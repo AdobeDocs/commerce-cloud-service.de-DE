@@ -1,0 +1,68 @@
+---
+title: Protokollhandler
+description: Erfahren Sie, wie Sie Protokollhandler für Adobe Commerce in der Cloud-Infrastruktur konfigurieren.
+feature: Cloud, Logs, Configuration
+role: Developer
+exl-id: d3be7b6d-5778-4c32-865b-31bdb2852a23
+source-git-commit: f8e35ecff4bcafda874a87642348e2d2bff5247b
+workflow-type: tm+mt
+source-wordcount: '232'
+ht-degree: 0%
+
+---
+
+# Protokollhandler
+
+Sie können Log-Handler konfigurieren, um Nachrichten an einen Remote-Protokollierungsserver zu senden. Ein Protokollhandler überträgt Build- und Bereitstellungsprotokolle auf andere Systeme, ähnlich wie Sie Protokolle per Push an Slack und E-Mail senden. Sie können eine _syslog_ -Handler, der sich ideal für die Protokollierung von Meldungen im Zusammenhang mit Hardware eignet, oder ein Graulog Extended Log Format (GELF)-Handler, der sich ideal für die Protokollierung von Nachrichten aus Softwareanwendungen eignet.
+
+Im folgenden Beispiel werden diese beiden Handler konfiguriert, indem die Konfiguration zum `.magento.env.yaml` -Datei. Für die Mindestprotokollierungsstufe (`min_level`), siehe [Protokollebenen](#log-levels).
+
+```yaml
+log:
+  syslog:
+    ident: "<syslog-ident>"
+    facility: 8 # https://php.net/manual/en/network.constants.php
+    min_level: "info"
+    logopts: <syslog-logopts>
+
+  syslog_udp:
+    host: "<syslog-host>"
+    port: <syslog-port>
+    facility: 8  # https://php.net/manual/en/network.constants.php
+    ident: "<syslog-ident>"
+    min_level: "info"
+
+  gelf:
+    min_level: "info"
+    use_default_formatter: true
+    additional: # Some additional information for each log message
+      project: "<some-project-id>"
+      app_id: "<some-app-id>"
+    transport:
+      http:
+        host: "<http-host>"
+        port: <http-port>
+        path: "<http-path>"
+        connection_timeout: 60
+      tcp:
+        host: "<tcp-host>"
+        port: <tcp-port>
+        connection_timeout: 60
+      udp:
+        host: "<udp-host>"
+        port: <udp-port>
+        chunk_size: 1024
+```
+
+## Protokollebenen
+
+Die Protokollebenen bestimmen die Detaillierungsstufe in den Benachrichtigungsmeldungen. Die folgenden Kategorien auf Protokollebene enthalten jede Protokollebene darunter. Beispiel: eine `debug` -Ebene umfasst die Protokollierung von jeder Ebene, während eine `alert` Die Ebene zeigt nur Warnhinweise und Notfälle an.
+
+- **debug**—detaillierte Debugging-Informationen
+- **Info**—interessante Ereignisse, wie z. B. eine Benutzeranmeldung oder ein SQL-Protokoll
+- **Hinweis**—normale, aber wichtige Ereignisse
+- **warning**—außergewöhnliche Ereignisse, die keine Fehler sind, z. B. die Verwendung einer veralteten API oder die schlechte Verwendung einer API
+- **error**—Laufzeitfehler, die keine sofortige Aktion erfordern
+- **kritisch**—kritische Bedingungen wie eine nicht verfügbare Anwendungskomponente oder eine unerwartete Ausnahme
+- **alert**—sofortige Maßnahme erforderlich, z. B. wenn eine Website ausfällt oder die Datenbank nicht verfügbar ist, sodass der Trigger einen SMS-Warnhinweis erhält
+- **Notfall**—system unbrauchbar
