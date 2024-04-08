@@ -2,11 +2,11 @@
 title: ECE-Tools - Versionshinweise
 description: Siehe eine Liste der neuesten Verbesserungen des ECE-Tools-Pakets.
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-01-16T00:00:00Z
+last-substantial-update: 2024-04-08T00:00:00Z
 exl-id: a464b940-c56e-4a7c-9948-559539e25361
-source-git-commit: f2aa4aa183298d829d27c4641f21acef1514d312
+source-git-commit: e21f21e34f89b62842bd22c99ff5705f984898e0
 workflow-type: tm+mt
-source-wordcount: '2887'
+source-wordcount: '2905'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,15 @@ Die Versionshinweise beinhalten:
 
 <!--Add release notes below-->
 
-## v2002.1.17 {#latest}
+
+## v2002.1.18 {#latest}
+
+Veröffentlichungsdatum: 8. April 2024
+
+- ![Neues Symbol](../../assets/new.svg) **PHP** — Unterstützung für PHP 8.3 hinzugefügt.
+- ![Fixsymbol](../../assets/fix.svg) Validator - Aktualisierter EOL-Validator.
+
+## v2002.1.17
 
 Veröffentlichungsdatum: 16. Januar 2024
 
