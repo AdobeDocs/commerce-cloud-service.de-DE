@@ -3,16 +3,16 @@ title: PHP-Einstellungen
 description: Erfahren Sie mehr über die optimalen PHP-Einstellungen für die Konfiguration von Commerce-Anwendungen in der Cloud-Infrastruktur.
 feature: Cloud, Configuration, Extensions
 exl-id: b4180265-f7a1-48e4-8c23-27835253e171
-source-git-commit: 9b3772cf640ebc56063434e1aa8acb1ec51dc63c
+source-git-commit: 94c1e16a07567471d446478e3bd2a33977247ef3
 workflow-type: tm+mt
-source-wordcount: '553'
+source-wordcount: '536'
 ht-degree: 0%
 
 ---
 
 # PHP-Einstellungen
 
-Sie können auswählen, [PHP-Version](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) in der `.magento.app.yaml` Datei:
+Sie können auswählen, welche [PHP-Version](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) in Ihrem `.magento.app.yaml` Datei:
 
 ```yaml
 name: mymagento
@@ -21,31 +21,31 @@ type: php:<version>
 
 >[!TIP]
 >
->Wenn Sie auf PHP 8.1 und höher aktualisieren, entfernen Sie JSON aus dem [`runtime: extensions:` property](properties.md#runtime) im `.magento.app.yaml` und stellen Sie sie erneut bereit. Die JSON-Erweiterung wird seit PHP 8.0 in der Cloud-Umgebung installiert.
+>Wenn Sie auf PHP 8.1 und höher aktualisieren, entfernen Sie JSON aus dem [`runtime: extensions:` Eigenschaft](properties.md#runtime) in der `.magento.app.yaml` Dateien und erneut bereitstellen. Die JSON-Erweiterung wird seit PHP 8.0 in der Cloud-Umgebung installiert.
 
-## PHP konfigurieren
+## Konfigurieren von PHP
 
-Sie können die PHP-Einstellungen für Ihre Umgebung mithilfe eines `php.ini` -Datei an die von Adobe Commerce verwaltete Konfiguration angehängt wird.
+Sie können die PHP-Einstellungen für Ihre Umgebung mit einem `php.ini` -Datei, die an die von Adobe Commerce verwaltete Konfiguration angehängt wird.
 
-Fügen Sie in Ihrem Repository die `php.ini` -Datei in das Stammverzeichnis der Anwendung (das Repository-Stammverzeichnis).
+Fügen Sie in Ihrem Repository Folgendes hinzu: `php.ini` Datei in den Stamm der Anwendung (den Repository-Stamm).
 
 >[!TIP]
 >
->Fehlerhaftes Konfigurieren von PHP-Einstellungen kann Probleme verursachen, daher sollten nur fortgeschrittene Administratoren diese Optionen festlegen.
+>Die unsachgemäße Konfiguration von PHP-Einstellungen kann Probleme verursachen, sodass nur erweiterte Administratoren diese Optionen festlegen sollten.
 
-### PHP-Speicherbegrenzung erhöhen
+### PHP-Speicherlimit erhöhen
 
-Um die PHP-Speicherbegrenzung zu erhöhen, fügen Sie die folgende Einstellung zum `php.ini` Datei:
+Um die PHP-Speicherbegrenzung zu erhöhen, fügen Sie die folgende Einstellung zur `php.ini` Datei:
 
 ```ini
 memory_limit = 1G
 ```
 
-Erhöhen Sie zum Debugging den Wert auf 2G.
+Erhöhen Sie zum Debuggen den Wert auf 2G.
 
 ### Optimieren der realpath_cache-Konfiguration
 
-Legen Sie Folgendes fest: `realpath_cache` Einstellungen zur Verbesserung der Anwendungsleistung.
+Legen Sie Folgendes fest `realpath_cache` Einstellungen zur Verbesserung der Anwendungsleistung.
 
 ```conf
 ;
@@ -59,15 +59,15 @@ realpath_cache_size = 10M
 realpath_cache_ttl = 7200
 ```
 
-Diese Einstellungen ermöglichen es PHP-Prozessen, Pfade zu Dateien zwischenzuspeichern, anstatt sie für jedes Laden der Seite zu suchen. Siehe [Leistungsoptimierung](https://www.php.net/manual/en/ini.core.php) in der PHP-Dokumentation.
+Diese Einstellungen ermöglichen es PHP-Prozessen, Pfade zu Dateien zwischenzuspeichern, anstatt sie bei jedem Laden der Seite zu suchen. Siehe [Leistungsoptimierung](https://www.php.net/manual/en/ini.core.php) in der PHP-Dokumentation.
 
 >[!NOTE]
 >
->Eine Liste der empfohlenen PHP-Konfigurationseinstellungen finden Sie unter [Erforderliche PHP-Einstellungen](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html) im _Installationshandbuch_.
+>Eine Liste der empfohlenen PHP-Konfigurationseinstellungen finden Sie unter [Erforderliche PHP-Einstellungen](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html) in der _Installationshandbuch_.
 
-### Benutzerdefinierte PHP-Einstellungen überprüfen
+### Überprüfen der benutzerdefinierten PHP-Einstellungen
 
-Nach dem Verschieben der `php.ini` Änderungen an Ihrer Cloud-Umgebung können Sie überprüfen, ob die benutzerdefinierte PHP-Konfiguration zu Ihrer Umgebung hinzugefügt wurde. Verwenden Sie beispielsweise SSH, um sich bei der Remote-Umgebung anzumelden und die Datei mit einer ähnlichen Funktion anzuzeigen:
+Nach dem Pushen der `php.ini` Wenn Sie Änderungen an Ihrer Cloud-Umgebung vornehmen, können Sie überprüfen, ob die benutzerdefinierte PHP-Konfiguration zu Ihrer Umgebung hinzugefügt wurde. Verwenden Sie beispielsweise SSH, um sich bei der Remote-Umgebung anzumelden und die Datei mit etwas Ähnlichem wie dem folgenden anzuzeigen:
 
 ```bash
 cat /etc/php/<php-version>/fpm/php.ini
@@ -75,15 +75,15 @@ cat /etc/php/<php-version>/fpm/php.ini
 
 >[!WARNING]
 >
->Wenn Sie Cloud Docker für Commerce für die lokale Entwicklung verwenden, lesen Sie [Docker-Dienstcontainer](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#fpm-container) für Informationen zur Verwendung eines benutzerdefinierten `php.ini` in einer Docker-Umgebung.
+>Wenn Sie Cloud Docker for Commerce für die lokale Entwicklung verwenden, siehe [Docker-Service-Container](https://developer.adobe.com/commerce/cloud-tools/docker/containers/service/#fpm-container) für Informationen zur Verwendung eines benutzerdefinierten `php.ini` Datei in einer Docker-Umgebung.
 
 ## Erweiterungen aktivieren
 
-Sie können PHP-Erweiterungen in der `runtime:extension` Abschnitt. Außerdem werden die angegebenen Erweiterungen in den Docker PHP-Containern verfügbar.
+Sie können PHP-Erweiterungen in der `runtime:extension` -Abschnitt. Außerdem werden die angegebenen Erweiterungen in den Docker-PHP-Containern verfügbar.
 
 >[!IMPORTANT]
 >
->Vor der Aktivierung von Erweiterungen ist es wichtig zu verstehen, dass die PHP-Version mit dem Betriebssystem kompatibel sein muss, das das Projekt hostet. Ihre Projektumgebung erfordert möglicherweise eine Aktualisierung des Betriebssystems durch das Infrastrukturteam, bevor Sie fortfahren können.
+>Bevor Sie Erweiterungen aktivieren, müssen Sie wissen, dass die PHP-Version mit dem Betriebssystem kompatibel sein muss, das das Projekt hostet. Bevor Sie fortfahren können, muss Ihre Projektumgebung möglicherweise vom Infrastruktur-Team auf das Betriebssystem aktualisiert werden.
 
 Beispiel in `.magento.app.yaml` Datei:
 
@@ -100,23 +100,21 @@ runtime:
         - exif
 ```
 
-Verwenden Sie SSH, um sich in einer Umgebung anzumelden und die PHP-Erweiterungen aufzulisten.
+Verwenden Sie SSH, um sich bei einer Umgebung anzumelden und die PHP-Erweiterungen aufzulisten.
 
 ```bash
 php -m
 ```
 
-Weitere Informationen zu einer bestimmten PHP-Erweiterung finden Sie in der [PHP-Erweiterungsliste](https://www.php.net/manual/en/extensions.alphabetical.php).
+Einzelheiten zu einer bestimmten PHP-Erweiterung finden Sie unter [PHP-Erweiterungsliste](https://www.php.net/manual/en/extensions.alphabetical.php).
 
 Die folgende Tabelle zeigt die unterstützten PHP-Erweiterungen bei der Bereitstellung von Adobe Commerce auf der Cloud-Plattform.
 
-| Standarderweiterungen | Installierte Erweiterungen<br>, die nicht deinstalliert werden können | Installierbare Erweiterungen<br>und deinstalliert nach Bedarf |
-| ------------------ | --------------------- | --------------------- |
-| `bcmath`<br>`bz2`<br>`calendar`<br>`exif`<br>`gd`<br>`gettext`<br> `intl`<br> `mysqli`<br> `openswoole`<br> `pcntl`<br> `pdo_mysql`<br> `soap`<br> `sockets`<br>  `sysvmsg`<br> `sysvsem`<br> `sysvshm`<br> `opcache`<br> `zip` | `ctype`<br> `curl`<br>`date`<br> `dom`<br> `fileinfo`<br> `filter`<br> `ftp`<br> `hash`<br> `iconv`<br> `json`<br> `mbstring`<br> `mysqlnd`<br> `openssl`<br> `pcre`<br> `pdo`<br> `pdo_sqlite`<br> `phar`<br>`posix`<br> `readline`<br> `session`<br> `sqlite3`<br> `tokenizer`<br> `xml`<br> `xmlreader`<br> `xmlwriter`<br> | `geoip`<br>`gmp`<br> `igbinary`<br> `imagick`<br> `imap`<br> `ioncube` <br>`ldap`<br> `mailparse`<br> `mcrypt`<br> `msgpack`<br> `mysqli`<br> `oauth`<br> `pdo_mysql`<br> `propro`<br> `pspell`<br> `raphf`<br> `recode`<br> `redis`<br> `shmop` `sockets`<br> `sodium`<br> `ssh2`<br>`tidy`<br> `xdebug`<br> `xmlrpc`<br> `xsl`<br> `yaml` |
+{{$include /help/_includes/templated/php-extensions-cloud.md}}
 
-Die Anforderungen an PHP-Module sind an die Adobe Commerce-Version gebunden. Siehe [PHP-Anforderungen](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html).
+Die PHP-Modulvoraussetzungen sind an die Adobe Commerce-Version gebunden. Siehe [PHP-Anforderungen](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/php-settings.html).
 
-### Erweiterungsunterstützung
+### Unterstützung von Erweiterungen
 
 Für Pro-Projekte benötigen die folgenden Erweiterungen zusätzliche Unterstützung für die Installation:
 
@@ -131,8 +129,8 @@ sourceguardian.restrict_unencoded = "1"
 
 Siehe [Abschnitt 3.5 der SourceGuardian-Dokumentation](https://sourceguardian.com/demofiles/files/SourceGuardian%20for%20Linux%20User%20Manual.pdf). _Dies ist ein Link zu einer PDF_.
 
-[Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) für Hilfe bei der Installation dieser PHP-Erweiterungen in allen Produktionsumgebungen und Pro Staging-Umgebungen. Aktualisieren einschließen `.magento/services.yaml` Datei, `.magento.app.yaml` -Datei mit der aktualisierten PHP-Version und weiteren PHP-Erweiterungen. Für Änderungen an einer Live-Produktionsumgebung müssen Sie eine Vorankündigung von mindestens 48 Stunden angeben. Es kann bis zu 48 Stunden dauern, bis das Cloud-Infrastruktur-Team Ihr Projekt aktualisiert.
+[Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) um Hilfe bei der Installation dieser PHP-Erweiterungen in allen Produktionsumgebungen und Pro-Staging-Umgebungen zu erhalten. Einschließen der aktualisierten `.magento/services.yaml` -Datei, `.magento.app.yaml` -Datei mit der aktualisierten PHP-Version und allen zusätzlichen PHP-Erweiterungen. Bei Änderungen an einer Live-Produktionsumgebung müssen Sie mindestens 48 Stunden im Voraus angeben. Es kann bis zu 48 Stunden dauern, bis das Cloud-Infrastruktur-Team Ihr Projekt aktualisiert.
 
 >[!WARNING]
 >
->PHP, das mit debug kompiliert wurde, wird nicht unterstützt und die Probe kann mit [!DNL XDebug] oder [!DNL XHProf]. Deaktivieren Sie diese Erweiterungen beim Aktivieren der Probe. Die Probe steht in Konflikt mit einigen PHP-Erweiterungen wie [!DNL Pinba] oder IonCube.
+>PHP, das mit debug kompiliert wurde, wird nicht unterstützt und der Probe kann mit Folgendem in Konflikt stehen [!DNL XDebug] oder [!DNL XHProf]. Deaktivieren Sie diese Erweiterungen, wenn Sie den Prüfpunkt aktivieren. Die Probe steht in Konflikt mit einigen PHP-Erweiterungen wie [!DNL Pinba] oder IonCube.
