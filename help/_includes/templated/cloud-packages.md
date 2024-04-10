@@ -1,7 +1,7 @@
 ---
-source-git-commit: 4dc60128f93f4595b0ed3e1a42cd64bb660e788f
+source-git-commit: ab9e2c8ca8c9a9c527aaa8b4cd5e2c2bc35bb718
 workflow-type: tm+mt
-source-wordcount: '2200'
+source-wordcount: '2184'
 ht-degree: 0%
 
 ---
@@ -19,26 +19,26 @@ ht-degree: 0%
 <!-- The edition variable contains `cloud` value from the _data/names.yml file
  -->
 
-Adobe Commerce in der Cloud-Infrastruktur verwendet Composer zur Verwaltung von PHP-Paketen.
+Adobe Commerce in der Cloud-Infrastruktur verwendet Composer, um PHP-Pakete zu verwalten.
 
-Die `composer.json` -Datei deklariert die Liste der Pakete, während die `composer.lock` -Datei speichert eine vollständige Liste der Pakete (eine Vollversion jedes Pakets und seiner Abhängigkeiten), die zum Erstellen einer Installation von Adobe Commerce oder Magento Open Source verwendet werden.
+Die `composer.json` -Datei die Liste der Pakete deklariert, während `composer.lock` speichert eine vollständige Liste der Packages (eine Vollversion jedes Packages und seiner Abhängigkeiten), die zum Erstellen einer Adobe Commerce- oder Magento Open Source-Installation verwendet werden.
 
-Die folgende Referenzdokumentation wird aus der `composer.lock` -Datei und umfasst die erforderlichen Pakete, die in Adobe Commerce in der Cloud-Infrastruktur 2.4.6 enthalten sind.
+Die folgende Referenzdokumentation wird aus der `composer.lock` -Datei und deckt die erforderlichen Pakete ab, die in Adobe Commerce in Cloud Infrastructure 2.4.7 enthalten sind.
 
 ## Abhängigkeiten
 
-`magento/magento-cloud-metapackage 2.4.6` weist die folgenden Abhängigkeiten auf:
+`magento/magento-cloud-metapackage 2.4.7` hat die folgenden Abhängigkeiten:
 
 ```config
 fastly/magento2: ^1.2.34
 magento/ece-tools: ^2002.1.0
 magento/module-paypal-on-boarding: ~100.5.0
-magento/product-enterprise-edition: >=2.4.6 <2.4.7
+magento/product-enterprise-edition: >=2.4.7 <2.4.8
 ```
 
 ## Drittanbieterlizenzen
 
-### Apache-2.0, LGPL-2.1-only
+### Apache-2.0, nur LGPL-2.1
 
 <table>
   <thead>
@@ -51,7 +51,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   <tbody>
   <tr>
     <td>
-      elasticsearch/elasticsearch
+      <a href="https://github.com/elastic/elasticsearch-php.git">elasticsearch/elasticsearch</a>
     </td>
     <td>Bibliothek</td>
     <td>PHP-Client für Elasticsearch</td>
@@ -61,7 +61,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/opensearch-project/opensearch-php.git">opensearch-project/opensearch-php</a>
     </td>
     <td>Bibliothek</td>
-    <td>PHP Client für OpenSearch</td>
+    <td>PHP-Client für OpenSearch</td>
   </tr>
   </tbody>
 </table>
@@ -82,7 +82,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/adobe/stock-api-libphp.git">astock/stock-api-libphp</a>
     </td>
     <td>Bibliothek</td>
-    <td>Adobe Stock API-Bibliothek</td>
+    <td>Adobe Stock-API-Bibliothek</td>
   </tr>
   <tr>
     <td>
@@ -100,9 +100,9 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
-      paypal/module-braintree
+      PayPal/Modul-Braintree
     </td>
-    <td>metapackage</td>
+    <td>Metapaket</td>
     <td>Braintree Magento</td>
   </tr>
   <tr>
@@ -115,7 +115,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tbody>
 </table>
 
-### BSD-2-Clause
+### BSD-2-Satz
 
 <table>
   <thead>
@@ -128,21 +128,14 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   <tbody>
   <tr>
     <td>
-      <a href="https://github.com/Bacon/BaconQrCode.git">bacon/bacon-qr-code</a>
+      <a href="https://github.com/Bacon/BaconQrCode.git">Bacon/Bacon-QR-Code</a>
     </td>
     <td>Bibliothek</td>
     <td>BaconQrCode ist ein QR-Code-Generator für PHP.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/beberlei/assert.git">beberlei/assert</a>
-    </td>
-    <td>Bibliothek</td>
-    <td>Thin Assertion Library für die Eingabevalidierung in Geschäftsmodellen.</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/DASPRiD/Enum.git">dasprid/enum</a>
+      <a href="https://github.com/DASPRiD/Enum.git">Dasprid/Enum</a>
     </td>
     <td>Bibliothek</td>
     <td>PHP 7.1 Enum-Implementierung</td>
@@ -152,12 +145,12 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/webimpress/safe-writer.git">webimpress/safe-writer</a>
     </td>
     <td>Bibliothek</td>
-    <td>Tool zum sicheren Schreiben von Dateien, um Wettlaufsituationen zu vermeiden</td>
+    <td>Tool zum sicheren Schreiben von Dateien, um Racebedingungen zu vermeiden</td>
   </tr>
   </tbody>
 </table>
 
-### BSD-3-Clause
+### BSD-3-Satz
 
 <table>
   <thead>
@@ -173,98 +166,98 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/colinmollenhour/Cm_Cache_Backend_File.git">colinmollenhour/cache-backend-file</a>
     </td>
     <td>Magento-Modul</td>
-    <td>Das Stock Zend_Cache_Backend_File Backend hat eine extrem schlechte Leistung bei der Reinigung durch Tags, sodass es unbrauchbar wird, wenn die Anzahl zwischengespeicherter Elemente zunimmt. Dieses Backend nimmt viele Änderungen vor, die zu einer enormen Leistungssteigerung führen, insbesondere bei der Tag-Reinigung.</td>
+    <td>Das Backend der Stock-Datei „Zend_Cache_Backend_File“ hat eine extrem schlechte Leistung bei der Bereinigung durch Tags, wodurch es unbrauchbar wird, wenn die Anzahl der zwischengespeicherten Elemente steigt. Dieses Backend nimmt viele Änderungen vor, was zu einer enormen Leistungssteigerung führt, insbesondere bei der Tag-Reinigung.</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/colinmollenhour/php-redis-session-abstract.git">colinmollenhour/php-redis-session-abstract</a>
     </td>
     <td>Bibliothek</td>
-    <td>Ein Redis-basierter Sitzungs-Handler mit optimistischer Sperre</td>
+    <td>Ein Redis-basierter Sitzungs-Handler mit optimistischer Sperrung</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/fastly/fastly-magento2.git">fastet/magento2</a>
+      <a href="https://github.com/fastly/fastly-magento2.git">Fastly/Magento2</a>
     </td>
-    <td>magento2-module</td>
+    <td>Magento2-Modul</td>
     <td>Fastly CDN Module für Magento 2.4.x</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/firebase/php-jwt.git">firebase/php-jwt</a>
+      <a href="https://github.com/firebase/php-jwt.git">Firebase/php-jwt</a>
     </td>
     <td>Bibliothek</td>
-    <td>Eine einfache Bibliothek zum Kodieren und Dekodieren von JSON Web Tokens (JWT) in PHP. Sollte der aktuellen Spezifikation entsprechen.</td>
+    <td>Eine einfache Bibliothek zum Codieren und Decodieren von JSON Web Tokens (JWT) in PHP. Sollte der aktuellen Spezifikation entsprechen.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/google/recaptcha.git">Google/Recaptcha</a>
+      <a href="https://github.com/google/recaptcha.git">Google/reCAPTCHA</a>
     </td>
     <td>Bibliothek</td>
-    <td>Client-Bibliothek für reCAPTCHA, einen kostenlosen Service, der Websites vor Spam und Missbrauch schützt.</td>
+    <td>Client-Bibliothek für reCAPTCHA, einen kostenlosen Dienst, der Websites vor Spam und Missbrauch schützt.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-captcha.git">Laminas/Laminas-Captcha</a>
+      <a href="https://github.com/laminas/laminas-captcha.git">laminas/laminas-captcha</a>
     </td>
     <td>Bibliothek</td>
-    <td>Generieren und Validieren von CAPTCHAs mit Figlets, Bildern, ReCaptcha und mehr</td>
+    <td>Generieren und Validieren von CAPTCHAs mit Filets, Bildern, reCAPTCHA und mehr</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-code.git">Laminas/Laminatcode</a>
+      <a href="https://github.com/laminas/laminas-code.git">laminas/laminas-code</a>
     </td>
     <td>Bibliothek</td>
-    <td>Erweiterung der PHP Reflection API, statisches Scannen von Code und Codegenerierung</td>
+    <td>Erweiterungen der PHP Reflection API, statisches Codescannen und Codegenerierung</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/laminas/laminas-config.git">laminas/laminas-config</a>
     </td>
     <td>Bibliothek</td>
-    <td>bietet eine verschachtelte, auf Objekteigenschaften basierende Benutzeroberfläche für den Zugriff auf diese Konfigurationsdaten im Anwendungscode</td>
+    <td>Stellt eine auf verschachtelten Objekteigenschaften basierende Benutzeroberfläche für den Zugriff auf diese Konfigurationsdaten im Anwendungscode bereit</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/laminas/laminas-crypt.git">laminas/laminas-crypt</a>
     </td>
     <td>Bibliothek</td>
-    <td>Starke Verschlüsselungs-Tools und Passwort-Hashing</td>
+    <td>Starke Verschlüsselungstools und Passwort-Hashing</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/laminas/laminas-db.git">laminas/laminas-db</a>
     </td>
     <td>Bibliothek</td>
-    <td>Abstraktionsebene der Datenbank, SQL-Abstraktion, Abstraktion der Ergebnismenge und Implementierung von RowDataGateway und TableDataGateway</td>
+    <td>Implementierungen von Datenbankabstraktionsebene, SQL-Abstraktion, Ergebnissatzabstraktion sowie RowDataGateway und TableDataGateway</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-di.git">Laminas/Laminas-di</a>
+      <a href="https://github.com/laminas/laminas-di.git">laminas/laminas-di</a>
     </td>
     <td>Bibliothek</td>
-    <td>Automatisierte Abhängigkeitseinspritzung für PSR-11-Container</td>
+    <td>Automatisierte Injektion von Abhängigkeiten für PSR-11-Container</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-escaper.git">Lamina/Lamina-Escaper</a>
+      <a href="https://github.com/laminas/laminas-escaper.git">Plättchen/Plättchen-Ausbrecher</a>
     </td>
     <td>Bibliothek</td>
-    <td>Sicheres und sicheres Escape von HTML, HTML-Attributen, JavaScript, CSS und URLs</td>
+    <td>Sicheres und sicheres Maskieren von HTML, HTML-Attributen, JavaScript, CSS und URLs</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/laminas/laminas-eventmanager.git">laminas/laminas-eventmanager</a>
     </td>
     <td>Bibliothek</td>
-    <td>Trigger und Abhören von Ereignissen in einer PHP-Anwendung</td>
+    <td>Trigger und Überwachen von Ereignissen in einer PHP-Anwendung</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-feed.git">Laminas/Laminatfeed</a>
+      <a href="https://github.com/laminas/laminas-feed.git">laminas/laminas-feed</a>
     </td>
     <td>Bibliothek</td>
-    <td>bietet Funktionen zum Erstellen und Verwenden von RSS- und Atom-Feeds.</td>
+    <td>bietet Funktionen zum Erstellen und Verwenden von RSS- und Atom-Feeds</td>
   </tr>
   <tr>
     <td>
@@ -275,42 +268,42 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-filter.git">Laminas/Lamina-Filter</a>
+      <a href="https://github.com/laminas/laminas-filter.git">laminas/laminas-filter</a>
     </td>
     <td>Bibliothek</td>
-    <td>Daten und Dateien programmgesteuert filtern und normalisieren</td>
+    <td>Programmgesteuertes Filtern und Normalisieren von Daten und Dateien</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-http.git">Laminas/Laminas-http</a>
+      <a href="https://github.com/laminas/laminas-http.git">laminas/laminas-http</a>
     </td>
     <td>Bibliothek</td>
-    <td>Bietet eine einfache Schnittstelle für die Ausführung von HTTP (Hyper-Text Transfer Protocol)-Anfragen</td>
+    <td>Bietet eine einfache Schnittstelle zum Ausführen von HTTP-Anfragen (Hyper-Text Transfer Protocol)</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-i18n.git">Laminas/Laminas-i18n</a>
+      <a href="https://github.com/laminas/laminas-i18n.git">LAMINAS/LAMINAS-I18N</a>
     </td>
     <td>Bibliothek</td>
-    <td>Übersetzungen für Ihre Anwendung bereitstellen sowie internationalisierte Werte filtern und validieren</td>
+    <td>Übersetzungen für Ihre Anwendung bereitstellen und internationalisierte Werte filtern und validieren</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/laminas/laminas-json.git">laminas/laminas-json</a>
     </td>
     <td>Bibliothek</td>
-    <td>bietet praktische Methoden zum Serialisieren von nativem PHP in JSON und Dekodieren von JSON in natives PHP</td>
+    <td>bietet praktische Methoden zum Serialisieren von nativem PHP zu JSON und zum Dekodieren von JSON zu nativem PHP</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-loader.git">Laminas/Laminas-Loader</a>
+      <a href="https://github.com/laminas/laminas-loader.git">Plättchen/Plättchen-Lader</a>
     </td>
     <td>Bibliothek</td>
-    <td>Strategien zum Laden und Laden von Plug-ins</td>
+    <td>Strategien zum automatischen Laden und Laden von Plug-ins</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-mail.git">Laminas/Laminas-mail</a>
+      <a href="https://github.com/laminas/laminas-mail.git">laminas/laminas-mail</a>
     </td>
     <td>Bibliothek</td>
     <td>Bietet allgemeine Funktionen zum Erstellen und Senden von Text- und MIME-kompatiblen mehrteiligen E-Mail-Nachrichten</td>
@@ -324,7 +317,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-mime.git">Lamina/Lamina-mime</a>
+      <a href="https://github.com/laminas/laminas-mime.git">laminas/laminas-mime</a>
     </td>
     <td>Bibliothek</td>
     <td>Erstellen und Analysieren von MIME-Nachrichten und -Teilen</td>
@@ -334,18 +327,18 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/laminas/laminas-modulemanager.git">laminas/laminas-modulemanager</a>
     </td>
     <td>Bibliothek</td>
-    <td>Modulare Anwendungssysteme für Laminas-mvc-Anwendungen</td>
+    <td>Modulares Applikationssystem für Laminas-MVC-Anwendungen</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-mvc.git">Laminas/Laminas-mvc</a>
+      <a href="https://github.com/laminas/laminas-mvc.git">laminas/laminas-mvc</a>
     </td>
     <td>Bibliothek</td>
-    <td>Die ereignisgesteuerte MVC-Schicht von Laminas, einschließlich MVC-Anwendungen, Controller und Plugins</td>
+    <td>Die ereignisgesteuerte MVC-Schicht von Laminas, einschließlich MVC-Anwendungen, Controller und Plug-ins</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-oauth.git">Laminas/Laminas-Oauth</a>
+      <a href="https://github.com/laminas/laminas-oauth.git">laminas/laminas-oauth</a>
     </td>
     <td>Bibliothek</td>
     <td></td>
@@ -355,18 +348,18 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/laminas/laminas-permissions-acl.git">laminas/laminas-permissions-acl</a>
     </td>
     <td>Bibliothek</td>
-    <td>Bietet eine einfache und flexible ACL-Implementierung (Access Control List) für die Verwaltung von Berechtigungen</td>
+    <td>Bietet eine einfache und flexible Implementierung der Zugriffssteuerungsliste (ACL) für die Verwaltung von Berechtigungen</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-recaptcha.git">Laminas/Laminas-Recaptcha</a>
+      <a href="https://github.com/laminas/laminas-recaptcha.git">Laminas/Laminas-reCAPTCHA</a>
     </td>
     <td>Bibliothek</td>
-    <td>OOP-Wrapper für den ReCaptcha-Webdienst</td>
+    <td>OOP-Wrapper für den ReCaptcha-Webservice</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-router.git">Laminas/Laminas-Router</a>
+      <a href="https://github.com/laminas/laminas-router.git">laminas/laminas-router</a>
     </td>
     <td>Bibliothek</td>
     <td>Flexibles Routing-System für HTTP- und Konsolenanwendungen</td>
@@ -376,25 +369,25 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/laminas/laminas-server.git">laminas/laminas-server</a>
     </td>
     <td>Bibliothek</td>
-    <td>Erstellen reflektionsbasierter RPC-Server</td>
+    <td>Erstellen von Reflection-basierten RPC-Servern</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-servicemanager.git">laminas/laminas-servicemanager</a>
+      <a href="https://github.com/laminas/laminas-servicemanager.git">laminas/laminas-serviceManager</a>
     </td>
     <td>Bibliothek</td>
-    <td>Werksgesteuerter Container für die Injektion von Abhängigkeiten</td>
+    <td>werkseitiger Injektor für die Injektion von Abhängigkeiten</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/laminas/laminas-session.git">laminas/laminas-session</a>
     </td>
     <td>Bibliothek</td>
-    <td>Objektorientierte Schnittstelle für PHP-Sitzungen und -Speicherung</td>
+    <td>Objektorientierte Schnittstelle zu PHP-Sitzungen und -Speicher</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-soap.git">Lamina/Lamina-Seife</a>
+      <a href="https://github.com/laminas/laminas-soap.git">laminas/laminas-soap</a>
     </td>
     <td>Bibliothek</td>
     <td></td>
@@ -411,49 +404,42 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/laminas/laminas-text.git">laminas/laminas-text</a>
     </td>
     <td>Bibliothek</td>
-    <td>Erstellen von FIGlets und textbasierten Tabellen</td>
+    <td>Erstellen von Feigenblättern und textbasierten Tabellen</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-uri.git">Lamina/Laminas-uri</a>
+      <a href="https://github.com/laminas/laminas-uri.git">laminas/laminas-uri</a>
     </td>
     <td>Bibliothek</td>
-    <td>Eine Komponente, die die Bearbeitung und Validierung von Uniform Resource Identifiers (URIs) unterstützt</td>
+    <td>Eine Komponente, die bei der Bearbeitung und Validierung von „Uniform Resource Identifiers (URIs)“ hilft</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-validator.git">Laminas/Laminas-validator</a>
+      <a href="https://github.com/laminas/laminas-validator.git">laminas/laminas-validator</a>
     </td>
     <td>Bibliothek</td>
-    <td>Validierungsklassen für eine Vielzahl von Domänen und die Möglichkeit, Validatoren zu ketten, um komplexe Validierungskriterien zu erstellen</td>
+    <td>Validierungsklassen für eine breite Palette von Domains und die Möglichkeit, Validatoren zu verketten, um komplexe Validierungskriterien zu erstellen</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/laminas/laminas-view.git">Lamina/Lamina-Ansicht</a>
+      <a href="https://github.com/laminas/laminas-view.git">laminas/laminas-view</a>
     </td>
     <td>Bibliothek</td>
-    <td>Flexible Ansichtsebene zur Unterstützung und Bereitstellung mehrerer Ansichtsebenen, Helfer und mehr</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/laminas/laminas-zendframework-bridge.git">laminas/laminas-zendframework-bridge</a>
-    </td>
-    <td>Bibliothek</td>
-    <td>Alias veraltete ZF-Klassennamen zu Laminas Project-Entsprechungen.</td>
+    <td>Flexible Ansichtsebene unterstützt und bietet mehrere Ansichtsebenen, Helper und mehr</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/nikic/PHP-Parser.git">nikic/php-parser</a>
     </td>
     <td>Bibliothek</td>
-    <td>Ein PHP-Parser, der in PHP geschrieben wurde</td>
+    <td>Ein in PHP geschriebener PHP-Parser</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/tedious/JShrink.git">tedivm/jschreink</a>
+      <a href="https://github.com/tedious/JShrink.git">tedivm/jsShrink</a>
     </td>
     <td>Bibliothek</td>
-    <td>JavaScript-Minifier in PHP erstellt</td>
+    <td>In PHP eingebauter JavaScript-Minimierer</td>
   </tr>
   <tr>
     <td>
@@ -465,7 +451,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tbody>
 </table>
 
-### BSD-3-Clause-Modification
+### BSD-3-Clause-Modifikation
 
 <table>
   <thead>
@@ -486,7 +472,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tbody>
 </table>
 
-### LGPL-2.1-oder-höher
+### ISC
 
 <table>
   <thead>
@@ -499,7 +485,28 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   <tbody>
   <tr>
     <td>
-      <a href="https://github.com/ezyang/htmlpurifier.git">ezyang/htmlfilter</a>
+      <a href="https://github.com/paragonie/sodium_compat.git">Paragonie/Natrium_compat</a>
+    </td>
+    <td>Bibliothek</td>
+    <td>Reine PHP-Implementierung von libnatrium; verwendet die PHP-Erweiterung, falls vorhanden</td>
+  </tr>
+  </tbody>
+</table>
+
+### LGPL-2.1-or-later
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Typ</th>
+      <th>Beschreibung</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      <a href="https://github.com/ezyang/htmlpurifier.git">Ezyang/HtmlPurifier</a>
     </td>
     <td>Bibliothek</td>
     <td>Standardkonformer HTML-Filter in PHP</td>
@@ -509,7 +516,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/php-amqplib/php-amqplib.git">php-amqplib/php-amqplib</a>
     </td>
     <td>Bibliothek</td>
-    <td>Früher Videlalvaro/php-amqplib.  Diese Bibliothek ist eine reine PHP-Implementierung des AMQP-Protokolls. Es wurde mit RabbitMQ getestet.</td>
+    <td>Zuvor videlalvaro/php-amqplib.  Diese Bibliothek ist eine reine PHP-Implementierung des AMQP-Protokolls. Es wurde gegen RabbitMQ getestet.</td>
   </tr>
   </tbody>
 </table>
@@ -530,158 +537,144 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/braintree/braintree_php.git">braintree/braintree_php</a>
     </td>
     <td>Bibliothek</td>
-    <td>Braintree PHP Client Library</td>
+    <td>Braintree PHP Client-Bibliothek</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/brick/math.git">Backstein/Mathematik</a>
+      <a href="https://github.com/brick/math.git">Brick/Math</a>
     </td>
     <td>Bibliothek</td>
     <td>Arithmetische Bibliothek mit beliebiger Genauigkeit</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/brick/varexporter.git">Backstein/Varexporter</a>
+      <a href="https://github.com/brick/varexporter.git">Brick/VarExporter</a>
     </td>
     <td>Bibliothek</td>
-    <td>Eine leistungsstarke Alternative zu var_export(), die Verschlüsse und Objekte ohne __set_state() exportieren kann</td>
+    <td>Eine leistungsstarke Alternative zu var_export(), die Schließungen und Objekte ohne __set_state() exportieren kann</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/ChristianRiesen/base32.git">christian-riesen/base32</a>
+      <a href="https://github.com/CarbonPHP/carbon-doctrine-types.git">CarbonPHP/Carbon-Doctrine-Types</a>
     </td>
     <td>Bibliothek</td>
-    <td>Base32-Encoder/Decoder nach RFC 4648</td>
+    <td>Typen zur Verwendung von Kohlenstoff in der Doktrin</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/colinmollenhour/credis.git">colinmollenhour/credis</a>
+      <a href="https://github.com/ChristianRiesen/base32.git">Christian-Riesen/base32</a>
     </td>
     <td>Bibliothek</td>
-    <td>Credis ist eine einfache Schnittstelle zum Schlüssel-Wert-Store von Redis, der die phpredis-Bibliothek umschließt, wenn sie für eine bessere Leistung verfügbar ist.</td>
+    <td>Base32 Encoder/Decoder nach RFC 4648</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/composer/ca-bundle.git">Composer/ca-bundle</a>
+      <a href="https://github.com/colinmollenhour/credis.git">colinmollenhour/credits</a>
     </td>
     <td>Bibliothek</td>
-    <td>Ermöglicht es Ihnen, einen Pfad zum System-CA-Bundle zu finden und eine Ausweichmöglichkeit zum Mozilla CA-Bundle einzuschließen.</td>
+    <td>Credis ist eine einfache Schnittstelle zum Redis-Schlüssel-Wert-Store, der die phpredis-Bibliothek umschließt, wenn sie für eine bessere Leistung verfügbar ist.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/composer/class-map-generator.git">Composer/class-map-generator</a>
+      <a href="https://github.com/composer/ca-bundle.git">composer/ca-bundle</a>
     </td>
     <td>Bibliothek</td>
-    <td>Hilfsprogramme zum Scannen von PHP-Code und Generieren von Klassenkarten.</td>
+    <td>Ermöglicht die Suche nach einem Pfad zum System-CA-Bundle und beinhaltet ein Fallback zum Mozilla CA-Bundle.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/composer/composer.git">Verfasser/Verfasser</a>
+      <a href="https://github.com/composer/class-map-generator.git">composer/class-map-generator</a>
     </td>
     <td>Bibliothek</td>
-    <td>Composer hilft Ihnen, Abhängigkeiten von PHP-Projekten zu deklarieren, zu verwalten und zu installieren. Dadurch wird sichergestellt, dass Sie überall den richtigen Stapel haben.</td>
+    <td>Dienstprogramme zum Scannen von PHP-Code und zum Erzeugen von Klassenzuordnungen.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/composer/metadata-minifier.git">Composer/metadata-minifier</a>
+      <a href="https://github.com/composer/composer.git">Komponist/Komponist</a>
     </td>
     <td>Bibliothek</td>
-    <td>Kleine Dienstprogrammbibliothek, die die Metadaten-Minimierung und -Erweiterung verarbeitet.</td>
+    <td>Composer unterstützt Sie beim Deklarieren, Verwalten und Installieren von Abhängigkeiten von PHP-Projekten. Dadurch wird sichergestellt, dass Sie überall den richtigen Stack haben.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/composer/pcre.git">Composer/PC</a>
+      <a href="https://github.com/composer/metadata-minifier.git">composer/metadata-minifier</a>
     </td>
     <td>Bibliothek</td>
-    <td>PCRE-Wrapping-Bibliothek, die typsichere preg_*-Ersetzungen bietet.</td>
+    <td>Kleine Dienstprogrammbibliothek, die die Minimierung und Erweiterung von Metadaten handhabt.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/composer/semver.git">Composer/Semver</a>
+      <a href="https://github.com/composer/pcre.git">Composer/PCRE</a>
     </td>
     <td>Bibliothek</td>
-    <td>Semver-Bibliothek, die Dienstprogramme, Versionsbegrenzungs-Parsing und Validierung bietet.</td>
+    <td>PCRE Wrapping-Bibliothek, die typsichere Preg_*-Ersetzungen bietet.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/composer/spdx-licenses.git">Composer/spdx-licenses</a>
+      <a href="https://github.com/composer/semver.git">Komponist/Semester</a>
     </td>
     <td>Bibliothek</td>
-    <td>SPDX-Lizenzliste und -Validierungsbibliothek.</td>
+    <td>Server-Bibliothek, die Dienstprogramme, das Analysieren von Versionsbeschränkungen und die Validierung bietet.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/composer/xdebug-handler.git">Composer/xdebug-handler</a>
+      <a href="https://github.com/composer/spdx-licenses.git">composer/spdx-licenses</a>
+    </td>
+    <td>Bibliothek</td>
+    <td>SPDX-Lizenzliste und Validierungsbibliothek.</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/composer/xdebug-handler.git">composer/xdebug-handler</a>
     </td>
     <td>Bibliothek</td>
     <td>Startet einen Prozess ohne Xdebug neu.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/doctrine/annotations.git">Dokumentation/Anmerkungen</a>
+      <a href="https://github.com/endroid/qr-code.git">Android/QR-Code</a>
     </td>
     <td>Bibliothek</td>
-    <td>Parser für Dokumentanmerkungen</td>
+    <td>Endroid QR-Code</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/doctrine/deprecations.git">doctrine/deprections</a>
+      <a href="https://github.com/ezimuel/guzzlestreams.git">Ezimuel/Guzzlestreams</a>
     </td>
     <td>Bibliothek</td>
-    <td>Eine kleine Ebene über der Trigger_error(E_USER_DEPRECATED)- oder PSR-3-Protokollierung mit Optionen zum Deaktivieren aller veralteten Versionen oder selektiv für Pakete.</td>
+    <td>Fork of guzzle/streams (aufgegeben) zur Verwendung mit elasticsearch-php</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/doctrine/lexer.git">doktrin/lexer</a>
+      <a href="https://github.com/ezimuel/ringphp.git">Ezimuel/RingPHP</a>
     </td>
     <td>Bibliothek</td>
-    <td>PHP Doctrine Lexer Parser-Bibliothek, die in Top-Down-, Rekursiv-Descent Parsers verwendet werden kann.</td>
+    <td>Abspaltung von guzzle/RingPHP (aufgegeben) zur Verwendung mit elasticsearch-php</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/endroid/qr-code.git">endroid/qr-code</a>
+      <a href="https://github.com/FriendsOfPHP/proxy-manager-lts.git">friendlyPHP/proxy-manager-lts</a>
     </td>
     <td>Bibliothek</td>
-    <td>Endroid-QR-Code</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/ezimuel/guzzlestreams.git">ezimuel/guzzlestreams</a>
-    </td>
-    <td>Bibliothek</td>
-    <td>Gabel/Ströme (aufgegeben) zur Verwendung mit Elasticsearch-php</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/ezimuel/ringphp.git">ezimuel/ringphp</a>
-    </td>
-    <td>Bibliothek</td>
-    <td>Gabel von guzzle/RingPHP (aufgegeben) zur Verwendung mit elasticsearch-php</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/FriendsOfPHP/proxy-manager-lts.git">friendlySofphp/proxy-manager-lts</a>
-    </td>
-    <td>Bibliothek</td>
-    <td>Erweiterung der Unterstützung für eine breitere Palette von PHP-Versionen zu ocramius/proxy-manager</td>
+    <td>Unterstützung für eine größere Auswahl an PHP-Versionen für ocramius/proxy-manager</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/bzikarsky/gelf-php.git">graylog2/gelf-php</a>
     </td>
     <td>Bibliothek</td>
-    <td>Eine PHP-Implementierung zum Senden von Protokollnachrichten an ein GELF-kompatibles Backend wie Graylog2.</td>
+    <td>Eine PHP-Implementierung, um Log-Nachrichten an ein GELF-kompatibles Backend wie Graylog2 zu senden.</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/guzzle/guzzle.git">guzzlehttp/guzzle</a>
     </td>
     <td>Bibliothek</td>
-    <td>Guzzle ist eine PHP HTTP-Client-Bibliothek</td>
+    <td>Guzzle ist eine PHP HTTP Client-Bibliothek</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/guzzle/promises.git">guzzlehttp/tries</a>
+      <a href="https://github.com/guzzle/promises.git">guzzlehttp/promises</a>
     </td>
     <td>Bibliothek</td>
     <td>Guzzle verspricht Bibliothek</td>
@@ -691,77 +684,77 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/guzzle/psr7.git">guzzlehttp/psr7</a>
     </td>
     <td>Bibliothek</td>
-    <td>Implementierung der PSR-7-Nachricht, die auch gemeinsame Methoden für das Dienstprogramm bereitstellt</td>
+    <td>PSR-7-Nachrichtenimplementierung, die auch gängige Dienstprogrammmethoden bietet</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/illuminate/collections.git">Ausleuchten/Sammlungen</a>
+      <a href="https://github.com/illuminate/collections.git">Illuminate/Collections</a>
     </td>
     <td>Bibliothek</td>
-    <td>Das Paket Sammlungen anzeigen .</td>
+    <td>Das Paket Illuminate Collections .</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/illuminate/config.git">leuchten/config</a>
+      <a href="https://github.com/illuminate/config.git">illuminate/config</a>
     </td>
     <td>Bibliothek</td>
-    <td>Das Paket Illuminate Config .</td>
+    <td>Das Paket „Illuminate Config„.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/illuminate/contracts.git">beleuchten/Verträge</a>
+      <a href="https://github.com/illuminate/contracts.git">beleuchten/kontrahieren</a>
     </td>
     <td>Bibliothek</td>
     <td>Das Paket Illuminate Contracts .</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/illuminate/macroable.git">beleuchten/makrofähig</a>
+      <a href="https://github.com/illuminate/macroable.git">beleuchten/makroskopisch</a>
     </td>
     <td>Bibliothek</td>
-    <td>Das Paket Illuminate Macroable .</td>
+    <td>Beleuchten Sie das Makro-Paket.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/justinrainbow/json-schema.git">justinrainbow/json-schema</a>
+      <a href="https://github.com/justinrainbow/json-schema.git">JustInRainbow/JSON-Schema</a>
     </td>
     <td>Bibliothek</td>
-    <td>Eine Bibliothek zum Validieren eines JSON-Schemas.</td>
+    <td>Eine Bibliothek zum Überprüfen eines JSON-Schemas.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/thephpleague/flysystem.git">Liga/Flysystem</a>
+      <a href="https://github.com/thephpleague/flysystem.git">Liga/Fliegensystem</a>
     </td>
     <td>Bibliothek</td>
-    <td>Abstraktion der Dateispeicherung für PHP</td>
+    <td>Dateispeicherabstraktion für PHP</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/thephpleague/flysystem-aws-s3-v3.git">league/flysystem-aws-s3-v3</a>
+      <a href="https://github.com/thephpleague/flysystem-aws-s3-v3.git">League/Flysystem-AWS-S3-V3</a>
     </td>
     <td>Bibliothek</td>
     <td>AWS S3-Dateisystemadapter für Flysystem.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/thephpleague/mime-type-detection.git">Erkennung von Klassen/MIME-Typen</a>
+      <a href="https://github.com/thephpleague/mime-type-detection.git">League/MIME-Type-Detection</a>
     </td>
     <td>Bibliothek</td>
-    <td>MIME-Typ-Erkennung für Flysystem</td>
+    <td>MIME-Erkennung für Flysystem</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/Seldaek/monolog.git">monolog/monolog</a>
     </td>
     <td>Bibliothek</td>
-    <td>Sendet Ihre Protokolle an Dateien, Sockets, Postfächer, Datenbanken und verschiedene Webdienste</td>
+    <td>Sendet Ihre Protokolle an Dateien, Sockets, Posteingänge, Datenbanken und verschiedene Web-Services</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/jmespath/jmespath.php.git">mtdowling/jmespath.php</a>
     </td>
     <td>Bibliothek</td>
-    <td>Deklarativ angeben, wie Elemente aus einem JSON-Dokument extrahiert werden</td>
+    <td>Deklarative Angabe, wie Elemente aus einem JSON-Dokument extrahiert werden</td>
   </tr>
   <tr>
     <td>
@@ -772,143 +765,150 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/paragonie/constant_time_encoding.git">paragonie/konstante_time_encoding</a>
+      <a href="https://github.com/paragonie/constant_time_encoding.git">paragonie/constant_time_encoding</a>
     </td>
     <td>Bibliothek</td>
-    <td>Konstante Implementierungen der RFC 4648-Kodierung (Base-64, Base-32, Base-16)</td>
+    <td>Implementierungen der RFC-4648-Codierung in konstanten Zeiten (Base-64, Base-32, Base-16)</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/paragonie/random_compat.git">paragonie/random_compat</a>
     </td>
     <td>Bibliothek</td>
-    <td>PHP 5.x-Polyfill für random_bytes() und random_int() von PHP 7</td>
+    <td>PHP 5.x Polyfill für random_bytes() und random_int() von PHP 7</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/MyIntervals/emogrifier.git">pelago/emogrifier</a>
     </td>
     <td>Bibliothek</td>
-    <td>Konvertiert CSS-Stile in Inline-Stilattribute in Ihrem HTML-Code</td>
+    <td>Konvertiert CSS-Stile in Inline-Stilattribute im HTML-Code</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/PhpGt/CssXPath.git">phpgt/cssxpath</a>
     </td>
     <td>Bibliothek</td>
-    <td>Konvertieren Sie CSS-Selektoren in XPath-Abfragen.</td>
+    <td>Konvertieren von CSS-Selektoren in XPath-Abfragen.</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/PhpGt/Dom.git">phpgt/dom</a>
     </td>
     <td>Bibliothek</td>
-    <td>Die moderne DOM-API für PHP-Projekte.</td>
+    <td>Moderne DOM-API.</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/PhpGt/PropFunc.git">phpgt/propfunc</a>
+    </td>
+    <td>Bibliothek</td>
+    <td>Eigenschaftenaccessor- und Mutatorfunktionen.</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/phpseclib/mcrypt_compat.git">phpseclib/mcrypt_compat</a>
     </td>
     <td>Bibliothek</td>
-    <td>PHP 5.x-8.x-Polyfill für Mcrypt-Erweiterung</td>
+    <td>PHP 5.x-8.x Polyfill für mcrypt Erweiterung</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/phpseclib/phpseclib.git">phpseclib/phpseclib</a>
     </td>
     <td>Bibliothek</td>
-    <td>Sichere PHP-Kommunikationsbibliothek - reine-PHP-Implementierungen von RSA, AES, SSH2, SFTP, X.509 usw.</td>
+    <td>PHP Secure Communications Library - RSA, AES, SSH2, SFTP, X.509 usw.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/php-fig/cache.git">psr/cache</a>
+      <a href="https://github.com/php-fig/clock.git">PSR/Uhr</a>
     </td>
     <td>Bibliothek</td>
-    <td>Allgemeine Benutzeroberfläche für das Zwischenspeichern von Bibliotheken</td>
+    <td>Gemeinsame Schnittstelle zum Lesen der Uhr.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/php-fig/container.git">psr/container</a>
+      <a href="https://github.com/php-fig/container.git">PSR/Container</a>
     </td>
     <td>Bibliothek</td>
-    <td>Allgemeine Container-Oberfläche (PHP FIG PSR-11)</td>
+    <td>Allgemeine Container-Schnittstelle (PHP-Abb. PSR-11)</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/php-fig/event-dispatcher.git">psr/event-dispatcher</a>
+      <a href="https://github.com/php-fig/event-dispatcher.git">PSR/event-dispatcher</a>
     </td>
     <td>Bibliothek</td>
     <td>Standardschnittstellen für die Ereignisverarbeitung.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/php-fig/http-client.git">psr/http-client</a>
+      <a href="https://github.com/php-fig/http-client.git">PSR/HTTP-Client</a>
     </td>
     <td>Bibliothek</td>
-    <td>Allgemeine Schnittstelle für HTTP-Clients</td>
+    <td>Gemeinsame Schnittstelle für HTTP-Clients</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/php-fig/http-factory.git">psr/http-factory</a>
+      <a href="https://github.com/php-fig/http-factory.git">PSR/HTTP-Factory</a>
     </td>
     <td>Bibliothek</td>
-    <td>Gemeinsame Schnittstellen für PSR-7-HTTP-Nachrichtenfabriken</td>
+    <td>Gemeinsame Schnittstellen für PSR-7 HTTP-Nachrichten-Factories</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/php-fig/http-message.git">psr/http-message</a>
+      <a href="https://github.com/php-fig/http-message.git">PSR/HTTP-Nachricht</a>
     </td>
     <td>Bibliothek</td>
-    <td>Allgemeine Schnittstelle für HTTP-Nachrichten</td>
+    <td>Gemeinsame Schnittstelle für HTTP-Nachrichten</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/php-fig/log.git">psr/log</a>
+      <a href="https://github.com/php-fig/log.git">PSR/LOG</a>
     </td>
     <td>Bibliothek</td>
-    <td>Allgemeine Benutzeroberfläche für die Protokollierung von Bibliotheken</td>
+    <td>Gemeinsame Benutzeroberfläche für die Protokollierung von Bibliotheken</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/php-fig/simple-cache.git">psr/simple-cache</a>
+      <a href="https://github.com/php-fig/simple-cache.git">PSR/simple-cache</a>
     </td>
     <td>Bibliothek</td>
-    <td>Gemeinsame Schnittstellen für einfache Zwischenspeicherung</td>
+    <td>Allgemeine Schnittstellen für einfaches Caching</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/ralouphie/getallheaders.git">ralouphie/getallheaders</a>
+      <a href="https://github.com/ralouphie/getallheaders.git">ralouphie/getAllHeaders</a>
     </td>
     <td>Bibliothek</td>
     <td>Ein Polyfill für getallheaders.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/ramsey/collection.git">Rammsey/Sammlung</a>
+      <a href="https://github.com/ramsey/collection.git">Ramsey/Kollektion</a>
     </td>
     <td>Bibliothek</td>
-    <td>Eine PHP-Bibliothek zum Darstellen und Bearbeiten von Kollektionen.</td>
+    <td>Eine PHP-Bibliothek zur Darstellung und Bearbeitung von Sammlungen.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/ramsey/uuid.git">ramsey/uuid</a>
+      <a href="https://github.com/ramsey/uuid.git">Ramsey/UUID</a>
     </td>
     <td>Bibliothek</td>
-    <td>Eine PHP-Bibliothek zum Generieren und Arbeiten mit Universally Unique Identifiers (UUIDs).</td>
+    <td>Eine PHP-Bibliothek zum Generieren und Verwenden von Universally Unique Identifiers (UUIDs).</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/reactphp/promise.git">react/promise</a>
+      <a href="https://github.com/reactphp/promise.git">React/Promise</a>
     </td>
     <td>Bibliothek</td>
     <td>Eine einfache Implementierung von CommonJS Promises/A für PHP</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/sabberworm/PHP-CSS-Parser.git">sabberwurm/php-css-parser</a>
+      <a href="https://github.com/MyIntervals/PHP-CSS-Parser.git">sabberwurm/php-css-parser</a>
     </td>
     <td>Bibliothek</td>
-    <td>Parser für CSS-Dateien in PHP geschrieben</td>
+    <td>Parser für in PHP geschriebene CSS-Dateien</td>
   </tr>
   <tr>
     <td>
@@ -922,14 +922,14 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/Seldaek/phar-utils.git">seld/phar-utils</a>
     </td>
     <td>Bibliothek</td>
-    <td>PHAR-Dateiformat-Dienstprogramme, wenn PHP Sie anruft</td>
+    <td>PHAR-Dateiformat-Dienstprogramme, für den Fall, dass PHP Sie startet</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/Seldaek/signal-handler.git">seld/signal-handler</a>
+      <a href="https://github.com/Seldaek/signal-handler.git">SELD/Signal-Handler</a>
     </td>
     <td>Bibliothek</td>
-    <td>Einfacher Unix-Signalhandler, der bei fehlender Unterstützung von Signalen für einfache plattformübergreifende Entwicklung leise fehlschlägt</td>
+    <td>Einfacher Unix-Signal-Handler, der im Hintergrund ausfällt, wenn Signale nicht unterstützt werden, um eine einfache plattformübergreifende Entwicklung zu ermöglichen</td>
   </tr>
   <tr>
     <td>
@@ -943,28 +943,28 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/Spomky-Labs/otphp.git">spomky-labs/otphp</a>
     </td>
     <td>Bibliothek</td>
-    <td>Eine PHP-Bibliothek zum Generieren einmaliger Passwörter gemäß RFC 4226 (HOTP-Algorithmus) und RFC 6238 (TOTP-Algorithmus) und kompatibel mit Google Authenticator</td>
+    <td>Eine PHP-Bibliothek zur Erzeugung von Einmalkennwörtern nach RFC 4226 (HOTP-Algorithmus) und RFC 6238 (TOTP-Algorithmus), die mit dem Google Authenticator kompatibel ist</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/Spomky-Labs/pki-framework.git">spomky-labs/pki-framework</a>
     </td>
     <td>Bibliothek</td>
-    <td>Ein PHP-Framework für die Verwaltung von Public Key-Infrastrukturen. Sie umfasst X.509 Public-Key-Zertifikate, Attributzertifikate, Zertifizierungsanfragen und die Validierung des Zertifizierungspfads.</td>
+    <td>Ein PHP-Framework für die Verwaltung von Public-Key-Infrastrukturen. Sie umfasst X.509-Zertifikate mit öffentlichem Schlüssel, Attributzertifikate, Zertifizierungsanfragen und die Validierung des Zertifizierungspfads.</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/config.git">symfony/config</a>
     </td>
     <td>Bibliothek</td>
-    <td>Hilft Ihnen, Konfigurationswerte jeder Art zu finden, zu laden, zu kombinieren, automatisch auszufüllen und zu validieren</td>
+    <td>Hilft Ihnen beim Suchen, Laden, Kombinieren, automatischen Ausfüllen und Überprüfen von Konfigurationswerten jeglicher Art</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/console.git">symfony/console</a>
     </td>
     <td>Bibliothek</td>
-    <td>Erleichtert die Erstellung schöner und testbarer Befehlszeilenschnittstellen</td>
+    <td>Erleichtert die Erstellung von schönen und testbaren Befehlszeilenschnittstellen</td>
   </tr>
   <tr>
     <td>
@@ -975,52 +975,66 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/dependency-injection.git">symfony/dependency-jection</a>
+      <a href="https://github.com/symfony/dependency-injection.git">symfony/dependency-injection</a>
     </td>
     <td>Bibliothek</td>
-    <td>Ermöglicht die Standardisierung und Zentralisierung der Art und Weise, wie Objekte in Ihrer Anwendung erstellt werden</td>
+    <td>Ermöglicht die Standardisierung und Zentralisierung der Objekterstellung in der Anwendung</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/deprecation-contracts.git">symfony/deprecation-contract</a>
+      <a href="https://github.com/symfony/deprecation-contracts.git">symfony/deprecation-Contracts</a>
     </td>
     <td>Bibliothek</td>
-    <td>Eine allgemeine Funktion und Konvention für Hinweise zur Einstellung von Triggern</td>
+    <td>Eine generische Funktion und Konvention für Hinweise zum Verwerfen von Triggern</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/error-handler.git">symfony/error-handler</a>
     </td>
     <td>Bibliothek</td>
-    <td>Bietet Tools zur Verwaltung von Fehlern und zur Vereinfachung des Debuggens von PHP-Code</td>
+    <td>Bietet Tools zur Fehlerverwaltung und einfachen Fehlerbehebung in PHP-Code</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/event-dispatcher.git">symfony/event-dispatcher</a>
     </td>
     <td>Bibliothek</td>
-    <td>Bietet Tools, mit denen Ihre Anwendungskomponenten miteinander kommunizieren können, indem sie Ereignisse senden und ihnen zuhören</td>
+    <td>Stellt Tools bereit, mit denen Ihre Anwendungskomponenten miteinander kommunizieren können, indem Ereignisse gesendet und überwacht werden</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/event-dispatcher-contracts.git">symfony/event-dispatcher-contract</a>
+      <a href="https://github.com/symfony/event-dispatcher-contracts.git">symfony/event-dispatcher-Contracts</a>
     </td>
     <td>Bibliothek</td>
-    <td>Generische Abstraktionen im Zusammenhang mit dem Dispatcher-Ereignis</td>
+    <td>Allgemeine Abstraktionen im Zusammenhang mit dem Dispatching-Ereignis</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/filesystem.git">symfony/filesystem</a>
     </td>
     <td>Bibliothek</td>
-    <td>Stellt grundlegende Hilfsprogramme für das Dateisystem bereit</td>
+    <td>Stellt grundlegende Dienstprogramme für das Dateisystem bereit</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/finder.git">symfony/finder</a>
     </td>
     <td>Bibliothek</td>
-    <td>Findet Dateien und Verzeichnisse über eine intuitive, fließende Benutzeroberfläche</td>
+    <td>Findet Dateien und Verzeichnisse über eine intuitive, flüssige Oberfläche</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/symfony/http-client.git">symfony/http-client</a>
+    </td>
+    <td>Bibliothek</td>
+    <td>Bietet leistungsstarke Methoden zum synchronen oder asynchronen Abrufen von HTTP-Ressourcen</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/symfony/http-client-contracts.git">symfony/http-client-Contracts</a>
+    </td>
+    <td>Bibliothek</td>
+    <td>Allgemeine Abstraktionen in Bezug auf HTTP-Clients</td>
   </tr>
   <tr>
     <td>
@@ -1034,102 +1048,109 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/symfony/http-kernel.git">symfony/http-kernel</a>
     </td>
     <td>Bibliothek</td>
-    <td>Bietet einen strukturierten Prozess zum Konvertieren einer Anforderung in eine Antwort</td>
+    <td>Stellt einen strukturierten Prozess zum Konvertieren einer Anfrage in eine Antwort bereit</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/intl.git">symfony/intl</a>
     </td>
     <td>Bibliothek</td>
-    <td>Stellt eine PHP-Ersetzungsschicht für die C intl-Erweiterung bereit, die zusätzliche Daten aus der ICU-Bibliothek enthält</td>
+    <td>Ermöglicht den Zugriff auf die Lokalisierungsdaten der ICU-Bibliothek</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-ctype.git">symfony/polyfill-type</a>
     </td>
     <td>Bibliothek</td>
-    <td>Symfony polyfill für Typfunktionen</td>
+    <td>Symfony Polyfill für ctype-Funktionen</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-intl-grapheme.git">symfony/polyfill-intl-grapheme</a>
     </td>
     <td>Bibliothek</td>
-    <td>Symfony polyfill für intl's grapheme_*-Funktionen</td>
+    <td>Symfony Polyfill für die Grapheme_* Funktionen von intl</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-intl-idn.git">symfony/polyfill-intl-idn</a>
     </td>
     <td>Bibliothek</td>
-    <td>Symfony polyfill für die Funktionen idn_to_ascii und idn_to_utf8</td>
+    <td>Symfony Polyfill für die Funktionen „idn_to_ascii“ und „idn_to_utf8“ von intl</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-intl-normalizer.git">symfony/polyfill-intl-normalizer</a>
     </td>
     <td>Bibliothek</td>
-    <td>Symfony polyfill für intl's Normalizer-Klasse und zugehörige Funktionen</td>
+    <td>Symfony Polyfill für Intl's Normalizer-Klasse und zugehörige Funktionen</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-mbstring.git">symfony/polyfill-mbstring</a>
     </td>
     <td>Bibliothek</td>
-    <td>Symfony polyfill für die Mbstring-Erweiterung</td>
+    <td>Symfony Polyfill für die MBstring-Erweiterung</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-php72.git">symfony/polyfill-php72</a>
     </td>
     <td>Bibliothek</td>
-    <td>Symfony polyfill-Backporting einige PHP 7.2+-Funktionen zu niedrigeren PHP-Versionen</td>
+    <td>Symfony Polyfill unterstützt einige PHP 7.2+ Funktionen zur Reduzierung von PHP-Versionen</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-php73.git">symfony/polyfill-php73</a>
     </td>
     <td>Bibliothek</td>
-    <td>Symfony polyfill-Backporting einige PHP 7.3+-Funktionen zu niedrigeren PHP-Versionen</td>
+    <td>Symfony Polyfill unterstützt einige PHP 7.3+ Funktionen zur Reduzierung von PHP-Versionen</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-php80.git">symfony/polyfill-php80</a>
     </td>
     <td>Bibliothek</td>
-    <td>Symfony polyfill-Backport einiger PHP 8.0+-Funktionen zu niedrigeren PHP-Versionen</td>
+    <td>Symfony Polyfill unterstützt einige PHP 8.0+ Funktionen zur Reduzierung von PHP-Versionen</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/polyfill-php81.git">symfony/polyfill-php81</a>
     </td>
     <td>Bibliothek</td>
-    <td>Symfony polyfill-Backport einiger PHP 8.1+-Funktionen zu niedrigeren PHP-Versionen</td>
+    <td>Symfony Polyfill unterstützt einige PHP 8.1+ Funktionen zur Reduzierung von PHP-Versionen</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/symfony/polyfill-php83.git">symfony/polyfill-php83</a>
+    </td>
+    <td>Bibliothek</td>
+    <td>Symfony Polyfill unterstützt einige PHP 8.3+ Funktionen zur Reduzierung von PHP-Versionen</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/process.git">symfony/process</a>
     </td>
     <td>Bibliothek</td>
-    <td>Führt Befehle in Unterprozessen aus</td>
+    <td>Führt Befehle in Teilprozessen aus</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/proxy-manager-bridge.git">symfony/proxy-manager-bridge</a>
     </td>
     <td>symfony-bridge</td>
-    <td>Integration für ProxyManager mit verschiedenen Symfony-Komponenten</td>
+    <td>Integration von ProxyManager mit verschiedenen Symfony-Komponenten</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/serializer.git">symfony/serializer</a>
     </td>
     <td>Bibliothek</td>
-    <td>Verarbeitet das Serialisieren und Deserialisieren von Datenstrukturen, einschließlich Objektdiagrammen, in Array-Strukturen oder anderen Formaten wie XML und JSON.</td>
+    <td>Ermöglicht das Serialisieren und Deserialisieren von Datenstrukturen, einschließlich Objektdiagrammen, in Array-Strukturen oder anderen Formaten wie XML und JSON.</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/service-contracts.git">symfony/service-contract</a>
+      <a href="https://github.com/symfony/service-contracts.git">symfony/service-Contracts</a>
     </td>
     <td>Bibliothek</td>
     <td>Allgemeine Abstraktionen im Zusammenhang mit Schreibdiensten</td>
@@ -1139,18 +1160,18 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
       <a href="https://github.com/symfony/string.git">symfony/string</a>
     </td>
     <td>Bibliothek</td>
-    <td>Bietet eine objektorientierte API für Zeichenfolgen und behandelt Bytes, UTF-8-Codepunkte und Graphem-Cluster einheitlich</td>
+    <td>Bietet eine objektorientierte API für Zeichenfolgen und behandelt Bytes, UTF-8-Code-Punkte und Graphem-Cluster einheitlich</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/symfony/translation.git">symfony/translation</a>
     </td>
     <td>Bibliothek</td>
-    <td>Bietet Tools zur Internationalisierung Ihrer Anwendung</td>
+    <td>Stellt Tools zur Internationalisierung Ihres Programms bereit</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/translation-contracts.git">symfony/translation-contract</a>
+      <a href="https://github.com/symfony/translation-contracts.git">symfony/translation-Contracts</a>
     </td>
     <td>Bibliothek</td>
     <td>Allgemeine Abstraktionen im Zusammenhang mit der Übersetzung</td>
@@ -1164,31 +1185,31 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/symfony/yaml.git">symfony/yaml</a>
+      <a href="https://github.com/symfony/var-exporter.git">symfony/var-Exporter</a>
     </td>
     <td>Bibliothek</td>
-    <td>Lädt und sichert YAML-Dateien</td>
+    <td>Ermöglicht den Export jeder serialisierbaren PHP-Datenstruktur in reinen PHP-Code</td>
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/thecodingmachine/safe.git">Thekodingmachine/safe</a>
+      <a href="https://github.com/symfony/yaml.git">symfony/yaml</a>
     </td>
     <td>Bibliothek</td>
-    <td>PHP-Kernfunktionen, die Ausnahmen ausgeben, anstatt FALSE bei Fehler zurückzugeben</td>
+    <td>Lädt YAML-Dateien und gibt sie aus</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/web-token/jwt-framework.git">web-token/jwt-framework</a>
     </td>
     <td>symfony-bundle</td>
-    <td>JSON Object Signing and Encryption Library für PHP und Symfony Bundle.</td>
+    <td>JSON Object Signing and Encryption Library für das PHP- und Symfony-Paket.</td>
   </tr>
   <tr>
     <td>
       <a href="https://github.com/webmozarts/assert.git">webmozart/assert</a>
     </td>
     <td>Bibliothek</td>
-    <td>Zuweisungen zur Validierung der Methodeneingabe/-ausgabe mit schönen Fehlermeldungen.</td>
+    <td>Assertionen zur Validierung der Eingabe/Ausgabe der Methode mit netten Fehlermeldungen.</td>
   </tr>
   <tr>
     <td>
@@ -1199,10 +1220,10 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/zordius/lightncandy.git">zordius/blitncandy</a>
+      <a href="https://github.com/zordius/lightncandy.git">Zordius/Lightcandy</a>
     </td>
     <td>Bibliothek</td>
-    <td>Eine extrem schnelle PHP-Implementierung von Handlebars ( http://handlebarsjs.com/ ) und mustache ( http://mustache.github.io/ ).</td>
+    <td>Eine extrem schnelle PHP-Implementierung von Handlebars ( http://handlebarsjs.com/ ) und Mustache ( http://mustache.github.io/ ).</td>
   </tr>
   </tbody>
 </table>
@@ -1220,17 +1241,31 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   <tbody>
   <tr>
     <td>
-      paypal/module-braintree-graph-ql
+      paypal/module-braintree-customer-balance
     </td>
-    <td>magento2-module</td>
+    <td>Magento2-Modul</td>
     <td>Nicht zutreffend</td>
   </tr>
   <tr>
     <td>
-      temando/module-shipping-remover
+      paypal/module-braintree-gift-card-account
     </td>
-    <td>magento2-module</td>
-    <td>Entfernt Temando-Erweiterung für den Transport mehrerer Frachtschiffe von Magento 2</td>
+    <td>Magento2-Modul</td>
+    <td>Nicht zutreffend</td>
+  </tr>
+  <tr>
+    <td>
+      paypal/module-braintree-gift-wrapping
+    </td>
+    <td>Magento2-Modul</td>
+    <td>Nicht zutreffend</td>
+  </tr>
+  <tr>
+    <td>
+      paypal/module-braintree-graph-ql
+    </td>
+    <td>Magento2-Modul</td>
+    <td>Nicht zutreffend</td>
   </tr>
   </tbody>
 </table>
@@ -1246,13 +1281,6 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
     </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>
-      temando/module-shipping
-    </td>
-    <td>metapackage</td>
-    <td>Temando-Erweiterung für die Schifffahrt mit mehreren Betreibern für Magento 2</td>
-  </tr>
   </tbody>
 </table>
 
@@ -1277,7 +1305,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tbody>
 </table>
 
-### Proprietär
+### firmeneigen
 
 <table>
   <thead>
@@ -1291,7 +1319,7 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
   </tbody>
 </table>
 
-### proprietär
+### firmeneigen
 
 <table>
   <thead>
@@ -1306,8 +1334,8 @@ magento/product-enterprise-edition: >=2.4.6 <2.4.7
     <td>
       paypal/module-braintree-core
     </td>
-    <td>magento2-module</td>
-    <td>Fork vom Magento Braintree 2.2.0-Modul von Gene Commerce für PayPal.</td>
+    <td>Magento2-Modul</td>
+    <td>Abspaltung vom Magento Braintree 2.2.0 Modul von Gene Commerce für PayPal.</td>
   </tr>
   </tbody>
 </table>
