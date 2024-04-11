@@ -1,33 +1,64 @@
 ---
-source-git-commit: 28aaae20fa03f31107bcd3fb569350a68842b152
+source-git-commit: 78e19b0cb274caf3799882d1f5d8242225c936ad
 workflow-type: tm+mt
-source-wordcount: '3125'
+source-wordcount: '4098'
 ht-degree: 0%
 
 ---
 # ece-tools
 
 <!-- The template to render with above values -->
-**Version**: 2002.1.14
+**Version**: 2002.1.18
 
-Diese Referenz enthält 32 Befehle, die über das `ece-tools` Befehlszeilen-Tool.
+Diese Referenz enthält 34 Befehle, die über das `ece-tools` Befehlszeilen-Tool.
 Die anfängliche Liste wird automatisch mit der Variablen `ece-tools list` in Adobe Commerce in der Cloud-Infrastruktur.
 
 >[!NOTE]
 >
 >Diese Referenz wird aus der Anwendungs-Codebase generiert. Um den Inhalt zu ändern, können Sie den Quellcode für die entsprechende Befehlsimplementierung im [codebase](https://github.com/magento/magento-cloud-cli) Repository erstellen und Ihre Änderungen zur Überprüfung einreichen. Eine andere Möglichkeit ist, _Feedback geben_ (finden Sie den Link oben rechts). Beitragsrichtlinien finden Sie unter [Codebeiträge](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
 
-## `build`
+## `_complete`
 
-Erstellt eine Anwendung.
+Interner Befehl zum Bereitstellen von Vorschlägen zur Shell-Fertigstellung
 
 ```bash
-ece-tools build
+ece-tools _complete [-s|--shell SHELL] [-i|--input INPUT] [-c|--current CURRENT] [-a|--api-version API-VERSION] [-S|--symfony SYMFONY]
 ```
+
+### `--shell`, `-s`
+
+Der Shell-Typ (&quot;bash&quot;, &quot;fish&quot;, &quot;zsh&quot;)
+
+- Erfordert einen Wert
+
+### `--input`, `-i`
+
+Ein Array von Eingabe-Token (z. B. COMP_WORDS oder argv)
+
+- Standard: `[]`
+- Erfordert einen Wert
+
+### `--current`, `-c`
+
+Der Index des &quot;input&quot;-Arrays, in dem sich der Cursor befindet (z. B. COMP_CWORD)
+
+- Erfordert einen Wert
+
+### `--api-version`, `-a`
+
+Die API-Version des Fertigstellungsskripts
+
+- Erfordert einen Wert
+
+### `--symfony`, `-S`
+
+veraltet
+
+- Erfordert einen Wert
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -55,14 +86,140 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--no-interaction`, `-n`
+
+Interaktive Fragen stellen
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+
+## `build`
+
+Erstellt eine Anwendung.
+
+```bash
+ece-tools build
+```
+
+### `--help`, `-h`
+
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--quiet`, `-q`
+
+Keine Nachricht ausgeben
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--verbose`, `-v|-vv|-vvv`
+
+Erhöhen Sie die Ausführlichkeit der Nachrichten: 1 für die normale Ausgabe, 2 für die ausführlichere Ausgabe und 3 für die Fehlerbehebung.
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--version`, `-V`
+
+Diese Anwendungsversion anzeigen
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--ansi`
+
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
+
+- Akzeptiert keinen Wert
+
+### `--no-ansi`
+
+Die Option &quot;—ansi&quot;umkehren
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--no-interaction`, `-n`
+
+Interaktive Fragen stellen
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+
+## `completion`
+
+Dump des Shell-Fertigstellungsskripts
+
+```bash
+ece-tools completion [--debug] [--] [<shell>]
+```
+
+
+### `shell`
+
+Der Shell-Typ (z. B. &quot;bash&quot;), der Wert der env var &quot;$SHELL&quot; wird verwendet, wenn dies nicht angegeben wird.
+
+
+### `--debug`
+
+Fertigstellungs-Debug-Protokoll verfolgen
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--help`, `-h`
+
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--quiet`, `-q`
+
+Keine Nachricht ausgeben
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--verbose`, `-v|-vv|-vvv`
+
+Erhöhen Sie die Ausführlichkeit der Nachrichten: 1 für die normale Ausgabe, 2 für die ausführlichere Ausgabe und 3 für die Fehlerbehebung.
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--version`, `-V`
+
+Diese Anwendungsversion anzeigen
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--ansi`
+
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
+
+- Akzeptiert keinen Wert
+
+### `--no-ansi`
+
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -107,7 +264,7 @@ Verwenden Sie ein alternatives Verzeichnis zum Speichern des Dump
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -135,14 +292,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -165,7 +321,7 @@ ece-tools deploy
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -193,14 +349,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -245,7 +400,7 @@ Ausgabe der Rohbefehl-Hilfe
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -273,14 +428,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -298,7 +452,7 @@ Interaktive Fragen stellen
 Listen-Befehle
 
 ```bash
-ece-tools list [--raw] [--format FORMAT] [--] [<namespace>]
+ece-tools list [--raw] [--format FORMAT] [--short] [--] [<namespace>]
 ```
 
 
@@ -321,18 +475,16 @@ Das Ausgabeformat (txt, xml, json oder md)
 - Standard: `txt`
 - Erfordert einen Wert
 
+### `--short`
 
-## `patch`
+Überspringen der Beschreibung der Befehlsargumente
 
-Wendet benutzerdefinierte Patches an.
-
-```bash
-ece-tools patch
-```
+- Standard: `false`
+- Akzeptiert keinen Wert
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -360,14 +512,70 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--no-interaction`, `-n`
+
+Interaktive Fragen stellen
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+
+## `patch`
+
+Wendet benutzerdefinierte Patches an.
+
+```bash
+ece-tools patch
+```
+
+### `--help`, `-h`
+
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--quiet`, `-q`
+
+Keine Nachricht ausgeben
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--verbose`, `-v|-vv|-vvv`
+
+Erhöhen Sie die Ausführlichkeit der Nachrichten: 1 für die normale Ausgabe, 2 für die ausführlichere Ausgabe und 3 für die Fehlerbehebung.
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--version`, `-V`
+
+Diese Anwendungsversion anzeigen
+
+- Standard: `false`
+- Akzeptiert keinen Wert
+
+### `--ansi`
+
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
+
+- Akzeptiert keinen Wert
+
+### `--no-ansi`
+
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -390,7 +598,7 @@ ece-tools post-deploy
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -418,14 +626,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -458,7 +665,7 @@ Szenario(e)
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -486,14 +693,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -516,7 +722,7 @@ ece-tools backup:list
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -544,14 +750,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -587,7 +792,7 @@ Ein bestimmter Dateiwiederherstellungspfad
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -615,14 +820,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -645,7 +849,7 @@ ece-tools build:generate
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -673,14 +877,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -703,7 +906,7 @@ ece-tools build:transfer
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -731,14 +934,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -768,7 +970,7 @@ Konfiguration im JSON-Format
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -796,14 +998,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -833,7 +1034,7 @@ Konfiguration im JSON-Format
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -861,14 +1062,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -891,7 +1091,7 @@ ece-tools cloud:config:validate
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -919,14 +1119,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -954,7 +1153,7 @@ ece-tools dump
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -982,14 +1181,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1012,7 +1210,7 @@ ece-tools cron:disable
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1040,14 +1238,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1070,7 +1267,7 @@ ece-tools cron:enable
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1098,14 +1295,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1128,7 +1324,7 @@ ece-tools cron:kill
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1156,14 +1352,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1193,7 +1388,7 @@ Cron-Auftragscode zum Entsperren.
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1221,14 +1416,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1251,7 +1445,7 @@ ece-tools dev:generate:schema-error
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1279,14 +1473,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1309,7 +1502,7 @@ ece-tools dev:git:update-composer
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1337,14 +1530,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1376,7 +1568,7 @@ Anzuzeigende Umgebungsvariablen, mögliche Optionen: Dienste, Routen, Variablen
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1404,14 +1596,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1447,7 +1638,7 @@ Wird verwendet, um Ergebnisse im JSON-Format zu erhalten
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1475,14 +1666,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1505,7 +1695,7 @@ ece-tools module:refresh
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1533,14 +1723,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1563,7 +1752,7 @@ ece-tools schema:generate
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1591,14 +1780,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1621,7 +1809,7 @@ ece-tools wizard:ideal-state
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1649,14 +1837,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1679,7 +1866,7 @@ ece-tools wizard:master-slave
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1707,14 +1894,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1737,7 +1923,7 @@ ece-tools wizard:scd-on-build
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1765,14 +1951,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1795,7 +1980,7 @@ ece-tools wizard:scd-on-demand
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1823,14 +2008,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1853,7 +2037,7 @@ ece-tools wizard:scd-on-deploy
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1881,14 +2065,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1911,7 +2094,7 @@ ece-tools wizard:split-db-state
 
 ### `--help`, `-h`
 
-Diese Hilfemeldung anzeigen
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1939,14 +2122,13 @@ Diese Anwendungsversion anzeigen
 
 ### `--ansi`
 
-ANSI-Ausgabe erzwingen
+ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
-- Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-ansi`
 
-ANSI-Ausgabe deaktivieren
+Die Option &quot;—ansi&quot;umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
