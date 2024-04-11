@@ -3,9 +3,9 @@ title: Backup-Management
 description: Erfahren Sie, wie Sie ein Backup für Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur manuell erstellen und wiederherstellen.
 feature: Cloud, Paas, Snapshots, Storage
 exl-id: 1cb00db7-2375-4761-9c07-1e20a74859e0
-source-git-commit: 1d8ffabb9f903e89495d11c973a9f0a5a8dd1d43
+source-git-commit: 069cbc233492d22932e8dce5bf0426dce8459727
 workflow-type: tm+mt
-source-wordcount: '682'
+source-wordcount: '685'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ Sie können eine manuelle Sicherung aktiver Starterumgebungen jederzeit mithilfe
 
 Ein Backup oder _Schnappschuss_ ist eine vollständige Sicherung der Umgebungsdaten, die alle persistenten Daten aus laufenden Diensten (MySQL-Datenbank) und allen Dateien enthält, die auf den bereitgestellten Volumes gespeichert sind (var, pub/media, app/etc). Der Schnappschuss _not_ Code einschließen, da der Code bereits im Git-basierten Repository gespeichert ist. Sie können keine Kopie einer Momentaufnahme herunterladen.
 
-Die Sicherungsfunktion **not** gelten für die Pro-Umgebungen. Die Staging- und Produktionsumgebungen von Pro erhalten standardmäßig regelmäßige Backups für Disaster Recovery-Zwecke, siehe [Pro Backup und Disaster Recovery](../architecture/pro-architecture.md#backup-and-disaster-recovery). Im Gegensatz zu automatischen Live-Backups in der Pro Staging- und Produktionsumgebung sind Backups **not** automatisch. Es ist _Ihre_ Verantwortung für die manuelle Erstellung eines Backups oder die Einrichtung eines Cron-Auftrags, um regelmäßig eine Sicherung Ihrer Starter- oder Pro-Integrationsumgebungen zu erstellen.
+Die Sicherungs-/Snapshot-Funktion **not** gelten für die Staging- und Produktionsumgebungen von Pro, die standardmäßig regelmäßige Backups für Disaster Recovery erhalten. Siehe Abschnitt [Pro Backup und Disaster Recovery](../architecture/pro-architecture.md#backup-and-disaster-recovery) für weitere Informationen. Im Gegensatz zu automatischen Live-Backups in der Pro Staging- und Produktionsumgebung sind Backups **not** automatisch. Es ist _Ihre_ Verantwortung für die manuelle Erstellung eines Backups oder die Einrichtung eines Cron-Auftrags, um regelmäßig eine Sicherung Ihrer Starter- oder Pro-Integrationsumgebungen zu erstellen.
 
 ## Manuelles Backup erstellen
 
