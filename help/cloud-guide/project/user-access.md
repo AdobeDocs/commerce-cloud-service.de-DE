@@ -6,9 +6,9 @@ feature: Cloud, Roles/Permissions
 last-substantial-update: 2023-06-27T00:00:00Z
 topic: Security
 exl-id: 3357a3ea-bf86-4a65-95d1-6b24f1152248
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: b85a163ff62f8a63430dff7c96b5cf391cf38d79
 workflow-type: tm+mt
-source-wordcount: '1441'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
@@ -161,7 +161,11 @@ Sie können die [[!DNL Cloud Console]](../../get-started/cloud-console.md) um Be
 
 1. Klicks **[!UICONTROL Add User]**.
 
-1. Stellen Sie nach dem Hinzufügen von Benutzern alle Umgebungen erneut bereit, um die Änderungen anzuwenden. Beim Hinzufügen eines Benutzers wird eine Bereitstellung nicht automatisch Trigger. Die Neuimplementierung ist ein wichtiger Schritt, um sicherzustellen, dass der Benutzer über SSH auf eine Umgebung zugreifen kann.
+   >[!IMPORTANT]
+   >
+   >Beim Hinzufügen eines Benutzers wird eine Bereitstellung nicht automatisch Trigger.
+
+1. Stellen Sie nach dem Hinzufügen von Benutzern alle Umgebungen erneut bereit, um die Änderungen anzuwenden. Beim Hinzufügen eines Benutzers wird eine Bereitstellung nicht automatisch Trigger. Die Neubereitstellung ist ein wichtiger Schritt, um sicherzustellen, dass der Benutzer über SSH auf eine Umgebung zugreifen oder Administratoraufgaben ausführen kann.
 
 Nachdem Sie den Benutzer hinzugefügt haben, sendet Adobe eine E-Mail mit Anweisungen zum Zugriff auf Adobe Commerce im Cloud-Infrastrukturprojekt an die angegebene Adresse.
 
