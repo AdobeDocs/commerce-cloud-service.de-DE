@@ -1,5 +1,5 @@
 ---
-title: Handel mit Cloud-Infrastruktur
+title: Commerce on Cloud Infrastructure
 description: Erfahren Sie mehr über das Erstellen, Bereitstellen und Verwalten von Commerce in der Cloud-Infrastruktur.
 exl-id: c0accd55-95ac-49d9-b6f4-0da19b82c28f
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# Handel mit Cloud-Infrastruktur
+# Commerce on Cloud Infrastructure
 
 Adobe Commerce on Cloud Infrastructure bietet eine automatisierte Hosting-Plattform mit einer **Self-Service** Vorgehensweise beim Erstellen, Bereitstellen und Verwalten Ihrer [!DNL Commerce] in einer Cloud-nativen Umgebung. Adobe Commerce in der Cloud-Infrastruktur verfügt über zusätzliche Funktionen, die es von den lokalen Adobe Commerce- und Magento Open Source-Plattformen abheben:
 
@@ -31,7 +31,7 @@ Anzeigen der [Technologiestapel](architecture/tech-stack.md) im Detail oder erfa
 
 ## Adobe Commerce-Dokumentation
 
-Im Handbuch Commerce on Cloud Infrastructure wird davon ausgegangen, dass Sie über einige Kenntnisse und Kenntnisse der Adobe Commerce-Anwendung verfügen. Weitere Informationen finden Sie unter [!DNL Commerce] Entwickler- und Benutzerhandbücher unten:
+Im Handbuch zur Cloud-Infrastruktur von Commerce wird davon ausgegangen, dass Sie über einige Kenntnisse und Kenntnisse der Adobe Commerce-Anwendung verfügen. Weitere Informationen finden Sie unter [!DNL Commerce] Entwickler- und Benutzerhandbücher unten:
 
 - [Dokumentation für Adobe Commerce-Entwickler](https://developer.adobe.com/commerce/docs/) (Adobe Developer-Site): Entwickeln, Anpassen, Integrieren, Erweitern und Verwenden erweiterter Funktionen
 
