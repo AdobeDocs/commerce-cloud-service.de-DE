@@ -1,7 +1,7 @@
 ---
-source-git-commit: 78e19b0cb274caf3799882d1f5d8242225c936ad
+source-git-commit: 6d8c082d78259f8f7adb0fb7f11ff4fcdb234124
 workflow-type: tm+mt
-source-wordcount: '4098'
+source-wordcount: '4030'
 ht-degree: 0%
 
 ---
@@ -58,7 +58,7 @@ veraltet
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -115,7 +115,7 @@ ece-tools build
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -185,7 +185,7 @@ Fertigstellungs-Debug-Protokoll verfolgen
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -264,7 +264,7 @@ Verwenden Sie ein alternatives Verzeichnis zum Speichern des Dump
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -321,7 +321,7 @@ ece-tools deploy
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -400,7 +400,7 @@ Ausgabe der Rohbefehl-Hilfe
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -484,7 +484,7 @@ Das Ausgabeformat (txt, xml, json oder md)
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -541,7 +541,7 @@ ece-tools patch
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -598,7 +598,7 @@ ece-tools post-deploy
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -665,7 +665,7 @@ Szenario(e)
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -722,7 +722,7 @@ ece-tools backup:list
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -792,7 +792,7 @@ Ein bestimmter Dateiwiederherstellungspfad
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -849,7 +849,7 @@ ece-tools build:generate
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -906,7 +906,7 @@ ece-tools build:transfer
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -970,7 +970,7 @@ Konfiguration im JSON-Format
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1034,7 +1034,7 @@ Konfiguration im JSON-Format
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1091,7 +1091,7 @@ ece-tools cloud:config:validate
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1153,7 +1153,7 @@ ece-tools dump
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1210,7 +1210,7 @@ ece-tools cron:disable
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1267,7 +1267,7 @@ ece-tools cron:enable
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1324,7 +1324,7 @@ ece-tools cron:kill
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1388,7 +1388,7 @@ Cron-Auftragscode zum Entsperren.
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1445,7 +1445,7 @@ ece-tools dev:generate:schema-error
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1502,7 +1502,7 @@ ece-tools dev:git:update-composer
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1568,7 +1568,7 @@ Anzuzeigende Umgebungsvariablen, mögliche Optionen: Dienste, Routen, Variablen
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1638,7 +1638,7 @@ Wird verwendet, um Ergebnisse im JSON-Format zu erhalten
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1695,7 +1695,7 @@ ece-tools module:refresh
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1752,7 +1752,7 @@ ece-tools schema:generate
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1809,7 +1809,7 @@ ece-tools wizard:ideal-state
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1866,7 +1866,7 @@ ece-tools wizard:master-slave
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1923,7 +1923,7 @@ ece-tools wizard:scd-on-build
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1980,7 +1980,7 @@ ece-tools wizard:scd-on-demand
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2037,7 +2037,7 @@ ece-tools wizard:scd-on-deploy
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2094,7 +2094,7 @@ ece-tools wizard:split-db-state
 
 ### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl erhält, wird die Hilfe zur Anzeige des \&lt;info>list\&lt;/info> command
+Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert

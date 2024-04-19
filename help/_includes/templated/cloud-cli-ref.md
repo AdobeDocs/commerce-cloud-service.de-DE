@@ -1,21 +1,21 @@
 ---
-source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
+source-git-commit: 6d8c082d78259f8f7adb0fb7f11ff4fcdb234124
 workflow-type: tm+mt
-source-wordcount: '21442'
+source-wordcount: '21171'
 ht-degree: 0%
 
 ---
-# Magento-Cloud (Adobe Commerce auf Cloud-Infrastruktur)
+# Magento-Cloud (Adobe Commerce über Cloud-Infrastruktur)
 
 <!-- The template to render with above values -->
 **Version**: 1.46.1
 
-Diese Referenz enthält 119 Befehle, die über die `magento-cloud` Befehlszeilen-Tool.
-Die anfängliche Liste wird automatisch mit dem `magento-cloud list` Befehl bei Adobe Commerce in der Cloud-Infrastruktur.
+Diese Referenz enthält 119 Befehle, die über das `magento-cloud` Befehlszeilen-Tool.
+Die anfängliche Liste wird automatisch mit der Variablen `magento-cloud list` in Adobe Commerce in der Cloud-Infrastruktur.
 
 >[!NOTE]
 >
->Dieser Verweis wird aus der Anwendungs-Code-Basis generiert. Um den Inhalt zu ändern, können Sie den Quell-Code für die entsprechende Befehlsimplementierung in der [Codebase](https://github.com/magento/magento-cloud-cli) Repository speichern und Ihre Änderungen zur Überprüfung übermitteln. Eine andere Möglichkeit besteht darin, _Geben Sie uns Feedback_ (finden Sie den Link oben rechts). Richtlinien für Beiträge finden Sie unter [Code-Beiträge](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
+>Diese Referenz wird aus der Anwendungs-Codebase generiert. Um den Inhalt zu ändern, können Sie den Quellcode für die entsprechende Befehlsimplementierung im [codebase](https://github.com/magento/magento-cloud-cli) Repository erstellen und Ihre Änderungen zur Überprüfung einreichen. Eine andere Möglichkeit ist, _Feedback geben_ (finden Sie den Link oben rechts). Beitragsrichtlinien finden Sie unter [Codebeiträge](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
 
 ## `clear-cache`
 
@@ -34,7 +34,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -48,14 +48,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -63,7 +63,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `decode`
 
-Decodieren einer codierten Zeichenfolge wie MAGENTO_CLOUD_VARIABLES
+Dekodieren einer kodierten Zeichenfolge wie MAGENTO_CLOUD_VARIABLES
 
 ```bash
 magento-cloud decode [-P|--property PROPERTY] [--] <value>
@@ -78,7 +78,7 @@ Der zu dekodierende Variablenwert
 
 ### `--property`, `-P`
 
-Die Eigenschaft, die in der Variablen angezeigt werden soll
+Die Eigenschaft, die in der -Variablen angezeigt werden soll
 
 - Erfordert einen Wert
 
@@ -91,7 +91,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -105,14 +105,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -120,7 +120,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `docs`
 
-Öffnen der Onlinedokumentation
+Öffnen Sie die Online-Dokumentation
 
 ```bash
 magento-cloud docs [--browser BROWSER] [--pipe] [--] [<search>]...
@@ -137,13 +137,13 @@ Suchbegriff(e)
 
 ### `--browser`
 
-Der zum Öffnen der URL zu verwendende Browser. Auf 0 für keine festlegen.
+Der zum Öffnen der URL zu verwendende Browser. Legen Sie 0 für keine fest.
 
 - Erfordert einen Wert
 
 ### `--pipe`
 
-Geben Sie die URL an stdout aus.
+Geben Sie die URL für stdout aus.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -157,7 +157,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -171,14 +171,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -186,7 +186,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `help`
 
-Zeigt Hilfe zu einem Befehl an
+Zeigt Hilfe für einen Befehl an
 
 ```bash
 magento-cloud help [--format FORMAT] [--raw] [--] [<command_name>]
@@ -209,7 +209,7 @@ Das Ausgabeformat (txt, json oder md)
 
 ### `--raw`
 
-So geben Sie die Raw-Befehlshilfe aus
+Ausgabe der Rohbefehl-Hilfe
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -223,7 +223,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -237,14 +237,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -272,7 +272,7 @@ Der Namespace-Name
 
 ### `--raw`
 
-So geben Sie die unbearbeitete Befehlsliste aus
+So geben Sie die unformatierte Befehlsliste aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -300,7 +300,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -314,14 +314,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -353,21 +353,21 @@ Eine Liste der Projekt-IDs, durch Kommas und/oder Leerzeichen getrennt
 
 ### `--continue`
 
-Ausführen von Befehlen auch dann fortsetzen, wenn eine Ausnahme auftritt
+Fahren Sie mit der Ausführung von Befehlen fort, selbst wenn eine Ausnahme aufgetreten ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--sort`
 
-Eine Eigenschaft, nach der die Liste der Projektoptionen sortiert werden soll
+Eine Eigenschaft zum Sortieren der Liste der Projektoptionen
 
 - Standard: `title`
 - Erfordert einen Wert
 
 ### `--reverse`
 
-Kehrt die Reihenfolge der Projektoptionen um
+Reihenfolge der Projektoptionen umkehren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -381,7 +381,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -395,14 +395,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -418,13 +418,13 @@ magento-cloud web [--browser BROWSER] [--pipe] [-p|--project PROJECT] [-e|--envi
 
 ### `--browser`
 
-Der zum Öffnen der URL zu verwendende Browser. Auf 0 für keine festlegen.
+Der zum Öffnen der URL zu verwendende Browser. Legen Sie 0 für keine fest.
 
 - Erfordert einen Wert
 
 ### `--pipe`
 
-Geben Sie die URL an stdout aus.
+Geben Sie die URL für stdout aus.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -437,7 +437,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -450,7 +450,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -464,14 +464,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -479,7 +479,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `activity:cancel`
 
-Abbrechen einer Aktivität
+Aktivität abbrechen
 
 ```bash
 magento-cloud activity:cancel [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [-a|--all] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<id>]
@@ -488,26 +488,26 @@ magento-cloud activity:cancel [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] 
 
 ### `id`
 
-Die Aktivitäts-ID. Die Standardeinstellung ist die letzte absagbare Aktivität.
+Die Aktivitäts-ID. Die Standardeinstellung ist die neueste stornierbare Aktivität.
 
 
 ### `--type`, `-t`
 
-Filtern nach Typ (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter für den Typ verwendet werden, z. B. „%var%“ zur Auswahl variablenbezogener Aktivitäten.
+Filtern nach Typ (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter für den Typ verwendet werden, z. B. &#39;%var%&#39; zur Auswahl variablenbezogener Aktivitäten.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--exclude-type`, `-x`
 
-Nach Typ ausschließen (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
+Nach Typ ausschließen (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--all`, `-a`
 
-Aktuelle Aktivitäten in allen Umgebungen überprüfen (bei Auswahl einer Standardaktivität)
+Prüfung der letzten Aktivitäten in allen Umgebungen (bei Auswahl einer Standardaktivität)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -520,7 +520,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -533,7 +533,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -547,14 +547,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -562,7 +562,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `activity:get`
 
-Anzeigen detaillierter Informationen zu einer einzelnen Aktivität
+Detaillierte Informationen zu einer einzelnen Aktivität anzeigen
 
 ```bash
 magento-cloud activity:get [-P|--property PROPERTY] [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--state STATE] [--result RESULT] [-i|--incomplete] [-a|--all] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT] [--] [<id>]
@@ -571,7 +571,7 @@ magento-cloud activity:get [-P|--property PROPERTY] [-t|--type TYPE] [-x|--exclu
 
 ### `id`
 
-Die Aktivitäts-ID. Standardmäßig wird die letzte Aktivität verwendet.
+Die Aktivitäts-ID. Die Standardeinstellung ist die neueste Aktivität.
 
 
 ### `--property`, `-P`
@@ -582,21 +582,21 @@ Die anzuzeigende Eigenschaft
 
 ### `--type`, `-t`
 
-Filtern nach Typ (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter für den Typ verwendet werden, z. B. „%var%“ zur Auswahl variablenbezogener Aktivitäten.
+Filtern nach Typ (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter für den Typ verwendet werden, z. B. &#39;%var%&#39; zur Auswahl variablenbezogener Aktivitäten.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--exclude-type`, `-x`
 
-Nach Typ ausschließen (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
+Nach Typ ausschließen (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--state`
 
-Nach Status filtern (bei Auswahl einer Standardaktivität): in_progress, pending, complete oder canceled. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Filtern nach Status (bei Auswahl einer Standardaktivität): in_progress, pending, complete oder cancelled. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -609,14 +609,14 @@ Filtern nach Ergebnis (bei Auswahl einer Standardaktivität): Erfolg oder Fehler
 
 ### `--incomplete`, `-i`
 
-Nur unvollständige Aktivitäten einbeziehen (bei Auswahl einer Standardaktivität). Dies ist eine Kurzschreibweise für \&lt;info>—state=in_progress,Pending\&lt;/info>
+Schließen Sie nur unvollständige Aktivitäten ein (bei Auswahl einer Standardaktivität). Dies ist eine Kurzanleitung für —state=in_progress,pending
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--all`, `-a`
 
-Aktuelle Aktivitäten in allen Umgebungen überprüfen (bei Auswahl einer Standardaktivität)
+Prüfung der letzten Aktivitäten in allen Umgebungen (bei Auswahl einer Standardaktivität)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -629,34 +629,34 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -670,7 +670,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -684,14 +684,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -699,7 +699,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `activity:list`
 
-Abrufen einer Liste von Aktivitäten für eine Umgebung oder ein Projekt
+Liste der Aktivitäten für eine Umgebung oder ein Projekt abrufen
 
 ```bash
 magento-cloud activities [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--limit LIMIT] [--start START] [--state STATE] [--result RESULT] [-i|--incomplete] [-a|--all] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT]
@@ -707,14 +707,14 @@ magento-cloud activities [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--li
 
 ### `--type`, `-t`
 
-Filteraktivitäten nach Typ Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen aufgeteilt werden. Der erste Teil des Aktivitätsnamens kann weggelassen werden, z. B. kann „cron“ „environment.cron„-Aktivitäten auswählen. Die Zeichen % oder * können als Platzhalter verwendet werden, z. B. „%var%„, um variablenbezogene Aktivitäten auszuwählen.
+Filteraktivitäten nach Typ Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Der erste Teil des Aktivitätsnamens kann weggelassen werden, z. B. kann &quot;cron&quot;Aktivitäten vom Typ &quot;environment.cron&quot;auswählen. Die Zeichen % oder * können als Platzhalter verwendet werden, z. B. &#39;%var%&#39; zur Auswahl variablenbezogener Aktivitäten.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--exclude-type`, `-x`
 
-Ausschließen von Aktivitäten nach Typ. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden. Der erste Teil des Aktivitätsnamens kann weggelassen werden, z. B. kann „cron“ „environment.cron„-Aktivitäten ausschließen. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
+Aktivitäten nach Typ ausschließen Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Der erste Teil des Aktivitätsnamens kann weggelassen werden, z. B. kann &quot;cron&quot;Aktivitäten vom Typ &quot;environment.cron&quot;ausschließen. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -728,20 +728,20 @@ Anzahl der angezeigten Ergebnisse begrenzen
 
 ### `--start`
 
-Nur Aktivitäten, die vor diesem Datum erstellt wurden, werden aufgelistet
+Es werden nur Aktivitäten aufgelistet, die vor diesem Datum erstellt wurden
 
 - Erfordert einen Wert
 
 ### `--state`
 
-Aktivitäten nach Status filtern: in Bearbeitung, ausstehend, abgeschlossen oder abgebrochen. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Aktivitäten nach Status filtern: in_progress, pending, complete oder abgebrochen. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--result`
 
-Filtern von Aktivitäten nach Ergebnis: Erfolg oder Fehler
+Aktivitäten nach Ergebnis filtern: Erfolg oder Fehler
 
 - Erfordert einen Wert
 
@@ -761,28 +761,28 @@ Aktivitäten in allen Umgebungen auflisten
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: ID*, Erstellt*, Beschreibung*, Fortschritt*, Status*, Ergebnis*, Abgeschlossen, Umgebungen, Typ (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: id*, created*, description*, progress*, state*, result*, completed, environment, type (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -795,7 +795,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -808,7 +808,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -822,14 +822,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -837,7 +837,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `activity:log`
 
-Protokoll einer Aktivität anzeigen
+Protokoll für eine Aktivität anzeigen
 
 ```bash
 magento-cloud activity:log [--refresh REFRESH] [-t|--timestamps] [--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--state STATE] [--result RESULT] [-i|--incomplete] [-a|--all] [--date-fmt DATE-FMT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<id>]
@@ -846,12 +846,12 @@ magento-cloud activity:log [--refresh REFRESH] [-t|--timestamps] [--type TYPE] [
 
 ### `id`
 
-Die Aktivitäts-ID. Standardmäßig wird die letzte Aktivität verwendet.
+Die Aktivitäts-ID. Die Standardeinstellung ist die neueste Aktivität.
 
 
 ### `--refresh`
 
-Aktualisierungsintervall der Aktivität (Sekunden). Auf 0 gesetzt, um die Aktualisierung zu deaktivieren.
+Intervall für die Aktivitätsaktualisierung (Sekunden). Auf 0 setzen, um die Aktualisierung zu deaktivieren.
 
 - Standard: `3`
 - Erfordert einen Wert
@@ -865,21 +865,21 @@ Zeitstempel neben jeder Nachricht anzeigen
 
 ### `--type`
 
-Filtern nach Typ (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter für den Typ verwendet werden, z. B. „%var%“ zur Auswahl variablenbezogener Aktivitäten.
+Filtern nach Typ (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter für den Typ verwendet werden, z. B. &#39;%var%&#39; zur Auswahl variablenbezogener Aktivitäten.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--exclude-type`, `-x`
 
-Nach Typ ausschließen (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
+Nach Typ ausschließen (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--state`
 
-Nach Status filtern (bei Auswahl einer Standardaktivität): in_progress, pending, complete oder canceled. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Filtern nach Status (bei Auswahl einer Standardaktivität): in_progress, pending, complete oder cancelled. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -892,21 +892,21 @@ Filtern nach Ergebnis (bei Auswahl einer Standardaktivität): Erfolg oder Fehler
 
 ### `--incomplete`, `-i`
 
-Nur unvollständige Aktivitäten einbeziehen (bei Auswahl einer Standardaktivität). Dies ist eine Kurzschreibweise für \&lt;info>—state=in_progress,Pending\&lt;/info>
+Schließen Sie nur unvollständige Aktivitäten ein (bei Auswahl einer Standardaktivität). Dies ist eine Kurzanleitung für —state=in_progress,pending
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--all`, `-a`
 
-Aktuelle Aktivitäten in allen Umgebungen überprüfen (bei Auswahl einer Standardaktivität)
+Prüfung der letzten Aktivitäten in allen Umgebungen (bei Auswahl einer Standardaktivität)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -919,7 +919,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -932,7 +932,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -946,14 +946,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -961,7 +961,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `app:config-get`
 
-Anzeigen der Konfiguration einer App
+Konfiguration einer App anzeigen
 
 ```bash
 magento-cloud app:config-get [-P|--property PROPERTY] [--refresh] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [-i|--identity-file IDENTITY-FILE]
@@ -988,7 +988,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -1013,7 +1013,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1027,14 +1027,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1057,7 +1057,7 @@ Ob der Cache aktualisiert werden soll
 
 ### `--pipe`
 
-Nur eine Liste der App-Namen ausgeben
+Nur Liste mit App-Namen ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1070,27 +1070,27 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: Name*, Typ*, Festplatte, Pfad, Größe (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: name*, type*, disk, path, size (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1104,7 +1104,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1118,14 +1118,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1133,7 +1133,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `auth:api-token-login`
 
-Melden Sie sich mit einem API-Token bei Magento Cloud an
+Bei der Magento Cloud über ein API-Token anmelden
 
 ```bash
 magento-cloud auth:api-token-login
@@ -1148,7 +1148,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1162,14 +1162,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1177,7 +1177,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `auth:browser-login`
 
-Anmelden bei Magento Cloud über einen Browser
+Bei der Magento Cloud über einen Browser anmelden
 
 ```bash
 magento-cloud login [-f|--force] [--browser BROWSER] [--pipe]
@@ -1192,13 +1192,13 @@ Melden Sie sich erneut an, auch wenn Sie bereits angemeldet sind
 
 ### `--browser`
 
-Der zum Öffnen der URL zu verwendende Browser. Auf 0 für keine festlegen.
+Der zum Öffnen der URL zu verwendende Browser. Legen Sie 0 für keine fest.
 
 - Erfordert einen Wert
 
 ### `--pipe`
 
-Geben Sie die URL an stdout aus.
+Geben Sie die URL für stdout aus.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1212,7 +1212,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1226,14 +1226,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1275,21 +1275,21 @@ Ob der Cache aktualisiert werden soll
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1303,7 +1303,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1317,14 +1317,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1332,7 +1332,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `auth:logout`
 
-Abmelden von Magento Cloud
+Aus Magento Cloud abmelden
 
 ```bash
 magento-cloud logout [-a|--all] [--other]
@@ -1340,14 +1340,14 @@ magento-cloud logout [-a|--all] [--other]
 
 ### `--all`, `-a`
 
-Von allen lokalen Sitzungen abmelden
+Abmelden von allen lokalen Sitzungen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--other`
 
-Von anderen lokalen Sitzungen abmelden
+Abmelden von anderen lokalen Sitzungen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1361,7 +1361,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1375,14 +1375,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1398,13 +1398,13 @@ magento-cloud blackfire:setup [--server_id SERVER_ID] [--server_token SERVER_TOK
 
 ### `--server_id`
 
-Die Server-ID
+Server-ID
 
 - Erfordert einen Wert
 
 ### `--server_token`
 
-Das Server-Token
+Server-Token
 
 - Erfordert einen Wert
 
@@ -1416,7 +1416,7 @@ Die Projekt-ID oder URL
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1437,7 +1437,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1451,14 +1451,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1480,13 +1480,13 @@ Der Pfad zur Zertifikatdatei
 
 ### `--key`
 
-Der Pfad zur Datei mit dem privaten Schlüssel des Zertifikats
+Der Pfad zur Datei mit dem privaten Zertifikatschlüssel
 
 - Erfordert einen Wert
 
 ### `--chain`
 
-Der Pfad zur Zertifikatkettendatei
+Der Pfad zur Zertifikatskettendatei
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -1499,7 +1499,7 @@ Die Projekt-ID oder URL
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1520,7 +1520,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1534,14 +1534,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1549,7 +1549,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `certificate:delete`
 
-Löschen eines Zertifikats aus dem Projekt
+Zertifikat aus dem Projekt löschen
 
 ```bash
 magento-cloud certificate:delete [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] <id>
@@ -1558,7 +1558,7 @@ magento-cloud certificate:delete [-p|--project PROJECT] [-W|--no-wait] [--wait] 
 
 ### `id`
 
-Die Zertifikat-ID (oder der Beginn)
+Die Zertifikatkennung (oder der Anfang)
 
 - Erforderlich
 
@@ -1570,7 +1570,7 @@ Die Projekt-ID oder URL
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1591,7 +1591,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1605,14 +1605,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1620,7 +1620,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `certificate:get`
 
-Anzeigen eines Zertifikats
+Zertifikat anzeigen
 
 ```bash
 magento-cloud certificate:get [-P|--property PROPERTY] [--date-fmt DATE-FMT] [-p|--project PROJECT] [--] <id>
@@ -1629,7 +1629,7 @@ magento-cloud certificate:get [-P|--property PROPERTY] [--date-fmt DATE-FMT] [-p
 
 ### `id`
 
-Die Zertifikat-ID (oder der Beginn)
+Die Zertifikatkennung (oder der Anfang)
 
 - Erforderlich
 
@@ -1641,7 +1641,7 @@ Die anzuzeigende Zertifikateigenschaft
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -1661,7 +1661,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1675,14 +1675,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1690,7 +1690,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `certificate:list`
 
-Auflisten von Projektzertifikaten
+Projektzertifikate auflisten
 
 ```bash
 magento-cloud certificates [--domain DOMAIN] [--exclude-domain EXCLUDE-DOMAIN] [--issuer ISSUER] [--only-auto] [--no-auto] [--ignore-expiry] [--only-expired] [--no-expired] [--pipe-domains] [--date-fmt DATE-FMT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT]
@@ -1698,19 +1698,19 @@ magento-cloud certificates [--domain DOMAIN] [--exclude-domain EXCLUDE-DOMAIN] [
 
 ### `--domain`
 
-Nach Domain-Namen filtern (Suche ohne Unterscheidung von Groß- und Kleinschreibung)
+Filtern nach Domain-Namen (Suche ohne Unterscheidung zwischen Groß- und Kleinschreibung)
 
 - Erfordert einen Wert
 
 ### `--exclude-domain`
 
-Zertifikate ausschließen, Übereinstimmung nach Domain-Namen (Suche ohne Berücksichtigung der Groß-/Kleinschreibung)
+Zertifikate ausschließen, die mit dem Domänennamen übereinstimmen (Suche ohne Unterscheidung zwischen Groß- und Kleinschreibung)
 
 - Erfordert einen Wert
 
 ### `--issuer`
 
-Nach Aussteller filtern
+Nach Emittenten filtern
 
 - Erfordert einen Wert
 
@@ -1730,7 +1730,7 @@ Nur manuell hinzugefügte Zertifikate anzeigen
 
 ### `--ignore-expiry`
 
-Abgelaufene und nicht abgelaufene Zertifikate anzeigen
+Sowohl abgelaufene als auch nicht abgelaufene Zertifikate anzeigen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1751,35 +1751,35 @@ Nur nicht abgelaufene Zertifikate anzeigen (Standard)
 
 ### `--pipe-domains`
 
-Gibt nur eine Liste der Domain-Namen zurück, die von den Zertifikaten abgedeckt werden
+Nur eine Liste der Domänennamen zurückgeben, die von den Zertifikaten abgedeckt sind
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: erstellt, Domains, Ablaufdatum, ID, Aussteller. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: erstellt, Domänen, abgelaufen, ID, Aussteller. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1799,7 +1799,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1813,14 +1813,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1837,14 +1837,14 @@ magento-cloud commit:get [-P|--property PROPERTY] [-p|--project PROJECT] [-e|--e
 
 ### `commit`
 
-Der Commit SHA. Dies kann auch &quot;HEAD&quot; und Caret-Suffixe (^) oder Tilde-Suffixe (~) für übergeordnete Commits akzeptieren.
+Der Commit SHA. Dies kann auch Suffixe vom Typ &quot;HEAD&quot;und Caret (^) oder Tilde (~) für übergeordnete Commits akzeptieren.
 
 - Standard: `HEAD`
 
 
 ### `--property`, `-P`
 
-Die Commit-Eigenschaft zum Anzeigen.
+Die angezeigte commit-Eigenschaft.
 
 - Erfordert einen Wert
 
@@ -1856,13 +1856,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -1876,7 +1876,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1890,14 +1890,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1905,7 +1905,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `commit:list`
 
-Commits auflisten
+Auflisten von Commits
 
 ```bash
 magento-cloud commits [--limit LIMIT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT] [--] [<commit>]
@@ -1914,7 +1914,7 @@ magento-cloud commits [--limit LIMIT] [-p|--project PROJECT] [-e|--environment E
 
 ### `commit`
 
-Der Git-Commit SHA wird gestartet. Dies kann auch &quot;HEAD&quot; und Caret-Suffixe (^) oder Tilde-Suffixe (~) für übergeordnete Commits akzeptieren.
+Das Git-Commit-SHA für den Start. Dies kann auch Suffixe vom Typ &quot;HEAD&quot;und Caret (^) oder Tilde (~) für übergeordnete Commits akzeptieren.
 
 
 ### `--limit`
@@ -1932,34 +1932,34 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: Autor, Datum, SHA, Zusammenfassung. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: author, date, sha, summary. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -1973,7 +1973,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1987,14 +1987,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2002,7 +2002,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `db:dump`
 
-Erstellen eines lokalen Dumps der Remote-Datenbank
+Lokalen Dump der Remote-Datenbank erstellen
 
 ```bash
 magento-cloud db:dump [--schema SCHEMA] [-f|--file FILE] [-d|--directory DIRECTORY] [-z|--gzip] [-t|--timestamp] [-o|--stdout] [--table TABLE] [--exclude-table EXCLUDE-TABLE] [--schema-only] [--charset CHARSET] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTITY-FILE]
@@ -2010,32 +2010,32 @@ magento-cloud db:dump [--schema SCHEMA] [-f|--file FILE] [-d|--directory DIRECTO
 
 ### `--schema`
 
-Das zu entladende Schema. Lassen Sie die Verwendung des Standardschemas (normalerweise „main„) weg.
+Das Schema, das abgelegt werden soll. Unterlassen der Verwendung des Standardschemas (normalerweise &quot;main&quot;).
 
 - Erfordert einen Wert
 
 ### `--file`, `-f`
 
-Ein benutzerdefinierter Dateiname für den Speicherauszug
+Ein benutzerdefinierter Dateiname für die Ablage
 
 - Erfordert einen Wert
 
 ### `--directory`, `-d`
 
-Ein benutzerdefiniertes Verzeichnis für den Speicherauszug
+Ein benutzerdefiniertes Verzeichnis für den Dump
 
 - Erfordert einen Wert
 
 ### `--gzip`, `-z`
 
-Komprimieren Sie den Dump mit gzip
+Komprimieren Sie die Ablage mit gzip
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--timestamp`, `-t`
 
-Hinzufügen eines Zeitstempels zum Dump-Dateinamen
+Fügen Sie einen Zeitstempel zum Dateinamen der Dump-Datei hinzu.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2049,28 +2049,28 @@ Ausgabe in STDOUT anstelle einer Datei
 
 ### `--table`
 
-Einzuschließende Tabelle(n)
+Zu berücksichtigende Tabelle(n)
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--exclude-table`
 
-Auszuschließende Tabelle(n)
+Auszuschließende Tabelle
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--schema-only`
 
-Nur Schemata sichern, keine Daten
+Nur Schemas ablegen, keine Daten
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--charset`
 
-Die Zeichensatzkodierung für den Dump
+Die Zeichensatzkodierung für die Dump
 
 - Erfordert einen Wert
 
@@ -2082,7 +2082,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -2094,13 +2094,13 @@ Der Name der Remote-Anwendung
 
 ### `--relationship`, `-r`
 
-Die zu verwendende Service-Beziehung
+Die zu verwendende Dienstbeziehung
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -2113,7 +2113,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2127,14 +2127,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2150,14 +2150,14 @@ magento-cloud db:size [-B|--bytes] [-C|--cleanup] [-p|--project PROJECT] [-e|--e
 
 ### `--bytes`, `-B`
 
-Größe in Byte anzeigen.
+Zeigt Größen in Byte an.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--cleanup`, `-C`
 
-Überprüfen, ob Tabellen bereinigt werden können, und Empfehlungen anzeigen (nur InnoDb).
+Überprüfen Sie, ob Tabellen bereinigt werden können, und zeigen Sie mir Empfehlungen an (nur InnoDb).
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2170,7 +2170,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -2182,34 +2182,34 @@ Der Name der Remote-Anwendung
 
 ### `--relationship`, `-r`
 
-Die zu verwendende Service-Beziehung
+Die zu verwendende Dienstbeziehung
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: max, percent_used, used. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: max, percent_used, used. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -2222,7 +2222,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2236,14 +2236,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2265,14 +2265,14 @@ Eine auszuführende SQL-Anweisung
 
 ### `--raw`
 
-Erzeugen von rohen, nicht tabellarischen Ausgaben
+Rohe, nicht tabellarische Ausgabe erzeugen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--schema`
 
-Das zu verwendende Schema. Lassen Sie die Verwendung des Standardschemas (normalerweise „main„) weg. Übergeben Sie eine leere Zeichenfolge, um kein Schema zu verwenden.
+Das zu verwendende Schema. Unterlassen der Verwendung des Standardschemas (normalerweise &quot;main&quot;). Übergeben Sie eine leere Zeichenfolge, um kein Schema zu verwenden.
 
 - Erfordert einen Wert
 
@@ -2284,7 +2284,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -2296,13 +2296,13 @@ Der Name der Remote-Anwendung
 
 ### `--relationship`, `-r`
 
-Die zu verwendende Service-Beziehung
+Die zu verwendende Dienstbeziehung
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -2315,7 +2315,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2329,14 +2329,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2344,7 +2344,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `domain:add`
 
-Hinzufügen einer neuen Domain zum Projekt
+Hinzufügen einer neuen Domäne zum Projekt
 
 ```bash
 magento-cloud domain:add [--cert CERT] [--key KEY] [--chain CHAIN] [--attach ATTACH] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] <name>
@@ -2353,32 +2353,32 @@ magento-cloud domain:add [--cert CERT] [--key KEY] [--chain CHAIN] [--attach ATT
 
 ### `name`
 
-Der Domain-Name
+Der Domänenname
 
 - Erforderlich
 
 ### `--cert`
 
-Der Pfad zur Zertifikatdatei für diese Domain
+Der Pfad zur Zertifikatdatei für diese Domäne
 
 - Erfordert einen Wert
 
 ### `--key`
 
-Der Pfad zur Datei mit dem privaten Schlüssel für das angegebene Zertifikat.
+Der Pfad zur privaten Schlüsseldatei für das angegebene Zertifikat.
 
 - Erfordert einen Wert
 
 ### `--chain`
 
-Der Pfad zur Zertifikatkettendatei bzw. zu den Dateien für das angegebene Zertifikat
+Der Pfad zur Zertifikatskettendatei(en) für das bereitgestellte Zertifikat
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--attach`
 
-Die Produktions-Domain, die diese in den Routen der Umgebung ersetzt. Erforderlich für Nicht-Produktions-Umgebungs-Domains.
+Die Produktionsdomäne, die diese in den Routen der Umgebung ersetzt. Erforderlich für Nicht-Produktions-Umgebungsdomänen.
 
 - Erfordert einen Wert
 
@@ -2390,13 +2390,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2417,7 +2417,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2431,14 +2431,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2446,7 +2446,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `domain:delete`
 
-Löschen einer Domain aus dem Projekt
+Eine Domäne aus dem Projekt löschen
 
 ```bash
 magento-cloud domain:delete [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] <name>
@@ -2455,7 +2455,7 @@ magento-cloud domain:delete [-p|--project PROJECT] [-e|--environment ENVIRONMENT
 
 ### `name`
 
-Der Domain-Name
+Der Domänenname
 
 - Erforderlich
 
@@ -2467,13 +2467,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2494,7 +2494,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2508,14 +2508,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2523,7 +2523,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `domain:get`
 
-Anzeigen detaillierter Informationen für eine Domain
+Detaillierte Informationen für eine Domäne anzeigen
 
 ```bash
 magento-cloud domain:get [-P|--property PROPERTY] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<name>]
@@ -2532,39 +2532,39 @@ magento-cloud domain:get [-P|--property PROPERTY] [--format FORMAT] [-c|--column
 
 ### `name`
 
-Der Domain-Name
+Der Domänenname
 
 
 ### `--property`, `-P`
 
-Die anzuzeigende Domain-Eigenschaft
+Die anzuzeigende Domäneneigenschaft
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -2577,7 +2577,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -2590,7 +2590,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2604,14 +2604,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2619,7 +2619,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `domain:list`
 
-Abrufen einer Liste aller Domains
+Liste aller Domänen abrufen
 
 ```bash
 magento-cloud domains [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [-e|--environment ENVIRONMENT]
@@ -2627,21 +2627,21 @@ magento-cloud domains [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: name*, ssl*, created_at*, registered_name, replace_for, type, updated_at (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: name*, ssl*, created_at*, registered_name, replacement_for, type, updated_at (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2654,7 +2654,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -2667,7 +2667,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2681,14 +2681,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2696,7 +2696,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `domain:update`
 
-Aktualisieren einer Domain
+Domain aktualisieren
 
 ```bash
 magento-cloud domain:update [--cert CERT] [--key KEY] [--chain CHAIN] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] <name>
@@ -2705,25 +2705,25 @@ magento-cloud domain:update [--cert CERT] [--key KEY] [--chain CHAIN] [-p|--proj
 
 ### `name`
 
-Der Domain-Name
+Der Domänenname
 
 - Erforderlich
 
 ### `--cert`
 
-Der Pfad zur Zertifikatdatei für diese Domain
+Der Pfad zur Zertifikatdatei für diese Domäne
 
 - Erfordert einen Wert
 
 ### `--key`
 
-Der Pfad zur Datei mit dem privaten Schlüssel für das angegebene Zertifikat.
+Der Pfad zur privaten Schlüsseldatei für das angegebene Zertifikat.
 
 - Erfordert einen Wert
 
 ### `--chain`
 
-Der Pfad zur Zertifikatkettendatei bzw. zu den Dateien für das angegebene Zertifikat
+Der Pfad zur Zertifikatskettendatei(en) für das bereitgestellte Zertifikat
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -2736,13 +2736,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2763,7 +2763,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2777,14 +2777,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2801,7 +2801,7 @@ magento-cloud environment:activate [--parent PARENT] [-p|--project PROJECT] [-e|
 
 ### `environment`
 
-Die zu aktivierenden Umgebungen
+Zu aktivierende Umgebung(n)
 
 - Standard: `[]`
 
@@ -2809,7 +2809,7 @@ Die zu aktivierenden Umgebungen
 
 ### `--parent`
 
-Vor der Aktivierung eine neue übergeordnete Umgebung festlegen
+Festlegen einer neuen übergeordneten Umgebung vor der Aktivierung
 
 - Erfordert einen Wert
 
@@ -2821,13 +2821,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2848,7 +2848,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2862,14 +2862,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2877,7 +2877,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `environment:branch`
 
-Verzweigen einer Umgebung
+Verzweigung einer Umgebung
 
 ```bash
 magento-cloud branch [--title TITLE] [--type TYPE] [--no-clone-parent] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<id>] [<parent>]
@@ -2921,13 +2921,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2948,7 +2948,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2962,14 +2962,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2986,12 +2986,12 @@ magento-cloud checkout [-i|--identity-file IDENTITY-FILE] [--] [<id>]
 
 ### `id`
 
-Die ID der Umgebung, die ausgecheckt werden soll. Beispiel: „sprint2“
+Die ID der Umgebung, die ausgecheckt werden soll. Beispiel: &quot;sprint2&quot;
 
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -3004,7 +3004,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3018,14 +3018,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3042,7 +3042,7 @@ magento-cloud environment:delete [--delete-branch] [--no-delete-branch] [--type 
 
 ### `environment`
 
-Die zu löschenden Umgebungen. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Die zu löschenden Umgebungen. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 
@@ -3050,7 +3050,7 @@ Die zu löschenden Umgebungen. Die Zeichen % oder * können als Platzhalter verw
 
 ### `--delete-branch`
 
-Löschen von Git-Verzweigungen für inaktive Umgebungen ohne Bestätigung
+Löschen von Git-Zweigen für inaktive Umgebungen ohne Bestätigung
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3064,42 +3064,42 @@ Löschen Sie keine Git-Verzweigungen (inaktive Umgebungen)
 
 ### `--type`
 
-Löschen Sie alle Umgebungen eines Typs (fügen Sie beliebige andere ausgewählte Umgebungen hinzu). Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen aufgeteilt werden.
+Löschen Sie alle Umgebungen eines Typs (Hinzufügung zu anderen ausgewählten Umgebungen) Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--only-type`, `-t`
 
-Nur Umgebungen eines bestimmten Typs löschen Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen aufgeteilt werden.
+Nur Löschumgebungen eines bestimmten Typs Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--exclude`
 
-Umgebung(en) nicht zu löschen. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Umgebung(en), die nicht gelöscht werden soll. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--exclude-type`
 
-Umgebungstypen, deren Werte nicht gelöscht werden sollen, können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Umgebungstypen, deren Werte nicht gelöscht werden sollen, können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--inactive`
 
-Alle inaktiven Umgebungen löschen (zu allen anderen ausgewählten hinzufügen)
+Löschen Sie alle inaktiven Umgebungen (Hinzufügung zu allen anderen ausgewählten Umgebungen)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--merged`
 
-Alle zusammengeführten Umgebungen löschen (zu allen anderen ausgewählten hinzufügen)
+Löschen Sie alle zusammengeführten Umgebungen (Hinzufügen zu allen anderen ausgewählten Umgebungen)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3119,13 +3119,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3146,7 +3146,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3160,14 +3160,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3175,7 +3175,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `environment:http-access`
 
-Aktualisieren der HTTP-Zugriffseinstellungen für eine Umgebung
+Aktualisieren von HTTP-Zugriffseinstellungen für eine Umgebung
 
 ```bash
 magento-cloud httpaccess [--access ACCESS] [--auth AUTH] [--enabled ENABLED] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait]
@@ -3183,21 +3183,21 @@ magento-cloud httpaccess [--access ACCESS] [--auth AUTH] [--enabled ENABLED] [-p
 
 ### `--access`
 
-Zugriffsbeschränkung im Format „permission:address„. 0 verwenden, um alle Adressen zu löschen.
+Zugriffsbeschränkungen im Format &quot;permission:address&quot;. Verwenden Sie 0, um alle Adressen zu löschen.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--auth`
 
-Einfache HTTP-Authentifizierungsdaten im Format „username:password„. Verwenden Sie 0, um alle Anmeldeinformationen zu löschen.
+HTTP Basic auth credentials im Format &quot;username:password&quot;. Verwenden Sie 0, um alle Berechtigungen zu löschen.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--enabled`
 
-Ob die Zugriffssteuerung aktiviert werden soll: 1 zum Aktivieren, 0 zum Deaktivieren
+Ob die Zugriffskontrolle aktiviert werden soll: 1 zur Aktivierung, 0 zur Deaktivierung
 
 - Erfordert einen Wert
 
@@ -3209,13 +3209,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3236,7 +3236,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3250,14 +3250,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3265,7 +3265,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `environment:info`
 
-Lesen oder Festlegen von Eigenschaften für eine Umgebung
+Eigenschaften für eine Umgebung lesen oder festlegen
 
 ```bash
 magento-cloud environment:info [--refresh] [--date-fmt DATE-FMT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<property>] [<value>]
@@ -3279,7 +3279,7 @@ Der Name der Eigenschaft
 
 ### `value`
 
-Legen Sie einen neuen Wert für die Eigenschaft fest
+Neuen Wert für die Eigenschaft festlegen
 
 
 ### `--refresh`
@@ -3291,28 +3291,28 @@ Ob der Cache aktualisiert werden soll
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3325,13 +3325,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3352,7 +3352,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3366,14 +3366,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3390,7 +3390,7 @@ magento-cloud environment:init [--profile PROFILE] [-p|--project PROJECT] [-e|--
 
 ### `url`
 
-Eine URL zu einem Git-Repository
+Eine URL zum Git-Repository
 
 - Erforderlich
 
@@ -3408,13 +3408,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3435,7 +3435,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3449,14 +3449,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3464,7 +3464,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `environment:list`
 
-Abrufen einer Liste von Umgebungen
+Liste der Umgebungen abrufen
 
 ```bash
 magento-cloud environments [-I|--no-inactive] [--pipe] [--refresh REFRESH] [--sort SORT] [--reverse] [--type TYPE] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT]
@@ -3472,14 +3472,14 @@ magento-cloud environments [-I|--no-inactive] [--pipe] [--refresh REFRESH] [--so
 
 ### `--no-inactive`, `-I`
 
-Keine inaktiven Umgebungen anzeigen
+Inaktive Umgebungen nicht anzeigen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--pipe`
 
-Ausgabe einer einfachen Liste von Umgebungs-IDs.
+Geben Sie eine einfache Liste von Umgebungs-IDs aus.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3493,42 +3493,42 @@ Ob die Liste aktualisiert werden soll.
 
 ### `--sort`
 
-Eine Eigenschaft zum Sortieren nach
+Eine Eigenschaft, die nach
 
 - Standard: `title`
 - Erfordert einen Wert
 
 ### `--reverse`
 
-In umgekehrter (absteigender) Reihenfolge sortieren
+Sortieren in umgekehrter (absteigender) Reihenfolge
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--type`
 
-Filtern Sie die Liste nach Umgebungstyp(en). Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Filtern Sie die Liste nach Umgebungstyp(en). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: id*, title*, status*, type*, created, machine_name, updated (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: id*, title*, status*, type*, created, machine_name, updated (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3548,7 +3548,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3562,14 +3562,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3577,7 +3577,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `environment:logs`
 
-Lesen der Protokolle einer Umgebung
+Protokolle einer Umgebung lesen
 
 ```bash
 magento-cloud log [--lines LINES] [--tail] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE] [--] [<type>]
@@ -3586,7 +3586,7 @@ magento-cloud log [--lines LINES] [--tail] [-p|--project PROJECT] [-e|--environm
 
 ### `type`
 
-Der Protokolltyp, z. B. „Zugriff“ oder „Fehler“
+Der Protokolltyp, z. B. &quot;access&quot; oder &quot;error&quot;
 
 
 ### `--lines`
@@ -3598,7 +3598,7 @@ Die Anzahl der anzuzeigenden Zeilen
 
 ### `--tail`
 
-Protokoll fortlaufend verfolgen
+Kontinuierliches Verfolgen des Protokolls
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3611,7 +3611,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -3623,13 +3623,13 @@ Der Name der Remote-Anwendung
 
 ### `--worker`
 
-Ein Worker-Name
+Arbeitername
 
 - Erfordert einen Wert
 
 ### `--instance`, `-I`
 
-Eine Instanz-ID
+Instanz-ID
 
 - Erfordert einen Wert
 
@@ -3642,7 +3642,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3656,14 +3656,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3680,7 +3680,7 @@ magento-cloud merge [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--
 
 ### `environment`
 
-Die zu fusionierende Umgebung
+Die zusammenzuführende Umgebung
 
 
 ### `--project`, `-p`
@@ -3691,13 +3691,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3718,7 +3718,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3732,14 +3732,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3747,7 +3747,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `environment:pause`
 
-Pausieren einer Umgebung
+Anhalten einer Umgebung
 
 ```bash
 magento-cloud environment:pause [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait]
@@ -3761,13 +3761,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3788,7 +3788,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3802,14 +3802,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3817,7 +3817,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `environment:push`
 
-Code in eine Umgebung pushen
+Push-Code in eine Umgebung
 
 ```bash
 magento-cloud push [--target TARGET] [-f|--force] [--force-with-lease] [-u|--set-upstream] [--activate] [--parent PARENT] [--type TYPE] [--no-clone-parent] [-W|--no-wait] [--wait] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-i|--identity-file IDENTITY-FILE] [--] [<source>]
@@ -3826,27 +3826,27 @@ magento-cloud push [--target TARGET] [-f|--force] [--force-with-lease] [-u|--set
 
 ### `source`
 
-Die Quellreferenz: ein Zweigname oder Commit-Hash
+Die Quell-Referenz: ein Zweigname oder Commit-Hash
 
 - Standard: `HEAD`
 
 
 ### `--target`
 
-Der Name der Zielverzweigung. Die Standardeinstellung ist die aktuelle Verzweigung.
+Der Name der Zielverzweigung. Die Standardeinstellung ist der aktuelle Zweig.
 
 - Erfordert einen Wert
 
 ### `--force`, `-f`
 
-Nicht-schnelle Vorwärtsaktualisierungen zulassen
+Nicht-schnelle Aktualisierungen zulassen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--force-with-lease`
 
-Nicht-schnelle Weiterleitungen zulassen, wenn die Remote-Tracking-Verzweigung auf dem neuesten Stand ist
+Nicht-schnelle Aktualisierungen zulassen, wenn die Remote-Tracking-Verzweigung auf dem neuesten Stand ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3860,33 +3860,33 @@ Legen Sie die Zielumgebung als Upstream für die Quellverzweigung fest. Dadurch 
 
 ### `--activate`
 
-Umgebung vor dem Pushen aktivieren
+Aktivieren der Umgebung vor dem Pushen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--parent`
 
-Übergeordnete Umgebung festlegen (nur bei Verwendung von —activate)
+Festlegen der neuen übergeordneten Umgebung (nur mit —activate verwendet)
 
 - Erfordert einen Wert
 
 ### `--type`
 
-Umgebungstyp festlegen (nur verwendet mit —activate )
+Umgebungstyp festlegen (nur mit —activate verwendet)
 
 - Erfordert einen Wert
 
 ### `--no-clone-parent`
 
-Klonen Sie nicht die Daten der übergeordneten Verzweigung (nur verwendet mit —activate)
+Klonen Sie nicht die Daten des übergeordneten Zweigs (nur mit —activate verwendet)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3906,13 +3906,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -3925,7 +3925,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3939,14 +3939,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3954,7 +3954,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `environment:redeploy`
 
-Erneutes Bereitstellen einer Umgebung
+Bereitstellung einer Umgebung
 
 ```bash
 magento-cloud redeploy [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait]
@@ -3968,13 +3968,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3995,7 +3995,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4009,14 +4009,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4024,7 +4024,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `environment:relationships`
 
-Beziehungen einer Umgebung anzeigen
+Anzeigen der Beziehungen einer Umgebung
 
 ```bash
 magento-cloud relationships [-P|--property PROPERTY] [--refresh] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [-i|--identity-file IDENTITY-FILE] [--] [<environment>]
@@ -4033,7 +4033,7 @@ magento-cloud relationships [-P|--property PROPERTY] [--refresh] [-p|--project P
 
 ### `environment`
 
-Die Umgebung
+Umwelt
 
 
 ### `--property`, `-P`
@@ -4057,7 +4057,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -4069,7 +4069,7 @@ Der Name der Remote-Anwendung
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -4082,7 +4082,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4096,14 +4096,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4111,7 +4111,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `environment:resume`
 
-Fortsetzen pausierter Umgebungen
+Fortsetzen einer angehaltenen Umgebung
 
 ```bash
 magento-cloud environment:resume [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait]
@@ -4125,13 +4125,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4152,7 +4152,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4166,14 +4166,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4190,7 +4190,7 @@ magento-cloud scp [-r|--recursive] [-p|--project PROJECT] [-e|--environment ENVI
 
 ### `files`
 
-Zu kopierende Dateien Verwenden Sie das Präfix „remote:„, um Remote-Standorte zu definieren.
+Zu kopierende Dateien. Verwenden Sie das Präfix remote: , um Remote-Standorte zu definieren.
 
 - Standard: `[]`
 
@@ -4198,7 +4198,7 @@ Zu kopierende Dateien Verwenden Sie das Präfix „remote:„, um Remote-Standor
 
 ### `--recursive`, `-r`
 
-Rekursives Kopieren ganzer Ordner
+rekursiv ganze Verzeichnisse kopieren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4211,7 +4211,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -4223,19 +4223,19 @@ Der Name der Remote-Anwendung
 
 ### `--worker`
 
-Ein Worker-Name
+Arbeitername
 
 - Erfordert einen Wert
 
 ### `--instance`, `-I`
 
-Eine Instanz-ID
+Instanz-ID
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -4248,7 +4248,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4262,14 +4262,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4277,7 +4277,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `environment:ssh`
 
-SSH zur aktuellen Umgebung
+SSH in die aktuelle Umgebung
 
 ```bash
 magento-cloud ssh [--pipe] [--all] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE] [-i|--identity-file IDENTITY-FILE] [--] [<cmd>]...
@@ -4286,7 +4286,7 @@ magento-cloud ssh [--pipe] [--all] [-p|--project PROJECT] [-e|--environment ENVI
 
 ### `cmd`
 
-Ein Befehl, der in der Umgebung ausgeführt werden soll.
+Ein Befehl zum Ausführen in der Umgebung.
 
 - Standard: `[]`
 
@@ -4294,14 +4294,14 @@ Ein Befehl, der in der Umgebung ausgeführt werden soll.
 
 ### `--pipe`
 
-Ausgabe nur der SSH-URL.
+Geben Sie nur die SSH-URL aus.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--all`
 
-Alle SSH-URLs ausgeben (für jede Anwendung).
+Geben Sie alle SSH-URLs (für jede App) aus.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4314,7 +4314,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -4326,19 +4326,19 @@ Der Name der Remote-Anwendung
 
 ### `--worker`
 
-Ein Worker-Name
+Arbeitername
 
 - Erfordert einen Wert
 
 ### `--instance`, `-I`
 
-Eine Instanz-ID
+Instanz-ID
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -4351,7 +4351,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4365,14 +4365,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4380,7 +4380,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `environment:synchronize`
 
-Synchronisieren des Codes einer Umgebung und/oder der Daten des übergeordneten Elements
+Synchronisieren des Codes und/oder der Daten einer Umgebung von der übergeordneten Umgebung
 
 ```bash
 magento-cloud sync [--rebase] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<synchronize>]...
@@ -4389,7 +4389,7 @@ magento-cloud sync [--rebase] [-p|--project PROJECT] [-e|--environment ENVIRONME
 
 ### `synchronize`
 
-Zu synchronisierende Elemente: „code„, „data“ oder beides
+Was synchronisiert werden soll: &quot;code&quot;, &quot;data&quot; oder beides
 
 - Standard: `[]`
 
@@ -4397,7 +4397,7 @@ Zu synchronisierende Elemente: „code„, „data“ oder beides
 
 ### `--rebase`
 
-Code durch Neubasierung anstatt durch Zusammenführen synchronisieren
+Synchronisieren Sie den Code durch Rebasing anstelle der Zusammenführung.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4410,13 +4410,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4437,7 +4437,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4451,14 +4451,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4474,20 +4474,20 @@ magento-cloud url [-1|--primary] [--browser BROWSER] [--pipe] [-p|--project PROJ
 
 ### `--primary`, `-1`
 
-Gibt nur die URL für die primäre Route zurück.
+Gibt nur die URL für die primäre Route zurück
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--browser`
 
-Der zum Öffnen der URL zu verwendende Browser. Auf 0 für keine festlegen.
+Der zum Öffnen der URL zu verwendende Browser. Legen Sie 0 für keine fest.
 
 - Erfordert einen Wert
 
 ### `--pipe`
 
-Geben Sie die URL an stdout aus.
+Geben Sie die URL für stdout aus.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4500,7 +4500,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -4513,7 +4513,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4527,14 +4527,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4542,7 +4542,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `environment:xdebug`
 
-Öffnen eines Tunnels zu Xdebug in der Umgebung
+Öffnen Sie einen Tunnel zu Xdebug in der Umgebung
 
 ```bash
 magento-cloud xdebug [--port PORT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE] [-i|--identity-file IDENTITY-FILE]
@@ -4563,7 +4563,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -4575,19 +4575,19 @@ Der Name der Remote-Anwendung
 
 ### `--worker`
 
-Ein Worker-Name
+Arbeitername
 
 - Erfordert einen Wert
 
 ### `--instance`, `-I`
 
-Eine Instanz-ID
+Instanz-ID
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -4600,7 +4600,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4614,14 +4614,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4629,7 +4629,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `integration:activity:get`
 
-Anzeigen detaillierter Informationen zu einer einzelnen Integrationsaktivität
+Detaillierte Informationen zu einer einzelnen Integrationsaktivität anzeigen
 
 ```bash
 magento-cloud integration:activity:get [-P|--property PROPERTY] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT] [--] [<integration>] [<activity>]
@@ -4643,7 +4643,7 @@ Eine Integrations-ID. Leer lassen, um aus einer Liste auszuwählen.
 
 ### `activity`
 
-Die Aktivitäts-ID. Standardmäßig wird die letzte Integrationsaktivität verwendet.
+Die Aktivitäts-ID. Die Standardeinstellung ist die neueste Integrationsaktivität.
 
 
 ### `--property`, `-P`
@@ -4666,28 +4666,28 @@ Die Projekt-ID oder URL
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -4701,7 +4701,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4715,14 +4715,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4730,7 +4730,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `integration:activity:list`
 
-Abrufen einer Liste von Aktivitäten für eine Integration
+Liste der Aktivitäten für eine Integration abrufen
 
 ```bash
 magento-cloud int:act [--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--limit LIMIT] [--start START] [--state STATE] [--result RESULT] [-i|--incomplete] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<id>]
@@ -4744,14 +4744,14 @@ Eine Integrations-ID. Leer lassen, um aus einer Liste auszuwählen.
 
 ### `--type`
 
-Filtern von Aktivitäten nach Typ. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Aktivitäten nach Typ filtern Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--exclude-type`, `-x`
 
-Ausschließen von Aktivitäten nach Typ. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
+Aktivitäten nach Typ ausschließen Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -4765,20 +4765,20 @@ Anzahl der angezeigten Ergebnisse begrenzen
 
 ### `--start`
 
-Nur Aktivitäten, die vor diesem Datum erstellt wurden, werden aufgelistet
+Es werden nur Aktivitäten aufgelistet, die vor diesem Datum erstellt wurden
 
 - Erfordert einen Wert
 
 ### `--state`
 
-Filtern von Aktivitäten nach Status. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Filtern von Aktivitäten nach Status. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--result`
 
-Filtern von Aktivitäten nach Ergebnis
+Aktivitäten nach Ergebnis filtern
 
 - Erfordert einen Wert
 
@@ -4791,28 +4791,28 @@ Nur unvollständige Aktivitäten auflisten
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: id*, created*, description*, type*, state*, result*, completed (* = Default columns). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: id*, created*, description*, type*, state*, result*, completed (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -4838,7 +4838,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4852,14 +4852,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4881,7 +4881,7 @@ Eine Integrations-ID. Leer lassen, um aus einer Liste auszuwählen.
 
 ### `activity`
 
-Die Aktivitäts-ID. Standardmäßig wird die letzte Integrationsaktivität verwendet.
+Die Aktivitäts-ID. Die Standardeinstellung ist die neueste Integrationsaktivität.
 
 
 ### `--timestamps`, `-t`
@@ -4893,7 +4893,7 @@ Zeitstempel neben jeder Nachricht anzeigen
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -4919,7 +4919,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4933,14 +4933,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4956,19 +4956,19 @@ magento-cloud integration:add [--type TYPE] [--base-url BASE-URL] [--bitbucket-u
 
 ### `--type`
 
-Der Integrationstyp (&#39;bitbucket&#39;, &#39;bitbucket_server&#39;, &#39;github&#39;, &#39;gitlab&#39;, &#39;webhook&#39;, &#39;health.email&#39;, &#39;health.pagerduty&#39;, &#39;health.slack&#39;, &#39;health.webhook&#39;, &#39;httplog&#39;, &#39;script&#39;, &#39;newrelic&#39;, &#39;splunk&#39;, &#39;sumologic&#39;, &#39;syslog&#39;)
+Der Integrationstyp (&#39;bitbucket&#39;, &#39;bitbucket_server&#39;, &#39;github&#39;, &#39;gitlab&#39;, &#39;webhook&#39;, &#39;health.email&#39;, &#39;health.pageruty&#39;, &#39;health.slack&#39;, &#39;health.webhook&#39;, &#39;httplog&#39;, &#39;script&#39;, &#39;newrelic&#39;, &#39;splunk&#39;, &#39;sumologic&#39;, &#39;syslog&#39;.
 
 - Erfordert einen Wert
 
 ### `--base-url`
 
-Die Basis-URL der Server-Installation
+Die Basis-URL der Serverinstallation
 
 - Erfordert einen Wert
 
 ### `--bitbucket-url`
 
-Die Basis-URL der Bitbucket-Server-Installation
+Die Basis-URL der Bitbucket Server-Installation
 
 - Erfordert einen Wert
 
@@ -4980,13 +4980,13 @@ Der Benutzername des Bitbucket-Servers
 
 ### `--token`
 
-Ein Authentifizierungs- oder Zugriffs-Token für die Integration
+Ein Authentifizierungs- oder Zugriffstoken für die Integration
 
 - Erfordert einen Wert
 
 ### `--key`
 
-Ein Bitbucket-OAuth-Verbraucherschlüssel
+Ein Bitbucket OAuth-Verbraucherschlüssel
 
 - Erfordert einen Wert
 
@@ -4998,19 +4998,19 @@ Ein Bitbucket OAuth-Kundengeheimnis
 
 ### `--license-key`
 
-Der Lizenzschlüssel für New Relic-Protokolle
+Der New Relic Logs-Lizenzschlüssel
 
 - Erfordert einen Wert
 
 ### `--server-project`
 
-Das Projekt (z. B. „namespace/repo„)
+Das Projekt (z. B. &quot;namespace/repo&quot;)
 
 - Erfordert einen Wert
 
 ### `--repository`
 
-Das zu trackende Repository (z. B. „Eigentümer/Repository„)
+Das zu verfolgende Repository (z. B. &quot;owner/repository&quot;)
 
 - Erfordert einen Wert
 
@@ -5023,21 +5023,21 @@ GitLab: Erstellen von Zusammenführungsanfragen als Umgebungen
 
 ### `--build-pull-requests`
 
-Jede Pull-Anforderung als Umgebung erstellen
+Erstellen jeder Pull-Anforderung als Umgebung
 
 - Standard: `true`
 - Erfordert einen Wert
 
 ### `--build-draft-pull-requests`
 
-Erstellen von Entwürfen für Pull-Anforderungen
+Erstellen von Entwurfs-Pull-Anforderungen
 
 - Standard: `true`
 - Erfordert einen Wert
 
 ### `--build-pull-requests-post-merge`
 
-Erstellen von Pull-Anforderungen basierend auf ihrem Post-Merge-Status
+Pull-Anforderungen basierend auf ihrem Postzusammenführungsstatus erstellen
 
 - Standard: `false`
 - Erfordert einen Wert
@@ -5058,35 +5058,35 @@ GitLab: Daten für Zusammenführungsanfragen klonen
 
 ### `--pull-requests-clone-parent-data`
 
-Klonen der Daten der übergeordneten Umgebung für Pull-Anforderungen
+Daten der übergeordneten Umgebung für Pull-Anforderungen klonen
 
 - Standard: `true`
 - Erfordert einen Wert
 
 ### `--resync-pull-requests`
 
-Daten der Anforderungsumgebung bei jedem Build erneut synchronisieren
+Synchronisieren von Umgebungsdaten für Pull-Anforderungen bei jedem Build
 
 - Standard: `false`
 - Erfordert einen Wert
 
 ### `--fetch-branches`
 
-Alle Verzweigungen aus der Remote-Instanz abrufen (als inaktive Umgebungen)
+Abrufen aller Zweige aus der Remote-Umgebung (als inaktive Umgebungen)
 
 - Standard: `true`
 - Erfordert einen Wert
 
 ### `--prune-branches`
 
-Löschen von Verzweigungen, die auf der Remote-Instanz nicht vorhanden sind
+Löschen von Zweigen, die nicht auf der Remote-Site vorhanden sind
 
 - Standard: `true`
 - Erfordert einen Wert
 
 ### `--resources-init`
 
-Die beim Initialisieren eines neuen Dienstes zu verwendenden Ressourcen („minimum„, „default„, „manual„, „parent„)
+Die Ressourcen, die beim Initialisieren eines neuen Dienstes verwendet werden sollen (&#39;minimum&#39;, &#39;default&#39;, &#39;manual&#39;, &#39;parent&#39;)
 
 - Erfordert einen Wert
 
@@ -5098,13 +5098,13 @@ Die URL oder der API-Endpunkt für die Integration
 
 ### `--shared-key`
 
-Webhook: der gemeinsame geheime JWS-Schlüssel
+Webhook: der gemeinsame JWS-geheime Schlüssel
 
 - Erfordert einen Wert
 
 ### `--file`
 
-Der Name einer lokalen Datei, die das hochzuladende Skript enthält
+Der Name einer lokalen Datei mit dem hochzuladenden Skript
 
 - Erfordert einen Wert
 
@@ -5117,7 +5117,7 @@ Eine Liste der Ereignisse, auf die reagiert werden soll, z. B. environment.push
 
 ### `--states`
 
-Eine Liste der Status, auf die Aktionen durchgeführt werden sollen, z. B. „Ausstehend„, „In Bearbeitung„, „Abgeschlossen“
+Eine Liste der Status, auf die reagiert werden soll, z. B. ausstehend, in_progress, complete
 
 - Standard: `complete`
 - Erfordert einen Wert
@@ -5138,7 +5138,7 @@ Die auszuschließenden Umgebungs-IDs
 
 ### `--from-address`
 
-[optional] Benutzerdefinierte Absenderadresse für Benachrichtigungs-E-Mails
+[Optional] Benutzerdefinierte Absenderadresse für Warnhinweis-E-Mails
 
 - Erfordert einen Wert
 
@@ -5163,19 +5163,19 @@ Der PagerDuty-Routing-Schlüssel
 
 ### `--category`
 
-Die Kategorie „Sumo Logic„, die zum Filtern verwendet wird
+Die Kategorie Sumo Logic , die zum Filtern verwendet wird
 
 - Erfordert einen Wert
 
 ### `--index`
 
-Der Splunk-Index
+Splunk-Index
 
 - Erfordert einen Wert
 
 ### `--sourcetype`
 
-Der Splunk-Ereignistyp
+Splunk-Ereignistyp
 
 - Erfordert einen Wert
 
@@ -5188,13 +5188,13 @@ Syslog-Transportprotokoll (&#39;tcp&#39;, &#39;udp&#39;, &#39;tls&#39;)
 
 ### `--syslog-host`
 
-Syslog Relais/Collector-Host
+Syslog-Relais/Collector-Host
 
 - Erfordert einen Wert
 
 ### `--syslog-port`
 
-Syslog-Relais-/Kollektor-Port
+Syslog Relais/Collector Port
 
 - Erfordert einen Wert
 
@@ -5234,7 +5234,7 @@ Ob die HTTPS-Zertifikatüberprüfung aktiviert werden soll (empfohlen)
 
 ### `--header`
 
-In POST-Anfragen zu verwendende HTTP-Header Trennen Sie Namen und Werte mit einem Doppelpunkt (:).
+HTTP-Header zur Verwendung in POST-Anfragen. Trennen Sie Namen und Werte durch einen Doppelpunkt (:).
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -5247,7 +5247,7 @@ Die Projekt-ID oder URL
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5268,7 +5268,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5282,14 +5282,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5297,7 +5297,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `integration:delete`
 
-Löschen einer Integration aus einem Projekt
+Integration aus einem Projekt löschen
 
 ```bash
 magento-cloud integration:delete [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] [<id>]
@@ -5317,7 +5317,7 @@ Die Projekt-ID oder URL
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5338,7 +5338,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5352,14 +5352,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5367,7 +5367,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `integration:get`
 
-Anzeigen von Details einer Integration
+Details einer Integration anzeigen
 
 ```bash
 magento-cloud integration:get [-P|--property [PROPERTY]] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [--] [<id>]
@@ -5387,21 +5387,21 @@ Die anzuzeigende Integrationseigenschaft
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5421,7 +5421,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5435,14 +5435,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5450,7 +5450,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `integration:list`
 
-Anzeigen einer Liste der Projektintegration(en)
+Liste der Projektintegration(n) anzeigen
 
 ```bash
 magento-cloud integrations [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT]
@@ -5458,21 +5458,21 @@ magento-cloud integrations [--format FORMAT] [-c|--columns COLUMNS] [--no-header
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: ID, Zusammenfassung, Typ. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: ID, Zusammenfassung, Typ. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5492,7 +5492,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5506,14 +5506,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5521,7 +5521,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `integration:update`
 
-Aktualisieren einer Integration
+Integration aktualisieren
 
 ```bash
 magento-cloud integration:update [--type TYPE] [--base-url BASE-URL] [--bitbucket-url BITBUCKET-URL] [--username USERNAME] [--token TOKEN] [--key KEY] [--secret SECRET] [--license-key LICENSE-KEY] [--server-project SERVER-PROJECT] [--repository REPOSITORY] [--build-merge-requests BUILD-MERGE-REQUESTS] [--build-pull-requests BUILD-PULL-REQUESTS] [--build-draft-pull-requests BUILD-DRAFT-PULL-REQUESTS] [--build-pull-requests-post-merge BUILD-PULL-REQUESTS-POST-MERGE] [--build-wip-merge-requests BUILD-WIP-MERGE-REQUESTS] [--merge-requests-clone-parent-data MERGE-REQUESTS-CLONE-PARENT-DATA] [--pull-requests-clone-parent-data PULL-REQUESTS-CLONE-PARENT-DATA] [--resync-pull-requests RESYNC-PULL-REQUESTS] [--fetch-branches FETCH-BRANCHES] [--prune-branches PRUNE-BRANCHES] [--resources-init RESOURCES-INIT] [--url URL] [--shared-key SHARED-KEY] [--file FILE] [--events EVENTS] [--states STATES] [--environments ENVIRONMENTS] [--excluded-environments EXCLUDED-ENVIRONMENTS] [--from-address FROM-ADDRESS] [--recipients RECIPIENTS] [--channel CHANNEL] [--routing-key ROUTING-KEY] [--category CATEGORY] [--index INDEX] [--sourcetype SOURCETYPE] [--protocol PROTOCOL] [--syslog-host SYSLOG-HOST] [--syslog-port SYSLOG-PORT] [--facility FACILITY] [--message-format MESSAGE-FORMAT] [--auth-mode AUTH-MODE] [--auth-token AUTH-TOKEN] [--verify-tls VERIFY-TLS] [--header HEADER] [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] [<id>]
@@ -5535,19 +5535,19 @@ Die ID der zu aktualisierenden Integration
 
 ### `--type`
 
-Der Integrationstyp (&#39;bitbucket&#39;, &#39;bitbucket_server&#39;, &#39;github&#39;, &#39;gitlab&#39;, &#39;webhook&#39;, &#39;health.email&#39;, &#39;health.pagerduty&#39;, &#39;health.slack&#39;, &#39;health.webhook&#39;, &#39;httplog&#39;, &#39;script&#39;, &#39;newrelic&#39;, &#39;splunk&#39;, &#39;sumologic&#39;, &#39;syslog&#39;)
+Der Integrationstyp (&#39;bitbucket&#39;, &#39;bitbucket_server&#39;, &#39;github&#39;, &#39;gitlab&#39;, &#39;webhook&#39;, &#39;health.email&#39;, &#39;health.pageruty&#39;, &#39;health.slack&#39;, &#39;health.webhook&#39;, &#39;httplog&#39;, &#39;script&#39;, &#39;newrelic&#39;, &#39;splunk&#39;, &#39;sumologic&#39;, &#39;syslog&#39;.
 
 - Erfordert einen Wert
 
 ### `--base-url`
 
-Die Basis-URL der Server-Installation
+Die Basis-URL der Serverinstallation
 
 - Erfordert einen Wert
 
 ### `--bitbucket-url`
 
-Die Basis-URL der Bitbucket-Server-Installation
+Die Basis-URL der Bitbucket Server-Installation
 
 - Erfordert einen Wert
 
@@ -5559,13 +5559,13 @@ Der Benutzername des Bitbucket-Servers
 
 ### `--token`
 
-Ein Authentifizierungs- oder Zugriffs-Token für die Integration
+Ein Authentifizierungs- oder Zugriffstoken für die Integration
 
 - Erfordert einen Wert
 
 ### `--key`
 
-Ein Bitbucket-OAuth-Verbraucherschlüssel
+Ein Bitbucket OAuth-Verbraucherschlüssel
 
 - Erfordert einen Wert
 
@@ -5577,19 +5577,19 @@ Ein Bitbucket OAuth-Kundengeheimnis
 
 ### `--license-key`
 
-Der Lizenzschlüssel für New Relic-Protokolle
+Der New Relic Logs-Lizenzschlüssel
 
 - Erfordert einen Wert
 
 ### `--server-project`
 
-Das Projekt (z. B. „namespace/repo„)
+Das Projekt (z. B. &quot;namespace/repo&quot;)
 
 - Erfordert einen Wert
 
 ### `--repository`
 
-Das zu trackende Repository (z. B. „Eigentümer/Repository„)
+Das zu verfolgende Repository (z. B. &quot;owner/repository&quot;)
 
 - Erfordert einen Wert
 
@@ -5602,21 +5602,21 @@ GitLab: Erstellen von Zusammenführungsanfragen als Umgebungen
 
 ### `--build-pull-requests`
 
-Jede Pull-Anforderung als Umgebung erstellen
+Erstellen jeder Pull-Anforderung als Umgebung
 
 - Standard: `true`
 - Erfordert einen Wert
 
 ### `--build-draft-pull-requests`
 
-Erstellen von Entwürfen für Pull-Anforderungen
+Erstellen von Entwurfs-Pull-Anforderungen
 
 - Standard: `true`
 - Erfordert einen Wert
 
 ### `--build-pull-requests-post-merge`
 
-Erstellen von Pull-Anforderungen basierend auf ihrem Post-Merge-Status
+Pull-Anforderungen basierend auf ihrem Postzusammenführungsstatus erstellen
 
 - Standard: `false`
 - Erfordert einen Wert
@@ -5637,35 +5637,35 @@ GitLab: Daten für Zusammenführungsanfragen klonen
 
 ### `--pull-requests-clone-parent-data`
 
-Klonen der Daten der übergeordneten Umgebung für Pull-Anforderungen
+Daten der übergeordneten Umgebung für Pull-Anforderungen klonen
 
 - Standard: `true`
 - Erfordert einen Wert
 
 ### `--resync-pull-requests`
 
-Daten der Anforderungsumgebung bei jedem Build erneut synchronisieren
+Synchronisieren von Umgebungsdaten für Pull-Anforderungen bei jedem Build
 
 - Standard: `false`
 - Erfordert einen Wert
 
 ### `--fetch-branches`
 
-Alle Verzweigungen aus der Remote-Instanz abrufen (als inaktive Umgebungen)
+Abrufen aller Zweige aus der Remote-Umgebung (als inaktive Umgebungen)
 
 - Standard: `true`
 - Erfordert einen Wert
 
 ### `--prune-branches`
 
-Löschen von Verzweigungen, die auf der Remote-Instanz nicht vorhanden sind
+Löschen von Zweigen, die nicht auf der Remote-Site vorhanden sind
 
 - Standard: `true`
 - Erfordert einen Wert
 
 ### `--resources-init`
 
-Die beim Initialisieren eines neuen Dienstes zu verwendenden Ressourcen („minimum„, „default„, „manual„, „parent„)
+Die Ressourcen, die beim Initialisieren eines neuen Dienstes verwendet werden sollen (&#39;minimum&#39;, &#39;default&#39;, &#39;manual&#39;, &#39;parent&#39;)
 
 - Erfordert einen Wert
 
@@ -5677,13 +5677,13 @@ Die URL oder der API-Endpunkt für die Integration
 
 ### `--shared-key`
 
-Webhook: der gemeinsame geheime JWS-Schlüssel
+Webhook: der gemeinsame JWS-geheime Schlüssel
 
 - Erfordert einen Wert
 
 ### `--file`
 
-Der Name einer lokalen Datei, die das hochzuladende Skript enthält
+Der Name einer lokalen Datei mit dem hochzuladenden Skript
 
 - Erfordert einen Wert
 
@@ -5696,7 +5696,7 @@ Eine Liste der Ereignisse, auf die reagiert werden soll, z. B. environment.push
 
 ### `--states`
 
-Eine Liste der Status, auf die Aktionen durchgeführt werden sollen, z. B. „Ausstehend„, „In Bearbeitung„, „Abgeschlossen“
+Eine Liste der Status, auf die reagiert werden soll, z. B. ausstehend, in_progress, complete
 
 - Standard: `complete`
 - Erfordert einen Wert
@@ -5717,7 +5717,7 @@ Die auszuschließenden Umgebungs-IDs
 
 ### `--from-address`
 
-[optional] Benutzerdefinierte Absenderadresse für Benachrichtigungs-E-Mails
+[Optional] Benutzerdefinierte Absenderadresse für Warnhinweis-E-Mails
 
 - Erfordert einen Wert
 
@@ -5742,19 +5742,19 @@ Der PagerDuty-Routing-Schlüssel
 
 ### `--category`
 
-Die Kategorie „Sumo Logic„, die zum Filtern verwendet wird
+Die Kategorie Sumo Logic , die zum Filtern verwendet wird
 
 - Erfordert einen Wert
 
 ### `--index`
 
-Der Splunk-Index
+Splunk-Index
 
 - Erfordert einen Wert
 
 ### `--sourcetype`
 
-Der Splunk-Ereignistyp
+Splunk-Ereignistyp
 
 - Erfordert einen Wert
 
@@ -5767,13 +5767,13 @@ Syslog-Transportprotokoll (&#39;tcp&#39;, &#39;udp&#39;, &#39;tls&#39;)
 
 ### `--syslog-host`
 
-Syslog Relais/Collector-Host
+Syslog-Relais/Collector-Host
 
 - Erfordert einen Wert
 
 ### `--syslog-port`
 
-Syslog-Relais-/Kollektor-Port
+Syslog Relais/Collector Port
 
 - Erfordert einen Wert
 
@@ -5813,7 +5813,7 @@ Ob die HTTPS-Zertifikatüberprüfung aktiviert werden soll (empfohlen)
 
 ### `--header`
 
-In POST-Anfragen zu verwendende HTTP-Header Trennen Sie Namen und Werte mit einem Doppelpunkt (:).
+HTTP-Header zur Verwendung in POST-Anfragen. Trennen Sie Namen und Werte durch einen Doppelpunkt (:).
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -5826,7 +5826,7 @@ Die Projekt-ID oder URL
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5847,7 +5847,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5861,14 +5861,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5876,7 +5876,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `integration:validate`
 
-Überprüfen einer vorhandenen Integration
+Bestehende Integration validieren
 
 ```bash
 magento-cloud integration:validate [-p|--project PROJECT] [--] [<id>]
@@ -5903,7 +5903,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5917,14 +5917,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5932,7 +5932,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `local:build`
 
-Lokales Erstellen des aktuellen Projekts
+Aktuelles Projekt lokal erstellen
 
 ```bash
 magento-cloud build [-a|--abslinks] [-s|--source SOURCE] [-d|--destination DESTINATION] [-c|--copy] [--clone] [--run-deploy-hooks] [--no-clean] [--no-archive] [--no-backup] [--no-cache] [--no-build-hooks] [--no-deps] [--working-copy] [--concurrency CONCURRENCY] [--lock] [--] [<app>]...
@@ -5941,7 +5941,7 @@ magento-cloud build [-a|--abslinks] [-s|--source SOURCE] [-d|--destination DESTI
 
 ### `app`
 
-Zu erstellende(s) Programm(e) angeben
+Zu erstellende Anwendung(en) angeben
 
 - Standard: `[]`
 
@@ -5956,33 +5956,33 @@ Absolute Links verwenden
 
 ### `--source`, `-s`
 
-Das Quellverzeichnis. Standardmäßig wird der aktuelle Projektstamm verwendet.
+Das Quellverzeichnis. Die Standardeinstellung ist der aktuelle Projektstamm.
 
 - Erfordert einen Wert
 
 ### `--destination`, `-d`
 
-Das Ziel, mit dem der Webstamm jeder App verknüpft wird. Standard: _www
+Das Ziel, mit dem der Webstamm jeder App symverknüpft wird. Standard: _www
 
 - Erfordert einen Wert
 
 ### `--copy`, `-c`
 
-In ein Build-Verzeichnis kopieren, anstatt von der Quelle aus eine Verknüpfung herzustellen
+Kopieren Sie in ein Build-Verzeichnis, anstatt symlink aus der Quelle zu verwenden.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--clone`
 
-Verwenden Sie Git, um die aktuelle HEAD in das Build-Verzeichnis zu klonen
+Verwenden Sie Git, um die aktuelle HEAD in den Build-Ordner zu klonen.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--run-deploy-hooks`
 
-Ausführen von Bereitstellungs- und/oder Bereitstellungs-Hooks
+Ausführen von &quot;deploy&quot;und/oder &quot;post_deploy&quot;
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5996,28 +5996,28 @@ Alte Builds nicht entfernen
 
 ### `--no-archive`
 
-Erstellen oder verwenden Sie kein Build-Archiv
+Erstellen oder Verwenden Sie kein Build-Archiv
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-backup`
 
-Den vorherigen Build nicht sichern
+vorherigen Build nicht sichern
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-cache`
 
-Cache deaktivieren
+Zwischenspeicherung deaktivieren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-build-hooks`
 
-Keine Post-Build-Hooks ausführen
+Führen Sie keine Post-Build-Hooks aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6031,21 +6031,21 @@ Build-Abhängigkeiten nicht lokal installieren
 
 ### `--working-copy`
 
-Drush: Verwenden Sie Git, um ein Repository jedes Drupal-Moduls zu klonen, anstatt einfach eine Version herunterzuladen
+Entfernen: Verwenden Sie Git, um ein Repository jedes Drupal-Moduls zu klonen, anstatt einfach eine Version herunterzuladen.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--concurrency`
 
-Drush: Legen Sie die Anzahl der gleichzeitigen Projekte fest, die gleichzeitig verarbeitet werden
+DRush: Legen Sie die Anzahl gleichzeitiger Projekte fest, die gleichzeitig verarbeitet werden.
 
 - Standard: `4`
 - Erfordert einen Wert
 
 ### `--lock`
 
-Drush: Sperrdatei erstellen oder aktualisieren (nur verfügbar mit Drush Version 7+)
+Löschen: Eine Sperrdatei erstellen oder aktualisieren (nur verfügbar mit DRush-Version 7+)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6059,7 +6059,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6073,14 +6073,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6088,7 +6088,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `local:dir`
 
-Suchen des lokalen Projektstamms
+Lokalen Projektstamm suchen
 
 ```bash
 magento-cloud dir [<subdir>]
@@ -6097,7 +6097,7 @@ magento-cloud dir [<subdir>]
 
 ### `subdir`
 
-Der zu suchende Unterordner (&#39;local&#39;, &#39;web&#39; oder &#39;shared&#39;)
+Das zu suchende Unterverzeichnis (&#39;local&#39;, &#39;web&#39; oder &#39;shared&#39;)
 
 
 ### `--help`, `-h`
@@ -6109,7 +6109,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6123,14 +6123,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6138,7 +6138,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `metrics:all`
 
-Anzeigen von CPU-, Datenträger- und Arbeitsspeichermetriken für eine Umgebung
+BETA Anzeigen von CPU-, Datenträger- und Speichermetriken für eine Umgebung
 
 ```bash
 magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6153,39 +6153,39 @@ Größen in Byte anzeigen
 
 ### `--range`, `-r`
 
-Der Zeitraum. Metriken werden für diese Dauer bis zum Endzeitpunkt (—to) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Minimum \&lt;comment>5m\&lt;/comment>, Maximum \&lt;comment>8h\&lt;/comment> oder höher (je nach Projekt), Standard \&lt;comment>10m\&lt;/comment>.
+Der Zeitraum. Metriken werden für diese Dauer bis zur Endzeit (—to) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 5m, max. 8h oder mehr (je nach Projekt), Standard 10m.
 
 - Erfordert einen Wert
 
 ### `--interval`, `-i`
 
-Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Minimum \&lt;comment>1m\&lt;/comment>.
+Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 1 m.
 
 - Erfordert einen Wert
 
 ### `--to`
 
-Die Endzeit. Die Standardeinstellung ist jetzt.
+Endzeit. Die Standardeinstellung ist jetzt.
 
 - Erfordert einen Wert
 
 ### `--latest`, `-1`
 
-Nur den neuesten einzelnen Datenpunkt anzeigen
+Nur den letzten einzelnen Datenpunkt anzeigen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--service`, `-s`
 
-Nach Service- oder Anwendungsnamen filtern Die Zeichen % oder * können als Platzhalter verwendet werden.
+Filtern nach Dienst- oder Anwendungsnamen Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--type`
 
-Filtern Sie nach Service-Typ (wenn —service nicht angegeben ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
+Filtern nach Diensttyp (wenn —service nicht bereitgestellt ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -6198,34 +6198,34 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: Zeitstempel*, Service*, CPU_Percent*, MEM_Percent*, Disk_Percent*, TMP_Disk_Percent*, CPU_Limit, CPU_Used, Disk_Limit, Disk_Used, Inodes_Limit, Inodes_Percent, Inodes_Used, MEM_Limit, MEM_Used, TMP_Disk_Limit, TMP_Disk_Used, TMP_Inodes_Limit, TMP_Inodes_Percent, TMP_Inodes_Used, Typ (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: timestamp*, service*, cpu_percent*, mem_percent*, disk_percent*, tmp_disk_percent*, cpu_limit, cpu_used, disk_limit, disk_used, inodes_limit, inodes_percent, inodes_used, mem_limit, mem_used, tmp_disk_used, tmp_inodes _limit, tmp_inodes_percent, tmp_inodes_used, Typ (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -6239,7 +6239,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6253,14 +6253,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6268,7 +6268,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `metrics:cpu`
 
-CPU-Auslastung einer Umgebung anzeigen
+BETA Anzeigen der CPU-Auslastung einer Umgebung
 
 ```bash
 magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6276,39 +6276,39 @@ magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--la
 
 ### `--range`, `-r`
 
-Der Zeitraum. Metriken werden für diese Dauer bis zum Endzeitpunkt (—to) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Minimum \&lt;comment>5m\&lt;/comment>, Maximum \&lt;comment>8h\&lt;/comment> oder höher (je nach Projekt), Standard \&lt;comment>10m\&lt;/comment>.
+Der Zeitraum. Metriken werden für diese Dauer bis zur Endzeit (—to) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 5m, max. 8h oder mehr (je nach Projekt), Standard 10m.
 
 - Erfordert einen Wert
 
 ### `--interval`, `-i`
 
-Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Minimum \&lt;comment>1m\&lt;/comment>.
+Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 1 m.
 
 - Erfordert einen Wert
 
 ### `--to`
 
-Die Endzeit. Die Standardeinstellung ist jetzt.
+Endzeit. Die Standardeinstellung ist jetzt.
 
 - Erfordert einen Wert
 
 ### `--latest`, `-1`
 
-Nur den neuesten einzelnen Datenpunkt anzeigen
+Nur den letzten einzelnen Datenpunkt anzeigen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--service`, `-s`
 
-Nach Service- oder Anwendungsnamen filtern Die Zeichen % oder * können als Platzhalter verwendet werden.
+Filtern nach Dienst- oder Anwendungsnamen Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--type`
 
-Filtern Sie nach Service-Typ (wenn —service nicht angegeben ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
+Filtern nach Diensttyp (wenn —service nicht bereitgestellt ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -6321,34 +6321,34 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: Zeitstempel*, Dienst*, Verwendet*, Limit*, Prozent*, Typ (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: timestamp*, service*, used*, limit*, percent*, type (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -6362,7 +6362,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6376,14 +6376,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6406,46 +6406,46 @@ Größen in Byte anzeigen
 
 ### `--range`, `-r`
 
-Der Zeitraum. Metriken werden für diese Dauer bis zum Endzeitpunkt (—to) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Minimum \&lt;comment>5m\&lt;/comment>, Maximum \&lt;comment>8h\&lt;/comment> oder höher (je nach Projekt), Standard \&lt;comment>10m\&lt;/comment>.
+Der Zeitraum. Metriken werden für diese Dauer bis zur Endzeit (—to) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 5m, max. 8h oder mehr (je nach Projekt), Standard 10m.
 
 - Erfordert einen Wert
 
 ### `--interval`, `-i`
 
-Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Minimum \&lt;comment>1m\&lt;/comment>.
+Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 1 m.
 
 - Erfordert einen Wert
 
 ### `--to`
 
-Die Endzeit. Die Standardeinstellung ist jetzt.
+Endzeit. Die Standardeinstellung ist jetzt.
 
 - Erfordert einen Wert
 
 ### `--latest`, `-1`
 
-Nur den neuesten einzelnen Datenpunkt anzeigen
+Nur den letzten einzelnen Datenpunkt anzeigen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--service`, `-s`
 
-Nach Service- oder Anwendungsnamen filtern Die Zeichen % oder * können als Platzhalter verwendet werden.
+Filtern nach Dienst- oder Anwendungsnamen Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--type`
 
-Filtern Sie nach Service-Typ (wenn —service nicht angegeben ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
+Filtern nach Diensttyp (wenn —service nicht bereitgestellt ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--tmp`
 
-Bericht zur temporären Festplattenauslastung (zeigt die Spalten: Zeitstempel, Dienst, tmp_used, tmp_limit, tmp_percent, tmp_ipercent)
+Temporäre Festplattenauslastung melden (Spalten anzeigen: Zeitstempel, Dienst, tmp_used, tmp_limit, tmp_percent, tmp_ipercent)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6458,34 +6458,34 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: Zeitstempel*, Dienst*, Verwendet*, Limit*, Prozent*, ipercent*, tmp_percent*, limit, iused, tmp_limit, tmp_ipercent, tmp_iused, tmp_limit, tmp_used, Typ (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: timestamp*, service*, used*, limit*, percent*, ipercent*, tmp_percent*, ilimit, iused, tmp_ilimit, tmp_ipercent, tmp_iused, tmp_limit, tmp_used, type (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -6499,7 +6499,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6513,14 +6513,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6528,7 +6528,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `metrics:memory`
 
-Anzeigen der Speichernutzung einer Umgebung
+BETA Speichernutzung einer Umgebung anzeigen
 
 ```bash
 magento-cloud mem [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -6543,39 +6543,39 @@ Größen in Byte anzeigen
 
 ### `--range`, `-r`
 
-Der Zeitraum. Metriken werden für diese Dauer bis zum Endzeitpunkt (—to) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Minimum \&lt;comment>5m\&lt;/comment>, Maximum \&lt;comment>8h\&lt;/comment> oder höher (je nach Projekt), Standard \&lt;comment>10m\&lt;/comment>.
+Der Zeitraum. Metriken werden für diese Dauer bis zur Endzeit (—to) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 5m, max. 8h oder mehr (je nach Projekt), Standard 10m.
 
 - Erfordert einen Wert
 
 ### `--interval`, `-i`
 
-Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Minimum \&lt;comment>1m\&lt;/comment>.
+Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 1 m.
 
 - Erfordert einen Wert
 
 ### `--to`
 
-Die Endzeit. Die Standardeinstellung ist jetzt.
+Endzeit. Die Standardeinstellung ist jetzt.
 
 - Erfordert einen Wert
 
 ### `--latest`, `-1`
 
-Nur den neuesten einzelnen Datenpunkt anzeigen
+Nur den letzten einzelnen Datenpunkt anzeigen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--service`, `-s`
 
-Nach Service- oder Anwendungsnamen filtern Die Zeichen % oder * können als Platzhalter verwendet werden.
+Filtern nach Dienst- oder Anwendungsnamen Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--type`
 
-Filtern Sie nach Service-Typ (wenn —service nicht angegeben ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
+Filtern nach Diensttyp (wenn —service nicht bereitgestellt ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -6588,34 +6588,34 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: Zeitstempel*, Dienst*, Verwendet*, Limit*, Prozent*, Typ (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: timestamp*, service*, used*, limit*, percent*, type (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -6629,7 +6629,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6643,14 +6643,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6658,7 +6658,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `mount:download`
 
-Dateien von einem Mount herunterladen, mithilfe von rsync
+Herunterladen von Dateien von einem Rich-Rich-Rsync-Server
 
 ```bash
 magento-cloud mount:download [-a|--all] [-m|--mount MOUNT] [--target TARGET] [--source-path] [--delete] [--exclude EXCLUDE] [--include INCLUDE] [--refresh] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE] [-i|--identity-file IDENTITY-FILE]
@@ -6666,40 +6666,40 @@ magento-cloud mount:download [-a|--all] [-m|--mount MOUNT] [--target TARGET] [--
 
 ### `--all`, `-a`
 
-Download von allen Mounts
+Download von allen Reittieren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--mount`, `-m`
 
-Die Bereitstellung (als App-relativer Pfad)
+Die -Bereitstellung (als App-relativer Pfad)
 
 - Erfordert einen Wert
 
 ### `--target`
 
-Das Verzeichnis, in das die Dateien heruntergeladen werden. Wenn —all verwendet wird, wird der Einhängepfad angehängt
+Das Verzeichnis, in das die Dateien heruntergeladen werden. Wenn —all verwendet wird, wird der Bereitstellungspfad angehängt
 
 - Erfordert einen Wert
 
 ### `--source-path`
 
-Verwenden Sie den Quellpfad des Mount (anstelle des Mount-Pfads) als Unterverzeichnis des Ziels, wenn —all verwendet wird
+Verwenden Sie den Quellpfad des Mount (anstelle des Bereitstellungspfads) als Unterverzeichnis des Ziels, wenn —all verwendet wird.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--delete`
 
-Ob irrelevante Dateien im Zielverzeichnis gelöscht werden sollen
+Ob irrelevante Dateien im Zielverzeichnis gelöscht werden
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--exclude`
 
-Datei(en) vom Download ausschließen (Muster)
+Vom Download auszuschließende Datei(en) (Muster)
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -6726,7 +6726,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -6738,19 +6738,19 @@ Der Name der Remote-Anwendung
 
 ### `--worker`
 
-Ein Worker-Name
+Arbeitername
 
 - Erfordert einen Wert
 
 ### `--instance`, `-I`
 
-Eine Instanz-ID
+Instanz-ID
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -6763,7 +6763,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6777,14 +6777,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6792,7 +6792,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `mount:list`
 
-Abrufen einer Liste der Reittiere
+Liste der Reittiere abrufen
 
 ```bash
 magento-cloud mounts [--paths] [--refresh] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE]
@@ -6800,7 +6800,7 @@ magento-cloud mounts [--paths] [--refresh] [--format FORMAT] [-c|--columns COLUM
 
 ### `--paths`
 
-Ausgabe nur der Einhängepfade (einer pro Zeile)
+Geben Sie nur die Bereitstellungspfade aus (1 pro Zeile)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6814,21 +6814,21 @@ Ob der Cache aktualisiert werden soll
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: Definition, Pfad. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: Definition, Pfad. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6841,7 +6841,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -6853,13 +6853,13 @@ Der Name der Remote-Anwendung
 
 ### `--worker`
 
-Ein Worker-Name
+Arbeitername
 
 - Erfordert einen Wert
 
 ### `--instance`, `-I`
 
-Eine Instanz-ID
+Instanz-ID
 
 - Erfordert einen Wert
 
@@ -6872,7 +6872,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6886,14 +6886,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6901,7 +6901,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `mount:size`
 
-Überprüfen der Festplattenauslastung der Bereitstellungen
+Überprüfen Sie die Festplattenauslastung der Bereitstellungen.
 
 ```bash
 magento-cloud mount:size [-B|--bytes] [--refresh] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-i|--identity-file IDENTITY-FILE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE]
@@ -6916,35 +6916,35 @@ Größen in Byte anzeigen
 
 ### `--refresh`
 
-Aktualisieren des Cache
+Cache aktualisieren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: Verfügbar, Max, Einhängevorrichtungen, percent_used, Größen, verwendet. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: verfügbar, max, mounts, percent_used, size, used. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -6956,7 +6956,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -6968,13 +6968,13 @@ Der Name der Remote-Anwendung
 
 ### `--worker`
 
-Ein Worker-Name
+Arbeitername
 
 - Erfordert einen Wert
 
 ### `--instance`, `-I`
 
-Eine Instanz-ID
+Instanz-ID
 
 - Erfordert einen Wert
 
@@ -6987,7 +6987,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7001,14 +7001,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7016,7 +7016,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `mount:upload`
 
-Dateien mithilfe von rsync auf eine Bereitstellung hochladen
+Hochladen von Dateien in eine -Bereitstellung mithilfe von Rsync
 
 ```bash
 magento-cloud mount:upload [--source SOURCE] [-m|--mount MOUNT] [--delete] [--exclude EXCLUDE] [--include INCLUDE] [--refresh] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE] [-i|--identity-file IDENTITY-FILE]
@@ -7024,26 +7024,26 @@ magento-cloud mount:upload [--source SOURCE] [-m|--mount MOUNT] [--delete] [--ex
 
 ### `--source`
 
-Ein Verzeichnis mit Dateien zum Hochladen
+Ein Verzeichnis mit hochzuladenden Dateien
 
 - Erfordert einen Wert
 
 ### `--mount`, `-m`
 
-Die Bereitstellung (als App-relativer Pfad)
+Die -Bereitstellung (als App-relativer Pfad)
 
 - Erfordert einen Wert
 
 ### `--delete`
 
-Gibt an, ob irrelevante Dateien im Mount gelöscht werden sollen
+Ob irrelevante Dateien im Bereitstellungsfenster gelöscht werden
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--exclude`
 
-Datei(en) vom Upload ausschließen (Muster)
+Vom Hochladen auszuschließende Datei(en) (Muster)
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -7070,7 +7070,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -7082,19 +7082,19 @@ Der Name der Remote-Anwendung
 
 ### `--worker`
 
-Ein Worker-Name
+Arbeitername
 
 - Erfordert einen Wert
 
 ### `--instance`, `-I`
 
-Eine Instanz-ID
+Instanz-ID
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -7107,7 +7107,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7121,14 +7121,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7136,7 +7136,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `operation:list`
 
-Auflisten von Laufzeitvorgängen für eine Umgebung
+BETA List-Laufzeitvorgänge in einer Umgebung
 
 ```bash
 magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
@@ -7144,7 +7144,7 @@ magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT]
 
 ### `--full`
 
-Die Länge des anzuzeigenden Befehls nicht begrenzen. Der Standardwert ist 24 Zeilen.
+Beschränken Sie nicht die Länge des anzuzeigenden Befehls. Der Standardwert beträgt 24 Zeilen.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7157,7 +7157,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -7169,27 +7169,27 @@ Der Name der Remote-Anwendung
 
 ### `--worker`
 
-Ein Worker-Name
+Arbeitername
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: service*, name*, start*, role, stop (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: service*, name*, start*, role, stop (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7203,7 +7203,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7217,14 +7217,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7232,7 +7232,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `operation:run`
 
-Ausführen eines Vorgangs in der Umgebung
+BETA Ausführen eines Vorgangs für die Umgebung
 
 ```bash
 magento-cloud operation:run [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-W|--no-wait] [--wait] [--] [<operation>]
@@ -7252,7 +7252,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -7264,13 +7264,13 @@ Der Name der Remote-Anwendung
 
 ### `--worker`
 
-Ein Worker-Name
+Arbeitername
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7291,7 +7291,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7305,14 +7305,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7341,7 +7341,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7355,14 +7355,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7384,18 +7384,18 @@ Die Projekt-ID
 
 ### `directory`
 
-Das Verzeichnis, in das geklont werden soll. Standardmäßig wird der Projekttitel verwendet
+Das Verzeichnis, in das geklont werden soll. Die Standardeinstellung ist der Projekttitel
 
 
 ### `--environment`, `-e`
 
-Die zu klonende Umgebungskennung. Die Standardeinstellung ist der Projektstandard oder die erste verfügbare Umgebung.
+Die zu klonende Umgebungs-ID. Die Standardeinstellung ist die Projektnummer oder die erste verfügbare Umgebung.
 
 - Erfordert einen Wert
 
 ### `--depth`
 
-Einen flachen Klon erstellen: Begrenzt die Anzahl der Commits im Verlauf.
+Erstellen eines flachen Klons: begrenzt die Anzahl der Commits im Verlauf
 
 - Erfordert einen Wert
 
@@ -7414,7 +7414,7 @@ Die Projekt-ID oder URL
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -7427,7 +7427,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7441,14 +7441,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7456,7 +7456,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `project:info`
 
-Lesen oder Festlegen von Eigenschaften für ein Projekt
+Eigenschaften für ein Projekt lesen oder festlegen
 
 ```bash
 magento-cloud project:info [--refresh] [--date-fmt DATE-FMT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] [<property>] [<value>]
@@ -7470,7 +7470,7 @@ Der Name der Eigenschaft
 
 ### `value`
 
-Legen Sie einen neuen Wert für die Eigenschaft fest
+Neuen Wert für die Eigenschaft festlegen
 
 
 ### `--refresh`
@@ -7482,28 +7482,28 @@ Ob der Cache aktualisiert werden soll
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7516,7 +7516,7 @@ Die Projekt-ID oder URL
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7537,7 +7537,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7551,14 +7551,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7566,7 +7566,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `project:list`
 
-Abrufen einer Liste aller aktiven Projekte
+Liste aller aktiven Projekte abrufen
 
 ```bash
 magento-cloud projects [--pipe] [--region REGION] [--title TITLE] [--my] [--refresh REFRESH] [--sort SORT] [--reverse] [--page PAGE] [-c|--count COUNT] [--format FORMAT] [--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -7574,20 +7574,20 @@ magento-cloud projects [--pipe] [--region REGION] [--title TITLE] [--my] [--refr
 
 ### `--pipe`
 
-Ausgabe einer einfachen Liste von Projekt-IDs. Deaktiviert die Paginierung.
+Geben Sie eine einfache Liste von Projekt-IDs aus. Deaktiviert die Paginierung.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--region`
 
-Nach Region filtern (exakte Übereinstimmung)
+Nach Region filtern (genaue Übereinstimmung)
 
 - Erfordert einen Wert
 
 ### `--title`
 
-Nach Titel filtern (Suche ohne Unterscheidung von Groß- und Kleinschreibung)
+Nach Titel filtern (Suche ohne Unterscheidung zwischen Groß- und Kleinschreibung)
 
 - Erfordert einen Wert
 
@@ -7607,54 +7607,54 @@ Ob die Liste aktualisiert werden soll
 
 ### `--sort`
 
-Eine Eigenschaft zum Sortieren nach
+Eine Eigenschaft, die nach
 
 - Standard: `title`
 - Erfordert einen Wert
 
 ### `--reverse`
 
-In umgekehrter (absteigender) Reihenfolge sortieren
+Sortieren in umgekehrter (absteigender) Reihenfolge
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--page`
 
-Seitennummer. Dies ermöglicht die Paginierung, trotz Konfiguration oder —count. Ignoriert, wenn —pipe angegeben ist.
+Seitenzahl. Dies ermöglicht die Paginierung, trotz Konfiguration oder —count. Wird ignoriert, wenn —pipe angegeben ist.
 
 - Erfordert einen Wert
 
 ### `--count`, `-c`
 
-Die Anzahl der pro Seite anzuzeigenden Projekte Verwenden Sie 0, um die Paginierung zu deaktivieren. Ignoriert, wenn —page angegeben wurde.
+Die Anzahl der pro Seite anzuzeigenden Projekte. Verwenden Sie 0, um die Paginierung zu deaktivieren. Wird ignoriert, wenn —page angegeben ist.
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`
 
-Anzuzeigende Spalten. Verfügbare Spalten: id*, title*, region*, created_at, organization_id, organization_label, organization_name, Status (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: id*, title*, region*, created_at, organization_id, organization_label, organization_name, status (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -7668,7 +7668,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7682,14 +7682,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7697,7 +7697,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `project:set-remote`
 
-Festlegen des Remote-Projekts für das aktuelle Git-Repository
+Remote-Projekt für das aktuelle Git-Repository festlegen
 
 ```bash
 magento-cloud set-remote [<project>]
@@ -7718,7 +7718,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7732,14 +7732,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7747,7 +7747,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `repo:cat`
 
-Lesen einer Datei im Projekt-Repository
+Datei im Projekt-Repository lesen
 
 ```bash
 magento-cloud repo:cat [-c|--commit COMMIT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] <path>
@@ -7762,7 +7762,7 @@ Der Pfad zur Datei
 
 ### `--commit`, `-c`
 
-Der Commit SHA. Dies kann auch &quot;HEAD&quot; und Caret-Suffixe (^) oder Tilde-Suffixe (~) für übergeordnete Commits akzeptieren.
+Der Commit SHA. Dies kann auch Suffixe vom Typ &quot;HEAD&quot;und Caret (^) oder Tilde (~) für übergeordnete Commits akzeptieren.
 
 - Erfordert einen Wert
 
@@ -7774,7 +7774,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -7787,7 +7787,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7801,14 +7801,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7816,7 +7816,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `repo:ls`
 
-Auflisten der Dateien im Projekt-Repository
+Auflisten von Dateien im Projekt-Repository
 
 ```bash
 magento-cloud repo:ls [-d|--directories] [-f|--files] [--git-style] [-c|--commit COMMIT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<path>]
@@ -7844,14 +7844,14 @@ Nur Dateien anzeigen
 
 ### `--git-style`
 
-Stilausgabe ähnlich wie „git-tree“
+Stilausgabe ähnlich &quot;git ls-tree&quot;
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--commit`, `-c`
 
-Der Commit SHA. Dies kann auch &quot;HEAD&quot; und Caret-Suffixe (^) oder Tilde-Suffixe (~) für übergeordnete Commits akzeptieren.
+Der Commit SHA. Dies kann auch Suffixe vom Typ &quot;HEAD&quot;und Caret (^) oder Tilde (~) für übergeordnete Commits akzeptieren.
 
 - Erfordert einen Wert
 
@@ -7863,7 +7863,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -7876,7 +7876,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7890,14 +7890,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7905,7 +7905,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `repo:read`
 
-Lesen eines Verzeichnisses oder einer Datei im Projekt-Repository
+Ordner oder Datei im Projekt-Repository lesen
 
 ```bash
 magento-cloud read [-c|--commit COMMIT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<path>]
@@ -7919,7 +7919,7 @@ Der Pfad zum Verzeichnis oder zur Datei
 
 ### `--commit`, `-c`
 
-Der Commit SHA. Dies kann auch &quot;HEAD&quot; und Caret-Suffixe (^) oder Tilde-Suffixe (~) für übergeordnete Commits akzeptieren.
+Der Commit SHA. Dies kann auch Suffixe vom Typ &quot;HEAD&quot;und Caret (^) oder Tilde (~) für übergeordnete Commits akzeptieren.
 
 - Erfordert einen Wert
 
@@ -7931,7 +7931,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -7944,7 +7944,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7958,14 +7958,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7987,7 +7987,7 @@ Die ursprüngliche URL der Route
 
 ### `--id`
 
-Eine auszuwählende Routen-ID
+Eine Route-ID zur Auswahl
 
 - Erfordert einen Wert
 
@@ -8006,14 +8006,14 @@ Die anzuzeigende Eigenschaft
 
 ### `--refresh`
 
-Umgehen des Cache-Speichers von Routen
+Den Zwischenspeicher von Routen umgehen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -8026,7 +8026,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -8051,7 +8051,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8065,14 +8065,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8080,7 +8080,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `route:list`
 
-Auflisten aller Routen für eine Umgebung
+Alle Routen für eine Umgebung auflisten
 
 ```bash
 magento-cloud routes [--refresh] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<environment>]
@@ -8094,28 +8094,28 @@ Die Umgebungs-ID
 
 ### `--refresh`
 
-Umgehen des Cache-Speichers von Routen
+Den Zwischenspeicher von Routen umgehen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: route*, type*, to*, url (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: route*, type*, to*, url (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8128,7 +8128,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -8141,7 +8141,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8155,14 +8155,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8191,7 +8191,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8205,14 +8205,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8220,7 +8220,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `self:update`
 
-Aktualisieren der CLI auf die neueste Version
+CLI auf die neueste Version aktualisieren
 
 ```bash
 magento-cloud update [--no-major] [--unstable] [--manifest MANIFEST] [--current-version CURRENT-VERSION] [--timeout TIMEOUT]
@@ -8228,21 +8228,21 @@ magento-cloud update [--no-major] [--unstable] [--manifest MANIFEST] [--current-
 
 ### `--no-major`
 
-Nur zwischen Nebenversionen oder Patch-Versionen aktualisieren
+Nur Aktualisierung zwischen kleineren oder Patch-Versionen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--unstable`
 
-Aktualisieren Sie auf eine neue instabile Version, falls verfügbar
+Aktualisierung auf eine neue instabile Version, falls verfügbar
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--manifest`
 
-Überschreiben des Speicherorts der Manifestdatei
+Speicherort der Manifestdatei überschreiben
 
 - Erfordert einen Wert
 
@@ -8254,7 +8254,7 @@ Aktuelle Version überschreiben
 
 ### `--timeout`
 
-Ein Timeout für die Versionsüberprüfung
+Eine Zeitüberschreitung für die Versionsüberprüfung
 
 - Standard: `30`
 - Erfordert einen Wert
@@ -8268,7 +8268,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8282,14 +8282,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8297,7 +8297,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `service:list`
 
-Auflisten der Services im Projekt
+Auflisten von Diensten im Projekt
 
 ```bash
 magento-cloud services [--refresh] [--pipe] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
@@ -8312,7 +8312,7 @@ Ob der Cache aktualisiert werden soll
 
 ### `--pipe`
 
-Ausgabe nur einer Liste von Service-Namen
+Nur eine Liste mit Dienstnamen ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8325,27 +8325,27 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: Datenträger, Name, Größe, Typ. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: Festplatte, Name, Größe, Typ. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8359,7 +8359,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8373,14 +8373,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8388,7 +8388,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `service:mongo:dump`
 
-Erstellen eines binären Archiv-Dump von Daten aus MongoDB
+Erstellen eines binären Archivierungs-Dump von Daten aus MongoDB
 
 ```bash
 magento-cloud mongodump [-c|--collection COLLECTION] [-z|--gzip] [-o|--stdout] [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTITY-FILE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP]
@@ -8396,13 +8396,13 @@ magento-cloud mongodump [-c|--collection COLLECTION] [-z|--gzip] [-o|--stdout] [
 
 ### `--collection`, `-c`
 
-Die Sammlung, die abgelegt werden soll
+Die zu löschende Sammlung
 
 - Erfordert einen Wert
 
 ### `--gzip`, `-z`
 
-Komprimieren Sie den Dump mit gzip
+Komprimieren Sie die Ablage mit gzip
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8416,13 +8416,13 @@ Ausgabe in STDOUT anstelle einer Datei
 
 ### `--relationship`, `-r`
 
-Die zu verwendende Service-Beziehung
+Die zu verwendende Dienstbeziehung
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -8434,7 +8434,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -8453,7 +8453,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8467,14 +8467,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8482,7 +8482,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `service:mongo:export`
 
-Exportieren von Daten aus MongoDB
+Daten aus MongoDB exportieren
 
 ```bash
 magento-cloud mongoexport [-c|--collection COLLECTION] [--jsonArray] [--type TYPE] [-f|--fields FIELDS] [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTITY-FILE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP]
@@ -8490,39 +8490,39 @@ magento-cloud mongoexport [-c|--collection COLLECTION] [--jsonArray] [--type TYP
 
 ### `--collection`, `-c`
 
-Die zu exportierende Sammlung
+Zu exportierende Kollektion
 
 - Erfordert einen Wert
 
 ### `--jsonArray`
 
-Exportieren von Daten als einzelnes JSON-Array
+Daten als einzelnes JSON-Array exportieren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--type`
 
-Der Exporttyp, z. B. „csv“
+Der Exporttyp, z. B. &quot;csv&quot;
 
 - Erfordert einen Wert
 
 ### `--fields`, `-f`
 
-Die zu exportierenden Felder
+Zu exportierende Felder
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--relationship`, `-r`
 
-Die zu verwendende Service-Beziehung
+Die zu verwendende Dienstbeziehung
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -8534,7 +8534,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -8553,7 +8553,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8567,14 +8567,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8582,7 +8582,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `service:mongo:restore`
 
-Wiederherstellen eines binären Archiv-Dump von Daten in MongoDB
+Wiederherstellen eines binären Datenarchiv-Dump in MongoDB
 
 ```bash
 magento-cloud mongorestore [-c|--collection COLLECTION] [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTITY-FILE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP]
@@ -8596,13 +8596,13 @@ Die wiederherzustellende Sammlung
 
 ### `--relationship`, `-r`
 
-Die zu verwendende Service-Beziehung
+Die zu verwendende Dienstbeziehung
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -8614,7 +8614,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -8633,7 +8633,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8647,14 +8647,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8662,7 +8662,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `service:mongo:shell`
 
-Verwenden der MongoDB-Shell
+MongoDB-Shell verwenden
 
 ```bash
 magento-cloud mongo [--eval EVAL] [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTITY-FILE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP]
@@ -8676,13 +8676,13 @@ magento-cloud mongo [--eval EVAL] [-r|--relationship RELATIONSHIP] [-i|--identit
 
 ### `--relationship`, `-r`
 
-Die zu verwendende Service-Beziehung
+Die zu verwendende Dienstbeziehung
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -8694,7 +8694,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -8713,7 +8713,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8727,14 +8727,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8751,18 +8751,18 @@ magento-cloud redis [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTIT
 
 ### `args`
 
-Dem Redis-Befehl hinzuzufügende Argumente
+Argumente zum Hinzufügen zum Befehl &quot;Redis&quot;
 
 
 ### `--relationship`, `-r`
 
-Die zu verwendende Service-Beziehung
+Die zu verwendende Dienstbeziehung
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -8774,7 +8774,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -8793,7 +8793,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8807,14 +8807,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8822,7 +8822,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `snapshot:create`
 
-Erstellen eines Snapshots einer Umgebung
+Schnappschuss einer Umgebung erstellen
 
 ```bash
 magento-cloud backup [--live] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<environment>]
@@ -8831,12 +8831,12 @@ magento-cloud backup [--live] [-p|--project PROJECT] [-e|--environment ENVIRONME
 
 ### `environment`
 
-Die Umgebung
+Umwelt
 
 
 ### `--live`
 
-Live-Backup: Halten Sie die Umgebung nicht an. Wenn festgelegt, bleibt die Umgebung aktiv und steht während des Backups Verbindungen offen. Dadurch werden Ausfallzeiten reduziert, was das Risiko birgt, dass die Daten in einem inkonsistenten Zustand gesichert werden.
+Live Backup: Beenden Sie die Umgebung nicht. Wenn diese Einstellung festgelegt ist, bleibt die Umgebung aktiv und während der Sicherung für Verbindungen geöffnet. Dadurch werden Ausfallzeiten reduziert, wodurch das Risiko besteht, Daten in einem inkonsistenten Zustand zu sichern.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8849,13 +8849,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8876,7 +8876,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8890,14 +8890,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8914,7 +8914,7 @@ magento-cloud snapshot:delete [-p|--project PROJECT] [-e|--environment ENVIRONME
 
 ### `id`
 
-Die ID des Snapshots. Erforderlich im nicht interaktiven Modus.
+Die ID der Momentaufnahme. Erforderlich im nicht interaktiven Modus.
 
 
 ### `--project`, `-p`
@@ -8925,13 +8925,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8952,7 +8952,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8966,14 +8966,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -8981,7 +8981,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `snapshot:get`
 
-Umgebungsschnappschuss anzeigen
+Anzeigen eines Umgebungs-Snapshots
 
 ```bash
 magento-cloud snapshot:get [-P|--property PROPERTY] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--date-fmt DATE-FMT] [--] [<id>]
@@ -8990,7 +8990,7 @@ magento-cloud snapshot:get [-P|--property PROPERTY] [-p|--project PROJECT] [-e|-
 
 ### `id`
 
-Die ID des Snapshots. Die Standardeinstellung ist die neueste .
+Die ID der Momentaufnahme. Der Standardwert ist der neueste.
 
 
 ### `--property`, `-P`
@@ -9007,13 +9007,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -9027,7 +9027,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9041,14 +9041,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9064,28 +9064,28 @@ magento-cloud snapshots [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -9098,7 +9098,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -9111,7 +9111,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9125,14 +9125,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9140,7 +9140,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `snapshot:restore`
 
-Wiederherstellen eines Umgebungsschnappschusses
+Wiederherstellen eines Umgebungs-Snapshots
 
 ```bash
 magento-cloud snapshot:restore [--target TARGET] [--branch-from BRANCH-FROM] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<snapshot>]
@@ -9149,18 +9149,18 @@ magento-cloud snapshot:restore [--target TARGET] [--branch-from BRANCH-FROM] [-p
 
 ### `snapshot`
 
-Der Name des Snapshots. Standardwert ist die neueste .
+Der Name der Momentaufnahme. Die Standardeinstellung ist die neueste
 
 
 ### `--target`
 
-Die wiederherzustellende Umgebung. Standardmäßig wird die aktuelle Umgebung des Snapshots verwendet
+Die wiederherzustellende Umgebung. Die Standardeinstellung ist die aktuelle Umgebung des Snapshots.
 
 - Erfordert einen Wert
 
 ### `--branch-from`
 
-Wenn —target noch nicht vorhanden ist, wird hier das übergeordnete Element der neuen Umgebung angegeben
+Wenn das —target noch nicht vorhanden ist, gibt dies das übergeordnete Element der neuen Umgebung an
 
 - Erfordert einen Wert
 
@@ -9172,13 +9172,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9199,7 +9199,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9213,14 +9213,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9236,7 +9236,7 @@ magento-cloud source-ops [--full] [-p|--project PROJECT] [-e|--environment ENVIR
 
 ### `--full`
 
-Die Länge des anzuzeigenden Befehls nicht begrenzen. Der Standardwert ist 24 Zeilen.
+Beschränken Sie nicht die Länge des anzuzeigenden Befehls. Der Standardwert beträgt 24 Zeilen.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9249,27 +9249,27 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: App, Befehl, Vorgang. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: App, Befehl, Vorgang. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9283,7 +9283,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9297,14 +9297,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9312,7 +9312,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `source-operation:run`
 
-Ausführen eines Quellvorgangs
+Quellvorgang ausführen
 
 ```bash
 magento-cloud source-operation:run [--variable VARIABLE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<operation>]
@@ -9326,7 +9326,7 @@ Der Vorgangsname
 
 ### `--variable`
 
-Eine Variable im Format \, die während des Vorgangs festgelegt werden soll.&lt;info>type:name=value\&lt;/info>
+Variable, die während des Vorgangs im Format type:name=value festgelegt wird
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -9339,13 +9339,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9366,7 +9366,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9380,14 +9380,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9395,7 +9395,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `ssh-cert:load`
 
-Erzeugen eines SSH-Zertifikats
+Erstellen eines SSH-Zertifikats
 
 ```bash
 magento-cloud ssh-cert:load [--refresh-only] [--new] [--new-key]
@@ -9403,21 +9403,21 @@ magento-cloud ssh-cert:load [--refresh-only] [--new] [--new-key]
 
 ### `--refresh-only`
 
-Aktualisieren Sie das Zertifikat nur, falls erforderlich (keine SSH-Konfiguration schreiben)
+Aktualisieren Sie das Zertifikat nur bei Bedarf (schreiben Sie keine SSH-Konfiguration).
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--new`
 
-Aktualisierung des Zertifikats erzwingen
+Aktualisieren des Zertifikats erzwingen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--new-key`
 
-[Veraltet] Stattdessen —new verwenden
+[Veraltet] Verwenden Sie stattdessen —new
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9431,7 +9431,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9445,14 +9445,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9487,7 +9487,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9501,14 +9501,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9516,7 +9516,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `ssh-key:delete`
 
-Löschen eines SSH-Schlüssels
+SSH-Schlüssel löschen
 
 ```bash
 magento-cloud ssh-key:delete [<id>]
@@ -9537,7 +9537,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9551,14 +9551,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9574,21 +9574,21 @@ magento-cloud ssh-keys [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: ID*, Titel*, Pfad*, Fingerabdruck (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: id*, title*, path*, fingerprint (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9602,7 +9602,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9616,14 +9616,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9631,7 +9631,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `subscription:info`
 
-Lesen oder Ändern von Abonnementeigenschaften
+Abonnementeigenschaften lesen und ändern
 
 ```bash
 magento-cloud subscription:info [-s|--id ID] [--date-fmt DATE-FMT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [--] [<property>] [<value>]
@@ -9645,7 +9645,7 @@ Der Name der Eigenschaft
 
 ### `value`
 
-Legen Sie einen neuen Wert für die Eigenschaft fest
+Neuen Wert für die Eigenschaft festlegen
 
 
 ### `--id`, `-s`
@@ -9656,28 +9656,28 @@ Die Abonnement-ID
 
 ### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-String)
+Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 
 - Standard: `c`
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9697,7 +9697,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9711,14 +9711,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9726,7 +9726,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `tunnel:close`
 
-SSH-Tunnel schließen
+Schließen von SSH-Tunneln
 
 ```bash
 magento-cloud tunnel:close [-a|--all] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP]
@@ -9734,7 +9734,7 @@ magento-cloud tunnel:close [-a|--all] [-p|--project PROJECT] [-e|--environment E
 
 ### `--all`, `-a`
 
-Alle Tunnel schließen
+Schließen aller Tunnel
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9747,7 +9747,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -9766,7 +9766,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9780,14 +9780,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9795,7 +9795,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `tunnel:info`
 
-Beziehungsinformationen für SSH-Tunnel anzeigen
+Anzeigen von Beziehungsinformationen für SSH-Tunnel
 
 ```bash
 magento-cloud tunnel:info [-P|--property PROPERTY] [-c|--encode] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP]
@@ -9809,7 +9809,7 @@ Die anzuzeigende Beziehungseigenschaft
 
 ### `--encode`, `-c`
 
-Ausgabe als base64-kodiertes JSON
+Ausgabe als base64-kodierte JSON
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9822,7 +9822,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -9841,7 +9841,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9855,14 +9855,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9891,7 +9891,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -9903,21 +9903,21 @@ Der Name der Remote-Anwendung
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: Port*, Projekt*, Umgebung*, App*, Beziehung*, URL (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: port*, project*, environment*, app*, relation*, url (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9931,7 +9931,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9945,14 +9945,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9960,7 +9960,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `tunnel:open`
 
-Öffnen von SSH-Tunneln zu den Beziehungen einer App
+SSH-Tunnel für die Beziehungen einer App öffnen
 
 ```bash
 magento-cloud tunnel:open [-g|--gateway-ports] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [-i|--identity-file IDENTITY-FILE]
@@ -9968,7 +9968,7 @@ magento-cloud tunnel:open [-g|--gateway-ports] [-p|--project PROJECT] [-e|--envi
 
 ### `--gateway-ports`, `-g`
 
-Zulassen, dass Remotehosts eine Verbindung zu lokalen weitergeleiteten Ports herstellen
+Remote-Hosts erlauben, eine Verbindung zu lokalen weitergeleiteten Ports herzustellen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -9981,7 +9981,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -9993,7 +9993,7 @@ Der Name der Remote-Anwendung
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -10006,7 +10006,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10020,14 +10020,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10035,7 +10035,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `tunnel:single`
 
-Öffnen eines einzelnen SSH-Tunnels zu einer App-Beziehung
+Öffnen eines einzelnen SSH-Tunnels für eine App-Beziehung
 
 ```bash
 magento-cloud tunnel:single [--port PORT] [-g|--gateway-ports] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTITY-FILE]
@@ -10049,7 +10049,7 @@ Der lokale Port
 
 ### `--gateway-ports`, `-g`
 
-Zulassen, dass Remotehosts eine Verbindung zu lokalen weitergeleiteten Ports herstellen
+Remote-Hosts erlauben, eine Verbindung zu lokalen weitergeleiteten Ports herzustellen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10062,7 +10062,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -10074,13 +10074,13 @@ Der Name der Remote-Anwendung
 
 ### `--relationship`, `-r`
 
-Die zu verwendende Service-Beziehung
+Die zu verwendende Dienstbeziehung
 
 - Erfordert einen Wert
 
 ### `--identity-file`, `-i`
 
-Eine zu verwendende SSH-Identität (privater Schlüssel)
+Eine SSH-Identität (privater Schlüssel) zur Verwendung
 
 - Erfordert einen Wert
 
@@ -10093,7 +10093,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10107,14 +10107,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10122,7 +10122,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `user:add`
 
-Hinzufügen eines Benutzers zum Projekt
+Einen Benutzer zum Projekt hinzufügen
 
 ```bash
 magento-cloud user:add [-r|--role ROLE] [--force-invite] [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] [<email>]
@@ -10136,14 +10136,14 @@ Die E-Mail-Adresse des Benutzers
 
 ### `--role`, `-r`
 
-Projektrolle des Benutzers („Admin“ oder „Viewer„) oder Rolle des Umgebungstyps (z. B. „staging:contributor“ oder „production:viewer„). Um einen Benutzer aus einem Umgebungstyp zu entfernen, setzen Sie die Rolle auf „Ohne„. Die Zeichen % oder * können als Platzhalter für den Umgebungstyp verwendet werden, z. B. „%:viewer„, um dem Benutzer die Rolle „viewer“ für alle Typen zu geben. Die Rolle kann abgekürzt werden, z. B. „production:v„.
+Die Projektrolle des Benutzers (&quot;admin&quot;oder &quot;viewer&quot;) oder die Umgebungstyprolle (z. B. &quot;staging:contributor&quot;oder &quot;production:viewer&quot;). Um einen Benutzer aus einem Umgebungstyp zu entfernen, setzen Sie die Rolle auf &quot;none&quot;. Die Zeichen % oder * können als Platzhalter für den Umgebungstyp verwendet werden, z. B. &quot;%:viewer&quot;, um dem Benutzer die Rolle &quot;Betrachter&quot;für alle Typen zu geben. Die Rolle kann abgekürzt werden, z. B. &quot;production:v&quot;.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--force-invite`
 
-Einladung senden, auch wenn bereits eine gesendet wurde
+Senden einer Einladung, auch wenn bereits eine gesendet wurde
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10156,7 +10156,7 @@ Die Projekt-ID oder URL
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10177,7 +10177,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10191,14 +10191,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10206,7 +10206,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `user:delete`
 
-Löschen eines Benutzers aus dem Projekt
+Benutzer aus dem Projekt löschen
 
 ```bash
 magento-cloud user:delete [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] <email>
@@ -10227,7 +10227,7 @@ Die Projekt-ID oder URL
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10248,7 +10248,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10262,14 +10262,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10277,7 +10277,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `user:get`
 
-Benutzerrolle(n) anzeigen
+Benutzerrollen anzeigen
 
 ```bash
 magento-cloud user:get [-l|--level LEVEL] [--pipe] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [-r|--role ROLE] [--] [<email>]
@@ -10291,13 +10291,13 @@ Die E-Mail-Adresse des Benutzers
 
 ### `--level`, `-l`
 
-Die Rollenebene („Projekt“ oder „Umgebung„)
+Die Rollenebene (&quot;Projekt&quot;oder &quot;Umgebung&quot;)
 
 - Erfordert einen Wert
 
 ### `--pipe`
 
-Ausgabe der Rolle an stdout (nach Durchführung von Änderungen)
+Ausgabe der zu stdout zu sendenden Rolle (nach Durchführung von Änderungen)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10310,13 +10310,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10330,7 +10330,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 
 ### `--role`, `-r`
 
-[Veraltet: Verwenden Sie user:update, um die Rolle(n) eines Benutzers zu ändern]
+[Veraltet: Verwenden Sie user:update , um die Benutzerrolle(en) zu ändern.]
 
 - Erfordert einen Wert
 
@@ -10343,7 +10343,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10357,14 +10357,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10372,7 +10372,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `user:list`
 
-Auflisten der Projektbenutzer
+Projektbenutzer auflisten
 
 ```bash
 magento-cloud users [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT]
@@ -10380,21 +10380,21 @@ magento-cloud users [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|-
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: email*, name*, role*, id*, granted_at, updated_at (* = Standardspalten). Das Zeichen „+“ kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: email*, name*, role*, id*, given_at, updated_at (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10414,7 +10414,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10428,14 +10428,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10443,7 +10443,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `user:update`
 
-Benutzerrolle(n) in einem Projekt aktualisieren
+Benutzerrollen in einem Projekt aktualisieren
 
 ```bash
 magento-cloud user:update [-r|--role ROLE] [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] [<email>]
@@ -10457,7 +10457,7 @@ Die E-Mail-Adresse des Benutzers
 
 ### `--role`, `-r`
 
-Projektrolle des Benutzers („Admin“ oder „Viewer„) oder Rolle des Umgebungstyps (z. B. „staging:contributor“ oder „production:viewer„). Um einen Benutzer aus einem Umgebungstyp zu entfernen, setzen Sie die Rolle auf „Ohne„. Die Zeichen % oder * können als Platzhalter für den Umgebungstyp verwendet werden, z. B. „%:viewer„, um dem Benutzer die Rolle „viewer“ für alle Typen zu geben. Die Rolle kann abgekürzt werden, z. B. „production:v„.
+Die Projektrolle des Benutzers (&quot;admin&quot;oder &quot;viewer&quot;) oder die Umgebungstyprolle (z. B. &quot;staging:contributor&quot;oder &quot;production:viewer&quot;). Um einen Benutzer aus einem Umgebungstyp zu entfernen, setzen Sie die Rolle auf &quot;none&quot;. Die Zeichen % oder * können als Platzhalter für den Umgebungstyp verwendet werden, z. B. &quot;%:viewer&quot;, um dem Benutzer die Rolle &quot;Betrachter&quot;für alle Typen zu geben. Die Rolle kann abgekürzt werden, z. B. &quot;production:v&quot;.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -10470,7 +10470,7 @@ Die Projekt-ID oder URL
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10491,7 +10491,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10505,14 +10505,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10520,7 +10520,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `variable:create`
 
-Erstellen einer Variablen
+Variable erstellen
 
 ```bash
 magento-cloud variable:create [-u|--update] [-l|--level LEVEL] [--name NAME] [--value VALUE] [--json JSON] [--sensitive SENSITIVE] [--prefix PREFIX] [--enabled ENABLED] [--inheritable INHERITABLE] [--visible-build VISIBLE-BUILD] [--visible-runtime VISIBLE-RUNTIME] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<name>]
@@ -10534,14 +10534,14 @@ Der Variablenname
 
 ### `--update`, `-u`
 
-Aktualisieren Sie die Variable, falls sie bereits existiert
+Aktualisieren Sie die Variable, falls sie bereits vorhanden ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--level`, `-l`
 
-Die Ebene, auf der die Variable festgelegt werden soll (&#39;Projekt&#39; oder &#39;Umgebung&#39;)
+Die Ebene, auf der die Variable festgelegt werden soll (&quot;Projekt&quot;oder &quot;Umgebung&quot;)
 
 - Erfordert einen Wert
 
@@ -10566,14 +10566,14 @@ Ob der Variablenwert JSON-formatiert ist
 
 ### `--sensitive`
 
-Ob der Variablenwert sensibel ist
+Ob der Variablenwert empfindlich ist
 
 - Standard: `false`
 - Erfordert einen Wert
 
 ### `--prefix`
 
-Das Präfix des Variablennamens, das dessen Typ bestimmen kann, z. B. „env„. Nur anwendbar, wenn der Name noch kein Präfix enthält. (z. B. „none“ oder „env:„)
+Das Präfix des Variablennamens, das den Typ bestimmen kann, z. B. &quot;env&quot;. Gilt nur, wenn der Name noch kein Präfix enthält. (z. B. &quot;none&quot;oder &quot;env:&quot;)
 
 - Standard: `none`
 - Erfordert einen Wert
@@ -10587,14 +10587,14 @@ Ob die Variable in der Umgebung aktiviert werden soll
 
 ### `--inheritable`
 
-Ob die Variable von untergeordneten Umgebungen vererbt wird
+Ob die Variable von untergeordneten Umgebungen vererbt werden kann
 
 - Standard: `true`
 - Erfordert einen Wert
 
 ### `--visible-build`
 
-Ob die Variable zur Erstellungszeit sichtbar sein soll
+Ob die Variable zur Build-Zeit sichtbar sein soll
 
 - Erfordert einen Wert
 
@@ -10613,13 +10613,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10640,7 +10640,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10654,14 +10654,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10669,7 +10669,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `variable:delete`
 
-Löschen einer Variablen
+Variable löschen
 
 ```bash
 magento-cloud variable:delete [-l|--level LEVEL] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] <name>
@@ -10684,7 +10684,7 @@ Der Variablenname
 
 ### `--level`, `-l`
 
-Variablenebene (&#39;project&#39;, &#39;environment&#39;, &#39;p&#39; oder &#39;e&#39;)
+Die Variablenebene (&quot;Projekt&quot;, &quot;Umgebung&quot;, &quot;p&quot;oder &quot;e&quot;)
 
 - Erfordert einen Wert
 
@@ -10696,13 +10696,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10723,7 +10723,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10737,14 +10737,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10752,7 +10752,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `variable:get`
 
-Anzeigen einer Variablen
+Anzeigen von Variablen
 
 ```bash
 magento-cloud vget [-P|--property PROPERTY] [-l|--level LEVEL] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--pipe] [--] [<name>]
@@ -10772,27 +10772,27 @@ Anzeigen einer einzelnen Variableneigenschaft
 
 ### `--level`, `-l`
 
-Variablenebene (&#39;project&#39;, &#39;environment&#39;, &#39;p&#39; oder &#39;e&#39;)
+Die Variablenebene (&quot;Projekt&quot;, &quot;Umgebung&quot;, &quot;p&quot;oder &quot;e&quot;)
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10805,13 +10805,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--pipe`
 
-[Veraltete Option] Nur den Variablenwert ausgeben
+[Veraltete Option] Nur Variablenwert ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10825,7 +10825,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10839,14 +10839,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10862,27 +10862,27 @@ magento-cloud variables [-l|--level LEVEL] [--format FORMAT] [-c|--columns COLUM
 
 ### `--level`, `-l`
 
-Variablenebene (&#39;project&#39;, &#39;environment&#39;, &#39;p&#39; oder &#39;e&#39;)
+Die Variablenebene (&quot;Projekt&quot;, &quot;Umgebung&quot;, &quot;p&quot;oder &quot;e&quot;)
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: is_enabled, level, name, value. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: is_enabled, level, name, value. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10895,7 +10895,7 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -10908,7 +10908,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10922,14 +10922,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10937,7 +10937,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `variable:update`
 
-Aktualisieren einer Variablen
+Variable aktualisieren
 
 ```bash
 magento-cloud variable:update [--allow-no-change] [-l|--level LEVEL] [--value VALUE] [--json JSON] [--sensitive SENSITIVE] [--enabled ENABLED] [--inheritable INHERITABLE] [--visible-build VISIBLE-BUILD] [--visible-runtime VISIBLE-RUNTIME] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] <name>
@@ -10952,14 +10952,14 @@ Der Variablenname
 
 ### `--allow-no-change`
 
-Erfolgreiche Rückgabe (kein Exitcode), wenn keine Änderungen angegeben wurden
+Rückkehrerfolg (kein Exitcode), wenn keine Änderungen bereitgestellt wurden
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--level`, `-l`
 
-Variablenebene (&#39;project&#39;, &#39;environment&#39;, &#39;p&#39; oder &#39;e&#39;)
+Die Variablenebene (&quot;Projekt&quot;, &quot;Umgebung&quot;, &quot;p&quot;oder &quot;e&quot;)
 
 - Erfordert einen Wert
 
@@ -10978,7 +10978,7 @@ Ob der Variablenwert JSON-formatiert ist
 
 ### `--sensitive`
 
-Ob der Variablenwert sensibel ist
+Ob der Variablenwert empfindlich ist
 
 - Standard: `false`
 - Erfordert einen Wert
@@ -10992,14 +10992,14 @@ Ob die Variable in der Umgebung aktiviert werden soll
 
 ### `--inheritable`
 
-Ob die Variable von untergeordneten Umgebungen vererbt wird
+Ob die Variable von untergeordneten Umgebungen vererbt werden kann
 
 - Standard: `true`
 - Erfordert einen Wert
 
 ### `--visible-build`
 
-Ob die Variable zur Erstellungszeit sichtbar sein soll
+Ob die Variable zur Build-Zeit sichtbar sein soll
 
 - Erfordert einen Wert
 
@@ -11018,13 +11018,13 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist
+Warten Sie nicht, bis der Vorgang abgeschlossen ist.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -11045,7 +11045,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -11059,14 +11059,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -11074,7 +11074,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `worker:list`
 
-Abrufen einer Liste aller bereitgestellten Worker
+Liste aller entsandten Arbeitskräfte
 
 ```bash
 magento-cloud workers [--refresh] [--pipe] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
@@ -11089,7 +11089,7 @@ Ob der Cache aktualisiert werden soll
 
 ### `--pipe`
 
-Ausgabe nur einer Liste der Arbeitskräftenamen
+Nur eine Liste mit Worker-Namen ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -11102,27 +11102,27 @@ Die Projekt-ID oder URL
 
 ### `--environment`, `-e`
 
-Die Umgebungskennung. Verwenden Sie „.“ , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 ### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
+Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
 
 - Standard: `table`
 - Erfordert einen Wert
 
 ### `--columns`, `-c`
 
-Anzuzeigende Spalten. Verfügbare Spalten: Befehle, Name, Typ. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
+Anzuzeigende Spalten Verfügbare Spalten: Befehle, Name, Typ. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 ### `--no-header`
 
-Tabellenüberschrift nicht ausgeben
+Geben Sie die Tabellenüberschrift nicht aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -11136,7 +11136,7 @@ Diese Hilfemeldung anzeigen
 
 ### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen der Ausführlichkeit von Nachrichten
+Die Ausführlichkeit von Nachrichten erhöhen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -11150,14 +11150,14 @@ Diese Anwendungsversion anzeigen
 
 ### `--yes`, `-y`
 
-Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
+Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 ### `--no-interaction`
 
-Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: \&lt;comment>MAGENTO_CLOUD_CLI_NO_INTERACTION=1\&lt;/comment>
+Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht der Verwendung der Umgebungsvariablen: MAGENTO_CLOUD_CLI_NO_INTERACTION=1
 
 - Standard: `false`
 - Akzeptiert keinen Wert
