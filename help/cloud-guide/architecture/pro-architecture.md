@@ -4,7 +4,7 @@ description: Erfahren Sie mehr über die Umgebungen, die von der Pro-Architektur
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 6807b572366d28fd54fbec89e7c119ec158b5e10
+source-git-commit: 95b033ba430cb5dc74fa654b9d519dfcd5b6d319
 workflow-type: tm+mt
 source-wordcount: '1472'
 ht-degree: 0%
@@ -34,7 +34,7 @@ Die folgende Tabelle fasst die Unterschiede zwischen Umgebungen zusammen:
 
 >[!NOTE]
 >
->Adobe bietet das Cloud Docker for Commerce-Tool für die Bereitstellung in einer lokalen Cloud Docker-Umgebung, damit Sie Adobe Commerce-Projekte entwickeln und testen können. Siehe [Docker-Entwicklung](../dev-tools/cloud-docker.md).
+>Adobe stellt das Cloud Docker-Tool für Commerce für die Bereitstellung in einer lokalen Cloud Docker-Umgebung bereit, damit Sie Adobe Commerce-Projekte entwickeln und testen können. Siehe [Docker-Entwicklung](../dev-tools/cloud-docker.md).
 
 ## Umgebungsarchitektur
 
@@ -195,8 +195,6 @@ RTO hängt von der Speichergröße ab. Die Wiederherstellung großer EBS-Volumin
 - Eine große Datenbank (200+ GB) kann 5 Stunden dauern
 - Eine mittlere Datenbank (150 GB) kann 2 1/2 Stunden dauern
 - Eine kleine Datenbank (60 GB) kann eine Stunde dauern
-
-{{pro-backups}}
 
 ## Pro Cluster-Skalierung
 
