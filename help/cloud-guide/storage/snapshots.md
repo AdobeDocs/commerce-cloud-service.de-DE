@@ -3,9 +3,9 @@ title: Backup-Management
 description: Erfahren Sie, wie Sie ein Backup für Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur manuell erstellen und wiederherstellen.
 feature: Cloud, Paas, Snapshots, Storage
 exl-id: 1cb00db7-2375-4761-9c07-1e20a74859e0
-source-git-commit: 069cbc233492d22932e8dce5bf0426dce8459727
+source-git-commit: 4c3f3f2775e8327476233520e52b589f7264786f
 workflow-type: tm+mt
-source-wordcount: '685'
+source-wordcount: '711'
 ht-degree: 0%
 
 ---
@@ -130,6 +130,10 @@ Die Wiederherstellungszeiten variieren je nach Größe Ihrer Datenbank:
    ```bash
    magento-cloud snapshot:restore <snapshot-id>
    ```
+
+## Wiederherstellen eines Snapshots zur Notfallwiederherstellung
+
+So stellen Sie den Snapshot zur Notfallwiederherstellung in der Staging- und Produktionsumgebung von Pro wieder her: [Importieren Sie die Datenbank-Dump direkt vom Server.](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production#meth3).
 
 ## Zurücksetzen-Code
 
