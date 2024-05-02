@@ -3,9 +3,9 @@ title: Protokolle anzeigen und verwalten
 description: Machen Sie sich mit den in der Cloud-Infrastruktur verfügbaren Protokolldateitypen und deren Auffindbarkeit vertraut.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: 86af69eed16e8fe464de93bd0f33cfbfd4ed8f49
 workflow-type: tm+mt
-source-wordcount: '1024'
+source-wordcount: '1056'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,7 @@ ssh 1.ent-project-environment-id@ssh.region.magento.cloud "cat var/log/cron.log"
 
 >[!TIP]
 >
->In Pro-Umgebungen sind die automatische Protokollierung von Rotation, Komprimierung und Entfernung für Protokolldateien mit einem festen Dateinamen aktiviert. Jeder Protokolldateityp verfügt über ein rotierendes Muster und eine Lebensdauer. Starterumgebungen haben keine Protokollrotation. Ausführliche Informationen zur Protokollrotation und Lebensdauer von komprimierten Protokollen finden Sie unter: `/etc/logrotate.conf` und `/etc/logrotate.d/<various>`
+>Für Pro-Staging- und Produktionsumgebungen werden die automatische Protokollierung, Komprimierung und Entfernung für Protokolldateien mit einem festen Dateinamen aktiviert. Jeder Protokolldateityp verfügt über ein rotierendes Muster und eine Lebensdauer. Starterumgebungen haben keine Protokollrotation. Ausführliche Informationen zur Protokollrotation und Lebensdauer von komprimierten Protokollen finden Sie unter: `/etc/logrotate.conf` und `/etc/logrotate.d/<various>`. Die Protokollrotation kann nicht in Pro Integration-Umgebungen konfiguriert werden. Für die Pro-Integration müssen Sie eine benutzerdefinierte Lösung/ein benutzerdefiniertes Skript implementieren und [Cron konfigurieren](../application/crons-property.md) , um das Skript nach Bedarf auszuführen.
 
 ## Protokolle erstellen und bereitstellen
 
