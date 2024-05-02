@@ -3,9 +3,9 @@ title: Crons-Eigenschaft
 description: Siehe Beispiele zum Konfigurieren der Eigenschaft "crons"im [!DNL Commerce] Anwendungskonfigurationsdatei.
 feature: Cloud, Configuration
 exl-id: 67d592c1-2933-4cdf-b4f6-d73cd44b9f59
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 1c0e05c3d8461bea473bcf6ec35162d65ef2774f
 workflow-type: tm+mt
-source-wordcount: '1063'
+source-wordcount: '1069'
 ht-degree: 0%
 
 ---
@@ -56,7 +56,7 @@ Sie können `crontab` zur Überprüfung der Konfiguration für Pro-Projekte verw
 
    >[!NOTE]
    >
-   >Wenn die Variable `crontab -l` gibt einen `Command not found` -Fehler, müssen Sie [Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) , um die Konfigurationsoption &quot;Auto-Crons Self-Service&quot;in Ihrem Pro-Projekt zu aktivieren.
+   >Wenn die Variable `crontab -l` gibt einen `Command not found` -Fehler (nur in Pro Staging- und Produktionsumgebungen), müssen Sie [Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) , um die Konfigurationsoption &quot;Auto-Crons-Self-Service&quot;für Ihr Projekt zu aktivieren.
 
 Das folgende Beispiel zeigt die `crontab` Ausgabe für eine Umgebung, die nur über die Standardeinstellung verfügt `crons` Konfiguration:
 
