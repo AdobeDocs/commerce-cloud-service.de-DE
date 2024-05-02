@@ -2,9 +2,9 @@
 title: SendGrid-E-Mail-Dienst
 description: Erfahren Sie mehr über den SendGrid-E-Mail-Dienst für Adobe Commerce in der Cloud-Infrastruktur und wie Sie Ihre DNS-Konfiguration testen können.
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: 7c22dc3b0e736043a3e176d2b7ae6c9dcbbf1eb5
+source-git-commit: 2b106edcaaacb63c0e785f094b7e1b755885abd0
 workflow-type: tm+mt
-source-wordcount: '1019'
+source-wordcount: '1090'
 ht-degree: 0%
 
 ---
@@ -27,13 +27,21 @@ Der SMTP-Proxy SendGrid ist nicht zur Verwendung als allgemeiner E-Mail-Server f
 
 ## E-Mail aktivieren oder deaktivieren
 
-Ausgehende E-Mails sind in Pro Production- und Staging-Umgebungen standardmäßig aktiviert. Die [!UICONTROL Outgoing emails] kann in den Umgebungseinstellungen unabhängig vom Status angezeigt werden, bis Sie die `enable_smtp` -Eigenschaft. Sie können ausgehende E-Mails für andere Umgebungen aktivieren, um E-Mails zur Authentifizierung mit zwei Faktoren für Cloud-Projektbenutzer zu senden. Siehe [Konfigurieren von E-Mails zum Testen](outgoing-emails.md).
+Sie können ausgehende E-Mails für jede Umgebung über die Cloud-Konsole oder die Befehlszeile aktivieren oder deaktivieren.
+
+Ausgehende E-Mails sind in Pro Production- und Staging-Umgebungen standardmäßig aktiviert. Allerdings [!UICONTROL Outgoing emails] kann in den Umgebungseinstellungen deaktiviert angezeigt werden, bis Sie die `enable_smtp` -Eigenschaft über [Befehlszeile](outgoing-emails.md#enable-emails-in-the-cli) oder [Cloud-Konsole](outgoing-emails.md#enable-emails-in-the-cloud-console). Sie können ausgehende E-Mails für Integrations- und Staging-Umgebungen aktivieren, um eine Zwei-Faktor-Authentifizierung durchzuführen oder E-Mails mit Passwörtern für Cloud-Projektbenutzer zurückzusetzen. Siehe [Konfigurieren von E-Mails zum Testen](outgoing-emails.md).
+
+Wenn ausgehende E-Mails in Pro Production- oder Staging-Umgebungen deaktiviert oder wieder aktiviert werden müssen, können Sie eine [Support-Ticket für Adobe Commerce](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide).
+
+>[!TIP]
+>
+>Aktualisieren der [!UICONTROL enable_smtp] Eigenschaftswert von [Befehlszeile](outgoing-emails.md#enable-emails-in-the-cli) ändert auch die [!UICONTROL Enable outgoing emails] Wert für diese Umgebung auf [Cloud-Konsole](outgoing-emails.md#enable-emails-in-the-cloud-console).
 
 ## SendGrid-Dashboard
 
 Alle Cloud-Projekte werden unter einem zentralen Konto verwaltet, sodass nur der Support Zugriff auf das SendGrid-Dashboard hat. SendGrid bietet keine Funktionen zur Einschränkung von Unterkonten.
 
-So überprüfen Sie die Aktivitätsprotokolle auf den Versandstatus oder eine Liste mit nicht, abgelehnt oder blockierten E-Mail-Adressen: [Senden eines Adobe Commerce Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket). Das Supportteam **cannot** Rufen Sie Aktivitätsprotokolle ab, die älter als 30 Tage sind.
+So überprüfen Sie die Aktivitätsprotokolle auf den Versandstatus oder eine Liste mit nicht, abgelehnt oder blockierten E-Mail-Adressen: [Senden eines Adobe Commerce Support-Tickets](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket). Das Supportteam **cannot** Rufen Sie Aktivitätsprotokolle ab, die älter als 30 Tage sind.
 
 Schließen Sie nach Möglichkeit die folgenden Informationen in Ihre Anfrage ein:
 
@@ -47,7 +55,7 @@ DKIM ist eine E-Mail-Authentifizierungstechnologie, mit der Internet Service Pro
 
 >[!WARNING]
 >
->Die SendGrid DKIM-Signaturen und die Unterstützung der Domain-Authentifizierung sind nur für Pro-Projekte verfügbar, nicht aber für Starter. Ausgehende Transaktions-E-Mails werden daher wahrscheinlich durch Spam-Filter gekennzeichnet. Die Verwendung von DKIM verbessert die Zustellrate als authentifizierter E-Mail-Absender. Um die Zustellrate von Nachrichten zu verbessern, können Sie von Starter auf Pro aktualisieren oder Ihren eigenen SMTP-Server oder E-Mail-Versand-Dienstleister verwenden. Siehe [E-Mail-Verbindungen konfigurieren](https://experienceleague.adobe.com/docs/commerce-admin/systems/communications/email-communications.html) im _Handbuch zu Admin Systems_.
+>Die SendGrid DKIM-Signaturen und die Unterstützung der Domain-Authentifizierung sind nur für Pro-Projekte verfügbar, nicht aber für Starter-Projekte. Ausgehende Transaktions-E-Mails werden daher wahrscheinlich durch Spam-Filter gekennzeichnet. Die Verwendung von DKIM verbessert die Zustellrate als authentifizierter E-Mail-Absender. Um die Zustellrate der Nachrichten zu verbessern, können Sie von Starter auf Pro aktualisieren oder Ihren eigenen SMTP-Server oder E-Mail-Versand-Dienstleister verwenden. Siehe [E-Mail-Verbindungen konfigurieren](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) im _Handbuch zu Admin Systems_.
 
 ### Sender- und Domain-Authentifizierung
 
@@ -55,7 +63,7 @@ Damit SendGrid Transaktions-E-Mails in Ihrem Namen von Pro Production- oder Stag
 
 **Aktivieren der Domänenauthentifizierung**:
 
-1. Senden einer [Support-Ticket](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) , die die Aktivierung des DKIM für eine bestimmte Domäne (**Nur Pro-Staging- und Produktionsumgebungen**).
+1. Senden einer [Support-Ticket](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) Anfrage zur Aktivierung von DKIM für eine bestimmte Domäne (**Nur Pro-Staging- und Produktionsumgebungen**).
 1. Aktualisieren Sie Ihre DNS-Konfiguration mit dem `TXT` und `CNAME` Einträge, die Ihnen im Support-Ticket bereitgestellt werden.
 
 **Beispiel `TXT` Datensatz mit Konto-ID**:
@@ -106,7 +114,7 @@ dig CNAME s2._domainkey.domain_name
 
 Der Schwellenwert für Transaktions-E-Mails bezieht sich auf die Anzahl der Transaktions-E-Mail-Nachrichten, die Sie von Pro-Umgebungen innerhalb eines bestimmten Zeitraums senden können, z. B. 12.000 E-Mails pro Monat aus Nicht-Produktionsumgebungen. Die Schwelle dient zum Schutz vor Spam-Sendungen und schädigt möglicherweise die Reputation Ihrer E-Mail.
 
-Es gibt keine festen Beschränkungen für die Anzahl der E-Mails, die in der Produktionsumgebung gesendet werden können, solange die Reputation des Absenders mehr als 95 % beträgt. Die Reputation wird durch die Anzahl an nicht zugestellten oder abgelehnten E-Mails und die Tatsache beeinflusst, ob DNS-basierte Spam-Registrierungen Ihre Domain als potenzielle Spam-Quelle gekennzeichnet haben. Siehe [E-Mails werden nicht gesendet, wenn die SendGrid-Gutschriften in Adobe Commerce überschritten wurden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/emails-not-being-sent-sendgrid-credits-exceeded.html) im _Knowledge Base für Commerce-Support_.
+Es gibt keine festen Beschränkungen für die Anzahl der E-Mails, die in der Produktionsumgebung gesendet werden können, solange die Reputation des Absenders mehr als 95 % beträgt. Die Reputation wird durch die Anzahl an nicht zugestellten oder abgelehnten E-Mails und die Tatsache beeinflusst, ob DNS-basierte Spam-Registrierungen Ihre Domain als potenzielle Spam-Quelle gekennzeichnet haben. Siehe [E-Mails werden nicht gesendet, wenn die SendGrid-Gutschriften in Adobe Commerce überschritten wurden](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/emails-not-being-sent-sendgrid-credits-exceeded) im _Wissensdatenbank zur Commerce-Unterstützung_.
 
 **Überprüfung der Überschreitung der maximalen Gutschriften**:
 
@@ -120,8 +128,8 @@ Es gibt keine festen Beschränkungen für die Anzahl der E-Mails, die in der Pro
 
 1. Überprüfen Sie die `/var/log/mail.log` für `authentication failed : Maxium credits exceeded` Einträge.
 
-   Wenn `authentication failed` Protokolleinträge und **Reputation beim E-Mail-Versand** ist mindestens 95, können Sie [Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) , um eine Erhöhung der Kreditzuweisung anzufordern.
+   Wenn `authentication failed` Protokolleinträge und **Reputation beim E-Mail-Versand** ist mindestens 95, können Sie [Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) , um eine Erhöhung der Kreditzuweisung anzufordern.
 
 ### Reputation beim E-Mail-Versand
 
-Die Reputation einer E-Mail-Nachricht ist eine Punktzahl, die von einem Internet Service Provider (ISP) einem Unternehmen zugewiesen wird, das E-Mail-Nachrichten sendet. Je höher der Wert ist, desto wahrscheinlicher ist es, dass ein ISP Nachrichten an den Posteingang eines Empfängers sendet. Wenn die Punktzahl unter eine bestimmte Stufe fällt, kann der ISP Nachrichten an den Spam-Ordner der Empfänger weiterleiten oder Nachrichten sogar vollständig zurückweisen. Die Reputationsbewertung wird durch verschiedene Faktoren bestimmt, z. B. einen Durchschnittswert von 30 Tagen für Ihre IP-Adressen im Vergleich zu anderen IP-Adressen und der Spam-Beschwerderate. Siehe [5 Möglichkeiten zur Überprüfung des Versandreputation](https://sendgrid.com/blog/5-ways-check-sending-reputation/).
+Die Reputation einer E-Mail-Nachricht ist eine Punktzahl, die von einem Internet Service Provider (ISP) einem Unternehmen zugewiesen wird, das E-Mail-Nachrichten sendet. Je höher der Wert ist, desto wahrscheinlicher ist es, dass ein ISP Nachrichten an den Posteingang eines Empfängers sendet. Wenn die Punktzahl unter eine bestimmte Stufe fällt, kann der ISP Nachrichten an den Spam-Ordner der Empfänger weiterleiten oder Nachrichten sogar vollständig zurückweisen. Die Reputationsbewertung wird durch verschiedene Faktoren bestimmt, z. B. einen Durchschnittswert von 30 Tagen für Ihre IP-Adressen im Vergleich zu anderen IP-Adressen und der Spam-Beschwerderate. Siehe [8 Möglichkeiten zur Überprüfung des Reputation beim E-Mail-Versand](https://sendgrid.com/en-us/blog/5-ways-check-sending-reputation).

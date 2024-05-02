@@ -2,9 +2,9 @@
 title: Ausgehende E-Mails konfigurieren
 description: Erfahren Sie, wie Sie ausgehende E-Mails für Adobe Commerce in der Cloud-Infrastruktur aktivieren.
 exl-id: 814fe2a9-15bf-4bcb-a8de-ae288fd7f284
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: 59f82d891bb7b1953c1e19b4c1d0a272defb89c1
 workflow-type: tm+mt
-source-wordcount: '279'
+source-wordcount: '363'
 ht-degree: 0%
 
 ---
@@ -13,13 +13,21 @@ ht-degree: 0%
 
 Sie können ausgehende E-Mails für jede Umgebung über die [!DNL Cloud Console] oder über die Befehlszeile. Aktivieren Sie ausgehende E-Mails für Integrations- und Staging-Umgebungen, um Zwei-Faktor-Authentifizierung zu senden oder Passwort-E-Mails für Cloud-Projektbenutzer zurückzusetzen.
 
-Ausgehende E-Mails sind standardmäßig in Produktionsumgebungen aktiviert. Die [!UICONTROL Enable outgoing emails] kann in den Umgebungseinstellungen unabhängig vom Status deaktiviert angezeigt werden, bis Sie die [`enable_smtp` property](#enable-emails-in-the-cli).
+Ausgehende E-Mails sind standardmäßig in der Produktions- und Staging-Umgebung aktiviert. Allerdings [!UICONTROL Enable outgoing emails] kann in den Umgebungseinstellungen deaktiviert angezeigt werden, bis Sie die `enable_smtp` -Eigenschaft über [Befehlszeile](#enable-emails-in-the-cli) oder [Cloud-Konsole](outgoing-emails.md#enable-emails-in-the-cloud-console).
+
+Aktualisieren der [!UICONTROL enable_smtp] Eigenschaftswert von [Befehlszeile](#enable-emails-in-the-cli) ändert auch die [!UICONTROL Enable outgoing emails] -Wert für diese Umgebung in der Cloud-Konsole festlegen.
 
 {{redeploy-warning}}
 
-## E-Mails in den [!DNL Cloud Console]
+## E-Mails in der Cloud Console aktivieren
 
 Verwenden Sie die **[!UICONTROL Outgoing emails]** Umschalten in der _Umgebung konfigurieren_ anzeigen, um die E-Mail-Unterstützung zu aktivieren oder zu deaktivieren.
+
+Wenn ausgehende E-Mails in Pro Production- oder Staging-Umgebungen deaktiviert oder wieder aktiviert werden müssen, können Sie eine [Support-Ticket für Adobe Commerce](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide).
+
+>[!TIP]
+>
+>Der Status ausgehender E-Mails wird in Pro-Umgebungen in der Cloud Console möglicherweise nicht angezeigt. Verwenden Sie stattdessen die [Befehlszeile](#enable-emails-in-the-cli) zum Aktivieren und Testen ausgehender E-Mails.
 
 **So verwalten Sie den E-Mail-Support über[!DNL Cloud Console]**:
 
@@ -61,4 +69,10 @@ Sie können die E-Mail-Konfiguration für eine aktive Umgebung mit dem `magento-
 
    ```bash
    php -r 'mail("mail@example.com", "test message", "just testing", "From: tester@example.com");'
+   ```
+
+1. Stellen Sie sicher, dass die E-Mail von SendGrid erfasst wird.
+
+   ```bash
+   grep mail@example.com /var/log/mail.log
    ```
