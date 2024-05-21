@@ -2,11 +2,11 @@
 title: ECE-Tools - Versionshinweise
 description: Siehe eine Liste der neuesten Verbesserungen des ECE-Tools-Pakets.
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-04-08T00:00:00Z
+last-substantial-update: 2024-05-21T00:00:00Z
 exl-id: a464b940-c56e-4a7c-9948-559539e25361
-source-git-commit: e21f21e34f89b62842bd22c99ff5705f984898e0
+source-git-commit: 923e2114270df22e134e0676ac97f84d770bb226
 workflow-type: tm+mt
-source-wordcount: '2905'
+source-wordcount: '2929'
 ht-degree: 0%
 
 ---
@@ -28,8 +28,14 @@ Die Versionshinweise beinhalten:
 
 <!--Add release notes below-->
 
+## v2002.1.19 {#latest}
 
-## v2002.1.18 {#latest}
+Veröffentlichungsdatum: 21. Mai 2024
+
+- ![Neues Symbol](../../assets/new.svg) **Lua**—Die Option useLua für CACHE_CONFIGURATION wurde hinzugefügt.
+- ![Fixsymbol](../../assets/fix.svg) **Validator**—Aktualisierte Validatoren für neue Versionen von Redis und RabbitMQ.
+
+## v2002.1.18
 
 Veröffentlichungsdatum: 8. April 2024
 
@@ -47,7 +53,7 @@ Veröffentlichungsdatum: 16. Januar 2024
 
 Veröffentlichungsdatum: 16. Oktober 2023
 
-- ![Neues Symbol](../../assets/new.svg) **Globale Umgebungsvariable ENABLE_WEBHOOKS**—Die [ENABLE_WEBHOOKS](../environment/variables-global.md#enable_webhooks) globale Variable zur Verwendung mit Commerce-Webhooks, um eine Verbindung zu einem externen Endpunkt herzustellen, z. B. App Builder-Laufzeitaktion oder ein Inventarverwaltungssystem von Drittanbietern.
+- ![Neues Symbol](../../assets/new.svg) **Globale Umgebungsvariable ENABLE_WEBHOOKS**—Die [ENABLE_WEBHOOKS](../environment/variables-global.md#enable_webhooks) globale Variable zur Verwendung mit Commerce-Webhooks, um eine Verbindung zu einem externen Endpunkt herzustellen, z. B. App Builder-Laufzeitaktion oder ein Bestandsverwaltungssystem von Drittanbietern.
 
 ## v2002.1.15
 
@@ -87,7 +93,7 @@ Veröffentlichungsdatum: 4. August 2022
 
 - ![Fixsymbol](../../assets/fix.svg) **ElasticSuite Validator und OpenSearch**—Korrektur des Validierungsproblems bei der ElasticSuite-Integritätsprüfung bei der Installation von OpenSearch.<!-- MCLOUD-8767 -->
 - ![Fixsymbol](../../assets/fix.svg) **Rückgabetypen für Bereitstellungsbefehle**—Feste Rückgabetypen für Bereitstellungsbefehle.<!-- AC-3208 -->
-- ![Fixsymbol](../../assets/fix.svg) **[!DNL RabbitMQ]Problem mit der neuen Commerce 2.4.5-Installation**—Fixed [!DNL RabbitMQ] Absturzproblem bei der neuen Commerce 2.4.5-Installation.<!-- MCLOUD-9059 -->
+- ![Fixsymbol](../../assets/fix.svg) **[!DNL RabbitMQ]Problem mit der neuen Installation von Commerce 2.4.5**—Fixed [!DNL RabbitMQ] Absturzproblem bei der neuen Installation von Commerce 2.4.5.<!-- MCLOUD-9059 -->
 
 ## v2002.1.10
 
@@ -209,7 +215,7 @@ Veröffentlichungsdatum: 9. November 2020
 
 **Aktualisierungen der Umgebungsvariablen**—
 
-- ![Neues Symbol](../../assets/new.svg) Der [SKIP_COMPOSER_DUMP_AUTOLOAD](../environment/variables-build.md#skip_composer_dump_autoload) Build-Variable. Festlegen der Variablen auf `true` verhindert, dass die Anwendung die `composer dump-autoload` -Befehl während einer Cloud Docker für Commerce-Installation. Die -Variable ist nur für Cloud Docker für Commerce-Container mit beschreibbaren Dateisystemen relevant (erstellt für Tests und Entwicklung mit `./vendor/bin/ece-docker build:compose --with-test`). Bei solchen Installationen überspringen Sie die `composer dump-autoload` -Befehl verhindert Fehler bei der Ausführung anderer Befehle, die versuchen, auf Dateien aus einem gelöschten `generated` Verzeichnis.<!--MCLOUD-6939-->
+- ![Neues Symbol](../../assets/new.svg) Der [SKIP_COMPOSER_DUMP_AUTOLOAD](../environment/variables-build.md#skip_composer_dump_autoload) Build-Variable. Festlegen der Variablen auf `true` verhindert, dass die Anwendung die `composer dump-autoload` -Befehl während eines Cloud Docker für die Commerce-Installation. Die -Variable ist nur für Cloud Docker für Commerce-Container mit beschreibbaren Dateisystemen relevant (erstellt zum Testen und Entwickeln mit `./vendor/bin/ece-docker build:compose --with-test`). Bei solchen Installationen überspringen Sie die `composer dump-autoload` -Befehl verhindert Fehler bei der Ausführung anderer Befehle, die versuchen, auf Dateien aus einem gelöschten `generated` Verzeichnis.<!--MCLOUD-6939-->
 
 ## v2002.1.2
 
@@ -217,7 +223,7 @@ Releasedatum: 5. August 2020
 
 **Validierungs- und Protokollverbesserungen**—
 
-- ![Neues Symbol](../../assets/new.svg) Der `schema.error.yaml` -Datei, die alle Fehler- und Warnbenachrichtigungen enthält, die während des Build-, Bereitstellungs- und Nachbereitungsprozesses auftreten können, sowie Vorschläge zur Behebung der Fehler. Die Informationen in dieser Datei sind auch im Abschnitt _Cloud-Handbuch für Commerce_. Siehe [Fehlermeldungsreferenz für Eece-Tools](../dev-tools/error-reference.md).<!--MCLOUD-5878-->
+- ![Neues Symbol](../../assets/new.svg) Der `schema.error.yaml` -Datei, die alle Fehler- und Warnbenachrichtigungen enthält, die während des Build-, Bereitstellungs- und Nachbereitungsprozesses auftreten können, sowie Vorschläge zur Behebung der Fehler. Die Informationen in dieser Datei sind auch im Abschnitt _Cloud-Anleitung für Commerce_. Siehe [Fehlermeldungsreferenz für Eece-Tools](../dev-tools/error-reference.md).<!--MCLOUD-5878-->
 
 - ![Neues Symbol](../../assets/new.svg) Das Cloud-Fehlerprotokoll wurde geändert (`/var/log/cloud.error.log`) Einträge in das JSON-Format hinzu, um die programmgesteuerte Analyse des Protokolls zu erleichtern.<!--MCLOUD-5879-->
 
