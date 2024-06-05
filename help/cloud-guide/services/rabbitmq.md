@@ -3,9 +3,9 @@ title: Einrichten des RabbitMQ-Dienstes
 description: Erfahren Sie, wie Sie den RabbitMQ-Dienst aktivieren, um Nachrichtenwarteschlangen für Adobe Commerce in der Cloud-Infrastruktur zu verwalten.
 feature: Cloud, Services
 exl-id: 85794b8f-2260-4a6e-b5a6-a1b4c356594e
-source-git-commit: d4c36b084094846cfad69adc2bffd567a58fab26
+source-git-commit: adcfbb7217c70122a4003a66d1bec1a623fbf11a
 workflow-type: tm+mt
-source-wordcount: '378'
+source-wordcount: '399'
 ht-degree: 0%
 
 ---
@@ -114,7 +114,7 @@ Für Debugging-Zwecke ist es nützlich, eine direkte Verbindung zu einer Diensti
    }
    ```
 
-1. Aktivieren Sie die lokale Anschlussweiterleitung zu RabbitMQ.
+1. Aktivieren Sie die lokale Port-Weiterleitung an RabbitMQ (wenn sich Ihr Projekt in einer anderen Region wie der USA-3, der EU-5 oder der AP-3-Region befindet), ersetzen Sie ``us-3``/``eu-5``/``ap-3`` für ``us``)
 
    ```bash
    ssh -L <port-number>:rabbitmq.internal:<port-number> <project-ID>-<branch-ID>@ssh.us.magentosite.cloud
