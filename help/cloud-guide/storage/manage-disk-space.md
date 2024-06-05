@@ -3,9 +3,9 @@ title: Verwalten des Festplattenspeichers
 description: Erfahren Sie, wie Sie Speicherplatz über die Befehlszeilenschnittstelle verwalten.
 feature: Cloud, Storage
 exl-id: 480cb33b-ac83-441d-946e-5b4de09ad84e
-source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
+source-git-commit: 8b40397796ee865aefbf8a7948cc9a3aceb1d35c
 workflow-type: tm+mt
-source-wordcount: '693'
+source-wordcount: '714'
 ht-degree: 0%
 
 ---
@@ -132,7 +132,7 @@ Zwei [Konfigurationsdateien](../environment/overview.md) Steuerung der Speicherp
 
 >[!IMPORTANT]
 >
->Für Pro Production- und Staging-Umgebungen müssen Sie [Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) , um die Speicherplatzzuweisung zu ändern. Eine Vergrößerung der Pro Produktions- und Staging-Umgebungen kann nur in bestimmten Intervallen erfolgen. Je nach aktueller Festplattenspeicherplatzbelegung wird daher unter Umständen empfohlen, die Speicherplatzzuweisung um mindestens 10 GB zu erhöhen. Nach der Zuweisung kann die Speichersteigerung für Pro Staging und Produktion nicht mehr rückgängig gemacht werden.
+>Für Pro Production- und Staging-Umgebungen müssen Sie [Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) , um die Speicherplatzzuweisung zu ändern. Eine Vergrößerung der Pro Produktions- und Staging-Umgebungen kann nur in bestimmten Intervallen erfolgen. Je nach aktueller Festplattenspeicherplatzbelegung wird daher unter Umständen empfohlen, die Speicherplatzzuweisung um mindestens 10 GB zu erhöhen. Nach der Zuweisung kann die Speichersteigerung für Pro Staging und Produktion nicht mehr rückgängig gemacht werden. Der Speicher kann nicht auf Ressourcen umverteilt oder neu verteilt werden. Um mehr Dateispeicher hinzuzufügen, reduzieren Sie den für MySQL zugewiesenen Speicherplatz.
 
 ### Anwendungsspeicherplatz
 
