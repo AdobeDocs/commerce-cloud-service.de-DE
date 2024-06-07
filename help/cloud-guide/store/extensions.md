@@ -3,9 +3,9 @@ title: Erweiterungen verwalten
 description: Erfahren Sie, wie Sie Erweiterungen in Adobe Commerce in der Cloud-Infrastruktur installieren und verwalten.
 feature: Cloud, Extensions, Upgrade
 exl-id: 9c6e98ca-85da-4342-8402-d576eb382ba2
-source-git-commit: bb7a866b1896a8a43d01ad3f83dc655bcf383374
+source-git-commit: f8fb9d4d43c85f91ff87686160bcddb7cd417635
 workflow-type: tm+mt
-source-wordcount: '626'
+source-wordcount: '646'
 ht-degree: 0%
 
 ---
@@ -13,6 +13,10 @@ ht-degree: 0%
 # Erweiterungen verwalten
 
 Sie können Ihre Adobe Commerce-Anwendungsfunktionen erweitern, indem Sie eine Erweiterung aus dem [Commerce Marketplace](https://marketplace.magento.com). Sie können beispielsweise ein Design hinzufügen, um das Erscheinungsbild Ihrer Storefront zu ändern, oder Sie können ein Sprachpaket hinzufügen, um Ihre Storefront und Ihren Administrator zu lokalisieren.
+
+>[!NOTE]
+>
+>Um Installationsprobleme zu vermeiden, müssen alle Marketplace-Käufe mit demselben Konto (MAGEID) abgeschlossen werden, das Eigentümer des Cloud-Projekts ist.
 
 ## Name des Komponisten einer Erweiterung
 
