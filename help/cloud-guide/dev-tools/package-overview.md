@@ -1,6 +1,6 @@
 ---
-title: '[!DNL ECE-Tools] Package'
-description: Informationen zum [!DNL ECE-Tools] und wie es bei der Verwaltung und Bereitstellung von Adobe Commerce hilft.
+title: '[!DNL ECE-Tools] package'
+description: Erfahren Sie mehr über das [!DNL ECE-Tools] Paket und wie es bei der Verwaltung und Bereitstellung von Adobe Commerce hilft.
 exl-id: 5583a685-29c5-4de5-8d2e-94cff5ff37ab
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
 workflow-type: tm+mt
@@ -11,13 +11,13 @@ ht-degree: 0%
 
 # ECE-Tools-Paket
 
-Die [!DNL ECE-Tools] -Paket ist ein Satz von Skripten und Tools, die zur Verwaltung und Bereitstellung der [!DNL Commerce] Anwendung. Die `ece-tools` Das -Paket vereinfacht viele Prozesse, z. B. das Verwalten von Cron-Aufträgen, das Überprüfen der Projektkonfiguration und das Anwenden von Adobe-Patches und Hotfixes. Sie können die [Open-Source [!DNL ECE-Tools] Code-Repository auf GitHub][ece-repo].
+Das Paket [!DNL ECE-Tools] ist ein Satz von Skripten und Tools, die für die Verwaltung und Bereitstellung der [!DNL Commerce] -Anwendung entwickelt wurden. Das Paket `ece-tools` vereinfacht viele Prozesse, z. B. das Verwalten von Cron-Aufträgen, das Überprüfen der Projektkonfiguration und das Anwenden von Adobe-Patches und Hotfixes. Sie können das [Open-Source [!DNL ECE-Tools] Code-Repository auf GitHub][ece-repo] anzeigen und dazu beitragen.
 
 {{ece-tools-package}}
 
-Die `ece-tools` Das -Paket ist mit Adobe Commerce kompatibel (ab Version 2.1.4) und enthält Skripte und Adobe Commerce zu Cloud-Infrastrukturbefehlen, die Ihnen helfen, Ihren Code zu verwalten und Ihre Projekte automatisch zu erstellen und bereitzustellen.
+Das Paket `ece-tools` ist mit Adobe Commerce kompatibel - beginnend mit Version 2.1.4 - und enthält Skripte und Adobe Commerce zu Cloud-Infrastrukturbefehlen, mit denen Sie Ihren Code verwalten sowie Ihre Projekte automatisch erstellen und bereitstellen können.
 
-In der folgenden Liste sind die verfügbaren `ece-tools` Befehle:
+In der folgenden Liste sind die verfügbaren `ece-tools`-Befehle aufgeführt:
 
 ```bash
 php ./vendor/bin/ece-tools list
@@ -25,17 +25,17 @@ php ./vendor/bin/ece-tools list
 
 ## Erstellen und Bereitstellen
 
-Die `ece-tools` Das -Paket enthält Befehle zum Ausführen von Vorgängen für die Build-, Bereitstellungs- und Postbereitstellungsphasen des Starts Ihrer Adobe Commerce in der Cloud-Infrastrukturanwendung. Beispiel: die `php ./vendor/bin/ece-tools build` -Befehl startet den Prozess zum Erstellen der Anwendung.
+Das Paket `ece-tools` enthält Befehle zum Ausführen von Vorgängen für die Build-, Bereitstellungs- und Post-Bereitstellung-Phasen des Starts Ihrer Adobe Commerce in der Cloud-Infrastrukturanwendung. Beispielsweise startet der Befehl `php ./vendor/bin/ece-tools build` den Build-Prozess der Anwendung.
 
-Standardmäßig werden diese `ece-tools` -Befehle befinden sich in der [Hooks-Eigenschaft](../application/hooks-property.md) des `.magento.app.yaml` Konfigurationsdatei.
+Standardmäßig befinden sich diese `ece-tools`-Befehle in der [hooks-Eigenschaft](../application/hooks-property.md) der `.magento.app.yaml`-Konfigurationsdatei.
 
 ## Docker-Konfigurationsgenerator
 
-Die `ece-tools` -Paket enthält eine Abhängigkeit für die [magento/magento-cloud-docker] -Paket, das Funktionen und Konfigurationsdateien für Docker-Bilder bereitstellt, um eine Docker-Entwicklungsumgebung für Adobe Commerce in der Cloud-Infrastruktur zu starten. Sie können Cloud Docker für Commerce auch als eigenständiges Paket ausführen. Siehe [Docker-Entwicklung](../dev-tools/cloud-docker.md).
+Das Paket `ece-tools` enthält eine Abhängigkeit für das Paket [magento/magento-cloud-docker] , das Funktionen und Konfigurationsdateien für Docker-Bilder bereitstellt, um eine Docker-Entwicklungsumgebung für Adobe Commerce in der Cloud-Infrastruktur zu starten. Sie können Cloud Docker für Commerce auch als eigenständiges Paket ausführen. Siehe [Docker-Entwicklung](../dev-tools/cloud-docker.md).
 
 ## Dienste, Routen und Variablen
 
-Sie können die `ece-tools` Paket, um detaillierte Informationen zum Base64-kodierten anzuzeigen [Cloud-Variablen](../environment/variables-cloud.md) wird in jeder Cloud-Umgebung verwendet. Der folgende Befehl zeigt alle Dienste, Routen und Variablen.
+Sie können das Paket `ece-tools` verwenden, um detaillierte Informationen zu den Base64-kodierten [Cloud-Variablen](../environment/variables-cloud.md) anzuzeigen, die in jeder Cloud-Umgebung verwendet werden. Der folgende Befehl zeigt alle Dienste, Routen und Variablen.
 
 ```bash
 php ./vendor/bin/ece-tools env:config:show
@@ -47,11 +47,11 @@ Um einen bestimmten Satz von Informationen anzuzeigen, verwenden Sie folgendes F
 php ./vendor/bin/ece-tools env:config:show <option>
 ```
 
-- `services`—Zeigt die Beziehungsdaten aus der `MAGENTO_CLOUD_RELATIONSHIPS` Umgebungsvariable, definiert in der `services.yaml` -Datei.
-- `routes`—Zeigt die konfigurierten Routen für das Projekt an, indem Sie die `MAGENTO_CLOUD_ROUTES` Umgebungsvariable.
-- `variables`—Zeigt die konfigurierten Variablen für das Projekt an, indem Sie die `MAGENTO_CLOUD_VARIABLES` Umgebungsvariable.
+- `services` - Zeigt die Beziehungsdaten aus der in der Datei `services.yaml` definierten Umgebungsvariablen `MAGENTO_CLOUD_RELATIONSHIPS` an.
+- `routes` - Zeigt die konfigurierten Routen für das Projekt mithilfe der Umgebungsvariablen `MAGENTO_CLOUD_ROUTES` an.
+- `variables` - Zeigt die konfigurierten Variablen für das Projekt mithilfe der Umgebungsvariablen `MAGENTO_CLOUD_VARIABLES` an.
 
-Beispielausgabe für die `services` Option:
+Beispielausgabe für die Option `services` :
 
 ```terminal
 Magento Cloud Services:
@@ -73,7 +73,7 @@ Magento Cloud Services:
 
 ## Umgebungskonfiguration überprüfen
 
-Es stehen verschiedene Überprüfungsbefehle zur Verfügung, mit denen Sie die Konfiguration Ihres Projekts bewerten können. Siehe [Smart-Assistenten](../deploy/smart-wizards.md) im _Implementierung optimieren_ für eine detaillierte Beschreibung der einzelnen Assistenten-Befehle. Die `wizard:ideal-state` -Befehl wird während der Build-Phase automatisch ausgeführt. So überprüfen Sie den idealen Zustand Ihres Projekts:
+Es stehen verschiedene Überprüfungsbefehle zur Verfügung, mit denen Sie die Konfiguration Ihres Projekts bewerten können. Eine detaillierte Beschreibung der einzelnen Assistentenbefehle finden Sie unter [Smart-Assistenten](../deploy/smart-wizards.md) im Abschnitt _Implementierung optimieren_ . Der Befehl `wizard:ideal-state` wird während der Build-Phase automatisch ausgeführt. So überprüfen Sie den idealen Zustand Ihres Projekts:
 
 ```bash
 php ./vendor/bin/ece-tools wizard:ideal-state
@@ -81,7 +81,7 @@ php ./vendor/bin/ece-tools wizard:ideal-state
 
 >[!NOTE]
 >
->Sie müssen die `wizard:ideal-state` in der Remote-Cloud-Umgebung. Der Befehl gibt immer die `The configured state is not ideal` Fehler bei Ausführung in der lokalen Entwicklungsumgebung.
+>Sie müssen den Befehl `wizard:ideal-state` in der Remote-Cloud-Umgebung ausführen. Der Befehl gibt immer den Fehler `The configured state is not ideal` zurück, wenn er in der lokalen Entwicklungsumgebung ausgeführt wird.
 
 Beispielausgabe:
 
@@ -89,11 +89,11 @@ Beispielausgabe:
 Ideal state is configured
 ```
 
-Siehe [Versionshinweise für Eece-Tools](../release-notes/cloud-tools-suite.md).
+Siehe [Versionshinweise für ece-tools](../release-notes/cloud-tools-suite.md).
 
 ## Adobe-Patches und benutzerdefinierte Patches
 
-Die `ece-tools` -Paket enthält eine Abhängigkeit für die [magento/magento-cloud-patches] bietet Adobe-Patches und Hotfixes, die die Integration aller Adobe Commerce-Versionen in Cloud-Umgebungen verbessern und die schnelle Bereitstellung wichtiger Fehlerbehebungen unterstützen. Der &quot;stellt auch benutzerdefinierte Patches bereit, die Sie zu Ihrem Adobe Commerce-Projekt in der Cloud-Infrastruktur hinzufügen. Siehe [Anwenden von Patches](../development/apply-patches.md).
+Das Paket `ece-tools` enthält eine Abhängigkeit vom Paket [magento/magento-cloud-patches] , das Adobe-Patches und Hotfixes bereitstellt, die die Integration aller Adobe Commerce-Versionen in Cloud-Umgebungen verbessern und die schnelle Bereitstellung kritischer Fehlerbehebungen unterstützen. Der &quot;stellt auch benutzerdefinierte Patches bereit, die Sie zu Ihrem Adobe Commerce-Projekt in der Cloud-Infrastruktur hinzufügen. Siehe [Anwenden von Patches](../development/apply-patches.md).
 
 <!-- link definitions -->
 

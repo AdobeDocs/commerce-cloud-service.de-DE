@@ -12,34 +12,34 @@ ht-degree: 0%
 
 # Anwenden von Patches
 
-[Cloud-Patches für Commerce](https://github.com/magento/magento-cloud-patches) und [Werkzeug für Qualitätsmuster](https://github.com/magento/quality-patches) Bereitstellen von Patches für Ihre installierte Adobe Commerce-Anwendung.
+[Cloud-Patches für Commerce](https://github.com/magento/magento-cloud-patches) und das [Qualitätspatches-Tool](https://github.com/magento/quality-patches) stellen Patches für Ihre installierte Adobe Commerce-Anwendung bereit.
 
-- Das Cloud Patches für Commerce-Pakete stellt erforderliche Patches mit kritischen Fehlerbehebungen bereit
-- Qualitätsmuster liefern optionale, wirkungsarme Korrekturen wie [Einzelpatches](https://experienceleague.adobe.com/docs/commerce-operations/release/planning/versioning-policy.html#individual-patch) die keine abwärtskompatiblen Änderungen enthalten
+- Das Cloud Patches für Commerce-Paket stellt erforderliche Patches mit kritischen Fehlerbehebungen bereit
+- Qualitätsmuster liefern optionale, mit geringen Auswirkungen versehene Qualitätsfixes wie [einzelne Patches](https://experienceleague.adobe.com/docs/commerce-operations/release/planning/versioning-policy.html#individual-patch), die keine abwärtsinkompatiblen Änderungen enthalten
 
-Siehe [Verfügbare Patches](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html) im _Handbuch für Commerce-Betriebstools_ , um eine vollständige Liste der veröffentlichten Patches zu überprüfen.
+Unter [Verfügbare Patches](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html) im _Handbuch für Commerce Operations Tools_ finden Sie eine vollständige Liste der veröffentlichten Patches.
 
-Beide Pakete verbessern die Integration aller Adobe Commerce-Versionen in Cloud-Umgebungen und unterstützen die schnelle Bereitstellung wichtiger, optionaler und benutzerdefinierter Fehlerbehebungen. Sie können diese Pakete verwenden, um allgemeine Informationen zu allen einzelnen Patches, die für den Handel verfügbar sind, anzuwenden, wiederherzustellen und anzuzeigen.
+Beide Pakete verbessern die Integration aller Adobe Commerce-Versionen in Cloud-Umgebungen und unterstützen die schnelle Bereitstellung wichtiger, optionaler und benutzerdefinierter Fehlerbehebungen. Sie können diese Pakete verwenden, um allgemeine Informationen über alle für Commerce verfügbaren Patches anzuwenden, wiederherzustellen und anzuzeigen.
 
 >[!TIP]
 >
->Sie können die [Werkzeug für Qualitätsmuster](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html) und Cloud Patches für Commerce als eigenständige Packages für Magento Open Source- und Adobe Commerce-Projekte. Es wird empfohlen, das Werkzeug für Qualitätsmuster für Nicht-Cloud-Projekte zu verwenden.
+>Sie können das Tool [Qualitätsmuster-Tool](https://experienceleague.adobe.com/tools/commerce-quality-patches/index.html) und Cloud-Patches für Commerce als eigenständige Pakete für Magento Open Source- und Adobe Commerce-Projekte verwenden. Es wird empfohlen, das Werkzeug für Qualitätsmuster für Nicht-Cloud-Projekte zu verwenden.
 
-Wenn Sie Änderungen an der Remote-Umgebung bereitstellen, wird die `ece-tools` -Paket verwendet `magento/magento-cloud-patches` und `magento/quality-patches` , um nach ausstehenden Patches zu suchen und diese automatisch in der folgenden Reihenfolge anzuwenden:
+Wenn Sie Änderungen an der Remote-Umgebung bereitstellen, verwendet das `ece-tools`-Paket `magento/magento-cloud-patches` und `magento/quality-patches`, um nach ausstehenden Patches zu suchen, und wendet sie automatisch in der folgenden Reihenfolge an:
 
-1. Wenden Sie alle erforderlichen Commerce-Patches an, die im Cloud Patches for Commerce-Paket enthalten sind.
+1. Wenden Sie alle erforderlichen Commerce-Patches an, die im Cloud-Patches für Commerce -Paket enthalten sind.
 1. Wenden Sie ausgewählte optionale Commerce-Patches an, die im Qualitätsmuster-Tool enthalten sind.
-1. Anwenden benutzerdefinierter Patches in der `/m2-hotfixes` Verzeichnis in alphabetischer Reihenfolge nach Patch-Name.
+1. Wenden Sie benutzerdefinierte Patches im Verzeichnis `/m2-hotfixes` in alphabetischer Reihenfolge nach Patch-Name an.
 
 >[!NOTE]
 >
->Wenn Sie die `ece-tools` oder dem Paket Cloud Patches für Commerce , werden bei der nächsten Bereitstellung Ihres Projekts die neuesten erforderlichen Patches angewendet oder Sie können sie sofort mit der `ece-patches apply` CLI-Befehl und erneute Bereitstellung Ihrer Cloud-Umgebung. Sie können nicht überspringen [erforderliche Patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) während des Bereitstellungsprozesses.
+>Wenn Sie das Paket `ece-tools` oder das Paket &quot;Cloud Patches für Commerce&quot;aktualisieren, werden die neuesten erforderlichen Patches beim nächsten Bereitstellen des Projekts angewendet. Alternativ können Sie sie sofort mit dem Befehl `ece-patches apply` CLI bereitstellen und Ihre Cloud-Umgebung erneut bereitstellen. Sie können [erforderliche Patches](https://github.com/magento/magento-cloud-patches/tree/develop/patches) während des Bereitstellungsprozesses nicht überspringen.
 
 ## Voraussetzungen
 
 {{upgrade-tip}}
 
-Das Tool für Qualitätsmuster ist eine Abhängigkeit von den Cloud-Patches für Commerce und der `ece-tools` Paket. Um die neuesten Patches anwenden zu können, müssen Sie [die neueste Version der ECE-Tools](../dev-tools/update-package.md) installiert. Die erforderliche Mindestversion der ECE-Tools ist 2002.1.2.
+Das Werkzeug für Qualitätsmuster ist eine Abhängigkeit von den Cloud-Patches für Commerce und dem Paket `ece-tools` . Um die neuesten Patches anwenden zu können, muss [die neueste Version der ECE-Tools](../dev-tools/update-package.md) installiert sein. Die erforderliche Mindestversion der ECE-Tools ist 2002.1.2.
 
 ## Verfügbare Patches und Status anzeigen
 
@@ -92,20 +92,20 @@ Magento 2 Enterprise Edition, version 2.3.5.0
 Die Statustabelle enthält die folgenden Arten von Informationen:
 
 - **Typ**:
-   - `Optional`—Alle Patches des Tools für Qualitätsmuster und des Cloud-Patches-Pakets sind für Installationen von Adobe Commerce und Magento Open Source optional. Für Adobe Commerce in der Cloud-Infrastruktur sind alle Patches optional.
-   - `Required`—Alle Patches aus dem Cloud Patches für Commerce-Paket sind für Cloud-Kunden erforderlich.
-   - `Deprecated`—Der einzelne Patch wird als veraltet markiert und wir empfehlen, ihn zurückzusetzen, wenn Sie ihn angewendet haben. Nachdem Sie einen veralteten Patch zurückgesetzt haben, wird er nicht mehr in der Statustabelle angezeigt.
+   - `Optional` - Alle Patches aus dem Quality Patches Tool und dem Cloud Patches-Paket sind für Adobe Commerce- und Magento Open Source-Installationen optional. Für Adobe Commerce in der Cloud-Infrastruktur sind alle Patches optional.
+   - `Required` - Alle Patches aus dem Cloud Patches für Commerce-Package sind für Cloud-Kunden erforderlich.
+   - `Deprecated` - Der einzelne Patch wird als veraltet markiert und wir empfehlen, ihn zurückzusetzen, wenn Sie ihn angewendet haben. Nachdem Sie einen veralteten Patch zurückgesetzt haben, wird er nicht mehr in der Statustabelle angezeigt.
    - `Custom`—Alle Patches aus dem Verzeichnis &quot;m2-hotfixes&quot;.
 
 - **Status**:
    - `Applied`—Der Patch wurde angewendet.
    - `Not applied`—Der Patch wurde nicht angewendet.
-   - `N/A`—Der Status des Patches kann aufgrund von Konflikten nicht definiert werden.
+   - `N/A`—Der Status des Patch kann aufgrund von Konflikten nicht definiert werden.
 
 - **Details**:
-   - `Affected components`—Die Liste der betroffenen Module.
-   - `Required patches`—Die Liste der erforderlichen Patches (Abhängigkeiten).
-   - `Recommended replacement`—Der Patch, der ein empfohlener Ersatz für einen veralteten Patch ist.
+   - `Affected components` - Die Liste der betroffenen Module.
+   - `Required patches` - Die Liste erforderlicher Patches (Abhängigkeiten).
+   - `Recommended replacement` - Der Patch, der als Ersatz für einen veralteten Patch empfohlen wird.
 
 ## Patch in einer lokalen Umgebung anwenden
 
@@ -113,7 +113,7 @@ Sie können Patches manuell in einer lokalen Umgebung anwenden und vor der Berei
 
 **So wenden Sie einzelne Patches in einer lokalen Entwicklungsumgebung an**:
 
-1. Fügen Sie die Variable &quot;QUALITY_PATCH&quot;zum `.magento.env.yaml` und führen Sie die erforderlichen Patches darunter auf.
+1. Fügen Sie die Variable &quot;QUALITY_PATCH&quot;zur Datei `.magento.env.yaml` hinzu und listen Sie die erforderlichen Patches darunter auf.
 
    ```yaml
    stage:
@@ -129,10 +129,10 @@ Sie können Patches manuell in einer lokalen Umgebung anwenden und vor der Berei
    php ./vendor/bin/ece-patches apply
    ```
 
-   Die `ece-patches apply` -Befehl wendet Patches in der folgenden Reihenfolge an:
+   Der Befehl `ece-patches apply` wendet Patches in der folgenden Reihenfolge an:
    - Erforderliche Patches
    - Optionale einzelne Patches
-   - Benutzerdefinierte Patches aus dem `/m2-hotfixes` directory
+   - Benutzerdefinierte Patches aus dem Verzeichnis `/m2-hotfixes`
 
 1. Löschen Sie den Cache.
 
@@ -150,7 +150,7 @@ Sie können Patches manuell in einer lokalen Umgebung anwenden und vor der Berei
 
 **So wenden Sie Patches in einer Remote-Umgebung an**:
 
-1. Fügen Sie die `QUALITY_PATCHES` in die `.magento.env.yaml` und führen Sie die erforderlichen Patches darunter auf.
+1. Fügen Sie die Variable `QUALITY_PATCHES` zur Datei `.magento.env.yaml` hinzu und listen Sie die erforderlichen Patches darunter auf.
 
    ```yaml
    stage:
@@ -164,7 +164,7 @@ Sie können Patches manuell in einer lokalen Umgebung anwenden und vor der Berei
    >
    >Nach dem Upgrade auf eine neue Version von Adobe Commerce müssen Sie Patches erneut anwenden, wenn die Patches nicht in der neuen Version enthalten sind.
 
-1. Hinzufügen, Übergeben und Pushen der aktualisierten `.magento.env.yaml` -Datei.
+1. Fügen Sie die aktualisierte `.magento.env.yaml` -Datei hinzu, übertragen Sie sie und pushen Sie sie.
 
    ```bash
    git add .magento.env.yaml
@@ -180,21 +180,21 @@ Sie können Patches manuell in einer lokalen Umgebung anwenden und vor der Berei
 
 ## Anwenden eines benutzerdefinierten Patches
 
-Bei der Bereitstellung wendet ECE-Tools alle Adobe-Patches und alle benutzerdefinierten Patches an, die Sie zum `/m2-hotfixes` im Projektstamm.
+Bei der Bereitstellung wendet ECE-Tools alle Adobe-Patches und benutzerdefinierten Patches an, die Sie dem Ordner &quot;`/m2-hotfixes`&quot;im Projektstamm hinzufügen.
 
 >[!NOTE]
 >
->Alle Patch-Dateinamen müssen mit dem `.patch` -Erweiterung.
+>Alle Patch-Dateinamen müssen mit der Erweiterung `.patch` enden.
 
 **So wenden Sie einen benutzerdefinierten Patch auf eine Cloud-Umgebung an und testen ihn**:
 
-1. Erstellen Sie im Projektstamm einen Ordner mit dem Namen `m2-hotfixes` , wenn es nicht vorhanden ist
+1. Erstellen Sie im Projektstamm einen Ordner mit dem Namen &quot;`m2-hotfixes`&quot;, falls dieser nicht vorhanden ist.
 
    ```bash
    mkdir m2-hotfixes
    ```
 
-1. Kopieren Sie die Patch-Datei in den `/m2-hotfixes` Verzeichnis.
+1. Kopieren Sie die Patch-Datei in das Verzeichnis `/m2-hotfixes` .
 
 1. Hinzufügen, Übertragen und Push-Code-Änderungen.
 
@@ -212,13 +212,13 @@ Bei der Bereitstellung wendet ECE-Tools alle Adobe-Patches und alle benutzerdefi
 
    >[!NOTE]
    >
-   >Testen Sie alle Patches in einer Produktionsumgebung vor der Produktion. Für Adobe Commerce in der Cloud-Infrastruktur können Sie Zweige mit der `magento-cloud environment:branch <branch-name>` CLI-Befehl.
+   >Testen Sie alle Patches in einer Produktionsumgebung vor der Produktion. Für Adobe Commerce in der Cloud-Infrastruktur können Sie mit dem CLI-Befehl `magento-cloud environment:branch <branch-name>` Zweige erstellen.
 
 ## Benutzerdefinierten Patch zurücksetzen
 
 So stellen Sie einen zuvor angewendeten benutzerspezifischen Patch wieder her oder deinstallieren ihn:
 
-1. Löschen Sie die Patch-Datei aus der `/m2-hotfixes` Verzeichnis.
+1. Löschen Sie die Patch-Datei aus dem Verzeichnis &quot;`/m2-hotfixes`&quot;.
 
 1. Hinzufügen, Übertragen und Push-Code-Änderungen.
 
@@ -236,15 +236,15 @@ So stellen Sie einen zuvor angewendeten benutzerspezifischen Patch wieder her od
 
    >[!NOTE]
    >
-   >Stellen Sie sicher, dass Sie in einer Produktionsumgebung testen. Für Adobe Commerce in der Cloud-Infrastruktur können Sie Zweige mit der `magento-cloud environment:branch <branch-name>` CLI-Befehl.
+   >Stellen Sie sicher, dass Sie in einer Produktionsumgebung testen. Für Adobe Commerce in der Cloud-Infrastruktur können Sie mit dem CLI-Befehl `magento-cloud environment:branch <branch-name>` Zweige erstellen.
 
 ## Anwenden von Patches auf ein Nicht-Cloud-Projekt
 
-Verwenden Sie die [Werkzeug für Qualitätsmuster](https://github.com/magento/quality-patches) für Magento Open Source- und Adobe Commerce-Projekte.
+Verwenden Sie das [Qualitätsmuster-Tool](https://github.com/magento/quality-patches) für Magento Open Source- und Adobe Commerce-Projekte.
 
 ## Patch in einer lokalen Umgebung wiederherstellen
 
-Sie können alle zuvor angewendeten Patches in einer lokalen Entwicklungsumgebung mithilfe der `ece-patches` CLI.
+Sie können alle zuvor angewendeten Patches in einer lokalen Entwicklungsumgebung mithilfe der `ece-patches`-CLI zurücksetzen.
 
 So stellen Sie alle angewendeten Patches wieder her:
 
@@ -260,4 +260,4 @@ Mit diesem Befehl werden alle Patches in der folgenden Reihenfolge zurückgesetz
 
 ## Protokollierung
 
-Das Tool &quot;Qualitätsmuster&quot;protokolliert alle Vorgänge zum `<Project_root>/var/log/patch.log` -Datei.
+Das Tool &quot;Qualitätsmuster&quot;protokolliert alle Vorgänge in der Datei &quot;`<Project_root>/var/log/patch.log`&quot;.

@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # Variablenebenen
 
-Projektvariablen gelten für alle Umgebungen innerhalb des Projekts. Umgebungsvariablen gelten für eine bestimmte Umgebung oder Verzweigung. Eine Umgebung _inherits_ Variablendefinitionen aus der übergeordneten Umgebung.
+Projektvariablen gelten für alle Umgebungen innerhalb des Projekts. Umgebungsvariablen gelten für eine bestimmte Umgebung oder Verzweigung. Eine Umgebung _übernimmt_ Variablendefinitionen aus der übergeordneten Umgebung.
 
-Sie können einen übernommenen Wert überschreiben, indem Sie die Variable speziell für die Umgebung definieren. Um beispielsweise Variablen für die Entwicklung festzulegen, definieren Sie die Variablenwerte in der `.magento.env.yaml` in der Integrationsumgebung. Diese Werte werden von allen in der Integrationsumgebung verzweigten Umgebungen übernommen. Siehe [Bereitstellungskonfiguration](configure-env-yaml.md) für Details zur Konfiguration Ihrer Umgebung mit `.magento.env.yaml` -Datei.
+Sie können einen übernommenen Wert überschreiben, indem Sie die Variable speziell für die Umgebung definieren. Um beispielsweise Variablen für die Entwicklung festzulegen, definieren Sie die Variablenwerte in der Datei `.magento.env.yaml` in der Integrationsumgebung. Diese Werte werden von allen in der Integrationsumgebung verzweigten Umgebungen übernommen. Weitere Informationen zum Konfigurieren Ihrer Umgebung mit der Datei `.magento.env.yaml` finden Sie unter [Bereitstellungskonfiguration](configure-env-yaml.md) .
 
 >[!BEGINTABS]
 
@@ -22,13 +22,13 @@ Sie können einen übernommenen Wert überschreiben, indem Sie die Variable spez
 
 **So legen Sie Variablen mithilfe der Cloud CLI fest**:
 
-- **Projektspezifische Variablen**—So legen Sie denselben Wert für fest _all_ -Umgebungen in Ihrem Projekt. Diese Variablen sind beim Erstellen und zur Laufzeit in allen Umgebungen verfügbar.
+- **Projektspezifische Variablen** - Um denselben Wert für _alle_ Umgebungen in Ihrem Projekt festzulegen. Diese Variablen sind beim Erstellen und zur Laufzeit in allen Umgebungen verfügbar.
 
   ```bash
   magento-cloud variable:create --level project --name <variable-name> --value <variable-value>
   ```
 
-- **Umgebungsspezifische Variablen**—So legen Sie einen eindeutigen Wert für eine _spezifisch_ Umgebung. Diese Variablen sind zur Laufzeit verfügbar und werden von untergeordneten Umgebungen übernommen. Geben Sie die Umgebung im Befehl mithilfe der `-e` -Option.
+- **Umgebungsspezifische Variablen** - Um einen eindeutigen Wert für eine _spezifische_ -Umgebung festzulegen. Diese Variablen sind zur Laufzeit verfügbar und werden von untergeordneten Umgebungen übernommen. Geben Sie die Umgebung in Ihrem Befehl mit der Option `-e` an.
 
   ```bash
   magento-cloud variable:create --level environment --name <variable-name> --value <variable-value>
@@ -38,21 +38,21 @@ Nachdem Sie projektspezifische Variablen festgelegt haben, müssen Sie die Remot
 
 >[!TAB Konsole]
 
-**So legen Sie Variablen mithilfe der Variablen[!DNL Cloud Console]**:
+**So legen Sie Variablen mithilfe des[!DNL Cloud Console]** fest:
 
-1. Im _[!DNL Cloud Console]_klicken Sie auf das Konfigurationssymbol auf der rechten Seite der Projektnavigation.
+1. Klicken Sie im Ordner &quot;_[!DNL Cloud Console]_&quot;auf das Konfigurationssymbol auf der rechten Seite der Projektnavigation.
 
    ![Projekt konfigurieren](../../assets/icon-configure.png){width="36"}
 
-1. So legen Sie eine Variable auf Projektebene fest: unter _Projekteinstellungen_ click **Variablen**.
+1. Um eine Variable auf Projektebene festzulegen, klicken Sie unter _Projekteinstellungen_ auf **Variablen**.
 
    ![Projektvariablen](../../assets/ui-project-variables.png)
 
-1. Um eine Variable auf Umgebungsebene festzulegen, müssen Sie im _Umgebungen_ Liste, wählen Sie eine Umgebung aus und klicken Sie auf **[!UICONTROL Variables]** Registerkarte.
+1. Um eine Umgebungsvariable festzulegen, wählen Sie in der Liste _Umgebungen_ eine Umgebung aus und klicken Sie auf die Registerkarte **[!UICONTROL Variables]** .
 
    ![Registerkarte &quot;Umgebungsvariablen&quot;](../../assets/ui-environment-variables.png)
 
-1. Klicks **[!UICONTROL Create variable]**.
+1. Klicken Sie auf **[!UICONTROL Create variable]**.
 
 1. Geben Sie einen Namen und einen Wert für die Variable an. Wählen Sie aus den Optionen aus:
 
@@ -62,22 +62,22 @@ Nachdem Sie projektspezifische Variablen festgelegt haben, müssen Sie die Remot
    - Sensitive Variable (Wert in der Konsole ausgeblendet und CLI-Antworten)
    - Vererbbar (untergeordnete Umgebungen können Variablen auf Umgebungsebene übernehmen)
 
-1. Klicks **[!UICONTROL Create variable]**.
+1. Klicken Sie auf **[!UICONTROL Create variable]**.
 
 >[!CAUTION]
 >
->Umgebungsspezifische Variablen in der [!DNL Cloud Console] stellt die Umgebung automatisch erneut bereit.
+>Durch das Festlegen umgebungsspezifischer Variablen in [!DNL Cloud Console] wird die Umgebung automatisch erneut bereitgestellt.
 
 >[!ENDTABS]
 
 ## Sichtbarkeit
 
-Sie können die Sichtbarkeit einer Variablen während der Build- oder Laufzeitumgebung mithilfe der `--visible-<build|runtime>` Befehl. Außerdem gibt es Optionen zum Festlegen von Vererbung und Empfindlichkeit.
+Mit dem Befehl `--visible-<build|runtime>` können Sie die Sichtbarkeit einer Variablen während der Build- oder Laufzeitumgebung einschränken. Außerdem gibt es Optionen zum Festlegen von Vererbung und Empfindlichkeit.
 
 Verwenden Sie die folgenden Optionen, um zu verhindern, dass eine Variable angezeigt oder vererbt wird:
 
-- `--inheritable false`—deaktiviert die Vererbung für untergeordnete Umgebungen. Dies ist nützlich zum Festlegen von Nur-Produktion-Werten für die `master` -Verzweigung verwenden und allen anderen Umgebungen die Verwendung einer Variablen auf Projektebene mit demselben Namen ermöglichen.
-- `--sensitive true`—markiert die Variable als _nicht lesbar_ im [!DNL Cloud Console]. Sie können die Variable nicht in der Benutzeroberfläche anzeigen. Sie können die Variable jedoch wie jede andere Variable auch im Anwendungscontainer anzeigen.
+- `--inheritable false` - Deaktiviert die Vererbung für untergeordnete Umgebungen. Dies ist nützlich, um reine Produktionswerte für die Verzweigung `master` festzulegen und allen anderen Umgebungen die Verwendung einer Variablen auf Projektebene mit demselben Namen zu ermöglichen.
+- `--sensitive true` - markiert die Variable als _nicht lesbar_ im [!DNL Cloud Console]. Sie können die Variable nicht in der Benutzeroberfläche anzeigen. Sie können die Variable jedoch wie jede andere Variable auch im Anwendungscontainer anzeigen.
 
 Im Folgenden wird ein spezieller Fall veranschaulicht, um zu verhindern, dass eine Variable gesehen oder vererbt wird. Sie können diese Optionen nur in der CLI angeben. Dieser Fall bezieht sich nicht auf alle verfügbaren Umgebungsvariablen.
 

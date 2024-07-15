@@ -14,9 +14,9 @@ ht-degree: 0%
 
 Beim Schreiben in eine Datenbank kann es hilfreich sein, die Profilerstellung auszuführen, um die Auswirkungen dieser Änderungen zu identifizieren. Die Profilerstellung verwaltet ein Protokoll mit Datenbankabfragen und erhöht die Laufzeitgenauigkeit.
 
-**So aktivieren Sie die Profilerstellung für Datenbankabfragen**:
+**Aktivieren der Profilerstellung für Datenbankabfragen**:
 
-1. [Bei der Datenbank anmelden](../services/mysql.md#connect-to-the-database).
+1. [Melden Sie sich bei der Datenbank an](../services/mysql.md#connect-to-the-database).
 
 1. Aktivieren Sie die Profilerstellung.
 

@@ -34,9 +34,9 @@ Um ein Design manuell zu installieren, muss sich der Code des Designs in einem k
           └── js
 ```
 
-**Manuelles Installieren eines Designs**:
+**So installieren Sie ein Design manuell**:
 
-1. Kopieren Sie den Code des Designs unter `<Project root dir>/app/design/frontend` für ein Storefront-Design oder `<Project root dir>/app/design/adminhtml` für ein Admin-Design. Stellen Sie sicher, dass der Ordner der obersten Ebene `<VendorName>`; andernfalls wird das Design nicht ordnungsgemäß installiert.
+1. Kopieren Sie den Code des Designs unter &quot;`<Project root dir>/app/design/frontend`&quot;für ein Storefront-Design oder &quot;`<Project root dir>/app/design/adminhtml`&quot;für ein Admin-Design. Stellen Sie sicher, dass der Ordner der obersten Ebene &quot;`<VendorName>`&quot; ist. Andernfalls wird das Design nicht ordnungsgemäß installiert.
 
    ```bash
    cp -r ExampleTheme <project-root>/app/design/frontend
@@ -65,13 +65,13 @@ Um ein Design manuell zu installieren, muss sich der Code des Designs in einem k
 
 1. Warten Sie, bis die Bereitstellung abgeschlossen ist.
 1. Melden Sie sich beim Administrator an.
-1. Klicks **Inhalt** > Design > **Designs**.
+1. Klicken Sie auf **Inhalt** > Design > **Designs**.
 
    Das Design wird im rechten Bereich angezeigt.
 
 ## Installieren eines Designs mithilfe von Composer
 
-Die Installation eines Designs mit Composer entspricht der Installation jeder anderen Erweiterung mit Composer. Siehe [Module installieren, verwalten und aktualisieren](extensions.md) für Details.
+Die Installation eines Designs mit Composer entspricht der Installation jeder anderen Erweiterung mit Composer. Weitere Informationen finden Sie unter [Module installieren, verwalten und aktualisieren](extensions.md) .
 
 So installieren Sie ein Design mit Composer:
 
@@ -101,10 +101,10 @@ So installieren Sie ein Design mit Composer:
    ```
 
 1. Melden Sie sich beim Administrator an.
-1. Klicks **Inhalt** > Design > **Designs**.
+1. Klicken Sie auf **Inhalt** > Design > **Designs**.
 
    Das Design wird im rechten Bereich angezeigt.
 
 ## Mehrere Designs
 
-Wenn Sie mehrere Designs verwenden, z. B. verschiedene Designs pro Gebietsschema, überprüfen Sie die `SCD_MATRIX` Umgebungsvariable zum Anpassen der Designbereitstellung. Siehe [build](../environment/variables-build.md#scd_matrix) oder [deploy](../environment/variables-deploy.md#scd_matrix) in den [Umgebungskonfiguration](../environment/configure-env-yaml.md).
+Wenn Sie mehrere Designs verwenden, z. B. verschiedene Designs pro Gebietsschema, überprüfen Sie die Umgebungsvariable `SCD_MATRIX` , um die Designbereitstellung anzupassen. Siehe die Schritte [build](../environment/variables-build.md#scd_matrix) oder [deploy](../environment/variables-deploy.md#scd_matrix) in der [Umgebungskonfiguration](../environment/configure-env-yaml.md).

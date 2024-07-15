@@ -14,7 +14,7 @@ ht-degree: 0%
 
 [Serverseitige Includes](https://nginx.org/en/docs/http/ngx_http_ssi_module.html) (SSI) sind Anweisungen auf HTML-Seiten, die auf dem Server ausgewertet werden, während die Seiten gerendert werden. Mit SSI können Sie dynamisch generierte Inhalte zu einer bestehenden HTML hinzufügen, ohne die gesamte Seite zu bedienen.
 
-Sie können SSI pro Route in Ihrer `.magento/routes.yaml`; zum Beispiel:
+Sie können SSI pro Route in Ihrem `.magento/routes.yaml` aktivieren oder deaktivieren, z. B.:
 
 ```yaml
     "http://{default}/":
@@ -31,18 +31,18 @@ Sie können SSI pro Route in Ihrer `.magento/routes.yaml`; zum Beispiel:
             enabled: true
 ```
 
-Mit SSI können Sie in Ihre HTML-Response-Direktiven einschließen, die dazu führen, dass der Server Teile des HTML ausfüllt, wobei alle vorhandenen berücksichtigt werden [Caching-Konfiguration](caching.md).
+Mit SSI können Sie in Ihre HTML-Response-Anweisungen einschließen, die dazu führen, dass der Server Teile des HTML ausfüllt, wobei die vorhandene [Caching-Konfiguration](caching.md) beachtet wird.
 
 Das folgende Beispiel zeigt, wie Sie ein dynamisches Datumssteuerelement am Anfang einer Seite einfügen und ein weiteres Datumssteuerelement am unteren Rand, das alle 600 Sekunden aktualisiert wird:
 
-Fügen Sie jeder Seite Folgendes hinzu, beispielsweise `/index.php`:
+Fügen Sie jeder Seite Folgendes hinzu, z. B. `/index.php`:
 
 ```php?start_inline=1
 echo date(DATE_RFC2822);
 <!--#include virtual="time.php" -->
 ```
 
-Fügen Sie Folgendes hinzu: `time.php`:
+Fügen Sie `time.php` Folgendes hinzu:
 
 ```php?start_inline=1
 header("Cache-Control: max-age=600");

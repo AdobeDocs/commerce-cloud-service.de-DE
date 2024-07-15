@@ -1,5 +1,5 @@
 ---
-title: Commerce-Version aktualisieren
+title: Upgrade der Commerce-Version
 description: Erfahren Sie, wie Sie die Adobe Commerce-Version im Cloud-Infrastrukturprojekt aktualisieren.
 feature: Cloud, Upgrade
 exl-id: 87821007-4979-4a20-940b-aa3c82c192d8
@@ -10,17 +10,17 @@ ht-degree: 0%
 
 ---
 
-# Commerce-Version aktualisieren
+# Upgrade der Commerce-Version
 
-Sie können die Adobe Commerce-Code-Basis auf eine neuere Version aktualisieren. Überprüfen Sie vor dem Upgrade Ihres Projekts die Datei [Systemanforderungen](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) in der _Installation_ Anleitung für die neuesten Anforderungen an die Softwareversion.
+Sie können die Codebasis von Adobe Commerce auf eine neuere Version aktualisieren. Bevor Sie Ihr Projekt aktualisieren, lesen Sie die [Systemanforderungen](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) im Handbuch _Installation_ , um die neuesten Anforderungen für die Softwareversion anzuzeigen.
 
-Abhängig von Ihrer Projektkonfiguration können Ihre Upgrade-Aufgaben Folgendes umfassen:
+Abhängig von Ihrer Projektkonfiguration können Ihre Aktualisierungsaufgaben Folgendes umfassen:
 
 - Aktualisierungsdienste wie MariaDB (MySQL), OpenSearch, RabbitMQ und Redis für die Kompatibilität mit neuen Adobe Commerce-Versionen.
 - Konvertieren Sie eine ältere Konfigurationsverwaltungsdatei.
-- Aktualisieren von `.magento.app.yaml` -Datei mit neuen Einstellungen für Erweiterungspunkte und Umgebungsvariablen.
-- Aktualisieren Sie Erweiterungen von Drittanbietern auf die neueste unterstützte Version.
-- Aktualisieren von `.gitignore` -Datei.
+- Aktualisieren Sie die Datei `.magento.app.yaml` mit neuen Einstellungen für Hooks und Umgebungsvariablen.
+- Aktualisieren Sie Drittanbietererweiterungen auf die neueste unterstützte Version.
+- Aktualisieren Sie die Datei &quot;`.gitignore`&quot;.
 
 {{upgrade-tip}}
 
@@ -28,14 +28,14 @@ Abhängig von Ihrer Projektkonfiguration können Ihre Upgrade-Aufgaben Folgendes
 
 ## Upgrade von älteren Versionen
 
-Wenn Sie ein Upgrade von einer Commerce-Version starten, die älter als 2.1 ist, können einige Einschränkungen in der Adobe Commerce-Code-Basis Ihre Möglichkeiten beeinträchtigen, _Aktualisierung_ für eine bestimmte ECE-Tools-Version oder _Upgrade_ zur nächsten unterstützten Commerce-Version wechseln. Verwenden Sie die folgende Tabelle, um den besten Pfad zu ermitteln:
+Wenn Sie ein Upgrade von einer Commerce-Version starten, die älter als 2.1 ist, können einige Einschränkungen in der Adobe Commerce-Codebasis Ihre Fähigkeit beeinträchtigen, __ auf eine bestimmte ECE-Tools-Version oder auf _Upgrade_ auf die nächste unterstützte Commerce-Version zu aktualisieren. Verwenden Sie die folgende Tabelle, um den besten Pfad zu ermitteln:
 
 | Aktuelle Version | Aktualisierungspfad |
 | ----------------- | ------------ |
-| 2.1.3 und früher | Aktualisieren Sie Adobe Commerce auf Version 2.1.4 oder höher, bevor Sie fortfahren. Führen Sie dann einen [Einmaliges Upgrade zur Installation von ECE-Tools](../dev-tools/install-package.md). |
-| 2.1.4 - 2.1.14 | [ECE-Tools aktualisieren](../dev-tools/update-package.md) Paket.<br>Siehe Versionshinweise für [2 002,0,9](../release-notes/cloud-release-archive.md#v200209) und späteren Versionen von 2002.0.x. |
-| 2.1.15 - 2.1.16 | [ECE-Tools aktualisieren](../dev-tools/update-package.md) Paket.<br>Siehe Versionshinweise für[2 002,0,9](../release-notes/cloud-release-archive.md#v200209) Und später. |
-| 2.2.x und höher | [ECE-Tools aktualisieren](../dev-tools/update-package.md) Paket.<br>Siehe Versionshinweise für[2 002,0,8](../release-notes/cloud-release-archive.md#v200208) Und später. |
+| 2.1.3 und früher | Aktualisieren Sie Adobe Commerce auf Version 2.1.4 oder höher, bevor Sie fortfahren. Führen Sie dann ein [ einmaliges Upgrade durch, um ECE-Tools](../dev-tools/install-package.md) zu installieren. |
+| 2.1.4 - 2.1.14 | [ECE-Tools](../dev-tools/update-package.md)-Paket aktualisieren.<br>Siehe Versionshinweise für die Versionen [2002.0.9](../release-notes/cloud-release-archive.md#v200209) und höher 2002.0.x . |
+| 2.1.15 - 2.1.16 | [ECE-Tools](../dev-tools/update-package.md)-Paket aktualisieren.<br>Siehe Versionshinweise für [2002.0.9](../release-notes/cloud-release-archive.md#v200209) und höher. |
+| 2.2.x und höher | [ECE-Tools](../dev-tools/update-package.md)-Paket aktualisieren.<br>Siehe Versionshinweise für [2002.0.8](../release-notes/cloud-release-archive.md#v200208) und höher. |
 
 {style="table-layout:auto"}
 
@@ -43,39 +43,39 @@ Wenn Sie ein Upgrade von einer Commerce-Version starten, die älter als 2.1 ist,
 
 ## Konfigurationsverwaltung
 
-In älteren Versionen von Adobe Commerce, z. B. 2.1.4 oder höher bis 2.2.x oder höher, wurde ein `config.local.php` -Datei für die Konfigurationsverwaltung. Adobe Commerce Version 2.2.0 und höher verwendet die `config.php` -Datei, die genau wie die `config.local.php` -Datei, aber sie verfügt über verschiedene Konfigurationseinstellungen, die eine Liste Ihrer aktivierten Module und zusätzliche Konfigurationsoptionen enthalten.
+In älteren Versionen von Adobe Commerce, z. B. 2.1.4 oder höher bis 2.2.x oder höher, wurde eine `config.local.php` -Datei für die Konfigurationsverwaltung verwendet. Adobe Commerce-Version 2.2.0 und höher verwenden die Datei &quot;`config.php`&quot;, die genau wie die Datei &quot;`config.local.php`&quot;funktioniert, aber unterschiedliche Konfigurationseinstellungen aufweist, die eine Liste der aktivierten Module und zusätzliche Konfigurationsoptionen enthalten.
 
-Beim Upgrade von einer älteren Version müssen Sie Folgendes migrieren `config.local.php` Datei zur Verwendung der neueren `config.php` -Datei. Führen Sie die folgenden Schritte aus, um Ihre Konfigurationsdatei zu sichern und eine zu erstellen.
+Beim Aktualisieren von einer älteren Version müssen Sie die Datei &quot;`config.local.php`&quot;migrieren, um die neuere Datei &quot;`config.php`&quot;zu verwenden. Führen Sie die folgenden Schritte aus, um Ihre Konfigurationsdatei zu sichern und eine zu erstellen.
 
-**So erstellen Sie ein temporäres `config.php` Datei**:
+**So erstellen Sie eine temporäre `config.php` Datei**:
 
-1. Kopie erstellen von `config.local.php` Datei und Benennen `config.php`.
+1. Erstellen Sie eine Kopie der Datei &quot;`config.local.php`&quot; und nennen Sie sie &quot;`config.php`&quot;.
 
-1. Fügen Sie diese Datei zum hinzu `app/etc` Ordner Ihres Projekts.
+1. Fügen Sie diese Datei zum Ordner `app/etc` Ihres Projekts hinzu.
 
-1. Fügen Sie die Datei zu Ihrer Verzweigung hinzu und übertragen Sie sie.
+1. Fügen Sie die Datei hinzu und übertragen Sie sie in Ihre Verzweigung.
 
-1. Übertragen Sie die Datei in die Integrationsverzweigung.
+1. Schicken Sie die Datei an Ihre Integrationsverzweigung.
 
 1. Fahren Sie mit dem Upgrade-Prozess fort.
 
 >[!WARNING]
 >
->Nach einem Upgrade können Sie die Datei `config.php` Datei erstellen und eine neue, vollständige Datei erstellen. Sie können diese Datei nur einmal löschen, um sie zu ersetzen. Nachdem ein neues erstellt wurde, schließen Sie `config.php` -Datei verwenden, können Sie die Datei nicht löschen, um eine neue Datei zu generieren. Siehe [Konfigurationsverwaltung und Pipeline-Bereitstellung](../store/store-settings.md).
+>Nach dem Upgrade können Sie die Datei &quot;`config.php`&quot; entfernen und eine neue, vollständige Datei erstellen. Sie können diese Datei nur löschen, um sie dieses Mal zu ersetzen. Nach dem Generieren einer neuen, vollständigen `config.php` -Datei können Sie die Datei nicht löschen, um eine neue zu generieren. Siehe [Konfigurationsverwaltung und Pipeline-Bereitstellung](../store/store-settings.md).
 
-### Überprüfen von Zend Framework Composer-Abhängigkeiten
+### Überprüfen der Abhängigkeiten von Zend Framework Composer
 
-Beim Upgrade auf **2.3.x oder höher ab 2.2.x**&#x200B;Überprüfen Sie, ob die Abhängigkeiten des Zend-Frameworks zur Datei hinzugefügt wurden. `autoload` Eigenschaft des `composer.json` -Datei, um Laminas zu unterstützen. Dieses Plug-in unterstützt neue Anforderungen für das Zend Framework, das zum Laminas-Projekt migriert wurde. Siehe [Migration von Zend Framework zum Laminas-Projekt](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) am _Magento DevBlog_.
+Stellen Sie beim Upgrade auf **2.3.x oder höher von 2.2.x** sicher, dass die Zend Framework-Abhängigkeiten zur Eigenschaft `autoload` der Datei `composer.json` hinzugefügt wurden, um Laminas zu unterstützen. Dieses Plug-in unterstützt neue Anforderungen für das Zend Framework, das zum Laminas-Projekt migriert wurde. Siehe [Migration des Zend Framework zum Laminas-Projekt](https://community.magento.com/t5/Magento-DevBlog/Migration-of-Zend-Framework-to-the-Laminas-Project/ba-p/443251) auf dem _Magento DevBlog_.
 
-**So überprüfen Sie die `auto-load:psr-4` Konfiguration**:
+**Überprüfen der `auto-load:psr-4` Konfiguration**:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
+1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
 
 1. Sehen Sie sich Ihre Integrationsverzweigung an.
 
-1. Öffnen Sie `composer.json` -Datei in einem Texteditor speichern.
+1. Öffnen Sie die Datei &quot;`composer.json`&quot; in einem Texteditor.
 
-1. Überprüfen Sie die `autoload:psr-4` -Abschnitt für die Zend Plug-in Manager-Implementierung für Controller-Abhängigkeiten.
+1. Überprüfen Sie den Abschnitt `autoload:psr-4` für die Implementierung des Zend-Plug-in-Managers für die Abhängigkeit der Controller.
 
    ```json
     "autoload": {
@@ -88,9 +88,9 @@ Beim Upgrade auf **2.3.x oder höher ab 2.2.x**&#x200B;Überprüfen Sie, ob die 
    }
    ```
 
-1. Wenn die Zend-Abhängigkeit fehlt, aktualisieren Sie `composer.json` Datei:
+1. Wenn die Zend-Abhängigkeit fehlt, aktualisieren Sie die Datei &quot;`composer.json`&quot;:
 
-   - Fügen Sie die folgende Zeile zur hinzu. `autoload:psr-4` -Abschnitt.
+   - Fügen Sie die folgende Zeile zum Abschnitt `autoload:psr-4` hinzu.
 
      ```json
      "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
@@ -102,7 +102,7 @@ Beim Upgrade auf **2.3.x oder höher ab 2.2.x**&#x200B;Überprüfen Sie, ob die 
      composer update
      ```
 
-   - Code-Änderungen hinzufügen, übertragen und per Push übertragen.
+   - Hinzufügen, Übertragen und Push-Code-Änderungen.
 
      ```bash
      git add -A
@@ -116,21 +116,21 @@ Beim Upgrade auf **2.3.x oder höher ab 2.2.x**&#x200B;Überprüfen Sie, ob die 
      git push origin <branch-name>
      ```
 
-   - Zusammenführen von Änderungen in der Staging-Umgebung und anschließend in der Produktion.
+   - Zusammenführen von Änderungen in der Staging-Umgebung und dann in der Produktion.
 
 ## Konfigurationsdateien
 
-Vor dem Upgrade der Anwendung müssen Sie Ihre Projektkonfigurationsdateien aktualisieren, um Änderungen an den Standardkonfigurationseinstellungen für Adobe Commerce in der Cloud-Infrastruktur oder der Anwendung zu berücksichtigen. Die neuesten Standardeinstellungen finden Sie in der [Magento-Cloud-GitHub-Repository](https://github.com/magento/magento-cloud).
+Vor der Aktualisierung des Programms müssen Sie Ihre Projektkonfigurationsdateien aktualisieren, um Änderungen an den Standardkonfigurationseinstellungen für Adobe Commerce in der Cloud-Infrastruktur oder der Anwendung zu berücksichtigen. Die neuesten Standardeinstellungen finden Sie im [magento-cloud GitHub-Repository](https://github.com/magento/magento-cloud).
 
 ### .magento.app.yaml
 
-Überprüfen Sie immer die in der [.magento.app.yaml](../application/configure-app-yaml.md) -Datei für die installierte Version, da sie steuert, wie Ihr Programm die Cloud-Infrastruktur erstellt und bereitstellt. Das folgende Beispiel gilt für Version 2.4.7 und verwendet Composer 2.7.2. Die `build: flavor:` -Eigenschaft wird nicht für Composer 2.x verwendet; siehe [Installieren und Verwenden von Composer 2](../application/properties.md#installing-and-using-composer-2).
+Überprüfen Sie stets die Werte in der Datei [.magento.app.yaml](../application/configure-app-yaml.md) für Ihre installierte Version, da sie steuert, wie Ihre Anwendung erstellt und in der Cloud-Infrastruktur bereitgestellt wird. Das folgende Beispiel bezieht sich auf Version 2.4.7 und verwendet Composer 2.7.2. Die Eigenschaft `build: flavor:` wird nicht für Composer 2.x verwendet; siehe [Installieren und Verwenden von Composer 2](../application/properties.md#installing-and-using-composer-2).
 
-**So aktualisieren Sie `.magento.app.yaml` Datei**:
+**Aktualisieren der `.magento.app.yaml`-Datei**:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
+1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
 
-1. Öffnen und bearbeiten Sie `magento.app.yaml` -Datei.
+1. Öffnen und bearbeiten Sie die Datei &quot;`magento.app.yaml`&quot;.
 
 1. Aktualisieren Sie die PHP-Optionen.
 
@@ -144,7 +144,7 @@ Vor dem Upgrade der Anwendung müssen Sie Ihre Projektkonfigurationsdateien aktu
            composer/composer: '2.7.2'
    ```
 
-1. Ändern Sie die `hooks` Eigenschaft `build` und `deploy` Befehle.
+1. Ändern Sie die Befehle `hooks` property `build` und `deploy`.
 
    ```yaml
    hooks:
@@ -183,17 +183,17 @@ Vor dem Upgrade der Anwendung müssen Sie Ihre Projektkonfigurationsdateien aktu
            CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
    ```
 
-1. Speichern Sie die Datei. Übernehmen oder übertragen Sie noch keine Änderungen an die Remote-Umgebung.
+1. Speichern Sie die Datei. Übertragen oder pushen Sie noch keine Änderungen in die Remote-Umgebung.
 
 1. Fahren Sie mit dem Upgrade-Prozess fort.
 
 ### composer.json
 
-Überprüfen Sie vor einem Upgrade immer, ob die Abhängigkeiten in der `composer.json` -Dateien sind mit der Adobe Commerce-Version kompatibel.
+Überprüfen Sie vor dem Upgrade immer, ob die Abhängigkeiten in der Datei `composer.json` mit der Adobe Commerce-Version kompatibel sind.
 
-**So aktualisieren Sie `composer.json` -Datei für Adobe Commerce Version 2.4.4 und höher**:
+**Aktualisieren der `composer.json`-Datei für Adobe Commerce-Version 2.4.4 und höher**:
 
-1. Folgendes hinzufügen `allow-plugins` in die `config` Bereich:
+1. Fügen Sie dem Abschnitt `config` den folgenden `allow-plugins` hinzu:
 
    ```json
    "config": {
@@ -205,7 +205,7 @@ Vor dem Upgrade der Anwendung müssen Sie Ihre Projektkonfigurationsdateien aktu
    },
    ```
 
-1. Fügen Sie das folgende Plug-in zur hinzu. `require` Bereich:
+1. Fügen Sie dem Abschnitt `require` das folgende Plug-in hinzu:
 
    ```json
    "require": {
@@ -213,7 +213,7 @@ Vor dem Upgrade der Anwendung müssen Sie Ihre Projektkonfigurationsdateien aktu
    },
    ```
 
-1. Fügen Sie die folgende Komponente zur hinzu `extra:component_paths` Bereich:
+1. Fügen Sie die folgende Komponente zum Abschnitt `extra:component_paths` hinzu:
 
    ```json
    "extra": {
@@ -223,15 +223,15 @@ Vor dem Upgrade der Anwendung müssen Sie Ihre Projektkonfigurationsdateien aktu
    },
    ```
 
-1. Speichern Sie die Datei. Übernehmen oder übertragen Sie noch keine Änderungen an Ihre Verzweigung.
+1. Speichern Sie die Datei. Übertragen oder pushen Sie noch keine Änderungen in Ihren Zweig.
 
 1. Fahren Sie mit dem Upgrade-Prozess fort.
 
-## Projekt-Backup
+## Projektsicherung
 
-Es wird empfohlen, vor einem Upgrade eine Sicherungskopie des Projekts zu erstellen. Führen Sie die folgenden Schritte aus, um Ihre Integrations-, Staging- und Produktionsumgebungen zu sichern.
+Es wird empfohlen, vor einer Aktualisierung eine Sicherungskopie Ihres Projekts zu erstellen. Führen Sie die folgenden Schritte aus, um Ihre Integration-, Staging- und Produktionsumgebungen zu sichern.
 
-**So sichern Sie die Datenbank und den Code Ihrer Integrationsumgebung**:
+**Sichern der Datenbank und des Codes der Integrationsumgebung**:
 
 1. Erstellen Sie eine lokale Sicherung der Remote-Datenbank.
 
@@ -241,7 +241,7 @@ Es wird empfohlen, vor einem Upgrade eine Sicherungskopie des Projekts zu erstel
 
    >[!NOTE]
    >
-   >Die `magento-cloud db:dump` Der Befehl führt den aus [mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) Befehl mit dem `--single-transaction` -Markierung, mit der Sie Ihre Datenbank sichern können, ohne die Tabellen zu sperren.
+   >Der Befehl `magento-cloud db:dump` führt den Befehl [mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html) mit dem Flag `--single-transaction` aus, mit dem Sie Ihre Datenbank sichern können, ohne die Tabellen zu sperren.
 
 1. Sichern Sie Code und Medien.
 
@@ -249,29 +249,29 @@ Es wird empfohlen, vor einem Upgrade eine Sicherungskopie des Projekts zu erstel
    php bin/magento setup:backup --code [--media]
    ```
 
-   Optional können Sie auslassen `[--media]` Wenn Sie über eine große Anzahl von statischen Dateien verfügen, die sich bereits in der Versionsverwaltung befinden.
+   Optional können Sie `[--media]` auslassen, wenn Sie eine große Anzahl statischer Dateien haben, die sich bereits in der Quell-Code-Verwaltung befinden.
 
-**So sichern Sie die Datenbank der Staging- oder Produktionsumgebung vor der Bereitstellung**:
+**So sichern Sie die Datenbank der Staging- oder Produktionsumgebung vor der Bereitstellung von**:
 
 1. Verwenden Sie SSH, um sich bei der Remote-Umgebung anzumelden.
 
-1. Erstellen eines [Datenbank-Dump](../storage/database-dump.md). Um einen Zielordner für den DB-Dump auszuwählen, verwenden Sie `--dump-directory` Option.
+1. Erstellen Sie einen [Datenbank-Dump](../storage/database-dump.md). Verwenden Sie die Option `--dump-directory` , um ein Zielverzeichnis für den DB-Dump auszuwählen.
 
    ```bash
    vendor/bin/ece-tools db-dump
    ```
 
-   Der Dump-Vorgang erstellt eine `dump-<timestamp>.sql.gz` Archivieren Sie die Datei in Ihrem Remote-Projektverzeichnis. Siehe [Datenbank sichern](../storage/database-dump.md).
+   Der Dump-Vorgang erstellt eine `dump-<timestamp>.sql.gz` -Archivdatei in Ihrem Remote-Projektverzeichnis. Siehe [Datenbank sichern](../storage/database-dump.md).
 
-## Anwendungs-Upgrade
+## Anwendungsaktualisierung
 
-Überprüfen Sie die [Service-Versionen](../services/services-yaml.md#service-versions) Informationen zu den aktuellen Anforderungen an die Softwareversion, bevor Sie Ihr Programm aktualisieren.
+Überprüfen Sie die Informationen zu den [Dienstversionen](../services/services-yaml.md#service-versions) auf die neuesten Anforderungen an die Softwareversion, bevor Sie Ihre Anwendung aktualisieren.
 
-**So aktualisieren Sie die Anwendungsversion**:
+**Aktualisieren der Anwendungsversion**:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
+1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
 
-1. Legen Sie die Upgrade-Version mithilfe der [Syntax der Versionsbeschränkung](overview.md#cloud-metapackage).
+1. Legen Sie die Upgrade-Version mit der Syntax der Versionsbegrenzung [ fest.](overview.md#cloud-metapackage)
 
    ```bash
    composer require "magento/magento-cloud-metapackage":">=CURRENT_VERSION <NEXT_VERSION" --no-update
@@ -279,7 +279,7 @@ Es wird empfohlen, vor einem Upgrade eine Sicherungskopie des Projekts zu erstel
 
    >[!NOTE]
    >
-   >Sie müssen die Versionsbeschränkungssyntax verwenden, um erfolgreich zu aktualisieren `ece-tools` Paket. Die Versionsbeschränkung finden Sie in der Datei `composer.json` -Datei für die -Version [Anwendungsvorlage](https://github.com/magento/magento-cloud/blob/master/composer.json) Sie verwenden für das Upgrade.
+   >Sie müssen die Syntax der Versionsbegrenzung verwenden, um das `ece-tools` -Paket erfolgreich zu aktualisieren. Sie finden die Versionsbeschränkung in der Datei `composer.json` für die Version der [Anwendungsvorlage](https://github.com/magento/magento-cloud/blob/master/composer.json), die Sie für das Upgrade verwenden.
 
 1. Aktualisieren Sie das Projekt.
 
@@ -287,7 +287,7 @@ Es wird empfohlen, vor einem Upgrade eine Sicherungskopie des Projekts zu erstel
    composer update
    ```
 
-1. Code-Änderungen hinzufügen, übertragen und per Push übertragen.
+1. Hinzufügen, Übertragen und Push-Code-Änderungen.
 
    ```bash
    git add -A
@@ -301,85 +301,85 @@ Es wird empfohlen, vor einem Upgrade eine Sicherungskopie des Projekts zu erstel
    git push origin <branch-name>
    ```
 
-   `git add -A` ist erforderlich, um alle geänderten Dateien zur Versionsverwaltung hinzuzufügen, da Composer Basispakete marshallt. Beide `composer install` und `composer update` Marshallen von Dateien aus dem Basispaket (`magento/magento2-base` und `magento/magento2-ee-base`) in den Paketstamm geschrieben.
+   `git add -A` ist erforderlich, um alle geänderten Dateien zur Quell-Code-Verwaltung hinzuzufügen, da der Composer Basispakete marshallt. Sowohl `composer install` als auch `composer update` Marshalldateien aus dem Basispaket (`magento/magento2-base` und `magento/magento2-ee-base`) in den Paketstamm.
 
-   Die Dateien, die Composer marshallt, gehören zur neuen Version von Adobe Commerce, um die veraltete Version derselben Dateien zu überschreiben. Derzeit ist das Marshalling in Adobe Commerce deaktiviert, sodass Sie die marshallten Dateien zur Quell-Code-Verwaltung hinzufügen müssen.
+   Die Dateien, die Composer marschiert, gehören zur neuen Version von Adobe Commerce, um die veraltete Version dieser Dateien zu überschreiben. Derzeit ist das Marshalling in Adobe Commerce deaktiviert. Daher müssen Sie die marshaled -Dateien zur Quell-Code-Verwaltung hinzufügen.
 
 1. Warten Sie, bis die Bereitstellung abgeschlossen ist.
 
-1. Überprüfen Sie das Upgrade in Ihrer Integrations-, Staging- oder Produktionsumgebung, indem Sie sich mit SSH anmelden und die Version überprüfen.
+1. Überprüfen Sie das Upgrade in Ihrer Integration-, Staging- oder Produktionsumgebung, indem Sie SSH verwenden, um sich anzumelden und die Version zu überprüfen.
 
    ```bash
    php bin/magento --version
    ```
 
-### Erstellen einer Datei config.php
+### Erstellen einer Datei &quot;config.php&quot;
 
-Wie in erwähnt [Konfigurationsverwaltung](#configuration-management)Nach dem Upgrade müssen Sie eine aktualisierte Datei erstellen. `config.php` -Datei. Schließen Sie alle zusätzlichen Konfigurationsänderungen über den Administrator in Ihrer Integrationsumgebung ab.
+Wie in [Konfigurationsverwaltung](#configuration-management) erwähnt, müssen Sie nach der Aktualisierung eine aktualisierte `config.php` -Datei erstellen. Schließen Sie alle weiteren Konfigurationsänderungen über den Admin in Ihrer Integrationsumgebung ab.
 
-**So erstellen Sie eine systemspezifische Konfigurationsdatei**:
+**Erstellen einer systemspezifischen Konfigurationsdatei**:
 
-1. Verwenden Sie vom Terminal aus einen SSH-Befehl, um das `/app/etc/config.php` -Datei für die Umgebung.
+1. Verwenden Sie vom Terminal einen SSH-Befehl, um die Datei `/app/etc/config.php` für die Umgebung zu generieren.
 
    ```bash
    ssh <SSH-URL> "<Command>"
    ```
 
-   So führen Sie beispielsweise für Pro Folgendes aus: `scd-dump` am `integration` Verzweigung:
+   Beispiel: Führen Sie für Pro den `scd-dump` -Vorgang für die Verzweigung `integration` aus:
 
    ```bash
    ssh <project-id-integration>@ssh.us.magentosite.cloud "php vendor/bin/ece-tools config:dump"
    ```
 
-1. Übertragen Sie die `config.php` Datei auf den lokalen Workstations mithilfe von `rsync` oder `scp`. Sie können diese Datei nur lokal zur Verzweigung hinzufügen.
+1. Übertragen Sie die `config.php` -Datei mit `rsync` oder `scp` auf Ihre lokalen Workstations. Sie können diese Datei nur lokal zum Zweig hinzufügen.
 
    ```bash
    rsync <SSH-URL>:app/etc/config.php ./app/etc/config.php
    ```
 
-1. Code-Änderungen hinzufügen, übertragen und per Push übertragen.
+1. Hinzufügen, Übertragen und Push-Code-Änderungen.
 
    ```bash
    git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
    ```
 
-   Dadurch wird eine aktualisierte generiert `/app/etc/config.php` Datei mit einer Modulliste und Konfigurationseinstellungen.
+   Dadurch wird eine aktualisierte `/app/etc/config.php` -Datei mit einer Modulliste und Konfigurationseinstellungen generiert.
 
 >[!WARNING]
 >
->Für ein Upgrade löschen Sie `config.php` -Datei. Nachdem diese Datei zu Ihrem Code hinzugefügt wurde, sollten Sie **nicht** Löschen Sie sie. Wenn Sie Einstellungen entfernen oder bearbeiten müssen, bearbeiten Sie die Datei manuell.
+>Bei einem Upgrade löschen Sie die Datei &quot;`config.php`&quot;. Nachdem diese Datei zum Code hinzugefügt wurde, sollten Sie sie **nicht** löschen. Wenn Sie Einstellungen entfernen oder bearbeiten müssen, bearbeiten Sie die Datei manuell.
 
 ### Erweiterungen aktualisieren
 
-Überprüfen Sie Ihre Erweiterungs- und Modulseiten von Drittanbietern auf Marketplace oder anderen Unternehmens-Sites und überprüfen Sie die Unterstützung für Adobe Commerce und Adobe Commerce auf Cloud-Infrastrukturen. Wenn Sie Erweiterungen und Module von Drittanbietern aktualisieren müssen, empfiehlt Adobe, mit deaktivierten Erweiterungen in einer neuen Integrationsverzweigung zu arbeiten.
+Überprüfen Sie Ihre Seiten mit Drittanbietererweiterungen und -modulen in Marketplace oder anderen Unternehmens-Sites und überprüfen Sie die Unterstützung für Adobe Commerce und Adobe Commerce in der Cloud-Infrastruktur. Wenn Sie Erweiterungen und Module von Drittanbietern aktualisieren müssen, empfiehlt Adobe, in einer neuen Integrationsverzweigung zu arbeiten, wobei Ihre Erweiterungen deaktiviert sind.
 
-**So überprüfen und aktualisieren Sie Ihre Erweiterungen**:
+**Überprüfen und Aktualisieren Ihrer Erweiterungen**:
 
 1. Erstellen Sie eine Verzweigung auf Ihrer lokalen Workstation.
 
 1. Deaktivieren Sie Ihre Erweiterungen nach Bedarf.
 
-1. Laden Sie, sofern verfügbar, Erweiterungs-Upgrades herunter.
+1. Sofern verfügbar, laden Sie Erweiterungs-Upgrades herunter.
 
-1. Installieren Sie das Upgrade, wie in der Dokumentation des Drittanbieters beschrieben.
+1. Installieren Sie das Upgrade wie in der Dokumentation von Drittanbietern beschrieben.
 
-1. Aktivieren und Testen der Erweiterung.
+1. Aktivieren und testen Sie die Erweiterung.
 
-1. Fügen Sie die Code-Änderungen hinzu, übertragen Sie sie und übertragen Sie sie auf die Fernbedienung.
+1. Fügen Sie die Codeänderungen hinzu, übertragen Sie sie und übertragen Sie sie auf die Remote-Umgebung.
 
-1. Push-Benachrichtigung und Testen in Ihrer Integrationsumgebung.
+1. Senden Sie Push-Benachrichtigungen an Ihre Integrationsumgebung und testen Sie sie.
 
-1. Pushen Sie in die Staging-Umgebung, um sie in einer Vorproduktionsumgebung zu testen.
+1. Push in die Staging-Umgebung, um sie in einer Produktionsumgebung zu testen.
 
-Adobe empfiehlt dringend, die Produktionsumgebung zu aktualisieren _Vorher_ Einschließen der aktualisierten Erweiterungen in Ihren Site-Launch-Prozess.
+Adobe empfiehlt dringend, die Produktionsumgebung _vor_ einschließlich der aktualisierten Erweiterungen im Site-Startprozess zu aktualisieren.
 
 >[!NOTE]
 >
->Wenn Sie die Anwendungsversion aktualisieren, wird der Upgrade-Prozess auf die neueste Version des Programms aktualisiert [Fastly CDN-Modul](../cdn/fastly.md#fastly-cdn-module-for-magento-2) Automatisch.
+>Wenn Sie Ihre Anwendungsversion aktualisieren, wird der Aktualisierungsprozess automatisch auf die neueste Version des [Fastly CDN-Moduls](../cdn/fastly.md#fastly-cdn-module-for-magento-2) aktualisiert.
 
-## Fehlerbehebung bei Upgrades
+## Fehlerbehebung bei der Aktualisierung
 
-Wenn das Upgrade fehlgeschlagen ist, erhalten Sie eine Fehlermeldung im Browser, die Sie darauf hinweist, dass Sie nicht auf Ihre Storefront oder das Admin-Panel zugreifen können:
+Wenn das Upgrade fehlgeschlagen ist, erhalten Sie eine Fehlermeldung im Browser, die darauf hinweist, dass Sie nicht auf Ihre Storefront oder das Admin-Bedienfeld zugreifen können:
 
 ```terminal
 There has been an error processing your request
@@ -387,9 +387,9 @@ Exception printing is disabled by default for security reasons.
   Error log record number: <error-number>
 ```
 
-**Beheben des Fehlers**:
+**So beheben Sie den Fehler**:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
+1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
 
 1. Verwenden Sie SSH, um sich bei der Remote-Umgebung anzumelden.
 
@@ -397,11 +397,11 @@ Exception printing is disabled by default for security reasons.
    magento-cloud ssh
    ```
 
-1. Öffnen Sie `./app/var/report/<error number>` -Datei.
+1. Öffnen Sie die Datei &quot;`./app/var/report/<error number>`&quot;.
 
-1. [Überprüfen der Protokolle](../test/log-locations.md) und ermitteln Sie die Ursache des Problems.
+1. [Überprüfen Sie die Protokolle](../test/log-locations.md) und ermitteln Sie die Quelle des Problems.
 
-1. Code-Änderungen hinzufügen, übertragen und per Push übertragen.
+1. Hinzufügen, Übertragen und Push-Code-Änderungen.
 
    ```bash
    git add -A && git commit -m "Fixed deployment failure" && git push origin <branch-name>

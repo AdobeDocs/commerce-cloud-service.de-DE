@@ -12,18 +12,18 @@ ht-degree: 0%
 
 # Szenario-basierte Bereitstellung
 
-Mit `ece-tools` 2002.1.0 und höher können Sie die szenario-basierte Bereitstellungsfunktion verwenden, um das standardmäßige Bereitstellungsverhalten anzupassen.
-Diese Funktion verwendet **Szenarien** und **Schritte** in der Konfiguration:
+Ab Version `ece-tools` 2002.1.0 können Sie die szenario-basierte Bereitstellungsfunktion verwenden, um das standardmäßige Bereitstellungsverhalten anzupassen.
+Diese Funktion verwendet **szenarien** und **Schritte** in der Konfiguration:
 
-- **Szenariokonfiguration**-Jeder Bereitstellungshaken ist ein *scenario*, eine XML-Konfigurationsdatei, die die Sequenz- und Konfigurationsparameter zum Ausführen von Bereitstellungsaufgaben beschreibt. Sie konfigurieren die Szenarien im `hooks` Abschnitt `.magento.app.yaml` -Datei.
+- **Szenario-Konfiguration** - Jeder Bereitstellungs-Hook ist ein *szenario*, bei dem es sich um eine XML-Konfigurationsdatei handelt, die die Sequenz- und Konfigurationsparameter zum Ausführen von Bereitstellungsaufgaben beschreibt. Sie konfigurieren die Szenarien im Abschnitt `hooks` der Datei `.magento.app.yaml` .
 
-- **Schrittkonfiguration**-Jedes Szenario verwendet eine Sequenz von *Schritte* in dem die zum Ausführen von Bereitstellungsaufgaben erforderlichen Vorgänge programmatisch beschrieben werden. Sie konfigurieren die Schritte in einer XML-basierten Szenario-Konfigurationsdatei.
+- **Schrittkonfiguration** - Jedes Szenario verwendet eine Sequenz von *Schritten* , die die zum Ausführen von Bereitstellungsaufgaben erforderlichen Vorgänge programmgesteuert beschreiben. Sie konfigurieren die Schritte in einer XML-basierten Szenario-Konfigurationsdatei.
 
-Adobe Commerce on Cloud Infrastructure bietet eine Reihe von [Standardszenarien](https://github.com/magento/ece-tools/tree/2002.1/scenario) und [Standardschritte](https://github.com/magento/ece-tools/tree/2002.1/src/Step) im `ece-tools` Paket. Sie können das Bereitstellungsverhalten anpassen, indem Sie benutzerdefinierte XML-Konfigurationsdateien erstellen, um die Standardkonfiguration zu überschreiben oder anzupassen. Sie können auch Szenarien und Schritte verwenden, um Code aus benutzerdefinierten Modulen auszuführen.
+Adobe Commerce in der Cloud-Infrastruktur bietet eine Reihe von [Standardszenarien](https://github.com/magento/ece-tools/tree/2002.1/scenario) und [Standardschritte](https://github.com/magento/ece-tools/tree/2002.1/src/Step) im Paket `ece-tools`. Sie können das Bereitstellungsverhalten anpassen, indem Sie benutzerdefinierte XML-Konfigurationsdateien erstellen, um die Standardkonfiguration zu überschreiben oder anzupassen. Sie können auch Szenarien und Schritte verwenden, um Code aus benutzerdefinierten Modulen auszuführen.
 
 ## Szenarien mithilfe von Build- und Bereitstellungs-Hooks hinzufügen
 
-Sie fügen die Szenarien zum Erstellen und Bereitstellen von Adobe Commerce zum `hooks` Abschnitt `.magento.app.yaml` -Datei. Jeder Erweiterungspunkt gibt die Szenarien an, die während jeder Phase ausgeführt werden sollen. Das folgende Beispiel zeigt die Standardszenario-Konfiguration.
+Sie fügen die Szenarien zum Erstellen und Bereitstellen von Adobe Commerce zum Abschnitt &quot;`hooks`&quot;der Datei &quot;`.magento.app.yaml`&quot;hinzu. Jeder Erweiterungspunkt gibt die Szenarien an, die während jeder Phase ausgeführt werden sollen. Das folgende Beispiel zeigt die Standardszenario-Konfiguration.
 
 > `magento.app.yaml` Hooks
 
@@ -41,11 +41,11 @@ hooks:
 
 >[!NOTE]
 >
->Mit der Veröffentlichung von `ece-tools` 2002.1.x gibt es eine neue [Hooks-Konfiguration](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/hooks-property.html) Format. Das ältere Format aus `ece-tools` Versionen 2002.0.x werden weiterhin unterstützt. Sie müssen jedoch auf das neue Format aktualisieren, um die szenario-basierte Bereitstellungsfunktion zu verwenden.
+>Mit der Veröffentlichung von `ece-tools` 2002.1.x gibt es ein neues Format für die [Hooks-Konfiguration](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/properties/hooks-property.html). Das ältere Format aus den Versionen `ece-tools` 2002.0.x wird weiterhin unterstützt. Sie müssen jedoch auf das neue Format aktualisieren, um die szenario-basierte Bereitstellungsfunktion zu verwenden.
 
 ## Überprüfen von Szenario-Schritten
 
-In der Hook-Konfiguration ist jedes Szenario eine XML-Datei, die Schritte zum Ausführen von Build-, Bereitstellungs- oder Post-Bereitstellungsaufgaben enthält. Beispiel: die `scenario/transfer` -Datei umfasst drei Schritte: `compress-static-content`, `clear-init-directory`, und `backup-data`
+In der Hook-Konfiguration ist jedes Szenario eine XML-Datei, die Schritte zum Ausführen von Build-, Bereitstellungs- oder Post-Bereitstellungsaufgaben enthält. Beispielsweise umfasst die Datei `scenario/transfer` drei Schritte: `compress-static-content`, `clear-init-directory` und `backup-data`
 
 > `scenario/transfer.xml`
 
@@ -84,15 +84,15 @@ Während der Bereitstellung werden die benutzerdefinierten Szenarien anhand der 
 
    1. `vendor/vendor-name/module-name/deploy2.xml`
    1. `vendor/vendor-name/module-name/deploy.xml`
-   1. `scenario/deploy.xml` (Standard- oder Basisszenario)
+   1. `scenario/deploy.xml` (Standard- oder Grundlinienszenario)
 
 - Die Schritte im Szenario mit der höchsten Priorität überschreiben die Schritte mit demselben Namen in den anderen Szenarien. Der Konfiguration werden neue Schritte hinzugefügt. Die gleichen Regeln gelten für mehr als zwei Szenarien, wobei jedes Szenario von rechts nach links priorisiert wird, z. B. (C → B → A).
 
 ### Standardschritte entfernen
 
-Sie entfernen Schritte aus Standardszenarien mit dem `skip` -Parameter.
+Sie entfernen Schritte aus Standardszenarien mit dem Parameter `skip` .
 
-Um beispielsweise die Variable `enable-maintenance-mode` und `set-production-mode` Erstellen Sie im standardmäßigen Bereitstellungsszenario eine Konfigurationsdatei, die die folgende Konfiguration enthält.
+Um beispielsweise die Schritte `enable-maintenance-mode` und `set-production-mode` im standardmäßigen Bereitstellungsszenario zu überspringen, erstellen Sie eine Konfigurationsdatei mit der folgenden Konfiguration.
 
 > `vendor/vendor-name/module-name/deploy-custom-mode-config.xml`
 
@@ -124,13 +124,13 @@ hooks:
 
 Benutzerdefinierte Szenarien können die Standardschritte zur Bereitstellung einer benutzerdefinierten Implementierung ersetzen. Verwenden Sie dazu den standardmäßigen Schrittnamen als Namen für den benutzerdefinierten Schritt.
 
-Beispiel: in der [Standardbereitstellungs-Szenario] die `enable-maintenance-mode` -Schritt führt den Standardwert aus [EnableMaintenanceMode PHP-Skript].
+Beispielsweise wird im [standardmäßigen Bereitstellungsszenario] der Schritt `enable-maintenance-mode` das standardmäßige PHP-Skript [EnableMaintenanceMode] ausgeführt.
 
 ```xml
 <step name="enable-maintenance-mode" type="Magento\MagentoCloud\Step\EnableMaintenanceMode" priority="300"/>
 ```
 
-Um diesen Schritt zu überschreiben, erstellen Sie eine benutzerdefinierte Szenario-Konfigurationsdatei, um ein anderes Skript auszuführen, wenn die `enable-maintenance-mode` -Schritt ausgeführt wird.
+Um diesen Schritt zu überschreiben, erstellen Sie eine benutzerdefinierte Szenario-Konfigurationsdatei, um bei Ausführung des Schritts `enable-maintenance-mode` ein anderes Skript auszuführen.
 
 ```xml
 <?xml version="1.0"?>
@@ -142,7 +142,7 @@ Um diesen Schritt zu überschreiben, erstellen Sie eine benutzerdefinierte Szena
 
 ### Schrittpriorität ändern
 
-Benutzerdefinierte Szenarien können die Priorität von Standardschritten ändern. Der folgende Schritt ändert die Priorität der `enable-maintenance-mode` Schritt aus `300` nach `10` , damit der Schritt im Bereitstellungsszenario früher ausgeführt wird.
+Benutzerdefinierte Szenarien können die Priorität von Standardschritten ändern. Im folgenden Schritt wird die Priorität des Schritts `enable-maintenance-mode` von `300` in `10` geändert, sodass der Schritt zuvor im Bereitstellungsszenario ausgeführt wird.
 
 ```xml
 <?xml version="1.0"?>
@@ -152,16 +152,16 @@ Benutzerdefinierte Szenarien können die Priorität von Standardschritten änder
 </scenario>
 ```
 
-In diesem Beispiel wird die `enable-maintenance-mode` Der Schritt wird an den Anfang des Szenarios verschoben, da er eine geringere Priorität hat als alle anderen Schritte im standardmäßigen Bereitstellungsszenario.
+In diesem Beispiel wird der Schritt `enable-maintenance-mode` an den Anfang des Szenarios verschoben, da er eine niedrigere Priorität hat als alle anderen Schritte im standardmäßigen Bereitstellungsszenario.
 
 ### Beispiel: Erweitern des Bereitstellungsszenarios
 
-Im folgenden Beispiel wird die [Standardbereitstellungs-Szenario] mit den folgenden Änderungen:
+Im folgenden Beispiel wird das [standardmäßige Bereitstellungsszenario] mit den folgenden Änderungen angepasst:
 
-- Ersetzt die `remove-deploy-failed-flag` Schritt mit einem benutzerdefinierten Schritt
-- Überspringt die `clean-redis-cache` Schritt im Schritt vor der Bereitstellung
-- Überspringt die `unlock-cron-jobs` Schritt
-- Überspringt die `validate-config` Schritt zum Deaktivieren kritischer Validatoren
+- Ersetzt den Schritt `remove-deploy-failed-flag` durch einen benutzerdefinierten Schritt
+- Überspringt den Unterschritt `clean-redis-cache` im Schritt vor der Bereitstellung
+- Überspringt den Schritt `unlock-cron-jobs`
+- Überspringt den Schritt `validate-config` , um wichtige Validatoren zu deaktivieren
 - Fügt einen neuen Schritt vor der Bereitstellung hinzu
 
 > `vendor/vendor-name/module-name/deploy-extended.xml`
@@ -203,7 +203,7 @@ Im folgenden Beispiel wird die [Standardbereitstellungs-Szenario] mit den folgen
 </scenario>
 ```
 
-Um dieses Skript in Ihrem Projekt zu verwenden, fügen Sie die folgende Konfiguration zum `.magento.app.yaml` Datei für Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur:
+Um dieses Skript in Ihrem Projekt zu verwenden, fügen Sie die folgende Konfiguration zur Datei &quot;`.magento.app.yaml`&quot;für Ihr Adobe Commerce on Cloud-Infrastrukturprojekt hinzu:
 
 ```yaml
 hooks:
@@ -219,23 +219,23 @@ hooks:
 
 >[!TIP]
 >
->Sie können die [Standardszenarien](https://github.com/magento/ece-tools/tree/2002.1/scenario) und [Standardschrittkonfiguration](https://github.com/magento/ece-tools/tree/2002.1/src/Step) im `ece-tools` GitHub-Repository , um zu bestimmen, welche Szenarien und Schritte für Ihre Aufgaben zum Erstellen, Bereitstellen und nach der Bereitstellung angepasst werden sollen.
+>Sie können die [Standardszenarien](https://github.com/magento/ece-tools/tree/2002.1/scenario) und die [Standardschrittkonfiguration](https://github.com/magento/ece-tools/tree/2002.1/src/Step) im GitHub-Repository überprüfen, um zu bestimmen, welche Szenarien und Schritte für Ihre Aufgaben zum Erstellen, Bereitstellen und Bereitstellen von Projekten angepasst werden sollen.`ece-tools`
 
-## Hinzufügen eines benutzerdefinierten Moduls zum Erweitern `ece-tools`
+## Fügen Sie ein benutzerdefiniertes Modul hinzu, um `ece-tools` zu erweitern
 
-Die `ece-tools` -Paket bietet standardmäßige API-Schnittstellen, die den Standards der Semantic Version entsprechen. Alle API-Schnittstellen sind mit **@api** -Anmerkung. Sie können die standardmäßige API-Implementierung durch Ihre eigene ersetzen, indem Sie ein benutzerdefiniertes Modul erstellen und den Standardcode nach Bedarf ändern.
+Das Paket `ece-tools` bietet standardmäßige API-Schnittstellen, die den Standards der Semantic Version entsprechen. Alle API-Schnittstellen sind mit der Anmerkung **@api** markiert. Sie können die standardmäßige API-Implementierung durch Ihre eigene ersetzen, indem Sie ein benutzerdefiniertes Modul erstellen und den Standardcode nach Bedarf ändern.
 
-Um das benutzerdefinierte Modul mit Adobe Commerce in der Cloud-Infrastruktur zu verwenden, müssen Sie Ihr Modul in der Erweiterungsliste für die `ece-tools` Paket. Der Registrierungsprozess ähnelt dem Prozess, den Sie zur Registrierung von Modulen in Adobe Commerce verwenden.
+Um das benutzerdefinierte Modul mit Adobe Commerce in der Cloud-Infrastruktur zu verwenden, müssen Sie Ihr Modul in der Erweiterungsliste für das Paket `ece-tools` registrieren. Der Registrierungsprozess ähnelt dem Prozess, den Sie zur Registrierung von Modulen in Adobe Commerce verwenden.
 
-**So registrieren Sie ein Modul bei der `ece-tools` package**:
+**So registrieren Sie ein Modul beim `ece-tools` -Paket**:
 
-1. Erstellen oder erweitern Sie die `registration.php` -Datei im Stammverzeichnis Ihres Moduls.
+1. Erstellen oder erweitern Sie die Datei `registration.php` im Stammverzeichnis Ihres Moduls.
 
    ```php?start_inline=1
    \Magento\MagentoCloud\ExtensionRegistrar::register('module-name', __DIR__);
    ```
 
-1. Aktualisieren Sie die `autoload` -Abschnitt für Ihre Modulkonfigurationsdatei, die die `registration.php` Datei zu automatischen Moduldateien in `composer.json`.
+1. Aktualisieren Sie den Abschnitt &quot;`autoload`&quot; für Ihre Modulkonfigurationsdatei, um die Datei &quot;`registration.php`&quot; zum automatischen Laden von Moduldateien in &quot;`composer.json`&quot;einzuschließen.
 
    ```json
    {
@@ -253,7 +253,7 @@ Um das benutzerdefinierte Modul mit Adobe Commerce in der Cloud-Infrastruktur zu
    }
    ```
 
-1. Fügen Sie die `config/services.xml` -Datei in Ihr -Modul. Diese Konfiguration wird zusammengeführt `config/services.xml` von `ece-tools` Paket.
+1. Fügen Sie die Datei `config/services.xml` in Ihr Modul ein. Diese Konfiguration wird über `config/services.xml` aus dem `ece-tools` -Paket zusammengeführt.
 
    ```xml
    <?xml version="1.0" encoding="UTF-8" ?>

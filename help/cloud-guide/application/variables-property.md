@@ -1,6 +1,6 @@
 ---
 title: Variableneigenschaft
-description: Verwenden Sie die Eigenschaft variables , um die Speicherkonfigurationsoptionen für die [!DNL Commerce] Anwendung.
+description: Verwenden Sie die Eigenschaft variables , um die Speicherkonfigurationsoptionen für die Anwendung [!DNL Commerce] anzupassen.
 feature: Cloud, Configuration
 exl-id: 5cd92fbb-8bff-48b1-9658-500140591344
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # Variableneigenschaft
 
-Sie können anwendungsbasierte Umgebungsvariablen verwenden, um Store-Konfigurationen anzupassen. Diese Variablen verwenden eine bestimmte Syntax. Siehe [Konfigurationseinstellungen überschreiben](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/paths/override-config-settings.html) im _Konfigurationshandbuch_.
+Sie können anwendungsbasierte Umgebungsvariablen verwenden, um Store-Konfigurationen anzupassen. Diese Variablen verwenden eine bestimmte Syntax. Siehe [Konfigurationseinstellungen außer Kraft setzen](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/paths/override-config-settings.html) im _Konfigurationshandbuch_.
 
-Die folgenden Umgebungsvariablen sind in der `.magento.app.yaml` -Datei für bestimmte Versionen der [!DNL Commerce] Anwendung.
+Die folgenden in der Datei `.magento.app.yaml` enthaltenen Umgebungsvariablen sind für bestimmte Versionen der Anwendung [!DNL Commerce] erforderlich.
 
 Erforderlich für Adobe Commerce 2.2.x bis 2.3.x:
 

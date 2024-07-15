@@ -10,12 +10,12 @@ ht-degree: 0%
 <!-- The template to render with above values -->
 **Version**: 1.46.1
 
-Diese Referenz enthält 119 Befehle, die über das `magento-cloud` Befehlszeilen-Tool.
-Die anfängliche Liste wird automatisch mit der Variablen `magento-cloud list` in Adobe Commerce in der Cloud-Infrastruktur.
+Diese Referenz enthält 119 Befehle, die über das Befehlszeilen-Tool `magento-cloud` verfügbar sind.
+Die anfängliche Liste wird mithilfe des Befehls `magento-cloud list` in Adobe Commerce in der Cloud-Infrastruktur automatisch generiert.
 
 >[!NOTE]
 >
->Diese Referenz wird aus der Anwendungs-Codebase generiert. Um den Inhalt zu ändern, können Sie den Quellcode für die entsprechende Befehlsimplementierung im [codebase](https://github.com/magento/magento-cloud-cli) Repository erstellen und Ihre Änderungen zur Überprüfung einreichen. Eine andere Möglichkeit ist, _Feedback geben_ (finden Sie den Link oben rechts). Beitragsrichtlinien finden Sie unter [Codebeiträge](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
+>Diese Referenz wird aus der Anwendungs-Codebase generiert. Um den Inhalt zu ändern, können Sie den Quellcode für die entsprechende Befehlsimplementierung im Repository [Codebase](https://github.com/magento/magento-cloud-cli) aktualisieren und Ihre Änderungen zur Überprüfung senden. Eine andere Möglichkeit besteht darin, _Feedback geben_ (den Link oben rechts zu finden). Beitragsrichtlinien finden Sie unter [Codebeiträge](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
 
 ## `clear-cache`
 
@@ -6138,7 +6138,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `metrics:all`
 
-BETA Anzeigen von CPU-, Datenträger- und Speichermetriken für eine Umgebung
+BETA Zeigt CPU-, Datenträger- und Speichermetriken für eine Umgebung an
 
 ```bash
 magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
@@ -7136,7 +7136,7 @@ Stellen Sie keine interaktiven Fragen; akzeptieren Sie Standardwerte. Entspricht
 
 ## `operation:list`
 
-BETA List-Laufzeitvorgänge in einer Umgebung
+BETA Listen-Laufzeitvorgänge in einer Umgebung
 
 ```bash
 magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
@@ -9417,7 +9417,7 @@ Aktualisieren des Zertifikats erzwingen
 
 ### `--new-key`
 
-[Veraltet] Verwenden Sie stattdessen —new
+[Veraltet] Verwenden Sie stattdessen —new .
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -10330,7 +10330,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 
 ### `--role`, `-r`
 
-[Veraltet: Verwenden Sie user:update , um die Benutzerrolle(en) zu ändern.]
+[Veraltet: Verwenden Sie user:update , um die Benutzerrolle(en) zu ändern]
 
 - Erfordert einen Wert
 

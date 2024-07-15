@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # Routen konfigurieren
 
-Die `routes.yaml` in der Datei `.magento/routes.yaml` definiert Routen für Ihre Adobe Commerce in Cloud-Infrastruktur-Integrations-, Staging- und Produktionsumgebungen. Routen bestimmen, wie die Anwendung eingehende HTTP- und HTTPS-Anforderungen verarbeitet.
+Die Datei &quot;`routes.yaml`&quot;im Ordner &quot;`.magento/routes.yaml`&quot;definiert Routen für Ihre Adobe Commerce in Cloud-Infrastruktur-Integrations-, Staging- und Produktionsumgebungen. Routen bestimmen, wie die Anwendung eingehende HTTP- und HTTPS-Anforderungen verarbeitet.
 
-Die Standardeinstellung `routes.yaml` -Datei gibt die Routenvorlagen für die Verarbeitung von HTTP-Anfragen als HTTPS für Projekte an, die eine einzelne Standarddomäne aufweisen, und für Projekte, die für mehrere Domänen konfiguriert sind:
+Die standardmäßige `routes.yaml` -Datei gibt die Routenvorlagen für die Verarbeitung von HTTP-Anfragen als HTTPS für Projekte an, die eine einzige Standarddomäne haben, und für Projekte, die für mehrere Domänen konfiguriert sind:
 
 ```yaml
 "http://{default}/":
@@ -25,7 +25,7 @@ Die Standardeinstellung `routes.yaml` -Datei gibt die Routenvorlagen für die Ve
     upstream: "mymagento:http"
 ```
 
-Verwenden Sie die `magento-cloud` CLI zum Anzeigen einer Liste der konfigurierten Routen:
+Verwenden Sie die CLI `magento-cloud` , um eine Liste der konfigurierten Routen anzuzeigen:
 
 ```bash
 magento-cloud environment:routes
@@ -43,9 +43,9 @@ magento-cloud environment:routes
 
 ## Routenvorlagen
 
-Die `routes.yaml` -Datei ist eine Liste von Vorlagenrouten und deren Konfigurationen. Sie können die folgenden Platzhalter in Routenvorlagen verwenden:
+Die Datei &quot;`routes.yaml`&quot; ist eine Liste mit Vorlagenrouten und ihren Konfigurationen. Sie können die folgenden Platzhalter in Routenvorlagen verwenden:
 
-- Die `{default}` Platzhalter stellt den qualifizierten Domänennamen dar, der als Standard für das Projekt konfiguriert wurde.
+- Der Platzhalter `{default}` stellt den qualifizierten Domänennamen dar, der als Standard für das Projekt konfiguriert wurde.
 
   Beispiel: ein Projekt mit der Standarddomäne `example.com` und den folgenden Routenvorlagen:
 
@@ -61,9 +61,9 @@ Die `routes.yaml` -Datei ist eine Liste von Vorlagenrouten und deren Konfigurati
   https://example.com/blog
   ```
 
-- Die `{all}` Platzhalter stellt alle Domänennamen dar, die für das Projekt konfiguriert sind.
+- Der Platzhalter `{all}` stellt alle für das Projekt konfigurierten Domänennamen dar.
 
-  Beispiel: ein Projekt mit `example.com` und `example1.com` Domänen mit den folgenden Routenvorlagen:
+  Beispiel: ein Projekt mit den Domänen `example.com` und `example1.com` mit den folgenden Routenvorlagen:
 
   ```text
   https://www.{all}/
@@ -83,17 +83,17 @@ Die `routes.yaml` -Datei ist eine Liste von Vorlagenrouten und deren Konfigurati
   https://example1.com/blog
   ```
 
-  Die `{all}` Platzhalter ist für Projekte nützlich, die für mehrere Domänen konfiguriert sind. In einer Nicht-Produktionszweig `{all}` wird durch die Projekt-ID und die Umgebungs-ID für jede Domäne ersetzt.
+  Der Platzhalter `{all}` ist für Projekte nützlich, die für mehrere Domänen konfiguriert sind. In einer Nicht-Produktions-Verzweigung wird `{all}` durch die Projekt-ID und die Umgebungs-ID für jede Domäne ersetzt.
 
-  Wenn für ein Projekt keine Domänen konfiguriert sind, was bei der Entwicklung üblich ist, wird die Variable `{all}` Platzhalter verhält sich genauso wie der `{default}` Platzhalter.
+  Wenn für ein Projekt keine Domänen konfiguriert sind, was bei der Entwicklung üblich ist, verhält sich der Platzhalter `{all}` genauso wie der Platzhalter `{default}` .
 
-Adobe Commerce generiert außerdem Routen für jede aktive Integrationsumgebung. In Integrationsumgebungen wird die `{default}` Platzhalter wird durch den folgenden Domänennamen ersetzt:
+Adobe Commerce generiert außerdem Routen für jede aktive Integrationsumgebung. In Integrationsumgebungen wird der Platzhalter `{default}` durch den folgenden Domänennamen ersetzt:
 
 ```text
 [branch]-[per-environment-random-string]-[project-id].[region].magentosite.cloud
 ```
 
-Beispiel: die `refactorcss` -Verzweigung für `mswy7hzcuhcjw` Projekt, das im `us` Der Cluster weist die folgende Domäne auf:
+Die Verzweigung `refactorcss` für das im `us`-Cluster gehostete `mswy7hzcuhcjw`-Projekt weist beispielsweise die folgende Domäne auf:
 
 ```text
 https://refactorcss-oy3m2pq-mswy7hzcuhcjw.us.magentosite.cloud/
@@ -105,7 +105,7 @@ https://refactorcss-oy3m2pq-mswy7hzcuhcjw.us.magentosite.cloud/
 
 ### Schrägstrich
 
-Routendefinitionen enthalten einen Schrägstrich, der einen Ordner oder Ordner angibt. Derselbe Inhalt kann jedoch mit oder ohne Schrägstrich bedient werden. Die folgenden URLs lösen die gleichen auf, können jedoch als _zwei verschiedene_ URLs:
+Routendefinitionen enthalten einen Schrägstrich, der einen Ordner oder Ordner angibt. Derselbe Inhalt kann jedoch mit oder ohne Schrägstrich bedient werden. Die folgenden URLs lösen die gleichen auf, können jedoch als _zwei verschiedene_ URLs interpretiert werden:
 
 ```text
 https://www.example.com/blog/
@@ -115,7 +115,7 @@ https://www.example.com/blog
 
 >[!TIP]
 >
->Es empfiehlt sich, einen Schrägstrich für Verzeichnisse zu verwenden. Bei jeder beliebigen Methode ist es jedoch wichtig, **konsistent bleiben** um zu vermeiden, dass zwei Standorte generiert werden.
+>Es empfiehlt sich, einen Schrägstrich für Verzeichnisse zu verwenden. Bei jeder beliebigen Methode ist es jedoch wichtig, **konsistent zu bleiben**, um zu verhindern, dass zwei Speicherorte generiert werden.
 
 ## Routenprotokolle
 
@@ -157,7 +157,7 @@ Alle Umgebungen unterstützen automatisch sowohl HTTP als auch HTTPS.
 
 Servieren Sie alle Seiten über TLS. Für diese Konfiguration müssen Sie Umleitungen für alle unverschlüsselten Anforderungen mit einer der folgenden Methoden an die TLS-Entsprechung konfigurieren:
 
-- Ändern Sie das Protokoll in HTTPS im `routes.yaml` -Datei.
+- Ändern Sie das Protokoll in der Datei `routes.yaml` in HTTPS.
 
   ```yaml
   "https://{default}/":
@@ -168,7 +168,7 @@ Servieren Sie alle Seiten über TLS. Für diese Konfiguration müssen Sie Umleit
       upstream: "mymagento:http"
   ```
 
-- Aktivieren Sie für Staging- und Produktionsumgebungen die [TLS schnell erzwingen](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/redirect-http-to-https-for-all-pages-on-cloud-force-tls.html) in der Admin-Benutzeroberfläche. Wenn Sie diese Option verwenden, wird die Umleitung zu HTTPS schnell verarbeitet, sodass Sie die `routes.yaml` Konfiguration.
+- Aktivieren Sie für Staging- und Produktionsumgebungen die Option [TLS auf Schnell erzwingen](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/redirect-http-to-https-for-all-pages-on-cloud-force-tls.html) in der Admin-Benutzeroberfläche. Wenn Sie diese Option verwenden, verarbeitet die Umleitung schnell zu HTTPS, sodass Sie die `routes.yaml` -Konfiguration nicht aktualisieren müssen.
 
 ## Routenoptionen
 
@@ -176,15 +176,15 @@ Konfigurieren Sie die einzelnen Routen separat mit den folgenden Eigenschaften:
 
 | Eigenschaft | Beschreibung |
 | ---------------- | ----------- |
-| `type: upstream` | Stellt eine Anwendung bereit. Außerdem verfügt es über eine `upstream` -Eigenschaft, die den Namen der Anwendung angibt (wie in `.magento.app.yaml`), gefolgt von `:http` -Endpunkt. |
-| `type: redirect` | Leitet zu einer anderen Route um. Danach folgt die `to` -Eigenschaft, bei der es sich um eine HTTP-Weiterleitung zu einer anderen Route handelt, die durch ihre Vorlage identifiziert wird. |
-| `cache:` | Steuerelemente [Zwischenspeicherung für die Route](caching.md). |
-| `redirects:` | Steuerelemente [Umleitungsregeln](redirects.md). |
-| `ssi:` | Steuerelemente zur Aktivierung von [Serverseitige Includes](server-side-includes.md). |
+| `type: upstream` | Stellt eine Anwendung bereit. Außerdem verfügt es über eine Eigenschaft `upstream` , die den Namen der Anwendung (wie in `.magento.app.yaml` definiert) gefolgt vom Endpunkt `:http` angibt. |
+| `type: redirect` | Leitet zu einer anderen Route um. Anschließend folgt die Eigenschaft `to` , bei der es sich um eine HTTP-Weiterleitung zu einer anderen durch die Vorlage identifizierten Route handelt. |
+| `cache:` | Steuert die [Zwischenspeicherung für die Route](caching.md). |
+| `redirects:` | Steuert [Umleitungsregeln](redirects.md). |
+| `ssi:` | Steuerelemente zum Aktivieren von [Server Side Includes](server-side-includes.md). |
 
 ## Einfache Routen
 
-In den folgenden Beispielen routet die Routenkonfiguration die Apex-Domäne und die `www` Subdomäne an `mymagento` Anwendung. Diese Route leitet keine HTTPS-Anforderungen weiter.
+In den folgenden Beispielen leitet die Routenkonfiguration die Apex-Domäne und die `www`-Subdomäne an die `mymagento`-Anwendung weiter. Diese Route leitet keine HTTPS-Anforderungen weiter.
 
 **Beispiel 1:**
 
@@ -206,7 +206,7 @@ In diesem Beispiel folgt das Anfrage-Routing den folgenden Regeln:
   http://example.com/path
   ```
 
-- Der Server gibt eine _301-Umleitung_ für Anforderungen mit dem folgenden URL-Muster:
+- Der Server gibt für Anfragen mit dem folgenden URL-Muster eine Umleitung _301_ aus:
 
   ```text
   http://www.example.com/mypath
@@ -245,11 +245,11 @@ Dies dient als Sammeldomäne in einer Live-Umgebung.
 
 ### Routing einer nicht zugeordneten Domäne
 
-Mit einem Punkt (`.`), um die Subdomain zu trennen.
+Sie können über einen Punkt (`.`) zu einem System weiterleiten, das keiner Domäne zugeordnet ist, um die Subdomain zu trennen.
 
 **Beispiel:**
 
-Ein Projekt mit `add-theme` -Zweig leitet zu der folgenden URL weiter:
+Ein Projekt mit dem Zweig `add-theme` leitet zu der folgenden URL weiter:
 
 ```text
 http://add-theme-projectID.us.magento.com/
@@ -284,7 +284,7 @@ http://foo.add-theme-projectID.us.magentosite.cloud/
 http://bar.add-theme-projectID.us.magentosite.cloud/
 ```
 
-Sie können das Routenmuster für nicht zugeordnete Domänen anzeigen, indem Sie eine SSH-Verbindung zur Umgebung herstellen und die `magento-cloud` CLI zum Auflisten der Routen:
+Sie können das Routenmuster für nicht zugeordnete Domänen anzeigen, indem Sie eine SSH-Verbindung zur Umgebung herstellen und die Routen mithilfe der CLI `magento-cloud` auflisten:
 
 ```terminal
 web@mymagento.0:~$ vendor/bin/ece-tools env:config:show routes
@@ -315,7 +315,7 @@ Magento Cloud Routes:
 
 ## Umleitungen und Caching
 
-Weitere Informationen finden Sie unter [Umleitungen](redirects.md)können Sie komplexe Umleitungsregeln verwalten, z. B. _partielle Umleitungen_ und Regeln für streckenbasierte [Zwischenspeicherung](caching.md):
+Wie ausführlicher unter [Umleitungen](redirects.md) erläutert, können Sie komplexe Umleitungsregeln verwalten, wie z. B. _partielle Umleitungen_, und Regeln für die routen basierten [Caching](caching.md) festlegen:
 
 ```yaml
 https://www.{default}/:

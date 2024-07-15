@@ -7,7 +7,7 @@ assignees: hguthrie
 source-git-commit: 8be5acdf0e555c46f3307b7acb564148a83570bd
 workflow-type: tm+mt
 source-wordcount: '10'
-ht-degree: 10%
+ht-degree: 30%
 
 ---
 
@@ -28,7 +28,7 @@ ht-degree: 10%
 
 <!-- (OPTIONAL) What would a solution for this issue look like? -->
 
-## Zusätzliche Informationen
+## Weitere Informationen
 
 <!-- (OPTIONAL) What other information can you provide about this feature? -->
 

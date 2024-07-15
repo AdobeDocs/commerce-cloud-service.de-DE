@@ -15,29 +15,29 @@ ht-degree: 0%
 
 Sie müssen über einen Authentifizierungsschlüssel verfügen, um auf das Adobe Commerce-Repository zugreifen und Installations- und Aktualisierungsbefehle für Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur aktivieren zu können. Es gibt zwei Methoden zum Angeben der Autorisierungsberechtigungen für Composer.
 
-- **Authentifizierungsdatei**—Eine Datei, die Ihren Adobe Commerce enthält [Autorisierungsberechtigungen](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/authentication-keys.html) in Ihrer Adobe Commerce auf dem Stammordner der Cloud-Infrastruktur.
-- **Umgebungsvariable**—Eine Umgebungsvariable zum Einrichten von Authentifizierungsschlüsseln in Ihrem Adobe Commerce-Projekt in der Cloud-Infrastruktur, um eine versehentliche Exposition zu verhindern.
+- **Authentifizierungsdatei** - Eine Datei, die Ihre Adobe Commerce [Autorisierungsberechtigungen](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/authentication-keys.html) in Ihrer Adobe Commerce im Stammordner der Cloud-Infrastruktur enthält.
+- **Umgebungsvariable**: Eine Umgebungsvariable zum Einrichten von Authentifizierungsschlüsseln in Ihrem Adobe Commerce-Projekt in der Cloud-Infrastruktur, um eine versehentliche Exposition zu verhindern.
 
 >[!BEGINSHADEBOX]
 
 **Sicherheitshinweis**
 
-Adobe empfiehlt die Verwendung der [Umgebungsvariable](#composer-auth-environment-variable) -Methode mit Ihrem Cloud-Projekt verwenden, um eine versehentliche Offenlegung Ihrer Autorisierungsberechtigungen zu verhindern.
+Adobe empfiehlt die Verwendung der [Umgebungsvariable](#composer-auth-environment-variable) -Methode in Ihrem Cloud-Projekt, um eine versehentliche Offenlegung Ihrer Autorisierungsberechtigungen zu verhindern.
 
-Die Authentifizierungsdateimethode ist ideal, wenn Sie Cloud Docker für Commerce als lokales Entwicklungstool verwenden. Achten Sie jedoch darauf, die `auth.json` in ein öffentliches Git-basiertes Repository. Sie können die `auth.json` in die Datei [`.gitignore` file](../project/file-structure.md#ignoring-files).
+Die Authentifizierungsdateimethode ist ideal, wenn Sie Cloud Docker für Commerce als lokales Entwicklungstool verwenden. Achten Sie jedoch darauf, die `auth.json` -Datei nicht in ein öffentliches Git-basiertes Repository hochzuladen. Sie können die Datei `auth.json` zur Datei [`.gitignore` ](../project/file-structure.md#ignoring-files) hinzufügen.
 
 >[!ENDSHADEBOX]
 
 ## Authentifizierungsdatei
 
-**So erstellen Sie eine `auth.json` file**:
+**So erstellen Sie eine `auth.json` -Datei**:
 
-1. Wenn Sie keine `auth.json` -Datei in Ihrem Stammverzeichnis des Projekts erstellen.
+1. Wenn Sie keine `auth.json` -Datei im Stammverzeichnis Ihres Projekts haben, erstellen Sie eine.
 
-   - Erstellen Sie mithilfe eines Texteditors eine `auth.json` -Datei in Ihrem Stammverzeichnis des Projekts.
-   - Kopieren Sie den Inhalt der [sample `auth.json`](https://github.com/magento/magento2/blob/2.3/auth.json.sample) in die neue `auth.json` -Datei.
+   - Erstellen Sie mit einem Texteditor eine `auth.json` -Datei in Ihrem Projektstammverzeichnis.
+   - Kopieren Sie den Inhalt von [sample `auth.json`](https://github.com/magento/magento2/blob/2.3/auth.json.sample) in die neue `auth.json`-Datei.
 
-1. Ersetzen `<public-key>` und `<private-key>` mit Ihren Adobe Commerce-Authentifizierungsdaten.
+1. Ersetzen Sie `<public-key>` und `<private-key>` durch Ihre Adobe Commerce-Authentifizierungsberechtigungen.
 
    ```json
    {
@@ -58,17 +58,17 @@ Die folgende Methode stellt die beste Möglichkeit dar, die versehentliche Offen
 
 **Hinzufügen von Authentifizierungsschlüsseln mit einer Umgebungsvariablen**:
 
-1. Im _[!DNL Cloud Console]_klicken Sie auf das Konfigurationssymbol auf der rechten Seite der Projektnavigation.
+1. Klicken Sie im Ordner &quot;_[!DNL Cloud Console]_&quot;auf das Konfigurationssymbol auf der rechten Seite der Projektnavigation.
 
    ![Projekt konfigurieren](../../assets/icon-configure.png){width="36"}
 
-1. Im _Projekteinstellungen_ Liste, klicken Sie **[!UICONTROL Variables]**.
+1. Klicken Sie in der Liste _Projekteinstellungen_ auf **[!UICONTROL Variables]**.
 
-1. Klicks **[!UICONTROL Create variable]**.
+1. Klicken Sie auf **[!UICONTROL Create variable]**.
 
-1. Im **[!UICONTROL Variable name]** Feld, eingeben `env:COMPOSER_AUTH`.
+1. Geben Sie im Feld **[!UICONTROL Variable name]** den Wert `env:COMPOSER_AUTH` ein.
 
-1. Im _Wert_ -Feld hinzufügen, Folgendes hinzufügen und ersetzen `<public-key>` und `<private-key>` mit Ihren Adobe Commerce-Authentifizierungsberechtigungen:
+1. Fügen Sie im Feld _Wert_ Folgendes hinzu und ersetzen Sie `<public-key>` und `<private-key>` durch Ihre Adobe Commerce-Authentifizierungsberechtigungen:
 
    ```json
    {
@@ -81,8 +81,8 @@ Die folgende Methode stellt die beste Möglichkeit dar, die versehentliche Offen
    }
    ```
 
-1. Auswählen **[!UICONTROL Available during buildtime]** und Auswahl aufheben **[!UICONTROL Available during runtime]**.
+1. Wählen Sie **[!UICONTROL Available during buildtime]** aus und heben Sie die Auswahl von **[!UICONTROL Available during runtime]** auf.
 
-1. Klicks **[!UICONTROL Create variable]**.
+1. Klicken Sie auf **[!UICONTROL Create variable]**.
 
-1. Entfernen Sie die `auth.json` -Datei aus jeder Umgebung.
+1. Entfernen Sie die Datei &quot;`auth.json`&quot; aus jeder Umgebung.

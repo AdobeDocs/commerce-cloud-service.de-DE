@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Vorhandenen Commerce-Code importieren
 
-Adobe empfiehlt, ein Commerce-Projekt für Cloud-Infrastruktur aus einer leeren Vorlage zu erstellen oder vorhandenen Code zu importieren. Es wird empfohlen, zunächst mit einer leeren Vorlage zu beginnen und dann vorhandenen Code in das neue Projekt zu importieren. Dadurch wird sichergestellt, dass Sie über alle erforderlichen Dateien verfügen, um das Projekt zu unterstützen.
+Adobe empfiehlt, eine Commerce für Cloud-Infrastrukturprojekte aus einer leeren Vorlage oder durch den Import von vorhandenem Code zu erstellen. Es wird empfohlen, zunächst mit einer leeren Vorlage zu beginnen und dann vorhandenen Code in das neue Projekt zu importieren. Dadurch wird sichergestellt, dass Sie über alle erforderlichen Dateien verfügen, um das Projekt zu unterstützen.
 
 Der vollständige Workflow zum Importieren von vorhandenem Code umfasst die folgenden Schritte:
 

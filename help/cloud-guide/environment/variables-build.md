@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Erstellen von Variablen
 
-Die folgenden _build_ -Variablen steuern -Aktionen in der Build-Phase und können Werte von der [Globale Variablen](variables-global.md). Fügen Sie diese Variablen in die `build` der `.magento.env.yaml` Datei:
+Die folgenden _build_ -Variablen steuern Aktionen in der Build-Phase und können Werte von den [globalen Variablen](variables-global.md) übernehmen und überschreiben. Fügen Sie diese Variablen in die `build` -Phase der `.magento.env.yaml`-Datei ein:
 
 ```yaml
 stage:
@@ -37,7 +37,7 @@ Die folgenden Variablen wurden in Version 2.2 entfernt:
 - **Standard**—`1`
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Legen Sie die Verzeichnisverschachtelungsebene zum Speichern von Fehlerberichtsdateien fest, um zu vermeiden, dass der Berichtordner mit Zehntausenden von Dateien gefüllt wird, wodurch die Verwaltung und Überprüfung der Daten erschwert werden kann. Diese Einstellung ist standardmäßig auf `1`. Normalerweise müssen Sie den Standardwert nur ändern, wenn Sie Probleme bei der Verwaltung von Fehlerberichtsdateien im `<magento_root>/var/report/` Verzeichnis.
+Legen Sie die Verzeichnisverschachtelungsebene zum Speichern von Fehlerberichtsdateien fest, um zu vermeiden, dass der Berichtordner mit Zehntausenden von Dateien gefüllt wird, wodurch die Verwaltung und Überprüfung der Daten erschwert werden kann. Diese Einstellung ist standardmäßig auf `1` eingestellt. In der Regel müssen Sie den Standardwert nur ändern, wenn Sie Probleme bei der Verwaltung von Fehlerberichtsdateien im Verzeichnis `<magento_root>/var/report/` haben.
 
 ```yaml
 stage:
@@ -76,7 +76,7 @@ Siehe [Anwenden von Patches](../development/apply-patches.md).
 - **Standard**—`6`
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Gibt an, [gzip](https://www.gnu.org/software/gzip) Komprimierungsstufe (`0` nach `9`) für die Komprimierung von statischem Inhalt; `0` Deaktiviert die Komprimierung.
+Gibt an, welche [gzip](https://www.gnu.org/software/gzip)-Komprimierungsstufe (`0` bis `9`) beim Komprimieren statischen Inhalts verwendet werden soll. `0` deaktiviert die Komprimierung.
 
 ```yaml
 stage:
@@ -102,9 +102,9 @@ stage:
 - **Standard**—`false`
 - **Version**—Adobe Commerce 2.4.2 und höher
 
-Legen Sie `true` , um zu verhindern, dass statische Inhalte für übergeordnete Designs während der Build-Phase generiert werden.
+Setzen Sie dies auf &quot;`true`&quot;, um zu verhindern, dass statische Inhalte für übergeordnete Designs während der Build-Phase generiert werden.
 
-Satz `SCD_NO_PARENT: false` während der Build-Phase, sodass das Generieren von statischem Inhalt für die übergeordneten Designs keine Auswirkungen auf die Site-Bereitstellung hat oder zu unnötigen Site-Ausfallzeiten führt. Siehe [Statische Inhaltsbereitstellung](../deploy/static-content.md).
+Legen Sie während der Build-Phase den Wert &quot;`SCD_NO_PARENT: false`&quot;fest, damit das Generieren von statischem Inhalt für die übergeordneten Designs keine Auswirkungen auf die Site-Bereitstellung hat oder zu unnötigen Site-Ausfallzeiten führt. Siehe [Bereitstellung statischer Inhalte](../deploy/static-content.md).
 
 ```yaml
 stage:
@@ -117,9 +117,9 @@ stage:
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Sie können mehrere Gebietsschemata pro Design konfigurieren. Diese Anpassung beschleunigt den Build-Prozess, indem die Anzahl unnötiger Designdateien verringert wird. Sie können beispielsweise die _Magento/Backend_ Thema auf Englisch und ein benutzerdefiniertes Thema in anderen Sprachen.
+Sie können mehrere Gebietsschemata pro Design konfigurieren. Diese Anpassung beschleunigt den Build-Prozess, indem die Anzahl unnötiger Designdateien verringert wird. Sie können beispielsweise das Design _magento/backend_ auf Englisch und ein benutzerdefiniertes Design in anderen Sprachen erstellen.
 
-Im folgenden Beispiel wird die `Magento/backend` Design mit drei Gebietsschemata:
+Im folgenden Beispiel wird das `Magento/backend` -Design mit drei Gebietsschemas erstellt:
 
 ```yaml
 stage:
@@ -155,7 +155,7 @@ stage:
           - af_ZA
 ```
 
-Sie können auch auswählen, _not_ Bereitstellen eines Designs:
+Sie können auch festlegen, dass _nicht_ ein Design bereitstellt:
 
 ```yaml
 stage:
@@ -186,13 +186,13 @@ stage:
 - **Standard**—`quick`
 - **Version**—Adobe Commerce 2.2.0 und höher
 
-Anpassen der [Implementierungsstrategie](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-strategy.html) für statischen Inhalt. Siehe [Bereitstellen von statischen Ansichtsdateien](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-deployment.html).
+Passen Sie die [Bereitstellungsstrategie](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-strategy.html) für statischen Inhalt an. Siehe [Bereitstellen von statischen Ansichtsdateien](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-deployment.html).
 
-Verwenden Sie diese Optionen _only_ wenn Sie mehr als ein Gebietsschema haben:
+Verwenden Sie diese Optionen _nur_ , wenn Sie mehr als ein Gebietsschema haben:
 
-- `standard`—stellt alle statischen Ansichtsdateien für alle Pakete bereit.
+- `standard` - stellt alle statischen Ansichtsdateien für alle Pakete bereit.
 - `quick`—(_default_) minimiert die Bereitstellungszeit.
-- `compact`—speichert Speicherplatz auf dem Server. In Adobe Commerce Version 2.2.4 und früher überschreibt diese Einstellung den Wert für `scd_threads` mit dem Wert `1`.
+- `compact` - Speichert Speicherplatz auf dem Server. In Adobe Commerce Version 2.2.4 und früher überschreibt diese Einstellung den Wert für `scd_threads` mit dem Wert `1`.
 
 ```yaml
 stage:
@@ -213,16 +213,16 @@ stage:
     SCD_THREADS: 2
 ```
 
-Verwenden Sie zur weiteren Verkürzung der Bereitstellungszeit [Konfigurationsverwaltung](../store/store-settings.md) mit dem `scd-dump` -Befehl, um die statische Bereitstellung in die Build-Phase zu verschieben.
+Um die Bereitstellungszeit weiter zu verkürzen, verwenden Sie [Konfigurationsverwaltung](../store/store-settings.md) mit dem Befehl `scd-dump` , um die statische Bereitstellung in die Build-Phase zu verschieben.
 
 ## `SCD_USE_BALER`
 
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.3.0 und höher
 
-[Baler](https://github.com/magento/baler) scannt den generierten JavaScript-Code und erstellt ein optimiertes JavaScript-Bundle. Wenn Sie das optimierte Bundle auf Ihrer Site bereitstellen, kann sich die Anzahl der Netzwerkanforderungen beim Laden Ihrer Site verringern und die Seitenladezeiten verbessern.
+[Baler](https://github.com/magento/baler) scannt Ihren generierten JavaScript-Code und erstellt ein optimiertes JavaScript-Bundle. Wenn Sie das optimierte Bundle auf Ihrer Site bereitstellen, kann sich die Anzahl der Netzwerkanforderungen beim Laden Ihrer Site verringern und die Seitenladezeiten verbessern.
 
-Legen Sie `true` , um Baler nach der Bereitstellung statischer Inhalte auszuführen.
+Legen Sie diese Einstellung auf &quot;`true`&quot;fest, um Baler nach der Bereitstellung statischer Inhalte auszuführen.
 
 ```yaml
 stage:
@@ -239,9 +239,9 @@ stage:
 - **Standard**— _Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Legen Sie `true` , um die `composer dump-autoload` -Befehl während einer Cloud Docker-Installation. Diese Variable ist nur für Cloud Docker-Container mit beschreibbaren Dateisystemen relevant. In solchen Fällen verhindert das Überspringen des Befehls Fehler durch andere Befehle, die versuchen, auf den Code aus dem gelöschten `generated` Verzeichnis.
+Setzen Sie dies auf `true` , um den Befehl `composer dump-autoload` während einer Cloud Docker-Installation zu überspringen. Diese Variable ist nur für Cloud Docker-Container mit beschreibbaren Dateisystemen relevant. In solchen Fällen verhindert das Überspringen des Befehls Fehler von anderen Befehlen, die versuchen, auf den Code aus dem gelöschten Verzeichnis `generated` zuzugreifen.
 
-Wenn Adobe Commerce ausgeführt wird `composer dump-autoload`, erstellt es automatische Dateien mit Links zu generierten Klassen in der `generated` -Ordner, was in Produktionsumgebungen mit schreibgeschützten Dateisystemen kein Problem darstellt. Für Cloud Docker-Installationen mit beschreibbaren Dateisystemen (nur für Tests und Entwicklung mit `./vendor/bin/ece-docker build:compose --with-test`), können Sie die `bin/magento -n setup:upgrade` -Befehl ohne `--keep-generated` -Option, mit der die `generated` Verzeichnis. Wenn das Verzeichnis gelöscht wird, wird die `composer dump-autoload` schlägt fehl, da die automatische Aktualisierung Links zu Dateien im gelöschten Verzeichnis enthält.
+Wenn Adobe Commerce `composer dump-autoload` ausführt, werden automatische Dateien mit Links zu generierten Klassen im Ordner `generated` erstellt, was in Produktionsumgebungen mit schreibgeschützten Dateisystemen kein Problem darstellt. Bei Cloud Docker-Installationen mit beschreibbaren Dateisystemen (die nur zum Testen und Entwickeln mit `./vendor/bin/ece-docker build:compose --with-test` erstellt wurden) können Sie jedoch den Befehl `bin/magento -n setup:upgrade` ohne die Option `--keep-generated` ausführen, wodurch der Ordner `generated` gelöscht wird. Wenn das Verzeichnis gelöscht wird, schlägt der Befehl `composer dump-autoload` fehl, da die automatische Aktualisierung Links zu Dateien im gelöschten Verzeichnis enthält.
 
 ```yaml
 stage:
@@ -254,11 +254,11 @@ stage:
 - **Standard**— _Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Legen Sie `true` , um die Bereitstellung statischer Inhalte während der Build-Phase zu überspringen.
+Setzen Sie dies auf &quot;`true`&quot;, um die Bereitstellung statischer Inhalte während der Build-Phase zu überspringen.
 
-Wenn Sie statischen Inhalt bereits während der Build-Phase mit [Konfigurationsverwaltung](../store/store-settings.md)können Sie die Bereitstellung statischer Inhalte für einen schnellen Build-Test überspringen.
+Wenn Sie statischen Inhalt bereits während der Build-Phase mit [Konfigurationsverwaltung](../store/store-settings.md) bereitstellen, können Sie die Bereitstellung statischer Inhalte für einen schnellen Build-Test überspringen.
 
-Legen Sie in der Build-Phase `SKIP_SCD: false` sodass der Aufbau statischer Inhalte während der Build-Phase erfolgt, in der der Prozess keine Auswirkungen auf die Site-Bereitstellung hat oder zu unnötigen Site-Ausfallzeiten führt. Siehe [Statische Inhaltsbereitstellung](../deploy/static-content.md).
+Setzen Sie in der Erstellungsphase `SKIP_SCD: false` so, dass der statische Inhaltserstellung während der Erstellungsphase erfolgt, wobei der Prozess keine Auswirkungen auf die Site-Bereitstellung hat oder zu unnötigen Site-Ausfallzeiten führt. Siehe [Bereitstellung statischer Inhalte](../deploy/static-content.md).
 
 ```yaml
 stage:
@@ -271,15 +271,15 @@ stage:
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Aktivieren oder deaktivieren Sie die [Symfony](https://symfony.com/doc/current/console/verbosity.html) Debug-Ausführlichkeitsstufe für `bin/magento` CLI-Befehle, die während der Bereitstellungsphase ausgeführt werden.
+Aktivieren oder deaktivieren Sie die Debugging-Ausführlichkeitsstufe für `bin/magento` CLI-Befehle, die während der Bereitstellungsphase ausgeführt werden.[](https://symfony.com/doc/current/console/verbosity.html)
 
 >[!NOTE]
 >
->So steuern Sie mit VERBOSE_COMMANDS die Details in der Befehlsausgabe für erfolgreich und fehlgeschlagen `bin/magento` CLI-Befehle, müssen Sie festlegen [MIN_LOGGING_LEVEL](variables-global.md#minlogginglevel) `debug`.
+>Um VERBOSE_COMMANDS zur Steuerung der Details in der Befehlsausgabe für erfolgreiche und fehlgeschlagene `bin/magento` CLI-Befehle zu verwenden, müssen Sie [MIN_LOGGING_LEVEL](variables-global.md#minlogginglevel) `debug` festlegen.
 
 Wählen Sie den Detailgrad aus, der in den Protokollen angegeben wird:
 
-- `-v`= normale Ausgabe
+- `-v` = normale Ausgabe
 - `-vv`= ausführlichere Ausgabe
 - `-vvv` = ausführliche Ausgabe, ideal für das Debugging
 

@@ -18,7 +18,7 @@ Sie können die Zwischenspeicherung in Ihrer Cloud-Infrastruktur-Projektumgebung
 
 ## Zwischenspeicherung einrichten
 
-Aktivieren Sie die Zwischenspeicherung für Ihre Anwendung, indem Sie die Cache-Regeln im Abschnitt `.magento/routes.yaml` Datei wie folgt:
+Aktivieren Sie das Caching für Ihre Anwendung, indem Sie die Cache-Regeln in der Datei `.magento/routes.yaml` wie folgt konfigurieren:
 
 ```yaml
 http://{default}/:
@@ -61,24 +61,24 @@ Im obigen Beispiel werden die folgenden Routen zwischengespeichert:
 - `http://{default}/path/more/`
 - `http://{default}/path/more/etc/`
 
-Und die folgenden Routen sind **not** zwischengespeichert:
+Die folgenden Routen werden im Cache **nicht** zwischengespeichert:
 
 - `http://{default}/path/`
 - `http://{default}/path/etc/`
 
 >[!NOTE]
 >
->Reguläre Ausdrücke in Routen sind **not** unterstützt.
+>Reguläre Ausdrücke in Routen werden **nicht** unterstützt.
 
 ## Aufbewahrungsfrist im Cache
 
-Die Aufbewahrungsfrist im Cache wird durch die Variable `Cache-Control` Antwortheader-Wert. Wenn nicht `Cache-Control` -Kopfzeile in der Antwort enthalten ist, wird die `default_ttl` verwendet wird.
+Die Aufbewahrungsfrist im Cache wird durch den Wert des Antwortheaders `Cache-Control` bestimmt. Wenn keine `Cache-Control` -Kopfzeile in der Antwort enthalten ist, wird der `default_ttl` -Schlüssel verwendet.
 
 ## Cache-Schlüssel
 
-Um zu entscheiden, wie eine Antwort zwischengespeichert werden soll, erstellt Adobe Commerce einen Cache-Schlüssel, der von mehreren Faktoren abhängt, und speichert die mit diesem Schlüssel verknüpfte Antwort. Wenn eine Anforderung denselben Cache-Schlüssel enthält, wird die Antwort wiederverwendet. Ihr Zweck ähnelt dem HTTP [`Vary` header](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44).
+Um zu entscheiden, wie eine Antwort zwischengespeichert werden soll, erstellt Adobe Commerce einen Cache-Schlüssel, der von mehreren Faktoren abhängt, und speichert die mit diesem Schlüssel verknüpfte Antwort. Wenn eine Anforderung denselben Cache-Schlüssel enthält, wird die Antwort wiederverwendet. Ihr Zweck ähnelt dem HTTP-Header [`Vary`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44).
 
-Die Parameter `headers` und `cookies` -Schlüssel ermöglichen es Ihnen, diesen Cache-Schlüssel zu ändern.
+Die Parameter `headers` und `cookies` ermöglichen es Ihnen, diesen Cache-Schlüssel zu ändern.
 
 Der Standardwert für diese Schlüssel lautet:
 
@@ -93,13 +93,13 @@ cache:
 
 ### `enabled`
 
-Wenn festgelegt auf `true`aktivieren Sie den Cache für diese Route. Wenn festgelegt auf `false`, deaktivieren Sie den Cache für diese Route.
+Wenn auf `true` gesetzt, aktivieren Sie den Cache für diese Route. Wenn auf `false` gesetzt, deaktivieren Sie den Cache für diese Route.
 
 ### `headers`
 
 Definiert, von welchen Werten der Cache-Schlüssel abhängen muss.
 
-Wenn beispielsweise die Variable `headers` Schlüssel ist:
+Wenn beispielsweise der Schlüssel `headers` wie folgt lautet:
 
 ```yaml
 cache:
@@ -107,11 +107,11 @@ cache:
     headers: ["Accept"]
 ```
 
-Anschließend speichert Adobe Commerce für jeden Wert der Variablen `Accept` HTTP-Header.
+Anschließend speichert Adobe Commerce für jeden Wert des HTTP-Headers `Accept` eine andere Antwort zwischen.
 
 ### `cookies`
 
-Die `cookies` -Schlüssel definiert, von welchen Werten der Cache-Schlüssel abhängen muss.
+Der Schlüssel `cookies` definiert, von welchen Werten der Cache-Schlüssel abhängen muss.
 
 Beispiel:
 
@@ -121,19 +121,19 @@ cache:
     cookies: ["value"]
 ```
 
-Der Cache-Schlüssel hängt vom Wert der `value` -Cookie in der -Anfrage.
+Der Cache-Schlüssel hängt vom Wert des `value` -Cookies in der Anforderung ab.
 
-Wenn die Variable `cookies` -Schlüssel hat die `["*"]` -Wert. Dieser Wert bedeutet, dass jede Anforderung mit einem Cookie den Cache umgeht. Dies ist der Standardwert.
+Es gibt einen Sonderfall, wenn der Schlüssel `cookies` den Wert `["*"]` aufweist. Dieser Wert bedeutet, dass jede Anforderung mit einem Cookie den Cache umgeht. Dies ist der Standardwert.
 
 >[!NOTE]
 >
->Sie können keine Platzhalter im Cookie-Namen verwenden. Verwenden Sie entweder einen präzisen Cookie-Namen oder gleichen Sie alle Cookies mit einem Sternchen (`*`). Beispiel: `SESS*` oder `~SESS` derzeit **not** gültige Werte.
+>Sie können keine Platzhalter im Cookie-Namen verwenden. Verwenden Sie entweder einen genauen Cookie-Namen oder gleichen Sie alle Cookies mit einem Sternchen (`*`) ab. Beispielsweise sind `SESS*` oder `~SESS` derzeit gültige Werte vom Typ **nicht**.
 
 Cookies haben die folgenden Einschränkungen:
 
-- Sie können die maximale Anzahl von **50 Cookies** im System. Andernfalls gibt die Anwendung eine `Unable to send the cookie. Maximum number of cookies would be exceeded` Ausnahmefehler.
-- Die maximale Cookie-Größe beträgt **4096 Byte**. Andernfalls gibt die Anwendung eine `Unable to send the cookie. Size of '%name' is %size bytes` Ausnahmefehler.
+- Sie können maximal **50 Cookies** im System festlegen. Andernfalls gibt die Anwendung die Ausnahme `Unable to send the cookie. Maximum number of cookies would be exceeded` aus.
+- Die maximale Cookie-Größe beträgt **4096 Byte**. Andernfalls gibt die Anwendung die Ausnahme `Unable to send the cookie. Size of '%name' is %size bytes` aus.
 
 ### `default_ttl`
 
-Wenn die Antwort keine `Cache-Control` -Kopfzeile, die `default_ttl` -Schlüssel wird verwendet, um die Aufbewahrungsfrist im Cache in Sekunden zu definieren. Der Standardwert ist `0`, was bedeutet, dass nichts zwischengespeichert wird.
+Wenn die Antwort keinen `Cache-Control` -Header aufweist, wird der `default_ttl` -Schlüssel verwendet, um die Aufbewahrungsfrist im Cache in Sekunden zu definieren. Der Standardwert ist `0`, was bedeutet, dass nichts zwischengespeichert wird.

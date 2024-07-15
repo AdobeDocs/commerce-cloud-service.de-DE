@@ -10,12 +10,12 @@ ht-degree: 0%
 <!-- The template to render with above values -->
 **Version**: 2002.1.18
 
-Diese Referenz enthält 34 Befehle, die über das `ece-tools` Befehlszeilen-Tool.
-Die anfängliche Liste wird automatisch mit der Variablen `ece-tools list` in Adobe Commerce in der Cloud-Infrastruktur.
+Diese Referenz enthält 34 Befehle, die über das Befehlszeilen-Tool `ece-tools` verfügbar sind.
+Die anfängliche Liste wird mithilfe des Befehls `ece-tools list` in Adobe Commerce in der Cloud-Infrastruktur automatisch generiert.
 
 >[!NOTE]
 >
->Diese Referenz wird aus der Anwendungs-Codebase generiert. Um den Inhalt zu ändern, können Sie den Quellcode für die entsprechende Befehlsimplementierung im [codebase](https://github.com/magento/magento-cloud-cli) Repository erstellen und Ihre Änderungen zur Überprüfung einreichen. Eine andere Möglichkeit ist, _Feedback geben_ (finden Sie den Link oben rechts). Beitragsrichtlinien finden Sie unter [Codebeiträge](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
+>Diese Referenz wird aus der Anwendungs-Codebase generiert. Um den Inhalt zu ändern, können Sie den Quellcode für die entsprechende Befehlsimplementierung im Repository [Codebase](https://github.com/magento/magento-cloud-cli) aktualisieren und Ihre Änderungen zur Überprüfung senden. Eine andere Möglichkeit besteht darin, _Feedback geben_ (den Link oben rechts zu finden). Beitragsrichtlinien finden Sie unter [Codebeiträge](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
 
 ## `_complete`
 
@@ -243,7 +243,7 @@ ece-tools db-dump [-d|--remove-definers] [-a|--dump-directory DUMP-DIRECTORY] [-
 
 ### `databases`
 
-Datenbanken zur Sicherung. Verfügbare Werte: [Haupt-Anführungsverkäufe]. Wenn der Argumentwert nicht angegeben ist, werden Datenbanksicherungen mit den im `MAGENTO_CLOUD_RELATIONSHIP` Umgebungsvariable oder/und `stage.deploy.DATABASE_CONFIGURATION` -Eigenschaft der Konfigurationsdatei .magento.env.yaml .
+Datenbanken zur Sicherung. Verfügbare Werte: [ Hauptquotenverkäufe]. Wenn der Argumentwert nicht angegeben ist, werden Datenbanksicherungen mit den Anmeldeinformationen erstellt, die in der Umgebungsvariablen `MAGENTO_CLOUD_RELATIONSHIP` oder/und der Eigenschaft `stage.deploy.DATABASE_CONFIGURATION` der Konfigurationsdatei .magento.env.yaml gespeichert sind.
 
 - Standard: `[]`
 
@@ -955,7 +955,7 @@ Interaktive Fragen stellen
 
 ## `cloud:config:create`
 
-Erstellt eine `.magento.env.yaml` -Datei mit der angegebenen Build-, Bereitstellungs- und Nachbereitstellungsvariablenkonfiguration. Überschreibt vorhandene `.magento,.env.yaml` -Datei.
+Erstellt eine `.magento.env.yaml` -Datei mit der angegebenen Variablenkonfiguration für Build, Bereitstellung und Bereitstellung. Überschreibt alle vorhandenen `.magento,.env.yaml` -Dateien.
 
 ```bash
 ece-tools cloud:config:create <configuration>
@@ -1019,7 +1019,7 @@ Interaktive Fragen stellen
 
 ## `cloud:config:update`
 
-Aktualisiert vorhandene `.magento.env.yaml` -Datei mit der angegebenen Konfiguration. Erstellt `.magento.env.yaml` , wenn sie nicht vorhanden ist.
+Aktualisiert die vorhandene `.magento.env.yaml` -Datei mit der angegebenen Konfiguration. Erstellt `.magento.env.yaml` -Datei, falls sie nicht vorhanden ist.
 
 ```bash
 ece-tools cloud:config:update <configuration>
@@ -1083,7 +1083,7 @@ Interaktive Fragen stellen
 
 ## `cloud:config:validate`
 
-Überprüfungen `.magento.env.yaml` Konfigurationsdatei
+Validiert die Konfigurationsdatei `.magento.env.yaml`
 
 ```bash
 ece-tools cloud:config:validate

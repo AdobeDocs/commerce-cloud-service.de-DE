@@ -1,6 +1,6 @@
 ---
 title: Eigenschaften
-description: Verwenden der Eigenschaftenliste als Verweis bei der Konfiguration [!DNL Commerce] Anwendung zum Erstellen und Bereitstellen in der Cloud-Infrastruktur.
+description: Verwenden Sie die Eigenschaftsliste als Referenz bei der Konfiguration der [!DNL Commerce] Anwendung für die Erstellung und Bereitstellung in der Cloud-Infrastruktur.
 feature: Cloud, Configuration, Build, Deploy, Roles/Permissions, Storage
 exl-id: 58a86136-a9f9-4519-af27-2f8fa4018038
 source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
@@ -12,30 +12,30 @@ ht-degree: 0%
 
 # Eigenschaften für die Anwendungskonfiguration
 
-Die `.magento.app.yaml` Die Datei verwendet Eigenschaften, um die Umgebungsunterstützung für die zu verwalten [!DNL Commerce] Anwendung.
+Die Datei `.magento.app.yaml` verwendet Eigenschaften, um die Umgebungsunterstützung für die Anwendung [!DNL Commerce] zu verwalten.
 
 | Name | Beschreibung | Standard | Erforderlich |
 | ------ | --------------------------------- | ------- | -------- |
 | [`access`](#access) | Benutzerrollen anpassen | — | Nein |
-| [`crons`](crons-property.md) | Spezifikationen aktualisieren und Cron-Aufträge planen | — | Nein |
-| [`dependencies`](#dependencies) | Aktivieren zusätzlicher Abhängigkeiten | `php:composer/composer: '2.2.4'` | Nein |
-| [`disk`](#disk) | Definieren der Größe der persistenten Festplatte | `5120` | Ja |
-| [`firewall`](firewall-property.md) | (Nur Starter) Steuerung des ausgehenden Traffics | — | Nein |
-| [`hooks`](hooks-property.md) | Anpassen von Shell-Befehlen für die Build-, Bereitstellungs- und Post-Bereitstellungsphase | — | Nein |
-| [`mounts`](#mounts) | Festlegen von Pfaden | Pfade:<ul><li>`"var": "shared:files/var"`</li><li>`"app/etc": "shared:files/etc"`</li><li>`"pub/media": "shared:files/media"`</li><li>`"pub/static": "shared:files/static"`</li></ul> | Nein |
+| [`crons`](crons-property.md) | Eigenschaften aktualisieren und Cron-Aufträge planen | — | Nein |
+| [`dependencies`](#dependencies) | Zusätzliche Abhängigkeiten aktivieren | `php:composer/composer: '2.2.4'` | Nein |
+| [`disk`](#disk) | Persistente Festplattengröße definieren | `5120` | Ja |
+| [`firewall`](firewall-property.md) | (Nur Starter) Ausgehenden Traffic steuern | — | Nein |
+| [`hooks`](hooks-property.md) | Anpassen von Shell-Befehlen für die Build-, Bereitstellungs- und Nach-Bereitstellung-Phasen | — | Nein |
+| [`mounts`](#mounts) | Pfade festlegen | Pfade:<ul><li>`"var": "shared:files/var"`</li><li>`"app/etc": "shared:files/etc"`</li><li>`"pub/media": "shared:files/media"`</li><li>`"pub/static": "shared:files/static"`</li></ul> | Nein |
 | [`name`](#name) | Anwendungsnamen definieren | `mymagento` | Ja |
-| [`relationships`](#relationships) | Zuordnen von Diensten | Dienste:<ul><li>`database: "mysql:mysql"`</li><li>`redis: "redis:redis"`</li><li>`opensearch: "opensearch:opensearch"`</li></ul> | Nein |
-| [`runtime`](#runtime) | Die Laufzeiteigenschaft enthält Erweiterungen, die für die [!DNL Commerce] Anwendung. | Erweiterungen:<ul><li>`xsl`</li><li>`newrelic`</li><li>`sodium`</li></ul> | Ja |
-| [`type`](#type-and-build) | Festlegen des Bild-Basis-Containers | `php:8.3` | Ja |
+| [`relationships`](#relationships) | Zuordnungsdienste | Dienste:<ul><li>`database: "mysql:mysql"`</li><li>`redis: "redis:redis"`</li><li>`opensearch: "opensearch:opensearch"`</li></ul> | Nein |
+| [`runtime`](#runtime) | Die Laufzeiteigenschaft enthält Erweiterungen, die für die [!DNL Commerce] -Anwendung erforderlich sind. | Erweiterungen:<ul><li>`xsl`</li><li>`newrelic`</li><li>`sodium`</li></ul> | Ja |
+| [`type`](#type-and-build) | Basisbehälterbild festlegen | `php:8.3` | Ja |
 | [`variables`](variables-property.md) | Anwenden einer Umgebungsvariablen auf eine bestimmte Commerce-Version | — | Nein |
-| [`web`](web-property.md) | Externe Anfragen verarbeiten | — | Ja |
-| [`workers`](workers-property.md) | Externe Anfragen verarbeiten | — | Ja, wenn nicht die Web-Eigenschaft verwendet wird |
+| [`web`](web-property.md) | Umgang mit externen Anforderungen | — | Ja |
+| [`workers`](workers-property.md) | Umgang mit externen Anforderungen | — | Ja, wenn die Webeigenschaft nicht verwendet wird |
 
 {style="table-layout:auto"}
 
 ## `name`
 
-Die `name` Eigenschaft stellt den Anwendungsnamen bereit, der im [`routes.yaml`](../routes/routes-yaml.md) Datei zum Definieren des Upstreams des HTTP-Codes (standardmäßig ) `mymagento:http`). Wenn beispielsweise der Wert von `name` ist `app`verwenden, müssen Sie `app:http` im Feld „Upstream„.
+Die Eigenschaft `name` stellt den Anwendungsnamen bereit, der in der Datei [`routes.yaml`](../routes/routes-yaml.md) verwendet wird, um den HTTP-Upstream zu definieren (standardmäßig `mymagento:http`). Wenn der Wert von `name` beispielsweise `app` ist, müssen Sie `app:http` im Upstream-Feld verwenden.
 
 >[!WARNING]
 >
@@ -43,15 +43,15 @@ Die `name` Eigenschaft stellt den Anwendungsnamen bereit, der im [`routes.yaml`]
 
 ## `type` und `build`
 
-Die `type`  und `build` Eigenschaften enthalten Informationen zum Basis-Container-Image, das zum Erstellen und Ausführen des Projekts verwendet werden soll.
+Die Eigenschaften `type` und `build` enthalten Informationen zum Basisbehälterbild, das erstellt und ausgeführt werden soll.
 
-Die unterstützten `type` Sprache ist PHP. Geben Sie die PHP-Version wie folgt an:
+Die unterstützte Sprache `type` ist PHP. Geben Sie die PHP-Version wie folgt an:
 
 ```yaml
 type: php:<version>
 ```
 
-Die `build` Die -Eigenschaft bestimmt, was beim Erstellen des Projekts standardmäßig geschieht. Die `flavor` Gibt einen Standardsatz von auszuführenden Build-Aufgaben an. Das folgende Beispiel zeigt die Standardkonfiguration für `type` und `build` von `magento-cloud/.magento.app.yaml`:
+Die Eigenschaft `build` bestimmt, was standardmäßig beim Erstellen des Projekts geschieht. Der `flavor` gibt einen Standardsatz von auszuführenden Build-Aufgaben an. Das folgende Beispiel zeigt die Standardkonfiguration für `type` und `build` von `magento-cloud/.magento.app.yaml`:
 
 ```yaml
 # The toolstack used to build the application.
@@ -66,13 +66,13 @@ dependencies:
 
 ### Installieren und Verwenden von Composer 2
 
-Die `build: flavor:` -Eigenschaft wird nicht für Composer 2.x verwendet; daher müssen Sie Composer während der Build-Phase manuell installieren. Um Composer 2.x in Ihren Starter- und Pro-Projekten zu installieren und zu verwenden, müssen Sie drei Änderungen an Ihrem `.magento.app.yaml` Konfiguration:
+Die Eigenschaft `build: flavor:` wird nicht für Composer 2.x verwendet. Daher müssen Sie Composer während der Build-Phase manuell installieren. Um Composer 2.x in Ihren Starter- und Pro-Projekten zu installieren und zu verwenden, müssen Sie drei Änderungen an Ihrer `.magento.app.yaml`-Konfiguration vornehmen:
 
-1. entfernen `composer` als `build: flavor:` und hinzufügen `none`. Diese Änderung verhindert, dass Cloud die standardmäßige Version 1.x von Composer zum Ausführen von Build-Aufgaben verwendet.
-1. Hinzufügen `composer/composer: '^2.0'` as a `php` Abhängigkeit für die Installation von Composer 2.x.
-1. Hinzufügen des `composer` Erstellen von Aufgaben in einer `build` Hook zum Ausführen der Build-Aufgaben mit Composer 2.x.
+1. Entfernen Sie `composer` als `build: flavor:` und fügen Sie `none` hinzu. Diese Änderung verhindert, dass Cloud die standardmäßige Version 1.x von Composer verwendet, um Build-Aufgaben auszuführen.
+1. Fügen Sie `composer/composer: '^2.0'` als `php` -Abhängigkeit für die Installation von Composer 2.x hinzu.
+1. Fügen Sie die Build-Aufgaben `composer` einem `build`-Hook hinzu, um die Build-Aufgaben mit Composer 2.x auszuführen.
 
-Verwenden Sie die folgenden Konfigurationsfragmente in Ihren eigenen `.magento.app.yaml` Konfiguration:
+Verwenden Sie die folgenden Konfigurationsfragmente in Ihrer eigenen `.magento.app.yaml`-Konfiguration:
 
 ```yaml
 # 1. Change flavor to none.
@@ -91,19 +91,19 @@ hooks:
         composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
 ```
 
-Siehe [Erforderliche Pakete](../development/overview.md#required-packages) für weitere Informationen über Composer.
+Weitere Informationen zu Composer finden Sie unter [Erforderliche Pakete](../development/overview.md#required-packages) .
 
 ## `dependencies`
 
-Geben Sie die Abhängigkeiten an, die Ihre Anwendung während des Build-Prozesses benötigen könnte.
+Geben Sie Abhängigkeiten an, die Ihre Anwendung während des Build-Prozesses möglicherweise benötigt.
 
-Adobe Commerce unterstützt Abhängigkeiten von den folgenden Sprachen:
+Adobe Commerce unterstützt Abhängigkeiten in den folgenden Sprachen:
 
 - PHP
-- Rubin
+- Ruby
 - Node.js
 
-Diese Abhängigkeiten sind unabhängig von den etwaigen Abhängigkeiten Ihrer Anwendung und in der `PATH`, während des Build-Prozesses und in der Laufzeitumgebung Ihrer Anwendung.
+Diese Abhängigkeiten sind unabhängig von den letztendlichen Abhängigkeiten Ihrer Anwendung und stehen in der `PATH`, während des Build-Prozesses und in der Laufzeitumgebung Ihrer Anwendung zur Verfügung.
 
 Sie können diese Abhängigkeiten wie folgt angeben:
 
@@ -116,7 +116,7 @@ nodejs:
 
 ## `runtime`
 
-Verwenden Sie , um die PHP-Konfiguration zur Laufzeit zu ändern, z. B. um Erweiterungen zu aktivieren. Die folgenden Erweiterungen sind erforderlich:
+Verwenden Sie , um die PHP-Konfiguration zur Laufzeit zu ändern, z. B. zum Aktivieren von Erweiterungen. Die folgenden Erweiterungen sind erforderlich:
 
 ```yaml
 runtime:
@@ -126,7 +126,7 @@ runtime:
         - sodium
 ```
 
-Siehe [PHP-Einstellungen](php-settings.md) für Details zur Aktivierung von Erweiterungen.
+Weitere Informationen zum Aktivieren von Erweiterungen finden Sie unter [PHP-Einstellungen](php-settings.md) .
 
 ## `disk`
 
@@ -136,24 +136,24 @@ Definiert die persistente Festplattengröße der Anwendung in MB.
 disk: 5120
 ```
 
-Die minimal empfohlene Festplattengröße beträgt 256 MB. Wenn der Fehler angezeigt wird `UserError: Error building the project: Disk size may not be smaller than 128MB`, erhöhen Sie die Größe auf 256 MB.
+Die empfohlene Mindestgröße beträgt 256 MB. Wenn der Fehler `UserError: Error building the project: Disk size may not be smaller than 128MB` auftritt, erhöhen Sie die Größe auf 256 MB.
 
 >[!NOTE]
 >
->Für Pro Staging- und Produktionsumgebungen müssen Sie [Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) So aktualisieren Sie `mounts` und `disk` Konfiguration für Ihr Programm. Wenn Sie das Ticket senden, geben Sie die erforderlichen Konfigurationsänderungen an und fügen Sie eine aktualisierte Version Ihres `.magento.app.yaml` -Datei.
+>Bei Staging- und Produktionsumgebungen für Pro müssen Sie [ein Adobe Commerce-Support-Ticket senden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket), um die Konfiguration `mounts` und `disk` für Ihre Anwendung zu aktualisieren. Geben Sie beim Senden des Tickets die erforderlichen Konfigurationsänderungen an und fügen Sie eine aktualisierte Version Ihrer `.magento.app.yaml` -Datei hinzu.
 
 ## `relationships`
 
 Definiert die Dienstzuordnung in der Anwendung.
 
-Die Beziehung `name` ist für die Anwendung in der `MAGENTO_CLOUD_RELATIONSHIPS` Umgebungsvariable. Die `<service-name>:<endpoint-name>` Beziehung ist den in der definierten Werten für Name und Typ zugeordnet `.magento/services.yaml` -Datei.
+Die Beziehung `name` ist für die Anwendung in der Umgebungsvariablen `MAGENTO_CLOUD_RELATIONSHIPS` verfügbar. Die `<service-name>:<endpoint-name>` -Beziehung ist mit den Namen- und Typwerten verknüpft, die in der `.magento/services.yaml` -Datei definiert sind.
 
 ```yaml
 relationships:
     <name>: "<service-name>:<endpoint-name>"
 ```
 
-Im Folgenden finden Sie ein Beispiel für die Standardbeziehungen:
+Im Folgenden finden Sie ein Beispiel für die standardmäßigen Beziehungen:
 
 ```yaml
 relationships:
@@ -163,11 +163,11 @@ relationships:
     rabbitmq: "rabbitmq:rabbitmq"
 ```
 
-Siehe [Dienste](../services/services-yaml.md) Eine vollständige Liste der derzeit unterstützten Diensttypen und Endpunkte finden Sie.
+Eine vollständige Liste der derzeit unterstützten Diensttypen und Endpunkte finden Sie unter [Dienste](../services/services-yaml.md) .
 
 ## `mounts`
 
-Ein Objekt, dessen Schlüssel Pfade sind, die relativ zum Stamm des Programms sind. Die Einhängung ist ein beschreibbarer Bereich auf der Festplatte für Dateien. Im Folgenden finden Sie eine standardmäßige Liste der in konfigurierten Bereitstellungen `magento.app.yaml` Datei, die den `volume_id[/subpath]` Syntax:
+Ein Objekt, dessen Schlüssel Pfade relativ zum Stammverzeichnis der Anwendung sind. Das Mount ist ein schreibbarer Bereich auf der Festplatte für Dateien. Im Folgenden finden Sie eine Standardliste der in der Datei `magento.app.yaml` mit der Syntax `volume_id[/subpath]` konfigurierten Bereitstellungen:
 
 ```yaml
  # The mounts that will be performed when the package is deployed.
@@ -178,34 +178,34 @@ mounts:
     "pub/static": "shared:files/static"
 ```
 
-Das Format für das Hinzufügen Ihres Mounts zu dieser Liste ist wie folgt:
+Das Format für das Hinzufügen Ihrer Reittierliste zu dieser Liste lautet wie folgt:
 
 ```bash
 "/public/sites/default/files": "shared:files/files"
 ```
 
-- `shared`- Gibt ein Volume zwischen Ihren Programmen innerhalb einer Umgebung frei.
-- `disk`- Definiert die für das freigegebene Volume verfügbare Größe.
+- `shared`—Teilt ein Volumen zwischen Ihren Anwendungen innerhalb einer Umgebung.
+- `disk` - Definiert die für das freigegebene Volume verfügbare Größe.
 
 >[!NOTE]
 >
->Für Pro Staging- und Produktionsumgebungen müssen Sie [Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) So aktualisieren Sie `mounts` und `disk` Konfiguration für Ihr Programm. Wenn Sie das Ticket senden, geben Sie die erforderlichen Konfigurationsänderungen an und fügen Sie eine aktualisierte Version Ihres `.magento.app.yaml` -Datei.
+>Bei Staging- und Produktionsumgebungen für Pro müssen Sie [ein Adobe Commerce-Support-Ticket senden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket), um die Konfiguration `mounts` und `disk` für Ihre Anwendung zu aktualisieren. Geben Sie beim Senden des Tickets die erforderlichen Konfigurationsänderungen an und fügen Sie eine aktualisierte Version Ihrer `.magento.app.yaml` -Datei hinzu.
 
-Sie können das Einbinden von Web-Seiten zugänglich machen, indem Sie es der [`web`](web-property.md) Standortblock.
+Sie können die Bereitstellung über das Internet zugänglich machen, indem Sie sie dem Block [`web`](web-property.md) der Positionen hinzufügen.
 
 >[!WARNING]
 >
->Sobald die Site Daten enthält, ändern Sie nicht mehr `subpath` Teil des Bereitstellungsnamens. Dieser Wert ist die eindeutige Kennung für das `files` Bereich. Wenn Sie diesen Namen ändern, gehen alle am alten Speicherort gespeicherten Site-Daten verloren.
+>Sobald Ihre Site über Daten verfügt, ändern Sie nicht den `subpath` -Teil des Bereitstellungsnamens. Dieser Wert ist die eindeutige Kennung für den Bereich `files` . Wenn Sie diesen Namen ändern, gehen alle am alten Speicherort gespeicherten Site-Daten verloren.
 
 ## `access`
 
-Die `access` -Eigenschaft gibt eine minimale Benutzerrollenebene an, die SSH-Zugriff auf die Umgebungen erlaubt. Folgende Benutzerrollen sind verfügbar:
+Die Eigenschaft `access` gibt ein Minimum an Benutzerrollenebene an, das SSH-Zugriff auf die Umgebungen erlaubt. Die verfügbaren Benutzerrollen sind:
 
-- `admin`- Kann Einstellungen ändern und Aktionen in der Umgebung ausführen; hat _Geber_ und _Betrachter_ Rechte.
-- `contributor`- Kann Code in diese Umgebung übertragen und von der Umgebung aus eine Verzweigung erstellen; hat _Betrachter_ Rechte.
-- `viewer`- Kann nur die Umgebung anzeigen.
+- `admin`: Kann Einstellungen ändern und Aktionen in der Umgebung ausführen; verfügt über die Berechtigungen _contributor_ und _viewer_ .
+- `contributor`: Kann Code in diese Umgebung und die Verzweigung aus der Umgebung pushen; hat _Viewer_ -Rechte.
+- `viewer` - Kann nur die Umgebung anzeigen.
 
-Die Standardbenutzerrolle ist `contributor`, wodurch der SSH-Zugriff von Benutzenden mit nur _Betrachter_ Rechte. Sie können die Benutzerrolle ändern in `viewer` um SSH-Zugriff nur für Benutzer mit _Betrachter_ Rechte:
+Die standardmäßige Benutzerrolle ist `contributor`, wodurch der SSH-Zugriff von Benutzern mit nur _Viewer_ -Rechten eingeschränkt wird. Sie können die Benutzerrolle in &quot;`viewer`&quot; ändern, um Benutzern mit nur _Viewer_ -Rechten den SSH-Zugriff zu ermöglichen:
 
 ```yaml
 access:

@@ -15,11 +15,11 @@ Verwenden Sie nach erfolgreicher Migration von Code, Dateien und Daten in Stagin
 
 ## Protokolldateien
 
-Wenn bei der Bereitstellung Fehler auftreten oder andere Probleme beim Testen auftreten, überprüfen Sie die Protokolldateien. Protokolldateien befinden sich unter der `var/log` Verzeichnis.
+Wenn bei der Bereitstellung Fehler auftreten oder andere Probleme beim Testen auftreten, überprüfen Sie die Protokolldateien. Protokolldateien befinden sich im Verzeichnis &quot;`var/log`&quot;.
 
-Das Bereitstellungsprotokoll befindet sich in `/var/log/platform/<prodject-ID>/deploy.log`. Der Wert von `<project-ID>` hängt von der Projekt-ID ab und davon, ob es sich bei der Umgebung um Staging oder Produktion handelt. Beispielsweise mit einer Projekt-ID von `yw1unoukjcawe`, lautet der Staging-Benutzer `yw1unoukjcawe_stg` und der Produktionsbenutzer `yw1unoukjcawe`.
+Das Bereitstellungsprotokoll befindet sich in `/var/log/platform/<prodject-ID>/deploy.log`. Der Wert von `<project-ID>` hängt von der Projekt-ID und davon ab, ob es sich bei der Umgebung um Staging oder Produktion handelt. Bei der Projekt-ID `yw1unoukjcawe` ist der Staging-Benutzer beispielsweise `yw1unoukjcawe_stg` und der Produktions-Benutzer `yw1unoukjcawe`.
 
-Verwenden Sie beim Zugriff auf Protokolle in Produktions- oder Staging-Umgebungen SSH, um sich bei jedem der drei Knoten anzumelden, um die Protokolle zu finden. Oder Sie können [Protokollverwaltung von New Relic](../monitor/log-management.md) um aggregierte Protokolldaten aller Knoten anzuzeigen und abzufragen. Siehe [Protokolle anzeigen](log-locations.md#application-logs).
+Verwenden Sie beim Zugriff auf Protokolle in Produktions- oder Staging-Umgebungen SSH, um sich bei jedem der drei Knoten anzumelden, um die Protokolle zu finden. Sie können auch die [New Relic-Protokollverwaltung](../monitor/log-management.md) verwenden, um aggregierte Protokolldaten von allen Knoten anzuzeigen und abzufragen. Siehe [Protokolle anzeigen](log-locations.md#application-logs).
 
 ## Überprüfen der Codebasis
 
@@ -27,27 +27,27 @@ Stellen Sie sicher, dass Ihre Codebasis ordnungsgemäß in Staging- und Produkti
 
 ## Konfigurationseinstellungen überprüfen
 
-Überprüfen Sie die Konfigurationseinstellungen über das Admin-Bedienfeld, einschließlich Basis-URL, Basis-Admin-URL, Einstellungen für mehrere Sites und mehr. Wenn Sie weitere Änderungen vornehmen müssen, nehmen Sie die Änderungen in Ihrer lokalen Git-Verzweigung vor und pushen Sie zum `master` -Verzweigung in Integration, Staging und Produktion.
+Überprüfen Sie die Konfigurationseinstellungen über das Admin-Bedienfeld, einschließlich Basis-URL, Basis-Admin-URL, Einstellungen für mehrere Sites und mehr. Wenn Sie zusätzliche Änderungen vornehmen müssen, führen Sie die Änderungen in Ihrer lokalen Git-Verzweigung durch und pushen Sie in die Verzweigung `master` in Integration, Staging und Produktion.
 
 ## Schnelles Zwischenspeichern überprüfen
 
-[Schnelles Konfigurieren](../cdn/fastly-configuration.md) Sorgfältige Detailgenauigkeit erfordert: Verwendung der richtigen Fastly Service ID und der Fastly API Token-Anmeldeinformationen, Hochladen des Fastly VCL-Codes, Aktualisierung der DNS-Konfiguration und Anwendung der SSL/TLS-Zertifikate auf Ihre Umgebungen. Nach Abschluss dieser Einrichtungsaufgaben können Sie die schnelle Zwischenspeicherung in Staging- und Produktionsumgebungen überprüfen.
+[Die Konfiguration von Fastly](../cdn/fastly-configuration.md) erfordert sorgfältige Detailgenauigkeit: Verwendung der richtigen Fastly Service ID- und Fastly API-Token-Anmeldeinformationen, Hochladen des Fastly VCL-Codes, Aktualisierung der DNS-Konfiguration und Anwendung der SSL/TLS-Zertifikate auf Ihre Umgebungen. Nach Abschluss dieser Einrichtungsaufgaben können Sie die schnelle Zwischenspeicherung in Staging- und Produktionsumgebungen überprüfen.
 
 **Überprüfen der Konfiguration des Fastly-Dienstes**:
 
-1. Melden Sie sich bei Admin für Staging und Produktion über die URL mit `/admin`oder die [aktualisierte Admin-URL](../environment/variables-admin.md#admin-url).
+1. Melden Sie sich bei Admin für Staging und Produktion mit der URL mit `/admin` oder der [aktualisierten Admin-URL](../environment/variables-admin.md#admin-url) an.
 
-1. Navigieren Sie zu **Stores** > **Einstellungen** > **Konfiguration** > **Erweitert** > **System**. Scrollen und klicken **Vollständiger Seiten-Cache**.
+1. Navigieren Sie zu **Stores** > **Einstellungen** > **Konfiguration** > **Erweitert** > **System**. Scrollen Sie nach unten und klicken Sie auf **Vollständiger Seiten-Cache**.
 
-1. Stellen Sie sicher, dass **Caching-Anwendung** Wert auf _Fastly CDN_ .
+1. Stellen Sie sicher, dass der Wert **Caching application** auf _Fastly CDN_ gesetzt ist.
 
 1. Testen Sie die Fastly-Anmeldeinformationen.
 
-   - Klicks **Schnelle Konfiguration**.
+   - Klicken Sie auf **Schnelle Konfiguration**.
 
-   - Überprüfen Sie, ob die Werte für die Anmeldedaten für die Fastly Service ID und den Fastly API-Token vorhanden sind. Siehe [Schnelles Abrufen von Anmeldedaten](/help/cloud-guide/cdn/fastly-configuration.md#get-fastly-credentials).
+   - Überprüfen Sie, ob die Werte für die Anmeldedaten für die Fastly Service ID und den Fastly API-Token vorhanden sind. Siehe [Schnelle Anmeldeinformationen abrufen](/help/cloud-guide/cdn/fastly-configuration.md#get-fastly-credentials).
 
-   - Klicks **Testen von Anmeldeinformationen**.
+   - Klicken Sie auf **Testberechtigungen**.
 
    >[!WARNING]
    >
@@ -55,24 +55,24 @@ Stellen Sie sicher, dass Ihre Codebasis ordnungsgemäß in Staging- und Produkti
 
 **So überprüfen Sie das Verhalten beim schnellen Zwischenspeichern**:
 
-1. Suchen Sie mithilfe der `dig` Befehlszeilen-Dienstprogramm, um Informationen zur Site-Konfiguration zu erhalten.
+1. Suchen Sie mithilfe des Befehlszeilen-Dienstprogramms `dig` nach Kopfzeilen, um Informationen zur Site-Konfiguration zu erhalten.
 
-   Sie können jede beliebige URL mit der `dig` Befehl. Die folgenden Beispiele verwenden Pro-URLs:
+   Sie können jede URL mit dem Befehl `dig` verwenden. Die folgenden Beispiele verwenden Pro-URLs:
 
    - Staging: `dig https://mcstaging.<your-domain>.com`
    - Produktion: `dig https://mcprod.<your-domain>.com`
 
-   Für zusätzliche `dig` Tests, siehe Fastly&#39;s [Tests vor DNS-Änderung](https://docs.fastly.com/en/guides/working-with-domains).
+   Weitere `dig`-Tests finden Sie unter Fastly&#39;s [Testing before change DNS](https://docs.fastly.com/en/guides/working-with-domains).
 
-1. Verwendung `cURL` , um die Informationen des Antwortheaders zu überprüfen.
+1. Verwenden Sie `cURL` , um die Informationen des Antwortheaders zu überprüfen.
 
    ```bash
    curl https://mcstaging.<your-domain>.com -H "host: mcstaging.<your-domain.com>" -k -vo /dev/null -H Fastly-Debug:1
    ```
 
-   Siehe [Überprüfen von Antwortheadern](../cdn/fastly-troubleshooting.md#check-cache-hit-and-miss-response-headers) für Details zum Überprüfen der Kopfzeilen.
+   Weitere Informationen zum Überprüfen der Kopfzeilen finden Sie unter [Überprüfen der Antwortheader](../cdn/fastly-troubleshooting.md#check-cache-hit-and-miss-response-headers) .
 
-1. Wenn Sie live sind, verwenden Sie `cURL` , um Ihre Live-Site zu überprüfen.
+1. Nachdem Sie live sind, verwenden Sie `cURL` , um Ihre Live-Site zu überprüfen.
 
    ```bash
    curl https://<your-domain> -k -vo /dev/null -H Fastly-Debug:1
@@ -127,7 +127,7 @@ Wenn Probleme auftreten, speichern Sie Ihre Reproduktionsschritte, Fehlermeldung
 </td>
 </tr>
 <tr>
-<td>Auftragsverwaltung</td>
+<td>Order Management</td>
 <td>
 <ul>
 <li>Erstellen einer Bestellung für einen Kunden</li>
@@ -198,19 +198,19 @@ Vor dem Start sollten Sie in Ihren Staging- und Produktionsumgebungen umfangreic
 
 Bevor Sie mit dem Testen beginnen, geben Sie ein Ticket mit Support ein, das die getesteten Umgebungen, die verwendeten Tools und den Zeitrahmen berät. Aktualisieren Sie das Ticket mit Ergebnissen und Informationen, um die Leistung zu verfolgen. Fügen Sie nach Abschluss des Tests Ihre aktualisierten Ergebnisse hinzu und beachten Sie, dass der Tickettest mit einem Datums- und Zeitstempel abgeschlossen ist.
 
-Überprüfen Sie die [Leistungs-Toolkit](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) Optionen im Rahmen Ihres Vorab-Starts-Bereitstellungsprozesses.
+Überprüfen Sie die Optionen für das [Leistungs-Toolkit](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) als Teil Ihres Vorab-Bereitstellungsprozesses.
 
 Verwenden Sie die folgenden Tools, um die bestmöglichen Ergebnisse zu erzielen:
 
-- [Leistungstest der Anwendung](../environment/variables-post-deploy.md#ttfb_tested_pages)—Testen Sie die Leistung der Anwendung, indem Sie die `TTFB_TESTED_PAGES` Umgebungsvariable zum Testen der Antwortzeit der Site.
-- [Belagung](https://www.joedog.org/siege-home/)—Software für die Traffic-Formgebung und -Tests, um Ihr Geschäft an die Grenzen zu bringen. Treffer auf Ihrer Site mit einer konfigurierbaren Anzahl simulierter Clients. Belagerung unterstützt grundlegende Authentifizierungs-, Cookies-, HTTP-, HTTPS- und FTP-Protokolle.
-- [Jmeter](https://jmeter.apache.org)—Ausgezeichnete Belastungstests zur Messung der Leistung bei erhöhtem Traffic, z. B. bei Flash-Verkäufen. Erstellen Sie benutzerdefinierte Tests, die für Ihre Site ausgeführt werden.
-- [New Relic](../monitor/new-relic-service.md) (bereitgestellt) - Hilft bei der Suche nach Prozessen und Bereichen der Site, die eine langsame Leistung mit der pro Aktion aufgezeichneten Zeit verursachen, wie das Senden von Daten, Abfragen, Redis und mehr.
-- [WebPageTest](https://www.webpagetest.org) und [Pingdom](https://www.pingdom.com)—Echtzeitanalyse der Seiten Ihrer Site Ladezeit mit verschiedenen Ausgangspunkten. Pingdom kann eine Gebühr verlangen. WebPageTest ist ein kostenloses Tool.
+- [Leistungstest der Anwendung](../environment/variables-post-deploy.md#ttfb_tested_pages) - Testen Sie die Leistung der Anwendung, indem Sie die Umgebungsvariable `TTFB_TESTED_PAGES` so konfigurieren, dass die Antwortzeit der Site getestet wird.
+- [Belagerung](https://www.joedog.org/siege-home/): Software für die Traffic-Formung und -Tests, um Ihren Store an die Grenze zu bringen. Treffer auf Ihrer Site mit einer konfigurierbaren Anzahl simulierter Clients. Belagerung unterstützt grundlegende Authentifizierungs-, Cookies-, HTTP-, HTTPS- und FTP-Protokolle.
+- [Jmeter](https://jmeter.apache.org)—Ausgezeichnete Belastungstests, mit denen die Leistung bei erhöhtem Traffic gemessen werden kann, z. B. bei Flash-Verkäufen. Erstellen Sie benutzerdefinierte Tests, die für Ihre Site ausgeführt werden.
+- [New Relic](../monitor/new-relic-service.md) (bereitgestellt): Hilft bei der Suche nach Prozessen und Bereichen der Site, was zu einer langsamen Leistung führt, da pro Aktion aufgetrackte Zeit wie das Senden von Daten, Abfragen, Redis usw. benötigt wird.
+- [WebPageTest](https://www.webpagetest.org) und [Pingdom](https://www.pingdom.com)—Die Echtzeitanalyse Ihrer Seiten lädt die Zeit mit verschiedenen Ausgangspunkten. Pingdom kann eine Gebühr verlangen. WebPageTest ist ein kostenloses Tool.
 
 ## Funktionstests
 
-Sie können das Magento Functional Testing Framework (MFTF) verwenden, um Funktionstests für Adobe Commerce aus der Cloud Docker-Umgebung abzuschließen. Siehe [Anwendungstests](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) im _Handbuch zu Cloud Docker für Commerce_.
+Sie können das Magento Functional Testing Framework (MFTF) verwenden, um Funktionstests für Adobe Commerce aus der Cloud Docker-Umgebung abzuschließen. Siehe [Anwendungstests](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) im Handbuch _Cloud Docker für Commerce_.
 
 ## Einrichten des Sicherheitsscan-Tools
 

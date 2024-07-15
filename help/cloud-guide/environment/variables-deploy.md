@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Bereitstellen von Variablen
 
-Die folgenden _deploy_ -Variablen steuern -Aktionen in der Bereitstellungsphase und können Werte von der [Globale Variablen](variables-global.md). Fügen Sie diese Variablen in die `deploy` der `.magento.env.yaml` Datei:
+Die folgenden _deploy_ -Variablen steuern Aktionen in der Bereitstellungsphase und können Werte von den [globalen Variablen](variables-global.md) übernehmen und überschreiben. Fügen Sie diese Variablen in die `deploy` -Phase der `.magento.env.yaml`-Datei ein:
 
 ```yaml
 stage:
@@ -32,7 +32,7 @@ Weitere Informationen zum Anpassen des Build- und Bereitstellungsprozesses finde
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Konfigurieren Sie die Seite &quot;Redis&quot;und die standardmäßige Zwischenspeicherung. Wenn Sie `cm_cache_backend_redis` -Parameter angeben, müssen Sie die `server`, `port`, und `database` Optionen.
+Konfigurieren Sie die Seite &quot;Redis&quot;und die standardmäßige Zwischenspeicherung. Beim Festlegen des Parameters `cm_cache_backend_redis` müssen Sie die Optionen `server`, `port` und `database` angeben.
 
 ```yaml
 stage:
@@ -63,7 +63,7 @@ stage:
             database: 11
 ```
 
-Im folgenden Beispiel wird die [Funktion zum Vorausfüllen umkehren](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/redis/redis-pg-cache.html#redis-preload-feature) wie in _Konfigurationshandbuch_:
+Im folgenden Beispiel wird die Funktion [Redis preload Feature](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/redis/redis-pg-cache.html#redis-preload-feature) verwendet, wie im _Konfigurationshandbuch_ definiert:
 
 ```yaml
 stage:
@@ -81,7 +81,7 @@ stage:
               - '061_SYSTEM_DEFAULT:hash'
 ```
 
-So verwenden Sie eine benutzerdefinierte [REDIS_BACKEND](#redis_backend) -Modell (nicht nur aus der Zulassungsliste) festlegen, legen Sie die `_custom_redis_backend` -Option `true` um die korrekte Validierung zu aktivieren, wie im folgenden Beispiel gezeigt:
+Um ein benutzerdefiniertes [REDIS_BACKEND](#redis_backend) -Modell (nicht nur aus der Zulassungsliste) zu verwenden, setzen Sie die `_custom_redis_backend` -Option auf `true` , um die korrekte Validierung zu aktivieren, wie im folgenden Beispiel gezeigt:
 
 ```yaml
 stage:
@@ -98,12 +98,12 @@ stage:
 - **Standard**—`true`
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Aktivierung oder Deaktivierung der Reinigung [statische Inhaltsdateien](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-deployment.html) während der Build- oder Bereitstellungsphase generiert wurde. Standardwert verwenden _true_ in der Entwicklung als Best Practice.
+Aktiviert bzw. deaktiviert das Löschen von [statischen Inhaltsdateien](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-deployment.html), die während der Build- oder Bereitstellungsphase generiert wurden. Verwenden Sie den Standardwert _true_ in der Entwicklung als Best Practice.
 
-- **`true`**—Entfernt alle vorhandenen statischen Inhalte vor der Bereitstellung des aktualisierten statischen Inhalts.
-- **`false`**—Die Bereitstellung überschreibt nur vorhandene statische Inhaltsdateien, wenn der generierte Inhalt eine neuere Version enthält.
+- **`true`**: Entfernt alle vorhandenen statischen Inhalte, bevor der aktualisierte statische Inhalt bereitgestellt wird.
+- **`false`** - Die Bereitstellung überschreibt nur vorhandene statische Inhaltsdateien, wenn der generierte Inhalt eine neuere Version enthält.
 
-Wenn Sie statischen Inhalt über einen separaten Prozess ändern, setzen Sie den Wert auf _false_.
+Wenn Sie statischen Inhalt in einem separaten Prozess ändern, setzen Sie den Wert auf _false_.
 
 ```yaml
 stage:
@@ -111,26 +111,26 @@ stage:
     CLEAN_STATIC_FILES: false
 ```
 
-Wenn statische Ansichtsdateien vor der Bereitstellung nicht bereinigt werden, kann dies zu Problemen führen, wenn Sie Aktualisierungen für vorhandene Dateien bereitstellen, ohne die vorherigen Versionen zu entfernen. Aufgrund von [Fallback statischer Dateien](https://developer.adobe.com/commerce/frontend-core/guide/caching/#clean-static-files-cache) Regeln verwenden, können Fallback-Vorgänge die falsche Datei anzeigen, wenn das Verzeichnis mehrere Versionen derselben Datei enthält.
+Wenn statische Ansichtsdateien vor der Bereitstellung nicht bereinigt werden, kann dies zu Problemen führen, wenn Sie Aktualisierungen für vorhandene Dateien bereitstellen, ohne die vorherigen Versionen zu entfernen. Aufgrund von [statischen Dateiausweichregeln](https://developer.adobe.com/commerce/frontend-core/guide/caching/#clean-static-files-cache) können Fallback-Vorgänge die falsche Datei anzeigen, wenn das Verzeichnis mehrere Versionen derselben Datei enthält.
 
 ## `CRON_CONSUMERS_RUNNER`
 
-- **Standard**—`cron_run = false`, `max_messages = 1000`
+- **Default**—`cron_run = false`, `max_messages = 1000`
 - **Version**—Adobe Commerce 2.2.0 und höher
 
 Verwenden Sie diese Umgebungsvariable, um sicherzustellen, dass Nachrichtenwarteschlangen nach einer Bereitstellung ausgeführt werden.
 
-- `cron_run`—Ein boolean -Wert, der die `consumers_runner` Cron-Auftrag (Standard = `false`).
-- `max_messages`—Eine Zahl, die die maximale Anzahl von Nachrichten angibt, die jeder Verbraucher vor dem Beenden verarbeiten muss (Standard = `1000`). Sie können den Wert auf `0` , um zu verhindern, dass der Verbraucher kündigt.
-- `consumers`—Ein Array von Zeichenfolgen, die angeben, welche Verbraucher ausgeführt werden sollen. Ein leeres Array wird ausgeführt _all_ Verbraucher.
+- `cron_run`—Ein boolescher Wert, der den `consumers_runner` Cron-Auftrag aktiviert oder deaktiviert (Standard = `false`).
+- `max_messages` - Eine Zahl, die die maximale Anzahl von Nachrichten angibt, die jeder Verbraucher vor dem Beenden verarbeiten muss (Standard = `1000`). Sie können den Wert auf `0` setzen, um zu verhindern, dass der Verbraucher beendet wird.
+- `consumers` - Ein Array von Zeichenfolgen, die angeben, welche Verbraucher ausgeführt werden sollen. Ein leeres Array führt _alle_ -Verbraucher aus.
 
-- `multiple_processes`-Eine Zahl, die die Anzahl der Prozesse angibt, die für jeden Verbraucher erzeugt werden sollen. In Commerce unterstützt **2,4,4** oder höher.
+- `multiple_processes`-Eine Zahl, die die Anzahl der Prozesse angibt, die für jeden Verbraucher erzeugt werden sollen. Unterstützt in Commerce **2.4.4** oder höher.
 
 >[!NOTE]
 >
->So geben Sie eine Liste der Nachrichtenwarteschlangen zurück `consumers`, führen Sie die `./bin/magento queue:consumers:list` in der Remote-Umgebung.
+>Um eine Liste der Nachrichtenwarteschlange `consumers` zurückzugeben, führen Sie den Befehl `./bin/magento queue:consumers:list` in der Remote-Umgebung aus.
 
-Beispiel für ein Array, das spezifisch ausgeführt wird `consumers` und `multiple_processes` für jeden Verbraucher zu laichen:
+Beispiel-Array, das bestimmte `consumers` und die `multiple_processes` ausführt, die für jeden Verbraucher erzeugt werden sollen:
 
 ```yaml
 stage:
@@ -146,7 +146,7 @@ stage:
         example_consumer_2: 3
 ```
 
-Beispiel für ein leeres Array, das alle `consumers`:
+Beispiel für ein leeres Array, das alle `consumers` -Werte ausführt:
 
 ```yaml
 stage:
@@ -157,22 +157,22 @@ stage:
       consumers: []
 ```
 
-Standardmäßig überschreibt der Bereitstellungsprozess alle Einstellungen im `env.php` -Datei. Siehe [Verwalten von Nachrichtenwarteschlangen](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/manage-message-queues.html) im _Commerce-Konfigurationshandbuch_ für Adobe Commerce vor Ort.
+Standardmäßig überschreibt der Bereitstellungsprozess alle Einstellungen in der Datei &quot;`env.php`&quot;. Siehe [Verwalten von Nachrichtenwarteschlangen](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/manage-message-queues.html) im _Commerce Configuration Guide_ für lokale Adobe Commerce.
 
 ## `CONSUMERS_WAIT_FOR_MAX_MESSAGES`
 
 - **Standard**—`false`
 - **Version**—Adobe Commerce 2.2.0 und höher
 
-Konfigurieren der `consumers` Verarbeiten Sie Nachrichten aus der Nachrichtenwarteschlange, indem Sie eine der folgenden Optionen auswählen:
+Konfigurieren Sie, wie `consumers` Nachrichten aus der Nachrichtenwarteschlange verarbeitet, indem Sie eine der folgenden Optionen auswählen:
 
-- `false`—`Consumers` verarbeitet verfügbare Nachrichten in der Warteschlange, schließt die TCP-Verbindung und beendet sie. `Consumers` nicht warten, bis zusätzliche Nachrichten in die Warteschlange gelangen, selbst wenn die Anzahl der verarbeiteten Nachrichten kleiner ist als die Anzahl der `max_messages` Wert, der in der Variablen `CRON_CONSUMERS_RUNNER` Bereitstellungsvariable.
+- `false`—`Consumers` verarbeitet verfügbare Nachrichten in der Warteschlange, schließt die TCP-Verbindung und beendet sie. `Consumers` nicht warten, bis zusätzliche Nachrichten in die Warteschlange gelangen, selbst wenn die Anzahl der verarbeiteten Nachrichten kleiner ist als der in der Implementierungsvariable `CRON_CONSUMERS_RUNNER` angegebene Wert `max_messages` .
 
-- `true`—`Consumers` weiterhin Nachrichten aus der Nachrichtenwarteschlange verarbeiten, bis die maximale Nachrichtenanzahl erreicht ist (`max_messages`), die in der Variablen `CRON_CONSUMERS_RUNNER` -Variable bereitstellen, bevor die TCP-Verbindung geschlossen und der Verbraucherprozess beendet wird. Wenn die Warteschlange vor dem Erreichen geleert wird `max_messages`, wartet der Verbraucher auf das Eintreffen weiterer Nachrichten.
+- `true`—`Consumers` verarbeitet weiterhin Nachrichten aus der Nachrichtenwarteschlange, bis die in der Bereitstellungsvariable `CRON_CONSUMERS_RUNNER` angegebene maximale Anzahl von Nachrichten (`max_messages`) erreicht ist, bevor die TCP-Verbindung geschlossen und der Verbraucherprozess beendet wird. Wenn die Warteschlange vor Erreichen von `max_messages` leer ist, wartet der Verbraucher, bis weitere Nachrichten eintreffen.
 
 >[!WARNING]
 >
->Wenn Sie Sekundäre zum Ausführen verwenden `consumers` Setzen Sie diese Variable auf &quot;true&quot;, anstatt einen Cron-Auftrag zu verwenden.
+>Wenn Sie Sekundäre zum Ausführen von `consumers` anstelle eines Cron-Auftrags verwenden, setzen Sie diese Variable auf &quot;true&quot;.
 
 ```yaml
 stage:
@@ -187,16 +187,16 @@ stage:
 
 >[!WARNING]
 >
->Legen Sie die `CRYPT_KEY` Wert durch [!DNL Cloud Console] anstelle der `.magento.env.yaml` -Datei, um zu vermeiden, dass der Schlüssel im Quellcode-Repository für Ihre Umgebung verfügbar wird. Siehe [Festlegen von Umgebungs- und Projektvariablen](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/overview.html#configure-environment).
+>Legen Sie den Wert `CRYPT_KEY` über die Datei [!DNL Cloud Console] anstelle der Datei `.magento.env.yaml` fest, um zu vermeiden, dass der Schlüssel im Quellcode-Repository für Ihre Umgebung verfügbar gemacht wird. Siehe [Festlegen von Umgebungs- und Projektvariablen](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/project/overview.html#configure-environment).
 
-Wenn Sie die Datenbank ohne Installationsprozess von einer Umgebung in eine andere verschieben, benötigen Sie die entsprechenden kryptografischen Informationen. Adobe Commerce verwendet den in der Variablen [!DNL Cloud Console] als `crypt/key` Wert in `env.php` -Datei.
+Wenn Sie die Datenbank ohne Installationsprozess von einer Umgebung in eine andere verschieben, benötigen Sie die entsprechenden kryptografischen Informationen. Adobe Commerce verwendet den in [!DNL Cloud Console] festgelegten Verschlüsselungsschlüsselwert als den Wert `crypt/key` in der Datei `env.php`.
 
 ## `DATABASE_CONFIGURATION`
 
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Wenn Sie eine Datenbank im [Beziehungseigenschaft](../application/properties.md#relationships) des `.magento.app.yaml` -Datei, können Sie Ihre Datenbankverbindungen für die Bereitstellung anpassen.
+Wenn Sie eine Datenbank in der [Eigenschaft &quot;Relations&quot;](../application/properties.md#relationships) der `.magento.app.yaml`-Datei definiert haben, können Sie Ihre Datenbankverbindungen für die Bereitstellung anpassen.
 
 ```yaml
 stage:
@@ -223,7 +223,7 @@ Außerdem können Sie ein Tabellenpräfix konfigurieren.
 >
 >Wenn Sie die Zusammenführungsoption nicht mit dem Tabellenpräfix verwenden, müssen Sie die standardmäßigen Verbindungseinstellungen angeben oder die Bereitstellung schlägt bei der Validierung fehl.
 
-Im folgenden Beispiel wird die `ece_` Tabellenpräfix mit Standardverbindungseinstellungen anstelle der Verwendung von `_merge` Option:
+Im folgenden Beispiel wird das Tabellenpräfix `ece_` mit den Standardverbindungseinstellungen verwendet, anstatt die Option `_merge` zu verwenden:
 
 ```yaml
 stage:
@@ -263,7 +263,7 @@ MariaDB [main]> SHOW TABLES;
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.2.0 und höher
 
-Behebt benutzerspezifische Inhalte bei [!DNL Elastic Suite] Diensteinstellungen zwischen -Implementierungen und verwendet sie im Abschnitt &quot;system/default/smile_elasticsuite_core_base_settings&quot;des Hauptteils [!DNL Elastic Suite] Konfiguration. Wenn die Variable [!DNL Elastic Suite] Das Composer-Paket wird installiert und automatisch konfiguriert.
+Behält angepasste [!DNL Elastic Suite] Diensteinstellungen zwischen Bereitstellungen bei und verwendet sie im Abschnitt &quot;system/default/smile_elasticsuite_core_base_settings&quot;der Hauptkonfiguration [!DNL Elastic Suite]. Wenn das Paket [!DNL Elastic Suite] Composer installiert ist, wird es automatisch konfiguriert.
 
 ```yaml
 stage:
@@ -292,12 +292,12 @@ stage:
 
 **Bekannte Einschränkungen**:
 
-- Ändern der Suchmaschine in einen anderen Typ als `elasticsuite` verursacht einen Bereitstellungsfehler, dem ein entsprechender Validierungsfehler beigefügt ist
+- Wenn Sie die Suchmaschine auf einen anderen Typ als `elasticsuite` ändern, tritt ein Bereitstellungsfehler auf, dem ein entsprechender Validierungsfehler beigefügt ist.
 - Das Entfernen des Elasticsearch-Dienstes führt zu einem Bereitstellungsfehler zusammen mit einem entsprechenden Validierungsfehler
 
 >[!NOTE]
 >
->Weitere Informationen zur Verwendung von oder Fehlerbehebung bei der [!DNL Elastic Suite] Plug-in mit Adobe Commerce, siehe [[!DNL Elastic Suite] Dokumentation](https://github.com/Smile-SA/elasticsuite).
+>Weitere Informationen zur Verwendung des Plug-ins [!DNL Elastic Suite] oder zur Fehlerbehebung mit Adobe Commerce finden Sie in der [[!DNL Elastic Suite] Dokumentation](https://github.com/Smile-SA/elasticsuite).
 
 ## `ENABLE_GOOGLE_ANALYTICS`
 
@@ -306,10 +306,10 @@ stage:
 
 Aktiviert und deaktiviert Google Analytics bei der Bereitstellung in Staging- und Integrationsumgebungen. Standardmäßig gilt Google Analytics nur für die Produktionsumgebung. Setzen Sie diesen Wert auf `true` , um Google Analytics in den Staging- und Integrationsumgebungen zu aktivieren.
 
-- **`true`**—Aktiviert Google Analytics in Staging- und Integrationsumgebungen.
-- **`false`**—Deaktiviert Google Analytics in Staging- und Integrationsumgebungen.
+- **`true`** - Aktiviert Google Analytics in Staging- und Integrationsumgebungen.
+- **`false`** - Deaktiviert Google Analytics in Staging- und Integrationsumgebungen.
 
-Fügen Sie die `ENABLE_GOOGLE_ANALYTICS` Umgebungsvariable auf `deploy` im Abschnitt `.magento.env.yaml` Datei:
+Fügen Sie die Umgebungsvariable `ENABLE_GOOGLE_ANALYTICS` in der `.magento.env.yaml` -Datei der `deploy`-Phase hinzu:
 
 ```yaml
 stage:
@@ -326,7 +326,7 @@ stage:
 - **Standard**—`true`
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Bei der Bereitstellung in der Pro- oder Starter-Staging- und Produktionsumgebung ersetzt diese Variable die Adobe Commerce-Basis-URLs in der Datenbank durch die Projekt-URLs, die von der [`MAGENTO_CLOUD_ROUTES`](variables-cloud.md) -Variable. Verwenden Sie diese Einstellung, um das Standardverhalten der [UPDATE_URLS](#update_urls) Bereitstellungsvariable, die bei der Bereitstellung in Staging- oder Produktionsumgebungen ignoriert wird.
+Bei der Bereitstellung in der Pro- oder Starter-Staging- und Produktionsumgebung ersetzt diese Variable die Basis-URLs der Adobe Commerce-Datenbank durch die in der Variable [`MAGENTO_CLOUD_ROUTES`](variables-cloud.md) angegebenen Projekt-URLs. Verwenden Sie diese Einstellung, um das Standardverhalten der Bereitstellungsvariable [UPDATE_URLS](#update_urls) zu überschreiben, die bei der Bereitstellung in Staging- oder Produktionsumgebungen ignoriert wird.
 
 ```yaml
 stage:
@@ -339,7 +339,7 @@ stage:
 - **Standard**—`file`
 - **Version**—Adobe Commerce 2.2.5 und höher
 
-Der Sperranbieter verhindert den Start doppelter Cron-Aufträge und Cron-Gruppen. Verwenden Sie die `file` Anbieter in der Produktionsumgebung sperren. Starterumgebungen und die Pro-Integrationsumgebung verwenden nicht die [MAGENTO_CLOUD_LOCKS_DIR](variables-cloud.md) -Variable, also `ece-tools` wendet die `db` Anbieter automatisch sperren.
+Der Sperranbieter verhindert den Start doppelter Cron-Aufträge und Cron-Gruppen. Verwenden Sie den Sperranbieter `file` in der Produktionsumgebung. Starterumgebungen und die Pro-Integrationsumgebung verwenden nicht die Variable [MAGENTO_CLOUD_LOCKS_DIR](variables-cloud.md) . Daher wendet `ece-tools` den Sperranbieter `db` automatisch an.
 
 ```yaml
 stage:
@@ -347,7 +347,7 @@ stage:
     LOCK_PROVIDER: "db"
 ```
 
-Siehe [Schloss konfigurieren](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/lock-provider.html) im _Installationshandbuch_.
+Siehe [Konfigurieren der Sperre](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/lock-provider.html) im _Installationshandbuch_.
 
 ## `MYSQL_USE_SLAVE_CONNECTION`
 
@@ -356,9 +356,9 @@ Siehe [Schloss konfigurieren](https://experienceleague.adobe.com/docs/commerce-o
 
 >[!TIP]
 >
->Die `MYSQL_USE_SLAVE_CONNECTION` wird nur in Adobe Commerce in Cloud-Infrastruktur-Staging- und Produktions-Pro-Cluster-Umgebungen unterstützt und nicht in Starter-Projekten.
+>Die Variable &quot;`MYSQL_USE_SLAVE_CONNECTION`&quot; wird nur in Adobe Commerce in Cloud-Infrastruktur-Staging- und Produktions-Pro-Cluster-Umgebungen unterstützt und nicht in Starter-Projekten.
 
-Adobe Commerce kann mehrere Datenbanken asynchron lesen. Legen Sie `true` zur automatischen Verwendung von _schreibgeschützt_ Verbindung zur Datenbank, um schreibgeschützten Traffic auf einem Nicht-Master-Knoten zu empfangen. Diese Verbindung verbessert die Leistung durch Lastenausgleich, da nur ein Knoten Lese- und Schreibvorgänge-Traffic verarbeitet. Legen Sie `false` , um ein vorhandenes schreibgeschütztes Verbindungs-Array aus dem `env.php` -Datei.
+Adobe Commerce kann mehrere Datenbanken asynchron lesen. Auf `true` setzen, um automatisch eine _schreibgeschützte_ Verbindung zur Datenbank zu verwenden, um schreibgeschützten Traffic auf einem Nicht-Master-Knoten zu empfangen. Diese Verbindung verbessert die Leistung durch Lastenausgleich, da nur ein Knoten Lese- und Schreibvorgänge-Traffic verarbeitet. Auf `false` setzen, um ein vorhandenes schreibgeschütztes Verbindungs-Array aus der `env.php`-Datei zu entfernen.
 
 ```yaml
 stage:
@@ -366,14 +366,14 @@ stage:
     MYSQL_USE_SLAVE_CONNECTION: true
 ```
 
-Wenn die Variable `MYSQL_USE_SLAVE_CONNECTION` festgelegt ist auf `true`, die `synchronous_replication` -Parameter auf `true` standardmäßig im `env.php` -Datei in Pro Staging- und Produktionsumgebungen. Wenn die Variable `MYSQL_USE_SLAVE_CONNECTION` auf `false`, die `synchronous_replication` -Parameter nicht konfiguriert ist.
+Wenn die Variable `MYSQL_USE_SLAVE_CONNECTION` auf `true` gesetzt ist, wird der Parameter `synchronous_replication` in der Datei `env.php` in den Pro Staging- und Produktionsumgebungen standardmäßig auf `true` gesetzt. Wenn `MYSQL_USE_SLAVE_CONNECTION` auf `false` gesetzt ist, wird der Parameter `synchronous_replication` nicht konfiguriert.
 
 ## `QUEUE_CONFIGURATION`
 
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Verwenden Sie diese Umgebungsvariable, um zwischen Bereitstellungen benutzerdefinierte AMQP-Diensteinstellungen beizubehalten. Wenn Sie beispielsweise einen vorhandenen Nachrichtenwarteschlangendienst verwenden möchten, anstatt die Cloud-Infrastruktur für Sie zu verwenden, verwenden Sie die `QUEUE_CONFIGURATION` Umgebungsvariable, um sie mit Ihrer Site zu verbinden:
+Verwenden Sie diese Umgebungsvariable, um zwischen Bereitstellungen benutzerdefinierte AMQP-Diensteinstellungen beizubehalten. Wenn Sie beispielsweise einen vorhandenen Nachrichtenwarteschlangendienst verwenden möchten, anstatt ihn von der Cloud-Infrastruktur zu erstellen, verwenden Sie die Umgebungsvariable `QUEUE_CONFIGURATION` , um ihn mit Ihrer Site zu verbinden:
 
 ```yaml
 stage:
@@ -423,7 +423,7 @@ Adobe Commerce Version 2.3.0 und höher umfasst die folgenden Backend-Modelle:
 - `\Magento\Framework\Cache\Backend\Redis`
 - `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache`
 
-Das Beispiel für das Festlegen von `REDIS_BACKEND`
+Das Beispiel zum Festlegen von `REDIS_BACKEND`
 
 ```yaml
 stage:
@@ -433,7 +433,7 @@ stage:
 
 >[!NOTE]
 >
->Wenn Sie `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` als Redis-Backend-Modell zur Aktivierung von [L2-Cache](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/level-two-cache.html), `ece-tools` generiert automatisch die Cachekonfiguration. Beispiel anzeigen [Konfigurationsdatei](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/level-two-cache.html#configuration-example) im _Adobe Commerce-Konfigurationshandbuch_. Um die generierte Cache-Konfiguration zu überschreiben, verwenden Sie die [CACHE_CONFIGURATION](#cache_configuration) Bereitstellungsvariable.
+>Wenn Sie `\Magento\Framework\Cache\Backend\RemoteSynchronizedCache` als Redis-Backend-Modell angeben, um den [L2-Cache](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/level-two-cache.html) zu aktivieren, generiert `ece-tools` die Cache-Konfiguration automatisch. Eine Beispiel-Konfigurationsdatei [finden Sie im _Adobe Commerce-Konfigurationshandbuch_. ](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/level-two-cache.html#configuration-example) Um die generierte Cache-Konfiguration zu überschreiben, verwenden Sie die Bereitstellungsvariable [CACHE_CONFIGURATION](#cache_configuration) .
 
 ## `REDIS_USE_SLAVE_CONNECTION`
 
@@ -442,13 +442,13 @@ stage:
 
 >[!WARNING]
 >
->Do _not_ Aktivieren Sie diese Variable auf einer [skalierte Architektur](../architecture/scaled-architecture.md) Projekt. Dies führt zu Redis-Verbindungsfehlern. Redis Slaves sind noch aktiv, werden aber nicht für Redis-Lesevorgänge verwendet. Alternativ empfiehlt Adobe die Verwendung von Adobe Commerce 2.3.5 oder höher, eine neue Redis-Backend-Konfiguration zu implementieren und die L2-Zwischenspeicherung für Redis zu implementieren.
+>Aktivieren Sie diese Variable _nicht_ in einem [skalierten Architektur](../architecture/scaled-architecture.md) -Projekt. Dies führt zu Redis-Verbindungsfehlern. Redis Slaves sind noch aktiv, werden aber nicht für Redis-Lesevorgänge verwendet. Alternativ empfiehlt Adobe die Verwendung von Adobe Commerce 2.3.5 oder höher, eine neue Redis-Backend-Konfiguration zu implementieren und die L2-Zwischenspeicherung für Redis zu implementieren.
 
 >[!TIP]
 >
->Die `REDIS_USE_SLAVE_CONNECTION` wird nur in Adobe Commerce in Cloud-Infrastruktur-Staging- und Produktions-Pro-Cluster-Umgebungen unterstützt und nicht in Starter-Projekten.
+>Die Variable &quot;`REDIS_USE_SLAVE_CONNECTION`&quot; wird nur in Adobe Commerce in Cloud-Infrastruktur-Staging- und Produktions-Pro-Cluster-Umgebungen unterstützt und nicht in Starter-Projekten.
 
-Adobe Commerce kann mehrere Redis-Instanzen asynchron lesen. Legen Sie `true` zur automatischen Verwendung von _schreibgeschützt_ Verbindung zu einer Redis-Instanz, um schreibgeschützten Traffic auf einem Nicht-Master-Knoten zu empfangen. Diese Verbindung verbessert die Leistung durch Lastenausgleich, da nur ein Knoten Lese- und Schreibvorgänge-Traffic verarbeitet. Legen Sie `false` , um ein vorhandenes schreibgeschütztes Verbindungs-Array aus dem `env.php` -Datei.
+Adobe Commerce kann mehrere Redis-Instanzen asynchron lesen. Auf `true` setzen, um automatisch eine schreibgeschützte _Verbindung_ zu einer Redis-Instanz zu verwenden, um schreibgeschützten Traffic auf einem Nicht-Master-Knoten zu empfangen. Diese Verbindung verbessert die Leistung durch Lastenausgleich, da nur ein Knoten Lese- und Schreibvorgänge-Traffic verarbeitet. Auf `false` setzen, um ein vorhandenes schreibgeschütztes Verbindungs-Array aus der `env.php`-Datei zu entfernen.
 
 ```yaml
 stage:
@@ -456,18 +456,18 @@ stage:
     REDIS_USE_SLAVE_CONNECTION: true
 ```
 
-Sie müssen den Redis-Dienst im `.magento.app.yaml` und in der `services.yaml` -Datei.
+Sie müssen einen Redis-Dienst in der Datei `.magento.app.yaml` und in der Datei `services.yaml` konfiguriert haben.
 
-[ECE-Tools, Version 2002.0.18](../release-notes/cloud-release-archive.md#v2002018) und verwendet später fehlertolerantere Einstellungen. Wenn Adobe Commerce keine Daten aus den Redizes lesen kann _Slave_ -Instanz dann liest sie Daten aus den Redis _master_ -Instanz.
+[ECE-Tools Version 2002.0.18](../release-notes/cloud-release-archive.md#v2002018) und höher verwendet fehlertolerantere Einstellungen. Wenn Adobe Commerce keine Daten aus der Redis _slave_ -Instanz lesen kann, werden Daten aus der Redis _master_ -Instanz gelesen.
 
-Die schreibgeschützte Verbindung kann nicht in der Integrationsumgebung verwendet werden oder wenn Sie die [`CACHE_CONFIGURATION` Variable](#cache_configuration).
+Die schreibgeschützte Verbindung kann nicht in der Integrationsumgebung verwendet werden oder wenn Sie die Variable [`CACHE_CONFIGURATION` ](#cache_configuration) verwenden.
 
 ## `RESOURCE_CONFIGURATION`
 
 - **Standard**—Nicht festgelegt
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Ordnet einen Ressourcennamen einer Datenbankverbindung zu. Diese Konfiguration entspricht dem `resource` Abschnitt `env.php` -Datei.
+Ordnet einen Ressourcennamen einer Datenbankverbindung zu. Diese Konfiguration entspricht dem Abschnitt `resource` der Datei `env.php` .
 
 {{merge-options}}
 
@@ -487,7 +487,7 @@ stage:
 - **Standard**—`4`
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Gibt an, [gzip](https://www.gnu.org/software/gzip) Komprimierungsstufe (`0` nach `9`) für die Komprimierung von statischem Inhalt; `0` Deaktiviert die Komprimierung.
+Gibt an, welche [gzip](https://www.gnu.org/software/gzip)-Komprimierungsstufe (`0` bis `9`) beim Komprimieren statischen Inhalts verwendet werden soll. `0` deaktiviert die Komprimierung.
 
 ```yaml
 stage:
@@ -513,9 +513,9 @@ stage:
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Sie können mehrere Gebietsschemata pro Design konfigurieren. Diese Anpassung beschleunigt den Implementierungsprozess, indem die Anzahl unnötiger Designdateien verringert wird. Beispielsweise können Sie die _Magento/Backend_ Thema auf Englisch und ein benutzerdefiniertes Thema in anderen Sprachen.
+Sie können mehrere Gebietsschemata pro Design konfigurieren. Diese Anpassung beschleunigt den Implementierungsprozess, indem die Anzahl unnötiger Designdateien verringert wird. Sie können beispielsweise das Design _magento/backend_ auf Englisch und ein benutzerdefiniertes Design in anderen Sprachen bereitstellen.
 
-Im folgenden Beispiel wird die `Magento/backend` Design mit drei Gebietsschemata:
+Im folgenden Beispiel wird das `Magento/backend` -Design mit drei Gebietsschemas bereitgestellt:
 
 ```yaml
 stage:
@@ -528,7 +528,7 @@ stage:
           - af_ZA
 ```
 
-Außerdem können Sie _not_ Bereitstellen eines Designs:
+Außerdem können Sie festlegen, dass _nicht_ ein Design bereitstellt:
 
 ```yaml
 stage:
@@ -559,7 +559,7 @@ stage:
 - **Standard**—`false`
 - **Version**—Adobe Commerce 2.4.2 und höher
 
-Legen Sie in der Bereitstellungsphase `SCD_NO_PARENT: true` damit statische Inhalte für übergeordnete Designs nicht während der Bereitstellungsphase generiert werden. Diese Einstellung minimiert die Bereitstellungszeit und verhindert Site-Ausfallzeiten, die auftreten können, wenn der statische Inhaltserstellung während der Bereitstellung fehlschlägt. Siehe [Statische Inhaltsbereitstellung](../deploy/static-content.md).
+Legen Sie in der Bereitstellungsphase den Wert &quot;`SCD_NO_PARENT: true`&quot;fest, damit statische Inhalte für übergeordnete Designs nicht während der Bereitstellungsphase generiert werden. Diese Einstellung minimiert die Bereitstellungszeit und verhindert Site-Ausfallzeiten, die auftreten können, wenn der statische Inhaltserstellung während der Bereitstellung fehlschlägt. Siehe [Bereitstellung statischer Inhalte](../deploy/static-content.md).
 
 ```yaml
 stage:
@@ -572,13 +572,13 @@ stage:
 - **Standard**—`quick`
 - **Version**—Adobe Commerce 2.2.0 und höher
 
-Ermöglicht Ihnen die Anpassung der [Implementierungsstrategie](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-strategy.html) für statischen Inhalt. Siehe [Bereitstellen von statischen Ansichtsdateien](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-deployment.html).
+Ermöglicht die Anpassung der [Implementierungsstrategie](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-strategy.html) für statischen Inhalt. Siehe [Bereitstellen von statischen Ansichtsdateien](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/static-view/static-view-file-deployment.html).
 
-Verwenden Sie diese Optionen _only_ wenn Sie mehr als ein Gebietsschema haben:
+Verwenden Sie diese Optionen _nur_ , wenn Sie mehr als ein Gebietsschema haben:
 
-- `standard`—stellt alle statischen Ansichtsdateien für alle Pakete bereit.
+- `standard` - stellt alle statischen Ansichtsdateien für alle Pakete bereit.
 - `quick`—(_default_) minimiert die Bereitstellungszeit.
-- `compact`—speichert Speicherplatz auf dem Server. In Adobe Commerce Version 2.2.4 und früher überschreibt diese Einstellung den Wert für `scd_threads` mit dem Wert `1`.
+- `compact` - Speichert Speicherplatz auf dem Server. In Adobe Commerce Version 2.2.4 und früher überschreibt diese Einstellung den Wert für `scd_threads` mit dem Wert `1`.
 
 ```yaml
 stage:
@@ -599,7 +599,7 @@ stage:
     SCD_THREADS: 2
 ```
 
-Verwenden Sie zur weiteren Verkürzung der Bereitstellungszeit [Konfigurationsverwaltung](../store/store-settings.md) mit dem `scd-dump` -Befehl, um die statische Bereitstellung in die Build-Phase zu verschieben.
+Um die Bereitstellungszeit weiter zu verkürzen, verwenden Sie [Konfigurationsverwaltung](../store/store-settings.md) mit dem Befehl `scd-dump` , um die statische Bereitstellung in die Build-Phase zu verschieben.
 
 ## `SEARCH_CONFIGURATION`
 
@@ -652,7 +652,7 @@ stage:
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Konfigurieren des Sitzungsspeichers für Redis. Erfordert die `save`, `redis`, `host`, `port`, und `database` Optionen für die Sitzungsspeichervariable. Beispiel:
+Konfigurieren des Sitzungsspeichers für Redis. Erfordert die Optionen `save`, `redis`, `host`, `port` und `database` für die Sitzungsspeichervariable. Beispiel:
 
 ```yaml
 stage:
@@ -689,9 +689,9 @@ stage:
 - **Standard**— _Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Legen Sie `true` Überspringen der Bereitstellung statischer Inhalte während der Bereitstellungsphase.
+Setzen Sie dies auf &quot;`true`&quot;, um die Bereitstellung statischer Inhalte während der Bereitstellungsphase zu überspringen.
 
-Legen Sie in der Bereitstellungsphase `SKIP_SCD: true` damit der statische Inhaltserstellung während der Bereitstellungsphase nicht erfolgt. Diese Einstellung minimiert die Bereitstellungszeit und verhindert Site-Ausfallzeiten, die auftreten können, wenn der statische Inhaltserstellung während der Bereitstellung fehlschlägt. Siehe [Statische Inhaltsbereitstellung](../deploy/static-content.md).
+Legen Sie in der Bereitstellungsphase `SKIP_SCD: true` fest, damit der statische Inhaltserstellung nicht während der Bereitstellungsphase erfolgt. Diese Einstellung minimiert die Bereitstellungszeit und verhindert Site-Ausfallzeiten, die auftreten können, wenn der statische Inhaltserstellung während der Bereitstellung fehlschlägt. Siehe [Bereitstellung statischer Inhalte](../deploy/static-content.md).
 
 ```yaml
 stage:
@@ -704,9 +704,9 @@ stage:
 - **Standard**—`true`
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Ersetzen Sie bei der Bereitstellung die Adobe Commerce-Basis-URLs in der Datenbank durch die von der [`MAGENTO_CLOUD_ROUTES`](variables-cloud.md) -Variable. Diese Konfiguration ist für die lokale Entwicklung nützlich, bei der Basis-URLs für Ihre lokale Umgebung eingerichtet werden. Wenn Sie eine Bereitstellung in einer Cloud-Umgebung durchführen, werden die URLs aktualisiert, damit Sie über die Projekt-URLs auf Ihre Storefront und Ihren Administrator zugreifen können.
+Ersetzen Sie bei der Bereitstellung die Adobe Commerce-Basis-URLs in der Datenbank durch die Projekt-URLs, die durch die Variable [`MAGENTO_CLOUD_ROUTES`](variables-cloud.md) angegeben wurden. Diese Konfiguration ist für die lokale Entwicklung nützlich, bei der Basis-URLs für Ihre lokale Umgebung eingerichtet werden. Wenn Sie eine Bereitstellung in einer Cloud-Umgebung durchführen, werden die URLs aktualisiert, damit Sie über die Projekt-URLs auf Ihre Storefront und Ihren Administrator zugreifen können.
 
-Wenn Sie URLs bei der Bereitstellung in Pro- oder Starter Staging- und Produktionsumgebungen aktualisieren müssen, verwenden Sie die [`FORCE_UPDATE_URLS`](#force_update_urls) -Variable.
+Wenn Sie URLs bei der Bereitstellung in Pro- oder Starter Staging- und Produktionsumgebungen aktualisieren müssen, verwenden Sie die Variable &quot;[`FORCE_UPDATE_URLS`](#force_update_urls)&quot;.
 
 ```yaml
 stage:
@@ -719,15 +719,15 @@ stage:
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Aktivieren oder deaktivieren Sie die [Symfony](https://symfony.com/doc/current/console/verbosity.html) Debug-Ausführlichkeitsstufe für `bin/magento` CLI-Befehle, die während der Bereitstellungsphase ausgeführt werden.
+Aktivieren oder deaktivieren Sie die Debugging-Ausführlichkeitsstufe für `bin/magento` CLI-Befehle, die während der Bereitstellungsphase ausgeführt werden.[](https://symfony.com/doc/current/console/verbosity.html)
 
 >[!NOTE]
 >
->So verwenden Sie die Einstellung VERBOSE_COMMANDS , um die Details in der Befehlsausgabe für erfolgreich und fehlgeschlagen zu steuern `bin/magento` CLI-Befehle, müssen Sie festlegen [MIN_LOGGING_LEVEL](variables-global.md#minlogginglevel) `debug`.
+>Um die VERBOSE_COMMANDS-Einstellung zu verwenden, um die Details in der Befehlsausgabe für erfolgreiche und fehlgeschlagene `bin/magento` CLI-Befehle zu steuern, müssen Sie [MIN_LOGGING_LEVEL](variables-global.md#minlogginglevel) `debug` festlegen.
 
 Wählen Sie den Detailgrad aus, der in den Protokollen angegeben wird:
 
-- `-v`= normale Ausgabe
+- `-v` = normale Ausgabe
 - `-vv`= ausführlichere Ausgabe
 - `-vvv` = ausführliche Ausgabe, ideal für das Debugging
 

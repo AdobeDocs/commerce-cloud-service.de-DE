@@ -14,16 +14,16 @@ ht-degree: 0%
 
 Willkommen in Adobe Commerce!
 
-Im Abschnitt Erste Schritte werden Sie durch die Verfahren zur Initialisierung Ihres Adobe Commerce-Kontos und zum Zugriff auf die [!DNL Cloud Console]. Die _Nächster Schritt_ -Link am Ende jedes Themas öffnet das nächste Konzept und die nächste Prozedur. Jedes Thema basiert auf den vorherigen Themen mit neuen Aufgaben und Lernlinks.
+Im Abschnitt Erste Schritte werden Sie durch die Verfahren geführt, mit denen Sie Ihr Adobe Commerce-Konto initialisieren und auf die [!DNL Cloud Console] zugreifen können. Der Link _Nächster Schritt_ am Ende jedes Themas öffnet das nächste Konzept und die nächste Prozedur. Jedes Thema basiert auf den vorherigen Themen mit neuen Aufgaben und Lernlinks.
 
-In diesem Handbuch wird davon ausgegangen, dass Sie über einige Kenntnisse und Kenntnisse im Bereich der [!DNL Commerce] Anwendung. Die aktuellen Benutzerhandbücher für Commerce-Entwickler und Commerce finden Sie hier:
+In diesem Handbuch wird davon ausgegangen, dass Sie über einige Kenntnisse und Kenntnisse der [!DNL Commerce]-Anwendung verfügen. Die neuesten Benutzerhandbücher für Commerce Developer und Commerce finden Sie hier:
 
-- [Dokumentation für Adobe Commerce-Entwickler](https://developer.adobe.com/commerce/docs/) (Adobe Developer-Site): Entwickeln, Anpassen, Integrieren, Erweitern und Verwenden erweiterter Funktionen
+- [Adobe Commerce-Entwicklerdokumentation](https://developer.adobe.com/commerce/docs/) (Adobe Developer-Site): Entwickeln, Anpassen, Integrieren, Erweitern und Verwenden erweiterter Funktionen
 
-- [Dokumentation zu Adobe Commerce](https://experienceleague.adobe.com/docs/commerce.html) (Adobe Experience League) - Planen, implementieren, betreiben, aktualisieren und verwalten Sie Ihre Commerce-Projekte
+- [Adobe Commerce-Dokumentation](https://experienceleague.adobe.com/docs/commerce.html) (Adobe Experience League): Planen, implementieren, betreiben, aktualisieren und verwalten Sie Ihre Commerce-Projekte.
 
 >[!TIP]
 >
 >Bereiten Sie sich auf Ihren Willkommensaufruf vor, um Ihr Adobe Commerce-Projekt zur Cloud-Infrastruktur zu initialisieren.
 >
->**Nächster Schritt**: [Bereitstellung von Commerce in Cloud](new-project.md)
+>**Nächster Schritt**: [Commerce in Cloud bereitstellen](new-project.md)

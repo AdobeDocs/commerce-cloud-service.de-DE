@@ -17,22 +17,22 @@ Nach dem Konfigurieren und Anpassen Ihres Adobe Commerce-Projekts für die Cloud
 
 Bei der Entwicklung ist es wichtig, durchgängige Funktionstests für Ihre Adobe Commerce im Cloud-Infrastrukturprojekt durchzuführen. Weitere Informationen finden Sie in den folgenden Anleitungen zum Ausführen von Funktionstests in der Docker-Umgebung:
 
-- **Anwendungstests**—Verwenden Sie die [Magento Functional Testing Framework (MFTF)](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) für Anwendungstests in der Cloud Docker-Umgebung.
+- **Anwendungstests**: Verwenden Sie das [Magento Functional Testing Framework (MFTF)](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) für Anwendungstests in der Cloud Docker-Umgebung.
 
-- **Codetests**—Verwenden Sie die [Framework für Tests von Empfängern](https://developer.adobe.com/commerce/cloud-tools/docker/test/code-testing/) zur Validierung von Code, der für Beiträge zu Cloud-Package-Repositorys vorgesehen ist.
+- **Code-Tests**: Verwenden Sie das [Codeception testing framework for PHP](https://developer.adobe.com/commerce/cloud-tools/docker/test/code-testing/)-Framework für die Validierung von Code, der für Beiträge zu Cloud-Package-Repositorys vorgesehen ist.
 
 ## Best Practices vor dem Start
 
 Beachten Sie die folgenden Testtypen als Best Practice, die vor dem Start der Site durchgeführt werden sollten:
 
-- **Belastungstest**—Führen Sie einen Belastungstest durch, um das Verhalten des Systems bei einer erwarteten Belastung zu verstehen. Testen Sie beispielsweise eine gleichzeitige Anzahl aktiver Benutzer in der Anwendung, wobei jeder Benutzer eine bestimmte Anzahl von Transaktionen innerhalb der festgelegten Dauer durchführt. Dieser Test zeigt die Reaktionszeit wichtiger geschäftskritischer Transaktionen, wie z. B. des Verhaltens von Datenbank- oder Anwendungsservern. Ein Belastungstest kann dabei helfen, Engpässe zu erkennen.
+- **Belastungstest**: Führen Sie einen Belastungstest durch, um das Verhalten des Systems bei einer erwarteten Belastung zu verstehen. Testen Sie beispielsweise eine gleichzeitige Anzahl aktiver Benutzer in der Anwendung, wobei jeder Benutzer eine bestimmte Anzahl von Transaktionen innerhalb der festgelegten Dauer durchführt. Dieser Test zeigt die Reaktionszeit wichtiger geschäftskritischer Transaktionen, wie z. B. des Verhaltens von Datenbank- oder Anwendungsservern. Ein Belastungstest kann dabei helfen, Engpässe zu erkennen.
 
-- **Belastungstest**—Fordern Sie die oberen Kapazitätsgrenzen innerhalb des Systems an, um festzustellen, ob das System ausreichend leistungsfähig ist, wenn die aktuelle Last weit über das erwartete Maximum hinausgeht.
+- **Belastungstest**: Stellen Sie die oberen Kapazitätsgrenzen im System infrage, um festzustellen, ob das System ausreichend leistungsfähig ist, wenn die aktuelle Last deutlich über dem erwarteten Maximum liegt.
 
-- **Sicherheitsscan**—Adobe bietet eine kostenlose [Sicherheitsscan-Tool](../launch/overview.md#set-up-the-security-scan-tool) für Ihre Sites.
+- **Sicherheitsscan** - Adobe stellt ein kostenloses [Sicherheitsscan-Tool](../launch/overview.md#set-up-the-security-scan-tool) für Ihre Sites bereit.
 
-- **Penetrationstest**—ist ein autorisierter simulierter Cyberangriff auf ein Computersystem, der zur Bewertung der Systemsicherheit entwickelt wurde. Der Penetrationstest hilft dabei, Schwächen oder Schwachstellen zu identifizieren, einschließlich des Potenzials für nicht autorisierte Parteien, Zugriff auf Systemfunktionen und Daten zu erhalten.
+- **Penetrationstest**: Ist ein autorisierter simulierter Cyberangriff auf ein Computersystem, der dazu bestimmt ist, die Sicherheit des Systems zu bewerten. Der Penetrationstest hilft dabei, Schwächen oder Schwachstellen zu identifizieren, einschließlich des Potenzials für nicht autorisierte Parteien, Zugriff auf Systemfunktionen und Daten zu erhalten.
 
 >[!WARNING]
 >
->Kunden dürfen keine Sicherheitsbewertungen der AWS-Infrastruktur oder der AWS-Dienste selbst durchführen. Wenn Sie ein Sicherheitsproblem innerhalb eines der AWS-Dienste feststellen, die bei Ihrer Sicherheitsbewertung beobachtet wurden, [AWS Security kontaktieren](mailto:aws-security@amazon.com) sofort. Siehe [AWS-Kundenrichtlinien für Penetrationstests](https://aws.amazon.com/security/penetration-testing/).
+>Kunden dürfen keine Sicherheitsbewertungen der AWS-Infrastruktur oder der AWS-Dienste selbst durchführen. Wenn Sie ein Sicherheitsproblem innerhalb eines der in Ihrer Sicherheitsbewertung beschriebenen AWS-Dienste feststellen, wenden Sie sich sofort an [AWS Security](mailto:aws-security@amazon.com) . Siehe [AWS-Kundenrichtlinien für Penetrationstests](https://aws.amazon.com/security/penetration-testing/).

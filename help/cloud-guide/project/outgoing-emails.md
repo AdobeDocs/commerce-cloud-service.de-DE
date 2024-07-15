@@ -11,31 +11,31 @@ ht-degree: 0%
 
 # Ausgehende E-Mails konfigurieren
 
-Sie können ausgehende E-Mails für jede Umgebung über die [!DNL Cloud Console] oder über die Befehlszeile. Aktivieren Sie ausgehende E-Mails für Integrations- und Staging-Umgebungen, um Zwei-Faktor-Authentifizierung zu senden oder Passwort-E-Mails für Cloud-Projektbenutzer zurückzusetzen.
+Sie können ausgehende E-Mails für jede Umgebung über den Befehl [!DNL Cloud Console] oder die Befehlszeile aktivieren und deaktivieren. Aktivieren Sie ausgehende E-Mails für Integrations- und Staging-Umgebungen, um Zwei-Faktor-Authentifizierung zu senden oder Passwort-E-Mails für Cloud-Projektbenutzer zurückzusetzen.
 
-Ausgehende E-Mails sind standardmäßig in der Produktions- und Staging-Umgebung aktiviert. Allerdings [!UICONTROL Enable outgoing emails] kann in den Umgebungseinstellungen deaktiviert angezeigt werden, bis Sie die `enable_smtp` -Eigenschaft über [Befehlszeile](#enable-emails-in-the-cli) oder [Cloud-Konsole](outgoing-emails.md#enable-emails-in-the-cloud-console).
+Ausgehende E-Mails sind standardmäßig in der Produktions- und Staging-Umgebung aktiviert. [!UICONTROL Enable outgoing emails] kann jedoch in den Umgebungseinstellungen deaktiviert angezeigt werden, bis Sie die Eigenschaft `enable_smtp` über die Befehlszeile [](#enable-emails-in-the-cli) oder die [Cloud-Konsole](outgoing-emails.md#enable-emails-in-the-cloud-console) festlegen.
 
-Aktualisieren der [!UICONTROL enable_smtp] Eigenschaftswert von [Befehlszeile](#enable-emails-in-the-cli) ändert auch die [!UICONTROL Enable outgoing emails] -Wert für diese Umgebung in der Cloud-Konsole festlegen.
+Durch die Aktualisierung des Eigenschaftswerts [!UICONTROL enable_smtp] um die Befehlszeile ](#enable-emails-in-the-cli) wird auch der Wert für die Einstellung [!UICONTROL Enable outgoing emails] für diese Umgebung in der Cloud Console geändert.[
 
 {{redeploy-warning}}
 
 ## E-Mails in der Cloud Console aktivieren
 
-Verwenden Sie die **[!UICONTROL Outgoing emails]** Umschalten in der _Umgebung konfigurieren_ anzeigen, um die E-Mail-Unterstützung zu aktivieren oder zu deaktivieren.
+Verwenden Sie den Umschalter **[!UICONTROL Outgoing emails]** in der Ansicht _Umgebung konfigurieren_ , um die E-Mail-Unterstützung zu aktivieren oder zu deaktivieren.
 
-Wenn ausgehende E-Mails in Pro Production- oder Staging-Umgebungen deaktiviert oder wieder aktiviert werden müssen, können Sie eine [Support-Ticket für Adobe Commerce](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide).
+Wenn ausgehende E-Mails in Pro Production- oder Staging-Umgebungen deaktiviert oder wieder aktiviert werden müssen, können Sie ein [Adobe Commerce-Supportticket](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide) senden.
 
 >[!TIP]
 >
 >Der Status ausgehender E-Mails wird in Pro-Umgebungen in der Cloud Console möglicherweise nicht angezeigt. Verwenden Sie stattdessen die [Befehlszeile](#enable-emails-in-the-cli) zum Aktivieren und Testen ausgehender E-Mails.
 
-**So verwalten Sie den E-Mail-Support über[!DNL Cloud Console]**:
+**So verwalten Sie den E-Mail-Support über die[!DNL Cloud Console]**:
 
-1. Melden Sie sich bei [[!DNL Cloud Console]](https://console.adobecommerce.com).
-1. Wählen Sie ein Projekt aus dem _Alle Projekte_ Liste.
+1. Melden Sie sich bei [[!DNL Cloud Console]](https://console.adobecommerce.com) an.
+1. Wählen Sie ein Projekt aus der Liste _Alle Projekte_ aus.
 1. Klicken Sie im Projekt-Dashboard auf das Konfigurationssymbol oben rechts.
-1. Klicks **[!UICONTROL Environments]** und wählen Sie eine bestimmte Umgebung aus der Liste aus.
-1. Um ausgehende E-Mails zu aktivieren oder zu deaktivieren, schalten Sie _Ausgehende E-Mails aktivieren_ **on** oder **Aus**.
+1. Klicken Sie auf **[!UICONTROL Environments]** und wählen Sie eine bestimmte Umgebung aus der Liste aus.
+1. Um ausgehende E-Mails zu aktivieren oder zu deaktivieren, schalten Sie _Ausgehende E-Mails aktivieren_ **Ein** oder **Aus** um.
 
    ![Ausgehende E-Mail-Konfiguration aktivieren](../../assets/outgoing-emails.png)
 
@@ -43,7 +43,7 @@ Nachdem Sie die Einstellung geändert haben, wird die Umgebung mit der neuen Kon
 
 ## Aktivieren von E-Mails in der CLI
 
-Sie können die E-Mail-Konfiguration für eine aktive Umgebung mit dem `magento-cloud` CLI `environment:info` -Befehl zum Festlegen der `enable_smtp` -Eigenschaft. Durch die Aktivierung von SMTP wird die `MAGENTO_CLOUD_SMTP_HOST` Umgebungsvariable mit der IP-Adresse des SMTP-Hosts zum Senden von E-Mails.
+Sie können die E-Mail-Konfiguration für eine aktive Umgebung mithilfe des Befehls `magento-cloud` CLI `environment:info` ändern, um die Eigenschaft `enable_smtp` festzulegen. Durch die Aktivierung von SMTP wird die Umgebungsvariable `MAGENTO_CLOUD_SMTP_HOST` mit der IP-Adresse des SMTP-Hosts zum Senden von E-Mails aktualisiert.
 
 **So verwalten Sie den E-Mail-Support über die Befehlszeile**:
 
@@ -55,7 +55,7 @@ Sie können die E-Mail-Konfiguration für eine aktive Umgebung mit dem `magento-
    magento-cloud environment:info -e <environment-id> | grep enable_smtp
    ```
 
-1. Ändern Sie die Konfiguration der E-Mail-Unterstützung, indem Sie die `enable_smtp` Umgebungsvariable auf `true` oder `false`.
+1. Ändern Sie die Konfiguration der E-Mail-Unterstützung, indem Sie die Umgebungsvariable `enable_smtp` auf `true` oder `false` setzen.
 
    ```bash
    magento-cloud environment:info --refresh -e <environment-id> enable_smtp true

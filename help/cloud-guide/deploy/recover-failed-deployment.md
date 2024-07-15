@@ -21,7 +21,7 @@ Sie können eine fehlgeschlagene Bereitstellung auf eine der folgenden Arten wie
 
 ## Bereinigen, Entfernen und erneutes Bereitstellen
 
-Um die vorherige Bereitstellung zu bereinigen, identifizieren Sie die Komponente, die hinzugefügt oder aktualisiert wurde, und entfernen Sie sie dann. Melden Sie sich zunächst bei der Remote-Umgebung an und löschen Sie manuell den Inhalt der `var` Verzeichnis. Entfernen Sie dann die Komponente aus dem `composer.json` und stellen Sie die Umgebung erneut bereit.
+Um die vorherige Bereitstellung zu bereinigen, identifizieren Sie die Komponente, die hinzugefügt oder aktualisiert wurde, und entfernen Sie sie dann. Melden Sie sich zunächst bei der Remote-Umgebung an und löschen Sie manuell den Inhalt des Verzeichnisses `var` . Entfernen Sie dann die Komponente aus der Datei `composer.json` und stellen Sie die Umgebung erneut bereit.
 
 **So reinigen Sie die `var` Verzeichnisse**:
 
@@ -33,7 +33,7 @@ Um die vorherige Bereitstellung zu bereinigen, identifizieren Sie die Komponente
    magento-cloud ssh
    ```
 
-1. Löschen Sie die `var` Verzeichnissen.
+1. Löschen Sie die Ordner &quot;`var`&quot;.
 
    ```shell
    rm -rf var/*
@@ -51,7 +51,7 @@ Um die vorherige Bereitstellung zu bereinigen, identifizieren Sie die Komponente
    composer clear-cache
    ```
 
-1. Entfernen Sie die Komponente aus der `composer.json` -Datei.
+1. Entfernen Sie die Komponente aus der Datei &quot;`composer.json`&quot;.
 
    ```bash
    composer remove <component-name>:<version>
@@ -81,6 +81,6 @@ Um die vorherige Bereitstellung zu bereinigen, identifizieren Sie die Komponente
 
 {{redeploy-warning}}
 
-Weitere Informationen zum Wiederherstellen einer Umgebung ohne Sicherung finden Sie unter [Wiederherstellen einer Umgebung](../development/restore-environment.md).
+Weitere Informationen zum Wiederherstellen einer Umgebung ohne Sicherung finden Sie in [Wiederherstellen einer Umgebung](../development/restore-environment.md) .
 
 {{stuck-deployment-tip}}

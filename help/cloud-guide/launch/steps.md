@@ -37,7 +37,7 @@ Der Wert &quot;Time-to-Live changed&quot;ist wichtig, um Ihre geänderte Domäne
 
 Führen Sie einige UAT-Tests in Ihrem Live Store durch, um sicherzustellen, dass alles ordnungsgemäß geladen und die Aktionen ausgeführt werden. Eine Liste der Tests finden Sie unter [Testen der Bereitstellung](../test/staging-and-production.md#complete-uat-testing).
 
-## Nach dem Start
+## Post-Launch
 
 Adobe überprüft und überwacht die Website, um sicherzustellen, dass alle Dienste und der Zugriff grün sind. Wir bleiben bei Bedarf zur Verfügung, um zu überprüfen, ob alle Systemprotokolle, Dienste, Caching und Funktionen wie Sie und Ihre Kunden benötigen, funktionieren.
 

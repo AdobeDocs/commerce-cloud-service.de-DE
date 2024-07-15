@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Benachrichtigungen einrichten
 
-Standardmäßig schreibt Adobe Commerce in der Cloud-Infrastruktur Build- und Bereitstellungsaktionen in die `app/var/log/cloud.log` -Datei im Stammverzeichnis der Adobe Commerce-Anwendung. Optional können Sie Protokolle an ein Messaging-System wie Slack und E-Mail senden, um Echtzeit-Benachrichtigungen zu erhalten.
+Standardmäßig schreibt Adobe Commerce in der Cloud-Infrastruktur Build- und Bereitstellungsaktionen in die Datei &quot;`app/var/log/cloud.log`&quot;im Stammordner der Adobe Commerce-Anwendung. Optional können Sie Protokolle an ein Messaging-System wie Slack und E-Mail senden, um Echtzeit-Benachrichtigungen zu erhalten.
 
 Beispielsweise können Sie eine Slack-Nachricht senden, um eine Benutzergruppe bei einem fehlgeschlagenen Bereitstellungsprozess zu benachrichtigen und eine Untersuchung darüber einzuleiten, was schiefgelaufen ist.
 
@@ -35,9 +35,9 @@ Beispielsweise können Sie während der ersten Entwicklung E-Mail-Benachrichtigu
 So konfigurieren Sie Benachrichtigungen:
 
 1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
-1. Im `.magento.env.yaml` in den Projektstamm, fügen Sie Ihre Einstellungen für das Messaging-System hinzu, einschließlich der bevorzugten Benachrichtigung [Protokollebenen](log-handlers.md#log-levels).
+1. Fügen Sie in der Datei &quot;`.magento.env.yaml`&quot;im Projektstamm Ihre Einstellungen für das Messaging-System hinzu, einschließlich der bevorzugten Benachrichtigungsebene [Protokollebenen](log-handlers.md#log-levels).
 
-   So konfigurieren Sie beispielsweise beide Slack _und_ E-Mail-Konfigurationen verwenden Sie Folgendes:
+   Um beispielsweise die E-Mail-Konfigurationen für Slack _und_ zu konfigurieren, verwenden Sie Folgendes:
 
    ```yaml
    log:
@@ -80,10 +80,10 @@ log:
     min_level: "info"
 ```
 
-- `token`—Ihre Slack [Benutzer-Token](https://api.slack.com/docs/token-types#user). Ihr Benutzer-Token autorisiert Adobe Commerce in der Cloud-Infrastruktur zum Senden von Nachrichten.
-- `channel`—Der Name des Slack-Kanals Adobe Commerce in der Cloud-Infrastruktur sendet Benachrichtigungen.
+- `token` - Ihr Slack [Benutzer-Token](https://api.slack.com/docs/token-types#user). Ihr Benutzer-Token autorisiert Adobe Commerce in der Cloud-Infrastruktur zum Senden von Nachrichten.
+- `channel` - Der Name des Slack-Kanals Adobe Commerce in der Cloud-Infrastruktur sendet Benachrichtigungen.
 - `username`—Benutzername Adobe Commerce in der Cloud-Infrastruktur verwendet , um Benachrichtigungen in Slack zu senden.
-- `min_level`—Minimale Protokollebene für Benachrichtigungsmeldungen. Wir empfehlen, `info`.
+- `min_level`—Minimale Protokollebene für Benachrichtigungsmeldungen. Es wird empfohlen, `info` zu verwenden.
 
 ### Beispiel für eine E-Mail-Konfiguration
 
@@ -102,7 +102,7 @@ log:
     min_level: "notice"
 ```
 
-- `to`—E-Mail-Adresse Adobe Commerce in der Cloud-Infrastruktur sendet Benachrichtigungen.
-- `from`—E-Mail-Adresse für den Versand von Benachrichtigungen an Empfänger.
+- `to` - E-Mail-Adresse Adobe Commerce in der Cloud-Infrastruktur sendet Benachrichtigungen.
+- `from` - E-Mail-Adresse zum Senden von Benachrichtigungsinhalten an Empfänger.
 - `subject`—Beschreibung der E-Mail.
-- `min_level`—Minimale Protokollebene für Benachrichtigungsmeldungen. Wir empfehlen, `notice` oder `warning`.
+- `min_level`—Minimale Protokollebene für Benachrichtigungsmeldungen. Es wird empfohlen, `notice` oder `warning` zu verwenden.

@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Die Verwaltung von Weiterleitungsregeln ist eine gängige Voraussetzung für Webanwendungen, insbesondere in Fällen, in denen Sie eingehende Links, die sich im Laufe der Zeit geändert oder entfernt haben, nicht verlieren möchten.
 
-Im Folgenden wird gezeigt, wie Sie Umleitungsregeln für Ihre Adobe Commerce in Cloud-Infrastrukturprojekten mit dem `routes.yaml` Konfigurationsdatei. Wenn die in diesem Thema behandelten Umleitungsmethoden für Sie nicht funktionieren, können Sie die Zwischenspeicherung von Kopfzeilen verwenden, um dasselbe zu tun.
+Im Folgenden wird gezeigt, wie Sie mithilfe der Konfigurationsdatei &quot;`routes.yaml`&quot;Umleitungsregeln in Ihrer Adobe Commerce für Cloud-Infrastrukturprojekte verwalten. Wenn die in diesem Thema behandelten Umleitungsmethoden für Sie nicht funktionieren, können Sie die Zwischenspeicherung von Kopfzeilen verwenden, um dasselbe zu tun.
 
 {{route-placeholder}}
 
@@ -24,11 +24,11 @@ Im Folgenden wird gezeigt, wie Sie Umleitungsregeln für Ihre Adobe Commerce in 
 
 >[!WARNING]
 >
->Konfigurieren Sie für Adobe Commerce in Cloud-Infrastrukturprojekten zahlreiche Nicht-Regex-Umleitungen und Umschreibungen in der `routes.yaml` -Datei Leistungsprobleme verursachen. Wenn `routes.yaml` -Datei 32 KB oder größer ist, laden Sie Ihre Nicht-Regex-Umleitungen ab und schreiben Sie sie auf Fastly um. Siehe [Nicht-Regex-Umleitungen werden nach Fastly anstatt nach Nginx (Routen) abgeladen.](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/offload-non-regex-redirects-to-fastly-instead-of-nginx-routes.html) im _Adobe Commerce Help Center_.
+>Bei Adobe Commerce in Cloud-Infrastrukturprojekten kann das Konfigurieren zahlreicher Nicht-Regex-Weiterleitungen und Rewrites in der Datei `routes.yaml` Leistungsprobleme verursachen. Wenn Ihre `routes.yaml` -Datei 32 KB oder größer ist, laden Sie Ihre Nicht-Regex-Umleitungen ab und schreiben Sie sie in Fastly um. Siehe [Nicht-Regex-Umleitungen zu Fastly anstatt Nginx (Routen) laden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/offload-non-regex-redirects-to-fastly-instead-of-nginx-routes.html) im _Adobe Commerce Help Center_.
 
 ## Umleitungen auf ganze Strecken
 
-Mithilfe von Umleitungen über ganze Routen können Sie einfache Routen mithilfe der `routes.yaml` -Datei. Sie können beispielsweise von einer Apex-Domäne zu einer `www` Subdomain wie folgt:
+Mithilfe von Umleitungen über ganze Routen können Sie einfache Routen mithilfe der Datei `routes.yaml` definieren. Sie können beispielsweise wie folgt von einer Apex-Domäne zu einer `www` -Subdomäne umleiten:
 
 ```yaml
 http://{default}/:
@@ -38,7 +38,7 @@ http://{default}/:
 
 ## Teilroute-Umleitungen
 
-Im `.magento/routes.yaml` -Datei können Sie basierend auf der Musterübereinstimmung partielle Umleitungsregeln zu vorhandenen Routen hinzufügen:
+In der Datei `.magento/routes.yaml` können Sie basierend auf der Musterübereinstimmung partielle Umleitungsregeln zu bestehenden Routen hinzufügen:
 
 ```yaml
 http://{default}/:
@@ -51,11 +51,11 @@ http://{default}/:
 
 Teilumleitungen funktionieren mit jeder Route, einschließlich Routen, die direkt von der Anwendung bedient werden.
 
-Zwei Schlüssel sind unter verfügbar `redirects`:
+Zwei Schlüssel sind unter `redirects` verfügbar:
 
-- **expires**—Optional, gibt die Zeit an, die die Weiterleitung im Browser zwischengespeichert werden soll. Beispiele für gültige Werte sind `3600s`, `1d`, `2w`, `3m`.
+- **expires** - Optional: Gibt die Zeit an, die zum Zwischenspeichern der Weiterleitung im Browser erforderlich ist. Beispiele für gültige Werte sind `3600s`, `1d`, `2w`, `3m`.
 
-- **paths**—Ein oder mehrere Schlüssel-Wert-Paare, die die Konfiguration für Umleitungsregeln für Teilstrecken angeben.
+- **Pfade**: Ein oder mehrere Schlüssel-Wert-Paare, die die Konfiguration für Regeln für Umleitungen mit partieller Route angeben.
 
   Für jede Umleitungsregel ist der Schlüssel ein Ausdruck zum Filtern von Anfragepfaden für die Umleitung. Der Wert ist ein Objekt, das das Zielziel für die Umleitung und die Optionen für die Verarbeitung der Umleitung angibt.
 
@@ -65,14 +65,14 @@ Zwei Schlüssel sind unter verfügbar `redirects`:
   | ---------- | ----------- |
   | `to` | Erforderlich: ein teilweiser absoluter Pfad, eine URL mit Protokoll und Host oder ein Muster, das das Ziel für die Umleitungsregel angibt. |
   | `regexp` | Optional, standardmäßig `false`. Gibt an, ob der Pfadschlüssel als regulärer PCRE-Ausdruck interpretiert werden soll. |
-  | `prefix` | Gibt an, ob die Umleitung sowohl für den Pfad als auch für alle untergeordneten Elemente oder nur für den Pfad selbst gilt. Standardwert ist `true`. Dieser Wert wird nicht unterstützt, wenn `regexp` is `true`. |
-  | `append_suffix` | Bestimmt, ob das Suffix mit der Umleitung übernommen wird. Standardwert ist `true`. Dieser Wert wird nicht unterstützt, wenn die `regexp` Schlüssel ist `true` oder* wenn die `prefix` Schlüssel ist `false`. |
-  | `code` | Gibt den HTTP-Statuscode an. Gültige Statuscodes sind [`301` (Dauerhaft verschoben)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2), [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3), [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8), und [`308`](https://www.rfc-editor.org/rfc/rfc7238). Standardwert ist `302`. |
-  | `expires` | Optional: Gibt die Zeit an, die die Weiterleitung im Browser zwischengespeichert werden soll. Die Standardeinstellung ist `expires` Wert, der direkt unter dem `redirects` auf, aber auf dieser Ebene können Sie den Cache-Ablauf für einzelne partielle Weiterleitungen optimieren. |
+  | `prefix` | Gibt an, ob die Umleitung sowohl für den Pfad als auch für alle untergeordneten Elemente oder nur für den Pfad selbst gilt. Der Standardwert ist `true`. Dieser Wert wird nicht unterstützt, wenn `regexp` `true` ist. |
+  | `append_suffix` | Bestimmt, ob das Suffix mit der Umleitung übernommen wird. Der Standardwert ist `true`. Dieser Wert wird nicht unterstützt, wenn der `regexp` -Schlüssel `true` oder* ist, wenn der `prefix` -Schlüssel `false` ist. |
+  | `code` | Gibt den HTTP-Statuscode an. Gültige Statuscodes sind [`301` (Dauerhaft verschoben)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2), [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3), [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8) und [`308`](https://www.rfc-editor.org/rfc/rfc7238). Der Standardwert ist `302`. |
+  | `expires` | Optional: Gibt die Zeit an, die die Weiterleitung im Browser zwischengespeichert werden soll. Der Standardwert ist der `expires` -Wert, der direkt unter dem `redirects` -Schlüssel definiert ist. Auf dieser Ebene können Sie jedoch den Cache-Ablauf für einzelne Teilumleitungen optimieren. |
 
 ## Beispiele für Umleitungen auf Teilstrecken
 
-Die folgenden Beispiele zeigen, wie Sie Teilroute-Umleitungen im `routes.yaml` Datei mit verschiedenen `paths` Konfigurationsoptionen.
+Die folgenden Beispiele zeigen, wie Sie mithilfe verschiedener `paths` -Konfigurationsoptionen Teilroute-Umleitungen in der Datei `routes.yaml` angeben.
 
 ### Abgleich von regulärem Ausdrucksmuster
 
@@ -86,7 +86,7 @@ http://{default}/:
         "/regexp/(.*)/match": { to: "http://example.com/$1", regexp: true }
 ```
 
-Diese Konfiguration filtert Anfragepfade für einen regulären Ausdruck und leitet übereinstimmende Anforderungen an `https://example.com`. Beispielsweise eine Anfrage an `https://example.com/regexp/a/b/c/match` umleitet auf `https://example.com/a/b/c`.
+Diese Konfiguration filtert Anfragepfade für einen regulären Ausdruck und leitet übereinstimmende Anforderungen an `https://example.com` um. Beispielsweise wird eine Anforderung an `https://example.com/regexp/a/b/c/match` an `https://example.com/a/b/c` umgeleitet.
 
 ### Präfixmuster-Übereinstimmung
 
@@ -102,11 +102,11 @@ http://{default}/:
 
 Diese Konfiguration funktioniert wie folgt:
 
-- Umleitungsanfragen, die dem Muster entsprechen `/from` zum Pfad `http://{default}/to`.
+- Leitet Anforderungen, die dem Muster `/from` entsprechen, an den Pfad `http://{default}/to` um.
 
-- Umleitungsanfragen, die dem Muster entsprechen `/from/another/path` nach `https://{default}/to/another/path`.
+- Leitet Anforderungen, die dem Muster `/from/another/path` entsprechen, auf `https://{default}/to/another/path` um.
 
-- Wenn Sie die `prefix` Eigenschaft auf `false`, Anforderungen, die mit dem `/from` Muster Trigger einer Umleitung, aber Anforderungen, die mit dem `/from/another/path` Muster nicht verwenden.
+- Wenn Sie die Eigenschaft `prefix` in `false` ändern, werden Anforderungen, die mit dem Muster-Trigger `/from` übereinstimmen, zwar umgeleitet, Anforderungen, die mit dem Muster `/from/another/path` übereinstimmen, jedoch nicht.
 
 ### Suffix-Musterabgleich
 
@@ -121,9 +121,9 @@ http://{default}/:
 
 Diese Konfiguration funktioniert wie folgt:
 
-- Umleitungsanfragen, die dem Muster entsprechen `/from/path/suffix` zum Pfad `https://{default}/to`.
+- Leitet Anforderungen, die dem Muster `/from/path/suffix` entsprechen, an den Pfad `https://{default}/to` um.
 
-- Wenn Sie die `append_suffix` Eigenschaft auf `true`, dann Anforderungen, die übereinstimmen `/from/path/suffix`  zum Pfad umleiten `https://{default}/to/path/suffix`.
+- Wenn Sie die Eigenschaft `append_suffix` in `true` ändern, werden Anforderungen, die mit `/from/path/suffix` übereinstimmen, zum Pfad `https://{default}/to/path/suffix` umgeleitet.
 
 ### Pfadspezifische Cache-Konfiguration
 
@@ -141,6 +141,6 @@ http://{default}/:
 
 Diese Konfiguration funktioniert wie folgt:
 
-- Umleitungen vom ersten Pfad (`/from`) werden einen Tag lang zwischengespeichert.
+- Umleitungen aus dem ersten Pfad (`/from`) werden einen Tag lang zwischengespeichert.
 
 - Umleitungen vom zweiten Pfad (`/here`) werden zwei Wochen lang zwischengespeichert.

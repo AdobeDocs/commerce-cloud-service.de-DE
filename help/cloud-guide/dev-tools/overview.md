@@ -13,10 +13,10 @@ ht-degree: 0%
 
 # Übersicht über Entwicklertools
 
-Adobe bietet eine Cloud Tools Suite für den Handel, die Packages für die Bereitstellung und Verwaltung von Adobe Commerce-Installationen und -Upgrades auf der Cloud-Plattform enthält.
+Adobe bietet eine Cloud Tools-Suite für Commerce, die Packages zum Bereitstellen und Verwalten von Adobe Commerce-Installationen und -Upgrades auf der Cloud-Plattform enthält.
 
-- [Cloud-CLI](cloud-cli-overview.md)—Verwalten von Cloud-Projekten und -Umgebungen, Ausführen von Routinen und Ausführen von Automatisierungsaufgaben mit `magento-cloud` CLI.
-- [Cloud Docker für Commerce](cloud-docker.md)—Stellen Sie Adobe Commerce für lokale Entwicklungs-, Test- und Automatisierungsaufgaben in einer Docker-Umgebung bereit.
-- [Cloud-Patches](../development/apply-patches.md)—Wenden Sie Patches an, um Commerce-Versionen in Cloud-Umgebungen zu integrieren und wichtige Fehlerbehebungen schnell bereitzustellen.
-- [ECE-Tools-Paket](package-overview.md)—Verwalten Sie Konfigurationen, erstellen Sie die Adobe Commerce-Anwendung und stellen Sie sie in den Remote-Cloud-Umgebungen bereit.
-- [Integrationen](../integrations/overview.md)—Integrieren Sie allgemeine Entwicklungstools wie Benachrichtigungen, Webhooks und Git-basierte Dienste.
+- [Cloud-CLI](cloud-cli-overview.md): Verwalten Sie Cloud-Projekte und -Umgebungen, führen Sie Routinen aus und führen Sie Automatisierungsaufgaben mit der CLI `magento-cloud` aus.
+- [Cloud Docker für Commerce](cloud-docker.md) - Stellen Sie Adobe Commerce für lokale Entwicklungs-, Test- und Automatisierungsaufgaben in einer Docker-Umgebung bereit.
+- [Cloud-Patches](../development/apply-patches.md): Wenden Sie Patches an, um Commerce-Versionen in Cloud-Umgebungen zu integrieren und wichtige Fehlerbehebungen schnell bereitzustellen.
+- [ECE-Tools-Paket](package-overview.md) - Verwalten Sie Konfigurationen, erstellen und stellen Sie die Adobe Commerce-Anwendung in den Remote-Cloud-Umgebungen bereit.
+- [Integrationen](../integrations/overview.md): Integrieren Sie allgemeine Entwicklungs-Tools wie Benachrichtigungen, Webhooks und Git-basierte Dienste.

@@ -7,7 +7,7 @@ assignees: ''
 source-git-commit: 4e12e99461ba5aaff38a3512165328a01306c08a
 workflow-type: tm+mt
 source-wordcount: '36'
-ht-degree: 2%
+ht-degree: 8%
 
 ---
 
@@ -27,7 +27,7 @@ ht-degree: 2%
 - Das Thema enthält Code-Beispiele, die _____ zeigen.
 - Andere (bitte angeben)
 
-## Zusätzliche Informationen
+## Weitere Informationen
 
 <!-- (OPTIONAL) Any information you already know or other online resources that cover this topic -->
 

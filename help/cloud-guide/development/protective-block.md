@@ -28,9 +28,9 @@ Wenn eine kritische Schwachstelle in Ihrer Anwendung erkannt wird, wird die Git-
 
 Es werden zwei Arten von Blöcken ausgeführt:
 
-1. **Vollständiger Block**—für Entwicklungswebsites. Begleitende Fehlermeldung `git push` enthält detaillierte Informationen zur Schwachstelle.
+1. **Baustein vervollständigen** - für Entwicklungs-Websites. Die Fehlermeldung, die `git push` begleitet, enthält detaillierte Informationen zur Schwachstelle.
 
-1. **Teilblock**—für Produktions-Websites, die es der Website ermöglichen, meist online zu bleiben. Je nach Art der Sicherheitslücke können Teile einer Anforderung, wie z. B. eine Abfragezeichenfolge, Cookies oder zusätzliche Header, aus GET-Anforderungen entfernt werden. Alle anderen Anfragen können vollständig blockiert werden, z. B. Anmeldung, Formularübermittlung oder Produktkasse.
+1. **Teilblock** - für Produktions-Websites, wodurch die Site größtenteils online bleibt. Je nach Art der Sicherheitslücke können Teile einer Anforderung, wie z. B. eine Abfragezeichenfolge, Cookies oder zusätzliche Header, aus GET-Anforderungen entfernt werden. Alle anderen Anfragen können vollständig blockiert werden, z. B. Anmeldung, Formularübermittlung oder Produktkasse.
 
 Die Aufhebung der Sperrung wird nach Beseitigung des Sicherheitsrisikos automatisiert. Der Block wird kurz nach dem Anwenden eines Sicherheits-Upgrades entfernt, durch das die Schwachstelle entfernt wird.
 
@@ -38,7 +38,7 @@ Die Aufhebung der Sperrung wird nach Beseitigung des Sicherheitsrisikos automati
 
 Der Schutzblock dient zum Schutz vor bekannten Sicherheitslücken in der Software, die Sie Adobe Commerce in der Cloud-Infrastruktur bereitstellen.
 
-Sie können den Schutzblock jedoch deaktivieren, indem Sie Folgendes zu [`.magento.app.yaml`](../application/configure-app-yaml.md):
+Sie können den Schutzblock jedoch deaktivieren, indem Sie [`.magento.app.yaml`](../application/configure-app-yaml.md) Folgendes hinzufügen:
 
 ```yaml
    preflight:

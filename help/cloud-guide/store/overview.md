@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Es gibt viele Möglichkeiten, Ihren Store anzupassen, z. B. das Hinzufügen eines benutzerdefinierten Designs, das Installieren einer Erweiterung oder das Erzwingen einer bestimmten Konfiguration in Cloud-Infrastrukturumgebungen. Sie können Einstellungen für bestimmte Dienste direkt in Staging- und Produktionsumgebungen konfigurieren. Sie können mehrere Websites und Stores einrichten. Die Speicherkonfiguration hilft Ihnen dabei, diese Optionen in Ihrer lokalen Workstation zu konfigurieren und bestimmte Einstellungen in allen Umgebungen bereitzustellen.
 
-Um auf Ihre Storefront zuzugreifen, verwenden Sie die `magento-cloud url` und antworten Sie auf die Eingabeaufforderungen. Oder Sie finden die URL im [!DNL Cloud Console] under **Auf Website zugreifen**.
+Um auf Ihre Storefront zuzugreifen, verwenden Sie den Befehl `magento-cloud url` und beantworten Sie die Eingabeaufforderungen. Oder Sie finden die URL in der &quot;[!DNL Cloud Console]&quot;-Liste unter &quot;**Zugriff auf Site**&quot;.
 
 ## Store-Optionen konfigurieren
 
@@ -28,7 +28,7 @@ Zu den Speicheroptionen gehören:
 
 ## Dienste und Integrationen konfigurieren
 
-Es gibt bestimmte [Konfigurationsdateien](../environment/overview.md) die bestimmte Bereitstellungsverhaltensweisen in Remote-Umgebungen verwalten. Sie können diese Themen separat prüfen:
+Es gibt bestimmte [Konfigurationsdateien](../environment/overview.md), die bestimmte Bereitstellungsverhaltensweisen in Remote-Umgebungen verwalten. Sie können diese Themen separat prüfen:
 
 * [Anwendungsimplementierung](../application/configure-app-yaml.md)
 * [Aktionen zum Erstellen und Bereitstellen von Umgebungen](../environment/configure-env-yaml.md)

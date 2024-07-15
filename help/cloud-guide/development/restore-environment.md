@@ -13,10 +13,10 @@ ht-degree: 0%
 
 # Wiederherstellen einer Umgebung
 
-Wenn Sie in der Integrationsumgebung auf Probleme stoßen und keine [gültige Sicherung](../storage/snapshots.md)versuchen Sie, Ihre Umgebung mit einer der folgenden Methoden wiederherzustellen:
+Wenn Probleme in der Integrationsumgebung auftreten und keine [gültige Sicherung](../storage/snapshots.md) vorhanden ist, versuchen Sie, Ihre Umgebung mit einer der folgenden Methoden wiederherzustellen:
 
 - Zurücksetzen oder Zurücksetzen des Codes in der Git-Verzweigung
-- Deinstallieren Sie die [!DNL Commerce] Applikation
+- Deinstallieren der [!DNL Commerce]-Anwendung
 - Neuerstellung erzwingen
 - Datenbank manuell zurücksetzen
 
@@ -26,11 +26,11 @@ Wenn Sie in der Integrationsumgebung auf Probleme stoßen und keine [gültige Si
 
 Wenn Sie Ihre Git-Verzweigung zurücksetzen, wird der Code in der Vergangenheit wieder in einen stabilen Status versetzt.
 
-**So setzen Sie die Verzweigung zurück**:
+**So setzen Sie Ihren Zweig zurück**:
 
 1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
 
-1. Überprüfen Sie den Git-Commitverlauf. Verwendung `--oneline` um abgekürzte Commits in einer Zeile anzuzeigen:
+1. Überprüfen Sie den Git-Commitverlauf. Verwenden Sie `--oneline` , um abgekürzte Commits in einer Zeile anzuzeigen:
 
    ```bash
    git log --oneline
@@ -49,7 +49,7 @@ Wenn Sie Ihre Git-Verzweigung zurücksetzen, wird der Code in der Vergangenheit 
 
 1. Wählen Sie einen Commit-Hash, der den letzten bekannten stabilen Status Ihres Codes darstellt.
 
-   Um Ihren Zweig auf seinen ursprünglichen initialisierten Status zurückzusetzen, suchen Sie den ersten Commit, der Ihren Zweig erstellt hat. Sie können `--reverse` um den Verlauf in umgekehrter chronologischer Reihenfolge anzuzeigen.
+   Um Ihren Zweig auf seinen ursprünglichen initialisierten Status zurückzusetzen, suchen Sie den ersten Commit, der Ihren Zweig erstellt hat. Sie können `--reverse` verwenden, um den Verlauf in umgekehrter chronologischer Reihenfolge anzuzeigen.
 
 1. Verwenden Sie die Option zum Zurücksetzen der Festplatte, um Ihren Zweig zurückzusetzen. Seien Sie vorsichtig mit diesem Befehl, da er alle Änderungen seit dem ausgewählten Commit verwirft.
 
@@ -65,15 +65,15 @@ Wenn Sie Ihre Git-Verzweigung zurücksetzen, wird der Code in der Vergangenheit 
 
 ## Commerce deinstallieren
 
-Deinstallieren der [!DNL Commerce] Die Anwendung kehrt Ihre Umgebung in den Originalzustand zurück, indem sie die Datenbank wiederherstellt, die Bereitstellungskonfiguration entfernt und die `var/` Unterverzeichnisse. Durch diese Anleitung wird auch Ihre Git-Verzweigung in einen früheren stabilen Zustand zurückgesetzt. Wenn Sie keine kürzlich erstellte Sicherung haben, aber über SSH auf die Remote-Umgebung zugreifen können, führen Sie die folgenden Schritte aus, um Ihre Umgebung wiederherzustellen:
+Durch das Deinstallieren der [!DNL Commerce] -Anwendung wird die Umgebung in den Originalzustand versetzt, indem die Datenbank wiederhergestellt, die Bereitstellungskonfiguration entfernt und die `var/` -Unterverzeichnisse gelöscht werden. Durch diese Anleitung wird auch Ihre Git-Verzweigung in einen früheren stabilen Zustand zurückgesetzt. Wenn Sie keine kürzlich erstellte Sicherung haben, aber über SSH auf die Remote-Umgebung zugreifen können, führen Sie die folgenden Schritte aus, um Ihre Umgebung wiederherzustellen:
 
 - Konfigurationsverwaltung deaktivieren
 - Adobe Commerce deinstallieren
 - Git-Verzweigung zurücksetzen
 
-Durch das Deinstallieren der Adobe Commerce-Software wird die Datenbank gelöscht, die Bereitstellungskonfiguration entfernt und die `var/` Unterverzeichnisse. Es ist wichtig zu deaktivieren [Konfigurationsverwaltung](../store/store-settings.md) damit die vorherigen Konfigurationseinstellungen während der nächsten Bereitstellung nicht automatisch angewendet werden. Stellen Sie sicher, dass Ihr `app/etc/` enthält nicht die `config.php` -Datei.
+Durch die Deinstallation der Adobe Commerce-Software wird die Datenbank gelöscht, die Bereitstellungskonfiguration entfernt und die Unterverzeichnisse `var/` werden gelöscht. Es ist wichtig, die [Konfigurationsverwaltung](../store/store-settings.md) zu deaktivieren, damit die vorherigen Konfigurationseinstellungen bei der nächsten Bereitstellung nicht automatisch angewendet werden. Stellen Sie sicher, dass Ihr `app/etc/` -Verzeichnis nicht die Datei `config.php` enthält.
 
-**Deinstallation der Adobe Commerce-Software**:
+**So deinstallieren Sie die Adobe Commerce-Software**:
 
 1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
 
@@ -110,7 +110,7 @@ Durch das Deinstallieren der Adobe Commerce-Software wird die Datenbank gelösch
    [SUCCESS]: Magento uninstallation complete.
    ```
 
-1. Löschen Sie die `var/` Unterverzeichnisse.
+1. Löschen Sie die Unterverzeichnisse `var/` .
 
    ```bash
    rm -rf var/*
@@ -154,13 +154,13 @@ Wenn Sie versucht haben, Adobe Commerce zu deinstallieren, der Befehl fehlgeschl
    mysql -h database.internal
    ```
 
-1. Legen Sie die `main` Datenbank.
+1. Legen Sie die `main` -Datenbank ab.
 
    ```shell
    drop database main;
    ```
 
-1. Leere erstellen `main` Datenbank.
+1. Erstellen Sie eine leere `main` -Datenbank.
 
    ```shell
    create database main;

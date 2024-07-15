@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # Protokollhandler
 
-Sie können Log-Handler konfigurieren, um Nachrichten an einen Remote-Protokollierungsserver zu senden. Ein Protokollhandler überträgt Build- und Bereitstellungsprotokolle auf andere Systeme, ähnlich wie Sie Protokolle per Push an Slack und E-Mail senden. Sie können eine _syslog_ -Handler, der sich ideal für die Protokollierung von Meldungen im Zusammenhang mit Hardware eignet, oder ein Graulog Extended Log Format (GELF)-Handler, der sich ideal für die Protokollierung von Nachrichten aus Softwareanwendungen eignet.
+Sie können Log-Handler konfigurieren, um Nachrichten an einen Remote-Protokollierungsserver zu senden. Ein Protokollhandler überträgt Build- und Bereitstellungsprotokolle auf andere Systeme, ähnlich wie Sie Protokolle per Push an Slack und E-Mail senden. Sie können einen _syslog_ -Handler aktivieren, der sich ideal für die Protokollierung von Meldungen im Zusammenhang mit Hardware eignet, oder einen Graulog Extended Log Format (GELF)-Handler, der sich ideal für die Protokollierung von Nachrichten aus Softwareanwendungen eignet.
 
-Im folgenden Beispiel werden diese beiden Handler konfiguriert, indem die Konfiguration zum `.magento.env.yaml` -Datei. Für die Mindestprotokollierungsstufe (`min_level`), siehe [Protokollebenen](#log-levels).
+Im folgenden Beispiel werden diese beiden Handler konfiguriert, indem die Konfiguration zur Datei `.magento.env.yaml` hinzugefügt wird. Informationen zu den Mindestwerten für die Protokollierungsstufe (`min_level`) finden Sie unter [Protokollebenen](#log-levels).
 
 ```yaml
 log:
@@ -56,13 +56,13 @@ log:
 
 ## Protokollebenen
 
-Die Protokollebenen bestimmen die Detaillierungsstufe in den Benachrichtigungsmeldungen. Die folgenden Kategorien auf Protokollebene enthalten jede Protokollebene darunter. Beispiel: eine `debug` -Ebene umfasst die Protokollierung von jeder Ebene, während eine `alert` Die Ebene zeigt nur Warnhinweise und Notfälle an.
+Die Protokollebenen bestimmen die Detaillierungsstufe in den Benachrichtigungsmeldungen. Die folgenden Kategorien auf Protokollebene enthalten jede Protokollebene darunter. Beispielsweise beinhaltet eine `debug` -Ebene die Protokollierung von jeder Ebene, während eine `alert` -Ebene nur Warnhinweise und Notfälle anzeigt.
 
-- **debug**—detaillierte Debugging-Informationen
-- **Info**—interessante Ereignisse, wie z. B. eine Benutzeranmeldung oder ein SQL-Protokoll
-- **Hinweis**—normale, aber wichtige Ereignisse
-- **warning**—außergewöhnliche Ereignisse, die keine Fehler sind, z. B. die Verwendung einer veralteten API oder die schlechte Verwendung einer API
+- **debug** - detaillierte Debugging-Informationen
+- **info** - interessante Ereignisse, wie z. B. eine Benutzeranmeldung oder ein SQL-Protokoll
+- **Hinweis** - normale, aber wichtige Ereignisse
+- **warning**—außergewöhnliche Ereignisse, die keine Fehler sind, wie die Verwendung einer veralteten API oder die schlechte Verwendung einer API
 - **error**—Laufzeitfehler, die keine sofortige Aktion erfordern
-- **kritisch**—kritische Bedingungen wie eine nicht verfügbare Anwendungskomponente oder eine unerwartete Ausnahme
-- **alert**—sofortige Maßnahme erforderlich, z. B. wenn eine Website ausfällt oder die Datenbank nicht verfügbar ist, sodass der Trigger einen SMS-Warnhinweis erhält
-- **Notfall**—system unbrauchbar
+- **critical** - kritische Bedingungen, z. B. eine nicht verfügbare Anwendungskomponente oder eine unerwartete Ausnahme
+- **alert** - sofortiges Handeln erforderlich, z. B. wenn eine Website ausfällt oder die Datenbank nicht verfügbar ist, sodass der Trigger einen SMS-Warnhinweis erhält
+- **alert** - System ist nicht verwendbar

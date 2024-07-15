@@ -45,7 +45,7 @@ ht-degree: 7%
    + [Regionale IP-Adressen](project/regional-ip-addresses.md)
 + Entwicklertools {#dev-tools}
    + [Übersicht](dev-tools/overview.md)
-   + Cloud-CLI {#cloud-cli}
+   + Cloud CLI {#cloud-cli}
       + [CLI - Übersicht](dev-tools/cloud-cli-overview.md)
       + [CLI-Referenz](dev-tools/cloud-cli-reference.md)
    + [Cloud Docker](dev-tools/cloud-docker.md)
@@ -85,7 +85,7 @@ ht-degree: 7%
    + [PrivateLink-Dienst](development/privatelink-service.md)
    + [Schutzblock](development/protective-block.md)
    + [Umgebung wiederherstellen](development/restore-environment.md)
-   + Speicherung {#storage}
+   + Speicher {#storage}
       + [Verwalten des Festplattenspeichers](storage/manage-disk-space.md)
       + [Profildatenbankabfragen](storage/profile-database-queries.md)
       + [Datenbank sichern](storage/database-dump.md)
@@ -111,14 +111,14 @@ ht-degree: 7%
    + Umgebung {#env}
       + [Konfigurieren der Umgebungsbereitstellung](environment/configure-env-yaml.md)
       + [Variablenebenen und Optionen](environment/variable-levels.md)
-      + Variablen überschreiben {#stage}
+      + Variablen {#stage} überschreiben
          + [Umgebungsvariablen](environment/variables-intro.md)
          + [ADMIN](environment/variables-admin.md)
          + [Cloud-Variablen](environment/variables-cloud.md)
          + [Global](environment/variables-global.md)
          + [Build](environment/variables-build.md)
          + [Bereitstellen](environment/variables-deploy.md)
-         + [Nach der Bereitstellung](environment/variables-post-deploy.md)
+         + [Post-Bereitstellung](environment/variables-post-deploy.md)
       + Benachrichtigungen konfigurieren {#log}
          + [Benachrichtigungen](environment/set-up-notifications.md)
          + [Protokollhandler](environment/log-handlers.md)
@@ -134,7 +134,7 @@ ht-degree: 7%
       + [OpenSearch](services/opensearch.md)
       + [RabbitMQ](services/rabbitmq.md)
       + [Redis](services/redis.md)
-+ Schnelldienste {#cdn}
++ Fastly Services {#cdn}
    + [Übersicht](cdn/fastly.md)
    + Schnelles Setup {#setup-fastly}
       + [Fastly Services konfigurieren](cdn/fastly-configuration.md)
@@ -164,7 +164,7 @@ ht-degree: 7%
    + [Übersicht](launch/overview.md)
    + [Checkliste für Launch](launch/checklist.md)
    + [Launch-Schritte](launch/steps.md)
-+ Website überwachen {#monitor}
++ Bildschirmseite {#monitor}
    + [Leistung](monitor/performance.md)
    + New Relic-Dienst {#new-relic}
       + [Übersicht über New Relic](monitor/new-relic-service.md)

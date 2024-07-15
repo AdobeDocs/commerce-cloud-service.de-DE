@@ -27,13 +27,13 @@ Sie müssen ein GitLab-Token und einen Webhook abrufen, um den Prozess fortzuset
 ## Voraussetzungen
 
 - Administratorzugriff auf das Adobe Commerce-Projekt in der Cloud-Infrastruktur
-- [`magento-cloud` CLI](../dev-tools/cloud-cli-overview.md) Tool in Ihrer lokalen Umgebung
+- [`magento-cloud` CLI](../dev-tools/cloud-cli-overview.md)-Tool in Ihrer lokalen Umgebung
 - Ein GitLab-Konto
-- Ein persönliches GitLab-Zugriffstoken mit Schreibzugriff auf das GitLab-Repository. Die ausgewählten Bereiche müssen mindestens sein: `api` und `read_repository`.
+- Ein persönliches GitLab-Zugriffstoken mit Schreibzugriff auf das GitLab-Repository. Die ausgewählten Bereiche müssen mindestens `api` und `read_repository` betragen.
 
 ## Repository vorbereiten
 
-Klonen Sie Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur von einer bestehenden Umgebung und migrieren Sie die Projektverzweigungen in ein neues, leeres GitLab-Repository, wobei Sie dieselben Zweignamen beibehalten. Es ist **kritisch** um eine identische Git-Struktur beizubehalten, damit Sie keine bestehenden Umgebungen oder Zweige in Ihrer Adobe Commerce in einem Cloud-Infrastrukturprojekt verlieren.
+Klonen Sie Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur von einer bestehenden Umgebung und migrieren Sie die Projektverzweigungen in ein neues, leeres GitLab-Repository, wobei Sie dieselben Zweignamen beibehalten. Es ist **wichtig**, eine identische Git-Struktur beizubehalten, damit Sie keine bestehenden Umgebungen oder Verzweigungen in Ihrer Adobe Commerce im Cloud-Infrastrukturprojekt verlieren.
 
 1. Melden Sie sich über das Terminal bei Ihrem Adobe Commerce-Projekt für eine Cloud-Infrastruktur an.
 
@@ -59,7 +59,7 @@ Klonen Sie Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur von einer beste
    git remote add origin git@gitlab.com:<user-name>/<repo-name>.git
    ```
 
-   Der Standardname für die Remote-Verbindung kann `origin` oder `magento`. Wenn `origin` vorhanden ist, können Sie einen anderen Namen wählen oder die vorhandene Referenz umbenennen oder löschen. Siehe [Git-Remote-Dokumentation](https://git-scm.com/docs/git-remote).
+   Der Standardname für die Remote-Verbindung kann `origin` oder `magento` sein. Wenn `origin` vorhanden ist, können Sie einen anderen Namen wählen oder die vorhandene Referenz umbenennen oder löschen. Siehe [git-remote-Dokumentation](https://git-scm.com/docs/git-remote).
 
 1. Stellen Sie sicher, dass Sie die GitLab-Fernbedienung korrekt hinzugefügt haben.
 
@@ -80,13 +80,13 @@ Klonen Sie Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur von einer beste
    git push -u origin master
    ```
 
-   Wenn Sie mit einem neuen GitLab-Repository beginnen, müssen Sie möglicherweise die `-f` -Option, da das Remote-Repository nicht mit Ihrer lokalen Kopie übereinstimmt.
+   Wenn Sie mit einem neuen GitLab-Repository beginnen, müssen Sie möglicherweise die Option `-f` verwenden, da das Remote-Repository nicht mit Ihrer lokalen Kopie übereinstimmt.
 
 1. Stellen Sie sicher, dass Ihr GitLab-Repository alle Ihre Projektdateien enthält.
 
 ## GitLab-Integration aktivieren
 
-Verwenden Sie die `magento-cloud integration` -Befehl, um die GitLab-Integration zu aktivieren, und rufen Sie die Payload-URL für den GitLab-Webhook ab, um Aktualisierungen von GitLab an Ihr Adobe Commerce-Projekt zur Cloud-Infrastruktur zu senden.
+Verwenden Sie den Befehl `magento-cloud integration` , um die GitLab-Integration zu aktivieren, und rufen Sie die Payload-URL für den GitLab-Webhook ab, um Aktualisierungen von GitLab an Ihr Adobe Commerce-Projekt zur Cloud-Infrastruktur zu senden.
 
 ```bash
 magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your-GitLab-token> [--base-url=<GitLab-url> --server-project=<GitLab-project> --build-merge-requests={true|false} --merge-requests-clone-parent-data={true|false} --fetch-branches={true|false} --prune-branches={true|false}]
@@ -96,18 +96,18 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
 | ------ | ----------- |
 | `<project-ID>` | Ihre Adobe Commerce-Projekt-ID für die Cloud-Infrastruktur |
 | `<your-GitLab-token>` | Das persönliche Zugriffstoken, das Sie für GitLab generiert haben |
-| `--base-url` | URL von GitLab (`https://gitlab.com/` wenn GitLab in der SaaS-Version verwendet wird) |
+| `--base-url` | URL von GitLab (`https://gitlab.com/`, wenn GitLab in seiner SaaS-Version verwendet wird) |
 | `--server-project` | Projektname in GitLab (Teil nach der Basis-URL) |
-| `--build-merge-requests` | Ein _optional_ -Parameter, der Adobe Commerce in der Cloud-Infrastruktur anweist, für jede Zusammenführungsanforderung eine neue Umgebung zu erstellen (`true` standardmäßig) |
-| `--merge-requests-clone-parent-data` | Ein _optional_ -Parameter, der Adobe Commerce in der Cloud-Infrastruktur anweist, die Daten der übergeordneten Umgebung für Zusammenführungsanfragen zu klonen (`true` standardmäßig) |
-| `--fetch-branches` | Ein _optional_ -Parameter, der dazu führt, dass Adobe Commerce in der Cloud-Infrastruktur alle Zweige aus der Remote-Umgebung (als inaktive Umgebungen) abruft (`true` standardmäßig) |
-| `--prune-branches` | Ein _optional_ -Parameter, der Adobe Commerce in der Cloud-Infrastruktur anweist, Zweige zu löschen, die nicht auf der Remote-Site vorhanden sind (`true` standardmäßig) |
+| `--build-merge-requests` | Ein Parameter _optional_ , der Adobe Commerce in der Cloud-Infrastruktur anweist, für jede Zusammenführungsanforderung eine neue Umgebung zu erstellen (`true` standardmäßig) |
+| `--merge-requests-clone-parent-data` | Ein Parameter _optional_ , der Adobe Commerce in der Cloud-Infrastruktur anweist, die Daten der übergeordneten Umgebung für Zusammenführungsanfragen zu klonen (`true` standardmäßig) |
+| `--fetch-branches` | Ein Parameter _optional_ , der bewirkt, dass Adobe Commerce in der Cloud-Infrastruktur alle Zweige aus der Remote-Umgebung (als inaktive Umgebungen) abruft (`true` standardmäßig). |
+| `--prune-branches` | Ein Parameter _optional_ , der Adobe Commerce in der Cloud-Infrastruktur anweist, Zweige zu löschen, die nicht auf der Remote-Site vorhanden sind (`true` standardmäßig) |
 
 >[!WARNING]
 >
->Die `magento-cloud integration` Befehlsüberschreibungen _all_ Code in Ihrem Adobe Commerce-Projekt für eine Cloud-Infrastruktur mit dem Code aus Ihrem GitLab-Repository erstellen. Dies umfasst alle Verzweigungen, einschließlich der `production` -Verzweigung. Diese Aktion erfolgt sofort und kann nicht rückgängig gemacht werden. Als Best Practice ist es wichtig, alle Verzweigungen aus Ihrem Adobe Commerce im Cloud-Infrastrukturprojekt zu klonen und in Ihr GitLab-Repository zu übertragen, bevor Sie die GitLab-Integration hinzufügen.
+>Der Befehl `magento-cloud integration` überschreibt den Code _all_ in Ihrem Adobe Commerce-Projekt in der Cloud-Infrastruktur mit dem Code aus Ihrem GitLab-Repository. Dies umfasst alle Verzweigungen, einschließlich der Verzweigung `production` . Diese Aktion erfolgt sofort und kann nicht rückgängig gemacht werden. Als Best Practice ist es wichtig, alle Verzweigungen aus Ihrem Adobe Commerce im Cloud-Infrastrukturprojekt zu klonen und in Ihr GitLab-Repository zu übertragen, bevor Sie die GitLab-Integration hinzufügen.
 
-**So aktivieren Sie die GitLab-Integration**:
+**Aktivieren der GitLab-Integration**:
 
 1. Fügen Sie vom Terminal die GitLab-Integration zu Ihrem Adobe Commerce on Cloud-Infrastrukturprojekt hinzu:
 
@@ -115,7 +115,7 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
    magento-cloud integration:add --type gitlab --project=3txxjf32gtryos --token=qVUfeEn4ouze7A7JH --base-url=https://gitlab.com/ --server-project=my-agency/project-name --build-merge-requests=false --merge-requests-clone-parent-data=false --fetch-branches=true --prune-branches=true
    ```
 
-1. Geben Sie bei Aufforderung ein `y` , um die Integration hinzuzufügen.
+1. Geben Sie bei Aufforderung `y` ein, um die Integration hinzuzufügen.
 
    ```terminal
    Warning: adding a 'gitlab' integration will automatically synchronize code from the external Git repository.
@@ -123,7 +123,7 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
    Are you sure you want to continue? [y/N] y
    ```
 
-1. Kopieren Sie die **Hook-URL** angezeigt durch die Rückgabeausgabe.
+1. Kopieren Sie die **Hook-URL**, die von der Ausgabe der Rückgabe angezeigt wird.
 
    ```terminal
    Hook URL: https://eu-3.magento.cloud/api/projects/3txxjf32gtryos/integrations/eolmpfizzg9lu/hook
@@ -146,24 +146,24 @@ magento-cloud integration:add --type=gitlab --project=<project-ID> --token=<your
 
 ### Webhook in GitLab hinzufügen
 
-Um Ereignisse wie Push- oder Zusammenführungsanfragen mit Ihrem Cloud Git-Server zu kommunizieren, müssen Sie [Webhook erstellen](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#overview) für Ihr GitLab-Repository
+Um Ereignisse wie Push- oder Zusammenführungsanfragen mit Ihrem Cloud Git-Server zu kommunizieren, müssen Sie [einen Webhook ](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#overview) für Ihr GitLab-Repository erstellen
 
-1. Klicken Sie in Ihrem GitLab-Repository auf das **Einstellungen** Registerkarte.
+1. Klicken Sie in Ihrem GitLab-Repository auf die Registerkarte **Einstellungen** .
 
 1. Klicken Sie in der linken Navigationsleiste auf **Webhooks**.
 
-1. Im _Webhooks_ bearbeiten Sie die folgenden Felder:
+1. Bearbeiten Sie im Formular _Webhooks_ die folgenden Felder:
 
-   - **URL**: Geben Sie die `Hook URL` zurückgegeben, als Sie die GitLab-Integration aktiviert haben.
+   - **URL**: Geben Sie den `Hook URL` ein, der zurückgegeben wurde, als Sie die GitLab-Integration aktiviert haben.
    - **Geheimer Token**: Geben Sie bei Bedarf einen Verifizierungsgeheimnis ein.
-   - **Trigger**: Aktivieren `Merge request events` und/oder `Push events` je nach Ihren Bedürfnissen.
-   - **Aktivieren der SSL-Verifizierung**: Sie müssen diese Option auswählen.
+   - **Trigger**: Aktivieren Sie je nach Bedarf die Optionen `Merge request events` und/oder `Push events`.
+   - **Aktivieren Sie die SSL-Verifizierung**: Sie müssen diese Option auswählen.
 
-1. Klicks **Webhook hinzufügen**.
+1. Klicken Sie auf **Webhook hinzufügen**.
 
 ### Integration testen
 
-Nach der Konfiguration der GitLab-Integration können Sie mithilfe der `magento-cloud` CLI:
+Nach der Konfiguration der GitLab-Integration können Sie mithilfe der `magento-cloud`-CLI überprüfen, ob die Integration funktioniert:
 
 ```bash
 magento-cloud integration:validate
@@ -183,12 +183,12 @@ Alternativ können Sie sie testen, indem Sie eine einfache Änderung an Ihr GitL
    git add . && git commit -m "Testing GitLab integration" && git push
    ```
 
-1. Melden Sie sich bei [[!DNL Cloud Console]](../project/overview.md) und überprüfen Sie, dass Ihre Commit-Nachricht angezeigt wird und Ihr Projekt bereitgestellt wird.
+1. Melden Sie sich bei [[!DNL Cloud Console]](../project/overview.md) an und überprüfen Sie, ob Ihre Commit-Nachricht angezeigt wird und Ihr Projekt bereitgestellt wird.
 
 ## Cloud-Verzweigung erstellen
 
-Verwenden Sie die `magento-cloud` CLI `environment:push` , um eine neue Umgebung zu erstellen und zu aktivieren. Siehe [Cloud-Verzweigung erstellen](bitbucket.md#create-a-cloud-branch).
+Verwenden Sie den Befehl `magento-cloud` CLI `environment:push` , um eine neue Umgebung zu erstellen und zu aktivieren. Siehe [Erstellen einer Cloud-Verzweigung](bitbucket.md#create-a-cloud-branch).
 
 ## Integration entfernen
 
-Verwenden Sie die `magento-cloud` CLI `integration:delete` -Befehl, um die Integration zu entfernen. Siehe [Integration entfernen](bitbucket.md#remove-the-integration).
+Verwenden Sie den Befehl `magento-cloud` CLI `integration:delete` , um die Integration zu entfernen. Siehe [Entfernen der Integration](bitbucket.md#remove-the-integration).

@@ -18,51 +18,51 @@ Wenn Sie bereit sind, Ihren Store bereitzustellen, müssen Sie die Bereitstellun
 
 >[!TIP]
 >
->Adobe empfiehlt, eine [Backup](../storage/snapshots.md) der Umgebung vor Bereitstellungen.
+>Adobe empfiehlt, vor der Bereitstellung eine [Sicherung](../storage/snapshots.md) der Umgebung zu erstellen.
 
-Außerdem können Sie [Implementierungen mit New Relic verfolgen](../monitor/track-deployments.md) zur Überwachung von Bereitstellungsereignissen und zur Analyse der Leistung zwischen Bereitstellungen.
+Außerdem können Sie die [Nachverfolgung von Bereitstellungen mit New Relic](../monitor/track-deployments.md) aktivieren, um Bereitstellungsereignisse zu überwachen und die Leistung zwischen Bereitstellungen zu analysieren.
 
 ## Starter-Implementierungsfluss
 
-Adobe empfiehlt, eine `staging` -Verzweigung aus `master` -Verzweigung, um die Entwicklung und Implementierung Ihres Starter-Plans optimal zu unterstützen. Anschließend sind zwei Ihrer vier aktiven Umgebungen fertig: `master` für die Produktion und `staging` für die Staging-Umgebung.
+Adobe empfiehlt, eine `staging` -Verzweigung aus der `master` -Verzweigung zu erstellen, um die Entwicklung und Bereitstellung Ihres Starter-Plans optimal zu unterstützen. Anschließend sind zwei Ihrer vier aktiven Umgebungen bereit: `master` für die Produktion und `staging` für die Staging-Umgebung.
 
-Detaillierte Informationen zum Prozess finden Sie unter [Workflow für die Entwicklung und Bereitstellung von Startern](../architecture/starter-develop-deploy-workflow.md).
+Ausführliche Informationen zum Prozess finden Sie unter [Workflow &quot;Starter Dedevelop and Deploy&quot;(Starterentwicklung und -bereitstellung)](../architecture/starter-develop-deploy-workflow.md).
 
 ## Pro-Implementierungsfluss
 
-Pro verfügt über eine große Integrationsumgebung mit zwei aktiven Verzweigungen, einem globalen `master` Zweige für Zweige, Staging und Produktion. Wenn Sie Ihr Projekt erstellen, kann Code verzweigt, entwickelt und gepusht werden, um Ihre Website zu erstellen und bereitzustellen. Die Integrationsumgebung kann zwar viele Verzweigungen aufweisen, Staging und Produktion verfügen jedoch nur über eine Verzweigung für jede Umgebung.
+Pro verfügt über eine große Integrationsumgebung mit zwei aktiven Verzweigungen, einer globalen `master`-Verzweigung, Staging- und Produktionsverzweigung. Wenn Sie Ihr Projekt erstellen, kann Code verzweigt, entwickelt und gepusht werden, um Ihre Website zu erstellen und bereitzustellen. Die Integrationsumgebung kann zwar viele Verzweigungen aufweisen, Staging und Produktion verfügen jedoch nur über eine Verzweigung für jede Umgebung.
 
-Detaillierte Informationen zum Prozess finden Sie unter [Pro-Entwicklungs- und Bereitstellungsarbeitsablauf](../architecture/pro-develop-deploy-workflow.md).
+Detaillierte Informationen zum Prozess finden Sie unter [Pro-Workflow für Entwicklung und Bereitstellung](../architecture/pro-develop-deploy-workflow.md).
 
 ## Bereitstellen von Code für Staging
 
-Die Staging-Umgebung bietet eine nahezu produktionsorientierte Umgebung mit einer Datenbank, einem Webserver und allen Diensten, einschließlich Fastly und New Relic. Sie können Push-, Zusammenführungs- und Bereitstellungsvorgänge vollständig über die [[!DNL Cloud Console]](../project/overview.md) oder [Cloud-CLI-Befehle](../dev-tools/cloud-cli-overview.md) durch eine Terminal-Anwendung.
+Die Staging-Umgebung bietet eine nahezu produktionsorientierte Umgebung mit einer Datenbank, einem Webserver und allen Diensten, einschließlich Fastly und New Relic. Sie können die Cloud-CLI-Befehle [[!DNL Cloud Console]](../project/overview.md) oder [Cloud-CLI-Befehle](../dev-tools/cloud-cli-overview.md) vollständig über eine Terminal-Anwendung übertragen, zusammenführen und bereitstellen.
 
 ### Bereitstellen von Code mit dem [!DNL Cloud Console]
 
-Die [!DNL Cloud Console] bietet Funktionen zum Erstellen, Verwalten und Bereitstellen von Code in Integrations-, Staging- und Produktionsumgebungen für Starter- und Pro-Pläne.
+Der [!DNL Cloud Console] bietet Funktionen zum Erstellen, Verwalten und Bereitstellen von Code in Integrations-, Staging- und Produktionsumgebungen für Starter- und Pro-Pläne.
 
-**Stellen Sie für Pro-Projekte die Integrationsverzweigung für das Staging bereit.**:
+**Stellen Sie für Pro-Projekte die Integrationsverzweigung für Staging bereit**:
 
-1. [Anmelden](https://accounts.magento.cloud) zu Ihrem Projekt hinzu.
-1. Wählen Sie die `integration` -Verzweigung.
-1. Wählen Sie die **Zusammenführen** -Option, um sie für Staging bereitzustellen.
+1. [Melden Sie sich ](https://accounts.magento.cloud) bei Ihrem Projekt an.
+1. Wählen Sie den Zweig `integration` aus.
+1. Wählen Sie die Option **Zusammenführen** aus, um sie für das Staging bereitzustellen.
 
    ![Zusammenführen](../../assets/button-merge.png){width="150"}
 
-1. Alle [testing](../test/staging-and-production.md) in der Staging-Umgebung.
-1. Wenn das Staging fertig ist, wählen Sie die **Zusammenführen** -Option, um sie für die Produktion bereitzustellen.
+1. Schließen Sie alle [Tests](../test/staging-and-production.md) in der Staging-Umgebung ab.
+1. Wenn das Staging fertig ist, wählen Sie die Option **Zusammenführen** aus, um sie für die Produktion bereitzustellen.
 
-**Stellen Sie für Starter die Entwicklungsverzweigung für das Staging bereit.**:
+**Für Starter stellen Sie die Entwicklungsverzweigung für Staging** bereit:
 
-1. [Anmelden](https://accounts.magento.cloud) zu Ihrem Projekt hinzu.
+1. [Melden Sie sich ](https://accounts.magento.cloud) bei Ihrem Projekt an.
 1. Wählen Sie die vorbereitete Codeverzweigung aus.
-1. Wählen Sie die **Zusammenführen** -Option, um sie für Staging bereitzustellen.
+1. Wählen Sie die Option **Zusammenführen** aus, um sie für das Staging bereitzustellen.
 
    ![Zusammenführen](../../assets/button-merge.png){width="150"}
 
-1. Alle [testing](../test/staging-and-production.md) in der Staging-Umgebung.
-1. Wenn das Staging fertig ist, wählen Sie die **Zusammenführen** Option für die Bereitstellung in der Produktion (`master`).
+1. Schließen Sie alle [Tests](../test/staging-and-production.md) in der Staging-Umgebung ab.
+1. Wenn das Staging fertig ist, wählen Sie die Option **Zusammenführen** aus, um sie für die Produktion bereitzustellen (`master`).
 
 ### Bereitstellen von Code mit der Befehlszeile
 
@@ -140,11 +140,11 @@ Die Cloud-CLI bietet Befehle zum Bereitstellen von Code. Sie benötigen SSH- und
 
 ## Migrieren von statischen Dateien
 
-[Statische Dateien](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) gespeichert in `mounts`. Es gibt zwei Methoden zum Migrieren von Dateien von einem Quellbereitstellungsspeicherort, wie z. B. Ihrer lokalen Umgebung, zu einem Ziel-Bereitstellungsspeicherort. Beide Methoden verwenden die `rsync` -Dienstprogramm verwenden, aber Adobe empfiehlt die Verwendung der `magento-cloud` CLI zum Verschieben von Dateien zwischen der lokalen und der Remote-Umgebung. Und Adobe empfiehlt die Verwendung der `rsync` -Methode verwendet, wenn Dateien von einer Remote-Quelle an einen anderen Remote-Speicherort verschoben werden.
+[Statische Dateien](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) werden in `mounts` gespeichert. Es gibt zwei Methoden zum Migrieren von Dateien von einem Quellbereitstellungsspeicherort, wie z. B. Ihrer lokalen Umgebung, zu einem Ziel-Bereitstellungsspeicherort. Beide Methoden verwenden das Dienstprogramm `rsync` , Adobe empfiehlt jedoch die Verwendung der CLI `magento-cloud` für das Verschieben von Dateien zwischen der lokalen und der Remote-Umgebung. Adobe empfiehlt die Verwendung der `rsync`-Methode beim Verschieben von Dateien von einer Remote-Quelle an einen anderen Remote-Speicherort.
 
 ### Migrieren von Dateien mithilfe der CLI
 
-Sie können die `mount:upload` und `mount:download` CLI-Befehle zum Migrieren von Dateien zwischen der lokalen und der Remote-Umgebung. Beide Befehle verwenden die `rsync` -Dienstprogramm verwenden, aber die CLI-Befehle bieten Optionen und Eingabeaufforderungen, die auf die Adobe Commerce in der Cloud-Infrastruktur-Umgebung zugeschnitten sind. Wenn Sie beispielsweise den einfachen Befehl ohne Optionen verwenden, fordert Sie die CLI auf, auszuwählen, welche Bereitstellung oder Bereitstellung hochgeladen oder heruntergeladen werden soll.
+Sie können die CLI-Befehle `mount:upload` und `mount:download` verwenden, um Dateien zwischen der lokalen und der Remote-Umgebung zu migrieren. Beide Befehle verwenden das Dienstprogramm `rsync` , die CLI-Befehle bieten jedoch Optionen und Eingabeaufforderungen, die auf die Adobe Commerce in der Cloud-Infrastrukturumgebung zugeschnitten sind. Wenn Sie beispielsweise den einfachen Befehl ohne Optionen verwenden, fordert Sie die CLI auf, auszuwählen, welche Bereitstellung oder Bereitstellung hochgeladen oder heruntergeladen werden soll.
 
 ```bash
 magento-cloud mount:download
@@ -168,7 +168,7 @@ Downloading files from the remote mount pub/media to pub/media
 Are you sure you want to continue? [Y/n] Y
 ```
 
-**So laden Sie Dateien von einer lokalen `pub/media/` Ordner auf dem Remote `pub/media/` Ordner für die aktuelle Umgebung**:
+**So laden Sie Dateien aus einem lokalen `pub/media/` -Ordner in den Remote `pub/media/` -Ordner für die aktuelle Umgebung hoch**:
 
 ```bash
 magento-cloud mount:upload --source /path/to/project/pub/media/ --mount pub/media/
@@ -189,11 +189,11 @@ Are you sure you want to continue? [Y/n] Y
   total size is 154.57K  speedup is 18.23
 ```
 
-Verwenden Sie die `--help` -Option für `mount:upload` und `mount:download` -Befehle, um weitere Optionen anzuzeigen. Beispielsweise gibt es eine `--delete` Option zum Entfernen irreführender Dateien während der Migration.
+Verwenden Sie die Option `--help` für die Befehle `mount:upload` und `mount:download` , um weitere Optionen anzuzeigen. Beispielsweise gibt es eine `--delete` -Option, um irrelevante Dateien während der Migration zu entfernen.
 
 ### Migrieren von Dateien mit rsync
 
-Alternativ können Sie die `rsync` -Dienstprogramm zum Migrieren von Dateien.
+Alternativ können Sie das Dienstprogramm `rsync` verwenden, um Dateien zu migrieren.
 
 ```bash
 rsync -azvP <source> <destination>
@@ -202,29 +202,29 @@ rsync -azvP <source> <destination>
 Dieser Befehl verwendet die folgenden Optionen:
 
 - `a`-archive
-- `z`-komprimieren von Dateien während der Migration
+- `z` komprimieren Dateien während der Migration
 - `v`-verbose
-- `P`- Teilfortschritt
+- `P` partieller Fortschritt
 
-Siehe [rsync](https://linux.die.net/man/1/rsync) Hilfe.
+Siehe Hilfe zu [rsync](https://linux.die.net/man/1/rsync) .
 
 >[!NOTE]
 >
 >Um Medien direkt von Remote-zu-Remote-Umgebungen zu übertragen, müssen Sie die SSH-Agent-Weiterleitung aktivieren, siehe [GitHub-Anleitung](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding).
 
-**So migrieren Sie statische Dateien direkt aus Remote-Umgebungen in Remote-Umgebungen (schneller Ansatz)**:
+**So migrieren Sie statische Dateien direkt von Remote-zu-Remote-Umgebungen (schneller Ansatz)**:
 
-1. Verwenden Sie SSH, um sich bei der Quellumgebung anzumelden. Verwenden Sie nicht das `magento-cloud` CLI. Verwenden der `-A` -Option ist wichtig, da sie die Weiterleitung der Verbindung des Authentifizierungsagenten ermöglicht.
+1. Verwenden Sie SSH, um sich bei der Quellumgebung anzumelden. Verwenden Sie nicht die CLI `magento-cloud` . Die Verwendung der Option `-A` ist wichtig, da sie die Weiterleitung der Verbindung des Authentifizierungsagenten ermöglicht.
 
    >[!TIP]
    >
-   >So suchen Sie die **SSH-Zugriff** -Link in [!DNL Cloud Console], wählen Sie die Umgebung aus und klicken Sie auf **Auf Site zugreifen**.
+   >Um den Link **SSH access** in Ihrem [!DNL Cloud Console] zu finden, wählen Sie die Umgebung aus und klicken Sie auf **Access Site**.
 
    ```bash
    ssh -A <environment_ssh_link@ssh.region.magento.cloud>
    ```
 
-1. Verwenden Sie die `rsync` -Befehl zum Kopieren der `pub/media` -Verzeichnis aus Ihrer Quellumgebung in eine andere Remote-Umgebung.
+1. Verwenden Sie den Befehl `rsync` , um den Ordner `pub/media` aus Ihrer Quellumgebung in eine andere Remote-Umgebung zu kopieren.
 
    ```bash
    rsync -azvP pub/media/ <destination_environment_ssh_link@ssh.region.magento.cloud>:pub/media/
@@ -240,29 +240,29 @@ Siehe [rsync](https://linux.die.net/man/1/rsync) Hilfe.
 
 >[!BEGINSHADEBOX]
 
-**Voraussetzung:** Ein Datenbank-Dump (siehe Schritt 3) sollte Trigger der Datenbank enthalten. Bestätigen Sie für das Dumping, dass Sie die [Berechtigung Trigger](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger).
+**Voraussetzung:** Ein Datenbank-Dump (siehe Schritt 3) sollte Trigger der Datenbank enthalten. Vergewissern Sie sich für das Dumping, dass Sie über die Berechtigung [TRIGGER](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger) verfügen.
 
 >[!IMPORTANT]
 >
 >Die Integrationsumgebungs-Datenbank dient ausschließlich Entwicklungstests und kann Daten enthalten, die Sie nicht in Staging und Produktion migrieren möchten.
 
-Für kontinuierliche Integrationsbereitstellungen, Adobe **empfiehlt nicht** Migration von Daten aus der Integration in Staging und Produktion. Sie können Testdaten übergeben oder wichtige Daten überschreiben. Alle wichtigen Konfigurationen werden mit der [Konfigurationsdatei](../store/store-settings.md) und `setup:upgrade` -Befehl während des Builds und der Bereitstellung.
+Bei kontinuierlichen Integrationsbereitstellungen empfiehlt Adobe **nicht die Migration von** Daten von der Integration in die Staging- und Produktionsumgebung. Sie können Testdaten übergeben oder wichtige Daten überschreiben. Alle wichtigen Konfigurationen werden beim Erstellen und Bereitstellen mithilfe des Befehls [Konfigurationsdatei](../store/store-settings.md) und `setup:upgrade` übergeben.
 
 >[!ENDSHADEBOX]
 
-Adobe **empfiehlt** Migration von Daten aus der Produktion in die Staging-Umgebung, um Ihre Site vollständig zu testen und in einer Produktionsumgebung zu speichern, in der alle Dienste und Einstellungen enthalten sind.
+Adobe **empfiehlt** die Migration von Daten aus der Produktion in die Staging-Umgebung, um Ihre Site vollständig zu testen und in einer Produktionsumgebung mit allen Diensten und Einstellungen zu speichern.
 
 >[!NOTE]
 >
->Um Medien von Remote-Umgebungen direkt an Remote-Standorte zu übertragen, müssen Sie die SSH-Agent-Weiterleitung aktivieren, siehe [GitHub-Anleitung](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding).
+>Um Medien direkt von Remote-zu-Remote-Umgebungen zu übertragen, müssen Sie die SSH-Agent-Weiterleitung aktivieren, siehe [GitHub-Anleitung](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/using-ssh-agent-forwarding).
 
 ### Datenbank sichern
 
-Es empfiehlt sich, eine Sicherung der Datenbank zu erstellen. Im folgenden Verfahren werden die Leitlinien aus [Datenbank sichern](../storage/database-dump.md).
+Es empfiehlt sich, eine Sicherung der Datenbank zu erstellen. Im folgenden Verfahren wird die Anleitung von [Datenbank sichern](../storage/database-dump.md) verwendet.
 
 **So speichern Sie die Datenbank**:
 
-1. [SSH zur Anmeldung bei der Remote-Umgebung verwenden](../development/secure-connections.md#use-an-ssh-command) , die die zu kopierende Datenbank enthält.
+1. [Verwenden Sie SSH, um sich bei der Remote-Umgebung anzumelden](../development/secure-connections.md#use-an-ssh-command), die die zu kopierende Datenbank enthält.
 
 1. Führen Sie die Umgebungsbeziehungen auf und notieren Sie sich die Informationen zur Datenbankanmeldung.
 
@@ -270,18 +270,18 @@ Es empfiehlt sich, eine Sicherung der Datenbank zu erstellen. Im folgenden Verfa
    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
    ```
 
-   Für Pro Staging und Produktion lautet der Name der Datenbank im `MAGENTO_CLOUD_RELATIONSHIPS` (normalerweise identisch mit dem Anwendungsnamen und Benutzernamen).
+   Bei Pro Staging and Production befindet sich der Name der Datenbank in der Variable `MAGENTO_CLOUD_RELATIONSHIPS` (normalerweise identisch mit dem Anwendungsnamen und Benutzernamen).
 
-1. Erstellen Sie eine Sicherung der Datenbank. Um ein Zielverzeichnis für den DB-Dump auszuwählen, verwenden Sie die `--dump-directory` -Option.
+1. Erstellen Sie eine Sicherung der Datenbank. Verwenden Sie die Option `--dump-directory` , um ein Zielverzeichnis für den DB-Dump auszuwählen.
 
-   Verwenden Sie für Starter-Umgebungen und Pro-Integrationsumgebungen `main` als Name der Datenbank:
+   Verwenden Sie für Starter-Umgebungen und Pro-Integrationsumgebungen `main` als Namen der Datenbank:
 
    ```bash
    php vendor/bin/ece-tools db-dump main
    ```
 
    Dump-Optionen:
-   - `--dump-directory=<dir>`—Wählen Sie ein Zielverzeichnis für die Datenbank-Dump aus.
+   - `--dump-directory=<dir>` - Wählen Sie ein Zielverzeichnis für den Datenbank-Dump
    - `--remove-definers`—DEFINER-Anweisungen aus der Datenbank-Dump entfernen
 
 1. Obwohl die ECE-Tools-Methode bevorzugt wird, besteht eine andere Methode darin, eine Datenbank-Dump-Datei mit nativem MySQL im GZIP-Format zu erstellen.
@@ -296,7 +296,7 @@ Es empfiehlt sich, eine Sicherung der Datenbank zu erstellen. Im folgenden Verfa
    mysqldump -h <database-host> --user=<database-username> --password=<password> --single-transaction --triggers --ignore-table=<database-name>.tfa_user_config --ignore-table=<database-name>.tfa_country_codes <database-name> | gzip - > /tmp/database.sql.gz
    ```
 
-1. Typ `logout` , um die SSH-Verbindung zu beenden.
+1. Geben Sie `logout` ein, um die SSH-Verbindung zu beenden.
 
 ### Datenbank ablegen und neu erstellen
 
@@ -304,7 +304,7 @@ Beim Datenimport müssen Sie eine Datenbank ablegen und erstellen.
 
 **So legen Sie die Datenbank ab und erstellen sie neu**:
 
-1. Erstellen Sie eine [SSH-Tunnel](../development/secure-connections.md#ssh-tunneling) in die Remote-Umgebung.
+1. Richten Sie einen [SSH-Tunnel](../development/secure-connections.md#ssh-tunneling) in die Remote-Umgebung ein.
 
 1. Stellen Sie eine Verbindung zum Datenbankdienst her.
 
@@ -312,7 +312,7 @@ Beim Datenimport müssen Sie eine Datenbank ablegen und erstellen.
    mysql --host=127.0.0.1 --user='<database-username>' --pass='<user-password>' --database='<name>' --port='<port>'
    ```
 
-1. Im `MariaDB [main]>` die Datenbank ablegen.
+1. Legen Sie an der Eingabeaufforderung `MariaDB [main]>` die Datenbank ab.
 
    Für Starter- und Pro-Integration:
 

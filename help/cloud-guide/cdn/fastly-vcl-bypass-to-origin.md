@@ -24,15 +24,15 @@ Sie können das Snippet so konfigurieren, dass es die schnelle Zwischenspeicheru
 
 {{$include /help/_includes/vcl-snippet-prerequisites.md}}
 
-**So umgehen Sie den Fastly-Cache basierend auf IP-Adresse oder URL**:
+**So umgehen Sie den Schnellcache basierend auf IP-Adresse oder URL**:
 
 {{admin-login-step}}
 
-1. Klicks **Stores** > Einstellungen > **Konfiguration** > **Erweitert** > **System**.
+1. Klicken Sie auf **Stores** > Einstellungen > **Konfiguration** > **Erweitert** > **System**.
 
-1. Erweitern **Vollständiger Seiten-Cache** > **Schnelle Konfiguration** > **Benutzerdefinierte VCL-Snippets**.
+1. Erweitern Sie **Vollständiger Seiten-Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
 
-1. Klicks **Benutzerdefiniertes Snippet erstellen**.
+1. Klicken Sie auf **Benutzerdefiniertes Snippet erstellen**.
 
 1. Fügen Sie die VCL-Snippet-Werte hinzu:
 
@@ -58,13 +58,13 @@ Sie können das Snippet so konfigurieren, dass es die schnelle Zwischenspeicheru
      if (req.url ~ "/media/feeds/GoogleShoppingHiVisNew.xml") {  return (pass);}
      ```
 
-     Verwenden Sie für eine exakte URL-Übereinstimmung den `==` Operator anstelle der `~` Operator. Siehe [Fastly VCL-Referenz] für Details.
+     Verwenden Sie für eine exakte URL-Übereinstimmung den Operator `==` anstelle des Operators `~` . Weitere Informationen finden Sie unter [Fastly VCL-Referenz] .
 
-1. Klicks **Erstellen**.
+1. Klicken Sie auf **Erstellen**.
 
-   ![Schnelles Umgehen des VCL-Codefragments](/help/assets/cdn/fastly-create-bypass-snippet.png)
+   ![VCL-Snippet schnell umgehen](/help/assets/cdn/fastly-create-bypass-snippet.png)
 
-1. Nachdem die Seite neu geladen wurde, klicken Sie auf **VCL schnell hochladen** im *Schnelle Konfiguration* Abschnitt.
+1. Klicken Sie nach dem Neuladen der Seite im Abschnitt *Schnelle Konfiguration* auf **VCL auf Fastly hochladen** .
 
 1. Nach Abschluss des Uploads aktualisieren Sie den Cache gemäß der Benachrichtigung oben auf der Seite.
 

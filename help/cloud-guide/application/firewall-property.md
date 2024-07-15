@@ -16,21 +16,21 @@ ht-degree: 0%
 >
 >Nur Starterprojekte
 
-Bei Starter-Projekten muss die `firewall` -Eigenschaft fügt eine _ausgehende_ Firewall zur Anwendung. Diese Firewall wirkt sich nicht auf eingehende Anfragen aus. Sie definiert, `tcp` Ausgehende Anforderungen können _leave_ eine Adobe Commerce-Site. Dies wird als Egress-Filterung bezeichnet. Die ausgehende Firewall filtert, was aus Ihrer Site ausgehen kann, also Ihre Site verlassen oder entkommen kann. Durch die Beschränkung von Escape-Funktionen wird Ihrem Server ein leistungsstarkes Sicherheitstool hinzugefügt.
+Bei Starter-Projekten fügt die Eigenschaft `firewall` der Anwendung eine _ausgehende_ -Firewall hinzu. Diese Firewall wirkt sich nicht auf eingehende Anfragen aus. Sie definiert, welche `tcp` ausgehenden Anforderungen _eine Adobe Commerce-Site verlassen können._ Dies wird als Egress-Filterung bezeichnet. Die ausgehende Firewall filtert, was aus Ihrer Site ausgehen kann, also Ihre Site verlassen oder entkommen kann. Durch die Beschränkung von Escape-Funktionen wird Ihrem Server ein leistungsstarkes Sicherheitstool hinzugefügt.
 
 ## Standardmäßige Einschränkungsrichtlinien
 
-Die Firewall bietet zwei Standardrichtlinien zur Steuerung des ausgehenden Traffics: `allow` und `deny`. Die `allow` policy _allows_ standardmäßig der gesamte ausgehende Traffic. Und die `deny` policy _Leugnungen_ standardmäßig der gesamte ausgehende Traffic. Wenn Sie jedoch eine Regel hinzufügen, wird die Standardrichtlinie überschrieben und die Firewall blockiert **all** Ausgehender Traffic ist von der Regel nicht zulässig.
+Die Firewall bietet zwei Standardrichtlinien zur Steuerung des ausgehenden Traffics: `allow` und `deny`. Die `allow` Richtlinie _erlaubt standardmäßig den gesamten ausgehenden Traffic._ Und die `deny` Richtlinie _verweigert_ standardmäßig den gesamten ausgehenden Traffic. Wenn Sie jedoch eine Regel hinzufügen, wird die Standardrichtlinie überschrieben und die Firewall blockiert den von der Regel nicht zulässigen ausgehenden Traffic **all**.
 
-Bei Starter-Plänen ist die Standardrichtlinie auf `allow`. Diese Einstellung stellt sicher, dass der gesamte ausgehende Traffic bis zum Hinzufügen Ihrer Ausstiegsfilterregeln entsperrt bleibt. Die Standardrichtlinie kann auf `deny` auf Anfrage.
+Bei Startplänen wird die Standardrichtlinie auf `allow` gesetzt. Diese Einstellung stellt sicher, dass der gesamte ausgehende Traffic bis zum Hinzufügen Ihrer Ausstiegsfilterregeln entsperrt bleibt. Die Standardrichtlinie kann auf Anfrage auf `deny` gesetzt werden.
 
-**So überprüfen Sie die Standardrichtlinie**:
+**Überprüfen der Standardrichtlinie**:
 
 ```bash
 magento-cloud p:curl --project PROJECT_ID /settings | grep -i outbound
 ```
 
-Sofern nicht angefordert `deny` Für Ihre Richtlinie sollte der Befehl zeigen, dass Ihre Richtlinie auf `allow`:
+Sofern Sie nicht `deny` für Ihre Richtlinie angefordert haben, sollte der Befehl zeigen, dass Ihre Richtlinie auf `allow` festgelegt ist:
 
 ```terminal
 "outbound_restrictions_default_policy": "allow"
@@ -38,11 +38,11 @@ Sofern nicht angefordert `deny` Für Ihre Richtlinie sollte der Befehl zeigen, d
 
 >[!NOTE]
 >
->**Wichtige Entfernung**: Wenn Sie eine ausgehende Regel hinzufügen, blockieren Sie den gesamten ausgehenden Traffic mit Ausnahme der Domänen, IP-Adressen oder Ports, die Sie zur Regel hinzufügen. Daher ist es wichtig, eine vollständige ausgehende Liste zu definieren und zu testen, bevor sie zu Ihrer Produktionssite hinzugefügt wird.
+>**Schlüsselmitnahme**: Wenn Sie eine ausgehende Regel hinzufügen, blockieren Sie den gesamten ausgehenden Traffic mit Ausnahme der Domänen, IP-Adressen oder Ports, die Sie zur Regel hinzufügen. Daher ist es wichtig, eine vollständige ausgehende Liste zu definieren und zu testen, bevor sie zu Ihrer Produktionssite hinzugefügt wird.
 
 ## Firewall-Optionen
 
-Die folgende Beispielkonfiguration im `.magento.app.yaml` -Datei alle `firewall` Optionen, mit denen Sie Regeln für Ihre Ausgangsfilterung hinzufügen können.
+Die folgende Beispielkonfiguration in der Datei `.magento.app.yaml` zeigt alle `firewall` -Optionen, die Sie zum Hinzufügen von Regeln für Ihre Ausgangsfilterung verwenden können.
 
 ```yaml
 firewall:
@@ -137,39 +137,39 @@ Ausgehende Firewall-Konfigurationen bestehen aus Regeln. Sie können beliebig vi
 
 **Jede Regel:**
 
-- Muss mit einem Bindestrich (`-`). Durch Hinzufügen eines Kommentars für dieselbe Zeile können Sie eine Regel visuell von der nächsten trennen.
-- Muss mindestens eine der folgenden Optionen definieren: `domains`, `ips`oder `ports`.
-- Muss die `tcp` Protokoll. Da dies das Standardprotokoll für alle Regeln ist, können Sie es aus der Regel auslassen.
-- Kann definieren `domains` oder `ips`, aber nicht beide in derselben Regel.
-- Kann enthalten `yaml` Kommentare (`#`) und Zeilenumbrüche verwenden, um die zulässigen Domänen, IP-Adressen und Ports zu organisieren.
+- Muss mit einem Bindestrich (`-`) beginnen. Durch Hinzufügen eines Kommentars für dieselbe Zeile können Sie eine Regel visuell von der nächsten trennen.
+- Muss mindestens eine der folgenden Optionen definieren: `domains`, `ips` oder `ports`.
+- Muss das Protokoll `tcp` verwenden. Da dies das Standardprotokoll für alle Regeln ist, können Sie es aus der Regel auslassen.
+- Kann `domains` oder `ips` definieren, aber nicht beide in derselben Regel.
+- Kann `yaml` Kommentare (`#`) und Zeilenumbrüche enthalten, um die zulässigen Domänen, IP-Adressen und Ports zu organisieren.
 
 Jede Regel verwendet die folgenden Eigenschaften:
 
 ### `domains`
 
-Die `domains` ermöglicht eine Liste mit vollständig qualifizierten Domain-Namen (FQDN).
+Die Option `domains` ermöglicht eine Liste mit vollständig qualifizierten Domänennamen (FQDN).
 
-Wenn eine Regel `domains` aber nicht `ports`, lässt die Firewall Domänenanforderungen an beliebige Ports zu.
+Wenn eine Regel &quot;`domains`&quot;, aber nicht &quot;`ports`&quot; definiert, lässt die Firewall Domänenanforderungen an beliebige Ports zu.
 
 ### `ips`
 
-Die `ips` erlaubt eine Liste von IP-Adressen in der CIDR-Notation. Sie können einzelne IP-Adressen oder IP-Adressbereiche angeben.
+Die Option `ips` ermöglicht eine Liste von IP-Adressen in der CIDR-Notation. Sie können einzelne IP-Adressen oder IP-Adressbereiche angeben.
 
-Fügen Sie die `/32` CIDR-Präfix am Ende Ihrer IP-Adresse:
+Um eine einzelne IP-Adresse anzugeben, fügen Sie das Präfix `/32` CIDR am Ende Ihrer IP-Adresse hinzu:
 
 ```terminal
 172.217.11.174/32  # google.com
 ```
 
-Um einen IP-Adressbereich anzugeben, verwenden Sie die [IP-Bereich bis CIDR](https://ipaddressguide.com/cidr) Rechner.
+Um einen IP-Adressbereich anzugeben, verwenden Sie den Taschenrechner [IP-Bereich bis CIDR](https://ipaddressguide.com/cidr) .
 
-Wenn eine Regel `ips` aber nicht `ports`, lässt die Firewall IP-Anfragen an jedem Port zu.
+Wenn eine Regel &quot;`ips`&quot;, aber nicht &quot;`ports`&quot; definiert, lässt die Firewall IP-Anfragen an jedem Port zu.
 
 ### `ports`
 
-Die `ports` ermöglicht eine Liste von Ports von 1 bis 65535. Für die meisten Regeln im Beispiel werden Ports `80` und `443` HTTP- und HTTPS-Anforderungen zulassen. Für New Relic ermöglichen die Regeln jedoch nur den Zugriff auf Domänen und IP-Adressen auf dem Port `443`, wie in der New Relic-Dokumentation unter [Netzwerkverkehr](https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/#agents).
+Die Option `ports` ermöglicht eine Liste der Ports von 1 bis 65535. Für die meisten Regeln im Beispiel sind sowohl HTTP- als auch HTTPS-Anfragen für die Ports `80` und `443` zulässig. Für New Relic ist der Zugriff auf Domänen und IP-Adressen jedoch nur über Port `443` möglich, wie in der New Relic-Dokumentation unter [Netzwerkverkehr](https://docs.newrelic.com/docs/new-relic-solutions/get-started/networks/#agents) empfohlen.
 
-Wenn eine Regel nur `ports`, ermöglicht die Firewall den Zugriff auf alle Domänen und IP-Adressen für die definierten Ports.
+Wenn eine Regel nur `ports` definiert, erlaubt die Firewall den Zugriff auf alle Domänen und IP-Adressen für die definierten Ports.
 
 >[!NOTE]
 >
@@ -177,11 +177,11 @@ Wenn eine Regel nur `ports`, ermöglicht die Firewall den Zugriff auf alle Domä
 
 ### `protocol`
 
-Wie bereits erwähnt, ist TCP das standardmäßige und einzige für Regeln zulässige Protokoll. UDP und seine Ports sind nicht zulässig. Aus diesem Grund können Sie die `protocol` aus allen Regeln. Wenn Sie ihn trotzdem einbeziehen möchten, müssen Sie den Wert auf `tcp`, wie in der ersten Beispielregel gezeigt.
+Wie bereits erwähnt, ist TCP das standardmäßige und einzige für Regeln zulässige Protokoll. UDP und seine Ports sind nicht zulässig. Aus diesem Grund können Sie die Option `protocol` in allen Regeln auslassen. Wenn Sie ihn trotzdem einbeziehen möchten, müssen Sie den Wert auf `tcp` setzen, wie in der ersten Regel des Beispiels gezeigt.
 
 ## Suchen nach Domänennamen, die zulassen
 
-Mithilfe des folgenden Befehls können Sie die Domänen identifizieren, die in die Filterungsregeln für Ausstiege aufgenommen werden sollen. `dns.log` und zeigen Sie eine Liste aller DNS-Anfragen an, die Ihre Site protokolliert hat:
+Mithilfe des folgenden Befehls können Sie die Domänen identifizieren, die in Ihre Ausgangsfilterregeln aufgenommen werden sollen, um die `dns.log` -Datei Ihres Servers zu analysieren und eine Liste aller DNS-Anfragen anzuzeigen, die von Ihrer Site protokolliert wurden:
 
 ```shell
 awk '($5 ~/query/)' /var/log/dns.log | awk '{print $6}' | sort | uniq -c | sort -rn
@@ -211,17 +211,17 @@ Nachdem Sie die Zugriffsregeln für die Domänen und IP-Adressen erfasst und kon
 
 So testen Sie Ihre Ausgangsfilterregeln:
 
-1. Erstellen Sie ein Shell-Skript von `curl` -Befehle zum Zugreifen auf die Domänen und IP-Adressen in Ihren Regeln. Binden Sie Befehle ein, die den Zugriff auf Domänen und IP-Adressen testen, die blockiert werden sollen.
+1. Erstellen Sie ein Shell-Skript mit `curl` Befehlen, um auf die Domänen und IP-Adressen in Ihren Regeln zuzugreifen. Binden Sie Befehle ein, die den Zugriff auf Domänen und IP-Adressen testen, die blockiert werden sollen.
 
-1. Konfigurieren Sie eine `post_deploy` Hook `.magento.app.yaml` -Datei, um das Skript auszuführen.
+1. Konfigurieren Sie einen `post_deploy` -Hook in Ihrer `.magento.app.yaml`-Datei, um das Skript auszuführen.
 
-1. Push `firewall` Konfiguration und Ihr Testskript an Ihre `integration` -Verzweigung.
+1. Schicken Sie Ihre `firewall`-Konfiguration und Ihr Testskript an Ihren `integration`-Zweig.
 
-1. Untersuchen Sie die `post_deploy` -Ausgabe aus `curl` Befehle.
+1. Überprüfen Sie die Ausgabe `post_deploy` von Ihren `curl` Befehlen.
 
-1. Verfeinern Sie Ihre `firewall` Regeln, aktualisieren Sie Ihre `curl` Skript, Bestätigen, Pushen und Wiederholen.
+1. Verfeinern Sie Ihre `firewall`-Regeln, aktualisieren Sie Ihr `curl`-Skript, begeben Sie es, pten Sie es und wiederholen Sie es.
 
-### `curl` Skriptbeispiel
+### Skriptbeispiel für `curl`
 
 ```shell
 # curl-tests-for-egress-filtering.sh
@@ -257,7 +257,7 @@ curl -v twitter.com
 ...
 ```
 
-### `post_deploy` example
+### Beispiel für `post_deploy`
 
 ```yaml
 hooks:

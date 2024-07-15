@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Verwalten des Festplattenspeichers
 
-Die Gesamtspeicherkapazität für Ihr Cloud-Projekt finden Sie in Ihrem Adobe Commerce-Vertrag für Cloud-Infrastruktur und auf Ihrer [Kontoseite](https://accounts.magento.cloud/user). Jede Projektkarte in Ihrem Konto zeigt die Anzahl der _Umgebungen_, die _Speicher_ Kapazität in GB und die Anzahl _Benutzer_. Alternativ können Sie den folgenden Cloud-Befehl verwenden:
+Die Gesamtspeicherkapazität für Ihr Cloud-Projekt finden Sie in Ihrem Adobe Commerce-Vertrag für die Cloud-Infrastruktur und auf Ihrer [Kontoseite](https://accounts.magento.cloud/user). Jede Projektkarte in Ihrem Konto zeigt die Anzahl der _Umgebungen_, die _Speicherkapazität_ in GB und die Anzahl der _Benutzer_. Alternativ können Sie den folgenden Cloud-Befehl verwenden:
 
 ```bash
 magento-cloud subscription:info | grep storage
@@ -30,7 +30,7 @@ Beispielbenachrichtigung:
 
 >[!BEGINSHADEBOX]
 
-_&quot;Unser Monitoring hat die Speicherung von Dateien auf Ihrem Cluster (Projekt-ID-Umgebung) nahezu vollständig erkannt. Die Festplattenauslastung liegt derzeit bei einem kritischen Nutzungsumfang mit weniger als 1 GiB. Das gemeinsam genutzte Speichervolumen wird derzeit von 60 GiB auf 70 GiB aktualisiert, um Ihre Dienste betriebsbereit zu halten. Sehen Sie sich die Verwendung von Produktions- und Staging-Dateien an, um zu sehen, ob Sie Speicherplatz freigeben können.&quot;_
+_&quot;Unser Monitoring hat den Dateispeicher auf Ihrem Cluster (Projekt-ID-Umgebung) nahezu vollständig erkannt. Die Festplattenauslastung liegt derzeit bei einem kritischen Nutzungsumfang mit weniger als 1 GiB. Das gemeinsam genutzte Speichervolumen wird derzeit von 60 GiB auf 70 GiB aktualisiert, um Ihre Dienste betriebsbereit zu halten. Sehen Sie sich die Verwendung von Produktions- und Staging-Dateien an, um zu sehen, ob Sie Speicherplatz freigeben können.&quot;_
 
 >[!ENDSHADEBOX]
 
@@ -40,9 +40,9 @@ _&quot;Unser Monitoring hat die Speicherung von Dateien auf Ihrem Cluster (Proje
 
 ## Integrationsumgebung überprüfen
 
-Sie können die Speichernutzung für Ihre Integrationsumgebung mithilfe der `magento-cloud` CLI.
+Sie können die Festplattenspeicherplatznutzung für Ihre Integrationsumgebung mithilfe der `magento-cloud`-CLI überprüfen.
 
-**So prüfen Sie die ungefähre Festplattenspeicherplatznutzung**:
+**So überprüfen Sie die ungefähre Festplattenspeicherplatznutzung**:
 
 ```bash
 magento-cloud db:size
@@ -60,7 +60,7 @@ Checking database service mysql...
 +----------------+-----------------+--------+
 ```
 
-Alle Halterungen teilen sich eine Festplatte. Sie können die Festplattenspeicherplatznutzung für Bereitstellungen mithilfe der `magento-cloud` CLI.
+Alle Halterungen teilen sich eine Festplatte. Mit der CLI `magento-cloud` können Sie die Festplattenspeicherplatznutzung auf Bereitstellungen überprüfen.
 
 **So überprüfen Sie die ungefähre Festplattenspeicherplatznutzung für Bereitstellungen**:
 
@@ -85,15 +85,15 @@ Checking disk usage for all mounts on <project>-<environment>-mymagento@ssh.us.m
 
 ## Überprüfen dedizierter Cluster
 
-Für Pro-Staging- und Produktionsumgebungen können Sie die Speichernutzung in jeder Umgebung mithilfe der `disk free` -Befehl, der den vom Dateisystem verwendeten Speicherplatz angibt. Sie müssen SSH verwenden, um sich bei einer Remote-Umgebung anzumelden.
+Bei Pro-Staging- und Produktionsumgebungen können Sie die Speichernutzung in jeder Umgebung mithilfe des Befehls `disk free` überprüfen, der die vom Dateisystem verwendete Festplattenspeichermenge angibt. Sie müssen SSH verwenden, um sich bei einer Remote-Umgebung anzumelden.
 
 ```bash
 df -h
 ```
 
-Die `-h` zeigt den Bericht in einem für Menschen lesbaren Format an (KB, MB oder GB).
+Die Option &quot;`-h`&quot; zeigt den Bericht in einem für Menschen lesbaren Format an (KB, MB oder GB).
 
-In der folgenden Beispielantwort wird die `/mnt/shared` Die Bereitstellung zeigt den Festplattenspeicher für Medien und `/data/mysql/` Die Bereitstellung zeigt Speicherplatz für die Datenbank an:
+In der folgenden Beispielantwort zeigt die `/mnt/shared` -Bereitstellung den Festplattenspeicher für Medien und die `/data/mysql/` -Bereitstellung zeigt Festplattenspeicher für die Datenbank an:
 
 ```terminal
 Filesystem                                    Size  Used Avail Use% Mounted on
@@ -128,21 +128,21 @@ Filesystem                                    Size  Used Avail Use% Mounted on
 
 ## Speicherplatz zuweisen
 
-Zwei [Konfigurationsdateien](../environment/overview.md) Steuerung der Speicherplatzzuweisung in Cloud-Umgebungen: die `.magento.app.yaml` und `.magento/services.yaml` -Datei. Jede Datei enthält `disk` -Eigenschaft, die den Wert der Festplattengröße in MB für die jeweilige Konfiguration definiert. Sie können die Speicherplatzzuweisung nur in Pro-Integration- und Starter-Umgebungen ändern.
+Zwei [Konfigurationsdateien](../environment/overview.md) steuern die Zuweisung von Speicherplatz in den Cloud-Umgebungen: die Datei `.magento.app.yaml` und die Datei `.magento/services.yaml`. Jede Datei enthält die Eigenschaft `disk` , die den Wert der Festplattengröße in MB für die jeweilige Konfiguration definiert. Sie können die Speicherplatzzuweisung nur in Pro-Integration- und Starter-Umgebungen ändern.
 
 >[!IMPORTANT]
 >
->Für Pro Production- und Staging-Umgebungen müssen Sie [Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) , um die Speicherplatzzuweisung zu ändern. Eine Vergrößerung der Pro Produktions- und Staging-Umgebungen kann nur in bestimmten Intervallen erfolgen. Je nach aktueller Festplattenspeicherplatzbelegung wird daher unter Umständen empfohlen, die Speicherplatzzuweisung um mindestens 10 GB zu erhöhen. Nach der Zuweisung kann die Speichersteigerung für Pro Staging und Produktion nicht mehr rückgängig gemacht werden. Der Speicher kann nicht auf Ressourcen umverteilt oder neu verteilt werden. Um mehr Dateispeicher hinzuzufügen, reduzieren Sie den für MySQL zugewiesenen Speicherplatz.
+>Für Pro-Produktions- und Staging-Umgebungen müssen Sie [ein Adobe Commerce-Support-Ticket senden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket), um die Speicherplatzzuweisung zu ändern. Eine Vergrößerung der Pro Produktions- und Staging-Umgebungen kann nur in bestimmten Intervallen erfolgen. Je nach aktueller Festplattenspeicherplatzbelegung wird daher unter Umständen empfohlen, die Speicherplatzzuweisung um mindestens 10 GB zu erhöhen. Nach der Zuweisung kann die Speichersteigerung für Pro Staging und Produktion nicht mehr rückgängig gemacht werden. Der Speicher kann nicht auf Ressourcen umverteilt oder neu verteilt werden. Um mehr Dateispeicher hinzuzufügen, reduzieren Sie den für MySQL zugewiesenen Speicherplatz.
 
 ### Anwendungsspeicherplatz
 
-Die `.magento.app.yaml` -Datei steuert die [persistenter Festplattenspeicher](../application/properties.md#disk) für die Anwendung verfügbar.
+Die Datei `.magento.app.yaml` steuert den [persistenten Speicherplatz](../application/properties.md#disk), der für die Anwendung verfügbar ist.
 
 **So erhöhen Sie den Speicherplatz für Ihre Anwendung**:
 
-1. Öffnen Sie in Ihrer lokalen Entwicklungsumgebung die `.magento.app.yaml` Konfigurationsdatei.
+1. Öffnen Sie in Ihrer lokalen Entwicklungsumgebung die Konfigurationsdatei `.magento.app.yaml` .
 
-1. Legen Sie einen neuen Wert für die `disk` -Eigenschaft (in MB).
+1. Legen Sie einen neuen Wert für die Eigenschaft `disk` fest (in MB).
 
    ```yaml
    disk: <value-mb>
@@ -160,13 +160,13 @@ Die `.magento.app.yaml` -Datei steuert die [persistenter Festplattenspeicher](..
 
 ### Dienstspeicherplatz
 
-Die `.magento/services.yaml` -Datei steuert den für jeden Dienst verfügbaren Speicherplatz, z. B. MySQL und Redis.
+Die Datei &quot;`.magento/services.yaml`&quot; steuert den für jeden Dienst verfügbaren Speicherplatz, z. B. MySQL und Redis.
 
 **Erhöhen des Festplattenspeichers für einen Dienst**:
 
-1. Öffnen Sie in Ihrer lokalen Entwicklungsumgebung die `.magento/services.yaml` Konfigurationsdatei.
+1. Öffnen Sie in Ihrer lokalen Entwicklungsumgebung die Konfigurationsdatei `.magento/services.yaml` .
 
-1. Fügen Sie einen Dienst hinzu oder suchen Sie ihn in der Datei. Siehe [Weitere Informationen zum Konfigurieren von Diensten](../services/services-yaml.md).
+1. Fügen Sie einen Dienst hinzu oder suchen Sie ihn in der Datei. Weitere Informationen finden Sie unter [ Informationen zum Konfigurieren von Diensten](../services/services-yaml.md).
 
 1. Legen Sie einen neuen Wert für die Disk-Eigenschaft fest (in MB).
 
@@ -188,11 +188,11 @@ Die `.magento/services.yaml` -Datei steuert den für jeden Dienst verfügbaren S
 
 ## Festplattenspeicher überwachen
 
-In Pro-Produktionsumgebungen können Sie Speicherplatz und andere Leistungsindikatoren mithilfe der Richtlinie Warnhinweise für Adobe Commerce für New Relic verwalten überwachen. Weitere Informationen finden Sie unter [Überwachen der Leistung mit verwalteten Warnhinweisen](../monitor/investigate-performance.md#monitor-performance-with-managed-alerts). Weitere Leitlinien finden Sie unter [Best Practices zur Lösung von Problemen mit der Datenbankleistung](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/maintenance/resolve-database-performance-issues.html).
+In Pro-Produktionsumgebungen können Sie Speicherplatz und andere Leistungsindikatoren mithilfe der Richtlinie Warnhinweise für Adobe Commerce für New Relic verwalten überwachen. Weitere Informationen finden Sie unter [Überwachen der Leistung mit verwalteten Warnhinweisen](../monitor/investigate-performance.md#monitor-performance-with-managed-alerts). Weitere Anleitungen finden Sie unter [Best Practices zur Lösung von Problemen mit der Datenbankleistung](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/maintenance/resolve-database-performance-issues.html).
 
 ## Kein Leerzeichen übrig
 
-Der Build-Cache kann mit der Zeit wachsen. Wenn Sie eine Warnung mit dem Status `No space left on device`versuchen Sie, den Build-Cache zu leeren und erneut bereitzustellen:
+Der Build-Cache kann mit der Zeit wachsen. Wenn Sie eine Warnung mit dem Status &quot;`No space left on device`&quot;erhalten, versuchen Sie, den Build-Cache zu leeren und erneut bereitzustellen:
 
 ```bash
 magento-cloud project:clear-build-cache

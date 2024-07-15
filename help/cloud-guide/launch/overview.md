@@ -25,7 +25,7 @@ Wir empfehlen dringend Tests in der Integration-, Staging- und Produktionsumgebu
 
 - Integrationsumgebungen unterstützen einige in Staging und Produktion verfügbare Dienste nicht, wie Fastly und New Relic.
 
-- [Vollständiger Test](../test/guidance.md) Ihre Site mit verschiedenen Tools im Staging für Last-, Stress-, Leistungs- und Site-Assets.
+- [Testen Sie Ihre Site vollständig](../test/guidance.md) mit verschiedenen Tools im Staging für Laden-, Stress-, Leistungs- und Site-Assets.
 
 - Da in Integrationsumgebungen möglicherweise nur Datenbanken mit Testdaten gefüllt sind, die nicht mit einer produktionsähnlichen Umgebung übereinstimmen, können beim Testen in Staging- oder Produktionsumgebungen zusätzliche Fehler oder unerwartetes Verhalten auftreten.
 
@@ -39,11 +39,11 @@ Sie benötigen die folgenden Informationen und Ressourcen, um sich auf den Site-
 
 - SSL-/TLS-Zertifikat
 
-Als Teil von Adobe Commerce für die Cloud-Infrastrukturanmeldung stellt Adobe ein domänenvalidiertes SSL-/TLS-Zertifikat bereit, das von Let&#39;s Encrypt ausgestellt wurde. Pro Produktion, Staging und Starterproduktion (`master`) verfügt über ein eindeutiges Zertifikat, das alle Domänen und Subdomänen in dieser Umgebung abdeckt. Diese Zertifikate werden automatisch bereitgestellt und auf Ihre Site hochgeladen, nachdem Sie Ihre DNS-Konfiguration für Entwicklung und Produktion aktualisiert haben. Siehe [Bereitstellen von SSL-/TLS-Zertifikaten](../cdn/fastly-configuration.md#provision-ssltls-certificates).
+Als Teil von Adobe Commerce für die Cloud-Infrastrukturanmeldung stellt Adobe ein domänenvalidiertes SSL-/TLS-Zertifikat bereit, das von Let&#39;s Encrypt ausgestellt wurde. Jede Pro Production-, Staging- und Starter Production-Umgebung (`master`) verfügt über ein eindeutiges Zertifikat, das alle Domänen und Subdomänen in dieser Umgebung abdeckt. Diese Zertifikate werden automatisch bereitgestellt und auf Ihre Site hochgeladen, nachdem Sie Ihre DNS-Konfiguration für Entwicklung und Produktion aktualisiert haben. Siehe [Bereitstellen von SSL-/TLS-Zertifikaten](../cdn/fastly-configuration.md#provision-ssltls-certificates).
 
 >[!NOTE]
 >
->Wenn Sie Ihr eigenes erweitertes Validierungs-SSL-Zertifikat für Ihr Unternehmen bereitstellen möchten, anstatt das Zertifikat &quot;Let&#39;s Encrypt&quot;zu verwenden, wenden Sie sich an Ihren CTA oder [Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket).
+>Wenn Sie Ihr eigenes erweitertes Validierungs-SSL-Zertifikat für Ihr Unternehmen bereitstellen möchten, anstatt das Let&#39;s Encrypt-Zertifikat zu verwenden, wenden Sie sich an Ihren CTA oder senden Sie ein Adobe Commerce-Supportticket](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket).[
 
 ## Einrichten des Sicherheitsscan-Tools
 
@@ -59,13 +59,13 @@ Als Teil von Adobe Commerce für die Cloud-Infrastrukturanmeldung stellt Adobe e
 >
 >Fügen Sie diese IP-Adressen zu einer Zulassungsliste in Ihren Netzwerk-Firewall-Regeln hinzu, damit das Tool Ihre Website scannen kann. Das Tool sendet Anforderungen nur an die Ports 80 und 443.
 
-Mit dem Security Scan Tool können Sie Ihre Store-Websites regelmäßig überwachen und Updates auf bekannte Sicherheitsrisiken, Malware und veraltete Software erhalten. Dieses Tool ist ein kostenloser Dienst, der für alle Implementierungen und Versionen von Adobe Commerce in der Cloud-Infrastruktur verfügbar ist. Sie greifen über die [Commerce Marketplace-Konto](https://account.magento.com/customer/account/login).
+Mit dem Security Scan Tool können Sie Ihre Store-Websites regelmäßig überwachen und Updates auf bekannte Sicherheitsrisiken, Malware und veraltete Software erhalten. Dieses Tool ist ein kostenloser Dienst, der für alle Implementierungen und Versionen von Adobe Commerce in der Cloud-Infrastruktur verfügbar ist. Sie greifen über Ihr [Commerce Marketplace-Konto](https://account.magento.com/customer/account/login) auf das Tool zu.
 
 - Überwachen Sie den Sicherheitsstatus Ihrer Sites und angewendete Sicherheitsupdates.
 
 - Empfangen von Sicherheitsupdates und Site-spezifischen Benachrichtigungen
 
-Siehe [Benutzerhandbuch](https://docs.magento.com/user-guide/magento/security-scan.html) für Informationen zur Einrichtung und Verwendung des Sicherheitsscan-Tools. Normalerweise beginnen Sie mit der Verwendung dieses Tools, wenn Sie mit dem Benutzerakzeptanztest (UAT) beginnen.
+Informationen zum Einrichten und Verwenden des Sicherheitsscan-Tools finden Sie im [Benutzerhandbuch](https://docs.magento.com/user-guide/magento/security-scan.html) . Normalerweise beginnen Sie mit der Verwendung dieses Tools, wenn Sie mit dem Benutzerakzeptanztest (UAT) beginnen.
 
 Jede Site, die Sie scannen, muss über den Tab Sicherheitsscan registriert werden. Während des Registrierungsprozesses müssen Sie den Haftungsausschluss akzeptieren, bevor Sie mit dem Scannen beginnen können. Sie steuern sowohl den Zeitplan als auch die Autorisierung des Benutzers für den Empfang von Benachrichtigungen, wenn die Überprüfung abgeschlossen ist. Sie können Prüfungen für ein bestimmtes, wiederkehrendes Datum und eine bestimmte Uhrzeit planen oder bei Bedarf eine Überprüfung durchführen.
 
@@ -80,17 +80,17 @@ Visbot/2.0 (+http://www.visvo.com/en/webmasters.jsp;bot@visvo.com)
 
 ## Site durchsuchen
 
-1. Zugriff auf [Commerce Marketplace-Konto](https://account.magento.com/customer/account/login).
+1. Greifen Sie auf Ihr [Commerce Marketplace-Konto](https://account.magento.com/customer/account/login) zu.
 
-1. Klicken Sie auf die Registerkarte Sicherheitsscan und wählen Sie **Wechseln Sie zu Sicherheitsprüfung**.
+1. Klicken Sie auf die Registerkarte Sicherheitsscan und wählen Sie **Gehe zu Sicherheitsscan**.
 
-1. Im _Aktionen_ Spalte für die Site auswählen **Scan ausführen**. Der Status der Benachrichtigung zeigt die geplante Prüfung an.
+1. Wählen Sie in der Spalte _Aktionen_ für die Site die Option **Scan ausführen**. Der Status der Benachrichtigung zeigt die geplante Prüfung an.
 
 ### So überprüfen Sie den Bericht:
 
 1. Nach Abschluss des Berichts wird eine Benachrichtigung angezeigt.
 
-1. Wählen Sie in der Site-Zeile den Bericht aus, den Sie anzeigen möchten. **Berichte** Spalte. Die Bestellung ist von neuester bis älterer Version.
+1. Wählen Sie in der Site-Zeile den Bericht aus, den Sie anzeigen möchten, in der Spalte **Berichte** . Die Bestellung ist von neuester bis älterer Version.
 
 Der Bericht listet Probleme auf, einschließlich fehlgeschlagener Scans, nicht identifizierter Ergebnisse und erfolgreicher Scans. Jeder Eintrag enthält detaillierte Informationen für die Prüfung, eine Liste der zu untersuchenden Probleme und zu ergreifenden Maßnahmen. Einige dieser Aktionen erfordern möglicherweise das Herunterladen und Installieren von Sicherheits-Patches. Fügen Sie erforderliche Patches zu einer Entwicklungsverzweigung auf Ihrer lokalen Workstation hinzu, bevor Sie sie zur Produktionsverzweigung hinzufügen.
 

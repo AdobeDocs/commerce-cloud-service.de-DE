@@ -33,17 +33,17 @@ Sie müssen ein GitHub-Token und einen Webhook abrufen, um den Prozess fortzuset
 
 ## GitHub-Token generieren
 
-Erstellen Sie ein klassisches persönliches Zugriffstoken in den GitHub-Entwicklereinstellungen. Sie müssen Mitglied einer Gruppe mit Schreibzugriff auf das GitHub-Repository sein, damit Sie _push_ zum Repository hinzufügen. Schließen Sie beim Erstellen Ihres Tokens die folgenden Bereiche ein:
+Erstellen Sie ein klassisches persönliches Zugriffstoken in den GitHub-Entwicklereinstellungen. Sie müssen Mitglied einer Gruppe mit Schreibzugriff auf das GitHub-Repository sein, damit Sie _Push_ an das Repository senden können. Schließen Sie beim Erstellen Ihres Tokens die folgenden Bereiche ein:
 
-- `admin:repo_hook`—Web-Hooks erstellen
-- `repo`—Integrieren mit Ihrem Repository
-- `read:org`—Integration in Ihr Organisations-Repository
+- `admin:repo_hook` - Erstellen von Web-Hooks
+- `repo`—Integration in Ihr Repository
+- `read:org`—Integrieren Sie in Ihr Organisations-Repository.
 
 Siehe [GitHub: Erstellen](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
 ## Repository vorbereiten
 
-Klonen Sie Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur von einer bestehenden Umgebung und migrieren Sie die Projektverzweigungen in ein neues, leeres GitHub-Repository, wobei Sie dieselben Zweignamen beibehalten. Es ist **kritisch** um eine identische Git-Struktur beizubehalten, damit Sie keine bestehenden Umgebungen oder Zweige in Ihrer Adobe Commerce in einem Cloud-Infrastrukturprojekt verlieren.
+Klonen Sie Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur von einer bestehenden Umgebung und migrieren Sie die Projektverzweigungen in ein neues, leeres GitHub-Repository, wobei Sie dieselben Zweignamen beibehalten. Es ist **wichtig**, eine identische Git-Struktur beizubehalten, damit Sie keine bestehenden Umgebungen oder Verzweigungen in Ihrer Adobe Commerce im Cloud-Infrastrukturprojekt verlieren.
 
 1. Melden Sie sich über das Terminal bei Ihrem Adobe Commerce-Projekt für eine Cloud-Infrastruktur an.
 
@@ -69,7 +69,7 @@ Klonen Sie Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur von einer beste
    git remote add origin git@github.com:<user-name>/<repo-name>.git
    ```
 
-   Der Standardname für die Remote-Verbindung kann `origin` oder `magento`. Wenn `origin` vorhanden ist, können Sie einen anderen Namen wählen oder die vorhandene Referenz umbenennen oder löschen. Siehe [Git-Remote-Dokumentation](https://git-scm.com/docs/git-remote).
+   Der Standardname für die Remote-Verbindung kann `origin` oder `magento` sein. Wenn `origin` vorhanden ist, können Sie einen anderen Namen wählen oder die vorhandene Referenz umbenennen oder löschen. Siehe [git-remote-Dokumentation](https://git-scm.com/docs/git-remote).
 
 1. Stellen Sie sicher, dass Sie die GitHub-Fernbedienung korrekt hinzugefügt haben.
 
@@ -90,30 +90,30 @@ Klonen Sie Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur von einer beste
    git push -u origin master
    ```
 
-   Wenn Sie mit einem neuen GitHub-Repository beginnen, müssen Sie möglicherweise die `-f` -Option, da das Remote-Repository nicht mit Ihrer lokalen Kopie übereinstimmt.
+   Wenn Sie mit einem neuen GitHub-Repository beginnen, müssen Sie möglicherweise die Option `-f` verwenden, da das Remote-Repository nicht mit Ihrer lokalen Kopie übereinstimmt.
 
 1. Stellen Sie sicher, dass Ihr GitHub-Repository alle Ihre Projektdateien enthält.
 
 ## GitHub-Integration aktivieren
 
-Bevor Sie beginnen, müssen sich Ihr Projektcode und Ihre Umgebungen im GitHub-Repository befinden. Nach Aktivierung der Integration wird das GitHub-Repository zur Codequelle. Wenn Sie Code-Änderungen an das Original senden `magento` Repository speichern, wird sie von der Integration überschrieben, wenn Sie Code-Änderungen an Ihr GitHub-Repository pushen.
+Bevor Sie beginnen, müssen sich Ihr Projektcode und Ihre Umgebungen im GitHub-Repository befinden. Nach Aktivierung der Integration wird das GitHub-Repository zur Codequelle. Wenn Sie Code-Änderungen an das ursprüngliche `magento`-Repository pushen, wird dieser von der Integration überschrieben, wenn Sie Code-Änderungen an Ihr GitHub-Repository pushen.
 
 Im Folgenden wird die GitHub-Integration aktiviert und eine Payload-URL bereitgestellt, die beim Erstellen eines Webhooks verwendet werden kann.
 
 >[!WARNING]
 >
->Der folgende Befehl überschreibt _all_ Code in Ihrem Adobe Commerce-Projekt für die Cloud-Infrastruktur mit Code aus Ihrem GitHub-Repository, der alle Verzweigungen einschließlich der `production` -Verzweigung. Diese Aktion erfolgt sofort und kann nicht rückgängig gemacht werden. Als Best Practice ist es wichtig, alle Verzweigungen aus Adobe Commerce in einem Cloud-Infrastrukturprojekt zu klonen und in Ihr GitHub-Repository zu übertragen **before** Hinzufügen der GitHub-Integration.
+>Der folgende Befehl überschreibt den Code _all_ in Ihrem Adobe Commerce-Projekt in der Cloud-Infrastruktur mit Code aus Ihrem GitHub-Repository, der alle Verzweigungen einschließlich der Verzweigung `production` enthält. Diese Aktion erfolgt sofort und kann nicht rückgängig gemacht werden. Als Best Practice ist es wichtig, alle Verzweigungen aus Ihrem Adobe Commerce im Cloud-Infrastrukturprojekt zu klonen und sie in Ihr GitHub-Repository zu übertragen, **bevor** die GitHub-Integration hinzufügt.
 
-Sie können die CLI-Eingabeaufforderungen mithilfe von `magento-cloud integration:add` oder Sie können den Integrationsbefehl mit den folgenden Optionen erstellen:
+Sie können die CLI-Aufforderungen mit `magento-cloud integration:add` schrittweise ausführen oder den Integrationsbefehl mit den folgenden Optionen erstellen:
 
 | Option | Erforderlich? | Beschreibung |
 | ----------------------- | --------- | --------------------------------- |
-| `--base-url` | Ja | Die Basis-URL der Serverinstallation, die `https://github.com/` oder benutzerdefiniert. Lassen Sie diese Option weg, wenn Ihr Repository mit öffentlichem GitHub gehostet wird. |
+| `--base-url` | Ja | Die Basis-URL der Serverinstallation, die `https://github.com/` oder ein benutzerdefinierter Wert sein kann. Lassen Sie diese Option weg, wenn Ihr Repository mit öffentlichem GitHub gehostet wird. |
 | `--token` | Ja | Das persönliche Zugriffstoken, das Sie für GitHub generiert haben |
 | `--repository` | Ja | Der Repository-Name: `owner-or-organisation/repository` |
-| `--build-pull-requests` | Optional | Weist Adobe Commerce in der Cloud-Infrastruktur nach dem Zusammenführen einer Pull-Anforderung (`true` standardmäßig) |
-| `--fetch-branches` | Optional | Adobe Commerce in der Cloud-Infrastruktur verfolgt Verzweigungen und stellt diese bereit, nachdem eine Verzweigung aktualisiert wurde (`true` standardmäßig) |
-| `--prune-branches` | Optional | Löschen Sie Zweige, die nicht auf der Remote-Site (`true` standardmäßig) |
+| `--build-pull-requests` | Optional | Weist Adobe Commerce in der Cloud-Infrastruktur nach dem Zusammenführen einer Pull-Anforderung (`true` standardmäßig) die Bereitstellung an |
+| `--fetch-branches` | Optional | Verursacht, dass Adobe Commerce in der Cloud-Infrastruktur Verzweigungen verfolgt und bereitstellt, nachdem Sie eine Verzweigung aktualisiert haben (`true` standardmäßig) |
+| `--prune-branches` | Optional | Löschen Sie Zweige, die nicht auf der Remote-Site vorhanden sind (`true` standardmäßig) |
 
 Es gibt viele weitere Optionen, die Sie mithilfe der Hilfeoption sehen können:
 
@@ -121,7 +121,7 @@ Es gibt viele weitere Optionen, die Sie mithilfe der Hilfeoption sehen können:
 magento-cloud integration:add --help
 ```
 
-**So aktivieren Sie die GitHub-Integration**:
+**Aktivieren der GitHub-Integration**:
 
 1. Aktivieren Sie die Integration.
 
@@ -143,7 +143,7 @@ magento-cloud integration:add --help
 
 1. Geben Sie bei Aufforderung die erforderlichen Informationen ein.
 
-1. Kopieren Sie die **Payload-URL** angezeigt durch die Rückgabeausgabe.
+1. Kopieren Sie die **Payload-URL**, die von der Ausgabe der Ausgabe angezeigt wird.
 
    ```terminal
    Created integration <integration-ID> (type: github)
@@ -157,25 +157,25 @@ magento-cloud integration:add --help
 
 Um Ereignisse wie Push-Benachrichtigungen mit Ihrem Cloud Git-Server zu kommunizieren, müssen Sie einen Webhook für Ihr GitHub-Repository erstellen:
 
-1. Klicken Sie in Ihrem GitHub-Repository auf das **Einstellungen** Registerkarte.
+1. Klicken Sie in Ihrem GitHub-Repository auf die Registerkarte **Einstellungen** .
 
 1. Klicken Sie in der linken Navigationsleiste auf **Webhooks**.
 
-1. Im _Webhooks_ Bereich, klicken Sie auf **Webhook hinzufügen**.
+1. Klicken Sie im Bereich _Webhooks_ auf **Webhook hinzufügen**.
 
-1. Im _Webhooks/Webhook hinzufügen_ bearbeiten Sie die folgenden Felder:
+1. Bearbeiten Sie im Formular _Webhooks/Add webhook_ die folgenden Felder:
 
-   - **Payload-URL**: Geben Sie die URL ein, die bei Aktivierung der GitHub-Integration zurückgegeben wurde.
-   - **Inhaltstyp**: Auswählen **application/json** aus der Liste.
-   - **Geheimnis**: Geben Sie einen Verifizierungsgeheimnis ein.
-   - **Welche Ereignisse möchten Sie auf diesen Webhook Trigger haben?**: Auswählen **Schicke alles!**.
-   - Wählen Sie die **Aktiv** aktivieren.
+   - **Payload-URL**: Geben Sie die URL ein, die zurückgegeben wird, wenn Sie die GitHub-Integration aktiviert haben.
+   - **Content type**: Wählen Sie **application/json** aus der Liste aus.
+   - **Geheimnis**: Geben Sie ein Verifizierungsgeheimnis ein.
+   - **Welche Ereignisse möchten Sie auf diesen Webhook Trigger haben?**: Wählen Sie **Alles senden** aus.
+   - Aktivieren Sie das Kontrollkästchen **Aktiv** .
 
-1. Klicks **Webhook hinzufügen**.
+1. Klicken Sie auf **Webhook hinzufügen**.
 
 ## Integration testen
 
-Nach der Konfiguration der GitHub-Integration können Sie mithilfe der `magento-cloud` CLI:
+Nach der Konfiguration der GitHub-Integration können Sie mithilfe der `magento-cloud`-CLI überprüfen, ob die Integration funktioniert:
 
 ```bash
 magento-cloud integration:validate
@@ -195,7 +195,7 @@ Alternativ können Sie sie testen, indem Sie eine einfache Änderung an Ihr GitH
    git add . && git commit -m "Testing GitHub integration" && git push
    ```
 
-1. Melden Sie sich bei [[!DNL Cloud Console]](../project/overview.md) und überprüfen Sie, dass Ihre Commit-Nachricht angezeigt wird und Ihr Projekt bereitgestellt wird.
+1. Melden Sie sich bei [[!DNL Cloud Console]](../project/overview.md) an und überprüfen Sie, ob Ihre Commit-Nachricht angezeigt wird und Ihr Projekt bereitgestellt wird.
 
 ## Integration entfernen
 
@@ -217,4 +217,4 @@ Sie können die GitHub-Integration sicher aus Ihrem Projekt entfernen, ohne den 
    magento-cloud integration:delete <int-ID>
    ```
 
-Außerdem können Sie die GitHub-Integration entfernen, indem Sie sich bei Ihrem GitHub-Konto anmelden und den Web-Hook im _Webhooks_ Repository-Registerkarte _Einstellungen_.
+Außerdem können Sie die GitHub-Integration entfernen, indem Sie sich bei Ihrem GitHub-Konto anmelden und den Web-Hook auf der Registerkarte _Webhooks_ des Repositorys entfernen _Einstellungen_.

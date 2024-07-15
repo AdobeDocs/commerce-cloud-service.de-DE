@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # Regionale IP-Adressen
 
-In den folgenden Tabellen sind die eingehenden und ausgehenden IP-Adressen aufgeführt, die von Adobe Commerce in der Cloud-Infrastruktur verwendet werden [Integrationsumgebungen](../architecture/pro-architecture.md#integration-environment). Diese IP-Adressen sind stabil, können sich jedoch ändern. Adobe benachrichtigt Kunden, bevor sie IP-Adressänderungen vornehmen.
+In den folgenden Tabellen sind die eingehenden und ausgehenden IP-Adressen aufgeführt, die von Adobe Commerce in Cloud-Infrastruktur-[Integrationsumgebungen](../architecture/pro-architecture.md#integration-environment) verwendet werden. Diese IP-Adressen sind stabil, können sich jedoch ändern. Adobe benachrichtigt Kunden, bevor sie IP-Adressänderungen vornehmen.
 
 Die Syntax für die Adressierung der Integrationsumgebungen lautet wie folgt:
 
@@ -19,11 +19,11 @@ Die Syntax für die Adressierung der Integrationsumgebungen lautet wie folgt:
 <branch>-<unique-ID>-<project-ID>.<region>.magentosite.cloud
 ```
 
-- **Eindeutige ID** = 7 alphanumerische Zufallszeichen
+- **Eindeutige ID** = 7 zufällige alphanumerische Zeichen
 - **Projekt-ID** = Projekt-ID mit 13 Zeichen
-- **Region** = AWS- oder Azure-Regionsname
+- **Region** = Name der AWS- oder Azure-Region
 
-Sie können die `ping` -Befehl zum Abrufen der eingehenden IP-Adresse:
+Sie können den Befehl `ping` verwenden, um die eingehende IP-Adresse abzurufen:
 
 ```bash
 ping integration-abcd123-abcd78910.us-3.magentosite.cloud

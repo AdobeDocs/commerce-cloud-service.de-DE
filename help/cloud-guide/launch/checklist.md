@@ -11,17 +11,17 @@ ht-degree: 0%
 
 # Checkliste für Launch
 
-Laden Sie vor der Bereitstellung in der Produktionsumgebung die [Checkliste für Launch](../../assets/adobe-commerce-cloud-prelaunch-checklist.pdf)und verwenden Sie es mit diesen Anweisungen, um zu bestätigen, dass Sie alle erforderlichen Konfigurationen und Tests abgeschlossen haben. Einen Überblick über den vollständigen Bereitstellungsprozess für Starter und Pro finden Sie unter [Bereitstellen Ihres Stores](../deploy/staging-production.md).
+Laden Sie vor der Bereitstellung in der Produktionsumgebung die Checkliste [Starten](../../assets/adobe-commerce-cloud-prelaunch-checklist.pdf) herunter und verwenden Sie sie mit diesen Anweisungen, um sicherzustellen, dass Sie alle erforderlichen Konfigurationen und Tests abgeschlossen haben. Einen Überblick über den vollständigen Bereitstellungsprozess für Starter und Pro finden Sie unter [Bereitstellen Ihres Stores](../deploy/staging-production.md).
 
 ## Vollständiger Test in der Produktion
 
-Siehe [Testen der Bereitstellung](../test/staging-and-production.md) zum Testen aller Aspekte Ihrer Sites, Stores und Umgebungen. Zu diesen Tests gehören die schnelle Überprüfung, Benutzerakzeptanztests (User Acceptance Tests, UAT) und Leistungstests.
+Unter [Testen der Bereitstellung](../test/staging-and-production.md) finden Sie Informationen zum Testen aller Aspekte Ihrer Sites, Stores und Umgebungen. Zu diesen Tests gehören die schnelle Überprüfung, Benutzerakzeptanztests (User Acceptance Tests, UAT) und Leistungstests.
 
 ## TLS und Fastly
 
 Adobe stellt ein &quot;Let&#39;s Encrypt SSL/TLS&quot;-Zertifikat für jede Umgebung bereit. Dieses Zertifikat ist erforderlich, damit Fastly sicheren Traffic über HTTPS bereitstellen kann.
 
-Um dieses Zertifikat zu verwenden, müssen Sie Ihre DNS-Konfiguration aktualisieren, damit Adobe die Domänenvalidierung abschließen und das Zertifikat auf Ihre Umgebung anwenden kann. Jede Umgebung verfügt über ein eindeutiges Zertifikat, das die Domänen für die Adobe Commerce auf in dieser Umgebung bereitgestellten Cloud-Infrastruktur-Sites abdeckt. Es wird empfohlen, die Konfigurationsaktualisierungen während der [Schnelles Einrichten](../cdn/fastly-configuration.md).
+Um dieses Zertifikat zu verwenden, müssen Sie Ihre DNS-Konfiguration aktualisieren, damit Adobe die Domänenvalidierung abschließen und das Zertifikat auf Ihre Umgebung anwenden kann. Jede Umgebung verfügt über ein eindeutiges Zertifikat, das die Domänen für die Adobe Commerce auf in dieser Umgebung bereitgestellten Cloud-Infrastruktur-Sites abdeckt. Es wird empfohlen, die Konfiguration während des [Schnellsetup-Prozesses](../cdn/fastly-configuration.md) abzuschließen und zu aktualisieren.
 
 ## DNS-Konfiguration mit Produktionseinstellungen aktualisieren
 
@@ -33,7 +33,7 @@ Wenn Sie bereit sind, Ihre Site zu starten, müssen Sie die DNS-Konfiguration ak
 
 - Die Konfiguration der Produktionsumgebung wurde mit allen erforderlichen Domänen aktualisiert.
 
-  In der Regel können Sie mit Ihrem technischen Kundenberater zusammenarbeiten, um alle Domänen und Subdomänen auf oberster Ebene hinzuzufügen, die für Ihre Geschäfte erforderlich sind. So können Sie die Domänen für Ihre Produktionsumgebung hinzufügen oder ändern: [Senden eines Adobe Commerce-Support-Tickets](https://support.magento.com/hc/en-us/articles/360019088251). Warten Sie auf die Bestätigung, dass Ihre Projektkonfiguration aktualisiert wurde.
+  In der Regel können Sie mit Ihrem technischen Kundenberater zusammenarbeiten, um alle Domänen und Subdomänen auf oberster Ebene hinzuzufügen, die für Ihre Geschäfte erforderlich sind. Um die Domänen für Ihre Produktionsumgebung hinzuzufügen oder zu ändern, senden Sie ein Adobe Commerce-Supportticket](https://support.magento.com/hc/en-us/articles/360019088251). [ Warten Sie auf die Bestätigung, dass Ihre Projektkonfiguration aktualisiert wurde.
 
   Bei Starter-Projekten müssen Sie die Domänen zu Ihrem Projekt hinzufügen. Siehe [Domänen verwalten](../cdn/fastly-custom-cache-configuration.md#manage-domains).
 
@@ -54,14 +54,14 @@ Wenn Sie bereit sind, Ihre Site zu starten, müssen Sie die DNS-Konfiguration ak
      Wir empfehlen beim Wechsel des DNS-Eintrags einen deutlich niedrigeren TTL-Wert. Dieser Wert gibt dem DNS an, wie lange der DNS-Eintrag zwischengespeichert werden soll. Wenn der DNS verkürzt wird, wird er schneller aktualisiert. Beispielsweise können Sie den TTL-Wert beim Aktualisieren Ihrer Site von drei Tagen auf 10 Minuten ändern. Beachten Sie, dass eine Verkürzung des TTL-Werts die DNS-Infrastruktur zusätzlich belastet. Stellen Sie den vorherigen, höheren Wert nach dem Site-Start wieder her.
 
 
-1. Fügen Sie CNAME-Einträge hinzu, um die Subdomains für Ihre Produktionsumgebung auf den Schnelldienst zu verweisen. `prod.magentocloud.map.fastly.net`, zum Beispiel:
+1. Fügen Sie CNAME-Einträge hinzu, um die Subdomains für Ihre Produktionsumgebung auf den Fastly-Dienst `prod.magentocloud.map.fastly.net` zu verweisen, z. B.:
 
    | Domäne oder Subdomäne | CNAME |
    | ----------------------- | -------------------------------- |
    | `www.<domain-name>.com` | prod.magentocloud.map.fastly.net |
    | `mystore.<domain-name>.com` | prod.magentocloud.map.fastly.net |
 
-1. Fügen Sie bei Bedarf A-Datensätze hinzu, um die Apex-Domäne (`<domain-name>.com`) an die folgenden Fastly-IP-Adressen:
+1. Fügen Sie bei Bedarf A-Datensätze hinzu, um die Apex-Domäne (`<domain-name>.com`) den folgenden Fastly-IP-Adressen zuzuordnen:
 
    | Apex-Domäne | ANAME |
    | --------------- | ----------------- |
@@ -72,10 +72,10 @@ Wenn Sie bereit sind, Ihre Site zu starten, müssen Sie die DNS-Konfiguration ak
 
 >[!IMPORTANT]
 >
->DNS-Anweisungen in [RFC 1034](https://www.rfc-editor.org/rfc/rfc1912) (**Abschnitt 2.4**) angeben, dass:
->_Ein CNAME-Eintrag darf nicht zusammen mit anderen Daten vorhanden sein. Anders ausgedrückt: Wenn suzy.podunk.xx ein Alias für use.podunk.xx ist, können Sie keinen MX-Eintrag für suzy.podunk.edu, keinen A-Datensatz oder sogar einen TXT-Eintrag haben._
+>Die DNS-Anweisungen in [RFC1034](https://www.rfc-editor.org/rfc/rfc1912) (**Abschnitt 2.4**) geben an, dass:
+>_Ein CNAME-Eintrag darf nicht zusammen mit anderen Daten vorhanden sein. Anders ausgedrückt: Wenn suzy.podunk.xx ein Alias für use.podunk.xx ist, können Sie keinen MX-Eintrag für suzy.podunk.edu, keinen A-Datensatz oder auch keinen TXT-Eintrag haben._
 >
->Aus diesem Grund sollten DNS-Einträge vom Typ `CNAME` für Subdomains und Typ `A` für Apex-Domänen (Stammdomänen). Das Verwerfen dieser Regel kann zu Störungen Ihres E-Mail-Dienstes oder der DNS-Verbreitung führen, da Sie die Möglichkeit verlieren, andere Datensätze wie MX oder NS hinzuzufügen. Einige DNS-Anbieter können dies durch interne Anpassungen umgehen, aber die Einhaltung des Standards gewährleistet Stabilität und Flexibilität (wie z. B. Änderung des DNS-Providers).
+>Aus diesem Grund sollten DNS-Einträge für Subdomains den Typ `CNAME` und für Apex-Domänen den Wert `A` haben (Stammdomänen). Das Verwerfen dieser Regel kann zu Störungen Ihres E-Mail-Dienstes oder der DNS-Verbreitung führen, da Sie die Möglichkeit verlieren, andere Datensätze wie MX oder NS hinzuzufügen. Einige DNS-Anbieter können dies durch interne Anpassungen umgehen, aber die Einhaltung des Standards gewährleistet Stabilität und Flexibilität (wie z. B. Änderung des DNS-Providers).
 
 1. Aktualisieren Sie die Basis-URL.
 
@@ -91,7 +91,7 @@ Wenn Sie bereit sind, Ihre Site zu starten, müssen Sie die DNS-Konfiguration ak
      php bin/magento setup:store-config:set --base-url="https://www.<domain-name>.com/"
      ```
 
-   **NOTE**: Sie können die Basis-URL auch über den Admin aktualisieren. Siehe [Store-URLs](https://experienceleague.adobe.com/docs/commerce-admin/stores-sales/site-store/store-urls.html) im _Adobe Commerce Stores and Purchase Experience Guide_.
+   **HINWEIS**: Sie können auch die Basis-URL vom Admin aus aktualisieren. Siehe [Store-URLs](https://experienceleague.adobe.com/docs/commerce-admin/stores-sales/site-store/store-urls.html) im _Adobe Commerce Stores and Purchase Experience Guide_.
 
 1. Warten Sie einige Minuten, bis die Site aktualisiert wurde.
 
@@ -105,7 +105,7 @@ Es werden folgende Änderungen und Prüfungen empfohlen:
 
 - [Abgeschlossene ausgehende E-Mail-Tests](../project/outgoing-emails.md)
 
-- [Sichere Konfiguration für Administratorberechtigungen und Basis-Admin-URL](https://docs.magento.com/user-guide/stores/security-admin.html)
+- [Sichere Konfiguration für Admin-Anmeldedaten und Basis-Admin-URL](https://docs.magento.com/user-guide/stores/security-admin.html)
 
 - [Alle Bilder für das Web optimieren](../cdn/fastly-image-optimization.md)
 
@@ -113,25 +113,25 @@ Es werden folgende Änderungen und Prüfungen empfohlen:
 
 ## Schnelles Zwischenspeichern überprüfen
 
-- Testen und überprüfen Sie, ob die schnelle Zwischenspeicherung auf der Produktions-Site ordnungsgemäß funktioniert. Detaillierte Tests und Prüfungen finden Sie unter [Schnelle Tests](../test/staging-and-production.md#check-fastly-caching).
+- Testen und überprüfen Sie, ob die schnelle Zwischenspeicherung auf der Produktions-Site ordnungsgemäß funktioniert. Detaillierte Tests und Prüfungen finden Sie unter [Schnelltests](../test/staging-and-production.md#check-fastly-caching).
 
-- [Stellen Sie sicher, dass die neueste Version des Fastly CDN Module for Commerce in Ihrer Produktionsumgebung installiert ist.](../cdn/fastly-configuration.md#upgrade-the-fastly-module)
+- [Stellen Sie sicher, dass die neueste Version des Fastly CDN Module für Commerce in Ihrer Produktionsumgebung installiert ist.](../cdn/fastly-configuration.md#upgrade-the-fastly-module)
 
 - [Stellen Sie sicher, dass die neueste Version des Fastly VCL-Codes hochgeladen wurde.](../cdn/fastly-configuration.md#upload-vcl-to-fastly)
 
 ## Leistungstests
 
-Wir empfehlen Ihnen, die [Leistungs-Toolkit](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) Optionen im Rahmen Ihres Vorab-Starts-Bereitstellungsprozesses.
+Es wird empfohlen, die Optionen für das [Leistungs-Toolkit](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) im Rahmen des Vorab-Starts-Bereitstellungsprozesses zu überprüfen.
 
 Sie können auch mit den folgenden Drittanbieteroptionen testen:
 
-- [Belagung](https://www.joedog.org/siege-home/): Software für Traffic-Formate und Tests, mit der Ihr Geschäft an die Grenzen gedrängt wird. Treffer auf Ihrer Site mit einer konfigurierbaren Anzahl simulierter Clients. Belagerung unterstützt grundlegende Authentifizierungs-, Cookies-, HTTP-, HTTPS- und FTP-Protokolle.
+- [Belagerung](https://www.joedog.org/siege-home/): Software für die Traffic-Formung und -Tests, mit der Ihr Geschäft an die Grenze gedrängt wird. Treffer auf Ihrer Site mit einer konfigurierbaren Anzahl simulierter Clients. Belagerung unterstützt grundlegende Authentifizierungs-, Cookies-, HTTP-, HTTPS- und FTP-Protokolle.
 
-- [Jmeter](https://jmeter.apache.org/): Ausgezeichnete Belastungstests, mit denen die Leistung bei erhöhtem Traffic, wie z. B. bei Flash-Verkäufen, gemessen werden kann. Erstellen Sie benutzerdefinierte Tests, die für Ihre Site ausgeführt werden.
+- [Jmeter](https://jmeter.apache.org/): Ausgezeichnete Belastungstests, mit denen die Leistung bei erhöhtem Traffic gemessen werden kann, z. B. bei Flash-Verkäufen. Erstellen Sie benutzerdefinierte Tests, die für Ihre Site ausgeführt werden.
 
-- [New Relic](https://support.newrelic.com/s/) (bereitgestellt): Hilft bei der Suche nach Prozessen und Bereichen der Site, die eine langsame Leistung mit der pro Aktion aufgezeichneten Zeit verursachen, wie das Senden von Daten, Abfragen, Redis und mehr.
+- [New Relic](https://support.newrelic.com/s/) (bereitgestellt): Hilft bei der Suche nach Prozessen und Bereichen der Site, was zu einer langsamen Leistung führt, da pro Aktion aufgetrackte Zeit benötigt wird, z. B. zum Senden von Daten, Abfragen, Redis usw.
 
-- [WebPageTest](https://www.webpagetest.org/) und [Pingdom](https://www.pingdom.com/): Die Echtzeit-Analyse der Seiten Ihrer Site lädt die Zeit mit verschiedenen Ausgangspunkten. Pingdom könnte eine Gebühr kosten. WebPageTest ist ein kostenloses Tool.
+- [WebPageTest](https://www.webpagetest.org/) und [Pingdom](https://www.pingdom.com/): Die Echtzeitanalyse Ihrer Seiten beim Laden mit verschiedenen Ausgangspunkten. Pingdom könnte eine Gebühr kosten. WebPageTest ist ein kostenloses Tool.
 
 ## Sicherheitskonfiguration
 
@@ -143,7 +143,7 @@ Sie können auch mit den folgenden Drittanbieteroptionen testen:
 
 - [Entfernen Sie alle Benutzer, die nicht mehr in Adobe Commerce im Cloud-Infrastrukturprojekt verwendet werden](../project/user-access.md)
 
-- [Zwei-Faktor-Authentifizierung konfigurieren](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html)
+- [Zweifaktorauthentifizierung konfigurieren](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html)
 
 ## Leistungsüberwachung
 

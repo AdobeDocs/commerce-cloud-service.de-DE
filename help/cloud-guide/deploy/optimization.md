@@ -12,21 +12,21 @@ ht-degree: 0%
 
 # Implementierung optimieren
 
-Die Site-Leistung kann während des Implementierungsprozesses beeinträchtigt sein. Die Dauer, die eine Site bei der Bereitstellung auf einer Produktionssite im Wartungsmodus verbringt, hängt von vielen Faktoren ab, z. B. von der Umgebungskonfiguration und der Menge an Inhalten, die eine Site enthält. Die erste Best Practice für die Optimierung Ihrer Cloud-Implementierung besteht darin, [Upgrade zur Verwendung `ece-tools`](../dev-tools/install-package.md) , um von den Paketfunktionen zu profitieren, z. B. von Befehlen zum Erstellen einer Sicherung der Datenbank und zur Überprüfung der Umgebungskonfiguration.
+Die Site-Leistung kann während des Implementierungsprozesses beeinträchtigt sein. Die Dauer, die eine Site bei der Bereitstellung auf einer Produktionssite im Wartungsmodus verbringt, hängt von vielen Faktoren ab, z. B. von der Umgebungskonfiguration und der Menge an Inhalten, die eine Site enthält. Die erste Best Practice zur Optimierung Ihrer Cloud-Implementierung besteht darin, ein [Upgrade durchzuführen, um `ece-tools`](../dev-tools/install-package.md) zu verwenden und von den Paketfunktionen zu profitieren, z. B. Befehlen zum Erstellen einer Sicherung der Datenbank und zur Überprüfung der Umgebungskonfiguration.
 
 Die folgenden Themen helfen Ihnen dabei, die Optimierung des Implementierungsprozesses zu verstehen:
 
-- [Cloud-Implementierungsprozess](process.md)
+- [Cloud-Bereitstellungsprozess](process.md)
 Der Cloud-Implementierungsprozess gliedert sich in drei Phasen. Sie können die Stärken und Schwächen jeder Phase zu Ihrem Vorteil nutzen.
 
-- [Keine Ausfallzeit-Bereitstellung](reduce-downtime.md)
+- [Keine Ausfallzeitbereitstellung](reduce-downtime.md)
 Erfahren Sie, was während der Bereitstellung geschieht und wie Sie die Ausfallzeit Ihrer Store-Erlebnisse während einer Aktualisierung der Produktionsumgebung reduzieren können.
 
 - [Statische Inhaltsbereitstellung](static-content.md)
 Die beste Methode zur Optimierung Ihrer Cloud-Implementierung besteht darin, zu steuern, wie und wann statische Inhalte generiert werden.
 
 - [Smart-Assistenten](smart-wizards.md)
-Die `ece-tools` bietet die Befehle des intelligenten Assistenten, um Ihre Projektkonfiguration schnell zu bewerten.
+Das Paket `ece-tools` enthält die Befehle des intelligenten Assistenten, um Ihre Projektkonfiguration schnell zu bewerten.
 
 - [Implementierungen mit New Relic verfolgen](../monitor/track-deployments.md)
 Verwenden Sie den New Relic-Dienst, um Bereitstellungsereignisse zu überwachen und die Auswirkungen der Bereitstellung auf die Gesamtleistung zu analysieren.

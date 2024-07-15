@@ -12,32 +12,32 @@ ht-degree: 0%
 
 # Backup-Management
 
-Sie können eine manuelle Sicherung aktiver Starterumgebungen jederzeit mithilfe des **[!UICONTROL Backup]** im [!DNL Cloud Console] oder unter Verwendung der `magento-cloud snapshot:create` Befehl.
+Sie können eine manuelle Sicherung aktiver Starterumgebungen jederzeit mithilfe der Schaltfläche **[!UICONTROL Backup]** im Befehl [!DNL Cloud Console] oder mithilfe des Befehls `magento-cloud snapshot:create` durchführen.
 
-Ein Backup oder _Schnappschuss_ ist eine vollständige Sicherung der Umgebungsdaten, die alle persistenten Daten aus laufenden Diensten (MySQL-Datenbank) und allen Dateien enthält, die auf den bereitgestellten Volumes gespeichert sind (var, pub/media, app/etc). Der Schnappschuss _not_ Code einschließen, da der Code bereits im Git-basierten Repository gespeichert ist. Sie können keine Kopie einer Momentaufnahme herunterladen.
+Ein Backup oder _Schnappschuss_ ist eine vollständige Sicherung von Umgebungsdaten, die alle persistenten Daten aus laufenden Diensten (MySQL-Datenbank) sowie alle Dateien enthält, die auf den bereitgestellten Volumes gespeichert sind (var, pub/media, app/etc). Der Snapshot enthält den Code _nicht_ , da der Code bereits im Git-basierten Repository gespeichert ist. Sie können keine Kopie einer Momentaufnahme herunterladen.
 
-Die Sicherungs-/Snapshot-Funktion **not** gelten für die Staging- und Produktionsumgebungen von Pro, die standardmäßig regelmäßige Backups für Disaster Recovery erhalten. Siehe Abschnitt [Pro Backup und Disaster Recovery](../architecture/pro-architecture.md#backup-and-disaster-recovery) für weitere Informationen. Im Gegensatz zu automatischen Live-Backups in der Pro Staging- und Produktionsumgebung sind Backups **not** automatisch. Es ist _Ihre_ Verantwortung für die manuelle Erstellung eines Backups oder die Einrichtung eines Cron-Auftrags, um regelmäßig eine Sicherung Ihrer Starter- oder Pro-Integrationsumgebungen zu erstellen.
+Die Sicherungs-/Snapshot-Funktion gilt **nicht** für die Pro-Staging- und Produktionsumgebungen, die standardmäßig regelmäßige Backups für Disaster Recovery erhalten. Weitere Informationen finden Sie unter [Pro Backup &amp; Disaster Recovery](../architecture/pro-architecture.md#backup-and-disaster-recovery) . Im Gegensatz zu den automatischen Live-Backups in den Pro Staging- und Produktionsumgebungen sind Backups **nicht** automatisch. Es liegt in der Verantwortung von _Ihrer_, manuell eine Sicherung zu erstellen oder einen Cron-Auftrag einzurichten, um regelmäßig eine Sicherung Ihrer Starter- oder Pro-Integrationsumgebungen zu erstellen.
 
 ## Manuelles Backup erstellen
 
-Sie können eine manuelle Sicherung einer aktiven Starter-Umgebung und einer Integration Pro-Umgebung aus dem [!DNL Cloud Console] oder erstellen Sie einen Schnappschuss aus der Cloud-CLI. Sie müssen über eine [Administratorrolle](../project/user-access.md) für die Umwelt.
+Sie können eine manuelle Sicherung einer aktiven Starter-Umgebung und einer Integration Pro-Umgebung aus der Umgebung [!DNL Cloud Console] erstellen oder einen Schnappschuss aus der Cloud-CLI erstellen. Sie müssen über eine [Administratorrolle](../project/user-access.md) für die Umgebung verfügen.
 
-**So erstellen Sie eine Sicherung einer Starter-Umgebung mit dem[!DNL Cloud Console]**:
+**So erstellen Sie eine Sicherung einer Starterumgebung mit dem[!DNL Cloud Console]**:
 
-1. Melden Sie sich bei [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. Melden Sie sich bei [[!DNL Cloud Console]](https://console.adobecommerce.com) an.
 1. Wählen Sie in der Projektnavigationsleiste eine Umgebung aus. Die Umgebung muss aktiv sein.
-1. Im _Backups_ Ansicht, klicken Sie **[!UICONTROL Backup]**. Diese Option ist in einer Pro-Umgebung nicht verfügbar.
+1. Klicken Sie in der Ansicht _Backups_ auf **[!UICONTROL Backup]**. Diese Option ist in einer Pro-Umgebung nicht verfügbar.
 
    ![Backup](../../assets/button-backup.png){width="150"}
 
 **So erstellen Sie eine Sicherung einer Integrationsumgebung mit dem[!DNL Cloud Console]**:
 
-1. Melden Sie sich bei [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. Melden Sie sich bei [[!DNL Cloud Console]](https://console.adobecommerce.com) an.
 1. Wählen Sie in der Projektnavigationsleiste eine Integration/Entwicklungsumgebung aus. Die Umgebung muss aktiv sein.
-1. Wählen Sie die **[!UICONTROL Backup]** im Menü oben rechts. Diese Option ist sowohl für Starter- als auch für Pro-Umgebungen verfügbar.
-1. Klicken Sie auf **[!UICONTROL Yes]** Schaltfläche.
+1. Wählen Sie im Menü oben rechts die Option **[!UICONTROL Backup]** aus. Diese Option ist sowohl für Starter- als auch für Pro-Umgebungen verfügbar.
+1. Klicken Sie auf die Schaltfläche **[!UICONTROL Yes]** .
 
-**So erstellen Sie einen Schnappschuss mit dem `magento-cloud` CLI**:
+**So erstellen Sie einen Schnappschuss mit der `magento-cloud` CLI**:
 
 1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
 1. Sehen Sie sich die zu Momentaufnahmen gehörige Umgebungsverzweigung an.
@@ -47,7 +47,7 @@ Sie können eine manuelle Sicherung einer aktiven Starter-Umgebung und einer Int
    magento-cloud snapshot:create --live
    ```
 
-   Alternativ können Sie die `magento-cloud backup` short -Befehl. Die `--live` lässt die Umgebung laufen, um Ausfallzeiten zu vermeiden. Eine vollständige Liste der Optionen erhalten Sie durch Eingabe von `magento-cloud snapshot:create --help`.
+   Alternativ können Sie den Befehl `magento-cloud backup` short verwenden. Die Option `--live` lässt die Umgebung laufen, um Ausfallzeiten zu vermeiden. Geben Sie `magento-cloud snapshot:create --help` ein, um eine vollständige Liste der Optionen anzuzeigen.
 
    Beispielantwort:
 
@@ -81,7 +81,7 @@ Sie können eine manuelle Sicherung einer aktiven Starter-Umgebung und einer Int
 
 ## Manuelles Backup wiederherstellen
 
-Sie müssen [Administratorzugriff](../project/user-access.md) in die Umwelt. Sie können **sieben Tage** nach _Wiederherstellen_ eine manuelle Sicherung. Beim Wiederherstellen einer Sicherung wird der Code der aktuellen Git-Verzweigung nicht geändert. Die Wiederherstellung einer Sicherung auf diese Weise gilt nicht für Staging- und Produktionsumgebungen von Pro; siehe [Pro Backup und Disaster Recovery](../architecture/pro-architecture.md#backup-and-disaster-recovery).
+Sie benötigen [Administratorzugriff](../project/user-access.md) auf die Umgebung. Sie haben bis zu **sieben Tage**, um _ein manuelles Backup wiederherzustellen_. Beim Wiederherstellen einer Sicherung wird der Code der aktuellen Git-Verzweigung nicht geändert. Das Wiederherstellen einer Sicherung auf diese Weise gilt nicht für Pro-Staging- und Produktionsumgebungen; siehe [Pro-Sicherung und Disaster Recovery](../architecture/pro-architecture.md#backup-and-disaster-recovery).
 
 Die Wiederherstellungszeiten variieren je nach Größe Ihrer Datenbank:
 
@@ -93,18 +93,18 @@ Die Wiederherstellungszeiten variieren je nach Größe Ihrer Datenbank:
 >
 >Wiederherstellung ohne Sicherung:
 >
->- Informationen zum Zurücksetzen auf vorherigen Code oder zum Entfernen hinzugefügter Erweiterungen in einer Umgebung finden Sie unter [Zurücksetzen-Code](#roll-back-code).
->- Wiederherstellung einer instabilen Umgebung, die _not_ eine Sicherung haben, siehe [Wiederherstellen einer Umgebung](../development/restore-environment.md).
+>- Weitere Informationen zum Zurücksetzen auf vorherigen Code oder zum Entfernen hinzugefügter Erweiterungen in einer Umgebung finden Sie unter [Zurücksetzen des Codes](#roll-back-code).
+>- Informationen zum Wiederherstellen einer instabilen Umgebung, in der _nicht_ gesichert ist, finden Sie unter [Wiederherstellen einer Umgebung](../development/restore-environment.md).
 
-**So stellen Sie eine Sicherung mithilfe der[!DNL Cloud Console]**:
+**So stellen Sie eine Sicherung mit dem[!DNL Cloud Console]** wieder her:
 
-1. Melden Sie sich bei [[!DNL Cloud Console]](https://console.adobecommerce.com).
+1. Melden Sie sich bei [[!DNL Cloud Console]](https://console.adobecommerce.com) an.
 1. Wählen Sie in der Projektnavigationsleiste eine Umgebung aus.
-1. Im _Backups_ Ansicht, wählen Sie ein Backup aus der _Gespeichert_ Liste. Die Sicherungsfunktion **not** gelten für die Pro-Umgebungen.
-1. Im ![Mehr](../../assets/icon-more.png){width="32"} (_more_), klicken Sie auf **Wiederherstellen**.
-1. Überprüfen Sie die Sicherungsinformationen und klicken Sie auf **Ja, wiederherstellen**.
+1. Wählen Sie in der Ansicht _Backups_ ein Backup aus der Liste _Gespeichert_ aus. Die Sicherungsfunktion gilt für die Pro-Umgebungen nicht mehr als **.**
+1. Klicken Sie im Menü ![Mehr](../../assets/icon-more.png){width="32"} (_mehr_) auf **Wiederherstellen**.
+1. Überprüfen Sie die Informationen zur Wiederherstellung aus der Sicherung und klicken Sie auf **Ja, stellen Sie** wieder her.
 
-**So stellen Sie einen Schnappschuss mithilfe der Cloud CLI wieder her**:
+**So stellen Sie einen Schnappschuss mithilfe der Cloud-CLI wieder her**:
 
 1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
 1. Sehen Sie sich die wiederherzustellende Umgebungsverzweigung an.
@@ -133,10 +133,10 @@ Die Wiederherstellungszeiten variieren je nach Größe Ihrer Datenbank:
 
 ## Wiederherstellen eines Snapshots zur Notfallwiederherstellung
 
-So stellen Sie den Snapshot zur Notfallwiederherstellung in der Staging- und Produktionsumgebung von Pro wieder her: [Importieren Sie die Datenbank-Dump direkt vom Server.](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production#meth3).
+Um den Schnappschuss zur Notfallwiederherstellung in Pro Staging- und Produktionsumgebungen wiederherzustellen, importieren Sie die Datenbank-Dump direkt vom Server](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/how-to/restore-a-db-snapshot-from-staging-or-production#meth3).[
 
 ## Zurücksetzen-Code
 
-Sicherungen und Momentaufnahmen tun dies _not_ eine Kopie Ihres Codes enthalten. Ihr Code ist bereits im Git-basierten Repository gespeichert, sodass Sie Git-basierte Befehle verwenden können, um den Code zurückzusetzen (oder wiederherzustellen). Verwenden Sie beispielsweise `git log --oneline` zum Scrollen durch vorherige Commands und dann [`git revert`](https://git-scm.com/docs/git-revert) um Code aus einem bestimmten Commit wiederherzustellen.
+Sicherungen und Momentaufnahmen enthalten _nicht_ eine Kopie Ihres Codes. Ihr Code ist bereits im Git-basierten Repository gespeichert, sodass Sie Git-basierte Befehle verwenden können, um den Code zurückzusetzen (oder wiederherzustellen). Verwenden Sie beispielsweise &quot;`git log --oneline`&quot;, um durch vorherige Commits zu blättern, und verwenden Sie dann &quot;[`git revert`](https://git-scm.com/docs/git-revert)&quot;, um den Code aus einem bestimmten Commit wiederherzustellen.
 
-Außerdem können Sie Code in einem _inactive_ -Verzweigung. Verwenden Sie Git-Befehle, um eine Verzweigung zu erstellen, anstatt `magento-cloud` Befehle. Siehe auch [Git-Befehle](../dev-tools/cloud-cli-overview.md#git-commands) im Cloud-CLI-Thema.
+Außerdem können Sie Code in einer _inaktiven_ -Verzweigung speichern. Verwenden Sie Git-Befehle, um eine Verzweigung zu erstellen, anstatt `magento-cloud`-Befehle zu verwenden. Weitere Informationen zu [Git-Befehlen](../dev-tools/cloud-cli-overview.md#git-commands) finden Sie im Thema zur Cloud-CLI.

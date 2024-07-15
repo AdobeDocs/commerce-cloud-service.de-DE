@@ -17,48 +17,48 @@ ht-degree: 0%
 
 Adobe Commerce-Projekte zur Cloud-Infrastruktur nutzen rollenbasierten Zugriff. Auf Projektebene stehen zwei Rollen zur Verfügung:
 
-- **Projektadministrator**—Schreiben Sie Zugriff auf alle Projektumgebungen und können Benutzer verwalten, Push-Code bereitstellen und Projekteinstellungen aktualisieren.
-- **Projekt-Viewer**—Schreibgeschützter Zugriff auf alle Projektumgebungen.
+- **Projektadministrator**: Schreiben Sie Zugriff auf alle Projektumgebungen und können Benutzer verwalten, Code pushen und Projekteinstellungen aktualisieren.
+- **Projekt-Viewer**: Schreibgeschützter Zugriff auf alle Projektumgebungen.
 
 Projekt-Viewer können in keiner Umgebung Aufgaben ausführen. Sie können jedoch Projekt-Viewern Schreibzugriff auf einen bestimmten Umgebungstyp gewähren.
 
-Der Zugriff auf Umgebungsebene basiert auf dem Umgebungstyp: Produktion, Staging und Entwicklung. Gewähren eines Benutzers _Viewer_ Berechtigung zu _development_ Umgebungen bedeutet, dass sie **all** Entwicklungsumgebungen im Projekt. In der folgenden Tabelle werden die den einzelnen Berechtigungsebenen zugewiesenen Fähigkeiten erläutert:
+Der Zugriff auf Umgebungsebene basiert auf dem Umgebungstyp: Produktion, Staging und Entwicklung. Wenn einem Benutzer _Viewer_ Berechtigungen für _Entwicklungsumgebungen_ gewährt werden, können alle **5} Entwicklungsumgebungen im Projekt angezeigt werden.** In der folgenden Tabelle werden die den einzelnen Berechtigungsebenen zugewiesenen Fähigkeiten erläutert:
 
 | Berechtigungsebene | Zugriff | SSH-Zugriff |
 | ------------------ | ----------- | :----------: |
 | **Admin** | Ausführen von Administratoraufgaben, wie z. B. Einstellungen ändern, Push-Code, Ausführen von Aufgaben und Verzweigungsverwaltung, einschließlich der Zusammenführung mit der übergeordneten Umgebung | Ja |
-| **Mitarbeiter** | Push-Code und Verzweigung der Umgebung; kann Einstellungen nicht ändern oder Aktionen ausführen | Ja |
-| **Viewer** | Schreibgeschützter Zugriff auf den Umgebungstyp | Nein |
+| **Contributor** | Push-Code und Verzweigung der Umgebung; kann Einstellungen nicht ändern oder Aktionen ausführen | Ja |
+| **Betrachter** | Schreibgeschützter Zugriff auf den Umgebungstyp | Nein |
 | **Kein Zugriff** | Kein Zugriff auf den Umgebungstyp | Nein |
 
 {style="table-layout:auto"}
 
-Sie können Benutzer hinzufügen und Rollen zuweisen mithilfe der `magento-cloud` CLI oder [!DNL Cloud Console].
+Sie können Benutzer hinzufügen und Rollen mithilfe der CLI `magento-cloud` oder der [!DNL Cloud Console] zuweisen.
 
 >[!BEGINSHADEBOX]
 
 **Voraussetzungen:**
 
-- Ein registrierter Benutzer bei einem Adobe ID. Ein Benutzer muss [sich für ein Adobe-Konto registrieren](https://account.adobe.com) und dann [Initialisieren ihres Cloud-Kontos](https://console.adobecommerce.com) , bevor Sie sie zu einem Cloud-Projekt hinzufügen können.
-- Ein Benutzer hat **Admin** -Rolle kann Benutzer mit `magento-cloud` CLI. Nur Benutzer, denen die **Kontoinhaber** -Rolle können Benutzer verwalten.
+- Ein registrierter Benutzer bei einem Adobe ID. Benutzer müssen [sich für ein Adobe-Konto registrieren](https://account.adobe.com) und dann [ihr Cloud-Konto initialisieren](https://console.adobecommerce.com), bevor sie einem Cloud-Projekt hinzugefügt werden können.
+- Benutzer mit der Rolle **Admin** können Benutzer mit der CLI `magento-cloud` nicht verwalten. Benutzer, denen die Rolle **Kontoinhaber** zugewiesen wurde, können diese verwalten.
 
 >[!ENDSHADEBOX]
 
 ## Benutzer mit der CLI verwalten
 
-Verwenden Sie die `magento-cloud` CLI zur Verwaltung von Benutzern und Integration in automatisierte Systeme:
+Verwenden Sie die `magento-cloud`-CLI, um Benutzer zu verwalten und in automatisierte Systeme zu integrieren:
 
-- `magento-cloud user:add`-einen Benutzer zum Projekt hinzufügen
-- `magento-cloud user:delete`-Löschen eines Benutzers
-- `magento-cloud user:list [users]`-Liste der Projektbenutzer
-- `magento-cloud user:role`-Ansicht oder Änderung der Benutzerrolle
-- `magento-cloud user:update`-Aktualisieren der Benutzerrolle in einem Projekt
+- `magento-cloud user:add` - Hinzufügen eines Benutzers zum Projekt
+- `magento-cloud user:delete` - Löschen eines Benutzers
+- `magento-cloud user:list [users]` list-Projektbenutzer
+- `magento-cloud user:role` - Anzeigen oder Ändern der Benutzerrolle
+- `magento-cloud user:update` Benutzerrolle in einem Projekt aktualisieren
 
-Die folgenden Beispiele verwenden die `magento-cloud` CLI zum Hinzufügen eines Benutzers, Konfigurieren von Rollen, Ändern von Projektzuweisungen und Zuweisen von Benutzerrollen.
+In den folgenden Beispielen wird die CLI `magento-cloud` verwendet, um einen Benutzer hinzuzufügen, Rollen zu konfigurieren, Projektzuweisungen zu ändern und Benutzerrollen zuzuweisen.
 
-**So fügen Sie einen Benutzer hinzu und weisen Rollen zu**:
+**So fügen Sie einen Benutzer hinzu und weisen die Rollen zu**:
 
-1. Verwenden Sie die `magento-cloud` CLI zum Hinzufügen des Benutzers.
+1. Verwenden Sie die CLI `magento-cloud` , um den Benutzer hinzuzufügen.
 
    ```bash
    magento-cloud user:add
@@ -66,7 +66,7 @@ Die folgenden Beispiele verwenden die `magento-cloud` CLI zum Hinzufügen eines 
 
    >[!IMPORTANT]
    >
-   >Der Benutzer muss über eine Adobe ID verfügen; siehe [Voraussetzungen](#add-users-and-manage-access).
+   >Der Benutzer muss über eine Adobe ID verfügen; siehe die [Voraussetzungen](#add-users-and-manage-access).
 
 1. Befolgen Sie die Anweisungen: Geben Sie die E-Mail-Adresse des Benutzers an, legen Sie die Rollen &quot;Projekt&quot;und &quot;Umgebung&quot;fest und fügen Sie den Benutzer hinzu.
 
@@ -113,7 +113,7 @@ Current role(s) of User (alice@example.com) on Production (project_id):
 
 ### Benutzer zu mehreren Umgebungen hinzufügen
 
-So fügen Sie einen Benutzer als `viewer` auf `Production` und als `contributor` auf `Integration` Umgebung:
+So fügen Sie einen Benutzer als `viewer` in einer `Production` -Umgebung und als `contributor` in einer `Integration` -Umgebung hinzu:
 
 ```bash
 magento-cloud user:add alice@example.com -r production:v -r integration:c
@@ -121,45 +121,45 @@ magento-cloud user:add alice@example.com -r production:v -r integration:c
 
 ### Berechtigungen der Benutzerumgebung aktualisieren
 
-So aktualisieren Sie die Berechtigungen der Benutzerumgebung auf `admin` auf `Production` Umgebung:
+Aktualisieren der Benutzerumgebungsberechtigungen auf `admin` in der `Production`-Umgebung:
 
 ```bash
 magento-cloud user:update alice@example.com -r production:a
 ```
 
-## Verwalten Sie Benutzer über die [!DNL Cloud Console]
+## Verwalten von Benutzern über die [!DNL Cloud Console]
 
-Sie können die [[!DNL Cloud Console]](../../get-started/cloud-console.md) um Berechtigungen hinzuzufügen und die _Bearbeiten_ , um die Berechtigungen für einen vorhandenen Benutzer zu ändern.
+Sie können die [[!DNL Cloud Console]](../../get-started/cloud-console.md) verwenden, um Berechtigungen hinzuzufügen, und die Funktion _Bearbeiten_ verwenden, um Berechtigungen für einen vorhandenen Benutzer zu ändern.
 
 >[!IMPORTANT]
 >
->Der Benutzer muss über eine Adobe ID verfügen; siehe [Voraussetzungen](#add-users-and-manage-access).
+>Der Benutzer muss über eine Adobe ID verfügen; siehe die [Voraussetzungen](#add-users-and-manage-access).
 
 ### Einen Benutzer zum Projekt hinzufügen
 
-1. Melden Sie sich bei [[!DNL Cloud Console]](https://console.adobecommerce.com/).
+1. Melden Sie sich bei [[!DNL Cloud Console]](https://console.adobecommerce.com/) an.
 
-1. Wählen Sie ein Projekt aus dem _Alle Projekte_ Liste.
+1. Wählen Sie ein Projekt aus der Liste _Alle Projekte_ aus.
 
 1. Klicken Sie im Projekt-Dashboard auf das Konfigurationssymbol oben rechts.
 
-1. under _Projekteinstellungen_ klicken **[!UICONTROL Access]**.
+1. Klicken Sie unter &quot;_Projekteinstellungen_&quot;auf &quot;**[!UICONTROL Access]**&quot;.
 
-1. Im _Zugriff_ Ansicht, klicken Sie **[!UICONTROL Add]**.
+1. Klicken Sie in der Ansicht _Zugriff_ auf **[!UICONTROL Add]**.
 
-1. Führen Sie die _[!UICONTROL Add User]_form:
+1. Füllen Sie das Formular _[!UICONTROL Add User]_aus:
 
    - Geben Sie die E-Mail-Adresse des Benutzers ein.
 
-   - **[!UICONTROL Project admin]**—gewähren Sie Administratorrechte für alle Einstellungen und Umgebungstypen.
+   - **[!UICONTROL Project admin]** - Erteilen Sie Administratorrechte für alle Einstellungen und Umgebungstypen.
 
-   - **[!UICONTROL Environment types and permissions]**—Gewähren von Zugriff und spezifischen Berechtigungen für bestimmte Umgebungstypen. _Kein Zugriff_, _Admin_ (Einstellungen ändern, Aktion ausführen, Zusammenführungscode), _Mitarbeiter_ (Push-Code) oder _Viewer_ (nur Ansicht).
+   - **[!UICONTROL Environment types and permissions]** - Gewähren Sie bestimmten Umgebungstypen Zugriff und spezifische Berechtigungsstufen. _Kein Zugriff_, _Admin_ (Einstellungen ändern, Aktion ausführen, Zusammenführungscode), _Mitarbeiter_ (Push-Code) oder _Betrachter_ (nur Ansicht).
 
    >[!TIP]
    >
-   >Nur ein **Projektadministrator** Benutzer können in jeder Umgebung verwaltet werden. So gewähren Sie Benutzern Zugriff auf die **Zugriff** Registerkarte, eine andere **Projektadministrator** oder **Kontoinhaber** muss diesem Benutzer die **Projektadministrator** Rolle.
+   >Nur ein **Projektadministrator** kann Benutzer in jeder Umgebung verwalten. Um einem Benutzer Zugriff auf die Registerkarte **Zugriff** zu gewähren, muss diesem Benutzer ein anderer **Projektadministrator** oder der **Kontoinhaber** die Rolle **Projektadministrator** zuweisen.
 
-1. Klicks **[!UICONTROL Add User]**.
+1. Klicken Sie auf **[!UICONTROL Add User]**.
 
    >[!IMPORTANT]
    >
@@ -177,11 +177,11 @@ Wenn die MFA-Durchsetzung in einem Adobe Commerce-Projekt zur Cloud-Infrastruktu
 
 Nachdem Sie einen Benutzer zu einem Cloud-Projekt hinzugefügt haben, bitten Sie den Benutzer, seine Kontosicherheitseinstellungen zu überprüfen und die folgenden Sicherheitskonfigurationen nach Bedarf hinzuzufügen:
 
-- **Aktivieren von TFA**—Erfüllen Sie die Sicherheits- und Compliance-Standards durch Konfiguration der Authentifizierung mit zwei Faktoren. Mit [MFH-Durchsetzung](multi-factor-authentication.md) TFA für Konten benötigen, die SSH verwenden, um auf die Projekte zuzugreifen.
+- **Aktivieren Sie TFA**: Erfüllen Sie die Sicherheits- und Compliance-Standards durch Konfiguration der Authentifizierung mit zwei Faktoren. Für Projekte, die mit der [MFA-Durchsetzung](multi-factor-authentication.md) konfiguriert wurden, ist TFA für Konten erforderlich, die SSH verwenden, um auf die Projekte zuzugreifen.
 
-- **SSH-Schlüssel aktivieren**—Benutzer, die Zugriff auf Adobe Commerce in Quell-Code-Repositorys für Cloud-Infrastruktur benötigen, müssen SSH-Schlüssel in ihrem Konto aktivieren. Siehe [Sichere Verbindungen](../development/secure-connections.md).
+- **SSH-Schlüssel aktivieren** - Benutzer, die Zugriff auf Adobe Commerce in Cloud-Infrastruktur-Quellcode-Repositorys benötigen, müssen SSH-Schlüssel in ihrem Konto aktivieren. Siehe [Sichere Verbindungen](../development/secure-connections.md).
 
-- **API-Token erstellen**—Benutzer müssen ein API-Token generieren, das für den SSH-Zugriff auf eine Umgebung verwendet wird. Sie benötigen das Token, um Authentifizierungs-Workflows für automatisierte Prozesse zu aktivieren.
+- **API-Token erstellen**: Benutzer müssen ein API-Token generieren, das für den SSH-Zugriff auf eine Umgebung verwendet wird. Sie benötigen das Token, um Authentifizierungs-Workflows für automatisierte Prozesse zu aktivieren.
 
   Bei Projekten mit aktivierter MFA-Durchsetzung müssen Sie das API-Token verwenden, um SSH-Zugriffsanfragen von automatisierten Konten zu authentifizieren. Das Token ermöglicht automatisierte Prozesse, um Authentifizierungs-Workflows zu umgehen, die TFA erfordern.
 
@@ -194,15 +194,15 @@ Adobe Commerce on Cloud Infrastructure unterstützt TFA mit einer der folgenden 
 - [FreeOTP (Android)](https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp)
 - [GAuth Authenticator (Firefox OS, Desktop, andere)](https://github.com/gbraad-apps/gauth)
 
-Anweisungen zum Installieren der Authentifizierungsanwendung und Aktivieren von TFA finden Sie im Abschnitt _Kontoeinstellungen_ in der [!DNL Cloud Console].
+Anweisungen zum Installieren der Authentifizierungsanwendung und Aktivieren von TFA finden Sie auf der Seite _Kontoeinstellungen_ im Abschnitt [!DNL Cloud Console].
 
-**Aktivieren von TFA in Ihrem Benutzerkonto**:
+**Aktivieren von TFA für Ihr Benutzerkonto**:
 
-1. Anmelden bei [Ihr Konto](https://console.adobecommerce.com).
+1. Melden Sie sich bei [Ihrem Konto](https://console.adobecommerce.com) an.
 
 1. Klicken Sie oben rechts im Kontomenü auf **[!UICONTROL My Profile]**.
 
-1. Im _Sicherheit_ Registerkarte, klicken **[!UICONTROL Set up application]**.
+1. Klicken Sie auf der Registerkarte _Sicherheit_ auf **[!UICONTROL Set up application]**.
 
 1. Wenn Sie auf Ihrem Mobilgerät keine genehmigte Authentifizierungsanwendung haben, installieren Sie eine mit den verknüpften Anweisungen.
 
@@ -210,29 +210,29 @@ Anweisungen zum Installieren der Authentifizierungsanwendung und Aktivieren von 
 
    - Öffnen Sie auf Ihrem Mobilgerät die Authentifizierungsanwendung. Fügen Sie dann den Einrichtungscode zur Anwendung hinzu.
 
-   - Im [!UICONTROL **[!UICONTROL TFA set up - Application]**] Seite, geben Sie den TFA-Code von Ihrem Mobilgerät in die **[!UICONTROL Application verification code]** -Feld.
+   - Geben Sie auf der Seite [!UICONTROL **[!UICONTROL TFA set up - Application]**] den TFA-Code von Ihrem Mobilgerät in das Feld **[!UICONTROL Application verification code]** ein.
 
-   - Klicks **[!UICONTROL Verify and save]**.
+   - Klicken Sie auf **[!UICONTROL Verify and save]**.
 
      Wenn der Code gültig ist, sendet Adobe eine Benachrichtigung an die E-Mail-Adresse des Kontos, die bestätigt, dass das Konto jetzt über TFA verfügt.
 
-1. Optional. Aktivieren _Vertrauenswürdiger Browser_ -Einstellungen, um den Authentifizierungscode im Browser 30 Tage lang zwischenzuspeichern.
+1. Optional. Aktivieren Sie die Einstellungen für _vertrauenswürdigen Browser_ , um den Authentifizierungscode 30 Tage lang im Browser zwischenzuspeichern.
 
    Diese Konfiguration reduziert die Anzahl der Authentifizierungsprobleme während der Projektanmeldung.
 
-1. Klicks **Speichern** oder **Überspringen**.
+1. Klicken Sie auf **Speichern** oder **Überspringen**.
 
 1. Speichern Sie die Wiederherstellungscodes.
 
-   - Im _TFA-Einrichtung - Wiederherstellung_ Codes hinzufügen, kopieren und speichern Sie die Wiederherstellungscodes, damit Sie sich bei Ihrem Adobe Commerce-Projekt in der Cloud-Infrastruktur anmelden können, wenn Sie nicht auf Ihr Mobilgerät oder Ihre Authentifizierungsanwendung zugreifen können.
+   - Kopieren Sie auf der Seite &quot;_TFA-Setup - Recovery_ -Codes&quot;die Wiederherstellungscodes und speichern Sie sie, damit Sie sich bei Ihrem Adobe Commerce-Projekt in der Cloud-Infrastruktur anmelden können, wenn Sie nicht auf Ihr Mobilgerät oder Ihre Authentifizierungsanwendung zugreifen können.
 
    - Kopieren Sie die Wiederherstellungscodes an einen anderen Speicherort oder schreiben Sie sie auf, falls Sie den Zugriff auf Ihr Gerät oder Ihre Authentifizierungsanwendung verlieren.
 
-   - Klicks **Speichern** um die Codes in Ihrem Konto zu speichern, damit Sie sie in Ihren Kontosicherheitseinstellungen anzeigen und verwalten können.
+   - Klicken Sie auf **Speichern** , um die Codes in Ihrem Konto zu speichern, damit Sie sie in Ihren Kontosicherheitseinstellungen anzeigen und verwalten können.
 
      >[!WARNING]
      >
-     >Wenn Sie den Zugriff auf ein Konto mit TFA verlieren und nicht über die Liste der Wiederherstellungscodes verfügen, müssen Sie sich an Ihren Projektadministrator wenden oder [Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) , um die TFA-Anwendung zurückzusetzen.
+     >Wenn Sie den Zugriff auf ein Konto mit TFA verlieren und nicht über die Liste der Wiederherstellungscodes verfügen, müssen Sie sich an Ihren Projektadministrator wenden oder [Senden Sie ein Adobe Commerce-Supportticket](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) , um die TFA-Anwendung zurückzusetzen.
 
 1. Klicken Sie nach Abschluss des TFA-Setups auf **Speichern** , um Ihr Konto zu aktualisieren.
 
@@ -240,17 +240,17 @@ Anweisungen zum Installieren der Authentifizierungsanwendung und Aktivieren von 
 
    - Melden Sie sich von Ihrem Konto ab.
    - Melden Sie sich mit Ihrem Benutzernamen und Kennwort an.
-   - Geben Sie bei Aufforderung den TFA-Code für die `accounts.magento.cloud` Eintrag aus der Authentifizierungsanwendung auf Ihrem Mobilgerät.
+   - Geben Sie bei Aufforderung den TFA-Code für den Eintrag `accounts.magento.cloud` aus der Authentifizierungsanwendung auf Ihrem Mobilgerät ein.
 
 ### Verwalten von TFA-Konfigurations- und Wiederherstellungscodes
 
-Sie können die TFA-Konfiguration für ein Adobe Commerce-Konto für die Cloud-Infrastruktur über das _Sicherheit_ im Abschnitt _Mein Profil_ Seite.
+Sie können die TFA-Konfiguration für ein Adobe Commerce-Konto für Cloud-Infrastruktur im Abschnitt _Sicherheit_ auf der Seite _Mein Profil_ verwalten.
 
-1. Anmelden bei [Ihr Konto](https://console.adobecommerce.com).
+1. Melden Sie sich bei [Ihrem Konto](https://console.adobecommerce.com) an.
 
 1. Klicken Sie oben rechts im Kontomenü auf **[!UICONTROL My Profile]**.
 
-1. Im _Mein Profil_ klicken Sie auf die **[!UICONTROL Security]** Registerkarte.
+1. Klicken Sie auf der Seite _Mein Profil_ auf die Registerkarte **[!UICONTROL Security]** .
 
 1. Verwenden Sie die verfügbaren Links, um die TFA-Einstellungen für Ihr Adobe Commerce-Konto für die Cloud-Infrastruktur zu aktualisieren:
 
@@ -271,14 +271,14 @@ Bei Projekten mit aktivierter MFA-Durchsetzung müssen Sie über ein API-Token v
 
 **So erstellen Sie ein API-Token**:
 
-1. Anmelden bei [Ihr Konto](https://console.adobecommerce.com).
+1. Melden Sie sich bei [Ihrem Konto](https://console.adobecommerce.com) an.
 
 1. Klicken Sie oben rechts im Kontomenü auf **[!UICONTROL My Profile]**.
 
-1. Im _Mein Profil_ klicken Sie auf die **[!UICONTROL API tokens]** Registerkarte.
+1. Klicken Sie auf der Seite _Mein Profil_ auf die Registerkarte **[!UICONTROL API tokens]** .
 
-1. Klicks **[!UICONTROL Create API token]** und geben Sie einen Namen ein, beispielsweise einen Namen, der mit dem maschinellen Benutzer oder automatisierten Prozess übereinstimmt, der das API-Token verwendet.
+1. Klicken Sie auf **[!UICONTROL Create API token]** und geben Sie einen Namen ein, z. B. einen Namen, der dem maschinellen Benutzer oder automatisierten Prozess entspricht, der das API-Token verwendet.
 
    ![API-Token](../../assets/api-token-name.png)
 
-1. Klicks **[!UICONTROL Create API token]**.
+1. Klicken Sie auf **[!UICONTROL Create API token]**.

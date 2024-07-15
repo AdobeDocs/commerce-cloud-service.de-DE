@@ -1,6 +1,6 @@
 ---
 user-guide-title: Erste Schritte mit Commerce
-user-guide-description: Beginnen Sie mit der Ersteinrichtung des [!DNL Commerce] in der Cloud-Infrastruktur.
+user-guide-description: Beginnen Sie mit der Ersteinrichtung der [!DNL Commerce] Anwendung in der Cloud-Infrastruktur.
 feature: Cloud
 product: magento
 recommendations: noDisplay, noCatalog
@@ -15,9 +15,9 @@ ht-degree: 0%
 # Erste Schritte mit Commerce {#start}
 
 + [Erste Schritte mit Commerce](overview.md)
-+ [Bereitstellung von Commerce in Cloud](new-project.md)
++ [Bereitstellung von Commerce on Cloud](new-project.md)
 + [Onboarding](onboarding.md)
 + [Anmelden bei [!DNL Cloud Console]](cloud-console.md)
 + [Zugriff auf Storefront](access-storefront.md)
 + [Vorbereitungen für die Entwicklung](prepare-workspace.md)
-+ [Rückkehr zum Cloud-Infrastruktur-Handbuch](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/overview.html)
++ [Zurück zum Cloud Infrastructure Guide](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/overview.html)

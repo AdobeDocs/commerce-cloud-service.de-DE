@@ -12,19 +12,19 @@ ht-degree: 0%
 
 # Cloud-CLI
 
-Die `magento-cloud` Das CLI-Tool ermöglicht es Entwicklern und Systemadministratoren, Cloud-Projekte und -Umgebungen zu verwalten, Routinen durchzuführen und Automatisierungsaufgaben durchzuführen. Die `magento-cloud` CLI erweitert die Funktionen der [[!DNL Cloud Console]](../../get-started/cloud-console.md). Nach der Installation `magento-cloud` CLI auf Ihrer lokalen Workstation können Sie damit Ihre Adobe Commerce in Cloud-Infrastruktur-Starter- und Pro-Integrationsumgebungen verwalten.
+Mit dem CLI-Tool `magento-cloud` können Entwickler und Systemadministratoren Cloud-Projekte und -Umgebungen verwalten, Routinen durchführen und Automatisierungsaufgaben ausführen. Die CLI `magento-cloud` erweitert die Funktionen und Funktionen von [[!DNL Cloud Console]](../../get-started/cloud-console.md). Nachdem Sie die `magento-cloud`-CLI auf Ihrer lokalen Workstation installiert haben, können Sie damit Ihre Adobe Commerce in den Integrationsumgebungen &quot;Cloud Infrastructure Starter&quot;und &quot;Pro&quot;verwalten.
 
-**So installieren Sie die `magento-cloud` CLI**:
+**Installieren der `magento-cloud` CLI**:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation zu dem Ordner, in dem Sie das Cloud-Projekt klonen möchten, und zu dem Speicherort der [Dateisysteminhaber](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) has _schreiben_ Zugriff.
+1. Wechseln Sie auf Ihrer lokalen Workstation zum Ordner, in dem Sie das Cloud-Projekt klonen möchten und in dem der [Dateisysteminhaber](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) über den Zugriff auf _write_ verfügt.
 
-1. Installieren Sie die `magento-cloud` CLI.
+1. Installieren Sie die CLI `magento-cloud` .
 
    ```bash
    curl -sS https://accounts.magento.cloud/cli/installer | php
    ```
 
-1. Hinzufügen `magento-cloud` CLI zum Bash-Profil.
+1. Fügen Sie `magento-cloud` CLI zum Bash-Profil hinzu.
 
    ```bash
    export PATH=$PATH:$HOME/.magento-cloud/bin
@@ -36,7 +36,7 @@ Die `magento-cloud` Das CLI-Tool ermöglicht es Entwicklern und Systemadministra
    . ~/.bash_profile
    ```
 
-1. Um die CLI zu starten, rufen Sie `magento-cloud` und geben Sie bei Aufforderung Ihre Anmeldedaten für das Cloud-Konto ein.
+1. Um die CLI zu starten, rufen Sie `magento-cloud` auf und geben Sie bei Aufforderung Ihre Anmeldedaten für das Cloud-Konto ein.
 
    ```bash
    magento-cloud
@@ -48,7 +48,7 @@ Die `magento-cloud` Das CLI-Tool ermöglicht es Entwicklern und Systemadministra
    Your email address or username:
    ```
 
-1. Überprüfen Sie die `magento-cloud` -Befehl sich in Ihrem Pfad befindet. Im folgenden Beispiel werden die verfügbaren Befehle aufgelistet.
+1. Stellen Sie sicher, dass sich der Befehl `magento-cloud` in Ihrem Pfad befindet. Im folgenden Beispiel werden die verfügbaren Befehle aufgelistet.
 
    ```bash
    magento-cloud list
@@ -56,9 +56,9 @@ Die `magento-cloud` Das CLI-Tool ermöglicht es Entwicklern und Systemadministra
 
 ## Allgemeine Befehle
 
-Adobe hat diese Befehle zum Verwalten von Cloud-Integrationsumgebungen entwickelt und empfiehlt, dass Sie die `magento-cloud` CLI aus einem Projektverzeichnis, damit Sie die `-p <project-ID>` -Parameter.
+Adobe hat diese Befehle zum Verwalten von Cloud-Integrationsumgebungen entwickelt und empfiehlt, die `magento-cloud`-CLI aus einem Projektverzeichnis auszuführen, damit Sie den Parameter `-p <project-ID>` weglassen können.
 
-Die folgende Liste der häufig verwendeten `magento-cloud` CLI-Befehle enthalten nur erforderliche Optionen. Sie können die `--help` -Option mit jedem Befehl, um weitere Informationen anzuzeigen.
+Die folgende Liste häufig verwendeter `magento-cloud` CLI-Befehle enthält nur erforderliche Optionen. Sie können die Option `--help` mit jedem Befehl verwenden, um weitere Informationen anzuzeigen.
 
 | Befehl | Beschreibung |
 | ------------------------------------ | -------------------------------------------------- |
@@ -74,11 +74,11 @@ Die folgende Liste der häufig verwendeten `magento-cloud` CLI-Befehle enthalten
 
 ## Umgebungsbefehle
 
-Umwelt _name_ unterscheidet sich von der Umgebung _ID_ nur, wenn Sie Leerzeichen oder Großbuchstaben im Umgebungsnamen verwenden. Eine Umgebungs-ID besteht aus allen Kleinbuchstaben, Zahlen und zulässigen Symbolen. Großbuchstaben in einem Umgebungsnamen werden in der ID in Kleinbuchstaben umgewandelt; Leerzeichen in einem Umgebungsnamen werden in Bindestriche umgewandelt.
+Die Umgebung _name_ unterscheidet sich nur dann von der Umgebung _ID_, wenn Sie Leerzeichen oder Großbuchstaben im Umgebungsnamen verwenden. Eine Umgebungs-ID besteht aus allen Kleinbuchstaben, Zahlen und zulässigen Symbolen. Großbuchstaben in einem Umgebungsnamen werden in der ID in Kleinbuchstaben umgewandelt; Leerzeichen in einem Umgebungsnamen werden in Bindestriche umgewandelt.
 
-Ein Umgebungsname _cannot_ -Zeichen einschließen, die für Ihre Linux-Shell oder reguläre Ausdrücke reserviert sind. Unzulässige Zeichen sind geschweifte Klammern (`{ }`), Klammern, Sternchen (`*`), spitze Klammern (`< >`), Und-Zeichen (`&`), Prozent (`%`) und anderen Zeichen.
+Der Umgebungsname _kann keine Zeichen enthalten, die für Ihre Linux-Shell oder reguläre Ausdrücke reserviert sind._ Unzulässige Zeichen sind geschweifte Klammern (`{ }`), Klammern, Sternchen (`*`), spitze Klammern (`< >`), Und-Zeichen (`&`), Prozentzeichen (`%`) und andere Zeichen.
 
-Die `magento-cloud environment:list` -Befehl zeigt Umgebungshierarchien an, während `git branch` nicht. Wenn Sie verschachtelte Umgebungen haben, verwenden Sie Folgendes:
+Der Befehl `magento-cloud environment:list` zeigt Umgebungshierarchien an, `git branch` dagegen nicht. Wenn Sie verschachtelte Umgebungen haben, verwenden Sie Folgendes:
 
 ```bash
 magento-cloud environment:list
@@ -102,9 +102,9 @@ Are you sure you want to redeploy the environment <environment-name>? [Y/n]
 
 ## Git-Befehle
 
-Sie werden feststellen, dass einige dieser Befehle Git-Befehlen ähneln. Die `magento-cloud` -Befehle stellen eine direkte Verbindung zum Git-basierten Cloud-Projekt mit zusätzlichen Funktionen her. Wenn Sie eine Verzweigung erstellen, ohne die `magento-cloud` CLI: Es wird nicht &quot;aktiviert&quot;und wird nicht automatisch erstellt, wenn Sie Änderungen an die Remote-Umgebung pushen. Die `magento-cloud` Der CLI-Befehl beinhaltet die Aktivierung.
+Sie werden feststellen, dass einige dieser Befehle Git-Befehlen ähneln. Die Befehle `magento-cloud` stellen eine direkte Verbindung zum Git-basierten Cloud-Projekt mit zusätzlichen Funktionen her. Wenn Sie eine Verzweigung ohne Verwendung der CLI `magento-cloud` erstellen, wird diese nicht &quot;aktiviert&quot;und beim Pushen von Änderungen an die Remote-Umgebung nicht automatisch erstellt. Der CLI-Befehl `magento-cloud` beinhaltet die Aktivierung.
 
-Verwenden Sie zum Erstellen einer Verzweigung die `magento-cloud` -Befehl, damit die Verzweigung aktiviert ist.
+Verwenden Sie zum Erstellen einer Verzweigung den Befehl `magento-cloud` , damit die Verzweigung aktiviert wird.
 
 ```bash
 magento-cloud environment:branch <new-name> <parent-branch>
@@ -112,8 +112,8 @@ magento-cloud environment:branch <new-name> <parent-branch>
 
 Für den Zweigstatus:
 
-- Verwenden Sie die `magento-cloud env` -Befehl, um eine Liste der Verzweigungen der Umgebung und deren Status anzuzeigen: aktiv oder inaktiv.
-- Verwenden Sie die `magento-cloud environment:activate` -Befehl zum Aktivieren einer Umgebungsverzweigung.
+- Verwenden Sie den Befehl `magento-cloud env` , um eine Liste der Verzweigungen der Umgebung und deren Status anzuzeigen: aktiv oder inaktiv.
+- Verwenden Sie den Befehl `magento-cloud environment:activate` , um einen Umgebungszweig zu aktivieren.
 
 Senden Sie eine leere Git-Bestätigung an den Trigger einer Bereitstellung. Beispiel:
 
@@ -129,7 +129,7 @@ Die folgenden Schritte zeigen die Verwendung der Befehle CLI und Git zur austaus
 
 1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
 
-1. Wechseln Sie zu [Dateisysteminhaber](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html).
+1. Wechseln Sie zum Besitzer des [Dateisystems](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html).
 
 1. Melden Sie sich bei Ihrem Projekt an.
 
@@ -151,7 +151,7 @@ Die folgenden Schritte zeigen die Verwendung der Befehle CLI und Git zur austaus
 
    >[!NOTE]
    >
-   >Es ist wichtig, die `magento-cloud environment:list` -Befehl, da er Umgebungshierarchien anzeigt, während die `git branch` nicht.
+   >Es ist wichtig, den Befehl `magento-cloud environment:list` zu verwenden, da er Umgebungshierarchien anzeigt, während der Befehl `git branch` dies nicht tut.
 
 1. Rufen Sie die Ausgangsverzweigungen ab, um den neuesten Code zu erhalten.
 
@@ -165,11 +165,11 @@ Die folgenden Schritte zeigen die Verwendung der Befehle CLI und Git zur austaus
    magento-cloud environment:checkout <environment-ID>
    ```
 
-   Git-Befehle checken nur die Git-Verzweigung aus. Die `magento-cloud checkout` -Befehl checkt den Zweig aus und wechselt zur aktiven Umgebung.
+   Git-Befehle checken nur die Git-Verzweigung aus. Der Befehl `magento-cloud checkout` checkt den Zweig aus und wechselt zur aktiven Umgebung.
 
    >[!TIP]
    >
-   >Sie können eine Umgebungsverzweigung mit der `magento-cloud environment:branch <environment-name> <parent-environment-ID>` -Befehlssyntax fest. Es kann einige zusätzliche Zeit in Anspruch nehmen, einen Umgebungs-Zweig zu erstellen und zu aktivieren.
+   >Sie können eine Umgebungsverzweigung mithilfe der Befehlssyntax `magento-cloud environment:branch <environment-name> <parent-environment-ID>` erstellen. Es kann einige zusätzliche Zeit in Anspruch nehmen, einen Umgebungs-Zweig zu erstellen und zu aktivieren.
 
 1. Verwenden Sie die Umgebungs-ID, um jeden aktualisierten Code zu Ihrem lokalen Speicherort abzurufen. Dies ist nicht erforderlich, wenn der Umgebungszweig neu ist.
 
@@ -177,7 +177,7 @@ Die folgenden Schritte zeigen die Verwendung der Befehle CLI und Git zur austaus
    git pull origin <environment-ID>
    ```
 
-1. (_Optional_) Erstellen Sie eine [Schnappschuss](../storage/snapshots.md) der Umgebung als Sicherung.
+1. (_Optional_) Erstellen Sie einen [Schnappschuss](../storage/snapshots.md) der Umgebung als Sicherung.
 
    ```bash
    magento-cloud snapshot:create -e <environment-ID>
@@ -185,9 +185,9 @@ Die folgenden Schritte zeigen die Verwendung der Befehle CLI und Git zur austaus
 
 ## CLI aktualisieren
 
-Die `magento-cloud` Die CLI sucht nach verfügbaren Updates, wenn Sie sich anmelden. Sie können jedoch mithilfe der `self:update` Befehl. Wenn ein Update verfügbar ist, befolgen Sie die Anweisungen zum Aktualisieren der CLI.
+Die Befehlszeilenschnittstelle &quot;`magento-cloud`&quot;sucht nach verfügbaren Updates, wenn Sie sich anmelden. Sie können jedoch mithilfe des Befehls `self:update` nach Aktualisierungen suchen. Wenn ein Update verfügbar ist, befolgen Sie die Anweisungen zum Aktualisieren der CLI.
 
-Wenn `magento-cloud` Die CLI ist aktuell und Sie sehen die folgende Antwort:
+Wenn Ihre `magento-cloud` -CLI aktuell ist, sehen Sie die folgende Antwort:
 
 ```bash
 magento-cloud update
