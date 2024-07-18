@@ -2,7 +2,7 @@
 title: '[!DNL ECE-Tools] package'
 description: Erfahren Sie mehr über das [!DNL ECE-Tools] Paket und wie es bei der Verwaltung und Bereitstellung von Adobe Commerce hilft.
 exl-id: 5583a685-29c5-4de5-8d2e-94cff5ff37ab
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '431'
 ht-degree: 0%
@@ -53,7 +53,7 @@ php ./vendor/bin/ece-tools env:config:show <option>
 
 Beispielausgabe für die Option `services` :
 
-```terminal
+```
 Magento Cloud Services:
 +-----------------------------------+----------------------------------+
 | Service Configuration             | Value                            |
@@ -85,7 +85,7 @@ php ./vendor/bin/ece-tools wizard:ideal-state
 
 Beispielausgabe:
 
-```terminal
+```
 Ideal state is configured
 ```
 

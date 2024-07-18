@@ -3,7 +3,7 @@ title: Erweiterungen verwalten
 description: Erfahren Sie, wie Sie Erweiterungen in Adobe Commerce in der Cloud-Infrastruktur installieren und verwalten.
 feature: Cloud, Extensions, Upgrade
 exl-id: 9c6e98ca-85da-4342-8402-d576eb382ba2
-source-git-commit: f8fb9d4d43c85f91ff87686160bcddb7cd417635
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '646'
 ht-degree: 0%
@@ -98,7 +98,7 @@ Adobe empfiehlt, in einer Entwicklungsverzweigung zu arbeiten, wenn Sie Ihrer Im
 
    Beispielantwort:
 
-   ```terminal
+   ```
    Module is enabled
    ```
 

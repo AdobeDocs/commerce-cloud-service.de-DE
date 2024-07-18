@@ -3,7 +3,7 @@ title: Cloud-Infrastrukturprojekt
 description: Lesen Sie einen Überblick über die Adobe Commerce zur Cloud-Infrastruktur [!DNL Cloud Console] und erfahren Sie, wie Sie auf die Kontoeinstellungen zugreifen.
 last-substantial-update: 2024-02-06T00:00:00Z
 exl-id: ae862898-9b4d-45ed-b370-e82cc6f99017
-source-git-commit: abe9aa36b907be8bdfdf42e6f28f1e1eac68fecf
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
@@ -81,7 +81,7 @@ Jede aktive Umgebung verfügt über eine Storefront. Wählen Sie in der oberen N
 
 Die Web-Zugriffs-URL kann Folgendes enthalten:
 
-```terminal
+```
 https://<branch>-<unique-ID>-<project-ID>.<region>.magentosite.cloud/
 ```
 

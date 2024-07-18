@@ -3,7 +3,7 @@ title: Einrichten mehrerer Websites oder Stores
 description: Erfahren Sie, wie Sie mehrere Websites oder Stores für Adobe Commerce in der Cloud-Infrastruktur konfigurieren.
 feature: Cloud, Configuration, Routes, Site Navigation
 exl-id: 16e932ef-f083-44d7-977f-0c78899e151a
-source-git-commit: 85aa54af10e7ea44adde5403b69ff03d4a0c622f
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1013'
 ht-degree: 0%
@@ -22,14 +22,14 @@ Die Einrichtung mehrerer Stores hängt davon ab, ob Sie eindeutige oder freigege
 
 Mehrere Stores mit eindeutigen Domänen:
 
-```terminal
+```
 https://first.store.com/
 https://second.store.com/
 ```
 
 Mehrere Stores mit derselben Domäne:
 
-```terminal
+```
 https://store.com/first/
 https://store.com/second/
 ```

@@ -3,7 +3,7 @@ title: Firewall-Eigenschaft
 description: Siehe Beispiele zum Konfigurieren der Firewall-Eigenschaft in der Konfigurationsdatei der Commerce-Anwendung.
 feature: Cloud, Configuration, Security
 exl-id: f169c008-c62a-41b7-a98d-cccd81c7291a
-source-git-commit: 74d88560db3b65294673a1e1827f9cea098d707a
+source-git-commit: a8ecebc87bfae5deaf0fc7ff3e7dd3b255fe3f24
 workflow-type: tm+mt
 source-wordcount: '844'
 ht-degree: 0%
@@ -32,7 +32,7 @@ magento-cloud p:curl --project PROJECT_ID /settings | grep -i outbound
 
 Sofern Sie nicht `deny` für Ihre Richtlinie angefordert haben, sollte der Befehl zeigen, dass Ihre Richtlinie auf `allow` festgelegt ist:
 
-```terminal
+```json
 "outbound_restrictions_default_policy": "allow"
 ```
 
@@ -157,7 +157,7 @@ Die Option `ips` ermöglicht eine Liste von IP-Adressen in der CIDR-Notation. Si
 
 Um eine einzelne IP-Adresse anzugeben, fügen Sie das Präfix `/32` CIDR am Ende Ihrer IP-Adresse hinzu:
 
-```terminal
+```
 172.217.11.174/32  # google.com
 ```
 
@@ -189,7 +189,7 @@ awk '($5 ~/query/)' /var/log/dns.log | awk '{print $6}' | sort | uniq -c | sort 
 
 Dieser Befehl zeigt auch DNS-Anfragen an, die von Ihren Egress-Filterregeln vorgenommen, aber blockiert wurden. Die Ausgabe zeigt nicht an, welche Domänen blockiert wurden, sondern nur, dass Anforderungen gestellt wurden. Die Ausgabe zeigt keine Anfragen an, die mithilfe einer IP-Adresse gestellt wurden.
 
-```terminal
+```
 Example output:
 
 97 magento.com

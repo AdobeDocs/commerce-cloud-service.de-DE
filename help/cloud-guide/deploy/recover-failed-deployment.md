@@ -3,7 +3,7 @@ title: Wiederherstellen nach Komponentenfehler
 description: Erfahren Sie, wie Sie wiederherstellen können, wenn eine Komponente in Adobe Commerce in der Cloud-Infrastruktur nicht ordnungsgemäß bereitgestellt werden kann.
 feature: Cloud, Deploy
 exl-id: 4855be0c-6883-4ab1-a364-316d10e97250
-source-git-commit: b44d97f82ef09288807c648010202422c9ac04eb
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '220'
 ht-degree: 0%
@@ -59,7 +59,7 @@ Um die vorherige Bereitstellung zu bereinigen, identifizieren Sie die Komponente
 
    Wenn die folgende Meldung angezeigt wird, müssen Sie nichts weiter unternehmen:
 
-   ```terminal
+   ```
    Package "<name>:<version>" listed for update is not installed. Ignoring.
    ```
 

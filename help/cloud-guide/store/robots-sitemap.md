@@ -3,7 +3,7 @@ title: Sitemap- und Suchmaschinenroboter hinzufügen
 description: Erfahren Sie, wie Sie Adobe Commerce in der Cloud-Infrastruktur Sitemap- und Suchmaschinenrobots hinzufügen.
 feature: Cloud, Configuration, Search, Site Navigation
 exl-id: b98f43fa-1878-466d-8ea0-1e7207af8b60
-source-git-commit: ee1db75c73c086e0ea54e1a7591ca7f2b4d2b36d
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '517'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Der Versuch, die Datei `sitemap.xml` zu generieren und in den Stammordner zu schreiben, führt zu folgendem Fehler:
 
-```terminal
+```
 Please make sure that "/" is writable by the web-server.
 ```
 

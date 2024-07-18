@@ -3,7 +3,7 @@ title: Smart-Assistenten
 description: Erfahren Sie, wie Sie mithilfe von intelligenten Assistenten bewerten können, ob Ihr Adobe Commerce on Cloud-Infrastrukturprojekt Best Practices für die Bereitstellung befolgt.
 feature: Cloud, Build, Deploy, SCD
 exl-id: eb79431c-8835-4ae4-b453-9c4932c5d5ac
-source-git-commit: 225fba1acfd8b3ce4d7ce989c7851e7b0b218680
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '322'
 ht-degree: 0%
@@ -36,13 +36,13 @@ Beispielsweise können Sie überprüfen, ob Ihre Konfiguration die On-Demand-Fun
 
 Eine erfolgreiche Konfiguration gibt Folgendes zurück:
 
-```terminal
+```
 SCD on-demand is enabled
 ```
 
 Eine fehlgeschlagene Konfiguration gibt zurück:
 
-```terminal
+```
 SCD on-demand is disabled
 ```
 
@@ -50,7 +50,7 @@ SCD on-demand is disabled
 
 Die _ideale_ -Konfiguration für Ihr Cloud-Projekt trägt dazu bei, Bereitstellungsausfälle zu minimieren, indem der Cache erwärmt und statische Inhalte auf Anforderung des Benutzers generiert werden. Dieser Assistent wird während der Bereitstellung automatisch ausgeführt. Wenn Ihre Cloud nicht für diesen _idealen Status_ konfiguriert ist, erhalten Sie eine Nachricht ähnlich der folgenden:
 
-```terminal
+```
 - SCD on build is not configured
 - Post-deploy hook is not configured
 - Skip HTML minification is disabled
@@ -81,6 +81,6 @@ Basierend auf der Ausgabe müssen Sie die folgenden Korrekturen an Ihrer Konfigu
 
 1. Übernehmen Sie die Codeänderungen und führen Sie den Test erneut aus. Wenn Ihre Konfiguration _ideal_ ist, erhalten Sie die folgende Meldung.
 
-   ```terminal
+   ```
    Ideal state is configured
    ```

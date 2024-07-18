@@ -4,7 +4,7 @@ description: Erfahren Sie, wie Sie Ihr Adobe Commerce-Projekt in die Cloud-Infra
 feature: Cloud, Integration
 last-substantial-update: 2023-05-25T00:00:00Z
 exl-id: 5305452f-4c8d-438c-ac78-e2e1ec2f8cd9
-source-git-commit: 4d32fc596064f01eaefe3ee509a655837fa846de
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '924'
 ht-degree: 0%
@@ -79,7 +79,7 @@ Klonen Sie Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur von einer beste
 
    Erwartete Antwort:
 
-   ```terminal
+   ```
    origin git@github.com:<user-name>/<repo-name>.git (fetch)
    origin git@github.com:<user-name>/<repo-name>.git (push)
    ```
@@ -145,7 +145,7 @@ magento-cloud integration:add --help
 
 1. Kopieren Sie die **Payload-URL**, die von der Ausgabe der Ausgabe angezeigt wird.
 
-   ```terminal
+   ```
    Created integration <integration-ID> (type: github)
    Repository: myUserName/myrepo
    Build PRs: yes

@@ -3,7 +3,7 @@ title: Backup-Management
 description: Erfahren Sie, wie Sie ein Backup für Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur manuell erstellen und wiederherstellen.
 feature: Cloud, Paas, Snapshots, Storage
 exl-id: 1cb00db7-2375-4761-9c07-1e20a74859e0
-source-git-commit: 4c3f3f2775e8327476233520e52b589f7264786f
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '711'
 ht-degree: 0%
@@ -51,7 +51,7 @@ Sie können eine manuelle Sicherung einer aktiven Starter-Umgebung und einer Int
 
    Beispielantwort:
 
-   ```terminal
+   ```
    Creating a snapshot of develop-branch
    Waiting for the activity ID (User created a backup of develop-branch):
    
@@ -70,7 +70,7 @@ Sie können eine manuelle Sicherung einer aktiven Starter-Umgebung und einer Int
 
    Die Liste gibt Informationen zum Snapshot-Status zurück:
 
-   ```terminal
+   ```
    Snapshots on the project (project-id), environment develop-branch (type: development):
    +---------------------------+----------------------+------------+
    | Created                   | Snapshot ID          | Restorable |
@@ -116,7 +116,7 @@ Die Wiederherstellungszeiten variieren je nach Größe Ihrer Datenbank:
 
    Die Liste gibt Informationen zu den verfügbaren Momentaufnahmen zurück:
 
-   ```terminal
+   ```
    Snapshots on the project (project-id), environment develop-branch (type: development):
    +---------------------------+----------------------+------------+
    | Created                   | Snapshot ID          | Restorable |

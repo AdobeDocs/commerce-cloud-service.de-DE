@@ -3,7 +3,7 @@ title: Speicherkonfigurationsverwaltung
 description: Erfahren Sie, wie Sie Store-Konfigurationseinstellungen in allen Adobe Commerce-Umgebungen in Cloud-Infrastrukturumgebungen verwalten und synchronisieren.
 feature: Cloud, Configuration, SCD
 exl-id: f2dd876d-24ee-4d47-b9ac-44fcf77b61b5
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1439'
 ht-degree: 0%
@@ -162,7 +162,7 @@ Wenn Sie Ihre Umgebung über den Admin ändern und den Befehl erneut ausführen,
 
 Kopien der ursprünglichen `app/etc/env.php` - und `app/etc/config.php` -Dateien wurden während des Bereitstellungsprozesses erstellt und im selben Ordner gespeichert. Im Folgenden werden die BAK (Backup-Dateien) und PHP (Originaldateien) im selben Ordner `app/etc` dargestellt:
 
-```terminal
+```
 ...
 config.php.bak
 di.xml
@@ -192,7 +192,7 @@ env.php
 
    Beispielantwort:
 
-   ```terminal
+   ```
    The list of backup files:
    app/etc/env.php
    app/etc/config.php

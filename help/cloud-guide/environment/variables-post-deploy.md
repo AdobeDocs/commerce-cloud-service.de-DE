@@ -1,18 +1,18 @@
 ---
-title: Post stellt Variablen bereit
+title: Variablen nach der Bereitstellung
 description: Siehe die Liste der Umgebungsvariablen, die Aktionen in der Adobe Commerce in der Cloud-Infrastruktur nach der Bereitstellung steuern.
 feature: Cloud, Configuration, Cache
 recommendations: noDisplay, catalog
 role: Developer
 exl-id: e460335f-cd2b-4c98-b1ff-32504599b33d
-source-git-commit: 8b02757591c4e8f607e936de4eda74d76953d9b7
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '511'
 ht-degree: 0%
 
 ---
 
-# Post stellt Variablen bereit
+# Variablen nach der Bereitstellung
 
 Die folgenden _Variablen nach der Bereitstellung_ steuern Aktionen in der Phase nach der Bereitstellung und können Werte von den [globalen Variablen](variables-global.md) übernehmen und überschreiben. Fügen Sie diese Variablen in die `post-deploy` -Phase der `.magento.env.yaml`-Datei ein:
 
@@ -45,7 +45,7 @@ stage:
 
 Nachdem Sie die Seiten angegeben haben, auf denen Ihre Änderungen getestet und übertragen werden sollen, wird der Test _Zeit bis Erstbyte_ in der Phase nach der Bereitstellung ausgeführt und die Ergebnisse für jeden Pfad zum Cloud-Protokoll werden veröffentlicht:
 
-```terminal
+```
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.313s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/customer/account/create","status":200}
 [2019-06-20 20:42:22] INFO: TTFB test result: 0.408s {"url":"https://staging-tkyicst-xkmwgjkwmwfuk.us-4.magentosite.cloud/checkout/cart","status":200}
 ```
@@ -93,7 +93,7 @@ Passen Sie die Liste der Seiten an, die zum Vorausfüllen des Caches in der Phas
 
 - **multiple pages** - Verwenden Sie das folgende Format, um mehrere Seiten gemäß einem bestimmten Muster für reguläre Ausdrücke zwischenzuspeichern:
 
-  ```terminal
+  ```
   <entity_type>:<pattern|url|product_sku>:<store_id|store_code>
   ```
 

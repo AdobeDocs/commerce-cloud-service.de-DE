@@ -3,7 +3,7 @@ title: Protokolle anzeigen und verwalten
 description: Machen Sie sich mit den in der Cloud-Infrastruktur verfügbaren Protokolldateitypen und deren Auffindbarkeit vertraut.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 86af69eed16e8fe464de93bd0f33cfbfd4ed8f49
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 0%
@@ -44,7 +44,7 @@ magento-cloud ssh -p <project-ID> -e <environment-ID> --all
 
 Beispielantwort:
 
-```terminal
+```
 1.ent-project-environment-id@ssh.region.magento.cloud
 2.ent-project-environment-id@ssh.region.magento.cloud
 3.ent-project-environment-id@ssh.region.magento.cloud
@@ -84,7 +84,7 @@ Nachdem Sie Änderungen an Ihre Umgebung gesendet haben, können Sie die Protoko
 
 Überprüfen Sie die Zeitstempel für Protokolleinträge, überprüfen Sie die Protokolle und suchen Sie nach den Protokollen für eine bestimmte Bereitstellung. Im Folgenden finden Sie ein gekürztes Beispiel für die Protokollausgabe, die Sie zur Fehlerbehebung verwenden können:
 
-```terminal
+```
 Re-deploying environment project-integration-ID
   Executing post deploy hook for service `mymagento`
     [2019-01-03 19:44:11] NOTICE: Starting post-deploy.
@@ -129,7 +129,7 @@ magento-cloud log -e <environment-ID> deploy
 
 Beispielantwort:
 
-```terminal
+```
 Reading log file projectID-branchname-ID--mymagento@ssh.zone.magento.cloud:/var/log/'deploy.log'
 
 [2023-04-24 18:58:03.080678] Launching command 'b'php ./vendor/bin/ece-tools run scenario/deploy.xml\n''.
@@ -153,7 +153,7 @@ magento-cloud ssh -e <environment-ID> "./vendor/bin/ece-tools error:show"
 
 Beispielantwort:
 
-```terminal
+```
 errorCode: 1001
 stage: build
 step: validate-config
@@ -187,19 +187,19 @@ Die meisten Fehlermeldungen enthalten eine Beschreibung und eine empfohlene Akti
 | Protokolldatei | Starter- und Pro-Integration | Beschreibung |
 | ------------------- | --------------------------- | ------------------------------------------------- |
 | **Protokoll bereitstellen** | `/var/log/deploy.log` | Aktivität vom [Bereitstellungs-Hook](../application/hooks-property.md). |
-| **Post-deploy log** | `/var/log/post_deploy.log` | Aktivität aus dem [ Post-Deploy-Hook](../application/hooks-property.md). |
+| **Protokoll nach der Bereitstellung** | `/var/log/post_deploy.log` | Aktivität aus dem [ Post-Deploy-Hook](../application/hooks-property.md). |
 | **Cron log** | `/var/log/cron.log` | Ausgabe aus Cron-Aufträgen. |
 | **Nginx-Zugriffsprotokoll** | `/var/log/access.log` | Beim Start von Nginx werden HTTP-Fehler für fehlende Verzeichnisse und ausgeschlossene Dateitypen angezeigt. |
 | **Nginx-Fehlerprotokoll** | `/var/log/error.log` | Startmeldungen, die für das Debugging von Konfigurationsfehlern im Zusammenhang mit Nginx nützlich sind. |
 | **PHP-Zugriffsprotokoll** | `/var/log/php.access.log` | Anforderungen an den PHP-Dienst. |
 | **PHP FPM log** | `/var/log/app.log` | |
 
-Für Staging- und Produktionsumgebungen für Pro sind die Protokolle &quot;Bereitstellung&quot;, &quot;Post-Bereitstellung&quot;und &quot;Cron&quot;nur auf dem ersten Knoten im Cluster verfügbar:
+Für Staging- und Produktionsumgebungen für Pro sind die Protokolle Bereitstellung, Bereitstellung und Cron nur auf dem ersten Knoten im Cluster verfügbar:
 
 | Protokolldatei | Pro Staging | Pro Produktion |
 | ------------------- | --------------------------------------------------- | ----------------------------------------------- |
 | **Protokoll bereitstellen** | Nur erster Knoten:<br>`/var/log/platform/<project-ID>_stg/deploy.log` | Nur erster Knoten:<br>`/var/log/platform/<project-ID>/deploy.log` |
-| **Post-deploy log** | Nur erster Knoten:<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | Nur erster Knoten:<br>`/var/log/platform/<project-ID>/post_deploy.log` |
+| **Protokoll nach der Bereitstellung** | Nur erster Knoten:<br>`/var/log/platform/<project-ID>_stg/post_deploy.log` | Nur erster Knoten:<br>`/var/log/platform/<project-ID>/post_deploy.log` |
 | **Cron log** | Nur erster Knoten:<br>`/var/log/platform/<project-ID>_stg/cron.log` | Nur erster Knoten:<br>`/var/log/platform/<project-ID>/cron.log` |
 | **Nginx-Zugriffsprotokoll** | `/var/log/platform/<project-ID>_stg/access.log` | `/var/log/platform/<project-ID>/access.log` |
 | **Nginx-Fehlerprotokoll** | `/var/log/platform/<project-ID>_stg/error.log` | `/var/log/platform/<project-ID>/error.log` |
@@ -210,7 +210,7 @@ Für Staging- und Produktionsumgebungen für Pro sind die Protokolle &quot;Berei
 
 Die Anwendungsprotokolle werden einmal täglich komprimiert und archiviert und ein Jahr lang aufbewahrt. Die komprimierten Protokolle werden mit einer eindeutigen ID benannt, die dem `Number of Days Ago + 1` entspricht. Beispielsweise wird in Pro-Produktionsumgebungen ein PHP-Zugriffsprotokoll für 21 Tage in der Vergangenheit gespeichert und wie folgt benannt:
 
-```terminal
+```
 /var/log/platform/<project-ID>/php.access.log.22.gz
 ```
 
@@ -218,7 +218,7 @@ Die archivierten Protokolldateien werden immer in dem Ordner gespeichert, in dem
 
 >[!NOTE]
 >
->Die Protokolldateien **Bereitstellen** und **Post-deploy** werden nicht gedreht und archiviert. Der gesamte Bereitstellungsverlauf wird in diese Protokolldateien geschrieben.
+>Die Protokolldateien **Bereitstellen** und **Nach der Bereitstellung** werden nicht gedreht und archiviert. Der gesamte Bereitstellungsverlauf wird in diese Protokolldateien geschrieben.
 
 ## Dienstprotokolle
 

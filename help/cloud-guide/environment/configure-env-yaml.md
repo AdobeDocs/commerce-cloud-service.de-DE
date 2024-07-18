@@ -4,7 +4,7 @@ description: Erfahren Sie, wie Sie mithilfe von Umgebungsvariablen Build- und Be
 feature: Cloud, Build, Configuration, Deploy, SCD
 role: Developer
 exl-id: 66e257e2-1eca-4af5-9b56-01348341400b
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '697'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Die folgenden Themen enthalten detaillierte Definitionen aller Variablen, die Si
 - [Global](variables-global.md)—Variablen steuern Aktionen in jeder Phase: Erstellen, Bereitstellen und Nach der Bereitstellung
 - [Build](variables-build.md)—Variablen steuern Build-Aktionen
 - [Bereitstellen](variables-deploy.md)—Variablen steuern die Bereitstellungsaktionen
-- [Post-deploy](variables-post-deploy.md)—Variablen steuern Aktionen nach der Bereitstellung
+- [Nach der Bereitstellung](variables-post-deploy.md)—Variablen steuern Aktionen nach der Bereitstellung
 
 ### Konfigurationsdatei über CLI erstellen
 
@@ -103,7 +103,7 @@ php ./vendor/bin/ece-tools cloud:config:validate
 
 Die folgende Beispielantwort enthält eine Liste der zu korrigierenden Elemente:
 
-```terminal
+```
 Environment configuration is not valid. Correct the following items in your .magento.env.yaml file:
 The SCD_THREADS variable contains an invalid value of type string. Use the following type: integer.
 The SCD_STRATEGY variable contains an invalid value fast. Use one of the available value options: compact, quick, standard.
@@ -136,7 +136,7 @@ stage:
 
 Wenn ein Fehler aufgrund eines unerwarteten Werts in der Konfigurationsdatei `.magento.env.yaml` auftritt, erhalten Sie eine Fehlermeldung. Beispielsweise enthält die folgende Fehlermeldung eine Liste der vorgeschlagenen Änderungen an jedem Element mit einem unerwarteten Wert und manchmal gültige Optionen:
 
-```terminal
+```
 - Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:
   Item CRON_CONSUMERS_RUNNER is not supposed to be in stage build. Please move it to one of possible stages: global, deploy
   Item SKIP_SCD has unexpected type string. Please use one of next types: boolean

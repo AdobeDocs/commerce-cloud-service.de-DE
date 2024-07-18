@@ -3,7 +3,7 @@ title: Upgrade des Projekts zur Verwendung der ECE-Tools
 description: Erfahren Sie, wie Sie Ihr Adobe Commerce auf das Cloud-Infrastrukturprojekt aktualisieren, um das ECE-Tools-Paket zu verwenden und die neuesten Fehlerbehebungen und Funktionen zu nutzen.
 feature: Cloud, Install
 exl-id: 820cca84-2817-4881-829f-ebb78400d8c7
-source-git-commit: bcdb59f0d2a17e55e8b0479ee69fac06c710638f
+source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
 workflow-type: tm+mt
 source-wordcount: '365'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Für dieses Projekt-Upgrade-Verfahren müssen Sie die `magento/magento-cloud-met
 
 Für jede Adobe Commerce-Version sind unterschiedliche Einschränkungen erforderlich, die auf Folgendes basieren:
 
-```terminal
+```
 >=current_version <next_version
 ```
 
@@ -105,7 +105,7 @@ Um Ihr Projekt für die Verwendung des `ece-tools`-Pakets zu aktualisieren, müs
 
 1. Fügen Sie die Codeänderungen hinzu und übertragen Sie sie. In diesem Beispiel wurden die folgenden Dateien aktualisiert:
 
-   ```terminal
+   ```
    .magento.app.yaml
    composer.json
    composer.lock
