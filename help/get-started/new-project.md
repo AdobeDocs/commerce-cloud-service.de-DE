@@ -4,9 +4,9 @@ description: Erfahren Sie, wie Sie einen Adobe Customer Technical Advisor für d
 recommendations: noDisplay, catalog
 role: Admin
 exl-id: cfb354b0-c255-4b6e-94aa-c5a6bf7230d6
-source-git-commit: 89c57a486545d6165e0407f913f4fa4cf6c95abe
+source-git-commit: 374cbe4a119b43ab446905fd6b9e51840094ce61
 workflow-type: tm+mt
-source-wordcount: '728'
+source-wordcount: '756'
 ht-degree: 0%
 
 ---
@@ -31,6 +31,8 @@ Beispiele für Produktions- und Staging-Domänen:
 - `mcstaging.your-store.com`
 
 Weitere Anleitungen zu mehreren oder eindeutigen Domänen finden Sie unter [Einrichten mehrerer Websites oder Stores](../cloud-guide/store/multiple-sites.md) im Handbuch _Commerce on Cloud Infrastructure_ .
+
+Weitere Informationen finden Sie unter [Mehrere Schnellkonten und zugewiesene Domänen](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/cdn/fastly#multiple-fastly-accounts-and-assigned-domains) , wenn Sie über ein vorhandenes Fastly-Konto verfügen, das die auf Ihrer Adobe Commerce-Site verwendeten Apex- und Subdomänen verknüpft.
 
 ## Transaktions-E-Mail-Domain
 
