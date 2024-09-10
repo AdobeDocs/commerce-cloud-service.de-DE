@@ -4,9 +4,9 @@ description: Erfahren Sie, wie Sie auf Ihr New Relic-Konto zugreifen und den Zug
 feature: Cloud, Observability
 role: Admin
 exl-id: ee639e2e-4074-4384-8f68-152bc3bac93b
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 1fc488d7e13952ad70d4c864327899f38ea48af1
 workflow-type: tm+mt
-source-wordcount: '833'
+source-wordcount: '660'
 ht-degree: 0%
 
 ---
@@ -17,20 +17,9 @@ Wenn Adobe Ihr Cloud-Infrastrukturprojekt bereitstellt, erhält der Lizenzinhabe
 
 ## Verwalten des Benutzerzugriffs
 
-Einem New Relic-Konto kann nur eine Person die Eigentümerrolle zugewiesen werden. Wenn Sie den Kontoinhaber ändern müssen, weisen Sie die Administratorrolle dem aktuellen Eigentümer zu und weisen Sie dann die Eigentümerrolle einem anderen Benutzer zu. Anweisungen finden Sie unter [Aktualisieren des Kontoinhabers](https://docs.newrelic.com/docs/accounts/original-accounts-billing/original-users-roles/users-roles-original-user-model/) in der Dokumentation zu _New Relic_ .
-
-Richtlinien für die Verwaltung des New Relic-Zugriffs:
-
-- Projekteigentümer und Admin-Benutzer können Benutzer zum New Relic-Konto hinzufügen und daraus entfernen.
-- Erstellen Sie nicht mehr als fünf volle **Benutzer**.
-- Gewähren Sie nur uneingeschränkten Zugriff für Benutzer, die Zugriff auf das vollständige Funktionssatz benötigen.
-- Es gibt keine spezielle Anleitung für freie **Eingeschränkte** Benutzer.
-
->[!TIP]
+>[!NOTE]
 >
->Bevor Sie einem Benutzer die Eigentümerrolle zuweisen, überprüfen Sie, ob der Benutzer im New Relic-Konto für Adobe Commerce in der Cloud-Infrastruktur vorhanden ist. Wenn Sie den Benutzer zu diesem Konto hinzufügen müssen und ein bestehender Kontoinhaber oder -administrator nicht helfen kann, kann jeder Benutzer mit Zugriff auf das [Adobe Partnereigentümerkonto](https://account.newrelic.com/accounts/1311131/users) für New Relic Benutzer im Namen des Kunden hinzufügen.
-
-Fügen Sie Ihrem New Relic-Konto mindestens einen **Admin** -Benutzer hinzu, der alle Zugriffs-, Integrations- und Tool-Verwendungen verwalten kann.
+>Gewähren Sie nur uneingeschränkten Zugriff für Benutzer, die Zugriff auf das vollständige Funktionssatz benötigen.
 
 **So greifen Sie auf die Benutzerverwaltung in New Relic zu:**
 
