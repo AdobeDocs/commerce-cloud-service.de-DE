@@ -4,9 +4,9 @@ description: Erfahren Sie, wie Sie Ihr Adobe Commerce-Projekt in die Cloud-Infra
 feature: Cloud, Integration
 last-substantial-update: 2023-05-25T00:00:00Z
 exl-id: 5305452f-4c8d-438c-ac78-e2e1ec2f8cd9
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: b162faadf114423a7da23ecf94c96eccbcaeb72b
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '949'
 ht-degree: 0%
 
 ---
@@ -108,7 +108,7 @@ Sie können die CLI-Aufforderungen mit `magento-cloud integration:add` schrittwe
 
 | Option | Erforderlich? | Beschreibung |
 | ----------------------- | --------- | --------------------------------- |
-| `--base-url` | Ja | Die Basis-URL der Serverinstallation, die `https://github.com/` oder ein benutzerdefinierter Wert sein kann. Lassen Sie diese Option weg, wenn Ihr Repository mit öffentlichem GitHub gehostet wird. |
+| `--base-url` | Ja | Die Basis-URL der Serverinstallation, die `https://github.com/` oder ein benutzerdefinierter Wert sein kann. Lassen Sie diese Option weg, wenn Ihr Repository mit öffentlichem GitHub gehostet wird oder wenn Ihr Repository nicht auf privaten Servern gehostet wird. Lassen Sie diese Option weg, wenn Ihre Repository-URL `https://github.com/{account}/{repository-name}` ähnelt. Dies kann Fehler wie `Unable to connect to GitHub: repository not found` verursachen. |
 | `--token` | Ja | Das persönliche Zugriffstoken, das Sie für GitHub generiert haben |
 | `--repository` | Ja | Der Repository-Name: `owner-or-organisation/repository` |
 | `--build-pull-requests` | Optional | Weist Adobe Commerce in der Cloud-Infrastruktur nach dem Zusammenführen einer Pull-Anforderung (`true` standardmäßig) die Bereitstellung an |
