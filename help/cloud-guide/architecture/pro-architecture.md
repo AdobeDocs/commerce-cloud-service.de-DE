@@ -4,9 +4,9 @@ description: Erfahren Sie mehr über die Umgebungen, die von der Pro-Architektur
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: eccf69d792f5f8bbd32fb24ac731fffa1eeb91ba
+source-git-commit: 66b1f86c8c674d0de4e2895e328a5a850eadf903
 workflow-type: tm+mt
-source-wordcount: '1511'
+source-wordcount: '1559'
 ht-degree: 0%
 
 ---
@@ -167,6 +167,10 @@ Aufgrund der einzigartigen, redundanten Hardware kann Adobe drei Gateway-Server 
 Adobe Commerce on Cloud Infrastructure verwendet eine Hochverfügbarkeitsarchitektur, die jedes Pro-Projekt in drei separaten AWS- oder Azure-Verfügbarkeitszonen repliziert, wobei jede Zone über ein eigenes Rechenzentrum verfügt. Zusätzlich zu dieser Redundanz erhalten die Pro-Staging- und Produktionsumgebungen regelmäßige Live-Backups, die für die Verwendung bei _katastrophalen Fehlern_ entwickelt wurden.
 
 **Automatische Sicherungen** enthalten persistente Daten von allen laufenden Diensten, wie z. B. der MySQL-Datenbank und Dateien, die auf den bereitgestellten Volumes gespeichert sind. Die Sicherungen werden in verschlüsselter Elastic Block Storage (EBS) in derselben Region wie die Produktionsumgebung gespeichert. Die automatischen Sicherungen sind nicht öffentlich zugänglich, da sie in einem separaten System gespeichert sind.
+
+>[!NOTE]
+>
+>Die bereitgestellten Volumes enthalten/beziehen sich nur auf die [beschreibbaren Reittiere](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/configure/app/properties/properties#mounts) und enthalten nicht alle Ihre `app/` Verzeichnisse. Wie bei den anderen Dateien werden sie vom [Build- und Bereitstellungsprozess](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/architecture/pro-develop-deploy-workflow#deployment-workflow) erstellt/generiert und Sie müssen auch Ihr Git-Repository auf die verbleibenden Dateien überprüfen.
 
 {{pro-backups}}
 
