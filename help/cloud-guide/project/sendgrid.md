@@ -2,9 +2,9 @@
 title: SendGrid-E-Mail-Dienst
 description: Erfahren Sie mehr über den SendGrid-E-Mail-Dienst für Adobe Commerce in der Cloud-Infrastruktur und wie Sie Ihre DNS-Konfiguration testen können.
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 1226be333deb1b1da402b4c0d2e141f9be1eb93b
 workflow-type: tm+mt
-source-wordcount: '1090'
+source-wordcount: '1128'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,10 @@ DKIM ist eine E-Mail-Authentifizierungstechnologie, mit der Internet Service Pro
 ### Sender- und Domain-Authentifizierung
 
 Damit SendGrid Transaktions-E-Mails in Ihrem Namen von Pro Production- oder Staging-Umgebungen sendet, müssen Sie Ihre DNS-Einstellungen so konfigurieren, dass die drei DNS-Einträge der SendGrid-Subdomain enthalten sind. Jedem SendGrid-Konto wird ein eindeutiger `TXT` -Datensatz zugewiesen, der zum Authentifizieren ausgehender E-Mails verwendet wird.
+
+>[!TIP]
+>
+>Stellen Sie sicher, dass Sie die **[!UICONTROLSE-Mail-Adressen speichern]** mit der entsprechenden Domäne in **[!UICONTROL Stores > Configuration > General > Store Email Addresses]** konfigurieren. Die Domänenauthentifizierung erfolgt für die E-Mail-Adresse des Absenders. Wenn die Standardeinstellung (`example.com`) konfiguriert ist, werden die E-Mails von `example.com` vom Sendgrid blockiert.
 
 **So aktivieren Sie die Domänenauthentifizierung**:
 
