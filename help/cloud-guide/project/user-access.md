@@ -6,9 +6,9 @@ feature: Cloud, Roles/Permissions
 last-substantial-update: 2023-06-27T00:00:00Z
 topic: Security
 exl-id: 3357a3ea-bf86-4a65-95d1-6b24f1152248
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 5e4be034a392716ea55e2878d336cb9ecac1e052
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1459'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Adobe Commerce-Projekte zur Cloud-Infrastruktur nutzen rollenbasierten Zugriff. Auf Projektebene stehen zwei Rollen zur Verfügung:
 
-- **Projektadministrator**: Schreiben Sie Zugriff auf alle Projektumgebungen und können Benutzer verwalten, Code pushen und Projekteinstellungen aktualisieren.
+- **Projektadministrator**: Schreiben Sie Zugriff auf alle Projektumgebungen und können Benutzer verwalten, Code pushen und Projekteinstellungen aktualisieren. (Zuvor als **Super Admin** bezeichnet)
 - **Projekt-Viewer**: Schreibgeschützter Zugriff auf alle Projektumgebungen.
 
 Projekt-Viewer können in keiner Umgebung Aufgaben ausführen. Sie können jedoch Projekt-Viewern Schreibzugriff auf einen bestimmten Umgebungstyp gewähren.
