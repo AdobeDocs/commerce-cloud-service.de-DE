@@ -3,9 +3,9 @@ title: Eigenschaften
 description: Verwenden Sie die Eigenschaftsliste als Referenz bei der Konfiguration der [!DNL Commerce] Anwendung für die Erstellung und Bereitstellung in der Cloud-Infrastruktur.
 feature: Cloud, Configuration, Build, Deploy, Roles/Permissions, Storage
 exl-id: 58a86136-a9f9-4519-af27-2f8fa4018038
-source-git-commit: 99272d08a11f850a79e8e24857b7072d1946f374
+source-git-commit: 1d671d7d2b9ef8742f50b23aa56020d82c701fa4
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '816'
 ht-degree: 0%
 
 ---
@@ -141,6 +141,8 @@ Die empfohlene Mindestgröße beträgt 256 MB. Wenn der Fehler `UserError: Error
 >[!NOTE]
 >
 >Bei Staging- und Produktionsumgebungen für Pro müssen Sie [ein Adobe Commerce-Support-Ticket senden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket), um die Konfiguration `mounts` und `disk` für Ihre Anwendung zu aktualisieren. Geben Sie beim Senden des Tickets die erforderlichen Konfigurationsänderungen an und fügen Sie eine aktualisierte Version Ihrer `.magento.app.yaml` -Datei hinzu.
+>
+>Es ist nicht möglich, den Festplattenspeicher in Staging oder Produktion vorübergehend zu erhöhen. Dieser Vorgang kann nicht rückgängig gemacht werden.
 
 ## `relationships`
 
