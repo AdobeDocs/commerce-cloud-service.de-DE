@@ -2,9 +2,9 @@
 title: SendGrid-E-Mail-Dienst
 description: Erfahren Sie mehr über den SendGrid-E-Mail-Dienst für Adobe Commerce in der Cloud-Infrastruktur und wie Sie Ihre DNS-Konfiguration testen können.
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: 1226be333deb1b1da402b4c0d2e141f9be1eb93b
+source-git-commit: b5c8dc062a940e9e202d9bd4cca6901b07109e07
 workflow-type: tm+mt
-source-wordcount: '1128'
+source-wordcount: '1273'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ DKIM ist eine E-Mail-Authentifizierungstechnologie, mit der Internet Service Pro
 
 >[!WARNING]
 >
->Die SendGrid DKIM-Signaturen und die Unterstützung der Domain-Authentifizierung sind nur für Pro-Projekte verfügbar, nicht aber für Starter-Projekte. Ausgehende Transaktions-E-Mails werden daher wahrscheinlich durch Spam-Filter gekennzeichnet. Die Verwendung von DKIM verbessert die Zustellrate als authentifizierter E-Mail-Absender. Um die Zustellrate der Nachrichten zu verbessern, können Sie von Starter auf Pro aktualisieren oder Ihren eigenen SMTP-Server oder E-Mail-Versand-Dienstleister verwenden. Siehe [E-Mail-Verbindungen konfigurieren](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) im _Leitfaden für Admin-Systeme_.
+>Die SendGrid DKIM-Signaturen und die Unterstützung der Domänenauthentifizierung sind nur in der Produktions- und Staging-Umgebung für Pro-Projekte verfügbar, jedoch nicht in allen Starter-Umgebungen. Ausgehende Transaktions-E-Mails werden daher wahrscheinlich durch Spam-Filter gekennzeichnet. Die Verwendung von DKIM verbessert die Zustellrate als authentifizierter E-Mail-Absender. Um die Zustellrate der Nachrichten zu verbessern, können Sie von Starter auf Pro aktualisieren oder Ihren eigenen SMTP-Server oder E-Mail-Versand-Dienstleister verwenden. Siehe [E-Mail-Verbindungen konfigurieren](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/communications/email-communications) im _Leitfaden für Admin-Systeme_.
 
 ### Sender- und Domain-Authentifizierung
 
@@ -137,3 +137,13 @@ Es gibt keine festen Beschränkungen für die Anzahl der E-Mails, die in der Pro
 ### Reputation beim E-Mail-Versand
 
 Die Reputation einer E-Mail-Nachricht ist eine Punktzahl, die von einem Internet Service Provider (ISP) einem Unternehmen zugewiesen wird, das E-Mail-Nachrichten sendet. Je höher der Wert ist, desto wahrscheinlicher ist es, dass ein ISP Nachrichten an den Posteingang eines Empfängers sendet. Wenn die Punktzahl unter eine bestimmte Stufe fällt, kann der ISP Nachrichten an den Spam-Ordner der Empfänger weiterleiten oder Nachrichten sogar vollständig zurückweisen. Die Reputationsbewertung wird durch verschiedene Faktoren bestimmt, z. B. einen Durchschnittswert von 30 Tagen für Ihre IP-Adressen im Vergleich zu anderen IP-Adressen und der Spam-Beschwerderate. Siehe [8 Möglichkeiten, den Ruf Ihrer E-Mail-Versand zu überprüfen](https://sendgrid.com/en-us/blog/5-ways-check-sending-reputation).
+
+### E-Mail-Unterdrückungslisten
+
+Eine E-Mail-Unterdrückungsliste ist eine Liste von Empfängern, an die E-Mails nicht gesendet werden sollten, wenn dies Ihrer Reputation des Versands und den Versandraten schaden würde. Der CAN-SPAM Act muss sicherstellen, dass E-Mail-Absender eine Methode zur Abmeldung von Empfängern haben, die E-Mails abbestellt oder als Spam gekennzeichnet haben. Die Unterdrückungsliste erfasst auch E-Mails, die bounce, blockiert oder ungültig sind.
+
+Um zu verhindern, dass E-Mails an den Spam-Ordner gesendet werden, folgen Sie dem Artikel Best Practices von Sendgrid, [Warum werden meine E-Mails zu Spam?](https://sendgrid.com/en-us/blog/10-tips-to-keep-email-out-of-the-spam-folder).
+
+Wenn manche Empfänger Ihre E-Mails nicht erhalten, können Sie [ein Adobe Commerce Support-Ticket senden](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide#submit-ticket) , um eine Überprüfung der Unterdrückungslisten anzufordern und die Empfänger bei Bedarf zu entfernen.
+
+Weitere Informationen finden Sie unter [Was ist eine Unterdrückungsliste?](https://sendgrid.com/en-us/blog/what-is-a-suppression-list)
