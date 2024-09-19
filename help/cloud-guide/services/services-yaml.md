@@ -3,16 +3,21 @@ title: Dienste konfigurieren
 description: Erfahren Sie, wie Sie von Adobe Commerce in der Cloud-Infrastruktur verwendete Dienste konfigurieren.
 feature: Cloud, Configuration, Services
 exl-id: 48091c10-c53f-4aad-afbe-b4516653bda1
-source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
+source-git-commit: 0262fca6e94d9815e8af0fb0c026e36fecc1f939
 workflow-type: tm+mt
-source-wordcount: '1007'
+source-wordcount: '1046'
 ht-degree: 0%
 
 ---
 
 # Dienste konfigurieren
 
-Die Datei &quot;`services.yaml`&quot; definiert die Dienste, die von Adobe Commerce in der Cloud-Infrastruktur wie MySQL, Redis und Elasticsearch oder OpenSearch unterstützt und verwendet werden. Sie müssen keine externen Dienstleister abonnieren. Diese Datei befindet sich im Ordner &quot;`.magento`&quot; Ihres Projekts.
+Die Datei &quot;`services.yaml`&quot; definiert die Dienste, die von Adobe Commerce in der Cloud-Infrastruktur wie MySQL, Redis und Elasticsearch oder OpenSearch unterstützt und verwendet werden. Sie müssen keine externen Dienstleister abonnieren.
+
+>[!NOTE]
+>
+>Die Datei &quot;`.magento/services.yaml`&quot; wird lokal im Verzeichnis &quot;`.magento`&quot; Ihres Projekts verwaltet. Auf die Konfiguration wird während des Build-Prozesses zur Definition der erforderlichen Dienstversionen nur in der Integrationsumgebung zugegriffen und nach Abschluss der Bereitstellung entfernt, sodass Sie sie nicht auf dem Server finden.
+
 
 Das Bereitstellungsskript verwendet die Konfigurationsdateien im Ordner &quot;`.magento`&quot;, um die Umgebung mit den konfigurierten Diensten bereitzustellen. Ein Dienst wird für Ihre Anwendung verfügbar, wenn er in der Eigenschaft [`relationships`](../application/properties.md#relationships) der Datei `.magento.app.yaml` enthalten ist. Die Datei `services.yaml` enthält die Werte _type_ und _disk_. Der Diensttyp definiert den Dienst _name_ und _version_.
 
