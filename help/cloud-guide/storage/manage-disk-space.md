@@ -3,7 +3,7 @@ title: Verwalten des Festplattenspeichers
 description: Erfahren Sie, wie Sie Speicherplatz über die Befehlszeilenschnittstelle verwalten.
 feature: Cloud, Storage
 exl-id: 480cb33b-ac83-441d-946e-5b4de09ad84e
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 0cc0b8e49e2cccf4266ecf84ef935f24fde1c7a4
 workflow-type: tm+mt
 source-wordcount: '714'
 ht-degree: 0%
@@ -93,7 +93,7 @@ df -h
 
 Die Option &quot;`-h`&quot; zeigt den Bericht in einem für Menschen lesbaren Format an (KB, MB oder GB).
 
-In der folgenden Beispielantwort zeigt die `/mnt/shared` -Bereitstellung den Festplattenspeicher für Medien und die `/data/mysql/` -Bereitstellung zeigt Festplattenspeicher für die Datenbank an:
+In der folgenden Beispielantwort zeigt die `/data/exports` -Bereitstellung den Festplattenspeicher für Medien und die `/data/mysql/` -Bereitstellung zeigt Festplattenspeicher für die Datenbank an:
 
 ```
 Filesystem                                    Size  Used Avail Use% Mounted on
