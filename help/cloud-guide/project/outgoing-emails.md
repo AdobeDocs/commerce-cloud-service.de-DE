@@ -2,20 +2,20 @@
 title: Ausgehende E-Mails konfigurieren
 description: Erfahren Sie, wie Sie ausgehende E-Mails für Adobe Commerce in der Cloud-Infrastruktur aktivieren.
 exl-id: 814fe2a9-15bf-4bcb-a8de-ae288fd7f284
-source-git-commit: 59f82d891bb7b1953c1e19b4c1d0a272defb89c1
+source-git-commit: ec9192caa5daa1cd25a3eec6095c2c3cf8fbefb4
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '373'
 ht-degree: 0%
 
 ---
 
 # Ausgehende E-Mails konfigurieren
 
-Sie können ausgehende E-Mails für jede Umgebung über den Befehl [!DNL Cloud Console] oder die Befehlszeile aktivieren und deaktivieren. Aktivieren Sie ausgehende E-Mails für Integrations- und Staging-Umgebungen, um Zwei-Faktor-Authentifizierung zu senden oder Passwort-E-Mails für Cloud-Projektbenutzer zurückzusetzen.
+Sie können ausgehende E-Mails für jede Umgebung über den Befehl [!DNL Cloud Console] oder die Befehlszeile aktivieren und deaktivieren. Aktivieren Sie ausgehende E-Mails für Integrations- (und Staging-Umgebungen nur für Starter)-Umgebungen, um Zwei-Faktor-Authentifizierungs- oder Kennwort-E-Mails für Cloud-Projektbenutzer zurückzusetzen.
 
-Ausgehende E-Mails sind standardmäßig in der Produktions- und Staging-Umgebung aktiviert. [!UICONTROL Enable outgoing emails] kann jedoch in den Umgebungseinstellungen deaktiviert angezeigt werden, bis Sie die Eigenschaft `enable_smtp` über die Befehlszeile [](#enable-emails-in-the-cli) oder die [Cloud-Konsole](outgoing-emails.md#enable-emails-in-the-cloud-console) festlegen.
+Ausgehende E-Mails sind standardmäßig in Produktions- und Staging-Umgebungen (nur Pro) aktiviert. Die Einstellung **[!UICONTROL Enable outgoing emails]** kann jedoch in den Umgebungseinstellungen deaktiviert angezeigt werden, unabhängig vom Status, bis Sie die Eigenschaft `enable_smtp` über die Befehlszeile ](#enable-emails-in-the-cli) oder die [Cloud-Konsole](outgoing-emails.md#enable-emails-in-the-cloud-console) festlegen.[
 
-Durch die Aktualisierung des Eigenschaftswerts [!UICONTROL enable_smtp] um die Befehlszeile ](#enable-emails-in-the-cli) wird auch der Wert für die Einstellung [!UICONTROL Enable outgoing emails] für diese Umgebung in der Cloud Console geändert.[
+Durch die Aktualisierung des Eigenschaftswerts `enable_smtp` um die Befehlszeile ](#enable-emails-in-the-cli) wird auch der Wert für die Einstellung [!UICONTROL Enable outgoing emails] für diese Umgebung in der Cloud Console geändert.[
 
 {{redeploy-warning}}
 
