@@ -3,9 +3,9 @@ title: Übersicht über Fastly Services
 description: Erfahren Sie, wie Sie mit den in der Cloud-Infrastruktur von Adobe Commerce enthaltenen Fastly-Diensten die Bereitstellung von Inhalten für Ihre Adobe Commerce-Sites optimieren und sichern können.
 feature: Cloud, Configuration, Iaas, Paas, Cache, Security, Services
 exl-id: dc4500bf-f037-47f0-b7ec-5cd1291f73a1
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: dc331df378074af8a8776a33784b73082a39cf10
 workflow-type: tm+mt
-source-wordcount: '1392'
+source-wordcount: '1426'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ bietet die folgenden Dienste zur Optimierung und Sicherung der Inhaltsbereitstel
 
 - **Sicherheit**: Nachdem Sie die Fastly-Dienste für Adobe Commerce-Sites aktiviert haben, stehen zusätzliche Sicherheitsfunktionen zum Schutz Ihrer Sites und Ihres Netzwerks zur Verfügung:
 
-   - [Web Application Firewall](fastly-waf-service.md) (WAF): Verwalteter Firewall-Dienst für Webanwendungen, der PCI-konforme Schutzmechanismen bietet, um schädlichen Traffic zu blockieren, bevor er Ihre Adobe Commerce-Produktion auf Cloud-Infrastruktur-Sites und im Netzwerk schädigen kann. Der WAF-Dienst ist nur in Pro- und Starter Production-Umgebungen verfügbar.
+   - [Web-Anwendungs-Firewall](fastly-waf-service.md) (WAF): Verwalteter Firewall-Dienst für Webanwendungen, der einen PCI-konformen Schutz bietet, um schädlichen Datenverkehr zu blockieren, bevor er Ihre Adobe Commerce-Produktion auf Cloud-Infrastruktur-Sites und im Netzwerk schädigen kann. Der WAF-Dienst ist nur in Pro- und Starter-Produktionsumgebungen verfügbar.
 
    - [Schutz des verteilten Denial of Service (DDoS)](#ddos-protection) - Integrierter DDoS-Schutz gegen häufige Angriffe wie Ping of Death, Smurf-Angriffe und andere ICMP-basierte Überschwemmungen.
 
@@ -42,13 +42,13 @@ bietet die folgenden Dienste zur Optimierung und Sicherung der Inhaltsbereitstel
 
      Adobe Commerce bietet ein domänenvalidiertes Let&#39;s Encrypt SSL/TLS-Zertifikat für jede Staging- und Produktionsumgebung. Adobe Commerce schließt die Domänenvalidierung und die Zertifikatbereitstellung während der schnellen Einrichtung ab.
 
-- **Ursprüngliche Verstopfung**: Verhindert, dass der Traffic die Fastly WAF umgeht, und blendet die IP-Adressen Ihrer Herkunftsserver aus, um sie vor direktem Zugriff und DDoS-Angriffen zu schützen.
+- **Ursprüngliche Verstopfung**: Verhindert, dass der Traffic den Fastly WAF umgeht, und blendet die IP-Adressen Ihrer Herkunftsserver aus, um sie vor direktem Zugriff und DoS-Angriffen zu schützen.
 
   Die Ursprungsbearbeitung ist in Adobe Commerce in Cloud Infrastructure Pro Production-Projekten standardmäßig aktiviert. Um das Ursprungs-Cloaking in Adobe Commerce in Cloud-Infrastruktur-Starter-Produktionsprojekten zu aktivieren, senden Sie ein [Adobe Commerce-Supportticket](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket). Wenn Sie über Traffic verfügen, der nicht zwischengespeichert werden muss, können Sie die Konfiguration des Fastly-Dienstes anpassen, um Anfragen zum Umgehen des Fastly-Cache](fastly-vcl-bypass-to-origin.md) durch [zu ermöglichen.
 
 - **[Bildoptimierung](fastly-image-optimization.md)**: Lädt die Bildverarbeitung und Größenanpassung an den Fastly-Dienst aus, damit Server Bestellungen und Konvertierungen effizienter verarbeiten können.
 
-- **[Schnellste CDN- und WAF-Protokolle](../monitor/new-relic-service.md#new-relic-log-management)**: Für Adobe Commerce on Cloud Infrastructure Pro-Projekte können Sie den New Relic Logs-Dienst verwenden, um schnelle CDN- und WAF-Protokolldaten zu überprüfen und zu analysieren.
+- **[Schnelles CDN und WAF-Protokolle](../monitor/new-relic-service.md#new-relic-log-management)** - Für Adobe Commerce on Cloud Infrastructure Pro-Projekte können Sie den New Relic Logs-Dienst verwenden, um schnelle CDN- und WAF-Protokolldaten zu überprüfen und zu analysieren.
 
 ## Fastly CDN-Modul für Magento 2
 
@@ -58,7 +58,9 @@ Bei der ersten Bereitstellung oder Aktualisierung Ihres Adobe Commerce-Projekts 
 
 ## Schnelles Service-Konto und -Anmeldedaten
 
-Adobe Commerces für Cloud-Infrastrukturprojekte erfordern kein spezielles Fastly-Konto oder keinen Kontoinhaber. Stattdessen verfügt jede Staging- und Produktionsumgebung über eindeutige Fastly-Anmeldeinformationen (API-Token und Service-ID) zum Konfigurieren und Verwalten von Fastly-Diensten über den Admin. Außerdem benötigen Sie die Anmeldeinformationen, um schnelle API-Anfragen zu senden.
+Adobe Commerce für Cloud-Infrastrukturprojekte erhält kein Fastly-Konto. Der Fastly-Dienst wird in einem zentralen Konto verwaltet, das bei der Adobe registriert ist, und das Management-Dashboard ist nur für das Cloud-Supportteam zugänglich.
+
+Stattdessen verfügt jede Staging- und Produktionsumgebung über eindeutige Fastly-Anmeldeinformationen (API-Token und Service-ID) zum Konfigurieren und Verwalten von Fastly-Diensten über den Commerce-Administrator. Die Fastly-API ist für die erweiterte Verwaltung des Fastly-Dienstes verfügbar, für die die Anmeldeinformationen zum Senden dieser Anfragen erforderlich sind.
 
 Bei der Projektbereitstellung fügt Adobe Ihr Projekt zum Fastly-Dienstkonto für Adobe Commerce in der Cloud-Infrastruktur hinzu und fügt die Fastly-Anmeldeinformationen zur Konfiguration für die Staging- und Produktionsumgebungen hinzu. Siehe [Schnelle Anmeldeinformationen abrufen](fastly-configuration.md#get-fastly-credentials).
 
