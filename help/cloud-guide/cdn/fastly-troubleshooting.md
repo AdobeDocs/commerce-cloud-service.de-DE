@@ -3,7 +3,7 @@ title: Schnelle Fehlerbehebung
 description: Erfahren Sie, wie Sie das Fastly CDN-Modul und die Services für Adobe Commerce beheben und verwalten.
 feature: Cloud, Configuration, Cache, Services
 exl-id: e4c47035-cbad-4838-8d44-fa5eaaac42d1
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: e066e9c7e1a6010c9d316f66f1632e28a0c40652
 workflow-type: tm+mt
 source-wordcount: '1834'
 ht-degree: 0%
@@ -119,7 +119,7 @@ Wenn ein 503-Fehler auftritt, gibt Fastly den Grund auf der Fehler- und Wartungs
 
 Wenn die Apex-Domäne und die Subdomänen für Ihr Adobe Commerce on Cloud-Infrastrukturprojekt bereits mit einem vorhandenen Fastly-Konto mit einer zugewiesenen Service-ID verknüpft sind, können Sie erst starten, nachdem Sie Ihre Schnelle Konfiguration aktualisiert haben:
 
-- Aktualisieren Sie die Konfiguration von apex und subdomain auf dem vorhandenen Fastly-Konto. Siehe [Mehrere schnelle Konten und zugewiesene Domänen](fastly.md#domain).
+- Aktualisieren Sie die Konfiguration von apex und subdomain auf dem vorhandenen Fastly-Konto. Siehe [Mehrere schnelle Konten und zugewiesene Domänen](fastly.md#multiple-fastly-accounts-and-assigned-domains).
 
 - [Fastly aktivieren und konfigurieren](fastly-configuration.md#enable-fastly-caching) und die [DNS-Konfiguration](../launch/checklist.md#update-dns-configuration-with-production-settings) abschließen
 
