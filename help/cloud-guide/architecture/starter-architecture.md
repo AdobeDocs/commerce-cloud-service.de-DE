@@ -3,9 +3,9 @@ title: Starterarchitektur
 description: Erfahren Sie mehr über die von der Starter-Architektur unterstützten Umgebungen.
 feature: Cloud, Paas
 exl-id: 03365d32-4eb4-42d4-82a7-771df5e7b3da
-source-git-commit: c61d711b1041ecf76ec6468cd225a34fd77c24b1
+source-git-commit: e5cb79cab4e22d1c787859ab98e6bab6cd2dc2eb
 workflow-type: tm+mt
-source-wordcount: '903'
+source-wordcount: '942'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,9 @@ Integrationsumgebungen sind für begrenzte Tests und Entwicklung ausgelegt. Beis
 
 Befolgen Sie die folgenden Best Practices, um eine optimale Leistung in der Integrationsumgebung zu erzielen:
 
-- Eingrenzen der Kataloggröße
+- Schränken Sie die Kataloggröße ein - Die Beispieldaten enthalten beispielsweise etwa 2.048 Produkte. Versuchen Sie, Ihre Kataloggröße auf etwa 4.000-5.000 Produkte zu reduzieren.
+
+- Verringerung der Anzahl der Kundengruppen - Eine zu große Anzahl von Kundengruppen kann sich auf die Indizierungsleistung und die Gesamtleistung auswirken.
 
 - Beschränkung der Verwendung auf einen oder zwei gleichzeitige Benutzer
 
