@@ -3,9 +3,9 @@ title: Benutzerdefinierte VCL für das Blockieren von Anforderungen
 description: Blockieren eingehender Anfragen nach IP-Adresse mithilfe einer ACL (Edge Access Control List) mit einem benutzerdefinierten VCL-Snippet.
 feature: Cloud, Configuration, Security
 exl-id: 1f637612-3858-49d0-91f7-9b8823933cc9
-source-git-commit: 0e9ace747cc56808108781e42b97c86756089818
+source-git-commit: 16c34b6c693c4d4d5c67b21c79e0cd5d198e047b
 workflow-type: tm+mt
-source-wordcount: '961'
+source-wordcount: '996'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,15 @@ Die folgenden Beispiele zeigen, wie Sie Anforderungen mit Inline-Bedingungsanwei
 
 >[!WARNING]
 >
->In diesen Beispielen wird der VCL-Code als JSON-Payload formatiert, die in einer Datei gespeichert und in einer Fastly API-Anfrage gesendet werden kann. Sie können das [VCL-Snippet vom Admin](#add-the-custom-vcl-snippet) oder als JSON-Zeichenfolge mithilfe der Fastly-API senden. Um eine Validierung zu verhindern, wenn Sie die Fastly-API mit einer JSON-Zeichenfolge verwenden, müssen Sie einen umgekehrten Schrägstrich verwenden, um Sonderzeichen zu maskieren.
+>In diesen Beispielen wird der VCL-Code als JSON-Payload formatiert, die in einer Datei gespeichert und in einer Fastly API-Anfrage gesendet werden kann. Sie können das [VCL-Snippet vom Admin](#add-the-custom-vcl-snippet) oder als JSON-Zeichenfolge mithilfe der Fastly-API senden. Um Überprüfungsfehler zu vermeiden, wenn Sie die Fastly-API mit einer JSON-Zeichenfolge verwenden, müssen Sie einen umgekehrten Schrägstrich verwenden, um Sonderzeichen zu maskieren.
+
+>[!NOTE]
+>Wenn Sie das VCL-Snippet vom Admin senden, extrahieren Sie die einzelnen Werte aus dem VCL-Beispielcode und geben Sie sie in die entsprechenden Felder ein. Beispiel:
+>- Name: `<name of the VCL>`
+>- Dynamisch: `<0/1>`
+>- Typ: `<type>`
+>- Priorität: `<priority>`
+>- Inhalt: `<content>`
 
 Siehe [Verwenden dynamischer VCL-Snippets](https://docs.fastly.com/vcl/vcl-snippets/) in der Fastly VCL-Dokumentation.
 
