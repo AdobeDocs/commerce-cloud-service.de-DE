@@ -3,9 +3,9 @@ title: Cloud-Komponenten für Commerce
 description: Sehen Sie sich eine Liste der neuesten Verbesserungen des Cloud-Komponenten-Pakets an.
 recommendations: noDisplay, catalog
 exl-id: b4e2508a-3558-4fa8-bae0-3eb76c7b2775
-source-git-commit: c02dfd2709cdc63ac1630edaa8c89cad5f737ea1
+source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '590'
 ht-degree: 0%
 
 ---
@@ -23,11 +23,18 @@ Die Versionshinweise beinhalten:
 
 <!--Add release notes below-->
 
-## v1.0.14 {#latest}
+## v1.1.0 {#latest}
+
+Veröffentlichungsdatum: 7. Oktober 2024
+
+- ![Fixsymbol](../../assets/fix.svg) **Refaktorierter Code**—Die Unterstützung alter PHP-Versionen 7.4, 7.3, 7.2 und zugehöriger Bibliotheken wurde entfernt.<!-- MCLOUD-9278 - -->
+- ![Fixsymbol](../../assets/fix.svg) **Aktualisierte Monolog-Version** - Unterstützung für Monolog 3.6 wurde hinzugefügt.<!-- MCLOUD-12855 - -->
+
+## v1.0.14
 
 Veröffentlichungsdatum: 8. April 2024
 
-- ![neues Symbol](../../assets/new.svg) **PHP** — Unterstützung für PHP 8.3 hinzugefügt.
+- ![neues Symbol](../../assets/new.svg) **PHP**—Es wurde Unterstützung für PHP 8.3 hinzugefügt.
 
 ## v1.0.13
 
@@ -121,4 +128,4 @@ Veröffentlichungsdatum: 12. Juni 2019
 
 Dies ist die erste Version des [`magento/magento-cloud-components`](https://github.com/magento/magento-cloud-components) -Pakets, das eine neue Abhängigkeit für die `ece-tools` -Paketversion 2002.0.20 und höher darstellt.
 
-- ![neues Symbol](../../assets/new.svg) Die Funktion zum Verwenden von Regex-Mustern wurde hinzugefügt, um die Umgebungsvariable **WARM_UP_PAGES** so zu konfigurieren, dass einzelne Seiten, mehrere Domänen und mehrere Seiten zwischengespeichert werden. Siehe [Post-deploy-Variablen](../environment/variables-post-deploy.md#warm_up_pages).<!--MAGECLOUD-3258-->
+- ![neues Symbol](../../assets/new.svg) Die Funktion zum Verwenden von Regex-Mustern wurde hinzugefügt, um die Umgebungsvariable **WARM_UP_PAGES** so zu konfigurieren, dass einzelne Seiten, mehrere Domänen und mehrere Seiten zwischengespeichert werden. Siehe [Variablen nach der Bereitstellung ](../environment/variables-post-deploy.md#warm_up_pages).<!--MAGECLOUD-3258-->

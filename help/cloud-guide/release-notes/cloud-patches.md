@@ -2,11 +2,11 @@
 title: Cloud-Patches für Commerce
 description: Sehen Sie sich eine Liste der neuesten Verbesserungen des Cloud Patches-Pakets an.
 recommendations: noDisplay, catalog
-last-substantial-update: 2024-05-21T00:00:00Z
+last-substantial-update: 2024-10-07T00:00:00Z
 exl-id: ae6b511b-a37d-4776-9a5e-ad7d9f9f6611
-source-git-commit: 61c42a1bd1d5a28f90b8756032ee6f45be4565b2
+source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
 workflow-type: tm+mt
-source-wordcount: '2208'
+source-wordcount: '2275'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,15 @@ Das Paket `magento/magento-cloud-patches` verwendet die folgende Versionssequenz
 
 <!--Add release notes below-->
 
-## v1.0.27 {#latest}
+## v1.1.0 {#latest}
+
+Veröffentlichungsdatum: 7. Oktober 2024
+
+- ![Fixsymbol](../../assets/fix.svg) **Refaktorierter Code**—Die Unterstützung alter PHP-Versionen (7.4, 7.3, 7.2) und verwandter Bibliotheken wurde entfernt.<!-- MCLOUD-9278 - -->
+- ![Fixsymbol](../../assets/fix.svg) **Aktualisierte Monolog-Version** - Unterstützung für Monolog 3.6 wurde hinzugefügt.<!-- MCLOUD-12855 - -->
+- ![Fixsymbol](../../assets/fix.svg) **Patch for Application Server**: Löst ein bekanntes Problem mit dem GraphQL-Anwendungsserver auf. Genauer gesagt enthielt der `CatalogGraphQl\\Model\\Config\\AttributeReader` in Version 2.4.7 einen Fehler, der dazu führen konnte, dass GraphQL-Anforderungen Antworten basierend auf veralteter Attributkonfiguration abrufen.<!-- ACPT-1876 -->
+
+## v1.0.27
 
 Veröffentlichungsdatum: 21. Mai 2024
 
