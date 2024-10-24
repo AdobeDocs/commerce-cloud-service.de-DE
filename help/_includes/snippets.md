@@ -1,7 +1,7 @@
 ---
-source-git-commit: 762ce3cb6268401b0f5fae5b2280a870aa9c83a5
+source-git-commit: a87039d2e96e39d6d8d19673c5e0d52de8b844a4
 workflow-type: tm+mt
-source-wordcount: '857'
+source-wordcount: '879'
 ht-degree: 0%
 
 ---
@@ -43,11 +43,12 @@ Legen Sie die Option `_merge` auf einen der folgenden Werte fest:
 ## Pro-Services-Unterstützung {#pro-update-service}
 
 >[!TIP]
+>
 >Für Pro-Projekte müssen Sie [ein Adobe Commerce-Support-Ticket senden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket), um [Dienste](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/service/services-yaml.html) nur in `Staging` - und `Production` -Umgebungen zu installieren oder zu aktualisieren.
 >
 >Geben Sie die erforderlichen Dienständerungen an, fügen Sie Ihre aktualisierten Dateien `.magento.app.yaml` und `services.yaml` ein und geben Sie die PHP-Version im Ticket an. Informationen zu Self-Service-Änderungen an PHP-Versionen, Erweiterungen oder Umgebungseinstellungen finden Sie unter [PHP-Einstellungen](https://experienceleague.adobe.com/docs/commerce-cloud-service/user-guide/configure/app/php-settings.html) in _Anwendungskonfiguration_.
 >
->Für Änderungen an einer _Live_-Produktionsumgebung (**Nur Pro**) müssen Sie eine Benachrichtigung über mindestens 48 Stunden bereitstellen, damit das Cloud-Infrastrukturteam genügend Zeit hat, Ressourcen zu marsheren und eine sichere Aktualisierung durchzuführen. Der Benachrichtigungszeitraum umfasst keine Wochenenden. Wenn Sie beispielsweise möchten, dass Ihre Service-Upgrades am Montag durchgeführt werden, müssen Sie die Anfrage bis zum vorigen Mittwoch übermitteln.
+>Für Änderungen an einer Live-Produktionsumgebung (**Nur Pro**) ist eine Benachrichtigung über mindestens 48 Stunden erforderlich. Dadurch kann das Cloud-Infrastruktur-Team ausreichend Zeit für die Mobilisierung von Ressourcen und die Durchführung eines sicheren Upgrades erhalten. Der Benachrichtigungszeitraum beginnt, wenn das Infrastrukturteam die Anfrage bestätigt und das Upgrade plant, mit Ausnahme der Wochenenden. Damit beispielsweise Dienstaktualisierungen am Montag abgeschlossen werden können, muss bis Mittwoch eine Bestätigung des geplanten Upgrades eingehen. In Spitzenlastzeiten kann es länger dauern, Ihre Anfrage zu verarbeiten.
 
 ## Pro Backups {#pro-backups}
 
