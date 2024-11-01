@@ -3,7 +3,7 @@ title: Workflow für Starterprojekte
 description: Erfahren Sie, wie Sie die Starter-Entwicklungs- und -Bereitstellungsarbeitsabläufe verwenden.
 feature: Cloud, Paas
 exl-id: f334047a-1e0d-45c7-bf96-5c2964741951
-source-git-commit: 08f43a3b0a50cdb2a5e8a45bd2e2448bc6dbca2b
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '2103'
 ht-degree: 0%
@@ -105,9 +105,9 @@ Wenn Sie bereit sind, Ihren Store zu konfigurieren, pushen Sie den gesamten Code
 Die besten Informationen zu Konfigurationen finden Sie in der Dokumentation zu Adobe Commerce und den installierten Erweiterungen. Im Folgenden finden Sie einige Links und Ideen, die Ihnen bei den ersten Schritten helfen:
 
 - [Best Practices für die Store-Konfiguration](../store/best-practices.md) für bestimmte Best Practices in der Cloud
-- [Grundlegende Konfiguration](https://docs.magento.com/user-guide/configuration/configuration-basic.html) für den Store-Administratorzugriff, Namen, Sprachen, Währungen, Branding, Sites, Store-Ansichten und mehr
-- [Design](https://docs.magento.com/user-guide/design/design-theme.html) für Ihr Erscheinungsbild der Site und Stores, einschließlich CSS und Layouts
-- [Systemkonfiguration](https://docs.magento.com/user-guide/system/system.html) für Rollen, Tools, Benachrichtigungen und Ihren Verschlüsselungsschlüssel für Ihre Datenbank
+- [Grundlegende Konfiguration](https://experienceleague.adobe.com/en/docs/commerce-admin/start/setup/store-details) für den Store-Administratorzugriff, Namen, Sprachen, Währungen, Branding, Sites, Store-Ansichten und mehr
+- [Design](https://experienceleague.adobe.com/en/docs/commerce-admin/content-design/content-menu#design-features) für Ihr Erscheinungsbild der Site und Stores, einschließlich CSS und Layouts
+- [Systemkonfiguration](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/guide-overview) für Rollen, Tools, Benachrichtigungen und Ihren Verschlüsselungsschlüssel für Ihre Datenbank
 - Erweiterungseinstellungen anhand der Dokumentation
 
 Neben den Speichereinstellungen können Sie auch mehrere Sites und Stores, konfigurierte Dienste und mehr konfigurieren. Siehe [Konfigurieren des Stores](../store/overview.md).
@@ -165,7 +165,7 @@ So exportieren Sie Produktionsdaten als Testdaten für die Verwendung in Staging
 
 - [Führen Sie beim Export einer geschützten Sicherung von Kunden- und Speicherdaten mit Ihrem Adobe Commerce-Verschlüsselungsschlüssel die CLI-Befehle (empfohlen) für die Support-Dienstprogramme aus](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cli/run-support-utilities.html)
 
-- [Datenerfassung](https://docs.magento.com/user-guide/system/support-data-collector.html)-Tool zum Generieren und Exportieren von Daten
+- [Datenerfassung](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/support#data-collector)-Tool zum Generieren und Exportieren von Daten
 
 Informationen zum Migrieren dieser Daten finden Sie unter [Migrieren und Bereitstellen von statischen Dateien und Daten](../deploy/staging-production.md#migrate-static-files).
 

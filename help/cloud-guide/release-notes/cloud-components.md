@@ -3,7 +3,7 @@ title: Cloud-Komponenten für Commerce
 description: Sehen Sie sich eine Liste der neuesten Verbesserungen des Cloud-Komponenten-Pakets an.
 recommendations: noDisplay, catalog
 exl-id: b4e2508a-3558-4fa8-bae0-3eb76c7b2775
-source-git-commit: 30eafa856aaa57bb2fd2ce26e3be2a69aee726e2
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '590'
 ht-degree: 0%
@@ -46,7 +46,7 @@ Veröffentlichungsdatum: 10. März 2023
 
 Veröffentlichungsdatum: 13. September 2022
 
-- ![Symbol &quot;Fehlerbehebung&quot;](../../assets/fix.svg) **Fehler bei Aufwärmen** - Es wurde ein Problem behoben, bei dem versucht wurde, [Aufwärmen](../environment/variables-post-deploy.md#warm_up_pages) durchzuführen, wenn die Seitenanzeige im Admin auf [**Nicht sichtbar**](https://docs.magento.com/user-guide/system/data-attributes-product.html#simple-product-csv-file-structure) festgelegt ist. Dies führte zu `ERROR: Warming up failed: <link to page>` -Fehlern im Bereitstellungsprotokoll.<!-- MCLOUD-9134 -->
+- ![Symbol &quot;Fehlerbehebung&quot;](../../assets/fix.svg) **Fehler bei Aufwärmen** - Es wurde ein Problem behoben, bei dem versucht wurde, [Aufwärmen](../environment/variables-post-deploy.md#warm_up_pages) durchzuführen, wenn die Seitenanzeige im Admin auf [**Nicht sichtbar**](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/data-transfer/data-attributes-product#simple-product-csv-file-structure) festgelegt ist. Dies führte zu `ERROR: Warming up failed: <link to page>` -Fehlern im Bereitstellungsprotokoll.<!-- MCLOUD-9134 -->
 
 ## v1.0.11
 

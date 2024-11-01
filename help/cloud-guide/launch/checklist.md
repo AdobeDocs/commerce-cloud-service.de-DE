@@ -2,7 +2,7 @@
 title: Checkliste für Launch
 description: Überprüfen Sie die Elemente der Checkliste für den Site-Start.
 exl-id: 4525742e-18c5-40d1-975d-00ba3f3a51a0
-source-git-commit: 5b0a691a4355f5eda31d42cd3da9925439dfb510
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '1104'
 ht-degree: 0%
@@ -105,7 +105,7 @@ Es werden folgende Änderungen und Prüfungen empfohlen:
 
 - [Abgeschlossene ausgehende E-Mail-Tests](../project/outgoing-emails.md)
 
-- [Sichere Konfiguration für Admin-Anmeldedaten und Basis-Admin-URL](https://docs.magento.com/user-guide/stores/security-admin.html)
+- [Sichere Konfiguration für Admin-Anmeldedaten und Basis-Admin-URL](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-admin)
 
 - [Alle Bilder für das Web optimieren](../cdn/fastly-image-optimization.md)
 
@@ -137,13 +137,13 @@ Sie können auch mit den folgenden Drittanbieteroptionen testen:
 
 - [Sicherheitsüberprüfung einrichten](overview.md#set-up-the-security-scan-tool)
 
-- [Sichere Konfiguration für Admin-Benutzer](https://docs.magento.com/user-guide/stores/security-admin.html)
+- [Sichere Konfiguration für Admin-Benutzer](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-admin)
 
-- [Sichere Konfiguration für Admin-URL](https://docs.magento.com/user-guide/stores/store-urls-custom-admin.html)
+- [Sichere Konfiguration für Admin-URL]https://experienceleague.adobe.com/en/docs/commerce-admin/stores-sales/site-store/store-urls#use-a-custom-admin-url)
 
 - [Entfernen Sie alle Benutzer, die nicht mehr in Adobe Commerce im Cloud-Infrastrukturprojekt verwendet werden](../project/user-access.md)
 
-- [Zweifaktorauthentifizierung konfigurieren](https://devdocs.magento.com/guides/v2.4/security/two-factor-authentication.html)
+- [Zweifaktorauthentifizierung konfigurieren](https://developer.adobe.com/commerce/testing/functional-testing-framework/two-factor-authentication/)
 
 ## Leistungsüberwachung
 

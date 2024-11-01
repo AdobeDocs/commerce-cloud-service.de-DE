@@ -3,9 +3,9 @@ title: Fastly Services konfigurieren
 description: Erfahren Sie, wie Sie Fastly-Dienste für Ihr Adobe Commerce-Projekt einrichten und konfigurieren.
 feature: Cloud, Configuration, Iaas, Cache, Security
 exl-id: c53ff3bd-3df2-45fb-933e-d3b29f7edf4e
-source-git-commit: 8a0523f1714b6ea41887e99b5c31294cf5e5255e
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '1961'
+source-wordcount: '1960'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Für Adobe Commerce ist in Staging- und Produktionsumgebungen der Cloud-Infrastruktur eine schnelle Bereitstellung erforderlich.
 
-Funktioniert schnell mit Varnish, um schnelle Zwischenspeicherungsfunktionen und ein [Content Delivery Network](https://glossary.magento.com/content-delivery-network) (CDN) für statische Assets bereitzustellen. Schnell stellt auch eine Web Application Firewall (WAF) bereit, um Ihre Site und Cloud-Infrastruktur zu schützen. Um Ihre Site und die Cloud-Infrastruktur vor bösartigem Traffic und Angriffen zu schützen, leiten Sie den gesamten eingehenden Site-Traffic schnell weiter.
+Funktioniert schnell mit Varnish, um schnelle Zwischenspeicherungsfunktionen und ein Content Delivery Network (CDN) für statische Assets bereitzustellen. Schnell stellt auch eine Web Application Firewall (WAF) bereit, um Ihre Site und Cloud-Infrastruktur zu schützen. Um Ihre Site und die Cloud-Infrastruktur vor bösartigem Traffic und Angriffen zu schützen, leiten Sie den gesamten eingehenden Site-Traffic schnell weiter.
 
 >[!NOTE]
 >

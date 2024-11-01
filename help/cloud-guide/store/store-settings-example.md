@@ -2,9 +2,9 @@
 title: Beispiel für die Verwaltung systemspezifischer Einstellungen
 description: Hier finden Sie ein Beispiel für die Verwaltung und Synchronisierung von Speicherkonfigurationseinstellungen in allen Adobe Commerce-Umgebungen in Cloud-Infrastruktur.
 hidefromtoc: true
-source-git-commit: 13e76d3e9829155995acbb72d947be3041579298
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '864'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Das Beispiel verwendet das folgende in [Speichereinstellungen](store-settings.md
 
 Sie können beispielsweise die folgenden Einstellungen festlegen:
 
-* Deaktivieren Sie die Optimierungseinstellungen für [locale](https://glossary.magento.com/locale) und statische Dateien in Ihrer Integrationsumgebung.
+* Deaktivieren Sie die Optimierungseinstellungen für Gebietsschema und statische Dateien in Ihrer Integrationsumgebung.
 * Aktivieren der statischen Dateioptimierung in Staging- und Produktionsumgebungen
 * Schnelles Konfigurieren in Staging und Produktion mit spezifischen Anmeldeinformationen für jede
 
@@ -56,7 +56,7 @@ In der Integrationsumgebung können Sie sich beim Administrator anmelden, um die
    ![Ändern des Gebietsschemas](../../assets/locale-options.png)
 
 1. Klicken Sie auf **Konfiguration speichern**.
-1. Wenn Sie dazu aufgefordert werden, leeren Sie den Cache-Speicher ](https://docs.magento.com/user-guide/system/cache-management.html).[
+1. Wenn Sie dazu aufgefordert werden, leeren Sie den Cache-Speicher ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management).[
 1. Melden Sie sich beim Administrator ab.
 
 ## Werte exportieren und config.php auf Ihr lokales System übertragen
@@ -159,7 +159,7 @@ Hinzufügen von Konfigurationswerten zum Integrationsumgebungs-Admin. In diesem 
 1. Erweitern Sie im rechten Bereich **JavaScript-Einstellungen**.
 1. Klicken Sie in der Liste **JavaScript-Dateien zusammenführen** auf **Ja**.
 1. Klicken Sie auf **Konfiguration speichern**.
-1. Wenn Sie dazu aufgefordert werden, leeren Sie den Cache-Speicher ](https://docs.magento.com/user-guide/system/cache-management.html).[
+1. Wenn Sie dazu aufgefordert werden, leeren Sie den Cache-Speicher ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management).[
 1. Melden Sie sich beim Administrator ab.
 
 Wenn Sie den Befehl &quot;dump&quot;erneut ausführen, wird die neue Konfiguration an die Datei angehängt.

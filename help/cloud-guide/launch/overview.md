@@ -2,7 +2,7 @@
 title: Site-Launch
 description: Erfahren Sie, wie Sie mit der Vorbereitung des Site-Starts beginnen.
 exl-id: a7b3f260-b76e-4220-b521-699548a9928a
-source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '902'
 ht-degree: 0%
@@ -65,7 +65,7 @@ Mit dem Security Scan Tool können Sie Ihre Store-Websites regelmäßig überwac
 
 - Empfangen von Sicherheitsupdates und Site-spezifischen Benachrichtigungen
 
-Informationen zum Einrichten und Verwenden des Sicherheitsscan-Tools finden Sie im [Benutzerhandbuch](https://docs.magento.com/user-guide/magento/security-scan.html) . Normalerweise beginnen Sie mit der Verwendung dieses Tools, wenn Sie mit dem Benutzerakzeptanztest (UAT) beginnen.
+Informationen zum Einrichten und Verwenden des Sicherheitsscan-Tools finden Sie im [Benutzerhandbuch](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-scan) . Normalerweise beginnen Sie mit der Verwendung dieses Tools, wenn Sie mit dem Benutzerakzeptanztest (UAT) beginnen.
 
 Jede Site, die Sie scannen, muss über den Tab Sicherheitsscan registriert werden. Während des Registrierungsprozesses müssen Sie den Haftungsausschluss akzeptieren, bevor Sie mit dem Scannen beginnen können. Sie steuern sowohl den Zeitplan als auch die Autorisierung des Benutzers für den Empfang von Benachrichtigungen, wenn die Überprüfung abgeschlossen ist. Sie können Prüfungen für ein bestimmtes, wiederkehrendes Datum und eine bestimmte Uhrzeit planen oder bei Bedarf eine Überprüfung durchführen.
 

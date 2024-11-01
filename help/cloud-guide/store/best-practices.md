@@ -3,7 +3,7 @@ title: Best Practices für die Store-Konfiguration
 description: Erfahren Sie mehr über Best Practices für die Konfiguration Ihres Stores in Adobe Commerce in der Cloud-Infrastruktur.
 feature: Cloud, Best Practices
 exl-id: 01f528bd-74c2-42e7-8e77-7e6f57a40ef4
-source-git-commit: 5b0a691a4355f5eda31d42cd3da9925439dfb510
+source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
 source-wordcount: '1087'
 ht-degree: 0%
@@ -58,7 +58,7 @@ Informationen zum Erstellen einer Preisregel finden Sie im [Adobe Commerce-Benut
 
 Im Folgenden finden Sie ein Beispiel für die Erstellung einer Preisregel für den Rabatt &quot;Nur erste Bestellung&quot;. Für diesen Rabatt möchten Sie:
 
-* Erstellen Sie eine Preisregel mit einem [Kundensegment](https://docs.magento.com/user-guide/marketing/customer-segment-price-rule.html) mit einer Bedingung: Gesamtanzahl der Bestellungen unter 1
+* Erstellen Sie eine Preisregel mit einem [Kundensegment](https://experienceleague.adobe.com/en/docs/commerce-admin/customers/segments/customer-segment-price-rule) mit einer Bedingung: Gesamtanzahl der Bestellungen unter 1
 * Fügen Sie dieses Kundensegment als Bedingung zur Warenkorbregel hinzu
 * Optional - Fügen Sie Bedingungen und Regeln hinzu, um die Rabatte auf bestimmte SKUs oder Produktkategorien für gezielte Käufe anzuwenden
 
