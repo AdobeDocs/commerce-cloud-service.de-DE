@@ -4,9 +4,9 @@ description: Sehen Sie sich eine Liste der neuesten Verbesserungen des Cloud Pat
 recommendations: noDisplay, catalog
 last-substantial-update: 2024-10-07T00:00:00Z
 exl-id: ae6b511b-a37d-4776-9a5e-ad7d9f9f6611
-source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
+source-git-commit: a91898c0117e91946e69151a1ad5b654f99c13df
 workflow-type: tm+mt
-source-wordcount: '2256'
+source-wordcount: '2313'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,19 @@ Das Paket `magento/magento-cloud-patches` verwendet die folgende Versionssequenz
 
 <!--Add release notes below-->
 
-## v1.1.0 {#latest}
+## v1.1.2 {#latest}
+
+Veröffentlichungsdatum: 5. November 2024
+
+- ![Fixsymbol](../../assets/fix.svg) **Patch für Commerce 2.4.4 zu 2.4.7** hinzugefügt - Dieses Update behebt eine kritische Sicherheitslücke von [CVE-2024-45115](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/troubleshooting/known-issues-patches-attached/security-update-available-for-adobe-commerce-apsb24-73) für Adobe Commerce bei Verwendung des B2B-Moduls.<!-- MCLOUD-12980 - -->
+
+## v1.1.1
+
+Veröffentlichungsdatum: 5. November 2024
+
+- ![Fixsymbol](../../assets/fix.svg) **Patch für Commerce 2.4.4 zu 2.4.7** hinzugefügt - Mit diesem Update wird eine kritische Sicherheitslücke vom Typ [CVE-2024-34102](https://experienceleague.adobe.com/en/docs/commerce-knowledge-base/kb/troubleshooting/known-issues-patches-attached/security-update-available-for-adobe-commerce-apsb24-40-revised-to-include-isolated-patch-for-cve-2024-34102?lang=en) CosmicSting behoben.<!-- MCLOUD-12980 - -->
+
+## v1.1.0
 
 Veröffentlichungsdatum: 7. Oktober 2024
 
