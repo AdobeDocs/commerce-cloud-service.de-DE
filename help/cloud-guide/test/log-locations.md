@@ -3,7 +3,7 @@ title: Protokolle anzeigen und verwalten
 description: Machen Sie sich mit den in der Cloud-Infrastruktur verfügbaren Protokolldateitypen und deren Auffindbarkeit vertraut.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: 633e5e75ae23a933d15a0faedae22092797d5d0b
 workflow-type: tm+mt
 source-wordcount: '1056'
 ht-degree: 0%
@@ -208,7 +208,7 @@ Für Staging- und Produktionsumgebungen für Pro sind die Protokolle Bereitstell
 
 ### Archivierte Protokolldateien
 
-Die Anwendungsprotokolle werden einmal täglich komprimiert und archiviert und ein Jahr lang aufbewahrt. Die komprimierten Protokolle werden mit einer eindeutigen ID benannt, die dem `Number of Days Ago + 1` entspricht. Beispielsweise wird in Pro-Produktionsumgebungen ein PHP-Zugriffsprotokoll für 21 Tage in der Vergangenheit gespeichert und wie folgt benannt:
+Die Anwendungsprotokolle werden einmal pro Tag komprimiert und archiviert und für **30 Tage** aufbewahrt. Die komprimierten Protokolle werden mit einer eindeutigen ID benannt, die dem `Number of Days Ago + 1` entspricht. Beispielsweise wird in Pro-Produktionsumgebungen ein PHP-Zugriffsprotokoll für 21 Tage in der Vergangenheit gespeichert und wie folgt benannt:
 
 ```
 /var/log/platform/<project-ID>/php.access.log.22.gz
