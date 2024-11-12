@@ -3,9 +3,9 @@ title: Sitemap- und Suchmaschinenroboter hinzufügen
 description: Erfahren Sie, wie Sie Adobe Commerce in der Cloud-Infrastruktur Sitemap- und Suchmaschinenrobots hinzufügen.
 feature: Cloud, Configuration, Search, Site Navigation
 exl-id: b98f43fa-1878-466d-8ea0-1e7207af8b60
-source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
+source-git-commit: fda88fdf03afa4a59f40e52802c16b6136d8716f
 workflow-type: tm+mt
-source-wordcount: '517'
+source-wordcount: '537'
 ht-degree: 0%
 
 ---
@@ -117,10 +117,12 @@ In der Admin-Konfiguration `sitemap` müssen Sie den Speicherort der Datei mit `
 
 ### Konfigurieren der Indizierung nach Suchmaschine
 
-Um die `robots.txt` -Anpassungen zu aktivieren, müssen Sie die Option **Indizierung durch Suchmaschinen ist für`<environment-name>`** in Ihren Projekteinstellungen aktivieren.
+Um die `robots.txt` -Anpassungen in der Produktion zu aktivieren, müssen Sie die Option **Indizierung durch Suchmaschinen ist für`<environment-name>`** in Ihren Projekteinstellungen aktivieren.
 
 ![Verwenden Sie den [!DNL Cloud Console], um Umgebungen zu verwalten](../../assets/robots-indexing-by-search-engine.png)
 
 >[!NOTE]
 >
->Wenn Sie PWA Studio verwenden und nicht auf Ihre konfigurierte `robots.txt` -Datei zugreifen können, fügen Sie `robots.txt` zur [Vorname-Zulassungsliste](https://github.com/magento/magento2-upward-connector#front-name-allowlist) unter **Stores** > Konfiguration > **Allgemein** > **Web** > UPWARD-PWA-Konfiguration hinzu.
+>- Die Indizierung durch Suchmaschinen kann nur in der Produktion aktiviert werden, jedoch nicht in einer der niedrigeren Umgebungen.
+>
+>- Wenn Sie PWA Studio verwenden und nicht auf Ihre konfigurierte `robots.txt` -Datei zugreifen können, fügen Sie `robots.txt` zur [Vorname-Zulassungsliste](https://github.com/magento/magento2-upward-connector#front-name-allowlist) unter **Stores** > Konfiguration > **Allgemein** > **Web** > UPWARD-PWA-Konfiguration hinzu.
