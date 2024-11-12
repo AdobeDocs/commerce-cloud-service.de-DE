@@ -4,9 +4,9 @@ description: Erfahren Sie mehr über die Umgebungen, die von der Pro-Architektur
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 66b1f86c8c674d0de4e2895e328a5a850eadf903
+source-git-commit: a1e7674b99d7e289531268e1a298f61344c7bd8f
 workflow-type: tm+mt
-source-wordcount: '1559'
+source-wordcount: '1573'
 ht-degree: 0%
 
 ---
@@ -67,6 +67,11 @@ Integrationsumgebungen sind für begrenzte Tests und Entwicklung ausgelegt, bevo
 Befolgen Sie die folgenden Best Practices, um eine optimale Leistung in der Integrationsumgebung zu erzielen:
 
 - Schränken Sie die Kataloggröße ein - Die Beispieldaten enthalten beispielsweise etwa 2.048 Produkte. Versuchen Sie, Ihre Kataloggröße auf etwa 4.000-5.000 Produkte zu reduzieren.
+Um die Anzahl der Produkte im Katalog zu überprüfen, führen Sie die folgende MySQL-Abfrage aus:
+
+  ```sql
+  select distinct count(entity_id) from catalog_product_entity;
+  ```
 
 - Verringerung der Anzahl der Kundengruppen - Eine zu große Anzahl von Kundengruppen kann sich auf die Indizierungsleistung und die Gesamtleistung auswirken.
 
