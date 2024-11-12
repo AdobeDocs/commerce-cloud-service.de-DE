@@ -2,20 +2,24 @@
 title: Ausgehende E-Mails konfigurieren
 description: Erfahren Sie, wie Sie ausgehende E-Mails für Adobe Commerce in der Cloud-Infrastruktur aktivieren.
 exl-id: 814fe2a9-15bf-4bcb-a8de-ae288fd7f284
-source-git-commit: ec9192caa5daa1cd25a3eec6095c2c3cf8fbefb4
+source-git-commit: 75318be63adcbe23bb8b6699b1c59b2b4a3c1a4d
 workflow-type: tm+mt
-source-wordcount: '373'
+source-wordcount: '384'
 ht-degree: 0%
 
 ---
 
 # Ausgehende E-Mails konfigurieren
 
-Sie können ausgehende E-Mails für jede Umgebung über den Befehl [!DNL Cloud Console] oder die Befehlszeile aktivieren und deaktivieren. Aktivieren Sie ausgehende E-Mails für Integrations- (und Staging-Umgebungen nur für Starter)-Umgebungen, um Zwei-Faktor-Authentifizierungs- oder Kennwort-E-Mails für Cloud-Projektbenutzer zurückzusetzen.
+Sie können ausgehende E-Mails für Integrations- (und Staging-Umgebungen nur für Starter) in der Befehlszeile [!DNL Cloud Console] oder der Befehlszeile aktivieren und deaktivieren. Aktivieren Sie ausgehende E-Mails, um zweifakultative Authentifizierung zu senden oder E-Mails mit Passwörtern für Cloud-Projektbenutzer zurückzusetzen.
 
 Ausgehende E-Mails sind standardmäßig in Produktions- und Staging-Umgebungen (nur Pro) aktiviert. Die Einstellung **[!UICONTROL Enable outgoing emails]** kann jedoch in den Umgebungseinstellungen deaktiviert angezeigt werden, unabhängig vom Status, bis Sie die Eigenschaft `enable_smtp` über die Befehlszeile ](#enable-emails-in-the-cli) oder die [Cloud-Konsole](outgoing-emails.md#enable-emails-in-the-cloud-console) festlegen.[
 
 Durch die Aktualisierung des Eigenschaftswerts `enable_smtp` um die Befehlszeile ](#enable-emails-in-the-cli) wird auch der Wert für die Einstellung [!UICONTROL Enable outgoing emails] für diese Umgebung in der Cloud Console geändert.[
+
+>[!NOTE]
+>
+>Durch Aktivierung/Deaktivierung der Einstellung &quot;**[!UICONTROL Enable outgoing emails]**&quot; werden E-Mails in der Staging- oder Produktionsumgebung von Pro nicht aktiviert/deaktiviert.
 
 {{redeploy-warning}}
 
@@ -27,14 +31,14 @@ Wenn ausgehende E-Mails in Pro Production- oder Staging-Umgebungen deaktiviert o
 
 >[!TIP]
 >
->Der Status ausgehender E-Mails wird in Pro-Umgebungen in der Cloud Console möglicherweise nicht angezeigt. Verwenden Sie stattdessen die [Befehlszeile](#enable-emails-in-the-cli) zum Aktivieren und Testen ausgehender E-Mails.
+>Der ausgehende E-Mail-Status wird möglicherweise nicht für Pro-Staging- oder Produktionsumgebungen in der Cloud Console angezeigt.
 
 **So verwalten Sie den E-Mail-Support über die[!DNL Cloud Console]**:
 
 1. Melden Sie sich bei [[!DNL Cloud Console]](https://console.adobecommerce.com) an.
 1. Wählen Sie ein Projekt aus der Liste _Alle Projekte_ aus.
 1. Klicken Sie im Projekt-Dashboard auf das Konfigurationssymbol oben rechts.
-1. Klicken Sie auf **[!UICONTROL Environments]** und wählen Sie eine bestimmte Umgebung aus der Liste aus.
+1. Klicken Sie auf **[!UICONTROL Environments]** und wählen Sie eine bestimmte Umgebung aus der Liste aus (außer Staging und Produktion für Pro).
 1. Um ausgehende E-Mails zu aktivieren oder zu deaktivieren, schalten Sie _Ausgehende E-Mails aktivieren_ **Ein** oder **Aus** um.
 
    ![Ausgehende E-Mail-Konfiguration aktivieren](../../assets/outgoing-emails.png)
