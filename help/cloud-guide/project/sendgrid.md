@@ -2,9 +2,9 @@
 title: SendGrid-E-Mail-Dienst
 description: Erfahren Sie mehr über den SendGrid-E-Mail-Dienst für Adobe Commerce in der Cloud-Infrastruktur und wie Sie Ihre DNS-Konfiguration testen können.
 exl-id: 30d3c780-603d-4cde-ab65-44f73c04f34d
-source-git-commit: b5c8dc062a940e9e202d9bd4cca6901b07109e07
+source-git-commit: d07447fa8390794c3d019d513f23321fe02e41a1
 workflow-type: tm+mt
-source-wordcount: '1273'
+source-wordcount: '1317'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Der SMTP-Proxy SendGrid ist nicht zur Verwendung als allgemeiner E-Mail-Server f
 
 >[!TIP]
 >
->Sie finden SendGrid-Details für Ihr Konto in der [Onboarding-Benutzeroberfläche](https://cloud.magento.com) und wählen die Registerkarte **Projektdetails** > **Hosting-Informationen** aus.
+>Vergewissern Sie sich, dass Sie die entsprechenden E-Mail-Adressen für den Store in Admin konfiguriert haben, indem Sie Stores > Konfiguration > Allgemein aufrufen, um Probleme mit der Zustellbarkeit und Domänenüberprüfung zu vermeiden. Sie müssen **[!UICONTROL Use Default]** deaktivieren und die Standardwerte durch eine Domäne ersetzen, deren Inhaber Sie sind. Öffentliche/freigegebene E-Mail-Dienste wie gmail.com und outlook.com sollten beim Senden von E-Mails über das Sendgrid nicht als Absender-E-Mail-Adresse konfiguriert werden.
 
 ## E-Mail aktivieren oder deaktivieren
 
