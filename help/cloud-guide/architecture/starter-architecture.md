@@ -3,9 +3,9 @@ title: Starterarchitektur
 description: Erfahren Sie mehr über die von der Starter-Architektur unterstützten Umgebungen.
 feature: Cloud, Paas
 exl-id: 03365d32-4eb4-42d4-82a7-771df5e7b3da
-source-git-commit: e5cb79cab4e22d1c787859ab98e6bab6cd2dc2eb
+source-git-commit: 1fea819aec27002e0e043cddf635f10c4edd7c5b
 workflow-type: tm+mt
-source-wordcount: '942'
+source-wordcount: '956'
 ht-degree: 0%
 
 ---
@@ -65,6 +65,11 @@ Integrationsumgebungen sind für begrenzte Tests und Entwicklung ausgelegt. Beis
 Befolgen Sie die folgenden Best Practices, um eine optimale Leistung in der Integrationsumgebung zu erzielen:
 
 - Schränken Sie die Kataloggröße ein - Die Beispieldaten enthalten beispielsweise etwa 2.048 Produkte. Versuchen Sie, Ihre Kataloggröße auf etwa 4.000-5.000 Produkte zu reduzieren.
+Um die Anzahl der Produkte im Katalog zu überprüfen, führen Sie die folgende MySQL-Abfrage aus:
+
+  ```sql
+  select distinct count(entity_id) from catalog_product_entity;
+  ```
 
 - Verringerung der Anzahl der Kundengruppen - Eine zu große Anzahl von Kundengruppen kann sich auf die Indizierungsleistung und die Gesamtleistung auswirken.
 
