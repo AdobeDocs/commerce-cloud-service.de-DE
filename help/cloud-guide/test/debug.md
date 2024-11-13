@@ -2,9 +2,9 @@
 title: Konfigurieren von  [!DNL Xdebug]
 description: Erfahren Sie, wie Sie die Xdebug-Erweiterung für das Debugging Ihrer Adobe Commerce in der Cloud-Infrastruktur-Projektentwicklung konfigurieren.
 exl-id: bf2d32d8-fab7-439e-8df3-b039e53009d4
-source-git-commit: 7b42174663b79b673ee5af05b794090ddc5bdd75
+source-git-commit: 83984f9e30402cda7af29ca5095a251ff835b4a1
 workflow-type: tm+mt
-source-wordcount: '1765'
+source-wordcount: '1920'
 ht-degree: 0%
 
 ---
@@ -31,7 +31,7 @@ Gehen Sie wie folgt vor, um [!DNL Xdebug] zu konfigurieren:
 
 - [Arbeiten in einer Verzweigung zum Push von Dateiaktualisierungen](#get-started-with-a-branch)
 - [Aktivieren Sie [!DNL Xdebug] für Umgebungen](#enable-xdebug-in-your-environment)
-- [IDE konfigurieren](#configure-phpstorm)
+- [PHPStorm-Server konfigurieren](#configure-phpstorm-server)
 - [Einrichten der Anschlussweiterleitung](#set-up-port-forwarding)
 
 ### Erste Schritte mit einer Verzweigung
@@ -41,6 +41,8 @@ Um [!DNL Xdebug] hinzuzufügen, empfiehlt Adobe, in [einer Entwicklungsverzweigu
 ### Aktivieren Sie Xdebug in Ihrer Umgebung
 
 Sie können [!DNL Xdebug] direkt für alle Starter-Umgebungen und Pro-Integrationsumgebungen aktivieren. Dieser Konfigurationsschritt ist nicht für Pro Production- und Staging-Umgebungen erforderlich. Siehe [Debuggen für Pro Staging und Produktion](#debug-for-pro-staging-and-production).
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437407?learn=on)
 
 Um [!DNL Xdebug] für Ihr Projekt zu aktivieren, fügen Sie `xdebug` zum Abschnitt `runtime:extensions` der Datei `.magento.app.yaml` hinzu.
 
@@ -65,11 +67,11 @@ Um [!DNL Xdebug] für Ihr Projekt zu aktivieren, fügen Sie `xdebug` zum Abschni
 1. Fügen Sie die Änderungen hinzu, übertragen und pushen Sie sie, um sie erneut bereitzustellen.
 
    ```bash
-   git add -A
+   git add .magento.app.yaml
    ```
 
    ```bash
-   git commit -m "Add xdebug"
+   git commit -m "add xdebug"
    ```
 
    ```bash
@@ -78,7 +80,9 @@ Um [!DNL Xdebug] für Ihr Projekt zu aktivieren, fügen Sie `xdebug` zum Abschni
 
 Bei der Bereitstellung in Starter-Umgebungen und Pro-Integrationsumgebungen ist [!DNL Xdebug] jetzt verfügbar. Fahren Sie mit der Konfiguration Ihrer IDE fort. Informationen zu PHPStorm finden Sie unter [PHPStorm konfigurieren](#configure-phpstorm).
 
-### PHPStorm konfigurieren
+### Konfigurieren des PHPStorm-Servers
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437409?learn=on)
 
 Die IDE [PhpStorm](https://www.jetbrains.com/phpstorm/) muss so konfiguriert sein, dass sie mit [!DNL Xdebug] ordnungsgemäß funktioniert.
 
@@ -86,10 +90,10 @@ Die IDE [PhpStorm](https://www.jetbrains.com/phpstorm/) muss so konfiguriert sei
 
 1. Öffnen Sie in Ihrem PhpStorm-Projekt das Bedienfeld **Einstellungen** .
 
-   - _macOS_ - Wählen Sie **PHPStorm** > **Voreinstellungen** aus.
+   - _macOS_ - Wählen Sie **PHPStorm** > **Einstellungen**.
    - _Windows/Linux_ - Wählen Sie **Datei** > **Einstellungen** aus.
 
-1. Erweitern Sie im Bedienfeld _Einstellungen_ den Abschnitt **Sprachen und Frameworks** > **PHP** > **Server** und suchen Sie ihn.
+1. Erweitern Sie im Bedienfeld _Einstellungen_ den Abschnitt **PHP** und klicken Sie auf **Server**.
 
 1. Klicken Sie auf **+** , um eine Serverkonfiguration hinzuzufügen. Oben ist der Projektname grau.
 
@@ -110,11 +114,32 @@ Die IDE [PhpStorm](https://www.jetbrains.com/phpstorm/) muss so konfiguriert sei
       - Produktion: `/app/<project_code>/`
       - Staging: `/app/<project_code>_stg/`
 
-1. Ändern Sie den Port [!DNL Xdebug] im Bedienfeld **Sprachen und Frameworks** > **PHP** > **Debug** > **Xdebug** > **Debug Port** auf 9000.
+1. Ändern Sie den Port [!DNL Xdebug] in `9000,9003` oder beschränken Sie ihn auf nur `9000` im Bedienfeld **PHP** > **Debug** > **Xdebug** > **Debug Port** .
 
 1. Klicken Sie auf **Anwenden**.
 
+### Erstellen der PHPStorm-Run-/Debug-Konfiguration
+
+Dadurch kann das Programm über die korrekten Debug-Einstellungen verfügen, um die Anforderung aus der Adobe Commerce-Anwendung zu verarbeiten.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437426?learn=on)
+
+1. Öffnen Sie die PHPStorm-Anwendung und klicken Sie oben rechts im Bildschirm auf &quot;**[!UICONTROL Add Configuration]**&quot;.
+
+1. Klicken Sie auf **[!UICONTROL Add new run configuration]**.
+
+1. Wählen Sie die Option **[!UICONTROL PHP Remote Debug]** aus.
+
+   - Geben Sie einen eindeutigen, aber erkennbaren Namen ein.
+   - Aktivieren Sie das Kontrollkästchen [!UICONTROL Filter debug connection by IDE key]**.
+   - Wählen Sie den Server aus, den Sie im vorherigen Abschnitt [1} erstellt haben. ](#configure-phpstorm-server) Wenn Sie sie noch nicht erstellt haben, können Sie sie jetzt erstellen. Weitere Informationen finden Sie in diesem Abschnitt des Einrichtungshandbuchs.
+   - Geben Sie im Textfeld **[!UICONTROL IDE key(session id)]** den Wert `PHPSTORM` in Großbuchstaben ein. Wir werden dies in anderen Teilen des Setups verwenden. Daher ist es wichtig, dies gleich zu halten. Wenn Sie eine andere Zeichenfolge auswählen, müssen Sie daran denken, sie an einer anderen Stelle im Einrichtungs- und Konfigurationsprozess zu verwenden.
+
+1. Klicken Sie auf **[!UICONTROL Apply]** > **[!UICONTROL OK]**.
+
 ### Einrichten der Anschlussweiterleitung
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437410?learn=on)
 
 Ordnen Sie die `XDEBUG` -Verbindung vom Server Ihrem lokalen System zu. Für jede Art von Debugging müssen Sie Port 9000 von Ihrem Adobe Commerce auf dem Cloud-Infrastrukturserver an Ihren lokalen Computer weiterleiten. Siehe einen der folgenden Abschnitte:
 
@@ -280,6 +305,10 @@ Sie benötigen Folgendes:
 >- Methode 2: Commerce Console: https://CONSOLE-URL/ENVIRONMENT, klicken Sie auf das Dropdown-Menü `SSH v`
 
 **Starten des Debuggens mithilfe der Umgebungs-URL**:
+
+Dies ist eine Demonstration der verwendeten Konfigurationen sowie eine Demonstration des GET-Parameters zum Starten einer Remote-Debugging-Sitzung.
+
+>[!VIDEO](https://video.tv.adobe.com/v/3437417?learn=on)
 
 1. Aktivieren Sie das Remote-Debugging. Besuchen Sie die Site im Browser und hängen Sie Folgendes an die URL an, wobei `KEY` für `xdebug_key` steht.
 
