@@ -2,7 +2,7 @@
 title: Staging- und Produktionstests
 description: Erfahren Sie, wie Sie in Staging- und Produktionsumgebungen testen können.
 exl-id: 5b762d59-04c5-4e89-a637-719141759158
-source-git-commit: 1253d8357fd2554050d1775fefbc420a2097db5f
+source-git-commit: c6d4128792e688485e021bad75d9814a9f4d3b4f
 workflow-type: tm+mt
 source-wordcount: '1329'
 ht-degree: 0%
@@ -12,6 +12,8 @@ ht-degree: 0%
 # Staging- und Produktionstests
 
 Verwenden Sie nach erfolgreicher Migration von Code, Dateien und Daten in Staging oder Produktion die Umgebungs-URLs, um Ihre Sites und Stores zu testen. Im Folgenden finden Sie Informationen zum Überprüfen von Protokollen, zum Testen von Fastly-Konfigurationen, zum Testen von Benutzerakzeptanztests (UAT) und mehr.
+
+{{second-staging}}
 
 ## Protokolldateien
 

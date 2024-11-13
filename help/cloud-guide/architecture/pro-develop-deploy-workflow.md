@@ -3,7 +3,7 @@ title: Pro Projekt-Workflow
 description: Erfahren Sie, wie Sie die Workflows für die Pro-Entwicklung und -Bereitstellung verwenden.
 feature: Cloud, Iaas, Paas
 exl-id: 103e90d5-2ef2-4fef-845c-439344666b00
-source-git-commit: 08f43a3b0a50cdb2a5e8a45bd2e2448bc6dbca2b
+source-git-commit: c6d4128792e688485e021bad75d9814a9f4d3b4f
 workflow-type: tm+mt
 source-wordcount: '782'
 ht-degree: 0%
@@ -91,6 +91,8 @@ Kombinieren Sie alle verifizierten Codeänderungen, indem Sie Ihre aktive Entwic
 Staging ist eine Produktionsumgebung vor der Produktion, die alle Dienste und Einstellungen so nah wie möglich an der Produktionsumgebung bereitstellt. Übertragen Sie Ihre Codeänderungen immer von der `integration` -Umgebung in die `staging` -Umgebung, damit Sie mit allen Diensten gründliche Tests durchführen können. Wenn Sie die Staging-Umgebung zum ersten Mal verwenden, müssen Sie Dienste wie [Fastly CDN](../cdn/fastly.md) und [New Relic](../monitor/new-relic-service.md) konfigurieren. Konfigurieren Sie Zahlungskanäle, Versand, Benachrichtigungen und andere wichtige Dienste mit Sandbox- oder Testberechtigungen.
 
 Am besten testen sollten Sie jeden Dienst gründlich testen, Ihre Leistungstestwerkzeuge überprüfen und UAT-Tests als Administrator und Kunde durchführen, bis Sie denken, dass Ihr Geschäft für die Produktionsumgebung bereit ist. Siehe [Bereitstellen Ihres Stores](../deploy/staging-production.md).
+
+{{second-staging}}
 
 ### Zusammenführen zur Produktion
 

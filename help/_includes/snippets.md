@@ -1,7 +1,7 @@
 ---
-source-git-commit: a87039d2e96e39d6d8d19673c5e0d52de8b844a4
+source-git-commit: 63b966c1562318dc43dd42641e6f607f5438137b
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: '907'
 ht-degree: 0%
 
 ---
@@ -81,6 +81,12 @@ Legen Sie die Option `_merge` auf einen der folgenden Werte fest:
 >[!NOTE]
 >
 >Ab Version [!DNL ECE-Tools] 2002.1.0 können Sie die szenario-basierte Bereitstellungsfunktion verwenden, um die Build-, Bereitstellungs- und Nachbereitstellungsprozesse für Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur anzupassen. Siehe [Scenario-basierte Bereitstellung](/help/cloud-guide/deploy/scenario-based.md).
+
+## Zweite Testphase {#second-staging}
+
+>[!NOTE]
+>
+>Einige Projekte erfordern einen komplexeren Entwicklungs-Workflow. Um dies zu unterstützen, bietet Adobe eine [zusätzliche Staging-Umgebung](/help/cloud-guide/test/second-staging.md) als Add-On-Option für Ihre Cloud-Infrastruktur.
 
 ## Dienstanweisung {#service-instruction}
 

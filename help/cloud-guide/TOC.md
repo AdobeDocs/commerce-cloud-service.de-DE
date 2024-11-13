@@ -3,9 +3,9 @@ user-guide-title: Handbuch zu Commerce mit Cloud Infrastructure
 user-guide-description: Erfahren Sie, wie Sie die Adobe Commerce-Anwendung in der Cloud-Infrastruktur verwalten.
 product: magento
 feature: Cloud
-source-git-commit: ebd434e488b666d34df9562825a612b33495e44d
+source-git-commit: 54b9101d3cba535a0e2c83e482aaebe261e3bcce
 workflow-type: tm+mt
-source-wordcount: '353'
+source-wordcount: '356'
 ht-degree: 7%
 
 ---
@@ -82,6 +82,7 @@ ht-degree: 7%
       + [Xdebug](test/debug.md)
       + [Beispieldaten](test/sample-data.md)
       + [Staging und Produktion](test/staging-and-production.md)
+      + [Zweite Staging-Umgebung](test/second-staging.md)
    + [PrivateLink-Dienst](development/privatelink-service.md)
    + [Schutzblock](development/protective-block.md)
    + [Umgebung wiederherstellen](development/restore-environment.md)
@@ -118,7 +119,7 @@ ht-degree: 7%
          + [Global](environment/variables-global.md)
          + [Build](environment/variables-build.md)
          + [Bereitstellen](environment/variables-deploy.md)
-         + [Post-Bereitstellung](environment/variables-post-deploy.md)
+         + [Nach der Bereitstellung](environment/variables-post-deploy.md)
       + Benachrichtigungen konfigurieren {#log}
          + [Benachrichtigungen](environment/set-up-notifications.md)
          + [Protokollhandler](environment/log-handlers.md)
@@ -144,7 +145,7 @@ ht-degree: 7%
    + [Bildoptimierung](cdn/fastly-image-optimization.md)
    + Mit VCL anpassen {#custom-vcl-snippets}
       + [Erste Schritte](cdn/fastly-vcl-custom-snippets.md)
-      + [Anforderungen an ein CMS-Backend umleiten](cdn/fastly-vcl-wordpress.md)
+      + [Erneutes Senden von Anforderungen an ein CMS-Backend](cdn/fastly-vcl-wordpress.md)
       + [Blockverweis-Spam](cdn/fastly-vcl-badreferer.md)
       + [IP-Zulassungsliste](cdn/fastly-vcl-allowlist.md)
       + [IP-Blockierungsliste](cdn/fastly-vcl-blocking.md)

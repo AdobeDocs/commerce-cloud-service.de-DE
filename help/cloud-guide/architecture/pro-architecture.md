@@ -4,7 +4,7 @@ description: Erfahren Sie mehr über die Umgebungen, die von der Pro-Architektur
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: a1e7674b99d7e289531268e1a298f61344c7bd8f
+source-git-commit: 18f4da5c6e7e5c483f5cf64e977b3fb3fd28bbb0
 workflow-type: tm+mt
 source-wordcount: '1573'
 ht-degree: 0%
@@ -120,6 +120,8 @@ Siehe [Freigabe-Workflow](pro-develop-deploy-workflow.md#deployment-workflow) un
 - Verwenden Sie nach dem Start der Produktions-Site die Staging-Umgebung in erster Linie, um Patches auf produktionskritische Fehlerbehebungen zu testen.
 
 - Sie können keine Verzweigung aus der Verzweigung `staging` erstellen. Stattdessen übernehmen Sie die Übertragung von Code-Änderungen vom Zweig `integration` in den Zweig `staging` .
+
+{{second-staging}}
 
 ### Produktionsumgebung
 
