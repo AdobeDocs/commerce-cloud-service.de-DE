@@ -2,9 +2,9 @@
 title: Commerce on Cloud Infrastructure
 description: Erfahren Sie mehr über das Erstellen, Bereitstellen und Verwalten von Commerce in der Cloud-Infrastruktur.
 exl-id: c0accd55-95ac-49d9-b6f4-0da19b82c28f
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 6ac23cbcf7ab48d09b494ebe8c7136518d213c4e
 workflow-type: tm+mt
-source-wordcount: '224'
+source-wordcount: '236'
 ht-degree: 0%
 
 ---
@@ -19,6 +19,10 @@ Adobe Commerce on Cloud Infrastructure bietet eine automatisierte Hosting-Plattf
 - Amazon Web Services (AWS)-Hosting, das eine skalierbare und sichere Umgebung für Online-Verkäufe und -Einzelhandel bietet.
 
 ![Cloud-Vorteile](../assets/CloudBenefits.svg)
+
+>[!NOTE]
+>
+>Weiterführende Informationen zur Sicherheit finden Sie in der Checkliste für den Sicherheitstart [1}.](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/launch/checklist#security-configuration)
 
 Sehen Sie sich den [Technologie-Stack](architecture/tech-stack.md) im Detail an oder erfahren Sie mehr über bestimmte Funktionen und unterstützte Produkte in der [Cloud-Architektur für Commerce](architecture/cloud-architecture.md).
 
