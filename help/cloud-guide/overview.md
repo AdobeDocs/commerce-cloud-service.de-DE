@@ -2,9 +2,9 @@
 title: Commerce on Cloud Infrastructure
 description: Erfahren Sie mehr über das Erstellen, Bereitstellen und Verwalten von Commerce in der Cloud-Infrastruktur.
 exl-id: c0accd55-95ac-49d9-b6f4-0da19b82c28f
-source-git-commit: 6ac23cbcf7ab48d09b494ebe8c7136518d213c4e
+source-git-commit: 5f00b20e599b7ba26e483a238d05d99daf1dd1b8
 workflow-type: tm+mt
-source-wordcount: '236'
+source-wordcount: '293'
 ht-degree: 0%
 
 ---
@@ -32,6 +32,26 @@ Sehen Sie sich den [Technologie-Stack](architecture/tech-stack.md) im Detail an 
 <div id="recs-overview-body-4"></div>
 <div id="recs-overview-body-5"></div>
 <div id="recs-overview-body-6"></div>
+
+## Cloud-Regionen
+
+Die folgenden Abschnitte enthalten Details zu den verschiedenen AWS- und Azure-Regionen, die für Adobe Commerce in der Cloud-Infrastruktur verfügbar sind.
+
+## AWS-Regionen
+
+![Diagramm mit AWS-Regionen](../assets/aws-regions.svg){zoomable="yes"}
+
+>[!NOTE]
+>
+> Nur in China und Russland vor Ort.
+
+## Azure-Regionen
+
+![Diagramm mit Azure-Regionen](../assets/azure-regions.svg){zoomable="yes"}
+
+>[!NOTE]
+>
+> Nur in China und Russland vor Ort. Alle Händler, die Integrationsumgebungen erfordern, müssen US-Regionen verwenden.
 
 ## Adobe Commerce-Dokumentation
 
