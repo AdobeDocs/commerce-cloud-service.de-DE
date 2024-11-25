@@ -4,9 +4,9 @@ description: Erfahren Sie, wie Sie auf Ihr New Relic-Dashboard zugreifen und Dat
 feature: Cloud, Observability
 topic: Performance
 exl-id: 8d1e2ad6-14d0-4754-9703-960d93e135a9
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
 workflow-type: tm+mt
-source-wordcount: '844'
+source-wordcount: '833'
 ht-degree: 0%
 
 ---
@@ -85,11 +85,11 @@ Wenn die Site-Infrastruktur oder die Anwendungsbedingungen eine Alarmschwelle Tr
 
 Ändern Sie keine Warnhinweise, die in der Richtlinie &quot;Managed Warnungen for Adobe Commerce&quot;enthalten sind. Adobe aktualisiert und verbessert die Alarmbedingungen in dieser Richtlinie im Laufe der Zeit, wodurch alle Anpassungen überschrieben werden, die Sie zur Richtlinie hinzufügen.
 
-Anstatt einen vorhandenen Warnhinweis zu ändern, können Sie eine Warnhinweisrichtlinie erstellen. Kopieren Sie dann die Warnungsbedingungen in die neue Richtlinie. Siehe [Richtlinien oder Bedingungen aktualisieren](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/alert-policies/update-or-disable-policies-conditions/) in der Dokumentation zu _New Relic_ .
+Anstatt einen vorhandenen Warnhinweis zu ändern, können Sie eine Warnhinweisrichtlinie erstellen. Kopieren Sie dann die Warnungsbedingungen in die neue Richtlinie.
 
 >[!TIP]
 >
->Weitere Informationen zu Warnhinweisen, Warnhinweisrichtlinien und Workflows finden Sie unter [Einführung in Warnhinweise](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/learn-alerts/alerts-concepts-workflow/) in der Dokumentation zu _New Relic_ .
+>Weitere Informationen zu Warnhinweisen, Warnhinweisrichtlinien und Workflows finden Sie unter [Einführung in Warnhinweise](https://docs.newrelic.com/docs/alerts/overview/) in der Dokumentation zu _New Relic_ .
 
 ## Einrichten eines Workflows für Benachrichtigungen
 
