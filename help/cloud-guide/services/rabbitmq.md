@@ -3,7 +3,7 @@ title: Einrichten des RabbitMQ-Dienstes
 description: Erfahren Sie, wie Sie den RabbitMQ-Dienst aktivieren, um Nachrichtenwarteschlangen für Adobe Commerce in der Cloud-Infrastruktur zu verwalten.
 feature: Cloud, Services
 exl-id: 85794b8f-2260-4a6e-b5a6-a1b4c356594e
-source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
 source-wordcount: '398'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # Einrichten des [!DNL RabbitMQ]-Dienstes
 
-Das [Message Queue Framework (MQF)](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) ist ein System in Adobe Commerce, das es einem [Modul](https://experienceleague.adobe.com/en/docs/commerce-operations/operational-playbook/glossary#module) ermöglicht, Nachrichten in Warteschlangen zu veröffentlichen. Außerdem werden die Verbraucher definiert, die die Nachrichten asynchron empfangen.
+Das [Message Queue Framework (MQF)](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/message-queues/message-queue-framework.html) ist ein System in Adobe Commerce, das es einem [Modul](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary#module) ermöglicht, Nachrichten in Warteschlangen zu veröffentlichen. Außerdem werden die Verbraucher definiert, die die Nachrichten asynchron empfangen.
 
 Der MQF verwendet [RabbitMQ](https://www.rabbitmq.com/) als Messaging-Broker, der eine skalierbare Plattform zum Senden und Empfangen von Nachrichten bietet. Es enthält auch einen Mechanismus zum Speichern nicht zugestellter Nachrichten. [!DNL RabbitMQ] basiert auf der AMQP-Spezifikation 0.9.1 (Advanced Message Queuing Protocol).
 

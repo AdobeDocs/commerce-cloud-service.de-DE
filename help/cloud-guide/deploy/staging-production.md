@@ -3,7 +3,7 @@ title: Bereitstellen in Staging und Produktion
 description: Erfahren Sie, wie Sie Ihren Adobe Commerce-Code für Cloud-Infrastruktur in den Staging- und Produktionsumgebungen für weitere Tests bereitstellen.
 feature: Cloud, Console, Deploy, SCD, Storage
 exl-id: 4b82289f-ee04-4b14-a0ed-7a8a19fc6a6a
-source-git-commit: ae7eb6a0c3de773377c8e1efb5ce2e92c06506bd
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
 source-wordcount: '1310'
 ht-degree: 0%
@@ -140,7 +140,7 @@ Die Cloud-CLI bietet Befehle zum Bereitstellen von Code. Sie benötigen SSH- und
 
 ## Migrieren von statischen Dateien
 
-[Statische Dateien](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) werden in `mounts` gespeichert. Es gibt zwei Methoden zum Migrieren von Dateien von einem Quellbereitstellungsspeicherort, wie z. B. Ihrer lokalen Umgebung, zu einem Ziel-Bereitstellungsspeicherort. Beide Methoden verwenden das Dienstprogramm `rsync` , Adobe empfiehlt jedoch die Verwendung der CLI `magento-cloud` für das Verschieben von Dateien zwischen der lokalen und der Remote-Umgebung. Adobe empfiehlt die Verwendung der `rsync`-Methode beim Verschieben von Dateien von einer Remote-Quelle an einen anderen Remote-Speicherort.
+[Statische Dateien](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) werden in `mounts` gespeichert. Es gibt zwei Methoden zum Migrieren von Dateien von einem Quellbereitstellungsspeicherort, wie z. B. Ihrer lokalen Umgebung, zu einem Ziel-Bereitstellungsspeicherort. Beide Methoden verwenden das Dienstprogramm `rsync` , Adobe empfiehlt jedoch die Verwendung der CLI `magento-cloud` für das Verschieben von Dateien zwischen der lokalen und der Remote-Umgebung. Adobe empfiehlt die Verwendung der `rsync`-Methode beim Verschieben von Dateien von einer Remote-Quelle an einen anderen Remote-Speicherort.
 
 ### Migrieren von Dateien mithilfe der CLI
 

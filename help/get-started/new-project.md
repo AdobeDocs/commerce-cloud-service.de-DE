@@ -4,9 +4,9 @@ description: Erfahren Sie, wie Sie einen Adobe Customer Technical Advisor für d
 recommendations: noDisplay, catalog
 role: Admin
 exl-id: cfb354b0-c255-4b6e-94aa-c5a6bf7230d6
-source-git-commit: da1dec76b9389244f9d5a65428e09f1bc897fa5f
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
-source-wordcount: '756'
+source-wordcount: '751'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Siehe [Verwalten von Speicherplatz](../cloud-guide/storage/manage-disk-space.md)
 
 Wählen Sie entweder Amazon Web Services (AWS) oder Microsoft Azure als Grundlage für Ihre Infrastruktur-as-a-Service-Projekte (IAAs) für Ihre Adobe Commerce in Cloud-Infrastruktur Pro-Projekte. Jeder Dienstleister arbeitet in mehreren Regionen und bietet mehrere Verfügbarkeitszonen. Wählen Sie eine Region aus, die Ihrem Standort entspricht, und reduzieren Sie das Latenzpotenzial und die höheren Kosten.
 
-Siehe [eine Zuordnung der Adobe Commerce-Cloud-Regionen](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/infrastructure/cloud/regions.html) im _Implementierungs-Playbook_.
+Siehe [eine Zuordnung der Adobe Commerce-Cloud-Regionen](../cloud-guide/overview.md).
 
 ## Verbindungsdienst
 

@@ -3,7 +3,7 @@ title: Best Practices bei der Implementierung
 description: Entdecken Sie Best Practices für die Bereitstellung von Adobe Commerce in der Cloud-Infrastruktur.
 feature: Cloud, Deploy, Best Practices
 exl-id: bac3ca83-0eee-4fda-9a5c-a84ab25a837a
-source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
 source-wordcount: '1904'
 ht-degree: 0%
@@ -118,7 +118,7 @@ In dieser Phase wird auch `composer install` ausgeführt, um Abhängigkeiten abz
 Diese Phase erstellt die Codebase und führt Hooks im Abschnitt `build` von `.magento.app.yaml` aus. Der standardmäßige Build-Erweiterungspunkt ist der Befehl `php ./vendor/bin/ece-tools` und führt Folgendes aus:
 
 - Wendet Patches in `vendor/magento/ece-patches` und optionale projektspezifische Patches in `m2-hotfixes` an
-- Regeneriert den Code und die Konfiguration [Abhängigkeitsinjektion](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) (d. h. das Verzeichnis `generated/`, das `generated/code` und `generated/metapackage` enthält) mit `bin/magento setup:di:compile`.
+- Regeneriert den Code und die Konfiguration [Abhängigkeitsinjektion](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) (d. h. das Verzeichnis `generated/`, das `generated/code` und `generated/metapackage` enthält) mit `bin/magento setup:di:compile`.
 - Überprüft, ob die Datei [`app/etc/config.php`](../store/store-settings.md) in der Codebasis vorhanden ist. Adobe Commerce generiert diese Datei automatisch, wenn sie sie während der Build-Phase nicht erkennt, und enthält eine Liste von Modulen und Erweiterungen. Wenn sie vorhanden ist, wird die Build-Phase normal fortgesetzt, statische Dateien werden mit GZIP komprimiert und bereitgestellt, wodurch Ausfallzeiten in der Bereitstellungsphase reduziert werden. Weitere Informationen zum Anpassen oder Deaktivieren der Dateikomprimierung finden Sie unter [Build-Optionen](../environment/variables-build.md) .
 
 >[!WARNING]
@@ -145,7 +145,7 @@ Der Slug enthält alle Dateien und Ordner **mit Ausnahme der folgenden** in `mag
 
 ### Phase 4: Bereitstellen von Schlägern und Clustern
 
-Ihre Anwendungen und alle [Backend](https://experienceleague.adobe.com/docs/commerce-operations/operational-playbook/glossary.html) -Dienste bieten wie folgt an:
+Ihre Anwendungen und alle [Backend](https://experienceleague.adobe.com/en/docs/commerce-operations/implementation-playbook/glossary) -Dienste bieten wie folgt an:
 
 - Fügt jeden Dienst in einem Container ein, z. B. Webserver, OpenSearch, [!DNL RabbitMQ]
 - Fügt das Lese- und Schreibdateisystem ein (auf einem hochverfügbaren verteilten Speichersystem bereitgestellt)
@@ -183,7 +183,7 @@ Es gibt zwei Bereitstellungshaken. Der Erweiterungspunkt &quot;`pre-deploy.php`&
 >
 >Das Bereitstellungsskript verwendet die Werte, die durch Konfigurationsdateien im Ordner &quot;`.magento`&quot;definiert sind, und löscht dann das Skript den Ordner und dessen Inhalt. Ihre lokale Entwicklungsumgebung ist nicht betroffen.
 
-### Post-Bereitstellung: Routing konfigurieren
+### Nach der Bereitstellung: Routing konfigurieren
 
 Während die Bereitstellung ausgeführt wird, stoppt der Prozess den eingehenden Traffic am Einstiegspunkt für 60 Sekunden und konfiguriert das Routing neu, sodass Ihr Web-Traffic in den neu erstellten Cluster gelangt.
 
