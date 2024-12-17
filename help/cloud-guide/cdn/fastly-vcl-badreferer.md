@@ -1,68 +1,68 @@
 ---
-title: Blockverweis-Spam
-description: Blockieren Sie Spam von Ihrer Site mit dem Fastly Edge-Wörterbuch und einem benutzerdefinierten VCL-Snippet.
+title: Spam für Verweise blockieren
+description: Blockieren Sie Empfehlungs-Spam auf Ihrer Site mit dem Fastly Edge-Wörterbuch und einem benutzerdefinierten VCL-Snippet.
 feature: Cloud, Configuration, Security
 exl-id: 665bac93-75db-424f-be2c-531830d0e59a
-source-git-commit: 7a181af2149eef7bfaed4dd4d256b8fa19ae1dda
+source-git-commit: a06e3f98b8b581213de1e0fd87ea4c2241ccaa62
 workflow-type: tm+mt
 source-wordcount: '684'
 ht-degree: 0%
 
 ---
 
-# Blockverweis-Spam
+# Spam für Verweise blockieren
 
-Das folgende Beispiel zeigt, wie Sie [Fastly Edge Dictionary](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) mit einem benutzerdefinierten VCL-Snippet konfigurieren, um Verweisspänen aus Ihrer Adobe Commerce auf der Cloud-Infrastruktur-Site zu blockieren.
+Das folgende Beispiel zeigt, wie Sie [Fastly Edge Dictionary](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) mit einem benutzerdefinierten VCL-Snippet konfigurieren, um Empfehlungs-Spam aus Ihrem Adobe Commerce auf der Cloud-Infrastruktur-Site zu blockieren.
 
 >[!NOTE]
 >
->Es wird empfohlen, benutzerdefinierte VCL-Konfigurationen zu einer Staging-Umgebung hinzuzufügen, in der Sie diese testen können, bevor Sie sie mit der Produktionsumgebung ausführen.
+>Es wird empfohlen, benutzerdefinierte VCL-Konfigurationen zu einer Staging-Umgebung hinzuzufügen, in der Sie sie testen können, bevor Sie sie mit der Produktionsumgebung ausführen.
 
 **Voraussetzungen:**
 
 {{$include /help/_includes/vcl-snippet-prerequisites.md}}
 
-- Überprüfen Sie Ihre Site-Protokolle auf gefälschte Verweis-URLs und erstellen Sie eine Liste der Domänen, die blockiert werden sollen.
+- Überprüfen Sie Ihre Site-Protokolle auf gefälschte Verweis-URLs und erstellen Sie eine Liste der zu blockierenden Domains.
 
 ## Erstellen einer Referrer-Blockierungsliste
 
-Edge-Wörterbücher erstellen Schlüssel-Wert-Paare, auf die VCL-Funktionen während der VCL-Snippet-Verarbeitung zugreifen können. In diesem Beispiel erstellen Sie ein Edge-Wörterbuch, das die Liste der zu blockierenden Referrer-Websites bereitstellt.
+Edge-Wörterbücher erstellen Schlüssel-Wert-Paare, auf die während der Verarbeitung von VCL-Ausschnitten VCL-Funktionen zugreifen können. In diesem Beispiel erstellen Sie ein Edge-Wörterbuch, das die Liste der zu blockierenden Referrer-Websites bereitstellt.
 
 {{admin-login-step}}
 
 1. Klicken Sie auf **Stores** > **Einstellungen** > **Konfiguration** > **Erweitert** > **System**.
 
-1. Erweitern Sie **Vollständiger Seiten-Cache** > **Schnellkonfiguration** > **Edge-Wörterbücher**.
+1. Erweitern Sie **Vollständiger Seitencache** > **Fastly-Konfiguration** > **Edge-Wörterbücher**.
 
-1. Erstellen Sie den Wörterbuchcontainer:
+1. Erstellen Sie den Wörterbuch-Container:
 
-   - Klicken Sie auf **Container hinzufügen**.
+   - Klicken Sie **Container hinzufügen**.
 
-   - Geben Sie auf der Seite *Container* einen **Wörterbuchnamen**—`referrer_blocklist` ein.
+   - Geben Sie auf *Seite* Container“ einen **Wörterbuchnamen**-`referrer_blocklist` ein.
 
-   - Wählen Sie **Aktivieren nach der Änderung** aus, um Ihre Änderungen für die Version der von Ihnen bearbeiteten Fastly-Service-Konfiguration bereitzustellen.
+   - Wählen Sie **Aktivieren nach der Änderung** aus, um Ihre Änderungen für die Version der Fastly-Service-Konfiguration bereitzustellen, die Sie bearbeiten.
 
-   - Klicken Sie auf **Hochladen** , um das Wörterbuch an Ihre Konfiguration des Fastly-Dienstes anzuhängen.
+   - Klicken Sie **Hochladen**, um das Wörterbuch an Ihre Fastly-Service-Konfiguration anzuhängen.
 
-1. Fügen Sie dem Wörterbuch `referrer_blocklist` die Liste der zu blockierenden Domänennamen hinzu:
+1. Fügen Sie die Liste der Domain-Namen hinzu, die dem `referrer_blocklist` blockiert werden sollen:
 
-   - Klicken Sie auf das Symbol Einstellungen für das Wörterbuch `referrer_blocklist` .
+   - Klicken Sie auf das Symbol Einstellungen für das `referrer_blocklist`.
 
-   - Fügen Sie Schlüssel-Wert-Paare hinzu und speichern Sie sie im neuen Wörterbuch. In diesem Beispiel ist jeder **Schlüssel** der Domänenname der zu blockierenden Referrer-URL und der **Wert** ist `true`.
+   - Hinzufügen und Speichern von Schlüssel-Wert-Paaren im neuen Wörterbuch. In diesem Beispiel ist jeder **Schlüssel** der Domain-Name einer zu blockierenden Referrer-URL und **Wert** wird `true`.
 
-     ![Schlechte Wörterbuchelemente des Referrers hinzufügen](../../assets/cdn/fastly-referrer-blocklist-dictionary.png)
+     ![Ungültige Referrer-Wörterbuchelemente hinzufügen](../../assets/cdn/fastly-referrer-blocklist-dictionary.png)
 
-   - Klicken Sie auf **Abbrechen** , um zur Systemkonfigurationsseite zurückzukehren.
+   - Klicken Sie **Abbrechen**, um zur Systemkonfigurationsseite zurückzukehren.
 
-1. Klicken Sie auf **Konfiguration speichern**.
+1. Klicken Sie **Konfiguration speichern**.
 
-1. Aktualisieren Sie den Cache gemäß der Benachrichtigung oben auf der Seite.
+1. Aktualisieren Sie den Cache entsprechend der Benachrichtigung oben auf der Seite.
 
-Weitere Informationen zu Edge-Wörterbüchern finden Sie unter [Erstellen und Verwenden von Edge-Wörterbüchern](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) und [benutzerdefinierten VCL-Snippets](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api#custom-vcl-examples) in der Schnelldokumentation.
+Weitere Informationen zu Edge-Wörterbüchern finden Sie unter [Erstellen und Verwenden von Edge](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) und [benutzerdefinierte VCL-Snippets](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api#custom-vcl-examples) in der Fastly-Dokumentation.
 
-## Erstellen eines benutzerdefinierten VCL-Snippets zum Blockieren von Werber-Spam
+## Erstellen eines benutzerdefinierten VCL-Snippets zum Blockieren von Referrer-Spam
 
-Der folgende benutzerdefinierte VCL-Codeausschnitt (JSON-Format) zeigt die Logik zum Überprüfen und Blockieren von Anforderungen. Das VCL-Snippet erfasst den Host einer Referrer-Website in einer Kopfzeile und vergleicht dann den Hostnamen mit der Liste der URLs im Wörterbuch `referrer_blocklist`. Wenn der Hostname übereinstimmt, wird die Anfrage mit einem `403 Forbidden` -Fehler blockiert.
+Der folgende benutzerdefinierte VCL-Code-Ausschnitt (JSON-Format) zeigt die Logik zum Überprüfen und Blockieren von Anfragen. Das VCL-Snippet erfasst den Host einer Referrer-Website in einer Kopfzeile und vergleicht dann den Host-Namen mit der Liste der URLs im `referrer_blocklist`. Wenn der Host-Name übereinstimmt, wird die Anfrage mit einem `403 Forbidden` Fehler blockiert.
 
 ```json
 {
@@ -70,37 +70,37 @@ Der folgende benutzerdefinierte VCL-Codeausschnitt (JSON-Format) zeigt die Logik
   "dynamic": "0",
   "type": "recv",
   "priority": "5",
-  "content": "set req.http.Referer-Host = regsub(req.http.Referer, \"^https?:\/\/?([^:\/s]+).*$\", \"\\1\"); if (table.lookup(referrer_blocklist, req.http.Referer-Host)) { error 403 \"Forbidden\"; }"
+  "content": "if (req.http.Referer ~ \"^(.*:)//([A-Za-z0-9\-\.]+)(:[0-9]+)?(.*)$\") {set req.http.Referer-Host = re.group.2;}if (table.lookup(referrer_blocklist, req.http.Referer-Host)) {error 403 \"Forbidden\";}"
 }
 ```
 
-Bevor Sie ein auf diesem Beispiel basierendes Snippet erstellen, überprüfen Sie die Werte, um festzustellen, ob Sie Änderungen vornehmen müssen:
+Bevor Sie einen Ausschnitt basierend auf diesem Beispiel erstellen, überprüfen Sie die Werte, um festzustellen, ob Sie Änderungen vornehmen müssen:
 
-- `name` - Name für das VCL-Snippet. Für dieses Beispiel haben wir `block_bad_referrer` verwendet.
+- `name` — Name des VCL-Snippets. Für dieses Beispiel haben wir `block_bad_referrer` verwendet.
 
-- `dynamic` - Der Wert 0 zeigt ein [reguläres Snippet](https://docs.fastly.com/en/guides/using-regular-vcl-snippets) an, das für die schnelle Konfiguration in das versionierte VCL hochgeladen werden soll.
+- `dynamic` - Wert 0 zeigt einen [regulären Ausschnitt](https://docs.fastly.com/en/guides/using-regular-vcl-snippets) an, der für die Fastly-Konfiguration in die versionierte VCL hochgeladen werden soll.
 
-- `priority` - Bestimmt, wann das VCL-Snippet ausgeführt wird. Die Priorität lautet &quot;`5`&quot;, um diesen Codeausschnitt auszuführen, bevor einem der standardmäßigen Magento VCL-Snippets (`magentomodule_*`) eine Priorität von 50 zugewiesen wird. Legen Sie die Priorität für jedes benutzerdefinierte Snippet höher oder niedriger als 50 fest, je nachdem, wann Ihr Snippet ausgeführt werden soll. Snippets mit niedrigeren Prioritätswerten werden zuerst ausgeführt.
+- `priority` - Bestimmt, wann der VCL-Snippet ausgeführt wird. Die Priorität `5` darin, diesen Code vor einem der standardmäßigen Magento-VCL-Snippets (`magentomodule_*`) auszuführen, denen eine Priorität von 50 zugewiesen wurde. Legen Sie die Priorität für jeden benutzerdefinierten Ausschnitt auf einen Wert von über oder unter 50 fest, je nachdem, wann der Ausschnitt ausgeführt werden soll. Snippets mit Zahlen niedrigerer Priorität werden zuerst ausgeführt.
 
-- `type` - Gibt einen Speicherort an, an dem das Snippet in die VCL-Version eingefügt werden soll. In diesem Beispiel ist das VCL-Snippet ein `recv` -Snippet. Wenn das Snippet in die VCL-Version eingefügt wird, wird es der UnterRoutine `vcl_recv` hinzugefügt, unter dem standardmäßigen Fastly VCL-Code und über allen Objekten.
+- `type` - Gibt einen Speicherort an, an dem der Ausschnitt in die VCL-Version eingefügt werden soll. In diesem Beispiel ist der VCL-Ausschnitt ein `recv`. Wenn der Ausschnitt in die VCL-Version eingefügt wird, wird er der `vcl_recv`-Unterroutine, unterhalb des standardmäßigen Fastly-VCL-Codes und über allen Objekten hinzugefügt.
 
-- `content` - Das Snippet des VCL-Codes, der in einer Zeile ohne Zeilenumbrüche ausgeführt werden soll.
+- `content` - Der Ausschnitt des VCL-Codes, der in einer Zeile ohne Zeilenumbrüche ausgeführt werden soll.
 
-Nachdem Sie den Code für Ihre Umgebung überprüft und aktualisiert haben, verwenden Sie eine der folgenden Methoden, um das benutzerdefinierte VCL-Snippet Ihrer Fastly Service-Konfiguration hinzuzufügen:
+Nachdem Sie den Code für Ihre Umgebung überprüft und aktualisiert haben, verwenden Sie eine der folgenden Methoden, um das benutzerdefinierte VCL-Snippet zu Ihrer Fastly-Service-Konfiguration hinzuzufügen:
 
-- [Fügen Sie das benutzerdefinierte VCL-Snippet aus dem Admin](#add-the-custom-vcl-snippet) hinzu. Diese Methode wird empfohlen, wenn Sie auf den Admin zugreifen können. (Erfordert [schnelle Version 1.2.58](fastly-configuration.md#upgrade) oder höher.)
+- [Fügen Sie das benutzerdefinierte VCL-Snippet von der Admin ](#add-the-custom-vcl-snippet). Diese Methode wird empfohlen, wenn Sie auf Admin zugreifen können. (Erfordert [Fastly Version 1.2.58](fastly-configuration.md#upgrade) oder höher.)
 
-- Speichern Sie das JSON-Codebeispiel in eine Datei (z. B. `allowlist.json`) und laden Sie sie mit der Fastly API](fastly-vcl-custom-snippets.md#manage-custom-vcl-snippets-using-the-api) hoch. [ Verwenden Sie diese Methode, wenn Sie nicht auf den Admin zugreifen können.
+- Speichern Sie das JSON-Code-Beispiel in einer Datei (z. B. `allowlist.json`) und [ Sie es mithilfe der Fastly-API ](fastly-vcl-custom-snippets.md#manage-custom-vcl-snippets-using-the-api). Verwenden Sie diese Methode, wenn Sie nicht auf Admin zugreifen können.
 
 ## Hinzufügen des benutzerdefinierten VCL-Snippets
 
 {{admin-login-step}}
 
-1. Klicken Sie auf **Stores** > Einstellungen > **Konfiguration** > **Erweitert** > **System**.
+1. Klicken Sie **Stores** > Einstellungen > **Konfiguration** > **Erweitert** > **System**.
 
-1. Erweitern Sie **Vollständiger Seiten-Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
+1. Erweitern Sie **Vollständiger Seitencache** > **Fastly-Konfiguration** > **Benutzerdefinierte VCL-Snippets**.
 
-1. Klicken Sie auf **Benutzerdefiniertes Snippet erstellen**.
+1. Klicken Sie **Benutzerdefiniertes Snippet erstellen**.
 
 1. Fügen Sie die VCL-Snippet-Werte hinzu:
 
@@ -113,22 +113,23 @@ Nachdem Sie den Code für Ihre Umgebung überprüft und aktualisiert haben, verw
    - **VCL** Snippet-Inhalt —
 
      ```conf
-     set req.http.Referer-Host = regsub(req.http.Referer,
-     "^https?://?([^:/\s]+).*$", "1");
+     if (req.http.Referer ~ "^(.*:)//([A-Za-z0-9\-\.]+)(:[0-9]+)?(.*)$") {
+       set req.http.Referer-Host = re.group.2;  
+     }
      if (table.lookup(referrer_blocklist, req.http.Referer-Host)) {
        error 403 "Forbidden";
      }
      ```
 
-1. Klicken Sie auf **Erstellen**.
+1. Klicken Sie **Erstellen**.
 
-   ![Erstellen eines benutzerdefinierten VCL-Codefragments für Referrer-Block](/help/assets/cdn/fastly-create-referrer-block-snippet.png)
+   ![Erstellen eines benutzerdefinierten Referrer-Block-VCL-Snippets](/help/assets/cdn/fastly-create-referrer-block-snippet.png)
 
-1. Klicken Sie nach dem Neuladen der Seite im Abschnitt *Schnelle Konfiguration* auf **VCL auf Fastly hochladen** .
+1. Nachdem die Seite neu geladen wurde, klicken Sie im Abschnitt **Fastly-Konfiguration** auf *VCL zu Fastly*.
 
-1. Nach Abschluss des Uploads aktualisieren Sie den Cache gemäß der Benachrichtigung oben auf der Seite.
+1. Aktualisieren Sie nach Abschluss des Uploads den Cache entsprechend der Benachrichtigung oben auf der Seite.
 
-Validiert die aktualisierte VCL-Version während des Upload-Prozesses schnell. Wenn die Validierung fehlschlägt, bearbeiten Sie Ihr benutzerdefiniertes VCL-Snippet, um Probleme zu beheben. Laden Sie dann die VCL erneut hoch.
+Validiert die aktualisierte VCL-Version während des Upload-Prozesses schnell. Wenn die Validierung fehlschlägt, bearbeiten Sie Ihr benutzerdefiniertes VCL-Snippet, um alle Probleme zu beheben. Laden Sie dann die VCL erneut hoch.
 
 {{automate-vcl-snippet-deployment}}
 
