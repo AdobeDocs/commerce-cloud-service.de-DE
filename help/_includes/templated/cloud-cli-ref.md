@@ -5,18 +5,18 @@ source-wordcount: '13341'
 ht-degree: 0%
 
 ---
-# Magento-Cloud (Adobe Commerce über Cloud-Infrastruktur)
+# Magento-Cloud (Adobe Commerce auf Cloud-Infrastruktur)
 
 <!-- The template to render with above values -->
 
 **Version**: 1.46.1
 
-Diese Referenz enthält 119 Befehle, die über das Befehlszeilen-Tool `magento-cloud` verfügbar sind.
-Die anfängliche Liste wird mithilfe des Befehls `magento-cloud list` in Adobe Commerce in der Cloud-Infrastruktur automatisch generiert.
+Diese Referenz enthält 119 Befehle, die über das `magento-cloud` Befehlszeilen-Tool verfügbar sind.
+Die anfängliche Liste wird automatisch mit dem Befehl `magento-cloud list` unter Adobe Commerce in der Cloud-Infrastruktur generiert.
 
 ## Allgemein
 
-Diese Referenz wird aus der Anwendungs-Codebase generiert. Um den Inhalt zu ändern, können Sie den Quellcode für die entsprechende Befehlsimplementierung im Repository [Codebase](https://github.com/magento/magento-cloud-cli) aktualisieren und Ihre Änderungen zur Überprüfung senden. Eine andere Möglichkeit besteht darin, _Feedback geben_ (den Link oben rechts zu finden). Beitragsrichtlinien finden Sie unter [Codebeiträge](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
+Dieser Verweis wird aus der Anwendungs-Code-Basis generiert. Um den Inhalt zu ändern, können Sie den Quell-Code für die entsprechende Befehlsimplementierung im Repository [Codebase](https://github.com/magento/magento-cloud-cli) aktualisieren und Ihre Änderungen zur Überprüfung übermitteln. Eine andere Möglichkeit ist _Feedback geben_ (finden Sie den Link oben rechts). Beitragsrichtlinien finden Sie unter [Code-Beiträge](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
 
 ### Globale Optionen
 
@@ -29,7 +29,7 @@ Diese Hilfemeldung anzeigen
 
 #### `--verbose`, `-v|-vv|-vvv`
 
-Die Ausführlichkeit von Nachrichten erhöhen
+Erhöhen der Ausführlichkeit von Nachrichten
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -43,7 +43,7 @@ Diese Anwendungsversion anzeigen
 
 #### `--yes`, `-y`
 
-Beantworten Sie Bestätigungsfragen mit &quot;Ja&quot;. Übernehmen Sie den Standardwert für andere Fragen und deaktivieren Sie die Interaktion.
+Bestätigungsfragen mit „Ja“ beantworten; Standardwert für andere Fragen akzeptieren; Interaktion deaktivieren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -75,7 +75,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 magento-cloud magento-cloud decode [-P|--property PROPERTY] [--] <value>
 ```
 
-Dekodieren einer kodierten Zeichenfolge wie MAGENTO_CLOUD_VARIABLES
+Eine codierte Zeichenfolge wie MAGENTO_CLOUD_VARIABLES decodieren
 
 ### Argumente
 
@@ -91,7 +91,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--property`, `-P`
 
-Die Eigenschaft, die in der -Variablen angezeigt werden soll
+Die Eigenschaft, die innerhalb der Variablen angezeigt werden soll
 
 - Erfordert einen Wert
 
@@ -102,7 +102,7 @@ Die Eigenschaft, die in der -Variablen angezeigt werden soll
 magento-cloud magento-cloud docs [--browser BROWSER] [--pipe] [--] [<search>]...
 ```
 
-Öffnen Sie die Online-Dokumentation
+Öffnen der Onlinedokumentation
 
 ### Argumente
 
@@ -119,13 +119,13 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--browser`
 
-Der zum Öffnen der URL zu verwendende Browser. Legen Sie 0 für keine fest.
+Der zum Öffnen der URL zu verwendende Browser. Auf 0 für keine festlegen.
 
 - Erfordert einen Wert
 
 #### `--pipe`
 
-Geben Sie die URL für stdout aus.
+Ausgabe der URL an stdout
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -137,7 +137,7 @@ Geben Sie die URL für stdout aus.
 magento-cloud magento-cloud help [--format FORMAT] [--raw] [--] [<command_name>]
 ```
 
-Zeigt Hilfe für einen Befehl an
+Zeigt Hilfe zu einem Befehl an
 
 ```
 The help command displays help for a given command:
@@ -172,7 +172,7 @@ Das Ausgabeformat (txt, json oder md)
 
 #### `--raw`
 
-Ausgabe der Rohbefehl-Hilfe
+So geben Sie die Raw-Befehlshilfe aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -184,7 +184,7 @@ Ausgabe der Rohbefehl-Hilfe
 magento-cloud magento-cloud list [--raw] [--format FORMAT] [--all] [--] [<namespace>]
 ```
 
-Listet Befehle auf
+Führt Befehle auf
 
 ```
 The list command lists all commands:
@@ -223,7 +223,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--raw`
 
-So geben Sie die unformatierte Befehlsliste aus
+Ausgabe der unbearbeiteten Befehlsliste
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -274,21 +274,21 @@ Eine Liste der Projekt-IDs, durch Kommas und/oder Leerzeichen getrennt
 
 #### `--continue`
 
-Fahren Sie mit der Ausführung von Befehlen fort, selbst wenn eine Ausnahme aufgetreten ist.
+Ausführen von Befehlen auch dann fortsetzen, wenn eine Ausnahme auftritt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--sort`
 
-Eine Eigenschaft zum Sortieren der Liste der Projektoptionen
+Eine Eigenschaft, nach der die Liste der Projektoptionen sortiert werden soll
 
 - Standard: `title`
 - Erfordert einen Wert
 
 #### `--reverse`
 
-Reihenfolge der Projektoptionen umkehren
+Kehrt die Reihenfolge der Projektoptionen um
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -308,13 +308,13 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--browser`
 
-Der zum Öffnen der URL zu verwendende Browser. Legen Sie 0 für keine fest.
+Der zum Öffnen der URL zu verwendende Browser. Auf 0 für keine festlegen.
 
 - Erfordert einen Wert
 
 #### `--pipe`
 
-Geben Sie die URL für stdout aus.
+Ausgabe der URL an stdout
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -327,7 +327,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -338,13 +338,13 @@ Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Proj
 magento-cloud magento-cloud activity:cancel [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [-a|--all] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<id>]
 ```
 
-Aktivität abbrechen
+Abbrechen einer Aktivität
 
 ### Argumente
 
 #### `id`
 
-Die Aktivitäts-ID. Die Standardeinstellung ist die neueste stornierbare Aktivität.
+Die Aktivitäts-ID. Die Standardeinstellung ist die letzte kündbare Aktivität.
 
 ### Optionen
 
@@ -352,21 +352,21 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--type`, `-t`
 
-Filtern nach Typ (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter für den Typ verwendet werden, z. B. &#39;%var%&#39; zur Auswahl variablenbezogener Aktivitäten.
+Nach Typ filtern (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter für den Typ verwendet werden, z. B. &quot;%var%&quot; zur Auswahl variablenbezogener Aktivitäten.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--exclude-type`, `-x`
 
-Nach Typ ausschließen (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
+Nach Typ ausschließen (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--all`, `-a`
 
-Prüfung der letzten Aktivitäten in allen Umgebungen (bei Auswahl einer Standardaktivität)
+Überprüfung der letzten Aktivitäten für alle Umgebungen (bei Auswahl einer Standardaktivität)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -379,7 +379,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -390,13 +390,13 @@ Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Proj
 magento-cloud magento-cloud activity:get [-P|--property PROPERTY] [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--state STATE] [--result RESULT] [-i|--incomplete] [-a|--all] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT] [--] [<id>]
 ```
 
-Detaillierte Informationen zu einer einzelnen Aktivität anzeigen
+Anzeigen detaillierter Informationen zu einer einzelnen Aktivität
 
 ### Argumente
 
 #### `id`
 
-Die Aktivitäts-ID. Die Standardeinstellung ist die neueste Aktivität.
+Die Aktivitäts-ID. Standardmäßig wird die letzte Aktivität verwendet.
 
 ### Optionen
 
@@ -410,21 +410,21 @@ Die anzuzeigende Eigenschaft
 
 #### `--type`, `-t`
 
-Filtern nach Typ (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter für den Typ verwendet werden, z. B. &#39;%var%&#39; zur Auswahl variablenbezogener Aktivitäten.
+Nach Typ filtern (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter für den Typ verwendet werden, z. B. &quot;%var%&quot; zur Auswahl variablenbezogener Aktivitäten.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--exclude-type`, `-x`
 
-Nach Typ ausschließen (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
+Nach Typ ausschließen (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--state`
 
-Filtern nach Status (bei Auswahl einer Standardaktivität): in_progress, pending, complete oder cancelled. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Filtern nach Status (bei Auswahl einer Standardaktivität): in_progress, pending, complete oder canceled. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -437,14 +437,14 @@ Filtern nach Ergebnis (bei Auswahl einer Standardaktivität): Erfolg oder Fehler
 
 #### `--incomplete`, `-i`
 
-Schließen Sie nur unvollständige Aktivitäten ein (bei Auswahl einer Standardaktivität). Dies ist eine Kurzanleitung für —state=in_progress,pending
+Nur unvollständige Aktivitäten einbeziehen (bei Auswahl einer Standardaktivität). Dies ist eine Kurzschreibweise für —state=in_progress,pending
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--all`, `-a`
 
-Prüfung der letzten Aktivitäten in allen Umgebungen (bei Auswahl einer Standardaktivität)
+Überprüfung der letzten Aktivitäten für alle Umgebungen (bei Auswahl einer Standardaktivität)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -457,34 +457,34 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -496,7 +496,7 @@ Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 magento-cloud magento-cloud activities [-t|--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--limit LIMIT] [--start START] [--state STATE] [--result RESULT] [-i|--incomplete] [-a|--all] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT]
 ```
 
-Liste der Aktivitäten für eine Umgebung oder ein Projekt abrufen
+Abrufen einer Liste von Aktivitäten für eine Umgebung oder ein Projekt
 
 ### Optionen
 
@@ -504,14 +504,14 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--type`, `-t`
 
-Filteraktivitäten nach Typ Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Der erste Teil des Aktivitätsnamens kann weggelassen werden, z. B. kann &quot;cron&quot;Aktivitäten vom Typ &quot;environment.cron&quot;auswählen. Die Zeichen % oder * können als Platzhalter verwendet werden, z. B. &#39;%var%&#39; zur Auswahl variablenbezogener Aktivitäten.
+Filteraktivitäten nach Typ Die Werte können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen aufgeteilt werden. Der erste Teil des Aktivitätsnamens kann weggelassen werden, z. B. kann „cron“ „environment.cron“-Aktivitäten auswählen. Die Zeichen % oder * können als Platzhalter verwendet werden, z. B. &quot;%var%&quot;, um variablenbezogene Aktivitäten auszuwählen.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--exclude-type`, `-x`
 
-Aktivitäten nach Typ ausschließen Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Der erste Teil des Aktivitätsnamens kann weggelassen werden, z. B. kann &quot;cron&quot;Aktivitäten vom Typ &quot;environment.cron&quot;ausschließen. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
+Ausschließen von Aktivitäten nach Typ. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden. Der erste Teil des Aktivitätsnamens kann weggelassen werden, z. B. kann „cron“ „environment.cron“-Aktivitäten ausschließen. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -525,20 +525,20 @@ Anzahl der angezeigten Ergebnisse begrenzen
 
 #### `--start`
 
-Es werden nur Aktivitäten aufgelistet, die vor diesem Datum erstellt wurden
+Nur Aktivitäten, die vor diesem Datum erstellt wurden, werden aufgelistet
 
 - Erfordert einen Wert
 
 #### `--state`
 
-Aktivitäten nach Status filtern: in_progress, pending, complete oder abgebrochen. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Aktivitäten nach Status filtern: in_progress, pending, complete oder canceled. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--result`
 
-Aktivitäten nach Ergebnis filtern: Erfolg oder Fehler
+Filtern von Aktivitäten nach Ergebnis: Erfolg oder Fehler
 
 - Erfordert einen Wert
 
@@ -558,28 +558,28 @@ Aktivitäten in allen Umgebungen auflisten
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: id*, created*, description*, progress*, state*, result*, completed, environment, type (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: ID*, Erstellt*, Beschreibung*, Fortschritt*, Status*, Ergebnis*, Abgeschlossen, Umgebungen, Typ (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -592,7 +592,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -603,13 +603,13 @@ Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Proj
 magento-cloud magento-cloud activity:log [--refresh REFRESH] [-t|--timestamps] [--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--state STATE] [--result RESULT] [-i|--incomplete] [-a|--all] [--date-fmt DATE-FMT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<id>]
 ```
 
-Protokoll für eine Aktivität anzeigen
+Protokoll einer Aktivität anzeigen
 
 ### Argumente
 
 #### `id`
 
-Die Aktivitäts-ID. Die Standardeinstellung ist die neueste Aktivität.
+Die Aktivitäts-ID. Standardmäßig wird die letzte Aktivität verwendet.
 
 ### Optionen
 
@@ -617,7 +617,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--refresh`
 
-Intervall für die Aktivitätsaktualisierung (Sekunden). Auf 0 setzen, um die Aktualisierung zu deaktivieren.
+Intervall für Aktivitätsaktualisierung (Sekunden). Auf 0 gesetzt, um die Aktualisierung zu deaktivieren.
 
 - Standard: `3`
 - Erfordert einen Wert
@@ -631,21 +631,21 @@ Zeitstempel neben jeder Nachricht anzeigen
 
 #### `--type`
 
-Filtern nach Typ (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter für den Typ verwendet werden, z. B. &#39;%var%&#39; zur Auswahl variablenbezogener Aktivitäten.
+Nach Typ filtern (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter für den Typ verwendet werden, z. B. &quot;%var%&quot; zur Auswahl variablenbezogener Aktivitäten.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--exclude-type`, `-x`
 
-Nach Typ ausschließen (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
+Nach Typ ausschließen (bei Auswahl einer Standardaktivität). Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--state`
 
-Filtern nach Status (bei Auswahl einer Standardaktivität): in_progress, pending, complete oder cancelled. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Filtern nach Status (bei Auswahl einer Standardaktivität): in_progress, pending, complete oder canceled. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -658,21 +658,21 @@ Filtern nach Ergebnis (bei Auswahl einer Standardaktivität): Erfolg oder Fehler
 
 #### `--incomplete`, `-i`
 
-Schließen Sie nur unvollständige Aktivitäten ein (bei Auswahl einer Standardaktivität). Dies ist eine Kurzanleitung für —state=in_progress,pending
+Nur unvollständige Aktivitäten einbeziehen (bei Auswahl einer Standardaktivität). Dies ist eine Kurzschreibweise für —state=in_progress,pending
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--all`, `-a`
 
-Prüfung der letzten Aktivitäten in allen Umgebungen (bei Auswahl einer Standardaktivität)
+Überprüfung der letzten Aktivitäten für alle Umgebungen (bei Auswahl einer Standardaktivität)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -685,7 +685,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -696,7 +696,7 @@ Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Proj
 magento-cloud magento-cloud app:config-get [-P|--property PROPERTY] [--refresh] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [-i|--identity-file IDENTITY-FILE]
 ```
 
-Konfiguration einer App anzeigen
+Anzeigen der Konfiguration einer App
 
 ### Optionen
 
@@ -723,7 +723,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -761,7 +761,7 @@ Ob der Cache aktualisiert werden soll
 
 #### `--pipe`
 
-Nur Liste mit App-Namen ausgeben
+Nur eine Liste der App-Namen ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -774,27 +774,27 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: name*, type*, disk, path, size (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: Name*, Typ*, Festplatte, Pfad, Größe (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -806,7 +806,7 @@ Geben Sie die Tabellenüberschrift nicht aus
 magento-cloud magento-cloud auth:api-token-login
 ```
 
-Bei der Magento Cloud über ein API-Token anmelden
+Melden Sie sich mit einem API-Token bei Magento Cloud an
 
 ```
 Use this command to log in to your Magento Cloud account using an API token.
@@ -832,7 +832,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 magento-cloud magento-cloud login [-f|--force] [--browser BROWSER] [--pipe]
 ```
 
-Bei der Magento Cloud über einen Browser anmelden
+Anmelden bei Magento Cloud über einen Browser
 
 ```
 Use this command to log in to the Magento Cloud CLI using a web browser.
@@ -863,13 +863,13 @@ Melden Sie sich erneut an, auch wenn Sie bereits angemeldet sind
 
 #### `--browser`
 
-Der zum Öffnen der URL zu verwendende Browser. Legen Sie 0 für keine fest.
+Der zum Öffnen der URL zu verwendende Browser. Auf 0 für keine festlegen.
 
 - Erfordert einen Wert
 
 #### `--pipe`
 
-Geben Sie die URL für stdout aus.
+Ausgabe der URL an stdout
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -895,7 +895,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--no-auto-login`
 
-Überspringt die automatische Anmeldung. Wenn Sie nicht angemeldet sind, wird nichts ausgegeben und der Exitcode ist 0, vorausgesetzt, es werden keine anderen Fehler ausgegeben.
+Überspringt die automatische Anmeldung. Wenn Sie nicht angemeldet sind, wird nichts ausgegeben und der Exitcode lautet 0, wobei keine anderen Fehler angenommen werden.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -915,21 +915,21 @@ Ob der Cache aktualisiert werden soll
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -941,7 +941,7 @@ Geben Sie die Tabellenüberschrift nicht aus
 magento-cloud magento-cloud logout [-a|--all] [--other]
 ```
 
-Aus Magento Cloud abmelden
+Abmelden von Magento Cloud
 
 ### Optionen
 
@@ -956,7 +956,7 @@ Abmelden von allen lokalen Sitzungen
 
 #### `--other`
 
-Abmelden von anderen lokalen Sitzungen
+Von anderen lokalen Sitzungen abmelden
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -976,13 +976,13 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--server_id`
 
-Server-ID
+Die Server-ID
 
 - Erfordert einen Wert
 
 #### `--server_token`
 
-Server-Token
+Das Server-Token
 
 - Erfordert einen Wert
 
@@ -994,7 +994,7 @@ Die Projekt-ID oder URL
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1027,13 +1027,13 @@ Der Pfad zur Zertifikatdatei
 
 #### `--key`
 
-Der Pfad zur Datei mit dem privaten Zertifikatschlüssel
+Der Pfad zur Datei mit dem privaten Schlüssel des Zertifikats
 
 - Erfordert einen Wert
 
 #### `--chain`
 
-Der Pfad zur Zertifikatskettendatei
+Der Pfad zur Zertifikatkettendatei
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -1046,7 +1046,7 @@ Die Projekt-ID oder URL
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1065,13 +1065,13 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud certificate:delete [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] <id>
 ```
 
-Zertifikat aus dem Projekt löschen
+Löschen eines Zertifikats aus dem Projekt
 
 ### Argumente
 
 #### `id`
 
-Die Zertifikatkennung (oder der Anfang)
+Die Zertifikat-ID (oder der Beginn)
 
 - Erforderlich
 
@@ -1087,7 +1087,7 @@ Die Projekt-ID oder URL
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1106,13 +1106,13 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud certificate:get [-P|--property PROPERTY] [--date-fmt DATE-FMT] [-p|--project PROJECT] [--] <id>
 ```
 
-Zertifikat anzeigen
+Anzeigen eines Zertifikats
 
 ### Argumente
 
 #### `id`
 
-Die Zertifikatkennung (oder der Anfang)
+Die Zertifikat-ID (oder der Beginn)
 
 - Erforderlich
 
@@ -1128,7 +1128,7 @@ Die anzuzeigende Zertifikateigenschaft
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -1146,7 +1146,7 @@ Die Projekt-ID oder URL
 magento-cloud magento-cloud certificates [--domain DOMAIN] [--exclude-domain EXCLUDE-DOMAIN] [--issuer ISSUER] [--only-auto] [--no-auto] [--ignore-expiry] [--only-expired] [--no-expired] [--pipe-domains] [--date-fmt DATE-FMT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT]
 ```
 
-Projektzertifikate auflisten
+Auflisten von Projektzertifikaten
 
 ### Optionen
 
@@ -1154,19 +1154,19 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--domain`
 
-Filtern nach Domain-Namen (Suche ohne Unterscheidung zwischen Groß- und Kleinschreibung)
+Nach Domain-Namen filtern (Suche ohne Berücksichtigung der Groß-/Kleinschreibung)
 
 - Erfordert einen Wert
 
 #### `--exclude-domain`
 
-Zertifikate ausschließen, die mit dem Domänennamen übereinstimmen (Suche ohne Unterscheidung zwischen Groß- und Kleinschreibung)
+Zertifikate ausschließen, Übereinstimmung nach Domain-Namen (Suche ohne Berücksichtigung der Groß-/Kleinschreibung)
 
 - Erfordert einen Wert
 
 #### `--issuer`
 
-Nach Emittenten filtern
+Nach Aussteller filtern
 
 - Erfordert einen Wert
 
@@ -1186,7 +1186,7 @@ Nur manuell hinzugefügte Zertifikate anzeigen
 
 #### `--ignore-expiry`
 
-Sowohl abgelaufene als auch nicht abgelaufene Zertifikate anzeigen
+Abgelaufene und nicht abgelaufene Zertifikate anzeigen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1207,35 +1207,35 @@ Nur nicht abgelaufene Zertifikate anzeigen (Standard)
 
 #### `--pipe-domains`
 
-Nur eine Liste der Domänennamen zurückgeben, die von den Zertifikaten abgedeckt sind
+Gibt nur eine Liste der Domain-Namen zurück, die von den Zertifikaten abgedeckt werden
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: erstellt, Domänen, abgelaufen, ID, Aussteller. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: Erstellt, Domains, Läuft ab, ID, Aussteller. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1259,7 +1259,7 @@ Commit-Details anzeigen
 
 #### `commit`
 
-Der Commit SHA. Dies kann auch Suffixe vom Typ &quot;HEAD&quot;und Caret (^) oder Tilde (~) für übergeordnete Commits akzeptieren.
+Der Commit SHA. Dies akzeptiert auch die Suffixe &quot;HEAD&quot; und „Caret“ (^) oder „Tilde“ (~) für übergeordnete Commits.
 
 - Standard: `HEAD`
 
@@ -1269,7 +1269,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--property`, `-P`
 
-Die angezeigte commit-Eigenschaft.
+Die Commit-Eigenschaft zum Anzeigen.
 
 - Erfordert einen Wert
 
@@ -1281,13 +1281,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -1299,13 +1299,13 @@ Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 magento-cloud magento-cloud commits [--limit LIMIT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT] [--] [<commit>]
 ```
 
-Auflisten von Commits
+Commits auflisten
 
 ### Argumente
 
 #### `commit`
 
-Das Git-Commit-SHA für den Start. Dies kann auch Suffixe vom Typ &quot;HEAD&quot;und Caret (^) oder Tilde (~) für übergeordnete Commits akzeptieren.
+Der erste Git-Commit SHA. Dies akzeptiert auch die Suffixe &quot;HEAD&quot; und „Caret“ (^) oder „Tilde“ (~) für übergeordnete Commits.
 
 ### Optionen
 
@@ -1313,7 +1313,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--limit`
 
-Die Anzahl der anzuzeigenden Commits.
+Die Anzahl der angezeigten Commits.
 
 - Standard: `10`
 - Erfordert einen Wert
@@ -1326,34 +1326,34 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: author, date, sha, summary. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: Autor, Datum, Freigabe, Zusammenfassung. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -1365,7 +1365,7 @@ Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 magento-cloud magento-cloud db:dump [--schema SCHEMA] [-f|--file FILE] [-d|--directory DIRECTORY] [-z|--gzip] [-t|--timestamp] [-o|--stdout] [--table TABLE] [--exclude-table EXCLUDE-TABLE] [--schema-only] [--charset CHARSET] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTITY-FILE]
 ```
 
-Lokalen Dump der Remote-Datenbank erstellen
+Erstellen eines lokalen Speicherauszugs der Remote-Datenbank
 
 ### Optionen
 
@@ -1373,32 +1373,32 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--schema`
 
-Das Schema, das abgelegt werden soll. Unterlassen der Verwendung des Standardschemas (normalerweise &quot;main&quot;).
+Das zu entladende Schema. Lassen Sie die Verwendung des Standardschemas (normalerweise „main„) weg.
 
 - Erfordert einen Wert
 
 #### `--file`, `-f`
 
-Ein benutzerdefinierter Dateiname für die Ablage
+Ein benutzerdefinierter Dateiname für den Speicherauszug
 
 - Erfordert einen Wert
 
 #### `--directory`, `-d`
 
-Ein benutzerdefiniertes Verzeichnis für den Dump
+Ein benutzerdefiniertes Verzeichnis für den Speicherauszug
 
 - Erfordert einen Wert
 
 #### `--gzip`, `-z`
 
-Komprimieren Sie die Ablage mit gzip
+Komprimieren Sie den Dump mit gzip
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--timestamp`, `-t`
 
-Fügen Sie einen Zeitstempel zum Dateinamen der Dump-Datei hinzu.
+Hinzufügen eines Zeitstempels zum Dump-Dateinamen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1412,28 +1412,28 @@ Ausgabe in STDOUT anstelle einer Datei
 
 #### `--table`
 
-Zu berücksichtigende Tabelle(n)
+Einzuschließende Tabelle(n)
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--exclude-table`
 
-Auszuschließende Tabelle
+Auszuschließende Tabelle(n)
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--schema-only`
 
-Nur Schemas ablegen, keine Daten
+Nur-Dump-Schemata, keine Daten
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--charset`
 
-Die Zeichensatzkodierung für die Dump
+Die Codierung des Zeichensatzes für den Speicherauszug
 
 - Erfordert einen Wert
 
@@ -1445,7 +1445,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -1457,13 +1457,13 @@ Der Name der Remote-Anwendung
 
 #### `--relationship`, `-r`
 
-Die zu verwendende Dienstbeziehung
+Die zu verwendende Service-Beziehung
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -1488,14 +1488,14 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--bytes`, `-B`
 
-Zeigt Größen in Byte an.
+Größe in Byte anzeigen.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--cleanup`, `-C`
 
-Überprüfen Sie, ob Tabellen bereinigt werden können, und zeigen Sie mir Empfehlungen an (nur InnoDb).
+Überprüfen, ob Tabellen bereinigt werden können, und Empfehlungen anzeigen (nur InnoDb).
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1508,7 +1508,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -1520,34 +1520,34 @@ Der Name der Remote-Anwendung
 
 #### `--relationship`, `-r`
 
-Die zu verwendende Dienstbeziehung
+Die zu verwendende Service-Beziehung
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: max, percent_used, used. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: max, percent_used, used. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -1558,7 +1558,7 @@ Eine SSH-Identität (privater Schlüssel) zur Verwendung
 magento-cloud magento-cloud sql [--raw] [--schema SCHEMA] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTITY-FILE] [--] [<query>]
 ```
 
-SQL auf der Remote-Datenbank ausführen
+SQL auf Remote-Datenbank ausführen
 
 ### Argumente
 
@@ -1579,7 +1579,7 @@ Rohe, nicht tabellarische Ausgabe erzeugen
 
 #### `--schema`
 
-Das zu verwendende Schema. Unterlassen der Verwendung des Standardschemas (normalerweise &quot;main&quot;). Übergeben Sie eine leere Zeichenfolge, um kein Schema zu verwenden.
+Das zu verwendende Schema. Lassen Sie die Verwendung des Standardschemas (normalerweise „main„) weg. Übergeben Sie eine leere Zeichenfolge, um kein Schema zu verwenden.
 
 - Erfordert einen Wert
 
@@ -1591,7 +1591,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -1603,13 +1603,13 @@ Der Name der Remote-Anwendung
 
 #### `--relationship`, `-r`
 
-Die zu verwendende Dienstbeziehung
+Die zu verwendende Service-Beziehung
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -1620,13 +1620,13 @@ Eine SSH-Identität (privater Schlüssel) zur Verwendung
 magento-cloud magento-cloud domain:add [--cert CERT] [--key KEY] [--chain CHAIN] [--attach ATTACH] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] <name>
 ```
 
-Hinzufügen einer neuen Domäne zum Projekt
+Hinzufügen einer neuen Domain zum Projekt
 
 ### Argumente
 
 #### `name`
 
-Der Domänenname
+Der Domain-Name
 
 - Erforderlich
 
@@ -1636,26 +1636,26 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--cert`
 
-Der Pfad zur Zertifikatdatei für diese Domäne
+Der Pfad zur Zertifikatdatei für diese Domain
 
 - Erfordert einen Wert
 
 #### `--key`
 
-Der Pfad zur privaten Schlüsseldatei für das angegebene Zertifikat.
+Der Pfad zur Datei mit dem privaten Schlüssel für das angegebene Zertifikat.
 
 - Erfordert einen Wert
 
 #### `--chain`
 
-Der Pfad zur Zertifikatskettendatei(en) für das bereitgestellte Zertifikat
+Der Pfad zur Zertifikatkettendatei bzw. zu den Dateien für das angegebene Zertifikat
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--attach`
 
-Die Produktionsdomäne, die diese in den Routen der Umgebung ersetzt. Erforderlich für Nicht-Produktions-Umgebungsdomänen.
+Die Produktions-Domain, die diese in den Routen der Umgebung ersetzt. Erforderlich für Nicht-Produktions-Umgebungs-Domains.
 
 - Erfordert einen Wert
 
@@ -1667,13 +1667,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1692,13 +1692,13 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud domain:delete [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] <name>
 ```
 
-Eine Domäne aus dem Projekt löschen
+Löschen einer Domain aus dem Projekt
 
 ### Argumente
 
 #### `name`
 
-Der Domänenname
+Der Domain-Name
 
 - Erforderlich
 
@@ -1714,13 +1714,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1739,13 +1739,13 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud domain:get [-P|--property PROPERTY] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<name>]
 ```
 
-Detaillierte Informationen für eine Domäne anzeigen
+Anzeigen detaillierter Informationen für eine Domain
 
 ### Argumente
 
 #### `name`
 
-Der Domänenname
+Der Domain-Name
 
 ### Optionen
 
@@ -1753,34 +1753,34 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--property`, `-P`
 
-Die anzuzeigende Domäneneigenschaft
+Die anzuzeigende Domain-Eigenschaft
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -1793,7 +1793,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -1804,7 +1804,7 @@ Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Proj
 magento-cloud magento-cloud domains [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [-e|--environment ENVIRONMENT]
 ```
 
-Liste aller Domänen abrufen
+Abrufen einer Liste aller Domains
 
 ### Optionen
 
@@ -1812,21 +1812,21 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: name*, ssl*, created_at*, registered_name, replacement_for, type, updated_at (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: name*, ssl*, created_at*, registered_name, replace_for, type, updated_at (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1839,7 +1839,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -1850,13 +1850,13 @@ Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Proj
 magento-cloud magento-cloud domain:update [--cert CERT] [--key KEY] [--chain CHAIN] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] <name>
 ```
 
-Domain aktualisieren
+Aktualisieren einer Domain
 
 ### Argumente
 
 #### `name`
 
-Der Domänenname
+Der Domain-Name
 
 - Erforderlich
 
@@ -1866,19 +1866,19 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--cert`
 
-Der Pfad zur Zertifikatdatei für diese Domäne
+Der Pfad zur Zertifikatdatei für diese Domain
 
 - Erfordert einen Wert
 
 #### `--key`
 
-Der Pfad zur privaten Schlüsseldatei für das angegebene Zertifikat.
+Der Pfad zur Datei mit dem privaten Schlüssel für das angegebene Zertifikat.
 
 - Erfordert einen Wert
 
 #### `--chain`
 
-Der Pfad zur Zertifikatskettendatei(en) für das bereitgestellte Zertifikat
+Der Pfad zur Zertifikatkettendatei bzw. zu den Dateien für das angegebene Zertifikat
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -1891,13 +1891,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1922,7 +1922,7 @@ Aktivieren einer Umgebung
 
 #### `environment`
 
-Zu aktivierende Umgebung(n)
+Die zu aktivierenden Umgebungen
 
 - Standard: `[]`
 - Array
@@ -1933,7 +1933,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--parent`
 
-Festlegen einer neuen übergeordneten Umgebung vor der Aktivierung
+Vor der Aktivierung eine neue übergeordnete Umgebung einrichten
 
 - Erfordert einen Wert
 
@@ -1945,13 +1945,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -1970,7 +1970,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud branch [--title TITLE] [--type TYPE] [--no-clone-parent] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<id>] [<parent>]
 ```
 
-Verzweigung einer Umgebung
+Verzweigen einer Umgebung
 
 ### Argumente
 
@@ -2014,13 +2014,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2045,7 +2045,7 @@ Auschecken einer Umgebung
 
 #### `id`
 
-Die ID der Umgebung, die ausgecheckt werden soll. Beispiel: &quot;sprint2&quot;
+Die ID der Umgebung, die ausgecheckt werden soll. Beispiel: „sprint2“
 
 ### Optionen
 
@@ -2053,7 +2053,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -2078,7 +2078,7 @@ This command allows you to delete environments as well as their Git branches.
 
 #### `environment`
 
-Die zu löschenden Umgebungen. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Die zu löschenden Umgebungen. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Array
@@ -2089,7 +2089,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--delete-branch`
 
-Löschen von Git-Zweigen für inaktive Umgebungen ohne Bestätigung
+Löschen von Git-Verzweigungen für inaktive Umgebungen ohne Bestätigung
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2103,42 +2103,42 @@ Löschen Sie keine Git-Verzweigungen (inaktive Umgebungen)
 
 #### `--type`
 
-Löschen Sie alle Umgebungen eines Typs (Hinzufügung zu anderen ausgewählten Umgebungen) Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen getrennt werden.
+Löschen Sie alle Umgebungen eines Typs (fügen Sie beliebige andere ausgewählte Umgebungen hinzu). Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--only-type`, `-t`
 
-Nur Löschumgebungen eines bestimmten Typs Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen getrennt werden.
+Nur Umgebungen eines bestimmten Typs löschen Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen aufgeteilt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--exclude`
 
-Umgebung(en), die nicht gelöscht werden soll. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Umgebung(en) nicht zu löschen. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--exclude-type`
 
-Umgebungstypen, deren Werte nicht gelöscht werden sollen, können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Umgebungstypen, deren Werte nicht gelöscht werden sollen, können durch Kommas (z. B. „a,b,c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--inactive`
 
-Löschen Sie alle inaktiven Umgebungen (Hinzufügung zu allen anderen ausgewählten Umgebungen)
+Alle inaktiven Umgebungen löschen (zu allen anderen ausgewählten hinzufügen)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--merged`
 
-Löschen Sie alle zusammengeführten Umgebungen (Hinzufügen zu allen anderen ausgewählten Umgebungen)
+Alle zusammengeführten Umgebungen löschen (zu allen anderen ausgewählten hinzufügen)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2158,13 +2158,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2183,7 +2183,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud httpaccess [--access ACCESS] [--auth AUTH] [--enabled ENABLED] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait]
 ```
 
-Aktualisieren von HTTP-Zugriffseinstellungen für eine Umgebung
+Aktualisieren der HTTP-Zugriffseinstellungen für eine Umgebung
 
 ### Optionen
 
@@ -2191,21 +2191,21 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--access`
 
-Zugriffsbeschränkungen im Format &quot;permission:address&quot;. Verwenden Sie 0, um alle Adressen zu löschen.
+Zugriffsbeschränkung im Format „permission:address“. 0 verwenden, um alle Adressen zu löschen.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--auth`
 
-HTTP Basic auth credentials im Format &quot;username:password&quot;. Verwenden Sie 0, um alle Berechtigungen zu löschen.
+Einfache HTTP-Authentifizierungsdaten im Format „username:password“. Verwenden Sie 0, um alle Anmeldeinformationen zu löschen.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--enabled`
 
-Ob die Zugriffskontrolle aktiviert werden soll: 1 zur Aktivierung, 0 zur Deaktivierung
+Ob die Zugriffssteuerung aktiviert werden soll: 1 zum Aktivieren, 0 zum Deaktivieren
 
 - Erfordert einen Wert
 
@@ -2217,13 +2217,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2242,7 +2242,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud environment:info [--refresh] [--date-fmt DATE-FMT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<property>] [<value>]
 ```
 
-Eigenschaften für eine Umgebung lesen oder festlegen
+Lesen oder Festlegen von Eigenschaften für eine Umgebung
 
 ### Argumente
 
@@ -2253,7 +2253,7 @@ Der Name der Eigenschaft
 
 #### `value`
 
-Neuen Wert für die Eigenschaft festlegen
+Legen Sie einen neuen Wert für die Eigenschaft fest
 
 ### Optionen
 
@@ -2268,28 +2268,28 @@ Ob der Cache aktualisiert werden soll
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2302,13 +2302,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2333,7 +2333,7 @@ Initialisieren einer Umgebung aus einem öffentlichen Git-Repository
 
 #### `url`
 
-Eine URL zum Git-Repository
+Eine URL zu einem Git-Repository
 
 - Erforderlich
 
@@ -2355,13 +2355,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2380,7 +2380,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud environments [-I|--no-inactive] [--pipe] [--refresh REFRESH] [--sort SORT] [--reverse] [--type TYPE] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT]
 ```
 
-Liste der Umgebungen abrufen
+Abrufen einer Liste von Umgebungen
 
 ### Optionen
 
@@ -2388,14 +2388,14 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--no-inactive`, `-I`
 
-Inaktive Umgebungen nicht anzeigen
+Keine inaktiven Umgebungen anzeigen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--pipe`
 
-Geben Sie eine einfache Liste von Umgebungs-IDs aus.
+Geben Sie eine einfache Liste der Umgebungs-IDs aus.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2409,42 +2409,42 @@ Ob die Liste aktualisiert werden soll.
 
 #### `--sort`
 
-Eine Eigenschaft, die nach
+Eine Eigenschaft zum Sortieren nach
 
 - Standard: `title`
 - Erfordert einen Wert
 
 #### `--reverse`
 
-Sortieren in umgekehrter (absteigender) Reihenfolge
+In umgekehrter (absteigender) Reihenfolge sortieren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--type`
 
-Filtern Sie die Liste nach Umgebungstyp(en). Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Filtern Sie die Liste nach Umgebungstyp(en). Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: id*, title*, status*, type*, created, machine_name, updated (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: id*, title*, status*, type*, created, machine_name, updated (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2462,13 +2462,13 @@ Die Projekt-ID oder URL
 magento-cloud magento-cloud log [--lines LINES] [--tail] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE] [--] [<type>]
 ```
 
-Protokolle einer Umgebung lesen
+Lesen der Protokolle einer Umgebung
 
 ### Argumente
 
 #### `type`
 
-Der Protokolltyp, z. B. &quot;access&quot; oder &quot;error&quot;
+Der Protokolltyp, z. B. „Zugriff“ oder „Fehler“
 
 ### Optionen
 
@@ -2483,7 +2483,7 @@ Die Anzahl der anzuzeigenden Zeilen
 
 #### `--tail`
 
-Kontinuierliches Verfolgen des Protokolls
+Protokoll kontinuierlich verfolgen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2496,7 +2496,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -2508,13 +2508,13 @@ Der Name der Remote-Anwendung
 
 #### `--worker`
 
-Arbeitername
+Ein Worker-Name
 
 - Erfordert einen Wert
 
 #### `--instance`, `-I`
 
-Instanz-ID
+Eine Instanz-ID
 
 - Erfordert einen Wert
 
@@ -2535,7 +2535,7 @@ This command will initiate a Git merge of the specified environment into its par
 
 #### `environment`
 
-Die zusammenzuführende Umgebung
+Die zu fusionierende Umgebung
 
 ### Optionen
 
@@ -2549,13 +2549,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2574,7 +2574,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud environment:pause [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait]
 ```
 
-Anhalten einer Umgebung
+Pausieren einer Umgebung
 
 ```
 Pausing an environment helps to reduce resource consumption and carbon emissions.
@@ -2594,13 +2594,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2619,13 +2619,13 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud push [--target TARGET] [-f|--force] [--force-with-lease] [-u|--set-upstream] [--activate] [--parent PARENT] [--type TYPE] [--no-clone-parent] [-W|--no-wait] [--wait] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-i|--identity-file IDENTITY-FILE] [--] [<source>]
 ```
 
-Push-Code in eine Umgebung
+Code in eine Umgebung pushen
 
 ### Argumente
 
 #### `source`
 
-Die Quell-Referenz: ein Zweigname oder Commit-Hash
+Die Quellreferenz: ein Zweigname oder Commit-Hash
 
 - Standard: `HEAD`
 
@@ -2635,20 +2635,20 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--target`
 
-Der Name der Zielverzweigung. Die Standardeinstellung ist der aktuelle Zweig.
+Der Name der Zielverzweigung. Die Standardeinstellung ist die aktuelle Verzweigung.
 
 - Erfordert einen Wert
 
 #### `--force`, `-f`
 
-Nicht-schnelle Aktualisierungen zulassen
+Nicht-schnelle Vorwärtsaktualisierungen zulassen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--force-with-lease`
 
-Nicht-schnelle Aktualisierungen zulassen, wenn die Remote-Tracking-Verzweigung auf dem neuesten Stand ist
+Lassen Sie nicht-schnelle Vorwärtsaktualisierungen zu, wenn die Remote-Tracking-Verzweigung auf dem neuesten Stand ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2662,33 +2662,33 @@ Legen Sie die Zielumgebung als Upstream für die Quellverzweigung fest. Dadurch 
 
 #### `--activate`
 
-Aktivieren der Umgebung vor dem Pushen
+Umgebung vor dem Pushen aktivieren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--parent`
 
-Festlegen der neuen übergeordneten Umgebung (nur mit —activate verwendet)
+Die neue übergeordnete Umgebung festlegen (nur verwendet mit —activate)
 
 - Erfordert einen Wert
 
 #### `--type`
 
-Umgebungstyp festlegen (nur mit —activate verwendet)
+Umgebungstyp festlegen (nur verwendet mit —activate )
 
 - Erfordert einen Wert
 
 #### `--no-clone-parent`
 
-Klonen Sie nicht die Daten des übergeordneten Zweigs (nur mit —activate verwendet)
+Klonen Sie nicht die Daten der übergeordneten Verzweigung (nur verwendet mit —activate)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2708,13 +2708,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -2725,7 +2725,7 @@ Eine SSH-Identität (privater Schlüssel) zur Verwendung
 magento-cloud magento-cloud redeploy [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait]
 ```
 
-Bereitstellung einer Umgebung
+Erneutes Bereitstellen einer Umgebung
 
 ### Optionen
 
@@ -2739,13 +2739,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2764,13 +2764,13 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud relationships [-P|--property PROPERTY] [--refresh] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [-i|--identity-file IDENTITY-FILE] [--] [<environment>]
 ```
 
-Anzeigen der Beziehungen einer Umgebung
+Beziehungen einer Umgebung anzeigen
 
 ### Argumente
 
 #### `environment`
 
-Umwelt
+Die Umgebung
 
 ### Optionen
 
@@ -2797,7 +2797,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -2809,7 +2809,7 @@ Der Name der Remote-Anwendung
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -2820,7 +2820,7 @@ Eine SSH-Identität (privater Schlüssel) zur Verwendung
 magento-cloud magento-cloud environment:resume [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait]
 ```
 
-Fortsetzen einer angehaltenen Umgebung
+Ausgesetzte Umgebung fortsetzen
 
 ### Optionen
 
@@ -2834,13 +2834,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2859,13 +2859,13 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud scp [-r|--recursive] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE] [-i|--identity-file IDENTITY-FILE] [--] [<files>]...
 ```
 
-Kopieren von Dateien in und aus einer Umgebung mithilfe von scp
+Kopieren von Dateien in eine und aus einer Umgebung mithilfe von scp
 
 ### Argumente
 
 #### `files`
 
-Zu kopierende Dateien. Verwenden Sie das Präfix remote: , um Remote-Standorte zu definieren.
+Zu kopierende Dateien Verwenden Sie das Präfix „remote:“, um Remote-Standorte zu definieren.
 
 - Standard: `[]`
 - Array
@@ -2876,7 +2876,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--recursive`, `-r`
 
-rekursiv ganze Verzeichnisse kopieren
+Rekursives Kopieren ganzer Ordner
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2889,7 +2889,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -2901,19 +2901,19 @@ Der Name der Remote-Anwendung
 
 #### `--worker`
 
-Arbeitername
+Ein Worker-Name
 
 - Erfordert einen Wert
 
 #### `--instance`, `-I`
 
-Instanz-ID
+Eine Instanz-ID
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -2924,13 +2924,13 @@ Eine SSH-Identität (privater Schlüssel) zur Verwendung
 magento-cloud magento-cloud ssh [--pipe] [--all] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE] [-i|--identity-file IDENTITY-FILE] [--] [<cmd>]...
 ```
 
-SSH in die aktuelle Umgebung
+SSH zur aktuellen Umgebung
 
 ### Argumente
 
 #### `cmd`
 
-Ein Befehl zum Ausführen in der Umgebung.
+Ein Befehl, der in der Umgebung ausgeführt werden soll.
 
 - Standard: `[]`
 - Array
@@ -2941,14 +2941,14 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--pipe`
 
-Geben Sie nur die SSH-URL aus.
+Ausgabe nur der SSH-URL.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--all`
 
-Geben Sie alle SSH-URLs (für jede App) aus.
+Ausgabe aller SSH-URLs (für jede Anwendung).
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -2961,7 +2961,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -2973,19 +2973,19 @@ Der Name der Remote-Anwendung
 
 #### `--worker`
 
-Arbeitername
+Ein Worker-Name
 
 - Erfordert einen Wert
 
 #### `--instance`, `-I`
 
-Instanz-ID
+Eine Instanz-ID
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -2996,7 +2996,7 @@ Eine SSH-Identität (privater Schlüssel) zur Verwendung
 magento-cloud magento-cloud sync [--rebase] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<synchronize>]...
 ```
 
-Synchronisieren des Codes und/oder der Daten einer Umgebung von der übergeordneten Umgebung
+Synchronisieren des Codes einer Umgebung und/oder der Daten der übergeordneten Umgebung
 
 ```
 This command synchronizes to a child environment from its parent environment.
@@ -3011,7 +3011,7 @@ parent to the child.
 
 #### `synchronize`
 
-Was synchronisiert werden soll: &quot;code&quot;, &quot;data&quot; oder beides
+Zu synchronisierende Elemente: „code“, „data“ oder beides
 
 - Standard: `[]`
 - Array
@@ -3022,7 +3022,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--rebase`
 
-Synchronisieren Sie den Code durch Rebasing anstelle der Zusammenführung.
+Code durch Neubasierung anstatt durch Zusammenführen synchronisieren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3035,13 +3035,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3068,20 +3068,20 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--primary`, `-1`
 
-Gibt nur die URL für die primäre Route zurück
+Gibt nur die URL für die primäre Route zurück.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--browser`
 
-Der zum Öffnen der URL zu verwendende Browser. Legen Sie 0 für keine fest.
+Der zum Öffnen der URL zu verwendende Browser. Auf 0 für keine festlegen.
 
 - Erfordert einen Wert
 
 #### `--pipe`
 
-Geben Sie die URL für stdout aus.
+Ausgabe der URL an stdout
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3094,7 +3094,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -3105,7 +3105,7 @@ Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Proj
 magento-cloud magento-cloud xdebug [--port PORT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE] [-i|--identity-file IDENTITY-FILE]
 ```
 
-Öffnen Sie einen Tunnel zu Xdebug in der Umgebung
+Öffnen eines Tunnels zu Xdebug in der Umgebung
 
 ### Optionen
 
@@ -3126,7 +3126,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -3138,19 +3138,19 @@ Der Name der Remote-Anwendung
 
 #### `--worker`
 
-Arbeitername
+Ein Worker-Name
 
 - Erfordert einen Wert
 
 #### `--instance`, `-I`
 
-Instanz-ID
+Eine Instanz-ID
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -3161,7 +3161,7 @@ Eine SSH-Identität (privater Schlüssel) zur Verwendung
 magento-cloud magento-cloud integration:activity:get [-P|--property PROPERTY] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT] [--] [<integration>] [<activity>]
 ```
 
-Detaillierte Informationen zu einer einzelnen Integrationsaktivität anzeigen
+Anzeigen detaillierter Informationen zu einer einzelnen Integrationsaktivität
 
 ### Argumente
 
@@ -3172,7 +3172,7 @@ Eine Integrations-ID. Leer lassen, um aus einer Liste auszuwählen.
 
 #### `activity`
 
-Die Aktivitäts-ID. Die Standardeinstellung ist die neueste Integrationsaktivität.
+Die Aktivitäts-ID. Standardmäßig wird die letzte Integrationsaktivität verwendet.
 
 ### Optionen
 
@@ -3198,28 +3198,28 @@ Die Projekt-ID oder URL
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -3231,7 +3231,7 @@ Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 magento-cloud magento-cloud int:act [--type TYPE] [-x|--exclude-type EXCLUDE-TYPE] [--limit LIMIT] [--start START] [--state STATE] [--result RESULT] [-i|--incomplete] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<id>]
 ```
 
-Liste der Aktivitäten für eine Integration abrufen
+Abrufen einer Liste von Aktivitäten für eine Integration
 
 ### Argumente
 
@@ -3245,14 +3245,14 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--type`
 
-Aktivitäten nach Typ filtern Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Filtern von Aktivitäten nach Typ. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--exclude-type`, `-x`
 
-Aktivitäten nach Typ ausschließen Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
+Ausschließen von Aktivitäten nach Typ. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden. Die Zeichen % oder * können als Platzhalter zum Ausschließen von Typen verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -3266,20 +3266,20 @@ Anzahl der angezeigten Ergebnisse begrenzen
 
 #### `--start`
 
-Es werden nur Aktivitäten aufgelistet, die vor diesem Datum erstellt wurden
+Nur Aktivitäten, die vor diesem Datum erstellt wurden, werden aufgelistet
 
 - Erfordert einen Wert
 
 #### `--state`
 
-Filtern von Aktivitäten nach Status. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Filtern Sie Aktivitäten nach Status. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--result`
 
-Aktivitäten nach Ergebnis filtern
+Filtern von Aktivitäten nach Ergebnis
 
 - Erfordert einen Wert
 
@@ -3292,28 +3292,28 @@ Nur unvollständige Aktivitäten auflisten
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: id*, created*, description*, type*, state*, result*, completed (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: id*, created*, description*, type*, state*, result*, completed (* = Default columns). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -3337,7 +3337,7 @@ Die Projekt-ID oder URL
 magento-cloud magento-cloud integration:activity:log [-t|--timestamps] [--date-fmt DATE-FMT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<integration>] [<activity>]
 ```
 
-Protokoll für eine Integrationsaktivität anzeigen
+Protokoll einer Integrationsaktivität anzeigen
 
 ### Argumente
 
@@ -3348,7 +3348,7 @@ Eine Integrations-ID. Leer lassen, um aus einer Liste auszuwählen.
 
 #### `activity`
 
-Die Aktivitäts-ID. Die Standardeinstellung ist die neueste Integrationsaktivität.
+Die Aktivitäts-ID. Standardmäßig wird die letzte Integrationsaktivität verwendet.
 
 ### Optionen
 
@@ -3363,7 +3363,7 @@ Zeitstempel neben jeder Nachricht anzeigen
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -3395,19 +3395,19 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--type`
 
-Der Integrationstyp (&#39;bitbucket&#39;, &#39;bitbucket_server&#39;, &#39;github&#39;, &#39;gitlab&#39;, &#39;webhook&#39;, &#39;health.email&#39;, &#39;health.pageruty&#39;, &#39;health.slack&#39;, &#39;health.webhook&#39;, &#39;httplog&#39;, &#39;script&#39;, &#39;newrelic&#39;, &#39;splunk&#39;, &#39;sumologic&#39;, &#39;syslog&#39;.
+Der Integrationstyp (&#39;bitbucket&#39;, &#39;bitbucket_server&#39;, &#39;github&#39;, &#39;gitlab&#39;, &#39;webhook&#39;, &#39;health.email&#39;, &#39;health.pagerduty&#39;, &#39;health.slack&#39;, &#39;health.webhook&#39;, &#39;httplog&#39;, &#39;script&#39;, &#39;newrelic&#39;, &#39;splunk&#39;, &#39;sumologic&#39;, &#39;syslog&#39;)
 
 - Erfordert einen Wert
 
 #### `--base-url`
 
-Die Basis-URL der Serverinstallation
+Die Basis-URL der Server-Installation
 
 - Erfordert einen Wert
 
 #### `--bitbucket-url`
 
-Die Basis-URL der Bitbucket Server-Installation
+Die Basis-URL der Bitbucket-Server-Installation
 
 - Erfordert einen Wert
 
@@ -3425,31 +3425,31 @@ Ein Authentifizierungs- oder Zugriffstoken für die Integration
 
 #### `--key`
 
-Ein Bitbucket OAuth-Verbraucherschlüssel
+Ein Bitbucket-OAuth-Verbraucherschlüssel
 
 - Erfordert einen Wert
 
 #### `--secret`
 
-Ein Bitbucket OAuth-Kundengeheimnis
+Ein Bitbucket für OAuth-Verbrauchergeheimnisse
 
 - Erfordert einen Wert
 
 #### `--license-key`
 
-Der New Relic Logs-Lizenzschlüssel
+Der Lizenzschlüssel für New Relic-Protokolle
 
 - Erfordert einen Wert
 
 #### `--server-project`
 
-Das Projekt (z. B. &quot;namespace/repo&quot;)
+Das Projekt (z. B. „namespace/repo„)
 
 - Erfordert einen Wert
 
 #### `--repository`
 
-Das zu verfolgende Repository (z. B. &quot;owner/repository&quot;)
+Das zu trackende Repository (z. B. „Eigentümer/Repository„)
 
 - Erfordert einen Wert
 
@@ -3462,21 +3462,21 @@ GitLab: Erstellen von Zusammenführungsanfragen als Umgebungen
 
 #### `--build-pull-requests`
 
-Erstellen jeder Pull-Anforderung als Umgebung
+Jede Pull-Anforderung als Umgebung erstellen
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--build-draft-pull-requests`
 
-Erstellen von Entwurfs-Pull-Anforderungen
+Erstellen von Pull-Anforderungen
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--build-pull-requests-post-merge`
 
-Pull-Anforderungen basierend auf ihrem Postzusammenführungsstatus erstellen
+Erstellen von Pull-Anforderungen basierend auf ihrem Post-Merge-Status
 
 - Standard: `false`
 - Erfordert einen Wert
@@ -3490,42 +3490,42 @@ GitLab: WIP-Zusammenführungsanfragen erstellen
 
 #### `--merge-requests-clone-parent-data`
 
-GitLab: Daten für Zusammenführungsanfragen klonen
+GitLab: Klonen von Daten für Zusammenführungsanfragen
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--pull-requests-clone-parent-data`
 
-Daten der übergeordneten Umgebung für Pull-Anforderungen klonen
+Klonen der Daten der übergeordneten Umgebung für Pull-Anforderungen
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--resync-pull-requests`
 
-Synchronisieren von Umgebungsdaten für Pull-Anforderungen bei jedem Build
+Daten der Pull-Anforderung bei jedem Build erneut synchronisieren
 
 - Standard: `false`
 - Erfordert einen Wert
 
 #### `--fetch-branches`
 
-Abrufen aller Zweige aus der Remote-Umgebung (als inaktive Umgebungen)
+Alle Verzweigungen aus der Remote-Instanz abrufen (als inaktive Umgebungen)
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--prune-branches`
 
-Löschen von Zweigen, die nicht auf der Remote-Site vorhanden sind
+Löschen von Verzweigungen, die auf der Remote-Instanz nicht vorhanden sind
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--resources-init`
 
-Die Ressourcen, die beim Initialisieren eines neuen Dienstes verwendet werden sollen (&#39;minimum&#39;, &#39;default&#39;, &#39;manual&#39;, &#39;parent&#39;)
+Die beim Initialisieren eines neuen Dienstes zu verwendenden Ressourcen („minimum“, „default“, „manual“, „parent„)
 
 - Erfordert einen Wert
 
@@ -3537,13 +3537,13 @@ Die URL oder der API-Endpunkt für die Integration
 
 #### `--shared-key`
 
-Webhook: der gemeinsame JWS-geheime Schlüssel
+Webhook: der gemeinsame geheime JWS-Schlüssel
 
 - Erfordert einen Wert
 
 #### `--file`
 
-Der Name einer lokalen Datei mit dem hochzuladenden Skript
+Der Name einer lokalen Datei, die das hochzuladende Skript enthält
 
 - Erfordert einen Wert
 
@@ -3556,7 +3556,7 @@ Eine Liste der Ereignisse, auf die reagiert werden soll, z. B. environment.push
 
 #### `--states`
 
-Eine Liste der Status, auf die reagiert werden soll, z. B. ausstehend, in_progress, complete
+Eine Liste der Status, auf die Aktionen durchgeführt werden sollen, z. B. „Ausstehend“, „In Bearbeitung“, „Abgeschlossen“
 
 - Standard: `complete`
 - Erfordert einen Wert
@@ -3577,7 +3577,7 @@ Die auszuschließenden Umgebungs-IDs
 
 #### `--from-address`
 
-[Optional] Benutzerdefinierte Absenderadresse für Warnhinweis-E-Mails
+[Optional] Benutzerdefinierte Absenderadresse für Warn-E-Mails
 
 - Erfordert einen Wert
 
@@ -3602,19 +3602,19 @@ Der PagerDuty-Routing-Schlüssel
 
 #### `--category`
 
-Die Kategorie Sumo Logic , die zum Filtern verwendet wird
+Die Kategorie der Sumo-Logik, die zum Filtern verwendet wird
 
 - Erfordert einen Wert
 
 #### `--index`
 
-Splunk-Index
+Der Splunk-Index
 
 - Erfordert einen Wert
 
 #### `--sourcetype`
 
-Splunk-Ereignistyp
+Der Splunk-Ereignistyp
 
 - Erfordert einen Wert
 
@@ -3627,13 +3627,13 @@ Syslog-Transportprotokoll (&#39;tcp&#39;, &#39;udp&#39;, &#39;tls&#39;)
 
 #### `--syslog-host`
 
-Syslog-Relais/Collector-Host
+Syslog-Relais/-Kollektor-Host
 
 - Erfordert einen Wert
 
 #### `--syslog-port`
 
-Syslog Relais/Collector Port
+Syslog-Relais-/Kollektoranschluss
 
 - Erfordert einen Wert
 
@@ -3673,7 +3673,7 @@ Ob die HTTPS-Zertifikatüberprüfung aktiviert werden soll (empfohlen)
 
 #### `--header`
 
-HTTP-Header zur Verwendung in POST-Anfragen. Trennen Sie Namen und Werte durch einen Doppelpunkt (:).
+In POST-Anfragen zu verwendende HTTP-Header Trennen Sie Namen und Werte mit einem Doppelpunkt (:).
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -3686,7 +3686,7 @@ Die Projekt-ID oder URL
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3705,7 +3705,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud integration:delete [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] [<id>]
 ```
 
-Integration aus einem Projekt löschen
+Löschen einer Integration aus einem Projekt
 
 ### Argumente
 
@@ -3725,7 +3725,7 @@ Die Projekt-ID oder URL
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3744,7 +3744,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud integration:get [-P|--property [PROPERTY]] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [--] [<id>]
 ```
 
-Details einer Integration anzeigen
+Anzeigen von Details einer Integration
 
 ### Argumente
 
@@ -3764,21 +3764,21 @@ Die anzuzeigende Integrationseigenschaft
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3796,7 +3796,7 @@ Die Projekt-ID oder URL
 magento-cloud magento-cloud integrations [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT]
 ```
 
-Liste der Projektintegration(n) anzeigen
+Liste der Projektintegrationen anzeigen
 
 ### Optionen
 
@@ -3804,21 +3804,21 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: ID, Zusammenfassung, Typ. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: ID, Zusammenfassung, Typ. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -3836,7 +3836,7 @@ Die Projekt-ID oder URL
 magento-cloud magento-cloud integration:update [--type TYPE] [--base-url BASE-URL] [--bitbucket-url BITBUCKET-URL] [--username USERNAME] [--token TOKEN] [--key KEY] [--secret SECRET] [--license-key LICENSE-KEY] [--server-project SERVER-PROJECT] [--repository REPOSITORY] [--build-merge-requests BUILD-MERGE-REQUESTS] [--build-pull-requests BUILD-PULL-REQUESTS] [--build-draft-pull-requests BUILD-DRAFT-PULL-REQUESTS] [--build-pull-requests-post-merge BUILD-PULL-REQUESTS-POST-MERGE] [--build-wip-merge-requests BUILD-WIP-MERGE-REQUESTS] [--merge-requests-clone-parent-data MERGE-REQUESTS-CLONE-PARENT-DATA] [--pull-requests-clone-parent-data PULL-REQUESTS-CLONE-PARENT-DATA] [--resync-pull-requests RESYNC-PULL-REQUESTS] [--fetch-branches FETCH-BRANCHES] [--prune-branches PRUNE-BRANCHES] [--resources-init RESOURCES-INIT] [--url URL] [--shared-key SHARED-KEY] [--file FILE] [--events EVENTS] [--states STATES] [--environments ENVIRONMENTS] [--excluded-environments EXCLUDED-ENVIRONMENTS] [--from-address FROM-ADDRESS] [--recipients RECIPIENTS] [--channel CHANNEL] [--routing-key ROUTING-KEY] [--category CATEGORY] [--index INDEX] [--sourcetype SOURCETYPE] [--protocol PROTOCOL] [--syslog-host SYSLOG-HOST] [--syslog-port SYSLOG-PORT] [--facility FACILITY] [--message-format MESSAGE-FORMAT] [--auth-mode AUTH-MODE] [--auth-token AUTH-TOKEN] [--verify-tls VERIFY-TLS] [--header HEADER] [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] [<id>]
 ```
 
-Integration aktualisieren
+Aktualisieren einer Integration
 
 ### Argumente
 
@@ -3850,19 +3850,19 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--type`
 
-Der Integrationstyp (&#39;bitbucket&#39;, &#39;bitbucket_server&#39;, &#39;github&#39;, &#39;gitlab&#39;, &#39;webhook&#39;, &#39;health.email&#39;, &#39;health.pageruty&#39;, &#39;health.slack&#39;, &#39;health.webhook&#39;, &#39;httplog&#39;, &#39;script&#39;, &#39;newrelic&#39;, &#39;splunk&#39;, &#39;sumologic&#39;, &#39;syslog&#39;.
+Der Integrationstyp (&#39;bitbucket&#39;, &#39;bitbucket_server&#39;, &#39;github&#39;, &#39;gitlab&#39;, &#39;webhook&#39;, &#39;health.email&#39;, &#39;health.pagerduty&#39;, &#39;health.slack&#39;, &#39;health.webhook&#39;, &#39;httplog&#39;, &#39;script&#39;, &#39;newrelic&#39;, &#39;splunk&#39;, &#39;sumologic&#39;, &#39;syslog&#39;)
 
 - Erfordert einen Wert
 
 #### `--base-url`
 
-Die Basis-URL der Serverinstallation
+Die Basis-URL der Server-Installation
 
 - Erfordert einen Wert
 
 #### `--bitbucket-url`
 
-Die Basis-URL der Bitbucket Server-Installation
+Die Basis-URL der Bitbucket-Server-Installation
 
 - Erfordert einen Wert
 
@@ -3880,31 +3880,31 @@ Ein Authentifizierungs- oder Zugriffstoken für die Integration
 
 #### `--key`
 
-Ein Bitbucket OAuth-Verbraucherschlüssel
+Ein Bitbucket-OAuth-Verbraucherschlüssel
 
 - Erfordert einen Wert
 
 #### `--secret`
 
-Ein Bitbucket OAuth-Kundengeheimnis
+Ein Bitbucket für OAuth-Verbrauchergeheimnisse
 
 - Erfordert einen Wert
 
 #### `--license-key`
 
-Der New Relic Logs-Lizenzschlüssel
+Der Lizenzschlüssel für New Relic-Protokolle
 
 - Erfordert einen Wert
 
 #### `--server-project`
 
-Das Projekt (z. B. &quot;namespace/repo&quot;)
+Das Projekt (z. B. „namespace/repo„)
 
 - Erfordert einen Wert
 
 #### `--repository`
 
-Das zu verfolgende Repository (z. B. &quot;owner/repository&quot;)
+Das zu trackende Repository (z. B. „Eigentümer/Repository„)
 
 - Erfordert einen Wert
 
@@ -3917,21 +3917,21 @@ GitLab: Erstellen von Zusammenführungsanfragen als Umgebungen
 
 #### `--build-pull-requests`
 
-Erstellen jeder Pull-Anforderung als Umgebung
+Jede Pull-Anforderung als Umgebung erstellen
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--build-draft-pull-requests`
 
-Erstellen von Entwurfs-Pull-Anforderungen
+Erstellen von Pull-Anforderungen
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--build-pull-requests-post-merge`
 
-Pull-Anforderungen basierend auf ihrem Postzusammenführungsstatus erstellen
+Erstellen von Pull-Anforderungen basierend auf ihrem Post-Merge-Status
 
 - Standard: `false`
 - Erfordert einen Wert
@@ -3945,42 +3945,42 @@ GitLab: WIP-Zusammenführungsanfragen erstellen
 
 #### `--merge-requests-clone-parent-data`
 
-GitLab: Daten für Zusammenführungsanfragen klonen
+GitLab: Klonen von Daten für Zusammenführungsanfragen
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--pull-requests-clone-parent-data`
 
-Daten der übergeordneten Umgebung für Pull-Anforderungen klonen
+Klonen der Daten der übergeordneten Umgebung für Pull-Anforderungen
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--resync-pull-requests`
 
-Synchronisieren von Umgebungsdaten für Pull-Anforderungen bei jedem Build
+Daten der Pull-Anforderung bei jedem Build erneut synchronisieren
 
 - Standard: `false`
 - Erfordert einen Wert
 
 #### `--fetch-branches`
 
-Abrufen aller Zweige aus der Remote-Umgebung (als inaktive Umgebungen)
+Alle Verzweigungen aus der Remote-Instanz abrufen (als inaktive Umgebungen)
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--prune-branches`
 
-Löschen von Zweigen, die nicht auf der Remote-Site vorhanden sind
+Löschen von Verzweigungen, die auf der Remote-Instanz nicht vorhanden sind
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--resources-init`
 
-Die Ressourcen, die beim Initialisieren eines neuen Dienstes verwendet werden sollen (&#39;minimum&#39;, &#39;default&#39;, &#39;manual&#39;, &#39;parent&#39;)
+Die beim Initialisieren eines neuen Dienstes zu verwendenden Ressourcen („minimum“, „default“, „manual“, „parent„)
 
 - Erfordert einen Wert
 
@@ -3992,13 +3992,13 @@ Die URL oder der API-Endpunkt für die Integration
 
 #### `--shared-key`
 
-Webhook: der gemeinsame JWS-geheime Schlüssel
+Webhook: der gemeinsame geheime JWS-Schlüssel
 
 - Erfordert einen Wert
 
 #### `--file`
 
-Der Name einer lokalen Datei mit dem hochzuladenden Skript
+Der Name einer lokalen Datei, die das hochzuladende Skript enthält
 
 - Erfordert einen Wert
 
@@ -4011,7 +4011,7 @@ Eine Liste der Ereignisse, auf die reagiert werden soll, z. B. environment.push
 
 #### `--states`
 
-Eine Liste der Status, auf die reagiert werden soll, z. B. ausstehend, in_progress, complete
+Eine Liste der Status, auf die Aktionen durchgeführt werden sollen, z. B. „Ausstehend“, „In Bearbeitung“, „Abgeschlossen“
 
 - Standard: `complete`
 - Erfordert einen Wert
@@ -4032,7 +4032,7 @@ Die auszuschließenden Umgebungs-IDs
 
 #### `--from-address`
 
-[Optional] Benutzerdefinierte Absenderadresse für Warnhinweis-E-Mails
+[Optional] Benutzerdefinierte Absenderadresse für Warn-E-Mails
 
 - Erfordert einen Wert
 
@@ -4057,19 +4057,19 @@ Der PagerDuty-Routing-Schlüssel
 
 #### `--category`
 
-Die Kategorie Sumo Logic , die zum Filtern verwendet wird
+Die Kategorie der Sumo-Logik, die zum Filtern verwendet wird
 
 - Erfordert einen Wert
 
 #### `--index`
 
-Splunk-Index
+Der Splunk-Index
 
 - Erfordert einen Wert
 
 #### `--sourcetype`
 
-Splunk-Ereignistyp
+Der Splunk-Ereignistyp
 
 - Erfordert einen Wert
 
@@ -4082,13 +4082,13 @@ Syslog-Transportprotokoll (&#39;tcp&#39;, &#39;udp&#39;, &#39;tls&#39;)
 
 #### `--syslog-host`
 
-Syslog-Relais/Collector-Host
+Syslog-Relais/-Kollektor-Host
 
 - Erfordert einen Wert
 
 #### `--syslog-port`
 
-Syslog Relais/Collector Port
+Syslog-Relais-/Kollektoranschluss
 
 - Erfordert einen Wert
 
@@ -4128,7 +4128,7 @@ Ob die HTTPS-Zertifikatüberprüfung aktiviert werden soll (empfohlen)
 
 #### `--header`
 
-HTTP-Header zur Verwendung in POST-Anfragen. Trennen Sie Namen und Werte durch einen Doppelpunkt (:).
+In POST-Anfragen zu verwendende HTTP-Header Trennen Sie Namen und Werte mit einem Doppelpunkt (:).
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -4141,7 +4141,7 @@ Die Projekt-ID oder URL
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4160,7 +4160,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud integration:validate [-p|--project PROJECT] [--] [<id>]
 ```
 
-Bestehende Integration validieren
+Bestehende Integration überprüfen
 
 ```
 This command allows you to check whether an integration is valid.
@@ -4203,7 +4203,7 @@ Aktuelles Projekt lokal erstellen
 
 #### `app`
 
-Zu erstellende Anwendung(en) angeben
+Zu erstellende(s) Programm(e) angeben
 
 - Standard: `[]`
 - Array
@@ -4221,33 +4221,33 @@ Absolute Links verwenden
 
 #### `--source`, `-s`
 
-Das Quellverzeichnis. Die Standardeinstellung ist der aktuelle Projektstamm.
+Das Quellverzeichnis. Standardmäßig wird der aktuelle Projektstamm verwendet.
 
 - Erfordert einen Wert
 
 #### `--destination`, `-d`
 
-Das Ziel, mit dem der Webstamm jeder App symverknüpft wird. Standard: _www
+Das Ziel, mit dem der Web-Stamm jeder App verknüpft wird. Standard: _www
 
 - Erfordert einen Wert
 
 #### `--copy`, `-c`
 
-Kopieren Sie in ein Build-Verzeichnis, anstatt symlink aus der Quelle zu verwenden.
+Kopieren Sie in ein Build-Verzeichnis, anstatt eine Verknüpfung von der Quelle aus herzustellen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--clone`
 
-Verwenden Sie Git, um die aktuelle HEAD in den Build-Ordner zu klonen.
+Verwenden Sie Git, um die aktuelle HEAD in das Build-Verzeichnis zu klonen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--run-deploy-hooks`
 
-Ausführen von &quot;deploy&quot;und/oder &quot;post_deploy&quot;
+Ausführen von Bereitstellungs- und/oder Bereitstellungs-Hooks
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4261,14 +4261,14 @@ Alte Builds nicht entfernen
 
 #### `--no-archive`
 
-Erstellen oder Verwenden Sie kein Build-Archiv
+Erstellen oder verwenden Sie kein Build-Archiv
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--no-backup`
 
-vorherigen Build nicht sichern
+Den vorherigen Build nicht sichern
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4282,7 +4282,7 @@ Zwischenspeicherung deaktivieren
 
 #### `--no-build-hooks`
 
-Führen Sie keine Post-Build-Hooks aus
+Nach dem Build keine Erweiterungspunkte ausführen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4296,21 +4296,21 @@ Build-Abhängigkeiten nicht lokal installieren
 
 #### `--working-copy`
 
-Entfernen: Verwenden Sie Git, um ein Repository jedes Drupal-Moduls zu klonen, anstatt einfach eine Version herunterzuladen.
+Drush: Verwenden Sie Git, um ein Repository jedes Drupal-Moduls zu klonen, anstatt einfach eine Version herunterzuladen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--concurrency`
 
-DRush: Legen Sie die Anzahl gleichzeitiger Projekte fest, die gleichzeitig verarbeitet werden.
+Drush: Legen Sie die Anzahl der gleichzeitigen Projekte fest, die gleichzeitig verarbeitet werden
 
 - Standard: `4`
 - Erfordert einen Wert
 
 #### `--lock`
 
-Löschen: Eine Sperrdatei erstellen oder aktualisieren (nur verfügbar mit DRush-Version 7+)
+Drush: Sperrdatei erstellen oder aktualisieren (nur verfügbar mit Drush Version 7+)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4328,7 +4328,7 @@ Lokalen Projektstamm suchen
 
 #### `subdir`
 
-Das zu suchende Unterverzeichnis (&#39;local&#39;, &#39;web&#39; oder &#39;shared&#39;)
+Der zu suchende Unterordner (&#39;local&#39;, &#39;web&#39; oder &#39;shared&#39;)
 
 ### Optionen
 
@@ -4341,7 +4341,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 magento-cloud magento-cloud metrics [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
 ```
 
-BETA Zeigt CPU-, Datenträger- und Speichermetriken für eine Umgebung an
+BETA : Anzeigen von CPU-, Datenträger- und Arbeitsspeichermetriken für eine Umgebung
 
 ### Optionen
 
@@ -4356,39 +4356,39 @@ Größen in Byte anzeigen
 
 #### `--range`, `-r`
 
-Der Zeitraum. Metriken werden für diese Dauer bis zur Endzeit (—to) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 5m, max. 8h oder mehr (je nach Projekt), Standard 10m.
+Der Zeitraum. Metriken werden für diese Dauer bis zum Endzeitpunkt (-bis) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 5 m, maximal 8 h oder mehr (je nach Projekt), standardmäßig 10 m.
 
 - Erfordert einen Wert
 
 #### `--interval`, `-i`
 
-Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 1 m.
+Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 1m.
 
 - Erfordert einen Wert
 
 #### `--to`
 
-Endzeit. Die Standardeinstellung ist jetzt.
+Die Endzeit. Die Standardeinstellung ist jetzt.
 
 - Erfordert einen Wert
 
 #### `--latest`, `-1`
 
-Nur den letzten einzelnen Datenpunkt anzeigen
+Nur den neuesten einzelnen Datenpunkt anzeigen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--service`, `-s`
 
-Filtern nach Dienst- oder Anwendungsnamen Die Zeichen % oder * können als Platzhalter verwendet werden.
+Nach Service- oder Anwendungsnamen filtern Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--type`
 
-Filtern nach Diensttyp (wenn —service nicht bereitgestellt ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
+Filtern nach Servicetyp (wenn —service nicht angegeben ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -4401,34 +4401,34 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: timestamp*, service*, cpu_percent*, mem_percent*, disk_percent*, tmp_disk_percent*, cpu_limit, cpu_used, disk_limit, disk_used, inodes_limit, inodes_percent, inodes_used, mem_limit, mem_used, tmp_disk_used, tmp_inodes _limit, tmp_inodes_percent, tmp_inodes_used, Typ (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: Zeitstempel*, Dienst*, CPU_Prozent*, MEM_Prozent*, Disk_Percent*, TMP_Disk_Percent*, CPU_Limit, CPU_Used, Disk_Limit, Disk_Used, Inodes_Limit, Inodes_Percent, Inodes_Used, MEM_Limit, MEM_Used, TMP_Disk_Limit, TMP_Disk_Used, TMP_Inodes_Limit, TMP_Inodes_Percent, TMP_Inodes_Used, Typ (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -4440,7 +4440,7 @@ Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 magento-cloud magento-cloud cpu [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
 ```
 
-BETA Anzeigen der CPU-Auslastung einer Umgebung
+BETA - Anzeige der CPU-Nutzung einer Umgebung
 
 ### Optionen
 
@@ -4448,39 +4448,39 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--range`, `-r`
 
-Der Zeitraum. Metriken werden für diese Dauer bis zur Endzeit (—to) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 5m, max. 8h oder mehr (je nach Projekt), Standard 10m.
+Der Zeitraum. Metriken werden für diese Dauer bis zum Endzeitpunkt (-bis) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 5 m, maximal 8 h oder mehr (je nach Projekt), standardmäßig 10 m.
 
 - Erfordert einen Wert
 
 #### `--interval`, `-i`
 
-Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 1 m.
+Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 1m.
 
 - Erfordert einen Wert
 
 #### `--to`
 
-Endzeit. Die Standardeinstellung ist jetzt.
+Die Endzeit. Die Standardeinstellung ist jetzt.
 
 - Erfordert einen Wert
 
 #### `--latest`, `-1`
 
-Nur den letzten einzelnen Datenpunkt anzeigen
+Nur den neuesten einzelnen Datenpunkt anzeigen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--service`, `-s`
 
-Filtern nach Dienst- oder Anwendungsnamen Die Zeichen % oder * können als Platzhalter verwendet werden.
+Nach Service- oder Anwendungsnamen filtern Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--type`
 
-Filtern nach Diensttyp (wenn —service nicht bereitgestellt ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
+Filtern nach Servicetyp (wenn —service nicht angegeben ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -4493,34 +4493,34 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: timestamp*, service*, used*, limit*, percent*, type (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: Zeitstempel*, Dienst*, Verwendet*, Limit*, Prozent*, Typ (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -4547,46 +4547,46 @@ Größen in Byte anzeigen
 
 #### `--range`, `-r`
 
-Der Zeitraum. Metriken werden für diese Dauer bis zur Endzeit (—to) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 5m, max. 8h oder mehr (je nach Projekt), Standard 10m.
+Der Zeitraum. Metriken werden für diese Dauer bis zum Endzeitpunkt (-bis) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 5 m, maximal 8 h oder mehr (je nach Projekt), standardmäßig 10 m.
 
 - Erfordert einen Wert
 
 #### `--interval`, `-i`
 
-Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 1 m.
+Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 1m.
 
 - Erfordert einen Wert
 
 #### `--to`
 
-Endzeit. Die Standardeinstellung ist jetzt.
+Die Endzeit. Die Standardeinstellung ist jetzt.
 
 - Erfordert einen Wert
 
 #### `--latest`, `-1`
 
-Nur den letzten einzelnen Datenpunkt anzeigen
+Nur den neuesten einzelnen Datenpunkt anzeigen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--service`, `-s`
 
-Filtern nach Dienst- oder Anwendungsnamen Die Zeichen % oder * können als Platzhalter verwendet werden.
+Nach Service- oder Anwendungsnamen filtern Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--type`
 
-Filtern nach Diensttyp (wenn —service nicht bereitgestellt ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
+Filtern nach Servicetyp (wenn —service nicht angegeben ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--tmp`
 
-Temporäre Festplattenauslastung melden (Spalten anzeigen: Zeitstempel, Dienst, tmp_used, tmp_limit, tmp_percent, tmp_ipercent)
+Bericht zur temporären Festplattenauslastung (zeigt die Spalten: Zeitstempel, Dienst, tmp_used, tmp_limit, tmp_percent, tmp_ipercent)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4599,34 +4599,34 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: timestamp*, service*, used*, limit*, percent*, ipercent*, tmp_percent*, ilimit, iused, tmp_ilimit, tmp_ipercent, tmp_iused, tmp_limit, tmp_used, type (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: timestamp*, service*, used*, limit*, percent*, ipercent*, tmp_percent*, limit, iused, tmp_limit, tmp_ipercent, tmp_iused, tmp_limit, tmp_used, type (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -4638,7 +4638,7 @@ Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 magento-cloud magento-cloud mem [-B|--bytes] [-r|--range RANGE] [-i|--interval INTERVAL] [--to TO] [-1|--latest] [-s|--service SERVICE] [--type TYPE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
 ```
 
-BETA Speichernutzung einer Umgebung anzeigen
+BETA Anzeigen der Speichernutzung einer Umgebung
 
 ### Optionen
 
@@ -4653,39 +4653,39 @@ Größen in Byte anzeigen
 
 #### `--range`, `-r`
 
-Der Zeitraum. Metriken werden für diese Dauer bis zur Endzeit (—to) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 5m, max. 8h oder mehr (je nach Projekt), Standard 10m.
+Der Zeitraum. Metriken werden für diese Dauer bis zum Endzeitpunkt (-bis) geladen. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 5 m, maximal 8 h oder mehr (je nach Projekt), standardmäßig 10 m.
 
 - Erfordert einen Wert
 
 #### `--interval`, `-i`
 
-Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 1 m.
+Das Zeitintervall. Die Standardeinstellung ist eine Division des Bereichs. Sie können Einheiten angeben: Stunden (h), Minuten (m) oder Sekunden (s). Mindestens 1m.
 
 - Erfordert einen Wert
 
 #### `--to`
 
-Endzeit. Die Standardeinstellung ist jetzt.
+Die Endzeit. Die Standardeinstellung ist jetzt.
 
 - Erfordert einen Wert
 
 #### `--latest`, `-1`
 
-Nur den letzten einzelnen Datenpunkt anzeigen
+Nur den neuesten einzelnen Datenpunkt anzeigen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--service`, `-s`
 
-Filtern nach Dienst- oder Anwendungsnamen Die Zeichen % oder * können als Platzhalter verwendet werden.
+Nach Service- oder Anwendungsnamen filtern Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--type`
 
-Filtern nach Diensttyp (wenn —service nicht bereitgestellt ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
+Filtern nach Servicetyp (wenn —service nicht angegeben ist). Die Version ist nicht erforderlich. Die Zeichen % oder * können als Platzhalter verwendet werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -4698,34 +4698,34 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: timestamp*, service*, used*, limit*, percent*, type (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: Zeitstempel*, Dienst*, Verwendet*, Limit*, Prozent*, Typ (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -4737,7 +4737,7 @@ Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 magento-cloud magento-cloud mount:download [-a|--all] [-m|--mount MOUNT] [--target TARGET] [--source-path] [--delete] [--exclude EXCLUDE] [--include INCLUDE] [--refresh] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE] [-i|--identity-file IDENTITY-FILE]
 ```
 
-Herunterladen von Dateien von einem Rich-Rich-Rsync-Server
+Dateien von einem Mount herunterladen, mithilfe von rsync
 
 ### Optionen
 
@@ -4745,40 +4745,40 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--all`, `-a`
 
-Download von allen Reittieren
+Download von allen Mounts
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--mount`, `-m`
 
-Die -Bereitstellung (als App-relativer Pfad)
+Die Bereitstellung (als App-relativer Pfad)
 
 - Erfordert einen Wert
 
 #### `--target`
 
-Das Verzeichnis, in das die Dateien heruntergeladen werden. Wenn —all verwendet wird, wird der Bereitstellungspfad angehängt
+Das Verzeichnis, in das die Dateien heruntergeladen werden. Wenn —all verwendet wird, wird der Einhängepfad angehängt
 
 - Erfordert einen Wert
 
 #### `--source-path`
 
-Verwenden Sie den Quellpfad des Mount (anstelle des Bereitstellungspfads) als Unterverzeichnis des Ziels, wenn —all verwendet wird.
+Verwenden Sie den Quellpfad des Mount (anstelle des Mount-Pfads) als Unterverzeichnis des Ziels, wenn —all verwendet wird
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--delete`
 
-Ob irrelevante Dateien im Zielverzeichnis gelöscht werden
+Ob irrelevante Dateien im Zielverzeichnis gelöscht werden sollen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--exclude`
 
-Vom Download auszuschließende Datei(en) (Muster)
+Datei(en) vom Download ausschließen (Muster)
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -4805,7 +4805,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -4817,19 +4817,19 @@ Der Name der Remote-Anwendung
 
 #### `--worker`
 
-Arbeitername
+Ein Worker-Name
 
 - Erfordert einen Wert
 
 #### `--instance`, `-I`
 
-Instanz-ID
+Eine Instanz-ID
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -4840,7 +4840,7 @@ Eine SSH-Identität (privater Schlüssel) zur Verwendung
 magento-cloud magento-cloud mounts [--paths] [--refresh] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE]
 ```
 
-Liste der Reittiere abrufen
+Erstellt eine Liste der Reittiere
 
 ### Optionen
 
@@ -4848,7 +4848,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--paths`
 
-Geben Sie nur die Bereitstellungspfade aus (1 pro Zeile)
+Ausgabe nur der Einhängepfade (einer pro Zeile)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4862,21 +4862,21 @@ Ob der Cache aktualisiert werden soll
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: Definition, Pfad. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: Definition, Pfad. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -4889,7 +4889,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -4901,13 +4901,13 @@ Der Name der Remote-Anwendung
 
 #### `--worker`
 
-Arbeitername
+Ein Worker-Name
 
 - Erfordert einen Wert
 
 #### `--instance`, `-I`
 
-Instanz-ID
+Eine Instanz-ID
 
 - Erfordert einen Wert
 
@@ -4918,7 +4918,7 @@ Instanz-ID
 magento-cloud magento-cloud mount:size [-B|--bytes] [--refresh] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-i|--identity-file IDENTITY-FILE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE]
 ```
 
-Überprüfen Sie die Festplattenauslastung der Bereitstellungen.
+Überprüfen der Festplattenauslastung der Bereitstellungen
 
 ```
 Use this command to check the disk size and usage for an application's mounts.
@@ -4942,35 +4942,35 @@ Größen in Byte anzeigen
 
 #### `--refresh`
 
-Cache aktualisieren
+Aktualisieren des Cache
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: verfügbar, max, mounts, percent_used, size, used. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: Verfügbar, Max, Einhängungen, percent_used, Größen, verwendet. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -4982,7 +4982,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -4994,13 +4994,13 @@ Der Name der Remote-Anwendung
 
 #### `--worker`
 
-Arbeitername
+Ein Worker-Name
 
 - Erfordert einen Wert
 
 #### `--instance`, `-I`
 
-Instanz-ID
+Eine Instanz-ID
 
 - Erfordert einen Wert
 
@@ -5011,7 +5011,7 @@ Instanz-ID
 magento-cloud magento-cloud mount:upload [--source SOURCE] [-m|--mount MOUNT] [--delete] [--exclude EXCLUDE] [--include INCLUDE] [--refresh] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-I|--instance INSTANCE] [-i|--identity-file IDENTITY-FILE]
 ```
 
-Hochladen von Dateien in eine -Bereitstellung mithilfe von Rsync
+Dateien mithilfe von rsync auf ein Mount hochladen
 
 ### Optionen
 
@@ -5025,20 +5025,20 @@ Ein Verzeichnis mit hochzuladenden Dateien
 
 #### `--mount`, `-m`
 
-Die -Bereitstellung (als App-relativer Pfad)
+Die Bereitstellung (als App-relativer Pfad)
 
 - Erfordert einen Wert
 
 #### `--delete`
 
-Ob irrelevante Dateien im Bereitstellungsfenster gelöscht werden
+Gibt an, ob irrelevante Dateien im Mount gelöscht werden sollen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--exclude`
 
-Vom Hochladen auszuschließende Datei(en) (Muster)
+Datei(en) vom Upload ausschließen (Muster)
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -5065,7 +5065,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -5077,19 +5077,19 @@ Der Name der Remote-Anwendung
 
 #### `--worker`
 
-Arbeitername
+Ein Worker-Name
 
 - Erfordert einen Wert
 
 #### `--instance`, `-I`
 
-Instanz-ID
+Eine Instanz-ID
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -5100,7 +5100,7 @@ Eine SSH-Identität (privater Schlüssel) zur Verwendung
 magento-cloud magento-cloud ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
 ```
 
-BETA Listen-Laufzeitvorgänge in einer Umgebung
+BETA-Listenlaufzeitvorgänge für eine Umgebung
 
 ### Optionen
 
@@ -5108,7 +5108,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--full`
 
-Beschränken Sie nicht die Länge des anzuzeigenden Befehls. Der Standardwert beträgt 24 Zeilen.
+Die Länge des anzuzeigenden Befehls nicht begrenzen. Der Standardwert ist 24 Zeilen.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5121,7 +5121,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -5133,27 +5133,27 @@ Der Name der Remote-Anwendung
 
 #### `--worker`
 
-Arbeitername
+Ein Worker-Name
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: service*, name*, start*, role, stop (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: service*, name*, start*, role, stop (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5165,7 +5165,7 @@ Geben Sie die Tabellenüberschrift nicht aus
 magento-cloud magento-cloud operation:run [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [--worker WORKER] [-W|--no-wait] [--wait] [--] [<operation>]
 ```
 
-BETA Ausführen eines Vorgangs für die Umgebung
+BETA - Ausführen eines Vorgangs in der Umgebung
 
 ### Argumente
 
@@ -5185,7 +5185,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -5197,13 +5197,13 @@ Der Name der Remote-Anwendung
 
 #### `--worker`
 
-Arbeitername
+Ein Worker-Name
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5252,7 +5252,7 @@ Die Projekt-ID
 
 #### `directory`
 
-Das Verzeichnis, in das geklont werden soll. Die Standardeinstellung ist der Projekttitel
+Der Ordner, in den geklont werden soll. Standardmäßig wird der Projekttitel verwendet
 
 ### Optionen
 
@@ -5260,13 +5260,13 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--environment`, `-e`
 
-Die zu klonende Umgebungs-ID. Die Standardeinstellung ist die Projektnummer oder die erste verfügbare Umgebung.
+Die zu klonende Umgebungskennung. Die Standardeinstellung ist der Projektstandard oder die erste verfügbare Umgebung
 
 - Erfordert einen Wert
 
 #### `--depth`
 
-Erstellen eines flachen Klons: begrenzt die Anzahl der Commits im Verlauf
+Einen flachen Klon erstellen: Begrenzt die Anzahl der Commits im Verlauf
 
 - Erfordert einen Wert
 
@@ -5285,7 +5285,7 @@ Die Projekt-ID oder URL
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -5296,7 +5296,7 @@ Eine SSH-Identität (privater Schlüssel) zur Verwendung
 magento-cloud magento-cloud project:info [--refresh] [--date-fmt DATE-FMT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] [<property>] [<value>]
 ```
 
-Eigenschaften für ein Projekt lesen oder festlegen
+Lesen oder Festlegen von Eigenschaften für ein Projekt
 
 ### Argumente
 
@@ -5307,7 +5307,7 @@ Der Name der Eigenschaft
 
 #### `value`
 
-Neuen Wert für die Eigenschaft festlegen
+Legen Sie einen neuen Wert für die Eigenschaft fest
 
 ### Optionen
 
@@ -5322,28 +5322,28 @@ Ob der Cache aktualisiert werden soll
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5356,7 +5356,7 @@ Die Projekt-ID oder URL
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5375,7 +5375,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud projects [--pipe] [--region REGION] [--title TITLE] [--my] [--refresh REFRESH] [--sort SORT] [--reverse] [--page PAGE] [-c|--count COUNT] [--format FORMAT] [--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT]
 ```
 
-Liste aller aktiven Projekte abrufen
+Abrufen einer Liste aller aktiven Projekte
 
 ### Optionen
 
@@ -5383,14 +5383,14 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--pipe`
 
-Geben Sie eine einfache Liste von Projekt-IDs aus. Deaktiviert die Paginierung.
+Ausgabe einer einfachen Liste von Projekt-IDs. Deaktiviert die Paginierung.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--region`
 
-Nach Region filtern (genaue Übereinstimmung)
+Nach Region filtern (exakte Übereinstimmung)
 
 - Erfordert einen Wert
 
@@ -5416,54 +5416,54 @@ Ob die Liste aktualisiert werden soll
 
 #### `--sort`
 
-Eine Eigenschaft, die nach
+Eine Eigenschaft zum Sortieren nach
 
 - Standard: `title`
 - Erfordert einen Wert
 
 #### `--reverse`
 
-Sortieren in umgekehrter (absteigender) Reihenfolge
+In umgekehrter (absteigender) Reihenfolge sortieren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--page`
 
-Seitenzahl. Dies ermöglicht die Paginierung, trotz Konfiguration oder —count. Wird ignoriert, wenn —pipe angegeben ist.
+Seitennummer. Dies ermöglicht die Paginierung, trotz Konfiguration oder —count. Ignoriert, wenn —pipe angegeben wurde.
 
 - Erfordert einen Wert
 
 #### `--count`, `-c`
 
-Die Anzahl der pro Seite anzuzeigenden Projekte. Verwenden Sie 0, um die Paginierung zu deaktivieren. Wird ignoriert, wenn —page angegeben ist.
+Die Anzahl der pro Seite anzuzeigenden Projekte Verwenden Sie 0, um die Paginierung zu deaktivieren. Ignoriert, wenn —page angegeben wurde.
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`
 
-Anzuzeigende Spalten Verfügbare Spalten: id*, title*, region*, created_at, organization_id, organization_label, organization_name, status (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: id*, title*, region*, created_at, organization_id, organization_label, organization_name, Status (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -5475,7 +5475,7 @@ Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 magento-cloud magento-cloud set-remote [<project>]
 ```
 
-Remote-Projekt für das aktuelle Git-Repository festlegen
+Festlegen des Remote-Projekts für das aktuelle Git-Repository
 
 ### Argumente
 
@@ -5494,7 +5494,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 magento-cloud magento-cloud repo:cat [-c|--commit COMMIT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] <path>
 ```
 
-Datei im Projekt-Repository lesen
+Lesen einer Datei im Projekt-Repository
 
 ### Argumente
 
@@ -5510,7 +5510,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--commit`, `-c`
 
-Der Commit SHA. Dies kann auch Suffixe vom Typ &quot;HEAD&quot;und Caret (^) oder Tilde (~) für übergeordnete Commits akzeptieren.
+Der Commit SHA. Dies akzeptiert auch die Suffixe &quot;HEAD&quot; und „Caret“ (^) oder „Tilde“ (~) für übergeordnete Commits.
 
 - Erfordert einen Wert
 
@@ -5522,7 +5522,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -5533,7 +5533,7 @@ Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Proj
 magento-cloud magento-cloud repo:ls [-d|--directories] [-f|--files] [--git-style] [-c|--commit COMMIT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<path>]
 ```
 
-Auflisten von Dateien im Projekt-Repository
+Auflisten der Dateien im Projekt-Repository
 
 ### Argumente
 
@@ -5561,14 +5561,14 @@ Nur Dateien anzeigen
 
 #### `--git-style`
 
-Stilausgabe ähnlich &quot;git ls-tree&quot;
+Stilausgabe ähnlich wie „git-tree“
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--commit`, `-c`
 
-Der Commit SHA. Dies kann auch Suffixe vom Typ &quot;HEAD&quot;und Caret (^) oder Tilde (~) für übergeordnete Commits akzeptieren.
+Der Commit SHA. Dies akzeptiert auch die Suffixe &quot;HEAD&quot; und „Caret“ (^) oder „Tilde“ (~) für übergeordnete Commits.
 
 - Erfordert einen Wert
 
@@ -5580,7 +5580,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -5591,7 +5591,7 @@ Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Proj
 magento-cloud magento-cloud read [-c|--commit COMMIT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<path>]
 ```
 
-Ordner oder Datei im Projekt-Repository lesen
+Lesen eines Verzeichnisses oder einer Datei im Projekt-Repository
 
 ### Argumente
 
@@ -5605,7 +5605,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--commit`, `-c`
 
-Der Commit SHA. Dies kann auch Suffixe vom Typ &quot;HEAD&quot;und Caret (^) oder Tilde (~) für übergeordnete Commits akzeptieren.
+Der Commit SHA. Dies akzeptiert auch die Suffixe &quot;HEAD&quot; und „Caret“ (^) oder „Tilde“ (~) für übergeordnete Commits.
 
 - Erfordert einen Wert
 
@@ -5617,7 +5617,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -5642,7 +5642,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--id`
 
-Eine Route-ID zur Auswahl
+Eine auszuwählende Routen-ID
 
 - Erfordert einen Wert
 
@@ -5661,14 +5661,14 @@ Die anzuzeigende Eigenschaft
 
 #### `--refresh`
 
-Den Zwischenspeicher von Routen umgehen
+Umgehen des Cache-Speichers von Routen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -5681,7 +5681,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -5704,7 +5704,7 @@ Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Proj
 magento-cloud magento-cloud routes [--refresh] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--] [<environment>]
 ```
 
-Alle Routen für eine Umgebung auflisten
+Auflisten aller Routen für eine Umgebung
 
 ### Argumente
 
@@ -5718,28 +5718,28 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--refresh`
 
-Den Zwischenspeicher von Routen umgehen
+Umgehen des Cache-Speichers von Routen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: route*, type*, to*, url (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: route*, type*, to*, url (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5752,7 +5752,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -5787,7 +5787,7 @@ Der Shell-Typ für die automatische Vervollständigung (bash oder zsh)
 magento-cloud magento-cloud update [--no-major] [--unstable] [--manifest MANIFEST] [--current-version CURRENT-VERSION] [--timeout TIMEOUT]
 ```
 
-CLI auf die neueste Version aktualisieren
+Aktualisieren der CLI auf die neueste Version
 
 ### Optionen
 
@@ -5795,21 +5795,21 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--no-major`
 
-Nur Aktualisierung zwischen kleineren oder Patch-Versionen
+Nur zwischen Nebenversionen oder Patch-Versionen aktualisieren
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--unstable`
 
-Aktualisierung auf eine neue instabile Version, falls verfügbar
+Auf eine neue instabile Version aktualisieren, falls verfügbar
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--manifest`
 
-Speicherort der Manifestdatei überschreiben
+Überschreiben des Speicherorts der Manifestdatei
 
 - Erfordert einen Wert
 
@@ -5821,7 +5821,7 @@ Aktuelle Version überschreiben
 
 #### `--timeout`
 
-Eine Zeitüberschreitung für die Versionsüberprüfung
+Ein Timeout für die Versionsüberprüfung
 
 - Standard: `30`
 - Erfordert einen Wert
@@ -5833,7 +5833,7 @@ Eine Zeitüberschreitung für die Versionsüberprüfung
 magento-cloud magento-cloud services [--refresh] [--pipe] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
 ```
 
-Auflisten von Diensten im Projekt
+Auflisten der Services im Projekt
 
 ### Optionen
 
@@ -5848,7 +5848,7 @@ Ob der Cache aktualisiert werden soll
 
 #### `--pipe`
 
-Nur eine Liste mit Dienstnamen ausgeben
+Ausgabe nur einer Liste von Service-Namen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5861,27 +5861,27 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: Festplatte, Name, Größe, Typ. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: Datenträger, Name, Größe, Typ. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5893,7 +5893,7 @@ Geben Sie die Tabellenüberschrift nicht aus
 magento-cloud magento-cloud mongodump [-c|--collection COLLECTION] [-z|--gzip] [-o|--stdout] [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTITY-FILE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP]
 ```
 
-Erstellen eines binären Archivierungs-Dump von Daten aus MongoDB
+Erstellen eines binären Archiv-Dump von Daten aus MongoDB
 
 ### Optionen
 
@@ -5901,13 +5901,13 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--collection`, `-c`
 
-Die zu löschende Sammlung
+Die Sammlung, die abgelegt werden soll
 
 - Erfordert einen Wert
 
 #### `--gzip`, `-z`
 
-Komprimieren Sie die Ablage mit gzip
+Komprimieren Sie den Dump mit gzip
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -5921,13 +5921,13 @@ Ausgabe in STDOUT anstelle einer Datei
 
 #### `--relationship`, `-r`
 
-Die zu verwendende Dienstbeziehung
+Die zu verwendende Service-Beziehung
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -5939,7 +5939,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -5956,7 +5956,7 @@ Der Name der Remote-Anwendung
 magento-cloud magento-cloud mongoexport [-c|--collection COLLECTION] [--jsonArray] [--type TYPE] [-f|--fields FIELDS] [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTITY-FILE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP]
 ```
 
-Daten aus MongoDB exportieren
+Exportieren von Daten aus MongoDB
 
 ### Optionen
 
@@ -5964,39 +5964,39 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--collection`, `-c`
 
-Zu exportierende Kollektion
+Die zu exportierende Sammlung
 
 - Erfordert einen Wert
 
 #### `--jsonArray`
 
-Daten als einzelnes JSON-Array exportieren
+Exportieren von Daten als einzelnes JSON-Array
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--type`
 
-Der Exporttyp, z. B. &quot;csv&quot;
+Der Exporttyp, z. B. „csv“
 
 - Erfordert einen Wert
 
 #### `--fields`, `-f`
 
-Zu exportierende Felder
+Die zu exportierenden Felder
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--relationship`, `-r`
 
-Die zu verwendende Dienstbeziehung
+Die zu verwendende Service-Beziehung
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -6008,7 +6008,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -6025,7 +6025,7 @@ Der Name der Remote-Anwendung
 magento-cloud magento-cloud mongorestore [-c|--collection COLLECTION] [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTITY-FILE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP]
 ```
 
-Wiederherstellen eines binären Datenarchiv-Dump in MongoDB
+Wiederherstellen eines binären Archiv-Dump von Daten in MongoDB
 
 ### Optionen
 
@@ -6039,13 +6039,13 @@ Die wiederherzustellende Sammlung
 
 #### `--relationship`, `-r`
 
-Die zu verwendende Dienstbeziehung
+Die zu verwendende Service-Beziehung
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -6057,7 +6057,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -6074,7 +6074,7 @@ Der Name der Remote-Anwendung
 magento-cloud magento-cloud mongo [--eval EVAL] [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTITY-FILE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP]
 ```
 
-MongoDB-Shell verwenden
+Verwenden der MongoDB-Shell
 
 ### Optionen
 
@@ -6088,13 +6088,13 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--relationship`, `-r`
 
-Die zu verwendende Dienstbeziehung
+Die zu verwendende Service-Beziehung
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -6106,7 +6106,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -6129,7 +6129,7 @@ Zugriff auf die Redis-CLI
 
 #### `args`
 
-Argumente zum Hinzufügen zum Befehl &quot;Redis&quot;
+Dem Redis-Befehl hinzuzufügende Argumente
 
 ### Optionen
 
@@ -6137,13 +6137,13 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--relationship`, `-r`
 
-Die zu verwendende Dienstbeziehung
+Die zu verwendende Service-Beziehung
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -6155,7 +6155,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -6172,13 +6172,13 @@ Der Name der Remote-Anwendung
 magento-cloud magento-cloud backup [--live] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<environment>]
 ```
 
-Schnappschuss einer Umgebung erstellen
+Erstellen eines Snapshots einer Umgebung
 
 ### Argumente
 
 #### `environment`
 
-Umwelt
+Die Umgebung
 
 ### Optionen
 
@@ -6186,7 +6186,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--live`
 
-Live Backup: Beenden Sie die Umgebung nicht. Wenn diese Einstellung festgelegt ist, bleibt die Umgebung aktiv und während der Sicherung für Verbindungen geöffnet. Dadurch werden Ausfallzeiten reduziert, wodurch das Risiko besteht, Daten in einem inkonsistenten Zustand zu sichern.
+Live-Backup: Halten Sie die Umgebung nicht an. Wenn festgelegt, bleibt die Umgebung aktiv und steht während des Backups Verbindungen offen. Dadurch werden Ausfallzeiten reduziert, was das Risiko birgt, dass die Daten in einem inkonsistenten Zustand gesichert werden.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6199,13 +6199,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6230,7 +6230,7 @@ Löschen eines Umgebungs-Snapshots
 
 #### `id`
 
-Die ID der Momentaufnahme. Erforderlich im nicht interaktiven Modus.
+Die ID des Snapshots. Erforderlich im nicht interaktiven Modus.
 
 ### Optionen
 
@@ -6244,13 +6244,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6269,13 +6269,13 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud snapshot:get [-P|--property PROPERTY] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--date-fmt DATE-FMT] [--] [<id>]
 ```
 
-Anzeigen eines Umgebungs-Snapshots
+Umgebungsschnappschuss anzeigen
 
 ### Argumente
 
 #### `id`
 
-Die ID der Momentaufnahme. Der Standardwert ist der neueste.
+Die ID des Snapshots. Standardmäßig wird die neueste verwendet.
 
 ### Optionen
 
@@ -6295,13 +6295,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -6313,7 +6313,7 @@ Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
 magento-cloud magento-cloud snapshots [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [--date-fmt DATE-FMT] [-p|--project PROJECT] [-e|--environment ENVIRONMENT]
 ```
 
-Verfügbare Momentaufnahmen einer Umgebung auflisten
+Auflisten der verfügbaren Momentaufnahmen einer Umgebung
 
 ### Optionen
 
@@ -6321,28 +6321,28 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
@@ -6355,7 +6355,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -6366,13 +6366,13 @@ Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Proj
 magento-cloud magento-cloud snapshot:restore [--target TARGET] [--branch-from BRANCH-FROM] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<snapshot>]
 ```
 
-Wiederherstellen eines Umgebungs-Snapshots
+Wiederherstellen eines Umgebungsschnappschusses
 
 ### Argumente
 
 #### `snapshot`
 
-Der Name der Momentaufnahme. Die Standardeinstellung ist die neueste
+Der Name des Snapshots. Standardwert ist die neueste .
 
 ### Optionen
 
@@ -6380,13 +6380,13 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--target`
 
-Die wiederherzustellende Umgebung. Die Standardeinstellung ist die aktuelle Umgebung des Snapshots.
+Die Umgebung, in der wiederhergestellt werden soll. Standardmäßig wird die aktuelle Umgebung des Snapshots verwendet
 
 - Erfordert einen Wert
 
 #### `--branch-from`
 
-Wenn das —target noch nicht vorhanden ist, gibt dies das übergeordnete Element der neuen Umgebung an
+Wenn —target noch nicht vorhanden ist, wird hier das übergeordnete Element der neuen Umgebung angegeben
 
 - Erfordert einen Wert
 
@@ -6398,13 +6398,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6423,7 +6423,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud source-ops [--full] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
 ```
 
-Auflisten von Quellvorgängen in einer Umgebung
+Auflisten von Quellvorgängen für eine Umgebung
 
 ### Optionen
 
@@ -6431,7 +6431,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--full`
 
-Beschränken Sie nicht die Länge des anzuzeigenden Befehls. Der Standardwert beträgt 24 Zeilen.
+Die Länge des anzuzeigenden Befehls nicht begrenzen. Der Standardwert ist 24 Zeilen.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6444,27 +6444,27 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: App, Befehl, Vorgang. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: App, Befehl, Vorgang. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6476,7 +6476,7 @@ Geben Sie die Tabellenüberschrift nicht aus
 magento-cloud magento-cloud source-operation:run [--variable VARIABLE] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<operation>]
 ```
 
-Quellvorgang ausführen
+Ausführen eines Quellvorgangs
 
 ### Argumente
 
@@ -6490,7 +6490,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--variable`
 
-Variable, die während des Vorgangs im Format type:name=value festgelegt wird
+Eine Variable im Format type:name=value, die während des Vorgangs festgelegt werden soll
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -6503,13 +6503,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6554,21 +6554,21 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--refresh-only`
 
-Aktualisieren Sie das Zertifikat nur bei Bedarf (schreiben Sie keine SSH-Konfiguration).
+Aktualisieren Sie das Zertifikat nur, falls erforderlich (keine SSH-Konfiguration schreiben)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--new`
 
-Aktualisieren des Zertifikats erzwingen
+Aktualisierung des Zertifikats erzwingen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--new-key`
 
-[Veraltet] Verwenden Sie stattdessen —new .
+[Veraltet] Verwenden Sie stattdessen —new
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6662,21 +6662,21 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: id*, title*, path*, fingerprint (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: ID*, Titel*, Pfad*, Fingerabdruck (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6688,7 +6688,7 @@ Geben Sie die Tabellenüberschrift nicht aus
 magento-cloud magento-cloud subscription:info [-s|--id ID] [--date-fmt DATE-FMT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [--] [<property>] [<value>]
 ```
 
-Abonnementeigenschaften lesen und ändern
+Lesen oder Ändern von Abonnementeigenschaften
 
 ### Argumente
 
@@ -6699,7 +6699,7 @@ Der Name der Eigenschaft
 
 #### `value`
 
-Neuen Wert für die Eigenschaft festlegen
+Legen Sie einen neuen Wert für die Eigenschaft fest
 
 ### Optionen
 
@@ -6713,28 +6713,28 @@ Die Abonnement-ID
 
 #### `--date-fmt`
 
-Das Datumsformat (als PHP-Datumsformat-Zeichenfolge)
+Das Datumsformat (als PHP-Datumsformat-String)
 
 - Standard: `c`
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6752,7 +6752,7 @@ Die Projekt-ID oder URL
 magento-cloud magento-cloud tunnel:close [-a|--all] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP]
 ```
 
-Schließen von SSH-Tunneln
+SSH-Tunnel schließen
 
 ### Optionen
 
@@ -6760,7 +6760,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--all`, `-a`
 
-Schließen aller Tunnel
+Alle Tunnel schließen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6773,7 +6773,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -6790,7 +6790,7 @@ Der Name der Remote-Anwendung
 magento-cloud magento-cloud tunnel:info [-P|--property PROPERTY] [-c|--encode] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP]
 ```
 
-Anzeigen von Beziehungsinformationen für SSH-Tunnel
+Beziehungsinformationen für SSH-Tunnel anzeigen
 
 ### Optionen
 
@@ -6804,7 +6804,7 @@ Die anzuzeigende Beziehungseigenschaft
 
 #### `--encode`, `-c`
 
-Ausgabe als base64-kodierte JSON
+Ausgabe als base64-kodiertes JSON
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6817,7 +6817,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -6855,7 +6855,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -6867,21 +6867,21 @@ Der Name der Remote-Anwendung
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: port*, project*, environment*, app*, relation*, url (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: Port*, Projekt*, Umgebung*, App*, Beziehung*, URL (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6914,7 +6914,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--gateway-ports`, `-g`
 
-Remote-Hosts erlauben, eine Verbindung zu lokalen weitergeleiteten Ports herzustellen
+Zulassen, dass Remote-Hosts eine Verbindung zu lokalen weitergeleiteten Ports herstellen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6927,7 +6927,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -6939,7 +6939,7 @@ Der Name der Remote-Anwendung
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -6950,7 +6950,7 @@ Eine SSH-Identität (privater Schlüssel) zur Verwendung
 magento-cloud magento-cloud tunnel:single [--port PORT] [-g|--gateway-ports] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-A|--app APP] [-r|--relationship RELATIONSHIP] [-i|--identity-file IDENTITY-FILE]
 ```
 
-Öffnen eines einzelnen SSH-Tunnels für eine App-Beziehung
+Öffnen eines einzelnen SSH-Tunnels zu einer App-Beziehung
 
 ### Optionen
 
@@ -6964,7 +6964,7 @@ Der lokale Port
 
 #### `--gateway-ports`, `-g`
 
-Remote-Hosts erlauben, eine Verbindung zu lokalen weitergeleiteten Ports herzustellen
+Zulassen, dass Remote-Hosts eine Verbindung zu lokalen weitergeleiteten Ports herstellen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -6977,7 +6977,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -6989,13 +6989,13 @@ Der Name der Remote-Anwendung
 
 #### `--relationship`, `-r`
 
-Die zu verwendende Dienstbeziehung
+Die zu verwendende Service-Beziehung
 
 - Erfordert einen Wert
 
 #### `--identity-file`, `-i`
 
-Eine SSH-Identität (privater Schlüssel) zur Verwendung
+Eine zu verwendende SSH-Identität (privater Schlüssel)
 
 - Erfordert einen Wert
 
@@ -7006,7 +7006,7 @@ Eine SSH-Identität (privater Schlüssel) zur Verwendung
 magento-cloud magento-cloud user:add [-r|--role ROLE] [--force-invite] [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] [<email>]
 ```
 
-Einen Benutzer zum Projekt hinzufügen
+Hinzufügen eines Benutzers zum Projekt
 
 ### Argumente
 
@@ -7020,14 +7020,14 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--role`, `-r`
 
-Die Projektrolle des Benutzers (&quot;admin&quot;oder &quot;viewer&quot;) oder die Umgebungstyprolle (z. B. &quot;staging:contributor&quot;oder &quot;production:viewer&quot;). Um einen Benutzer aus einem Umgebungstyp zu entfernen, setzen Sie die Rolle auf &quot;none&quot;. Die Zeichen % oder * können als Platzhalter für den Umgebungstyp verwendet werden, z. B. &quot;%:viewer&quot;, um dem Benutzer die Rolle &quot;Betrachter&quot;für alle Typen zu geben. Die Rolle kann abgekürzt werden, z. B. &quot;production:v&quot;.
+Projektrolle des Benutzers („Admin“ oder „Viewer„) oder Rolle des Umgebungstyps (z. B. „staging:contributor“ oder „production:viewer„). Um einen Benutzer aus einem Umgebungstyp zu entfernen, legen Sie die Rolle als „Keine“ fest. Die Zeichen % oder * können als Platzhalter für den Umgebungstyp verwendet werden, z. B. &quot;%:viewer“, um dem Benutzer die Rolle „viewer“ für alle Typen zu geben. Die Rolle kann abgekürzt werden, z. B. „production:v“.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--force-invite`
 
-Senden einer Einladung, auch wenn bereits eine gesendet wurde
+Einladung senden, auch wenn bereits eine gesendet wurde
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7040,7 +7040,7 @@ Die Projekt-ID oder URL
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7059,7 +7059,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud user:delete [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] <email>
 ```
 
-Benutzer aus dem Projekt löschen
+Löschen eines Benutzers aus dem Projekt
 
 ### Argumente
 
@@ -7081,7 +7081,7 @@ Die Projekt-ID oder URL
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7100,7 +7100,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud user:get [-l|--level LEVEL] [--pipe] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [-r|--role ROLE] [--] [<email>]
 ```
 
-Benutzerrollen anzeigen
+Benutzerrolle(n) anzeigen
 
 ### Argumente
 
@@ -7114,13 +7114,13 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--level`, `-l`
 
-Die Rollenebene (&quot;Projekt&quot;oder &quot;Umgebung&quot;)
+Rollenebene (&#39;Projekt&#39; oder &#39;Umgebung&#39;)
 
 - Erfordert einen Wert
 
 #### `--pipe`
 
-Ausgabe der zu stdout zu sendenden Rolle (nach Durchführung von Änderungen)
+Ausgabe der Rolle an stdout (nach Durchführung von Änderungen)
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7133,13 +7133,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7153,7 +7153,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 
 #### `--role`, `-r`
 
-[Veraltet: Verwenden Sie user:update , um die Benutzerrolle(en) zu ändern]
+[Veraltet: Verwenden Sie user:update, um die Rolle(n) eines Benutzers zu ändern]
 
 - Erfordert einen Wert
 
@@ -7164,7 +7164,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud users [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT]
 ```
 
-Projektbenutzer auflisten
+Auflisten der Projektbenutzer
 
 ### Optionen
 
@@ -7172,21 +7172,21 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: email*, name*, role*, id*, given_at, updated_at (* = Standardspalten). Das Zeichen &quot;+&quot;kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: email*, name*, role*, id*, granted_at, updated_at (* = Standardspalten). Das Zeichen &quot;+&quot; kann als Platzhalter für die Standardspalten verwendet werden. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7204,7 +7204,7 @@ Die Projekt-ID oder URL
 magento-cloud magento-cloud user:update [-r|--role ROLE] [-p|--project PROJECT] [-W|--no-wait] [--wait] [--] [<email>]
 ```
 
-Benutzerrollen in einem Projekt aktualisieren
+Benutzerrolle(n) in einem Projekt aktualisieren
 
 ### Argumente
 
@@ -7218,7 +7218,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--role`, `-r`
 
-Die Projektrolle des Benutzers (&quot;admin&quot;oder &quot;viewer&quot;) oder die Umgebungstyprolle (z. B. &quot;staging:contributor&quot;oder &quot;production:viewer&quot;). Um einen Benutzer aus einem Umgebungstyp zu entfernen, setzen Sie die Rolle auf &quot;none&quot;. Die Zeichen % oder * können als Platzhalter für den Umgebungstyp verwendet werden, z. B. &quot;%:viewer&quot;, um dem Benutzer die Rolle &quot;Betrachter&quot;für alle Typen zu geben. Die Rolle kann abgekürzt werden, z. B. &quot;production:v&quot;.
+Projektrolle des Benutzers („Admin“ oder „Viewer„) oder Rolle des Umgebungstyps (z. B. „staging:contributor“ oder „production:viewer„). Um einen Benutzer aus einem Umgebungstyp zu entfernen, legen Sie die Rolle als „Keine“ fest. Die Zeichen % oder * können als Platzhalter für den Umgebungstyp verwendet werden, z. B. &quot;%:viewer“, um dem Benutzer die Rolle „viewer“ für alle Typen zu geben. Die Rolle kann abgekürzt werden, z. B. „production:v“.
 
 - Standard: `[]`
 - Erfordert einen Wert
@@ -7231,7 +7231,7 @@ Die Projekt-ID oder URL
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7250,7 +7250,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud variable:create [-u|--update] [-l|--level LEVEL] [--name NAME] [--value VALUE] [--json JSON] [--sensitive SENSITIVE] [--prefix PREFIX] [--enabled ENABLED] [--inheritable INHERITABLE] [--visible-build VISIBLE-BUILD] [--visible-runtime VISIBLE-RUNTIME] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] [<name>]
 ```
 
-Variable erstellen
+Erstellen einer Variablen
 
 ### Argumente
 
@@ -7264,14 +7264,14 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--update`, `-u`
 
-Aktualisieren Sie die Variable, falls sie bereits vorhanden ist.
+Aktualisieren Sie die Variable, falls sie bereits existiert
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--level`, `-l`
 
-Die Ebene, auf der die Variable festgelegt werden soll (&quot;Projekt&quot;oder &quot;Umgebung&quot;)
+Die Ebene, auf der die Variable festgelegt werden soll (&#39;Projekt&#39; oder &#39;Umgebung&#39;)
 
 - Erfordert einen Wert
 
@@ -7296,14 +7296,14 @@ Ob der Variablenwert JSON-formatiert ist
 
 #### `--sensitive`
 
-Ob der Variablenwert empfindlich ist
+Ob der Variablenwert sensibel ist
 
 - Standard: `false`
 - Erfordert einen Wert
 
 #### `--prefix`
 
-Das Präfix des Variablennamens, das den Typ bestimmen kann, z. B. &quot;env&quot;. Gilt nur, wenn der Name noch kein Präfix enthält. (z. B. &quot;none&quot;oder &quot;env:&quot;)
+Das Präfix des Variablennamens, das dessen Typ bestimmen kann, z. B. „env“. Nur anwendbar, wenn der Name noch kein Präfix enthält. (z. B. „none“ oder „env:„)
 
 - Standard: `none`
 - Erfordert einen Wert
@@ -7317,14 +7317,14 @@ Ob die Variable in der Umgebung aktiviert werden soll
 
 #### `--inheritable`
 
-Ob die Variable von untergeordneten Umgebungen vererbt werden kann
+Ob die Variable von untergeordneten Umgebungen vererbt wird
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--visible-build`
 
-Ob die Variable zur Build-Zeit sichtbar sein soll
+Ob die Variable zur Erstellungszeit sichtbar sein soll
 
 - Erfordert einen Wert
 
@@ -7343,13 +7343,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7368,7 +7368,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud variable:delete [-l|--level LEVEL] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] <name>
 ```
 
-Variable löschen
+Löschen einer Variablen
 
 ### Argumente
 
@@ -7384,7 +7384,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--level`, `-l`
 
-Die Variablenebene (&quot;Projekt&quot;, &quot;Umgebung&quot;, &quot;p&quot;oder &quot;e&quot;)
+Variablenebene (&#39;Projekt&#39;, &#39;Umgebung&#39;, &#39;P&#39; oder &#39;E&#39;)
 
 - Erfordert einen Wert
 
@@ -7396,13 +7396,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7421,7 +7421,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud vget [-P|--property PROPERTY] [-l|--level LEVEL] [--format FORMAT] [-c|--columns COLUMNS] [--no-header] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--pipe] [--] [<name>]
 ```
 
-Anzeigen von Variablen
+Anzeigen einer Variablen
 
 ### Argumente
 
@@ -7441,27 +7441,27 @@ Anzeigen einer einzelnen Variableneigenschaft
 
 #### `--level`, `-l`
 
-Die Variablenebene (&quot;Projekt&quot;, &quot;Umgebung&quot;, &quot;p&quot;oder &quot;e&quot;)
+Variablenebene (&#39;Projekt&#39;, &#39;Umgebung&#39;, &#39;P&#39; oder &#39;E&#39;)
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7474,13 +7474,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--pipe`
 
-[Veraltete Option] Nur Variablenwert ausgeben
+[Veraltete Option] Nur den Variablenwert ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7500,27 +7500,27 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--level`, `-l`
 
-Die Variablenebene (&quot;Projekt&quot;, &quot;Umgebung&quot;, &quot;p&quot;oder &quot;e&quot;)
+Variablenebene (&#39;Projekt&#39;, &#39;Umgebung&#39;, &#39;P&#39; oder &#39;E&#39;)
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: is_enabled, level, name, value. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: is_enabled, level, name, value. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7533,7 +7533,7 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
@@ -7544,7 +7544,7 @@ Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Proj
 magento-cloud magento-cloud variable:update [--allow-no-change] [-l|--level LEVEL] [--value VALUE] [--json JSON] [--sensitive SENSITIVE] [--enabled ENABLED] [--inheritable INHERITABLE] [--visible-build VISIBLE-BUILD] [--visible-runtime VISIBLE-RUNTIME] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [-W|--no-wait] [--wait] [--] <name>
 ```
 
-Variable aktualisieren
+Aktualisieren einer Variablen
 
 ### Argumente
 
@@ -7560,14 +7560,14 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--allow-no-change`
 
-Rückkehrerfolg (kein Exitcode), wenn keine Änderungen bereitgestellt wurden
+Erfolgreiche Rückgabe (kein Exitcode), wenn keine Änderungen angegeben wurden
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--level`, `-l`
 
-Die Variablenebene (&quot;Projekt&quot;, &quot;Umgebung&quot;, &quot;p&quot;oder &quot;e&quot;)
+Variablenebene (&#39;Projekt&#39;, &#39;Umgebung&#39;, &#39;P&#39; oder &#39;E&#39;)
 
 - Erfordert einen Wert
 
@@ -7586,7 +7586,7 @@ Ob der Variablenwert JSON-formatiert ist
 
 #### `--sensitive`
 
-Ob der Variablenwert empfindlich ist
+Ob der Variablenwert sensibel ist
 
 - Standard: `false`
 - Erfordert einen Wert
@@ -7600,14 +7600,14 @@ Ob die Variable in der Umgebung aktiviert werden soll
 
 #### `--inheritable`
 
-Ob die Variable von untergeordneten Umgebungen vererbt werden kann
+Ob die Variable von untergeordneten Umgebungen vererbt wird
 
 - Standard: `true`
 - Erfordert einen Wert
 
 #### `--visible-build`
 
-Ob die Variable zur Build-Zeit sichtbar sein soll
+Ob die Variable zur Erstellungszeit sichtbar sein soll
 
 - Erfordert einen Wert
 
@@ -7626,13 +7626,13 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--no-wait`, `-W`
 
-Warten Sie nicht, bis der Vorgang abgeschlossen ist.
+Warten Sie nicht, bis der Vorgang abgeschlossen ist
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7651,7 +7651,7 @@ Warten Sie, bis der Vorgang abgeschlossen ist (Standard)
 magento-cloud magento-cloud workers [--refresh] [--pipe] [-p|--project PROJECT] [-e|--environment ENVIRONMENT] [--format FORMAT] [-c|--columns COLUMNS] [--no-header]
 ```
 
-Liste aller entsandten Arbeitskräfte
+Abrufen einer Liste aller bereitgestellten Worker
 
 ### Optionen
 
@@ -7666,7 +7666,7 @@ Ob der Cache aktualisiert werden soll
 
 #### `--pipe`
 
-Nur eine Liste mit Worker-Namen ausgeben
+Nur eine Liste der Arbeitskräftenamen ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -7679,27 +7679,27 @@ Die Projekt-ID oder URL
 
 #### `--environment`, `-e`
 
-Die Umgebungs-ID. Verwenden Sie &quot;.&quot; , um die Standardumgebung des Projekts auszuwählen.
+Die Umgebungskennung. &quot;.“ verwenden , um die Standardumgebung des Projekts auszuwählen.
 
 - Erfordert einen Wert
 
 #### `--format`
 
-Das Ausgabeformat: Tabelle, CSV, TSV oder einfach
+Das Ausgabeformat: Tabelle, CSV, TSV oder Nur
 
 - Standard: `table`
 - Erfordert einen Wert
 
 #### `--columns`, `-c`
 
-Anzuzeigende Spalten Verfügbare Spalten: Befehle, Name, Typ. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. &quot;a,b,c&quot;) und/oder Leerzeichen aufgeteilt werden.
+Anzuzeigende Spalten. Verfügbare Spalten: Befehle, Name, Typ. Die Zeichen % oder * können als Platzhalter verwendet werden. Die Werte können durch Kommas (z. B. „a, b, c„) und/oder Leerzeichen getrennt werden.
 
 - Standard: `[]`
 - Erfordert einen Wert
 
 #### `--no-header`
 
-Geben Sie die Tabellenüberschrift nicht aus
+Tabellenüberschrift nicht ausgeben
 
 - Standard: `false`
 - Akzeptiert keinen Wert

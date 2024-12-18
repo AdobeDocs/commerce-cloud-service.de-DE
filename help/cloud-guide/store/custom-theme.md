@@ -12,11 +12,11 @@ ht-degree: 0%
 
 # Benutzerdefiniertes Design
 
-Sie können ein oder mehrere Designs installieren, um sie für einen oder alle Ihrer Stores und Sites in Ihrem Projekt zu verwenden. Designs umfassen mehrere statische Dateien, darunter Bilder, Schriftarten, CSS, JavaScript, PHP und mehr, um Ihre Geschäfte vollständig zu entwerfen. Sie können das Design hinzufügen, indem Sie entweder den Code in das Dateisystem extrahieren oder den Composer verwenden.
+Sie können ein oder mehrere Designs installieren, die für einen oder alle Ihre Stores und Sites in Ihrem Projekt verwendet werden sollen. Designs umfassen mehrere statische Dateien, einschließlich Bilder, Schriftarten, CSS, JavaScript, PHP und mehr, um Ihre Stores vollständig zu gestalten. Sie können das Design hinzufügen, indem Sie entweder den Code in das Dateisystem extrahieren oder den Composer verwenden.
 
 ## Manuelles Installieren eines Designs
 
-Um ein Design manuell zu installieren, muss sich der Code des Designs in einem komprimierten Archiv oder in einer Verzeichnisstruktur wie der folgenden befinden:
+Um ein Design manuell zu installieren, müssen Sie den Code des Designs in einem komprimierten Archiv oder in einer Verzeichnisstruktur ähnlich der folgenden haben:
 
 ```text
 <VendorName>
@@ -36,28 +36,28 @@ Um ein Design manuell zu installieren, muss sich der Code des Designs in einem k
 
 **So installieren Sie ein Design manuell**:
 
-1. Kopieren Sie den Code des Designs unter &quot;`<Project root dir>/app/design/frontend`&quot;für ein Storefront-Design oder &quot;`<Project root dir>/app/design/adminhtml`&quot;für ein Admin-Design. Stellen Sie sicher, dass der Ordner der obersten Ebene &quot;`<VendorName>`&quot; ist. Andernfalls wird das Design nicht ordnungsgemäß installiert.
+1. Kopieren Sie den Code des Designs unter `<Project root dir>/app/design/frontend` für ein Storefront-Design oder `<Project root dir>/app/design/adminhtml` für ein Admin-Design. Stellen Sie sicher, dass der Ordner der obersten Ebene `<VendorName>` ist. Andernfalls wird das Design nicht ordnungsgemäß installiert.
 
    ```bash
    cp -r ExampleTheme <project-root>/app/design/frontend
    ```
 
-1. Bestätigen Sie das Design, das an die richtige Stelle kopiert wurde.
+1. Bestätigen Sie, dass das Design an die richtige Stelle kopiert wurde.
 
    * Storefront-Design: `ls <project-root>/app/design/frontend`
    * Admin-Design: `ls <project-root>/app/design/adminhtml`
 
-   Ein Beispiel:
+   Es folgt ein Beispiel:
 
-   Beispiel-Design-Adobe Commerce
+   ExampleTheme Adobe Commerce
 
-1. Fügen Sie Dateien hinzu und übertragen Sie sie.
+1. Dateien hinzufügen und übertragen.
 
    ```bash
    git add -A && git commit -m "Add theme"
    ```
 
-1. Schicken Sie die Dateien an Ihren Zweig.
+1. Übertragen Sie die Dateien in Ihre Verzweigung.
 
    ```bash
    git push origin <branch name>
@@ -65,19 +65,19 @@ Um ein Design manuell zu installieren, muss sich der Code des Designs in einem k
 
 1. Warten Sie, bis die Bereitstellung abgeschlossen ist.
 1. Melden Sie sich beim Administrator an.
-1. Klicken Sie auf **Inhalt** > Design > **Designs**.
+1. Klicken Sie **Inhalt** > Design > **Designs**.
 
    Das Design wird im rechten Bereich angezeigt.
 
 ## Installieren eines Designs mithilfe von Composer
 
-Die Installation eines Designs mit Composer entspricht der Installation jeder anderen Erweiterung mit Composer. Weitere Informationen finden Sie unter [Module installieren, verwalten und aktualisieren](extensions.md) .
+Das Installieren eines Designs mit Composer entspricht dem Installieren einer anderen Erweiterung mit Composer. Siehe [Installieren, Verwalten und Aktualisieren von Modulen](extensions.md) für weitere Informationen.
 
-So installieren Sie ein Design mit Composer:
+So installieren Sie ein Design mit dem Composer:
 
-1. Kaufen Sie das Design über Commerce Marketplace.
-1. Rufen Sie den Namen des Designs Composer ab.
-1. Wechseln Sie in den Stammordner von Adobe Commerce und geben Sie den Befehl ein:
+1. Kaufen Sie das Design von Commerce Marketplace.
+1. Rufen Sie den Namen des Designers ab.
+1. Wechseln Sie in Ihr Adobe Commerce-Stammverzeichnis und geben Sie den Befehl ein:
 
    ```bash
    composer require <vendor>/<name>:<version>
@@ -89,7 +89,7 @@ So installieren Sie ein Design mit Composer:
    composer require zero1/theme-fashionista-theme:1.0.0
    ```
 
-1. Warten Sie, bis die Abhängigkeiten aktualisiert wurden.
+1. Warten Sie, bis die Abhängigkeiten aktualisiert werden.
 1. Geben Sie die folgenden Befehle ein:
 
    ```bash
@@ -101,10 +101,10 @@ So installieren Sie ein Design mit Composer:
    ```
 
 1. Melden Sie sich beim Administrator an.
-1. Klicken Sie auf **Inhalt** > Design > **Designs**.
+1. Klicken Sie **Inhalt** > Design > **Designs**.
 
    Das Design wird im rechten Bereich angezeigt.
 
 ## Mehrere Designs
 
-Wenn Sie mehrere Designs verwenden, z. B. verschiedene Designs pro Gebietsschema, überprüfen Sie die Umgebungsvariable `SCD_MATRIX` , um die Designbereitstellung anzupassen. Siehe die Schritte [build](../environment/variables-build.md#scd_matrix) oder [deploy](../environment/variables-deploy.md#scd_matrix) in der [Umgebungskonfiguration](../environment/configure-env-yaml.md).
+Wenn Sie mehrere Designs verwenden, z. B. verschiedene Designs pro Gebietsschema, überprüfen Sie die `SCD_MATRIX` Umgebungsvariable , um die Designbereitstellung anzupassen. Siehe die [Erstellen](../environment/variables-build.md#scd_matrix) oder [Bereitstellen](../environment/variables-deploy.md#scd_matrix) in der [Umgebungskonfiguration](../environment/configure-env-yaml.md).

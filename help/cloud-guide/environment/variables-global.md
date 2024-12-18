@@ -1,6 +1,6 @@
 ---
 title: Globale Variablen
-description: Sehen Sie sich die Liste der Umgebungsvariablen an, die Aktionen in der Adobe Commerce bei der Bereitstellung der Cloud-Infrastruktur steuern.
+description: Siehe die Liste der Umgebungsvariablen, die Aktionen im Bereitstellungsprozess der Adobe Commerce-Cloud-Infrastruktur steuern.
 feature: Cloud, Configuration, Build, Deploy, Eventing, Logs, SCD
 recommendations: noDisplay, catalog
 role: Developer
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 # Globale Variablen
 
-Globale Variablen steuern Aktionen in jeder Phase des [!DNL Commerce]-Bereitstellungsprozesses: Erstellen, Bereitstellen und Nach der Bereitstellung. Da globale Variablen sich auf jede Phase auswirken, müssen Sie sie in der `global` -Phase der `.magento.env.yaml`-Datei festlegen:
+Globale Variablen steuern Aktionen in jeder Phase des [!DNL Commerce]-Bereitstellungsprozesses: Erstellen, Bereitstellen und Nachbereitstellen. Da sich globale Variablen auf jede Phase auswirken, müssen Sie sie im `global` der `.magento.env.yaml` festlegen:
 
 ```yaml
 stage:
@@ -22,21 +22,21 @@ stage:
     GLOBAL_VARIABLE_NAME: value
 ```
 
-Weitere Informationen zum Anpassen des Build- und Bereitstellungsprozesses finden Sie unter
+Weitere Informationen zum Anpassen des Build- und Bereitstellungsprozesses finden Sie unter:
 
 - [Bereitstellungskonfiguration](configure-env-yaml.md)
 - [Bereitstellungsprozess](../deploy/process.md)
 
 ## `ENABLE_EVENTING`
 
-- **Standard**-_Nicht festgelegt_
+- **default**-_not set_
 - **Version**—Adobe Commerce 2.4.5 und höher
 
-Wenn auf `true` gesetzt, ermöglicht cron die Ausführung von Nachrichtenwarteschlangenkonsumenten. Adobe I/O-Ereignisse für Adobe Commerce verwenden Nachrichtenwarteschlangen, um die Bereitstellung kritischer Ereignisse zu beschleunigen.
+Bei Festlegung auf `true` wird Cron aktiviert, um die Nachrichtenwarteschlange von Nutzern auszuführen. Adobe I/O-Ereignisse für Adobe Commerce verwenden Nachrichtenwarteschlangen, um den Versand kritischer Ereignisse zu beschleunigen.
 
-Adobe empfiehlt, die Variable [`CRON_CONSUMERS_RUNNER`](./variables-deploy.md#cron_consumers_runner) auch zur `deploy` -Phase der `.magento.env.yaml` -Datei hinzuzufügen, wobei `cron_run` auf `true` eingestellt ist.
+Adobe empfiehlt, auch die Variable [`CRON_CONSUMERS_RUNNER`](./variables-deploy.md#cron_consumers_runner) zum `deploy` der `.magento.env.yaml` hinzuzufügen, wobei `cron_run` auf `true` gesetzt ist.
 
-Das folgende Beispiel zeigt eine vollständig konfigurierte `ENABLE_EVENTING` -Variable.
+Das folgende Beispiel zeigt eine vollständig konfigurierte `ENABLE_EVENTING`.
 
 ```yaml
 stage:
@@ -51,10 +51,10 @@ stage:
 
 ## ENABLE_WEBHOOKS
 
-- **Standard**-_Nicht festgelegt_
+- **default**-_not set_
 - **Version**—Adobe Commerce 2.4.4 und höher
 
-Wenn auf `true` gesetzt, aktiviert Commerce-Webhooks. Der Webhook wird auf einem externen Endpunkt ausgeführt, z. B. einer App Builder-Laufzeitaktion oder eines Bestandsverwaltungssystems von Drittanbietern. Im [_Webhooks-Handbuch_](https://developer.adobe.com/commerce/extensibility/webhooks) wird diese Funktion ausführlich beschrieben.
+Wenn auf `true` gesetzt, werden Commerce-Webhooks aktiviert. Der Webhook wird über einen externen Endpunkt ausgeführt, z. B. eine App Builder-Laufzeitaktion oder ein Inventarverwaltungssystem eines Drittanbieters. Im [_Webhooks-Handbuch_](https://developer.adobe.com/commerce/extensibility/webhooks) wird diese Funktion ausführlich beschrieben.
 
 ```yaml
 stage:
@@ -67,7 +67,7 @@ stage:
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Überschreibt die minimale Protokollierungsstufe für alle Ausgabestreams ohne Änderung des Codes, was bei der Fehlerbehebung von Problemen bei der Bereitstellung hilfreich ist. Wenn Ihre Bereitstellung beispielsweise fehlschlägt, können Sie diese Variable verwenden, um die Protokollierungsgranularität global zu erhöhen. Siehe [Protokollebenen](log-handlers.md#log-levels). Der Wert `min_level` in den Protokollierungs-Handlern überschreibt diese Einstellung.
+Überschreibt die minimale Protokollierungsstufe für alle Ausgabe-Streams, ohne den Code zu ändern, was bei der Fehlerbehebung bei Bereitstellungsproblemen hilfreich ist. Wenn beispielsweise Ihre Bereitstellung fehlschlägt, können Sie diese Variable verwenden, um die Protokollierungsgranularität global zu erhöhen. Siehe [Protokollebenen](log-handlers.md#log-levels). Der `min_level` Wert in Logging Handlern überschreibt diese Einstellung.
 
 ```yaml
 stage:
@@ -77,16 +77,16 @@ stage:
 
 >[!WARNING]
 >
->Die Einstellung für die Variable `MIN_LOGGING_LEVEL` ändert nicht die Konfiguration der Protokollebene für den Datei-Handler, der standardmäßig auf `debug` festgelegt ist.
+>Die Einstellung für die Variable `MIN_LOGGING_LEVEL` ändert nichts an der Konfiguration auf Protokollebene für den Datei-Handler, der standardmäßig auf `debug` festgelegt ist.
 
 ## `SCD_ON_DEMAND`
 
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Aktivieren Sie die Generierung von statischem Inhalt auf Anforderung eines Benutzers (SCD). Statische Inhalte nach Bedarf eignen sich ideal für den Entwicklungs- und Test-Workflow, da dadurch die Bereitstellungszeit verkürzt wird.
+Aktivieren der Generierung statischer Inhalte auf Anfrage eines Benutzers (SCD). Statische Inhalte bei Bedarf eignen sich ideal für den Entwicklungs- und Test-Workflow, da sie die Bereitstellungszeit verkürzen.
 
-Durch das Vorausfüllen des Caches mit dem [`post_deploy`-Hook](../application/hooks-property.md) werden die Site-Ausfallzeiten reduziert. Die Cache-Erwärmung ist nur für Pro-Projekte verfügbar, die Staging- und Produktionsumgebungen in den [!DNL Cloud Console] und für Starter-Projekte enthalten. Fügen Sie die Umgebungsvariable `SCD_ON_DEMAND` in der `.magento.env.yaml` -Datei der `global`-Phase hinzu:
+Vorausfüllen des Cache mithilfe des [`post_deploy` Hooks ](../application/hooks-property.md) die Ausfallzeit der Site. Der Cache-Warming ist nur für Pro-Projekte verfügbar, die Staging- und Produktionsumgebungen im [!DNL Cloud Console] enthalten, sowie für Starter-Projekte. Fügen Sie die Umgebungsvariable `SCD_ON_DEMAND` zum `global` in der `.magento.env.yaml` hinzu:
 
 ```yaml
 stage:
@@ -94,7 +94,7 @@ stage:
     SCD_ON_DEMAND: true
 ```
 
-Die Variable `SCD_ON_DEMAND` überspringt die SCD in beiden Phasen (Build und Bereitstellung), löscht die Ordner `pub/static` und `var/view_preprocessed` und schreibt Folgendes in die Datei `app/etc/env.php`:
+Die Variable `SCD_ON_DEMAND` überspringt die SCD in beiden Phasen (Erstellen und Bereitstellen), löscht die `pub/static` und `var/view_preprocessed` Ordner und schreibt Folgendes in die `app/etc/env.php`:
 
 ```php?start_inline=1
 return array(
@@ -109,9 +109,9 @@ return array(
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.2.0 und höher
 
-Ermöglicht Ihnen, die maximale erwartete Ausführungszeit für die Bereitstellung statischer Inhalte zu erhöhen.
+Ermöglicht die Verlängerung der maximal erwarteten Ausführungszeit für die Bereitstellung statischer Inhalte.
 
-Standardmäßig wird von Adobe Commerce die maximal erwartete Ausführung auf 900 Sekunden festgelegt. In einigen Szenarien benötigen Sie jedoch möglicherweise mehr Zeit, um die Bereitstellung statischer Inhalte für ein Cloud-Projekt abzuschließen.
+Standardmäßig legt Adobe Commerce die maximal erwartete Ausführung auf 900 Sekunden fest. In einigen Szenarien benötigen Sie jedoch möglicherweise mehr Zeit, um die statische Inhaltsbereitstellung für ein Cloud-Projekt abzuschließen.
 
 ```yaml
 stage:
@@ -126,7 +126,7 @@ stage:
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.4.2 und höher
 
-Setzen Sie dies auf &quot;`true`&quot;, um zu verhindern, dass statische Inhalte für übergeordnete Designs während der Build- und Bereitstellungsphase generiert werden. Wenn diese Option auf &quot;`true`&quot; gesetzt ist, wird weniger statischer Inhalt generiert, was die Gesamterstellungs- und Bereitstellungszeiten verbessert.
+Wenn auf `true` gesetzt, wird verhindert, dass während der Build- und Bereitstellungsphase statische Inhalte für übergeordnete Designs generiert werden. Wenn diese Option auf `true` festgelegt ist, wird weniger statischer Inhalt generiert, wodurch die Erstellungs- und Bereitstellungszeiten insgesamt verbessert werden.
 
 ```yaml
 stage:
@@ -139,9 +139,9 @@ stage:
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.3.0 und höher
 
-[Baler](https://github.com/magento/baler) ist ein Modul, das Ihren generierten JavaScript-Code prüft und ein optimiertes JavaScript-Bundle erstellt. Wenn Sie das optimierte Bundle auf Ihrer Site bereitstellen, kann sich die Anzahl der Netzwerkanforderungen beim Laden Ihrer Site verringern und die Seitenladezeiten verbessern.
+[Baler](https://github.com/magento/baler) ist ein Modul, das Ihren generierten JavaScript-Code scannt und ein optimiertes JavaScript-Bundle erstellt. Durch die Bereitstellung des optimierten Bundles auf Ihrer Site kann die Anzahl der Netzwerkanfragen beim Laden Ihrer Site reduziert und die Seitenladezeiten verbessert werden.
 
-Legen Sie diese Einstellung auf &quot;`true`&quot;fest, um Baler nach der Bereitstellung statischer Inhalte auszuführen.
+Legen Sie diese Option auf `true` fest, um die Ballenpresse nach der Bereitstellung statischer Inhalte auszuführen.
 
 ```yaml
 stage:
@@ -151,21 +151,21 @@ stage:
 
 >[!NOTE]
 >
->Installieren und konfigurieren Sie das Baler-Modul, bevor Sie diese Funktion verwenden. Da Baler in der Alpha-Version verfügbar ist, aktivieren Sie diese Option nur in Staging-Umgebungen.
+>Installieren und konfigurieren Sie das Ballenmodul, bevor Sie diese Funktion verwenden. Da Baller in der Alpha-Version vorliegt, aktivieren Sie diese Option nur in Staging-Umgebungen.
 
 ## `SKIP_HTML_MINIFICATION`
 
-- **Default**:
+- **Standard**:
    - `true`—für `ece-tools` 2002.0.13 und höher
-   - `false`—für frühere Versionen von `ece-tools`
+   - `false` - für frühere Versionen von `ece-tools`
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Aktiviert bzw. deaktiviert das Kopieren von statischen Ansichtsdateien in das Verzeichnis `<magento_root>/init/` am Ende der Build-Phase. Wenn der Wert auf `true` gesetzt ist, werden die Dateien nicht kopiert und die HTML-Minimierung ist auf Anfrage verfügbar. Setzen Sie diesen Wert auf `true` , um Ausfallzeiten bei der Bereitstellung in Staging- und Produktionsumgebungen zu reduzieren.
+Aktiviert oder deaktiviert das Kopieren von statischen Ansichtsdateien in das `<magento_root>/init/` am Ende des Erstellungsvorgangs. Wenn auf `true` festgelegt, werden die Dateien nicht kopiert und eine HTML-Minimierung ist auf Anfrage verfügbar. Legen Sie diesen Wert auf `true` fest, um Ausfallzeiten bei der Bereitstellung in Staging- und Produktionsumgebungen zu reduzieren.
 
-- **`false`**—Kopiert das Verzeichnis `view_preprocessed` am Ende der Build-Phase in das Verzeichnis `<magento_root>/init/` und stellt das Verzeichnis im Verzeichnis `<magento_root>/var` zu Beginn der Bereitstellungsphase wieder her.
-- **`true`**—Aktiviert die On-Demand-HTML-Minimierung; kopiert _nicht_ die `<magento_root>var/view_preprocessed` am Ende der Build-Phase in den Ordner `<magento_root>/init/`.
+- **`false`** - Kopiert den `view_preprocessed` Ordner am Ende der Build-Phase in den `<magento_root>/init/` Ordner und stellt den Ordner im `<magento_root>/var` zu Beginn der Bereitstellungsphase wieder her.
+- **`true`** - Aktiviert die On-Demand-HTML-Minimierung; kopiert _nicht_ die `<magento_root>var/view_preprocessed` am Ende der Erstellungsphase in das `<magento_root>/init/`.
 
-Fügen Sie die Umgebungsvariable `SKIP_HTML_MINIFICATION` in der `.magento.env.yaml` -Datei der `global`-Phase hinzu:
+Fügen Sie die Umgebungsvariable `SKIP_HTML_MINIFICATION` zum `global` in der `.magento.env.yaml` hinzu:
 
 ```yaml
 stage:
@@ -178,16 +178,16 @@ stage:
 - **Standard**—_Nicht festgelegt_
 - **Version**—Adobe Commerce 2.1.4 und höher
 
-Verwenden Sie die Variable `X_FRAME_CONFIGURATION` , um die Kopfzeilenkonfiguration [`X-Frame-Options`](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/xframe-options.html) für Ihre Adobe Commerce-Site zu ändern. Diese Konfiguration steuert, wie der Browser eine Seite in einem `<frame>`, `<iframe>` oder `<object>` rendert. Verwenden Sie eine der folgenden Optionen:
+Verwenden Sie die Variable `X_FRAME_CONFIGURATION` , um die Konfiguration des [`X-Frame-Options`](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/security/xframe-options.html)-Headers für Ihre Adobe Commerce-Site zu ändern. Diese Konfiguration steuert, wie der Browser eine Seite in einem `<frame>`, `<iframe>` oder `<object>` rendert. Verwenden Sie eine der folgenden Optionen:
 
-- `DENY`: Seite kann nicht in einem Frame angezeigt werden.
-- `SAMEORIGIN`—(Die standardmäßige Adobe Commerce-Einstellung.) Die Seite kann nur in einem Frame mit derselben Herkunft wie die Seite selbst angezeigt werden.
+- `DENY` - Die Seite kann nicht in einem Frame angezeigt werden.
+- `SAMEORIGIN`-(Die Standardeinstellung für Adobe Commerce.) Die Seite kann nur in einem Frame angezeigt werden, der auf demselben Ursprung wie die Seite selbst liegt.
 
 >[!WARNING]
 >
->Die Option `ALLOW-FROM <uri>` wird nicht mehr unterstützt, da sie von Adobe Commerce unterstützte Browser nicht mehr unterstützen. Siehe [Browserkompatibilität](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility).
+>Die `ALLOW-FROM <uri>`-Option wird nicht mehr unterstützt, da sie von Adobe Commerce unterstützte Browser nicht mehr unterstützen. Siehe [Browser-Kompatibilität](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility).
 
-Fügen Sie die Umgebungsvariable `X_FRAME_CONFIGURATION` in der `.magento.env.yaml` -Datei der `global`-Phase hinzu:
+Fügen Sie die Umgebungsvariable `X_FRAME_CONFIGURATION` zum `global` in der `.magento.env.yaml` hinzu:
 
 ```yaml
 stage:

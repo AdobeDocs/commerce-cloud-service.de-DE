@@ -13,39 +13,39 @@ ht-degree: 0%
 
 # Schutzblock
 
-Adobe Commerce in der Cloud-Infrastruktur verfügt über eine Schutzblockierfunktion, die unter bestimmten Umständen den Zugriff auf Websites mit Sicherheitslücken einschränkt. Diese partielle Blockierungsmethode verhindert die Nutzung bekannter Sicherheitslücken. Veraltete Software enthält oft Exploits, daher ist es wichtig, vor diesen Exploits zu schützen, indem der Zugriff auf diese Seiten teilweise blockiert wird.
+Adobe Commerce in der Cloud-Infrastruktur verfügt über eine Schutzsperre, die unter bestimmten Umständen den Zugriff auf Websites mit Sicherheitslücken einschränkt. Diese partielle Sperrmethode verhindert die Ausnutzung bekannter Sicherheitslücken. Veraltete Software enthält häufig Exploits. Daher ist es wichtig, diese Exploits zu schützen, indem der Zugriff auf diese Sites teilweise blockiert wird.
 
 ## Funktionsweise des Schutzblocks
 
-Adobe Commerce unterhält eine Datenbank mit Signaturen bekannter Sicherheitslücken in Open-Source-Software, die häufig in der Cloud-Infrastruktur bereitgestellt werden. Die Sicherheitsprüfung analysiert nur bekannte Schwachstellen in Open-Source-Projekten; sie kann keine Anpassungen untersuchen, die Sie schreiben.
+Adobe Commerce unterhält eine Signaturdatenbank bekannter Sicherheitslücken in Open-Source-Software, die häufig in der Cloud-Infrastruktur bereitgestellt werden. Die Sicherheitsprüfung analysiert nur bekannte Schwachstellen in Open-Source-Projekten und kann keine von Ihnen geschriebenen Anpassungen untersuchen.
 
 Die Sicherheitsprüfung wird ausgeführt:
 
-- Wenn Sie neuen Code an Git senden
+- Wenn Sie neuen Code an Git pushen
 - Wenn neue Sicherheitslücken zur Datenbank hinzugefügt werden
 
-Wenn eine kritische Schwachstelle in Ihrer Anwendung erkannt wird, wird die Git-Push-Benachrichtigung zurückgewiesen.
+Wenn in Ihrer Anwendung eine kritische Sicherheitslücke entdeckt wird, wird die Git-Push-Benachrichtigung abgelehnt.
 
-Es werden zwei Arten von Blöcken ausgeführt:
+Es gibt zwei Arten von Blöcken, die ausgeführt werden:
 
-1. **Baustein vervollständigen** - für Entwicklungs-Websites. Die Fehlermeldung, die `git push` begleitet, enthält detaillierte Informationen zur Schwachstelle.
+1. **Komplettblock** - für Entwicklungs-Websites. Die `git push` beigefügte Fehlermeldung enthält detaillierte Informationen zur Sicherheitslücke.
 
-1. **Teilblock** - für Produktions-Websites, wodurch die Site größtenteils online bleibt. Je nach Art der Sicherheitslücke können Teile einer Anforderung, wie z. B. eine Abfragezeichenfolge, Cookies oder zusätzliche Header, aus GET-Anforderungen entfernt werden. Alle anderen Anfragen können vollständig blockiert werden, z. B. Anmeldung, Formularübermittlung oder Produktkasse.
+1. **Teilblockierung** - für Produktions-Websites, mit denen die Website größtenteils online bleiben kann. Je nach Art der Sicherheitslücke können Teile einer Anfrage, wie z. B. eine Abfragezeichenfolge, Cookies oder zusätzliche Header, aus GET-Anfragen entfernt werden. Alle anderen Anfragen können vollständig blockiert werden, z. B. Anmeldung, Formularübermittlung oder Produktkasse.
 
-Die Aufhebung der Sperrung wird nach Beseitigung des Sicherheitsrisikos automatisiert. Der Block wird kurz nach dem Anwenden eines Sicherheits-Upgrades entfernt, durch das die Schwachstelle entfernt wird.
+Die Aufhebung der Blockierung erfolgt automatisch bei Behebung des Sicherheitsrisikos. Die Sperre wird kurz nach der Anwendung eines Sicherheits-Upgrades entfernt, das die Sicherheitslücke entfernt.
 
-## Aus dem Schutzblock ausschließen
+## Deaktivieren des Schutzblocks
 
-Der Schutzblock dient zum Schutz vor bekannten Sicherheitslücken in der Software, die Sie Adobe Commerce in der Cloud-Infrastruktur bereitstellen.
+Der Schutzblock dient dazu, Sie vor bekannten Sicherheitslücken in der Software zu schützen, die Sie in der Cloud-Infrastruktur von Adobe Commerce bereitstellen.
 
-Sie können den Schutzblock jedoch deaktivieren, indem Sie [`.magento.app.yaml`](../application/configure-app-yaml.md) Folgendes hinzufügen:
+Sie können den Schutzblock jedoch deaktivieren, indem Sie Folgendes zu [`.magento.app.yaml`](../application/configure-app-yaml.md) hinzufügen:
 
 ```yaml
    preflight:
       enabled: false
 ```
 
-Sie können eine bestimmte Prüfung explizit abwählen, z. B.:
+Sie können eine bestimmte Prüfung explizit deaktivieren, z. B.:
 
 ```yaml
    preflight:

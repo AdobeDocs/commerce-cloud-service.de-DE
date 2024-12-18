@@ -1,6 +1,6 @@
 ---
 title: Wiederherstellen einer Umgebung
-description: Erfahren Sie, wie Sie die Adobe Commerce-Anwendung aus einem Cloud-Infrastrukturprojekt deinstallieren und eine Umgebung in einen stabilen Zustand zurückführen.
+description: Erfahren Sie, wie Sie die Adobe Commerce-Anwendung aus einem Cloud-Infrastrukturprojekt deinstallieren und eine Umgebung wieder in einen stabilen Zustand versetzen.
 role: Developer
 topic: Development
 exl-id: b76bd6c3-986e-4adc-abd0-5b27db0d8a3b
@@ -13,24 +13,24 @@ ht-degree: 0%
 
 # Wiederherstellen einer Umgebung
 
-Wenn Sie in der Integrationsumgebung auf Probleme stoßen und keine [gültige Sicherung](../storage/snapshots.md) haben oder die Umgebung auf eine leere Verzögerung zurücksetzen möchten, können Sie Ihre Umgebung mit einer der folgenden Methoden wiederherstellen/zurücksetzen:
+Wenn in der Integrationsumgebung Probleme auftreten und Sie keine [gültige Sicherung](../storage/snapshots.md) haben oder die Umgebung auf ein leeres Blatt zurücksetzen möchten, können Sie Ihre Umgebung mit einer der folgenden Methoden wiederherstellen/zurücksetzen:
 
 - Zurücksetzen oder Zurücksetzen des Codes in der Git-Verzweigung
-- Deinstallieren der [!DNL Commerce]-Anwendung
-- Neuerstellung erzwingen
-- Datenbank manuell zurücksetzen
+- [!DNL Commerce] deinstallieren
+- Erzwingen einer erneuten Bereitstellung
+- Manuelles Zurücksetzen der Datenbank
 
 {{stuck-deployment-tip}}
 
-## Git-Verzweigung zurücksetzen
+## Zurücksetzen der Git-Verzweigung
 
-Wenn Sie Ihre Git-Verzweigung zurücksetzen, wird der Code in der Vergangenheit wieder in einen stabilen Status versetzt.
+Durch Zurücksetzen der Git-Verzweigung wird der Code in der Vergangenheit in einen stabilen Status zurückgesetzt.
 
-**So setzen Sie Ihren Zweig zurück**:
+**So setzen Sie Ihre Verzweigung zurück**:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
+1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
 
-1. Überprüfen Sie den Git-Commitverlauf. Verwenden Sie `--oneline` , um abgekürzte Commits in einer Zeile anzuzeigen:
+1. Überprüfen Sie den Verlauf des Git-Commits. Verwenden Sie `--oneline`, um abgekürzte Commits in einer Zeile anzuzeigen:
 
    ```bash
    git log --oneline
@@ -49,15 +49,15 @@ Wenn Sie Ihre Git-Verzweigung zurücksetzen, wird der Code in der Vergangenheit 
 
 1. Wählen Sie einen Commit-Hash, der den letzten bekannten stabilen Status Ihres Codes darstellt.
 
-   Um Ihren Zweig auf seinen ursprünglichen initialisierten Status zurückzusetzen, suchen Sie den ersten Commit, der Ihren Zweig erstellt hat. Sie können `--reverse` verwenden, um den Verlauf in umgekehrter chronologischer Reihenfolge anzuzeigen.
+   Um Ihre Verzweigung auf den ursprünglichen initialisierten Status zurückzusetzen, suchen Sie nach dem ersten Commit, mit dem Ihre Verzweigung erstellt wurde. Sie können `--reverse` verwenden, um den Verlauf in umgekehrter chronologischer Reihenfolge anzuzeigen.
 
-1. Verwenden Sie die Option zum Zurücksetzen der Festplatte, um Ihren Zweig zurückzusetzen. Seien Sie vorsichtig mit diesem Befehl, da er alle Änderungen seit dem ausgewählten Commit verwirft.
+1. Verwenden Sie die Option zum Zurücksetzen der Verzweigung. Seien Sie vorsichtig mit diesem Befehl, da er alle Änderungen seit dem ausgewählten Commit verwirft.
 
    ```bash
    git reset --hard <commit>
    ```
 
-1. Übertragen Sie Ihre Änderungen in den Trigger einer Neuimplementierung, die Adobe Commerce erneut installiert.
+1. Übertragen Sie Ihre Änderungen in eine Trigger-A-Bereitstellung, wodurch Adobe Commerce neu installiert wird.
 
    ```bash
    git push --force <origin> <branch>
@@ -65,17 +65,17 @@ Wenn Sie Ihre Git-Verzweigung zurücksetzen, wird der Code in der Vergangenheit 
 
 ## Commerce deinstallieren
 
-Durch das Deinstallieren der [!DNL Commerce] -Anwendung wird die Umgebung in den Originalzustand versetzt, indem die Datenbank wiederhergestellt, die Bereitstellungskonfiguration entfernt und die `var/` -Unterverzeichnisse gelöscht werden. Durch diese Anleitung wird auch Ihre Git-Verzweigung in einen früheren stabilen Zustand zurückgesetzt. Wenn Sie keine kürzlich erstellte Sicherung haben, aber über SSH auf die Remote-Umgebung zugreifen können, führen Sie die folgenden Schritte aus, um Ihre Umgebung wiederherzustellen:
+Durch die Deinstallation der [!DNL Commerce]-Anwendung kehrt Ihre Umgebung in den Originalzustand zurück, indem Sie die Datenbank wiederherstellen, die Bereitstellungskonfiguration entfernen und die `var/` Unterverzeichnisse löschen. In dieser Anleitung wird auch die Git-Verzweigung auf einen früheren stabilen Status zurückgesetzt. Wenn Sie nicht über eine aktuelle Sicherung verfügen, aber auf die Remote-Umgebung über SSH zugreifen können, führen Sie die folgenden Schritte aus, um Ihre Umgebung wiederherzustellen:
 
-- Konfigurationsverwaltung deaktivieren
+- Deaktivieren der Konfigurationsverwaltung
 - Adobe Commerce deinstallieren
-- Git-Verzweigung zurücksetzen
+- Zurücksetzen der Git-Verzweigung
 
-Durch die Deinstallation der Adobe Commerce-Software wird die Datenbank gelöscht, die Bereitstellungskonfiguration entfernt und die Unterverzeichnisse `var/` werden gelöscht. Es ist wichtig, die [Konfigurationsverwaltung](../store/store-settings.md) zu deaktivieren, damit die vorherigen Konfigurationseinstellungen bei der nächsten Bereitstellung nicht automatisch angewendet werden. Stellen Sie sicher, dass Ihr `app/etc/` -Verzeichnis nicht die Datei `config.php` enthält.
+Durch die Deinstallation der Adobe Commerce-Software wird die Datenbank gelöscht, die Bereitstellungskonfiguration entfernt und die `var/`-Unterverzeichnisse gelöscht. Es ist wichtig, die [Konfigurationsverwaltung](../store/store-settings.md) zu deaktivieren, damit die vorherigen Konfigurationseinstellungen bei der nächsten Bereitstellung nicht automatisch angewendet werden. Stellen Sie sicher, dass das `app/etc/`-Verzeichnis nicht die `config.php`-Datei enthält.
 
-**So deinstallieren Sie die Adobe Commerce-Software**:
+**Deinstallieren der Adobe Commerce-Software**:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
+1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
 
 1. Verwenden Sie SSH, um sich bei der Remote-Umgebung anzumelden.
 
@@ -102,7 +102,7 @@ Durch die Deinstallation der Adobe Commerce-Software wird die Datenbank gelösch
    php bin/magento setup:uninstall -n
    ```
 
-1. Vergewissern Sie sich, dass Adobe Commerce erfolgreich deinstalliert wurde.
+1. Bestätigen Sie, dass Adobe Commerce erfolgreich deinstalliert wurde.
 
    Die folgende Meldung wird angezeigt, um eine erfolgreiche Deinstallation zu bestätigen:
 
@@ -110,25 +110,25 @@ Durch die Deinstallation der Adobe Commerce-Software wird die Datenbank gelösch
    [SUCCESS]: Magento uninstallation complete.
    ```
 
-1. Löschen Sie die Unterverzeichnisse `var/` .
+1. Löschen Sie die `var/` Unterverzeichnisse.
 
    ```bash
    rm -rf var/*
    ```
 
-1. Melden Sie sich ab.
+1. Abmelden.
 
 >[!TIP]
 >
->Optional ist es empfehlenswert, Build-Caches zu bereinigen.
+>Optional ist es eine gute Praxis, Caches zu bereinigen.
 >
 >```bash
 >magento-cloud project:clear-build-cache
 >```
 
-## Neuerstellung erzwingen
+## Erzwingen einer erneuten Bereitstellung
 
-Wenn Sie versucht haben, Adobe Commerce zu deinstallieren und Ihre Bereitstellung weiterhin fehlschlägt, können Sie versuchen, eine manuelle Implementierung zu erzwingen.
+Wenn Sie versucht haben, Adobe Commerce zu deinstallieren und Ihre Bereitstellung weiterhin fehlschlägt, können Sie versuchen, manuell eine erneute Bereitstellung zu erzwingen.
 
 ```bash
 git commit --allow-empty -m "<message>" && git push <origin> <branch>
@@ -136,11 +136,11 @@ git commit --allow-empty -m "<message>" && git push <origin> <branch>
 
 ## Datenbank zurücksetzen
 
-Wenn Sie versucht haben, Adobe Commerce zu deinstallieren, der Befehl fehlgeschlagen ist oder nicht abgeschlossen werden konnte, können Sie die Datenbank manuell zurücksetzen.
+Wenn Sie versucht haben, Adobe Commerce zu deinstallieren, und der Befehl fehlgeschlagen ist oder nicht abgeschlossen werden konnte, können Sie die Datenbank manuell zurücksetzen.
 
 **Zurücksetzen der Datenbank**:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
+1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
 
 1. Verwenden Sie SSH, um sich bei der Remote-Umgebung anzumelden.
 
@@ -154,13 +154,13 @@ Wenn Sie versucht haben, Adobe Commerce zu deinstallieren, der Befehl fehlgeschl
    mysql -h database.internal
    ```
 
-1. Legen Sie die `main` -Datenbank ab.
+1. `main` ablegen.
 
    ```shell
    drop database main;
    ```
 
-1. Erstellen Sie eine leere `main` -Datenbank.
+1. Erstellen Sie eine leere `main`.
 
    ```shell
    create database main;
@@ -173,7 +173,7 @@ Wenn Sie versucht haben, Adobe Commerce zu deinstallieren, der Befehl fehlgeschl
    - `env.php`
    - `env.php.bak`
 
-1. Melden Sie sich ab und Trigger einer Neuimplementierung.
+1. Trigger Melden Sie sich ab und führen Sie eine erneute Bereitstellung durch.
 
    ```bash
    magento-cloud environment:redeploy

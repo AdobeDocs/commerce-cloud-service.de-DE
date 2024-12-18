@@ -1,6 +1,6 @@
 ---
 title: Hooks-Eigenschaft
-description: Siehe Beispiele zum Konfigurieren der Hooks-Eigenschaft in der Konfigurationsdatei der [!DNL Commerce] Anwendung.
+description: Siehe Beispiele zum Konfigurieren der Hooks-Eigenschaft in der Konfigurationsdatei  [!DNL Commerce] .application.
 feature: Cloud, Configuration, Build, Deploy
 exl-id: d9561f09-5129-4b72-978e-2e3873e8efae
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
@@ -12,15 +12,15 @@ ht-degree: 0%
 
 # Hooks-Eigenschaft
 
-Verwenden Sie den Abschnitt &quot;`hooks`&quot;, um Shell-Befehle während der Build-, Bereitstellungs- und Postbereitstellungsphasen auszuführen:
+Verwenden Sie den Abschnitt `hooks` , um Shell-Befehle während der Build-, Bereitstellungs- und Nachbereitstellungsphasen auszuführen:
 
-- **`build`**—Führen Sie die Befehle _vor_ aus, um Ihre Anwendung zu verpacken. Dienste wie die Datenbank oder Redis sind nicht verfügbar, da die Anwendung noch nicht bereitgestellt wurde. Fügen Sie benutzerdefinierte Befehle _vor_ dem Standardbefehl `php ./vendor/bin/ece-tools` hinzu, damit benutzerdefiniert generierte Inhalte bis zur Bereitstellungsphase weiterverwendet werden.
+- **`build`** - Führt Befehle aus _bevor_ Anwendung verpackt wird. Dienste wie die Datenbank oder Redis sind nicht verfügbar, da die Anwendung noch nicht bereitgestellt wurde. Fügen Sie benutzerdefinierte Befehle _vor_ dem Standardbefehl `php ./vendor/bin/ece-tools` hinzu, damit benutzergenerierter Inhalt in der Bereitstellungsphase fortgesetzt wird.
 
-- **`deploy`**—Führen Sie die Befehle _nach dem Verpacken und Bereitstellen Ihrer Anwendung durch._ Sie können jetzt auf andere Dienste zugreifen. Da der Standardbefehl `php ./vendor/bin/ece-tools` den Ordner `app/etc` an den richtigen Speicherort kopiert, müssen Sie benutzerdefinierte Befehle _nach_ dem Bereitstellungsbefehl hinzufügen, um zu verhindern, dass benutzerdefinierte Befehle fehlschlagen.
+- **`deploy`**: Ausführen von Befehlen _nach_ Verpacken und Bereitstellen der Anwendung. An dieser Stelle können Sie auf andere Dienste zugreifen. Da der standardmäßige `php ./vendor/bin/ece-tools`-Befehl das `app/etc` an den richtigen Speicherort kopiert, müssen Sie (_)_ Bereitstellungsbefehl benutzerdefinierte Befehle hinzufügen, um Fehler bei benutzerdefinierten Befehlen zu vermeiden.
 
-- **`post_deploy`**—Führen Sie die Befehle _nach der_ Bereitstellung Ihrer Anwendung aus und _nach_ beginnt der Container, Verbindungen zu akzeptieren. Der Erweiterungspunkt `post_deploy` löscht den Cache und lädt den Cache vorab (wärmt). Sie können die Seitenliste mithilfe der Variablen `WARM_UP_PAGES` in der Phase [Post-deploy](../environment/variables-post-deploy.md) anpassen. Obwohl dies nicht erforderlich ist, funktioniert dies zusammen mit der Umgebungsvariablen `SCD_ON_DEMAND` .
+- **`post_deploy`** - Führt Befehle aus _nachdem_ Anwendung bereitgestellt wurde und _danach_ beginnt der Container Verbindungen zu akzeptieren. Der `post_deploy`-Hook löscht den Cache und lädt den Cache vorab (erwärmt). Sie können die Liste der Seiten mithilfe der `WARM_UP_PAGES` Variable im [Phase nach der Bereitstellung“ ](../environment/variables-post-deploy.md). Dies ist zwar nicht erforderlich, funktioniert aber zusammen mit der Umgebungsvariablen `SCD_ON_DEMAND` .
 
-Das folgende Beispiel zeigt die Standardkonfiguration in der Datei &quot;`.magento.app.yaml`&quot;. Fügen Sie CLI-Befehle unter den Abschnitten `build`, `deploy` oder `post_deploy` _vor_ dem Befehl `ece-tools` hinzu:
+Das folgende Beispiel zeigt die Standardkonfiguration in der `.magento.app.yaml`. Fügen Sie CLI-Befehle unter den Abschnitten `build`, `deploy` oder `post_deploy` (_)_ `ece-tools` Befehl hinzu:
 
 ```yaml
 hooks:
@@ -38,7 +38,7 @@ hooks:
         php ./vendor/bin/ece-tools run scenario/post-deploy.xml
 ```
 
-Außerdem können Sie die Build-Phase weiter anpassen, indem Sie die Befehle `generate` und `transfer` verwenden, um zusätzliche Aktionen auszuführen, wenn Sie speziell Code erstellen oder Dateien verschieben.
+Außerdem können Sie die Build-Phase weiter anpassen, indem Sie die Befehle `generate` und `transfer` verwenden, um zusätzliche Aktionen speziell beim Erstellen von Code oder beim Verschieben von Dateien durchzuführen.
 
 ```yaml
 hooks:
@@ -50,11 +50,11 @@ hooks:
         php ./vendor/bin/ece-tools build:transfer
 ```
 
-- `set -e` - führt dazu, dass Hooks beim ersten fehlgeschlagenen Befehl fehlschlagen, anstatt beim letzten fehlgeschlagenen Befehl.
-- `build:generate` - Wendet Patches an, validiert die Konfiguration, generiert IDs und generiert statische Inhalte, wenn SCD für die Build-Phase aktiviert ist.
-- `build:transfer`: Überträgt generierten Code und statischen Inhalt an das endgültige Ziel.
+- `set -e` - verursacht, dass Hooks beim ersten fehlgeschlagenen Befehl fehlschlagen, anstatt beim letzten fehlgeschlagenen Befehl.
+- `build:generate`: Wendet Patches an, validiert die Konfiguration, generiert eine ID und generiert statische Inhalte, wenn SCD für die Build-Phase aktiviert ist.
+- `build:transfer` - Überträgt generierten Code und statischen Inhalt an das endgültige Ziel.
 
-Die Befehle werden aus dem Anwendungsordner (`/app`) ausgeführt. Sie können den Befehl `cd` verwenden, um den Ordner zu ändern. Die Hooks schlagen fehl, wenn der endgültige Befehl in ihnen fehlschlägt. Um sie beim ersten fehlgeschlagenen Befehl fehlschlagen zu lassen, fügen Sie am Anfang des Hooks `set -e` hinzu.
+Die Befehle werden im Anwendungsverzeichnis (`/app`) ausgeführt. Sie können den `cd`-Befehl verwenden, um das Verzeichnis zu ändern. Die Hooks schlagen fehl, wenn der letzte Befehl in ihnen fehlschlägt. Um sie beim ersten fehlgeschlagenen Befehl zum Fehlschlagen zu bringen, fügen Sie `set -e` am Anfang des Hooks hinzu.
 
 **So kompilieren Sie Sass-Dateien mit grunt**:
 
@@ -74,6 +74,6 @@ hooks:
         php ./vendor/bin/ece-tools build
 ```
 
-Kompilieren Sie Sass-Dateien mit `grunt` vor der Bereitstellung statischer Inhalte, was während des Builds geschieht. Setzen Sie den Befehl `grunt` vor den Befehl `build`.
+Kompilieren Sie Sass-Dateien mithilfe von `grunt` vor der Bereitstellung statischer Inhalte, die während des Builds erfolgt. Platzieren Sie den Befehl `grunt` vor dem Befehl `build` .
 
 {{scenarios}}

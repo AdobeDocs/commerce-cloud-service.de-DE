@@ -1,6 +1,6 @@
 ---
-title: Optimieren der Cloud-Implementierung
-description: Erfahren Sie, wie Sie den Implementierungsprozess für Adobe Commerce für Cloud-Infrastrukturprojekte optimieren können, einschließlich Ausfallzeiten, statischer Inhaltsbereitstellung, szenarienbasierter Bereitstellung und intelligenter Assistenten.
+title: Optimieren der Cloud-Bereitstellung
+description: Erfahren Sie, wie Sie den Bereitstellungsprozess für Adobe Commerce in Cloud-Infrastrukturprojekten optimieren können, einschließlich der Reduzierung von Ausfallzeiten, der Bereitstellung statischer Inhalte, der szenarienbasierten Bereitstellung und intelligenter Assistenten.
 feature: Cloud, Deploy, SCD
 exl-id: 62e5eccb-6919-4a4b-9f50-6105f9d0f3af
 source-git-commit: 5c47c8bf9c97fac70ef249f76ecc905df07e4437
@@ -10,23 +10,23 @@ ht-degree: 0%
 
 ---
 
-# Implementierung optimieren
+# Optimieren der Bereitstellung
 
-Die Site-Leistung kann während des Implementierungsprozesses beeinträchtigt sein. Die Dauer, die eine Site bei der Bereitstellung auf einer Produktionssite im Wartungsmodus verbringt, hängt von vielen Faktoren ab, z. B. von der Umgebungskonfiguration und der Menge an Inhalten, die eine Site enthält. Die erste Best Practice zur Optimierung Ihrer Cloud-Implementierung besteht darin, ein [Upgrade durchzuführen, um `ece-tools`](../dev-tools/install-package.md) zu verwenden und von den Paketfunktionen zu profitieren, z. B. Befehlen zum Erstellen einer Sicherung der Datenbank und zur Überprüfung der Umgebungskonfiguration.
+Die Site-Leistung kann während des Bereitstellungsprozesses beeinträchtigt sein. Wie lange sich eine Site im Wartungsmodus befindet, wenn sie auf einer Produktions-Site bereitgestellt wird, hängt von vielen Faktoren ab, z. B. der Umgebungskonfiguration und der Menge an Inhalten, die eine Site enthält. Die erste Best Practice für die Optimierung Ihrer Cloud-Bereitstellung besteht darin[ ein Upgrade durchzuführen, um `ece-tools`](../dev-tools/install-package.md) für die Vorteile der Paketfunktionen zu verwenden, z. B. Befehle zum Erstellen eines Backups der Datenbank und zum Überprüfen der Umgebungskonfiguration.
 
-Die folgenden Themen helfen Ihnen dabei, die Optimierung des Implementierungsprozesses zu verstehen:
+Die folgenden Themen können Ihnen dabei helfen, besser zu verstehen, wie Sie den Bereitstellungsprozess optimieren können:
 
 - [Cloud-Bereitstellungsprozess](process.md)
-Der Cloud-Implementierungsprozess gliedert sich in drei Phasen. Sie können die Stärken und Schwächen jeder Phase zu Ihrem Vorteil nutzen.
+Der Cloud-Bereitstellungsprozess umfasst drei Phasen. Sie können die Stärken und Schwächen jeder Phase zu Ihrem Vorteil nutzen.
 
-- [Keine Ausfallzeitbereitstellung](reduce-downtime.md)
-Erfahren Sie, was während der Bereitstellung geschieht und wie Sie die Ausfallzeit Ihrer Store-Erlebnisse während einer Aktualisierung der Produktionsumgebung reduzieren können.
+- [Keine Ausfallzeiten bei der Bereitstellung](reduce-downtime.md)
+Erfahren Sie, was während der Bereitstellung passiert und wie Sie die Ausfallzeiten Ihres Stores während einer Aktualisierung der Produktionsumgebung reduzieren können.
 
 - [Statische Inhaltsbereitstellung](static-content.md)
-Die beste Methode zur Optimierung Ihrer Cloud-Implementierung besteht darin, zu steuern, wie und wann statische Inhalte generiert werden.
+Die beste Möglichkeit, Ihre Cloud-Bereitstellung zu optimieren, besteht darin, zu steuern, wie und wann statische Inhalte generiert werden.
 
-- [Smart-Assistenten](smart-wizards.md)
-Das Paket `ece-tools` enthält die Befehle des intelligenten Assistenten, um Ihre Projektkonfiguration schnell zu bewerten.
+- [Intelligente Assistenten](smart-wizards.md)
+Das `ece-tools`-Paket enthält die Befehle des intelligenten Assistenten, mit denen Sie Ihre Projektkonfiguration schnell auswerten können.
 
-- [Implementierungen mit New Relic verfolgen](../monitor/track-deployments.md)
-Verwenden Sie den New Relic-Dienst, um Bereitstellungsereignisse zu überwachen und die Auswirkungen der Bereitstellung auf die Gesamtleistung zu analysieren.
+- [Verfolgen von Bereitstellungen mit New Relic](../monitor/track-deployments.md)
+Verwenden Sie den New Relic-Service, um Bereitstellungsereignisse zu überwachen und die Auswirkungen der Bereitstellung auf die Gesamtleistung zu analysieren.

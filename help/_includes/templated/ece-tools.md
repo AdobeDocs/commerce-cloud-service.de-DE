@@ -5,22 +5,22 @@ source-wordcount: '921'
 ht-degree: 0%
 
 ---
-# ece-tools
+# ECE-Tools
 
 **Version**: 2002.2.0
 
-Diese Referenz enthält 34 Befehle, die über das Befehlszeilen-Tool `ece-tools` verfügbar sind.
-Die anfängliche Liste wird mithilfe des Befehls `ece-tools list` in Adobe Commerce in der Cloud-Infrastruktur automatisch generiert.
+Diese Referenz enthält 34 Befehle, die über das `ece-tools` Befehlszeilen-Tool verfügbar sind.
+Die anfängliche Liste wird automatisch mit dem Befehl `ece-tools list` unter Adobe Commerce in der Cloud-Infrastruktur generiert.
 
 ## Allgemein
 
-Diese Referenz wird aus der Anwendungs-Codebase generiert. Um den Inhalt zu ändern, geben Sie uns Feedback _(suchen Sie den Link oben rechts)._ Beitragsrichtlinien finden Sie unter [Codebeiträge](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
+Dieser Verweis wird aus der Anwendungs-Code-Basis generiert. Um den Inhalt zu ändern, _Sie uns Feedback_ (finden Sie den Link oben rechts). Beitragsrichtlinien finden Sie unter [Code-Beiträge](https://developer.adobe.com/commerce/contributor/guides/code-contributions/).
 
 ### Globale Optionen
 
 #### `--help`, `-h`
 
-Zeigen Sie Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe zum Listenbefehl angezeigt
+Zeigt die Hilfe für den angegebenen Befehl an. Wenn kein Befehl angegeben wird, wird die Hilfe für den Listenbefehl angezeigt
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -34,7 +34,7 @@ Keine Nachricht ausgeben
 
 #### `--verbose`, `-v|-vv|-vvv`
 
-Erhöhen Sie die Ausführlichkeit der Nachrichten: 1 für die normale Ausgabe, 2 für die ausführlichere Ausgabe und 3 für die Fehlerbehebung.
+Erhöhen Sie die Ausführlichkeit der Meldungen: 1 für die normale Ausgabe, 2 für die ausführlichere Ausgabe und 3 für die Fehlersuche.
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -54,14 +54,14 @@ ANSI-Ausgabe erzwingen (oder deaktivieren —no-ansi)
 
 #### `--no-ansi`
 
-Die Option &quot;—ansi&quot;umkehren
+Negieren Sie die Option &quot;—ansi“
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--no-interaction`, `-n`
 
-Interaktive Fragen stellen
+Keine interaktiven Fragen stellen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -73,7 +73,7 @@ Interaktive Fragen stellen
 ece-tools _complete [-s|--shell SHELL] [-i|--input INPUT] [-c|--current CURRENT] [-a|--api-version API-VERSION] [-S|--symfony SYMFONY]
 ```
 
-Interner Befehl zum Bereitstellen von Vorschlägen zur Shell-Fertigstellung
+Interner Befehl zur Bereitstellung von Shell-Fertigstellungsvorschlägen
 
 ### Optionen
 
@@ -81,7 +81,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--shell`, `-s`
 
-Der Shell-Typ (&quot;bash&quot;, &quot;fish&quot;, &quot;zsh&quot;)
+Der Schalentyp („bash“, „fish“, „zsh„)
 
 - Erfordert einen Wert
 
@@ -94,19 +94,19 @@ Ein Array von Eingabe-Token (z. B. COMP_WORDS oder argv)
 
 #### `--current`, `-c`
 
-Der Index des &quot;input&quot;-Arrays, in dem sich der Cursor befindet (z. B. COMP_CWORD)
+Der Index des „Eingabe“-Arrays, in dem sich der Cursor befindet (z. B. COMP_CWORD)
 
 - Erfordert einen Wert
 
 #### `--api-version`, `-a`
 
-Die API-Version des Fertigstellungsskripts
+Die API-Version des Abschlussskripts
 
 - Erfordert einen Wert
 
 #### `--symfony`, `-S`
 
-veraltet
+Veraltet
 
 - Erfordert einen Wert
 
@@ -165,7 +165,7 @@ Add this to the end of your shell configuration file (e.g. "~/.bashrc"):
 
 #### `shell`
 
-Der Shell-Typ (z. B. &quot;bash&quot;), der Wert der env var &quot;$SHELL&quot; wird verwendet, wenn dies nicht angegeben wird.
+Der Shell-Typ (z. B. „bash„), der Wert der &quot;$SHELL“-Env-Var wird verwendet, wenn diese nicht angegeben wird
 
 ### Optionen
 
@@ -173,7 +173,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--debug`
 
-Fertigstellungs-Debug-Protokoll verfolgen
+Verfolgen Sie den Abschluss des Debug-Protokolls
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -191,7 +191,7 @@ Erstellt Datenbanksicherungen.
 
 #### `databases`
 
-Datenbanken zur Sicherung. Verfügbare Werte: [ Hauptquotenverkäufe]. Wenn der Argumentwert nicht angegeben ist, werden Datenbanksicherungen mit den Anmeldeinformationen erstellt, die in der Umgebungsvariablen `MAGENTO_CLOUD_RELATIONSHIP` oder/und der Eigenschaft `stage.deploy.DATABASE_CONFIGURATION` der Konfigurationsdatei .magento.env.yaml gespeichert sind.
+Datenbanken für die Sicherung. Verfügbare Werte: [Hauptangebotsverkäufe]. Wenn der Argumentwert nicht angegeben ist, werden Datenbanksicherungen mit den in der `MAGENTO_CLOUD_RELATIONSHIP` Umgebungsvariablen oder/und der `stage.deploy.DATABASE_CONFIGURATION` Eigenschaft der Konfigurationsdatei &quot;.magento.env.yaml“ gespeicherten Anmeldeinformationen erstellt.
 
 - Standard: `[]`
 - Array
@@ -202,14 +202,14 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--remove-definers`, `-d`
 
-Entfernen von Definitionen aus der Datenbank-Dump
+Definierer aus dem Datenbank-Dump entfernen
 
 - Standard: `false`
 - Akzeptiert keinen Wert
 
 #### `--dump-directory`, `-a`
 
-Verwenden Sie ein alternatives Verzeichnis zum Speichern des Dump
+Alternatives Verzeichnis zum Speichern des Speicherauszugs verwenden
 
 - Erfordert einen Wert
 
@@ -220,7 +220,7 @@ Verwenden Sie ein alternatives Verzeichnis zum Speichern des Dump
 ece-tools deploy
 ```
 
-Stellt die Anwendung bereit.
+Stellt das Programm bereit.
 
 ### Optionen
 
@@ -233,7 +233,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools help [--format FORMAT] [--raw] [--] [<command_name>]
 ```
 
-Hilfe für einen Befehl anzeigen
+Anzeigen der Hilfe für einen Befehl
 
 ```
 The help command displays help for a given command:
@@ -268,7 +268,7 @@ Das Ausgabeformat (txt, xml, json oder md)
 
 #### `--raw`
 
-Ausgabe der Rohbefehl-Hilfe
+So geben Sie die Raw-Befehlshilfe aus
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -280,7 +280,7 @@ Ausgabe der Rohbefehl-Hilfe
 ece-tools list [--raw] [--format FORMAT] [--short] [--] [<namespace>]
 ```
 
-Listen-Befehle
+Befehle auflisten
 
 ```
 The list command lists all commands:
@@ -312,7 +312,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--raw`
 
-So geben Sie die unformatierte Befehlsliste aus
+Ausgabe der unbearbeiteten Befehlsliste
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -326,7 +326,7 @@ Das Ausgabeformat (txt, xml, json oder md)
 
 #### `--short`
 
-Überspringen der Beschreibung der Befehlsargumente
+So überspringen Sie die Beschreibung der Befehlsargumente
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -351,7 +351,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools post-deploy
 ```
 
-Führt nach Bereitstellungsvorgängen aus.
+Führt nach der Bereitstellung Vorgänge aus.
 
 ### Optionen
 
@@ -364,7 +364,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools run <scenario>...
 ```
 
-Führen Sie Szenarien aus.
+Szenario(e) ausführen.
 
 ### Argumente
 
@@ -401,7 +401,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools backup:restore [-f|--force] [--file [FILE]]
 ```
 
-Wiederherstellen wichtiger Konfigurationsdateien. Führen Sie backup:list aus, um die Liste der Backup-Dateien anzuzeigen.
+Stellen Sie wichtige Konfigurationsdateien wieder her. Führen Sie backup:list aus, um die Liste der Backup-Dateien anzuzeigen.
 
 ### Optionen
 
@@ -409,7 +409,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 
 #### `--force`, `-f`
 
-Vorhandene Dateien beim Wiederherstellen einer Sicherung überschreiben
+Vorhandene Dateien beim Wiederherstellen eines Backups überschreiben
 
 - Standard: `false`
 - Akzeptiert keinen Wert
@@ -427,7 +427,7 @@ Ein bestimmter Dateiwiederherstellungspfad
 ece-tools build:generate
 ```
 
-Generiert alle erforderlichen Dateien für die Build-Phase.
+Generiert alle für die Build-Phase erforderlichen Dateien.
 
 ### Optionen
 
@@ -440,7 +440,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools build:transfer
 ```
 
-Sendet generierte Dateien in das Init-Verzeichnis.
+Überträgt generierte Dateien in das Init-Verzeichnis.
 
 ### Optionen
 
@@ -453,7 +453,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools cloud:config:create <configuration>
 ```
 
-Erstellt eine `.magento.env.yaml` -Datei mit der angegebenen Variablenkonfiguration für Build, Bereitstellung und Bereitstellung. Überschreibt alle vorhandenen `.magento,.env.yaml` -Dateien.
+Erstellt eine `.magento.env.yaml` mit der angegebenen Konfiguration der Variablen „build“, „deploy“ und „post-deploy“. Überschreibt eine vorhandene `.magento,.env.yaml`.
 
 ### Argumente
 
@@ -474,7 +474,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools cloud:config:update <configuration>
 ```
 
-Aktualisiert die vorhandene `.magento.env.yaml` -Datei mit der angegebenen Konfiguration. Erstellt `.magento.env.yaml` -Datei, falls sie nicht vorhanden ist.
+Aktualisiert die vorhandene `.magento.env.yaml` mit der angegebenen Konfiguration. Erstellt `.magento.env.yaml` Datei, wenn sie noch nicht vorhanden ist.
 
 ### Argumente
 
@@ -495,7 +495,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools cloud:config:validate
 ```
 
-Validiert die Konfigurationsdatei `.magento.env.yaml`
+Validiert `.magento.env.yaml` Konfigurationsdatei
 
 ### Optionen
 
@@ -521,7 +521,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools cron:disable
 ```
 
-Deaktivieren Sie alle Magento-Cron-Prozesse und beenden Sie alle laufenden Prozesse.
+Deaktiviert alle Magento-Cron-Prozesse und beendet alle laufenden Prozesse.
 
 ### Optionen
 
@@ -560,7 +560,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools cron:unlock [--job-code [JOB-CODE]]
 ```
 
-Entsperren Sie Cron-Aufträge, die im Status &quot;Wird ausgeführt&quot;blieben.
+Entsperren Sie Cron-Aufträge, die im Status „Wird ausgeführt“ feststecken.
 
 ### Optionen
 
@@ -580,7 +580,7 @@ Cron-Auftragscode zum Entsperren.
 ece-tools dev:generate:schema-error
 ```
 
-Generiert die Datei dist/error-codes.md aus der Datei schema.error.yaml .
+Generiert die Datei dist/error-codes.md aus der Datei schema.error.yaml.
 
 ### Optionen
 
@@ -593,7 +593,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools dev:git:update-composer
 ```
 
-Aktualisiert den Composer für die Bereitstellung von Git.
+Aktualisiert Composer für die Bereitstellung von Git.
 
 ### Optionen
 
@@ -606,13 +606,13 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools env:config:show [<variable>...]
 ```
 
-Zeigt kodierte Cloud-Konfigurationsumgebungsvariablen an.
+Anzeigen kodierter Cloud-Konfigurations-Umgebungsvariablen.
 
 ### Argumente
 
 #### `variable`
 
-Anzuzeigende Umgebungsvariablen, mögliche Optionen: Dienste, Routen, Variablen
+Anzuzeigende Umgebungsvariablen, mögliche Optionen: Services, Routen, Variablen
 
 - Standard: `[]`
 - Array
@@ -634,7 +634,7 @@ Zeigt Informationen zu Fehlern nach Fehler-ID oder Informationen zu allen Fehler
 
 #### `error-code`
 
-Fehlercode, wenn der Befehl nicht übergeben wurde, zeigt Informationen zu allen Fehlern aus der letzten Implementierung an
+Fehlercode, wenn der Befehl nicht übergeben wird, zeigt Informationen zu allen Fehlern der letzten Bereitstellung an
 
 ### Optionen
 
@@ -667,7 +667,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools schema:generate
 ```
 
-Generiert die *.dist-Schemadatei.
+Erzeugt die Datei *.dist des Schemas
 
 ### Optionen
 
@@ -680,7 +680,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools wizard:ideal-state
 ```
 
-Überprüft den idealen Konfigurationsstatus.
+Prüft den idealen Konfigurationszustand.
 
 ### Optionen
 
@@ -706,7 +706,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools wizard:scd-on-build
 ```
 
-Überprüft die SCD bei der Build-Konfiguration.
+Prüft SCD bei der Build-Konfiguration.
 
 ### Optionen
 
@@ -719,7 +719,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools wizard:scd-on-demand
 ```
 
-Überprüft die Konfiguration von SCD bei Bedarf.
+Überprüfung der SCD-On-Demand-Konfiguration
 
 ### Optionen
 
@@ -732,7 +732,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools wizard:scd-on-deploy
 ```
 
-Überprüft die SCD bei der Bereitstellungskonfiguration.
+Überprüft SCD bei der Bereitstellungskonfiguration.
 
 ### Optionen
 
@@ -745,7 +745,7 @@ Globale Optionen finden Sie unter [Globale Optionen](#global-options).
 ece-tools wizard:split-db-state
 ```
 
-Überprüft die Möglichkeit, DB aufzuteilen und ob DB bereits geteilt wurde oder nicht.
+Prüft, ob DB aufgeteilt werden kann und ob DB bereits aufgeteilt wurde.
 
 ### Optionen
 

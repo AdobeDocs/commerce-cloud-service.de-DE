@@ -1,6 +1,6 @@
 ---
-title: Benutzerdefinierte VCL zum Umgehen des Fastly-Cache
-description: Fehlerbehebung beim Anforderungstraffic an den Herkunftsserver durch Erstellen eines benutzerdefinierten VCL-Snippets, um den Fastly-Cache zu umgehen.
+title: Benutzerdefinierte VCL zur Umgehung des Fastly-Cache
+description: Fehlerbehebung beim Anfrage-Traffic an den Ursprungs-Server durch Erstellen eines benutzerdefinierten VCL-Ausschnitts zur Umgehung des Fastly-Cache.
 feature: Cloud, Configuration, Cache
 exl-id: a2e9dc57-9b5e-4716-9965-a4324442ad00
 source-git-commit: 7a181af2149eef7bfaed4dd4d256b8fa19ae1dda
@@ -10,29 +10,29 @@ ht-degree: 0%
 
 ---
 
-# Benutzerdefinierte VCL zum Umgehen des Fastly-Cache
+# Benutzerdefinierte VCL zur Umgehung des Fastly-Cache
 
-Sie können ein benutzerdefiniertes VCL-Snippet erstellen, um den Fastly-Cache zu umgehen, damit Sie die Fehlerbehebung für den Anforderungs-Traffic auf dem Herkunftsserver durchführen können. Sie können beispielsweise ein Snippet erstellen, um festzustellen, ob Site-Probleme durch Caching verursacht werden, oder um Kopfzeilen zu beheben.
+Sie können ein benutzerdefiniertes VCL-Snippet erstellen, um den Fastly-Cache zu umgehen, damit Sie den Anfragedatenverkehr an den Ursprungsserver beheben können. Sie können beispielsweise einen Ausschnitt erstellen, um zu ermitteln, ob Site-Probleme durch das Caching verursacht werden, oder um Kopfzeilen zu beheben.
 
-Sie können das Snippet so konfigurieren, dass es die schnelle Zwischenspeicherung für Anforderungen von einer bestimmten IP-Adresse oder URL umgeht.
+Sie können das Snippet so konfigurieren, dass das Fastly-Caching für Anfragen von einer bestimmten IP-Adresse oder URL umgangen wird.
 
 >[!NOTE]
 >
->Bevor Sie die benutzerdefinierte VCL-Konfiguration in einer Produktionsumgebung zusammenführen, sollten Sie den Code in der Staging-Umgebung testen.
+>Stellen Sie vor dem Zusammenführen einer benutzerdefinierten VCL-Konfiguration in einer Produktionsumgebung sicher, dass Sie den Code in der Staging-Umgebung testen.
 
 **Voraussetzungen:**
 
 {{$include /help/_includes/vcl-snippet-prerequisites.md}}
 
-**So umgehen Sie den Schnellcache basierend auf IP-Adresse oder URL**:
+**Um den Fastly-Cache basierend auf der IP-Adresse oder URL zu umgehen**:
 
 {{admin-login-step}}
 
-1. Klicken Sie auf **Stores** > Einstellungen > **Konfiguration** > **Erweitert** > **System**.
+1. Klicken Sie **Stores** > Einstellungen > **Konfiguration** > **Erweitert** > **System**.
 
-1. Erweitern Sie **Vollständiger Seiten-Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
+1. Erweitern Sie **Vollständiger Seitencache** > **Fastly-Konfiguration** > **Benutzerdefinierte VCL-Snippets**.
 
-1. Klicken Sie auf **Benutzerdefiniertes Snippet erstellen**.
+1. Klicken Sie **Benutzerdefiniertes Snippet erstellen**.
 
 1. Fügen Sie die VCL-Snippet-Werte hinzu:
 
@@ -44,7 +44,7 @@ Sie können das Snippet so konfigurieren, dass es die schnelle Zwischenspeicheru
 
    - **VCL** Snippet-Inhalt —
 
-     Das folgende Beispiel umgeht Fastly für eine bestimmte IP-Adresse:
+     Im folgenden Beispiel wird Fastly für eine bestimmte IP-Adresse umgangen:
 
      ```conf
      if (client.ip == "<Your IPv4 IP address>" || client.ip == "<Your IPv6 IP address>") {
@@ -52,25 +52,25 @@ Sie können das Snippet so konfigurieren, dass es die schnelle Zwischenspeicheru
      }
      ```
 
-     Das folgende Beispiel umgeht Fastly für ein bestimmtes URL-Muster:
+     Im folgenden Beispiel wird Fastly für ein bestimmtes URL-Muster umgangen:
 
      ```conf
      if (req.url ~ "/media/feeds/GoogleShoppingHiVisNew.xml") {  return (pass);}
      ```
 
-     Verwenden Sie für eine exakte URL-Übereinstimmung den Operator `==` anstelle des Operators `~` . Weitere Informationen finden Sie unter [Fastly VCL-Referenz] .
+     Verwenden Sie für eine exakte URL-Übereinstimmung den `==`-Operator anstelle des `~`-Operators. Einzelheiten finden Sie in [Fastly VCL]Referenz.
 
-1. Klicken Sie auf **Erstellen**.
+1. Klicken Sie **Erstellen**.
 
-   ![VCL-Snippet schnell umgehen](/help/assets/cdn/fastly-create-bypass-snippet.png)
+   ![Erstellen eines VCL-Snippets unter Umgehung von Fastly](/help/assets/cdn/fastly-create-bypass-snippet.png)
 
-1. Klicken Sie nach dem Neuladen der Seite im Abschnitt *Schnelle Konfiguration* auf **VCL auf Fastly hochladen** .
+1. Nachdem die Seite neu geladen wurde, klicken Sie im Abschnitt **Fastly-Konfiguration** auf *VCL zu Fastly*.
 
-1. Nach Abschluss des Uploads aktualisieren Sie den Cache gemäß der Benachrichtigung oben auf der Seite.
+1. Aktualisieren Sie nach Abschluss des Uploads den Cache entsprechend der Benachrichtigung oben auf der Seite.
 
-   Validiert die aktualisierte VCL-Version während des Upload-Prozesses schnell. Wenn die Validierung fehlschlägt, bearbeiten Sie Ihr benutzerdefiniertes VCL-Snippet, um Probleme zu beheben. Laden Sie dann die VCL erneut hoch.
+   Validiert die aktualisierte VCL-Version während des Upload-Prozesses schnell. Wenn die Validierung fehlschlägt, bearbeiten Sie Ihr benutzerdefiniertes VCL-Snippet, um alle Probleme zu beheben. Laden Sie dann die VCL erneut hoch.
 
-Nachdem Sie das VCL-Snippet hinzugefügt haben, können Sie cURL-Befehle verwenden, um Anfragen von der angegebenen IP-Adresse oder URL an den Herkunftsserver zu senden, wie im folgenden Beispiel gezeigt:
+Nachdem Sie den VCL-Ausschnitt hinzugefügt haben, können Sie cURL-Befehle verwenden, um von der angegebenen IP-Adresse oder URL aus Anfragen an den Ursprungs-Server zu senden, wie im folgenden Beispiel gezeigt:
 
 ```bash
 curl -svo /dev/null www.example.com/index.html

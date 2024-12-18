@@ -1,6 +1,6 @@
 ---
-title: Pro Projekt-Workflow
-description: Erfahren Sie, wie Sie die Workflows für die Pro-Entwicklung und -Bereitstellung verwenden.
+title: Pro-Projekt-Workflow
+description: Erfahren Sie, wie Sie die Pro-Entwicklungs- und Bereitstellungs-Workflows verwenden.
 feature: Cloud, Iaas, Paas
 exl-id: 103e90d5-2ef2-4fef-845c-439344666b00
 source-git-commit: c6d4128792e688485e021bad75d9814a9f4d3b4f
@@ -10,99 +10,99 @@ ht-degree: 0%
 
 ---
 
-# Pro Projekt-Workflow
+# Pro-Projekt-Workflow
 
-Das Pro-Projekt umfasst ein einzelnes Git-Repository mit einer globalen `master`-Verzweigung und drei Hauptumgebungen:
+Das Pro-Projekt umfasst ein einzelnes Git-Repository mit einer globalen `master` und drei Hauptumgebungen:
 
-1. **Produktions**-Umgebung zum Starten und Verwalten der Live-Site
-1. **Staging**-Umgebung zum Testen mit allen Diensten
-1. **Integration**-Umgebung für Entwicklung und Tests
+1. **Produktion** Umgebung für das Starten und Verwalten der Live-Site
+1. **Staging**-Umgebung zum Testen mit allen Services
+1. **Integration** Umgebung für Entwicklung und Tests
 
-![Pro Umgebungs-Liste](../../assets/pro-environments.png)
+![Pro Umgebungsliste](../../assets/pro-environments.png)
 
-Diese Umgebungen sind `read-only` und akzeptieren bereitgestellte Codeänderungen aus Verzweigungen, die von Ihrem lokalen Arbeitsbereich aus gesendet werden. Eine vollständige Übersicht über die Pro-Umgebungen finden Sie unter [Pro-Architektur](pro-architecture.md) . Eine Übersicht über die Liste der Pro-Umgebungen in der Projektansicht finden Sie unter [[!DNL Cloud Console]](../project/overview.md#cloud-console) .
+Diese Umgebungen sind `read-only` und akzeptieren bereitgestellte Code-Änderungen von Verzweigungen, die aus Ihrem lokalen Arbeitsbereich gepusht werden. Siehe [Pro Architektur](pro-architecture.md) für einen vollständigen Überblick über die Pro-Umgebungen. Siehe [[!DNL Cloud Console]](../project/overview.md#cloud-console) für einen Überblick über die Liste der Pro-Umgebungen in der Projektansicht.
 
-Die folgende Abbildung zeigt den Workflow für die Entwicklung und Bereitstellung von Pro, der einen einfachen Ansatz mit Git-Verzweigung verwendet. Sie [ entwickeln ](#development-workflow) -Code mithilfe einer aktiven Verzweigung, die auf der `integration` -Umgebung basiert. Dabei ändern sich _Push_- und _Pull_-Code von und zu Ihrer Remote-aktiven Verzweigung. Sie stellen den verifizierten Code durch _Zusammenführen_ des Remote-Zweigs mit dem Basis-Zweig bereit, der einen automatisierten [Build- und Bereitstellungsprozess](#deployment-workflow) für diese Umgebung aktiviert.
+Die folgende Grafik zeigt den Pro-Workflow zum Entwickeln und Bereitstellen , der einen einfachen, Git-verzweigenden Ansatz verwendet. Sie [ Code ](#development-workflow) einer aktiven Verzweigung auf Grundlage der `integration`-Umgebung entwickeln, indem Sie Code-Änderungen _pushen_ und _abrufen_ auf und von Ihrer entfernten, aktiven Verzweigung aus. Sie stellen verifizierten Code bereit _indem Sie die_-Verzweigung mit der Basisverzweigung zusammenführen, wodurch ein automatisierter [Build- und Bereitstellungs](#deployment-workflow)-Prozess für diese Umgebung aktiviert wird.
 
-![Allgemeine Ansicht des Workflows zur Entwicklung der Pro-Architektur](../../assets/pro-dev-workflow.png)
+![Allgemeine Ansicht des Entwicklungs-Workflows der Pro-Architektur](../../assets/pro-dev-workflow.png)
 
 ## Entwicklungs-Workflow
 
-Die Integrationsumgebung bietet eine einzige, grundlegende `integration` -Verzweigung, die Ihre Adobe Commerce im Cloud-Infrastrukturcode enthält. Sie können eine weitere Verzweigung der aktiven Umgebung erstellen. Dies ermöglicht bis zu zwei aktive Verzweigungen, die in Platform as a service (PageS)-Containern bereitgestellt werden. Die Anzahl der inaktiven Umgebungen ist unbegrenzt.
+Die Integrationsumgebung bietet eine zentrale `integration`-Verzweigung mit dem Code Ihrer Adobe Commerce on Cloud-Infrastruktur. Sie können eine zusätzliche Verzweigung für die aktive Umgebung erstellen. Dies ermöglicht bis zu zwei aktive Verzweigungen, die in Platform as a Service (PaaS)-Containern bereitgestellt werden. Die Anzahl der inaktiven Umgebungen ist unbegrenzt.
 
 {{enhanced-integration-envs}}
 
-Die Projektumgebungen unterstützen einen flexiblen, kontinuierlichen Integrationsprozess. Klonen Sie zunächst die Verzweigung `integration` in Ihren lokalen Projektordner. Erstellen Sie eine Verzweigung oder mehrere Zweige, entwickeln Sie neue Funktionen, konfigurieren Sie Änderungen, fügen Sie Erweiterungen hinzu und stellen Sie Aktualisierungen bereit:
+Die Projektumgebungen unterstützen einen flexiblen, kontinuierlichen Integrationsprozess. Klonen Sie zunächst die `integration` Verzweigung in den lokalen Projektordner. Erstellen Sie eine oder mehrere Verzweigungen, entwickeln Sie neue Funktionen, konfigurieren Sie Änderungen, fügen Sie Erweiterungen hinzu und stellen Sie Aktualisierungen bereit:
 
-- **Fetch** ändert sich von `integration`
+- **Änderungen** von `integration` abrufen
 
-- **Verzweigung** von `integration`
+- **Verzweigung** aus `integration`
 
-- **Entwickeln** Code auf einer lokalen Workstation, einschließlich [!DNL Composer] Updates
+- **Entwickeln** von Code auf einer lokalen Workstation, einschließlich [!DNL Composer]
 
-- **Push**-Codeänderungen an Remote-Zugriff und -Validierung
+- **Push**-Code ändert sich in Remote und validiert
 
-- **Merge** zu `integration` und test
+- **Zusammenführen** zum `integration` und Testen
 
-Mit einer entwickelten Codeverzweigung und den entsprechenden Konfigurationsdateien können Ihre Codeänderungen mit der `integration` -Verzweigung zusammengeführt werden, um umfassendere Tests zu ermöglichen. Die `integration` -Umgebung eignet sich auch am besten für:
+Mit einer entwickelten Code-Verzweigung und den entsprechenden Konfigurationsdateien können Ihre Code-Änderungen zur umfassenderen Testung in die `integration`-Verzweigung zusammengeführt werden. Die `integration` Umgebung eignet sich auch am besten für:
 
-- **Integrieren von Drittanbieterdiensten**: Nicht alle Dienste sind in der PAs-Umgebung verfügbar.
+- **Integrieren von Drittanbieterdiensten** - Nicht alle Dienste sind in der PaaS-Umgebung verfügbar.
 
-- **Generieren von Konfigurationsverwaltungsdateien** - Einige Konfigurationseinstellungen sind _schreibgeschützt_ in einer bereitgestellten Umgebung.
+- **Erstellen von Konfigurationsverwaltungsdateien** - Einige Konfigurationseinstellungen sind _schreibgeschützt_ in einer bereitgestellten Umgebung.
 
-- **Konfigurieren des Stores**: Sie sollten alle Speichereinstellungen vollständig mit der Integrationsumgebung konfigurieren. Sie finden die **Store Admin URL** in der Umgebungsansicht _integration_ in der Ansicht _[!DNL Cloud Console]_.
+- **Store konfigurieren** - Sie sollten alle Store-Einstellungen mithilfe der Integrationsumgebung vollständig konfigurieren. Sie finden die **Store-Admin** URL) in der Ansicht _Integration_ in der _[!DNL Cloud Console]_.
 
-## Bereitstellungsarbeitsablauf
+## Bereitstellungs-Workflow
 
-Jedes Mal, wenn Sie Code von Ihrer lokalen Workstation in die Remote-Umgebung pushen oder Code in einen Umgebungszweig zusammenführen, generieren die Build- und Bereitstellungsskripte neuen Code und stellen die konfigurierten Dienste für die Remote-Umgebung bereit.
+Jedes Mal, wenn Sie Code von Ihrer lokalen Workstation in die Remote-Umgebung pushen oder Code in eine Umgebungsverzweigung zusammenführen, generieren die Build- und Bereitstellungsskripte neuen Code und stellen die konfigurierten Services in der Remote-Umgebung bereit.
 
-Skriptaktionen erstellen:
+Skript-Aktionen erstellen:
 
-- Die Site in der Zielumgebung wird während eines Builds weiterhin ausgeführt
+- Site in der Zielumgebung wird während eines Builds weiterhin ausgeführt
 
-- Adobe Commerce auf Cloud-Infrastruktur-Patches und Hotfixes überprüfen und ausführen
+- Überprüfen und Ausführen von Adobe Commerce auf Cloud-Infrastruktur-Patches und -Hotfixes
 
-- Kompilieren von Code mit einem Build- und Bereitstellungsprotokoll
+- Kompilieren von Code mit einem Build und Bereitstellen von Protokollen
 
-- Suchen Sie nach Konfigurationsverwaltung , um die Bereitstellung statischer Inhalte während dieser Phase durchzuführen.
+- Überprüfen Sie, ob die Konfigurationsverwaltung funktioniert, und die Bereitstellung statischer Inhalte findet in dieser Phase statt.
 
-- Erstellen oder verwenden Sie ein Beispiel mit unverändertem Code, um den Prozess zu beschleunigen
+- Erstellen oder verwenden Sie einen Slug mit unverändertem Code, um den Prozess zu beschleunigen
 
-- Bereitstellung aller Backend-Dienste und -Anwendungen
+- Bereitstellung aller Backend-Services und -Programme
 
 Skriptaktionen bereitstellen:
 
-- Platzieren Sie die Site in der Zielumgebung im Modus _Wartung_ .
+- Platzieren Sie die Site in der Zielumgebung in einen _Wartungsmodus_.
 
-- Statischen Inhalt bereitstellen, wenn er beim Erstellen nicht abgeschlossen wurde
+- Statischen Inhalt bereitstellen, wenn er beim Build nicht abgeschlossen wurde
 
 - Installieren oder Aktualisieren von Adobe Commerce in der Cloud-Infrastruktur
 
-- Routing für Traffic konfigurieren
+- Konfigurieren des Routings für Traffic
 
-Nach dem Build- und Bereitstellungsprozess wird Ihr Store mit den neuesten Code-Änderungen und -Konfigurationen wieder online geschaltet. Siehe [Bereitstellungsprozess](../deploy/process.md).
+Nach dem Build- und Bereitstellungsprozess wird Ihr Store mit Ihren neuesten Code-Änderungen und Konfigurationen wieder online geschaltet. Siehe [Bereitstellungsprozess](../deploy/process.md).
 
-### Zusammenführen zur Integration
+### Zusammenführen mit Integration
 
-Kombinieren Sie alle verifizierten Codeänderungen, indem Sie Ihre aktive Entwicklungsverzweigung in der Basis-Verzweigung `integration` zusammenführen. Sie können alle Änderungen in der Verzweigung `integration` testen, bevor Sie Änderungen an der Staging-Umgebung weiterleiten.
+Kombinieren Sie alle überprüften Code-Änderungen, indem Sie Ihre aktive Entwicklungsverzweigung mit der `integration` zusammenführen. Sie können alle Ihre Änderungen auf der `integration`-Verzweigung testen, bevor Sie Änderungen in die Staging-Umgebung hochstufen.
 
-### Zu Staging zusammenführen
+### Mit Staging zusammenführen
 
-Staging ist eine Produktionsumgebung vor der Produktion, die alle Dienste und Einstellungen so nah wie möglich an der Produktionsumgebung bereitstellt. Übertragen Sie Ihre Codeänderungen immer von der `integration` -Umgebung in die `staging` -Umgebung, damit Sie mit allen Diensten gründliche Tests durchführen können. Wenn Sie die Staging-Umgebung zum ersten Mal verwenden, müssen Sie Dienste wie [Fastly CDN](../cdn/fastly.md) und [New Relic](../monitor/new-relic-service.md) konfigurieren. Konfigurieren Sie Zahlungskanäle, Versand, Benachrichtigungen und andere wichtige Dienste mit Sandbox- oder Testberechtigungen.
+Staging ist eine Vorproduktionsumgebung, die alle Services und Einstellungen so nah wie möglich an der Produktionsumgebung bereitstellt. Übertragen Sie Code-Änderungen immer von der `integration` Umgebung in die `staging` Umgebung, damit Sie alle Services gründlich testen können. Wenn Sie die Staging-Umgebung zum ersten Mal verwenden, müssen Sie Services wie [Fastly CDN](../cdn/fastly.md) und [New Relic](../monitor/new-relic-service.md) konfigurieren. Konfigurieren Sie Zahlungs-Gateways, Versand, Benachrichtigungen und andere wichtige Services mit Sandbox- oder Testberechtigungen.
 
-Am besten testen sollten Sie jeden Dienst gründlich testen, Ihre Leistungstestwerkzeuge überprüfen und UAT-Tests als Administrator und Kunde durchführen, bis Sie denken, dass Ihr Geschäft für die Produktionsumgebung bereit ist. Siehe [Bereitstellen Ihres Stores](../deploy/staging-production.md).
+Es ist am besten, jeden Service gründlich zu testen, Ihre Leistungstesttools zu überprüfen und UAT-Tests als Administrator und als Kunde durchzuführen, bis Sie das Gefühl haben, dass Ihr Store für die Produktionsumgebung bereit ist. Siehe [Bereitstellen Ihres Stores](../deploy/staging-production.md).
 
 {{second-staging}}
 
-### Zusammenführen zur Produktion
+### Mit Produktion fusionieren
 
-Führen Sie nach gründlichen Tests in der Staging-Umgebung eine Zusammenführung in die Produktionsumgebung durch und testen Sie sie mithilfe von Live-Anmeldeinformationen gründlich. Zum Zeitpunkt des Starts Ihrer Produktions-Site müssen Kunden in der Lage sein, Käufe abzuschließen, und Administratoren müssen in der Lage sein, den Live Store zu verwalten. In den folgenden Themen finden Sie eine detaillierte, klare Anleitung zur Bereitstellung Ihres Stores und zur Live-Schaltung:
+Führen Sie nach gründlichen Tests in der Staging-Umgebung eine Verbindung zur Produktionsumgebung her und testen Sie sie sorgfältig mit Live-Anmeldeinformationen. Zum Zeitpunkt des Starts der Produktionssite müssen Kunden in der Lage sein, Käufe abzuschließen, und Administratoren müssen in der Lage sein, den Live Store zu verwalten. Unter den folgenden Themen finden Sie eine detaillierte, übersichtliche Anleitung zur Bereitstellung Ihres Stores und zur Live-Schaltung:
 
-- [Bereitstellen Ihres Stores](../deploy/staging-production.md)
+- [Bereitstellen des Stores](../deploy/staging-production.md)
 - [Site-Launch](../launch/overview.md)
 
-### Zu globaler Master zusammenführen
+### Zusammenführen mit dem globalen Stamm
 
-Pushen Sie stets eine Kopie des Produktionscodes an den globalen Ordner &quot;`master`&quot;, falls es notwendig ist, die Produktionsumgebung zu debuggen, ohne die Dienste zu unterbrechen.
+Senden Sie immer eine Kopie des Produktions-Codes an die globale `master`, falls eine dringende Notwendigkeit besteht, die Produktionsumgebung zu debuggen, ohne die Services zu unterbrechen.
 
-Erstellen Sie **nicht** einen Zweig aus Global `master`. Verwenden Sie die Verzweigung `integration` , um neue aktive Verzweigungen für die Entwicklung und Fehlerbehebungen zu erstellen.
+Erstellen **keine** aus der globalen `master`. Verwenden Sie die `integration` Verzweigung, um neue aktive Verzweigungen für die Entwicklung und Fehlerbehebungen zu erstellen.

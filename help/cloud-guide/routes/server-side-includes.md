@@ -1,6 +1,6 @@
 ---
-title: Serverseitige Includes
-description: Erfahren Sie, wie Sie serverseitige Includes mit Adobe Commerce in der Cloud-Infrastruktur verwenden.
+title: Server-seitige Includes
+description: Erfahren Sie, wie Sie Server-seitige Includes mit Adobe Commerce in der Cloud-Infrastruktur verwenden.
 feature: Cloud, Routes
 exl-id: 34a38cb5-5f0e-49ac-9dba-bb581a06aeed
 source-git-commit: 649c11b111aa9c9105e54908bf9c6f48741f10e4
@@ -10,11 +10,11 @@ ht-degree: 0%
 
 ---
 
-# Serverseitige Includes
+# Server-seitige Includes
 
-[Serverseitige Includes](https://nginx.org/en/docs/http/ngx_http_ssi_module.html) (SSI) sind Anweisungen auf HTML-Seiten, die auf dem Server ausgewertet werden, während die Seiten gerendert werden. Mit SSI können Sie dynamisch generierte Inhalte zu einer bestehenden HTML hinzufügen, ohne die gesamte Seite zu bedienen.
+[Server-seitige Includes](https://nginx.org/en/docs/http/ngx_http_ssi_module.html) (SSI) sind Anweisungen zum HTML von Seiten, die auf dem Server ausgewertet werden, während die Seiten gerendert werden. Mit SSI können Sie dynamisch generierte Inhalte zu einer bestehenden HTML-Seite hinzufügen, ohne die gesamte Seite zu bedienen.
 
-Sie können SSI pro Route in Ihrem `.magento/routes.yaml` aktivieren oder deaktivieren, z. B.:
+Sie können SSI für jede Route in Ihrem `.magento/routes.yaml` aktivieren oder deaktivieren; Beispiel:
 
 ```yaml
     "http://{default}/":
@@ -31,22 +31,22 @@ Sie können SSI pro Route in Ihrem `.magento/routes.yaml` aktivieren oder deakti
             enabled: true
 ```
 
-Mit SSI können Sie in Ihre HTML-Response-Anweisungen einschließen, die dazu führen, dass der Server Teile des HTML ausfüllt, wobei die vorhandene [Caching-Konfiguration](caching.md) beachtet wird.
+SSI ermöglicht es Ihnen, in Ihre HTML-Antwort-Anweisungen einzuschließen, die bewirken, dass der Server Teile der HTML ausfüllt und dabei alle vorhandenen [Caching-Konfiguration](caching.md) berücksichtigt.
 
-Das folgende Beispiel zeigt, wie Sie ein dynamisches Datumssteuerelement am Anfang einer Seite einfügen und ein weiteres Datumssteuerelement am unteren Rand, das alle 600 Sekunden aktualisiert wird:
+Das folgende Beispiel zeigt, wie Sie am Anfang einer Seite ein dynamisches Datums-Steuerelement und am Ende ein weiteres Datums-Steuerelement einfügen, das alle 600 Sekunden aktualisiert wird:
 
-Fügen Sie jeder Seite Folgendes hinzu, z. B. `/index.php`:
+Fügen Sie einer Seite wie `/index.php` Folgendes hinzu:
 
 ```php?start_inline=1
 echo date(DATE_RFC2822);
 <!--#include virtual="time.php" -->
 ```
 
-Fügen Sie `time.php` Folgendes hinzu:
+Fügen Sie Folgendes zu `time.php` hinzu:
 
 ```php?start_inline=1
 header("Cache-Control: max-age=600");
 echo date(DATE_RFC2822);
 ```
 
-Navigieren Sie zu der Seite, auf der Sie das Steuerelement hinzugefügt haben. Aktualisieren Sie die Seite mehrmals und beachten Sie, dass sich die Zeit oben auf der Seite ändert, die Zeit am unteren Rand jedoch nur alle 600 Sekunden geändert wird.
+Navigieren Sie zu der Seite, der Sie das Steuerelement hinzugefügt haben. Aktualisieren Sie die Seite mehrmals. Beachten Sie, dass sich die Zeit oben auf der Seite ändert, die Zeit unten jedoch nur alle 600 Sekunden.

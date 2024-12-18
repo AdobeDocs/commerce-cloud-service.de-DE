@@ -1,6 +1,6 @@
 ---
-title: Protokollhandler
-description: Erfahren Sie, wie Sie Protokollhandler für Adobe Commerce in der Cloud-Infrastruktur konfigurieren.
+title: Protokoll-Handler
+description: Erfahren Sie, wie Sie Protokoll-Handler für Adobe Commerce in der Cloud-Infrastruktur konfigurieren.
 feature: Cloud, Logs, Configuration
 role: Developer
 exl-id: d3be7b6d-5778-4c32-865b-31bdb2852a23
@@ -11,11 +11,11 @@ ht-degree: 0%
 
 ---
 
-# Protokollhandler
+# Protokoll-Handler
 
-Sie können Log-Handler konfigurieren, um Nachrichten an einen Remote-Protokollierungsserver zu senden. Ein Protokollhandler überträgt Build- und Bereitstellungsprotokolle auf andere Systeme, ähnlich wie Sie Protokolle per Push an Slack und E-Mail senden. Sie können einen _syslog_ -Handler aktivieren, der sich ideal für die Protokollierung von Meldungen im Zusammenhang mit Hardware eignet, oder einen Graulog Extended Log Format (GELF)-Handler, der sich ideal für die Protokollierung von Nachrichten aus Softwareanwendungen eignet.
+Sie können Protokoll-Handler konfigurieren, um Nachrichten an einen Remote-Protokollierungsserver zu senden. Ein Protokoll-Handler überträgt Build- und Bereitstellungsprotokolle auf andere Systeme, ähnlich wie Sie Protokolle per Push an Slack und E-Mail senden. Sie können einen _syslog_-Handler aktivieren, der sich ideal für die Protokollierung von Meldungen im Zusammenhang mit Hardware eignet, oder einen Graulog Extended Log Format (GELF)-Handler, der sich ideal für die Protokollierung von Meldungen aus Software-Anwendungen eignet.
 
-Im folgenden Beispiel werden diese beiden Handler konfiguriert, indem die Konfiguration zur Datei `.magento.env.yaml` hinzugefügt wird. Informationen zu den Mindestwerten für die Protokollierungsstufe (`min_level`) finden Sie unter [Protokollebenen](#log-levels).
+Im folgenden Beispiel werden diese beiden Handler konfiguriert, indem die Konfiguration zur `.magento.env.yaml`-Datei hinzugefügt wird. Die Werte für die minimale Protokollierungsebene (`min_level`) finden Sie unter [Protokollierungsebenen](#log-levels).
 
 ```yaml
 log:
@@ -56,13 +56,13 @@ log:
 
 ## Protokollebenen
 
-Die Protokollebenen bestimmen die Detaillierungsstufe in den Benachrichtigungsmeldungen. Die folgenden Kategorien auf Protokollebene enthalten jede Protokollebene darunter. Beispielsweise beinhaltet eine `debug` -Ebene die Protokollierung von jeder Ebene, während eine `alert` -Ebene nur Warnhinweise und Notfälle anzeigt.
+Protokollebenen bestimmen den Detaillierungsgrad von Benachrichtigungsinhalten. Die folgenden Protokollebenen-Kategorien umfassen alle darunter liegenden Protokollebenen. Beispielsweise umfasst eine `debug` Protokollierungsebene die Protokollierung auf jeder Ebene, während eine `alert` nur Warnhinweise und Notfälle anzeigt.
 
-- **debug** - detaillierte Debugging-Informationen
-- **info** - interessante Ereignisse, wie z. B. eine Benutzeranmeldung oder ein SQL-Protokoll
-- **Hinweis** - normale, aber wichtige Ereignisse
-- **warning**—außergewöhnliche Ereignisse, die keine Fehler sind, wie die Verwendung einer veralteten API oder die schlechte Verwendung einer API
-- **error**—Laufzeitfehler, die keine sofortige Aktion erfordern
-- **critical** - kritische Bedingungen, z. B. eine nicht verfügbare Anwendungskomponente oder eine unerwartete Ausnahme
-- **alert** - sofortiges Handeln erforderlich, z. B. wenn eine Website ausfällt oder die Datenbank nicht verfügbar ist, sodass der Trigger einen SMS-Warnhinweis erhält
-- **alert** - System ist nicht verwendbar
+- **debug** - Detaillierte Debugging-Informationen
+- **info** - Interessante Ereignisse wie ein Benutzerlogin oder SQL-Protokoll
+- **Hinweis** - Normale, aber wichtige Ereignisse
+- **Warnung** - Ausnahmefälle, bei denen es sich nicht um Fehler handelt, wie z. B. die Verwendung einer veralteten API oder die schlechte Verwendung einer API
+- **error** - Laufzeitfehler, die keine sofortige Aktion erfordern
+- **Kritisch** - Kritische Bedingungen, z. B. eine nicht verfügbare Anwendungskomponente oder eine unerwartete Ausnahme
+- **Warnhinweis** - Sofortmaßnahmen erforderlich - wie z. B. Ausfall einer Website oder Nichtverfügbarkeit der Datenbank -, die Trigger von SMS-Warnhinweisen informieren
+- **Notfall** - System ist nicht verwendbar

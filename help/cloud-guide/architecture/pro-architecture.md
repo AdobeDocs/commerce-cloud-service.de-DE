@@ -1,10 +1,10 @@
 ---
 title: Pro Architektur
-description: Erfahren Sie mehr über die Umgebungen, die von der Pro-Architektur unterstützt werden.
+description: Erfahren Sie mehr über die von der Pro-Architektur unterstützten Umgebungen.
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 18f4da5c6e7e5c483f5cf64e977b3fb3fd28bbb0
+source-git-commit: adcc6b2dd7929352dedf878cd2ec3b8af7c2a35f
 workflow-type: tm+mt
 source-wordcount: '1573'
 ht-degree: 0%
@@ -13,206 +13,206 @@ ht-degree: 0%
 
 # Pro Architektur
 
-Ihre Adobe Commerce on Cloud Infrastructure Pro-Architektur unterstützt mehrere Umgebungen, mit denen Sie Ihren Store entwickeln, testen und starten können.
+Ihre Adobe Commerce on Cloud Infrastructure Pro-Architektur unterstützt mehrere Umgebungen, die Sie zum Entwickeln, Testen und Starten Ihres Stores verwenden können.
 
-- **Master**: Stellt eine `master` -Verzweigung bereit, die in Platform as a service (PageS)-Containern bereitgestellt wird.
-- **Integration**: Stellt einen einzelnen `integration` -Zweig zur Entwicklung bereit, Sie können jedoch einen weiteren Zweig erstellen. Dies ermöglicht bis zu zwei _aktive_ Zweige, die in Platform as a service (PageS)-Containern bereitgestellt werden.
-- **Staging**: Stellt einen einzelnen `staging`-Zweig bereit, der in dedizierten Infrastructure as a service (IAAs)-Containern bereitgestellt wird.
-- **Produktion**: Stellt eine einzelne `production` -Verzweigung bereit, die in dedizierten Infrastructure as a service (IAAs)-Containern bereitgestellt wird.
+- **Master** - Stellt eine `master` Verzweigung bereit, die in Platform as a Service (PaaS)-Containern bereitgestellt wird.
+- **Integration** - Bietet eine einzige `integration` Verzweigung für die Entwicklung, Sie können jedoch eine zusätzliche Verzweigung erstellen. Dies ermöglicht bis zu zwei _aktive_ Verzweigungen, die in Platform as a Service (PaaS)-Containern bereitgestellt werden.
+- **Staging**: Bietet eine einzelne `staging`, die in dedizierten IaaS-Containern (Infrastructure as a Service) bereitgestellt wird.
+- **Produktion** - Bietet eine einzelne `production`, die in dedizierten IaaS-Containern (Infrastructure as a Service) bereitgestellt wird.
 
 Die folgende Tabelle fasst die Unterschiede zwischen Umgebungen zusammen:
 
 |                                        | INTEGRATION | STAGING | PRODUKTION |
 | -------------------------------------- | ----------- | ----------------- | -------------------- |
-| Unterstützt die Einstellungsverwaltung im [!DNL Cloud Console] | Ja | Begrenzt | Begrenzt |
-| Unterstützt mehrere Zweige | Ja | Nein (nur Staging) | Nein (nur Produktion) |
+| Unterstützt die Einstellungsverwaltung im [!DNL Cloud Console] | Ja | Limited | Limited |
+| Unterstützt mehrere Verzweigungen | Ja | Nein (nur Staging) | Nein (nur Produktion) |
 | Verwendet YAML-Dateien für die Konfiguration | Ja | Nein | Nein |
-| Wird auf dedizierter IAAs-Hardware ausgeführt | Nein | Ja | Ja |
-| Enthält Fastly-CDN | Nein | Ja | Ja |
-| Enthält New Relic-Dienst | Nein | APM | APM + NRI |
-| Automatische Backups | Nein | Ja | Ja |
+| Läuft auf dedizierter IaaS-Hardware | Nein | Ja | Ja |
+| Enthält Fastly CDN | Nein | Ja | Ja |
+| Umfasst New Relic-Service | Nein | APM | APM + NRI |
+| Automatische Sicherungen | Nein | Ja | Ja |
 
 >[!NOTE]
 >
->Adobe stellt das Cloud Docker-Tool für Commerce für die Bereitstellung in einer lokalen Cloud Docker-Umgebung bereit, damit Sie Adobe Commerce-Projekte entwickeln und testen können. Siehe [Docker-Entwicklung](../dev-tools/cloud-docker.md).
+>Adobe stellt das Tool Cloud Docker für Commerce zum Bereitstellen in einer lokalen Cloud Docker-Umgebung bereit, damit Sie Adobe Commerce-Projekte entwickeln und testen können. Siehe [Docker-](../dev-tools/cloud-docker.md).
 
 ## Umgebungsarchitektur
 
-Ihr Projekt ist ein einzelnes Git-Repository mit drei Hauptumgebungsverzweigungen: `integration`, `staging` und `production`. Das folgende Diagramm zeigt die hierarchische Beziehung von Pro-Umgebungen:
+Ihr Projekt ist ein einzelnes Git-Repository mit drei Hauptumgebungszweigen: `integration`, `staging` und `production`. Das folgende Diagramm zeigt die hierarchische Beziehung von Pro-Umgebungen:
 
-![Allgemeine Ansicht der Pro-Umgebung-Architektur](../../assets/pro-branch-architecture.png)
+![Allgemeine Ansicht der Pro-Umgebungsarchitektur](../../assets/pro-branch-architecture.png)
 
 ### Master-Umgebung
 
-Bei Pro-Projekten stellt die Verzweigung `master` eine aktive PaaS-Umgebung für Ihre Produktionsumgebung bereit. Pushen Sie stets eine Kopie des Produktionscodes an die Umgebung `master` , damit Sie die Produktionsumgebung debuggen können, ohne die Dienste zu unterbrechen.
+Bei Pro-Projekten bietet die `master`-Verzweigung eine aktive PaaS-Umgebung für Ihre Produktionsumgebung. Senden Sie immer eine Kopie des Produktions-Codes an die `master`, damit Sie die Produktionsumgebung debuggen können, ohne die Services zu unterbrechen.
 
 **Einschränkungen:**
 
-- Erstellen Sie **nicht** einen Zweig, der auf dem Zweig `master` basiert. Verwenden Sie die Integrationsumgebung, um aktive Verzweigungen für die Entwicklung zu erstellen.
+- Erstellen **** keine Verzweigung basierend auf der `master`. Verwenden Sie die Integrationsumgebung, um aktive Verzweigungen für die Entwicklung zu erstellen.
 
-- Verwenden Sie nicht die `master` -Umgebung für Entwicklungs-, UAT- oder Leistungstests.
+- Verwenden Sie die `master` nicht für Entwicklungs-, UAT- oder Leistungstests
 
 ### Integrationsumgebung
 
-Die Integrationsumgebung wird in einem Linux-Container (LXC) auf einem als &quot;PaaS&quot;bekannten Serverraster ausgeführt. Jede Umgebung enthält einen Webserver und eine Datenbank zum Testen Ihrer Site. Eine Liste der AWS- und Azure-IP-Adressen finden Sie unter [Regionale IP-Adressen](../project/regional-ip-addresses.md) .
+Die Integrationsumgebung wird in einem Linux-Container (LXC) auf einem Raster von Servern ausgeführt, die als PaaS bezeichnet werden. Jede Umgebung enthält einen Webserver und eine Datenbank zum Testen der Site. Unter [Regionale IP-Adressen](../project/regional-ip-addresses.md) finden Sie eine Liste der IP-Adressen von AWS und Azure.
 
 **Empfohlene Anwendungsfälle:**
 
-Integrationsumgebungen sind für begrenzte Tests und Entwicklung ausgelegt, bevor Änderungen in Staging- und Produktionsumgebungen verschoben werden. Beispielsweise können Sie die Integrationsumgebung verwenden, um die folgenden Aufgaben auszuführen:
+Integrationsumgebungen sind auf eingeschränkte Tests und Entwicklung ausgelegt, bevor Änderungen in Staging- und Produktionsumgebungen verschoben werden. Beispielsweise können Sie die Integrationsumgebung verwenden, um die folgenden Aufgaben auszuführen:
 
-- Sicherstellen, dass Änderungen an CI-Prozessen (Continuous Integration) Cloud-kompatibel sind
+- Sicherstellen, dass Änderungen an kontinuierlichen Integrationsprozessen (CI/CI) Cloud-kompatibel sind
 
-- Testen Sie kritische Workflows auf wichtigen Seiten wie Startseite, Kategorie, Produktdetailseite (PDP), Checkout und Admin
+- Testen Sie kritische Workflows auf wichtigen Seiten wie Startseite, Kategorie, Produktdetailseite (PDP), Checkout und Admin.
 
 Befolgen Sie die folgenden Best Practices, um eine optimale Leistung in der Integrationsumgebung zu erzielen:
 
-- Schränken Sie die Kataloggröße ein - Die Beispieldaten enthalten beispielsweise etwa 2.048 Produkte. Versuchen Sie, Ihre Kataloggröße auf etwa 4.000-5.000 Produkte zu reduzieren.
+- Beschränken der Kataloggröße - Die Beispieldaten enthalten etwa 2.048 Produkte als Referenz. Reduzieren Sie Ihre Kataloggröße auf etwa 4.000-5.000 Produkte.
 Um die Anzahl der Produkte im Katalog zu überprüfen, führen Sie die folgende MySQL-Abfrage aus:
 
   ```sql
   select distinct count(entity_id) from catalog_product_entity;
   ```
 
-- Verringerung der Anzahl der Kundengruppen - Eine zu große Anzahl von Kundengruppen kann sich auf die Indizierungsleistung und die Gesamtleistung auswirken.
+- Verringern der Anzahl von Kundengruppen - Zu viele Kundengruppen können die Indizierungsleistung und die Gesamtleistung beeinträchtigen.
 
-- Beschränkung der Verwendung auf einen oder zwei gleichzeitige Benutzer
+- Verwendung auf einen oder zwei gleichzeitige Benutzer beschränken
 
-- Deaktivieren Sie Cron-Aufträge und führen Sie sie nach Bedarf manuell aus.
+- Deaktivieren Sie Cron-Aufträge und führen Sie sie nach Bedarf manuell aus
 
 **Einschränkungen:**
 
-- Schnellere CDN- und New Relic-Dienste sind in einer Integrationsumgebung nicht verfügbar
+- Fastly CDN- und New Relic-Services sind in einer Integrationsumgebung nicht verfügbar
 
-- Die Architektur der Integrationsumgebung entspricht nicht der Staging- und Produktionsarchitektur
+- Die Architektur der Integrationsumgebung stimmt nicht mit der Staging- und Produktionsarchitektur überein
 
-- Verwenden Sie nicht die `integration` -Umgebung für Entwicklungstests, Leistungstests oder Benutzerakzeptanztests.
+- Verwenden Sie die `integration`-Umgebung nicht für Entwicklungstests, Leistungstests oder Benutzerakzeptanztests (UAT)
 
-- Verwenden Sie nicht die Umgebung &quot;`integration`&quot;, um B2B für Adobe Commerce-Funktionen zu testen.
+- Verwenden Sie die `integration`-Umgebung nicht zum Testen von B2B auf Adobe Commerce-Funktionen
 
-- Sie können die Datenbank in der Integrationsumgebung nicht aus der Datenbankproduktion oder -staging wiederherstellen
+- Sie können die Datenbank nicht in der Integrationsumgebung von der Produktions- oder Staging-Datenbank aus wiederherstellen
 
 {{enhanced-integration-envs}}
 
 ### Staging-Umgebung
 
-Die Staging-Umgebung bietet eine nahezu produktionsorientierte Umgebung zum Testen Ihrer Site. Diese Umgebung, die auf dedizierter IaaS-Hardware gehostet wird, umfasst alle Dienste wie Fastly CDN, New Relic APM und Search.
+Die Staging-Umgebung bietet eine produktionsnahe Umgebung zum Testen Ihrer Site. Diese Umgebung, die auf dedizierter IaaS-Hardware gehostet wird, umfasst alle Services wie Fastly CDN, New Relic APM und Suche.
 
 **Empfohlene Anwendungsfälle:**
 
-Die Umgebung entspricht der Produktionsarchitektur und wurde für UAT, Content Staging und endgültige Überprüfung entwickelt, bevor Funktionen in die `production` -Umgebung gepusht werden. Sie können beispielsweise die Umgebung `staging` verwenden, um die folgenden Aufgaben auszuführen:
+Die Umgebung entspricht der Produktionsarchitektur und ist für UAT, Staging von Inhalten und abschließende Überprüfung konzipiert, bevor Funktionen in die `production`-Umgebung verschoben werden. Beispielsweise können Sie die `staging` verwenden, um die folgenden Aufgaben auszuführen:
 
 - Regressionstests mit Produktionsdaten
 
-- Leistungstests mit aktivierter Fastly-Caching-Funktion
+- Leistungstests mit aktiviertem Fastly-Caching
 
-- Testen neuer Builds anstelle von Patches in der Produktion
+- Testen neuer Builds in der Produktionsumgebung statt eines Patches
 
 - UAT-Tests für neue Builds
 
-- B2B-Test für Adobe Commerce
+- Testen von B2B für Adobe Commerce
 
 - Anpassen der Cron-Konfiguration und Testen von Cron-Aufträgen
 
-Siehe [Freigabe-Workflow](pro-develop-deploy-workflow.md#deployment-workflow) und [Testen der Bereitstellung](../test/staging-and-production.md).
+Siehe [Bereitstellungs-Workflow](pro-develop-deploy-workflow.md#deployment-workflow) und [Testbereitstellung](../test/staging-and-production.md).
 
 **Einschränkungen:**
 
-- Verwenden Sie nach dem Start der Produktions-Site die Staging-Umgebung in erster Linie, um Patches auf produktionskritische Fehlerbehebungen zu testen.
+- Verwenden Sie nach dem Start der Produktions-Site die Staging-Umgebung hauptsächlich, um Patches für produktionskritische Fehlerkorrekturen zu testen.
 
-- Sie können keine Verzweigung aus der Verzweigung `staging` erstellen. Stattdessen übernehmen Sie die Übertragung von Code-Änderungen vom Zweig `integration` in den Zweig `staging` .
+- Aus der `staging` Verzweigung kann keine Verzweigung erstellt werden. Stattdessen übertragen Sie Code-Änderungen von der `integration` Verzweigung auf die `staging` Verzweigung.
 
 {{second-staging}}
 
 ### Produktionsumgebung
 
-In der Produktionsumgebung werden Ihre öffentlichen Storefronts mit einzelnen und mehreren Sites ausgeführt. Diese Umgebung wird auf dedizierter iOS-Hardware mit redundanten Hochverfügbarkeitsknoten ausgeführt, die einen kontinuierlichen Zugriff und Failover-Schutz für Ihre Kunden ermöglichen. Die Produktionsumgebung umfasst alle Dienste in der Staging-Umgebung sowie den Dienst [New Relic Infrastructure (NRI)](../monitor/new-relic-service.md#new-relic-infrastructure) , der automatisch eine Verbindung zu den Anwendungsdaten und Leistungsanalysen herstellt, um eine dynamische Serverüberwachung zu ermöglichen.
+Die Produktionsumgebung führt Ihre öffentlichen Storefronts mit einer und mehreren Sites aus. Diese Umgebung läuft auf dedizierter IaaS-Hardware mit redundanten, hochverfügbaren Knoten für den kontinuierlichen Zugriff und den Failover-Schutz für Ihre Kunden. Die Produktionsumgebung umfasst alle Services in der Staging-Umgebung sowie den [New Relic Infrastructure (NRI)](../monitor/new-relic-service.md#new-relic-infrastructure)-Service, der automatisch eine Verbindung zu den Anwendungsdaten und Leistungsanalysen herstellt, um eine dynamische Serverüberwachung zu ermöglichen.
 
-**Caveat:**
+**Vorbehalt:**
 
-Sie können keine Verzweigung aus der Verzweigung `production` erstellen. Stattdessen übernehmen Sie die Übertragung von Code-Änderungen vom Zweig `staging` in den Zweig `production` .
+Aus der `production` Verzweigung kann keine Verzweigung erstellt werden. Stattdessen übertragen Sie Code-Änderungen von der `staging` Verzweigung auf die `production` Verzweigung.
 
-### Produktionstechnologie-Stapel
+### Produktionstechnologie-Stack
 
 Die Produktionsumgebung verfügt über drei virtuelle Maschinen (VMs) hinter einem Elastic Load Balancer, der von einem HAProxy pro VM verwaltet wird. Jede VM umfasst die folgenden Technologien:
 
-- **Fastly CDN**—HTTP-Caching und CDN
+- **Fastly CDN** - HTTP-Caching und CDN
 
-- **NGINX**—Webserver mit PHP-FPM, einer Instanz mit mehreren Arbeitern
+- **NGINX** - Webserver mit PHP-FPM, eine Instanz mit mehreren Workern
 
-- **GlusterFS** - Dateiserver für die Verwaltung aller statischen Dateibereitstellungen und für die Synchronisierung mit vier Ordnerbereitstellungen:
+- **GlusterFS** - Dateiserver zur Verwaltung aller statischen Dateibereitstellungen und Synchronisierung mit vier Verzeichnis-Bereitstellungen:
 
    - `var`
    - `pub/media`
    - `pub/static`
    - `app/etc`
 
-- **Redis** - ein Server pro VM mit nur einem aktiven Server und die beiden anderen als Replikate
+- **Redis** - ein Server pro virtuellem Rechner mit nur einem aktiven Server und die beiden anderen als Replikate
 
-- **Elasticsearch**—Suche nach Adobe Commerce in der Cloud-Infrastruktur 2.2 bis 2.4.3-p2
+- **Elasticsearch** - Suchen Sie nach Adobe Commerce in Cloud Infrastructure 2.2 bis 2.4.3-p2
 
-- **OpenSearch** - Suchen Sie in der Cloud-Infrastruktur 2.3.7-p3, 2.4.3-p2, 2.4.4 und höher nach Adobe Commerce.
+- **OpenSearch** - Suchen Sie nach Adobe Commerce in Cloud-Infrastruktur 2.3.7-p3, 2.4.3-p2, 2.4.4 und höher
 
-- **Galera**—Datenbankcluster mit einer MariaDB MySQL-Datenbank pro Knoten mit einer automatischen Inkrementierungseinstellung von drei für eindeutige IDs in jeder Datenbank
+- **Galera** - Datenbank-Cluster mit einer MariaDB MySQL-Datenbank pro Knoten mit einer Einstellung zum automatischen Inkrementieren von drei für eindeutige IDs in jeder Datenbank
 
 Die folgende Abbildung zeigt die in der Produktionsumgebung verwendeten Technologien:
 
-![Produktionstechnologiestapel](../../assets/az-stack-diagram.png)
+![Produktionstechnologie-Stack](../../assets/az-stack-diagram.png)
 
 ## Redundante Hardware
 
-Anstatt eine herkömmliche, aktive/passive `master`- oder eine primär-sekundäre Einrichtung auszuführen, führt Adobe Commerce in der Cloud-Infrastruktur eine _redundante Architektur_ aus, in der alle drei Instanzen Lese- und Schreibvorgänge akzeptieren. Diese Architektur bietet keine Ausfallzeiten bei der Skalierung und garantiert Transaktionsintegrität.
+Anstatt eine herkömmliche Active/Passiv-`master` oder eine Einrichtung auf Primär-/Sekundär-Ebene auszuführen, führt Adobe Commerce in der Cloud-Infrastruktur eine _redundante Architektur_ auf der alle drei Instanzen Lese- und Schreibvorgänge akzeptieren. Diese Architektur bietet keine Ausfallzeiten bei der Skalierung und bietet garantierte Transaktionsintegrität.
 
-Aufgrund der einzigartigen, redundanten Hardware kann Adobe drei Gateway-Server bereitstellen. Die meisten externen Dienste ermöglichen es Ihnen, mehrere IP-Adressen zu einer Zulassungsliste hinzuzufügen, sodass es kein Problem darstellt, mehr als eine feste IP-Adresse zu haben. Die drei Gateways ordnen die drei Server im Cluster der Produktionsumgebung zu und behalten statische IP-Adressen bei. Sie ist vollständig redundant und auf allen Ebenen verfügbar:
+Aufgrund der einzigartigen, redundanten Hardware kann Adobe drei Gateway-Server bereitstellen. Die meisten externen Services ermöglichen es Ihnen, einer Zulassungsliste mehrere IP-Adressen hinzuzufügen, sodass mehr als eine feste IP-Adresse kein Problem darstellt. Die drei Gateways sind den drei Servern im Cluster Ihrer Produktionsumgebung zugeordnet und behalten statische IP-Adressen bei. Es ist vollständig redundant und auf jeder Ebene hochverfügbar:
 
 - DNS
 - Content Delivery Network (CDN)
-- Elastic load balancer (ELB)
-- Cluster mit drei Servern, das alle Adobe Commerce-Dienste einschließlich Datenbank und Webserver umfasst
+- Elastischer Lastausgleich (ELB)
+- Dreiserver-Cluster, der alle Adobe Commerce-Services umfasst, einschließlich Datenbank und Webserver
 
-## Sicherung und Wiederherstellung nach Katastrophen
+## Sicherung und Notfallwiederherstellung
 
-Adobe Commerce on Cloud Infrastructure verwendet eine Hochverfügbarkeitsarchitektur, die jedes Pro-Projekt in drei separaten AWS- oder Azure-Verfügbarkeitszonen repliziert, wobei jede Zone über ein eigenes Rechenzentrum verfügt. Zusätzlich zu dieser Redundanz erhalten die Pro-Staging- und Produktionsumgebungen regelmäßige Live-Backups, die für die Verwendung bei _katastrophalen Fehlern_ entwickelt wurden.
+Adobe Commerce in Cloud-Infrastrukturen verwenden eine Hochverfügbarkeitsarchitektur, die jedes Pro-Projekt in drei separaten AWS- oder Azure Availability Zones repliziert, wobei jede Zone über ein separates Rechenzentrum verfügt. Zusätzlich zu dieser Redundanz erhalten Pro-Staging- und Produktionsumgebungen regelmäßige Live-Backups, die für den Einsatz bei &quot;_&quot;_.
 
-**Automatische Sicherungen** enthalten persistente Daten von allen laufenden Diensten, wie z. B. der MySQL-Datenbank und Dateien, die auf den bereitgestellten Volumes gespeichert sind. Die Sicherungen werden in verschlüsselter Elastic Block Storage (EBS) in derselben Region wie die Produktionsumgebung gespeichert. Die automatischen Sicherungen sind nicht öffentlich zugänglich, da sie in einem separaten System gespeichert sind.
+**Automatische Backups** schließen persistente Daten aus allen laufenden Diensten ein, z. B. die MySQL-Datenbank und Dateien, die auf den bereitgestellten Volumes gespeichert sind. Die Backups werden in einem verschlüsselten Elastic Block Storage (EBS) in derselben Region wie die Produktionsumgebung gespeichert. Die automatischen Backups sind nicht öffentlich zugänglich, da sie in einem separaten System gespeichert sind.
 
 >[!NOTE]
 >
->Die bereitgestellten Volumes enthalten/beziehen sich nur auf die [beschreibbaren Reittiere](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/configure/app/properties/properties#mounts) und enthalten nicht alle Ihre `app/` Verzeichnisse. Wie bei den anderen Dateien werden sie vom [Build- und Bereitstellungsprozess](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/architecture/pro-develop-deploy-workflow#deployment-workflow) erstellt/generiert und Sie müssen auch Ihr Git-Repository auf die verbleibenden Dateien überprüfen.
+>Die bereitgestellten Volumes enthalten/beziehen sich nur auf [beschreibbare Bereitstellungen](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/configure/app/properties/properties#mounts) und enthalten nicht alle Ihre `app/`. Die anderen Dateien werden durch den Build- [ Bereitstellungsprozess erstellt/generiert](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/architecture/pro-develop-deploy-workflow#deployment-workflow) und Sie müssen außerdem Ihr Git-Repository auf verbleibende Dateien überprüfen.
 
 {{pro-backups}}
 
-Sie können mithilfe von CLI-Befehlen eine **manuelle Sicherung** der Datenbank für Ihre Staging- und Produktionsumgebungen erstellen. Siehe [Sichern der Datenbank](../storage/database-dump.md). Für `integration` -Umgebungen empfiehlt Adobe, ein Backup als ersten Schritt nach dem Zugriff auf Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur zu erstellen, bevor Sie größere Änderungen vornehmen. Siehe [Backup management](../storage/snapshots.md).
+Mithilfe von CLI **Befehlen können Sie eine** manuelle Sicherung) der Datenbank für Ihre Staging- und Produktionsumgebungen erstellen. Siehe [Datenbank sichern](../storage/database-dump.md). Für `integration` Umgebungen empfiehlt Adobe, als ersten Schritt nach dem Zugriff auf Ihr Adobe Commerce on Cloud-Infrastrukturprojekt und vor der Anwendung größerer Änderungen ein Backup zu erstellen. Siehe [Backup-Verwaltung](../storage/snapshots.md).
 
-### Ziel des Rückgewinnungspunkts
+### Wiederherstellungspunkt-Ziel
 
-RPO ist eine maximale Zeitdauer von sechs Stunden bis zum letzten Backup (z. B. um 06:00 Uhr, dann um 12:00 Uhr, dann um 18:00 Uhr). Die Häufigkeit der Backups hängt vom Backup-Zeitplan Ihres Plans und dem Volumen der Änderungen ab, die in den Speicherdienst geschrieben werden sollen.
+RPO beträgt maximal sechs Stunden für die letzte Sicherung (z. B. um 06:00 Uhr, dann um 12:00 Uhr und dann um 18:00 Uhr). Die Häufigkeit der Backups hängt vom Backup-Zeitplan Ihres Plans und der Anzahl der Änderungen ab, die in den Speicher-Service geschrieben werden sollen.
 
-### Bindungsrichtlinie
+### Aufbewahrungsrichtlinie
 
 Adobe behält automatische Sicherungen gemäß der folgenden Datenaufbewahrungsrichtlinie bei:
 
-| Zeitraum | Richtlinie zur Sicherung der Datenaufbewahrung |
+| Zeitraum | Aufbewahrungsrichtlinie für Backups |
 | ------------------ | ----------------------- |
 | Tag 1 bis 3 | Ein Backup pro Stunde |
 | Tage 4 bis 7 | Ein Backup pro Tag |
 | Wochen 2 bis 6 | Ein Backup pro Woche |
-| Wochen 8 bis 12 | Ein zweiwöchiges Backup |
-| Monat 3 bis 5 | Ein Backup pro Monat |
+| Wochen 8 bis 12 | Eine Sicherung alle zwei Wochen |
+| 3. bis 5. Monat | Ein Backup pro Monat |
 
-Diese Richtlinie kann je nach Ihrem Cloud-Infrastrukturplan variieren.
+Diese Richtlinie kann je nach Cloud-Infrastrukturplan variieren.
 
 ### Recovery Time Objective
 
-RTO hängt von der Speichergröße ab. Die Wiederherstellung großer EBS-Volumina nimmt mehr Zeit in Anspruch. Die Wiederherstellungszeiten variieren je nach Größe Ihrer Datenbank:
+RTO hängt von der Größe des Speichers ab. Bei großen EBS-Volumes dauert die Wiederherstellung länger. Die Wiederherstellungszeiten können je nach Größe der Datenbank variieren:
 
-- Eine große Datenbank (200+ GB) kann 5 Stunden dauern
+- Eine große Datenbank (200 oder mehr GB) kann 5 Stunden dauern
 - Eine mittlere Datenbank (150 GB) kann 2 1/2 Stunden dauern
-- Eine kleine Datenbank (60 GB) kann eine Stunde dauern
+- Eine kleine Datenbank (60 GB) kann 1 Stunde dauern
 
 ## Pro Cluster-Skalierung
 
-Die Konfigurationen für die Größe des Pro-Clusters und _compute_ variieren je nach gewähltem Cloud-Anbieter (AWS, Azure), Region und Service-Abhängigkeiten. Adobe Cloud-Infrastruktur kann Pro-Cluster skalieren, um Verkehrserwartungen und Service-Anforderungen bei sich ändernden Anforderungen gerecht zu werden.
+Die Größe des Pro-Clusters und _Compute_-Konfigurationen variieren je nach ausgewähltem Cloud-Anbieter (AWS, Azure), Region und Service-Abhängigkeiten. Die Adobe-Cloud-Infrastruktur kann Pro-Cluster skalieren, um Traffic-Erwartungen und Service-Anforderungen bei sich ändernden Anforderungen zu berücksichtigen.
 
-Die redundante Architektur ermöglicht das Hochskalieren der Adobe-Cloud-Infrastruktur ohne Ausfallzeiten. Beim Hochskalieren rotiert jede der drei Instanzen auf die Upgrade-Kapazität, ohne dass sich dies auf den Betrieb des Standorts auswirkt. Beispielsweise können Sie einem vorhandenen Cluster zusätzliche Webserver hinzufügen, wenn die Beschränkung auf PHP-Ebene und nicht auf Datenbankebene erfolgt. Dies ermöglicht die _horizontale Skalierung_, um die vertikale Skalierung zu ergänzen, die von zusätzlichen CPUs auf Datenbankebene bereitgestellt wird. Siehe [Skalierte Architektur](scaled-architecture.md).
+Die redundante Architektur ermöglicht eine Hochskalierung der Adobe-Cloud-Infrastruktur ohne Ausfallzeiten. Beim Hochskalieren rotiert jede der drei Instanzen, um die Kapazität zu aktualisieren, ohne den Site-Betrieb zu beeinträchtigen. Sie können beispielsweise zusätzliche Webserver zu einem vorhandenen Cluster hinzufügen, wenn die Einschränkung auf PHP-Ebene statt auf Datenbankebene erfolgt. Dies bietet _horizontale Skalierung_ um die vertikale Skalierung zu ergänzen, die durch zusätzliche CPUs auf Datenbankebene bereitgestellt wird. Siehe [Skalierte Architektur](scaled-architecture.md).
 
-Wenn Sie aus einem Ereignis oder aus anderen Gründen einen signifikanten Anstieg des Traffics erwarten, können Sie eine vorübergehende Erhöhung der Kapazität anfordern. Siehe [Anfordern einer temporären Upsize-Datei](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/how-to-request-temporary-magento-upsize.html) im _Commerce Help Center_.
+Wenn Sie aus einem Ereignis oder einem anderen Grund einen signifikanten Traffic-Anstieg erwarten, können Sie eine temporäre Kapazitätssteigerung anfordern. Siehe [Anfordern einer temporären ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/how-to/how-to-request-temporary-magento-upsize.html) im _Commerce-Hilfezentrum_.

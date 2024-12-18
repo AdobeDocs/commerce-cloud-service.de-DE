@@ -1,70 +1,70 @@
 ---
 title: Zweite Staging-Umgebung
-description: Lernen Sie die Vorteile und Verwendungszwecke einer zweiten Staging-Umgebung für parallele Tests, Problemisolierung, Versionskontrolle und mehr kennen.
-source-git-commit: 51fa75fff952e3832151d47b80baa7f532aa277f
+description: Erfahren Sie mehr über die Vorteile und Einsatzmöglichkeiten einer zweiten Staging-Umgebung für parallele Tests, die Isolierung von Problemen, die Versionskontrolle und mehr.
+exl-id: 0afaebf9-fe3d-4ba3-b496-b37cb1f07b35
+source-git-commit: f20724fb92d1e5362ccd13bc96d08be521d6b5df
 workflow-type: tm+mt
 source-wordcount: '716'
 ht-degree: 0%
 
 ---
 
-
 # Zweite Staging-Umgebung
 
-In der Adobe Commerce Cloud-Infrastruktur stellt die Staging-Umgebung umfassende Tests und Validierungen in einer Umgebung sicher, die die Produktionsumgebung widerspiegeln kann. Diese Umgebung ermöglicht es Ihnen, Fehler sicher zu identifizieren und zu beheben und gleichzeitig sicherzustellen, dass alle neuen Funktionen oder Änderungen nahtlos integriert sind, bevor sie sich auf Ihre Live-Site auswirken.
+In der Adobe Commerce Cloud-Infrastruktur stellt die Staging-Umgebung umfassende Tests und Validierungen in einer Umgebung sicher, die der Produktionsumgebung entspricht. In dieser Umgebung können Sie Fehler sicher identifizieren und beheben und gleichzeitig sicherstellen, dass alle neuen Funktionen oder Änderungen nahtlos integriert werden, bevor sie sich auf Ihre Live-Site auswirken.
 
-Einige Projekte erfordern einen komplexeren Entwicklungs-Workflow. Um dies zu unterstützen, bietet Adobe eine zusätzliche Staging-Umgebung als Add-On-Option für Ihre Cloud-Infrastruktur. Zwei Staging-Umgebungen sind von Vorteil für komplexe Projekte und die gleichzeitige Teamzusammenarbeit.
+Einige Projekte erfordern einen komplexeren Entwicklungs-Workflow. Um diese Anforderung zu erfüllen, bietet Adobe eine zusätzliche Staging-Umgebung als Add-on-Option für Ihre Cloud-Infrastruktur. Zwei Staging-Umgebungen sind für komplexe Projekte und die gleichzeitige Zusammenarbeit zwischen Teams von Vorteil.
 
 Eine sekundäre Staging-Umgebung bietet die folgenden Vorteile:
 
-- **Parallel-Tests**: Mit zwei Staging-Umgebungen können Teams neue Funktionen und wichtige Aktualisierungen gleichzeitig testen, ohne die Entwicklung der jeweils anderen zu beeinträchtigen. Sie können beispielsweise eine Umgebung den Funktionstests zuweisen und gleichzeitig die andere Umgebung für Leistungs- und Stresstests reservieren.
+- **Paralleles Testen**: Mit zwei Staging-Umgebungen können Teams neue Funktionen und wichtige Updates gleichzeitig testen, ohne sich gegenseitig in der Entwicklung zu behindern. Beispielsweise können Sie eine Umgebung für Funktionstests reservieren, während Sie die andere Umgebung für Leistungs- und Belastungstests reservieren.
 
-- **Isolierung der Probleme**: Wenn in der primären Staging-Umgebung Fehler oder Probleme auftreten, können Sie diese in der sekundären Umgebung replizieren und diagnostizieren, ohne den Testfortschritt zu stoppen. Dadurch wird sichergestellt, dass die Fehlerbehebung laufende Tests nicht beeinträchtigt.
+- **Isolierung von Problemen**: Wenn Fehler oder Probleme in der primären Staging-Umgebung auftreten, können Sie diese in der sekundären Umgebung replizieren und diagnostizieren, ohne den Testfortschritt zu stoppen. Dadurch wird sichergestellt, dass laufende Tests nicht durch die Fehlerbehebung beeinträchtigt werden.
 
-- **Versionskontrolle**: Verwaltung verschiedener Versionen Ihrer Anwendung effizienter. Die primäre Staging-Umgebung kann den neuesten stabilen Build ausführen, während die sekundären Tests experimentelle Funktionen bieten. Dies hilft Ihnen, Release-Zyklen besser zu verwalten und sicherzustellen, dass experimentelle Änderungen keine stabilen Builds stören.
+- **Versionskontrolle**: Verschiedene Versionen der Anwendung können effektiver verwaltet werden. In der primären Staging-Umgebung kann der neueste stabile Build ausgeführt werden, während die sekundären Testfunktionen aufweisen. Dadurch können Sie Versionszyklen besser verwalten und sicherstellen, dass experimentelle Änderungen stabile Builds nicht stören.
 
-- **Verbesserte Rollout-Planung**: Sie können verschiedene Bereitstellungsszenarien simulieren. Die primäre Staging-Umgebung kann die aktuelle Produktionseinrichtung nachahmen, während die sekundäre Umgebung für den Test bevorstehender Versionen konfiguriert werden kann.
+- **Erweiterte Rollout-Planung** Sie können verschiedene Bereitstellungsszenarien simulieren. Die primäre Staging-Umgebung kann die aktuelle Produktionseinrichtung nachahmen, während die sekundäre Umgebung zum Testen kommender Versionen konfiguriert werden kann.
 
-- **Benutzerakzeptanztests (UAT)**: Bei Verwendung der primären Umgebung für die fortlaufende Entwicklung können Sie UAT eine sekundäre Umgebung zuweisen. Dadurch können Benutzer oder Kunden neue Funktionen in einer kontrollierten Umgebung testen und Feedback dazu geben, ohne dass dies Auswirkungen auf Tests hat.
+- **User Acceptance Testing (UAT)**: Wenn Sie die primäre Umgebung für die laufende Entwicklung verwenden, können Sie der UAT eine sekundäre Umgebung zuweisen. Auf diese Weise können Benutzer oder Clients in einem kontrollierten Umfeld Tests durchführen und Feedback zu neuen Funktionen geben, ohne dass Tests betroffen sind.
 
-- **Regressionstests**: Sie können eine Umgebung für nach vorne gerichtete Tests und die andere für Regressionstests verwenden, um sicherzustellen, dass neue Änderungen die vorhandene Funktionalität nicht beeinträchtigen.
+- **Regressionstests**: Sie können eine Umgebung für Tests in die Zukunft und die andere für Regressionstests verwenden, um sicherzustellen, dass neue Änderungen die vorhandenen Funktionen nicht beeinträchtigen.
 
-- **Schulungen und Demonstrationen**: Verwenden Sie eine Umgebung zum Trainieren neuer Teammitglieder oder zum Demonstrieren neuer Funktionen für Stakeholder. Dadurch wird sichergestellt, dass Schulungsaktivitäten Tests nicht unterbrechen.
+- **Schulung und Demonstrationen**: Verwenden Sie eine Umgebung, um neue Team-Mitglieder zu schulen oder neue Funktionen für Stakeholder zu demonstrieren. Dadurch wird sichergestellt, dass Tests durch Trainingsaktivitäten nicht unterbrochen werden.
 
-- **Einrichtung privater Links**: Master- und Integrationsumgebungen unterstützen keine Einrichtung privater Links. Wenn Ihr Entwicklungs-Workflow zusätzliche Umgebungen erfordert, die über Private Link für Entwicklung, Tests oder einen anderen Zweck verbunden werden, sollten Sie erwägen, eine zusätzliche Staging-Umgebung hinzuzufügen.
+- **Einrichtung privater Links**: Master- und Integrationsumgebungen unterstützen nicht die Einrichtung privater Links. Wenn Ihr Entwicklungs-Workflow zusätzliche Umgebungen erfordert, die über einen privaten Link für Entwicklung, Tests oder einen anderen Zweck verbunden sind, sollten Sie das Hinzufügen einer zusätzlichen Staging-Umgebung erwägen.
 
-Durch die Verwendung von zwei Staging-Umgebungen können Sie die Workflow-Effizienz, das Risikomanagement und die Gesamtqualität Ihrer Anwendung erheblich verbessern. Diese Umgebungen bieten Sicherheit und Flexibilität, die eine Staging-Umgebung nicht bieten könnte.
+Mit zwei Staging-Umgebungen können Sie die Effizienz Ihres Workflows, das Risikomanagement und die Gesamtqualität Ihrer Anwendung erheblich verbessern. Diese Umgebungen bieten Sicherheit und Flexibilität, die eine Staging-Umgebung nicht bieten könnte.
 
 >[!NOTE]
 >
->Dieses Setup ist ein Add-on. Kunden, die eine sekundäre Umgebung wünschen, müssen sich an ihren Vertriebsmitarbeiter wenden, um eine anzufordern. Der Vertriebsmitarbeiter kann Informationen zu Preisen und Bereitstellungsprozess bereitstellen.
+>Dieses Setup ist ein Add-on. Kunden, die eine sekundäre Umgebung wünschen, müssen sich an ihren Vertriebsmitarbeiter wenden, um eine solche Umgebung anzufordern. Der Vertriebsmitarbeiter kann Informationen über Preise und den Bereitstellungsprozess bereitstellen.
 
-Wenn Ihr Projekt bereits über eine zusätzliche Staging-Umgebung verfügt oder Sie erwägen, Ihr aktuelles Projekt zu aktualisieren, beachten Sie die folgenden Bereitstellungszeitpläne und -aufgaben:
+Wenn Ihr Projekt bereits über eine zusätzliche Staging-Umgebung verfügt oder Sie ein Upgrade Ihres aktuellen Projekts in Betracht ziehen, sollten Sie die folgenden Bereitstellungszeitpläne und Zuständigkeiten berücksichtigen:
 
 - Der Bereitstellungsprozess kann bis zu zwei Wochen dauern, nachdem Sie die Anfrage bei Ihrem Adobe-Vertriebsmitarbeiter bestätigt haben.
 
-- Neue Staging-Umgebungen sind nur in derselben Region wie Ihre aktuellen Staging- und Produktionsumgebungen verfügbar.
+- Neue Staging-Umgebungen sind nur in derselben Region verfügbar wie Ihre aktuellen Staging- und Produktionsumgebungen.
 
-- Sie müssen entweder Ihre Integrations- oder Master-Umgebung aktualisieren und angeben, auf welcher Umgebung Ihre sekundäre Staging-Umgebung basieren soll. Die sekundäre Staging-Umgebung kann nicht aus der Staging- oder Produktionsumgebung kopiert werden.
+- Sie müssen entweder Ihre Integrations- oder die Master-Umgebung aktualisieren und angeben, auf welchen Ihrer Umgebungen Ihre sekundäre Staging-Umgebung basieren wird. Die sekundäre Staging-Umgebung kann nicht aus der Staging- oder Produktionsumgebung kopiert werden.
 
-- Nachdem Sie Ihre neue Staging-Umgebung erhalten haben, können Sie sie in Ihren Entwicklungsfluss einbeziehen. Wie bei anderen Umgebungen sind auch Code- und Datenbankaktualisierungen in Ihrer Verantwortung.
+- Nachdem Sie Ihre neue Staging-Umgebung erhalten haben, können Sie sie in Ihren Entwicklungsablauf einbeziehen. Wie bei anderen Umgebungen liegt die Verantwortung bei Code- und Datenbankaktualisierungen.
 
-## Anfordern der Umgebung
+## Umgebung anfordern
 
-Gehen Sie wie folgt vor, um Ihre Anfrage zu erleichtern:
+Gehen Sie wie folgt vor, um Ihre Anfrage zu vereinfachen:
 
 1. Aktualisieren Sie Ihre Verzweigung.
 
-   Aktualisieren Sie Ihre Integration- oder Masterverzweigung mit dem Code und der Datenbank, die Sie für die neue Umgebung verwenden möchten.
+   Aktualisieren Sie Ihre Integrations- oder Master-Verzweigung mit dem Code und der Datenbank, die Sie für die neue Umgebung verwenden möchten.
 
 1. Wenden Sie sich an Ihren Vertriebsmitarbeiter.
 
-   Wenden Sie sich an Ihren Adobe Sales-Support-Mitarbeiter und stellen Sie ihm die spezifische Verzweigung zur Verfügung, die Sie als Grundlage für Ihre neue Staging-Umgebung (Integration oder Master) verwenden möchten.
+   Wenden Sie sich an Ihren Adobe-Vertriebsmitarbeiter und geben Sie ihm die spezifische Verzweigung an, die Sie als Grundlage für Ihre neue Staging-Umgebung (Integration oder Master) verwenden möchten.
 
-1. Bestätigen Sie die Details.
+1. Details bestätigen.
 
-   Nachdem Sie die Details mit Ihrem Vertriebsmitarbeiter bestätigt haben, warten Sie auf die Bestätigung, dass die Bereitstellungsanfrage empfangen wurde und verarbeitet wird. Wenn der Bereitstellungsprozess abgeschlossen ist, sendet Ihnen das Adobe-Team eine Bestätigung.
+   Warten Sie nach der Bestätigung der Details bei Ihrem Vertriebsmitarbeiter auf die Bestätigung, dass die Bereitstellungsanfrage empfangen wurde und verarbeitet wird. Wenn der Bereitstellungsprozess abgeschlossen ist, sendet Ihnen das Adobe-Team eine Bestätigung.
 
 1. Stellen Sie in Ihrer neuen Umgebung bereit.
 
-   Führen Sie die [standardmäßigen Bereitstellungsschritte](../deploy/staging-production.md) aus, um Ihren Code und Ihre Datenbank in der neuen Staging-Umgebung bereitzustellen.
+   Befolgen Sie die [Standardbereitstellungsschritte](../deploy/staging-production.md), um Ihren Code und Ihre Datenbank in der neuen Staging-Umgebung bereitzustellen.

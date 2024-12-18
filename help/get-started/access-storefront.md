@@ -1,5 +1,5 @@
 ---
-title: Zugriff auf Ihr Commerce Admin-Bedienfeld
+title: Zugriff auf das Commerce Admin Panel
 description: Erfahren Sie, wie Sie auf Ihr Commerce Admin-Bedienfeld zugreifen können.
 recommendations: noDisplay, catalog
 exl-id: 9a8a0a49-b108-48bd-b413-ec9431370c06
@@ -10,24 +10,24 @@ ht-degree: 0%
 
 ---
 
-# Zugriff auf Ihr Commerce Admin-Bedienfeld
+# Zugriff auf das Commerce Admin Panel
 
-Benutzer, die über Administratorzugriff auf das Commerce Admin-Bedienfeld verfügen, können Benutzer hinzufügen, Store-Dienste konfigurieren, die Einrichtung von Stores und die Anpassung abschließen und vieles mehr.
+Benutzende mit administrativem Zugriff auf das Commerce-Admin-Bedienfeld können Benutzende hinzufügen, Store-Services konfigurieren, die Einrichtung und Anpassung von Stores abschließen und vieles mehr.
 
-Bei einem neuen Projekt besteht der erste Schritt nach Erhalt der Begrüßungs-E-Mail darin, den Administratorzugriff auf das Projekt zu sichern, indem das Kennwort im Lizenzeigentümer-Konto geändert wird. Der Standardbenutzername für dieses Konto ist die E-Mail-Adresse des Lizenzinhabers.
+Bei einem neuen Projekt besteht der erste Schritt nach Erhalt der Begrüßungs-E-Mail darin, den Admin-Zugriff auf das Projekt zu sichern, indem das Passwort im Konto Lizenzinhaber geändert wird. Der Standardbenutzername für dieses Konto ist die E-Mail-Adresse des Lizenzinhabers.
 
-Sie können eine Kennwortänderungsanforderung mit einer der folgenden Methoden senden:
+Sie können eine Kennwortänderungsanfrage mit einer der folgenden Methoden senden:
 
-- Suchen Sie die Begrüßungs-E-Mail, die an die E-Mail-Adresse des Lizenzinhabers gesendet wird, folgen Sie dem Link und ändern Sie Ihr Kennwort.
+- Suchen Sie die Begrüßungs-E-Mail, die an die E-Mail-Adresse des Lizenzinhabers gesendet wurde, und folgen Sie dem Link, um Ihr Kennwort zu ändern.
 
-- Kopieren Sie die Store-URL von der [[!DNL Cloud Console]](../cloud-guide/project/overview.md) in einen Browser. Hängen Sie dann `/admin` an das Ende der URL an, um die Anmeldeseite zu öffnen. Klicken Sie auf **Kennwort vergessen?** -Link, um eine Anfrage zur Passwortänderung an die E-Mail-Adresse des Lizenzinhabers zu senden.
+- Kopieren Sie die Store-URL aus dem [[!DNL Cloud Console]](../cloud-guide/project/overview.md) in einen Browser. Hängen Sie dann `/admin` an das Ende der URL an, um die Anmeldeseite zu öffnen. Klicken Sie auf **Kennwort vergessen?** Link zum Senden einer Anforderung zur Passwortänderung an die E-Mail-Adresse des Lizenzinhabers.
 
-Nachdem Sie die Kennwortänderungsanforderung gesendet haben, überprüfen Sie Ihre E-Mail auf die Benachrichtigung zum Zurücksetzen des Kennworts. Wenn Sie die E-Mail nicht erhalten, überprüfen Sie Ihren Spam-Ordner.
+Nachdem Sie die Kennwortänderungsanfrage gesendet haben, überprüfen Sie Ihre E-Mail auf die Benachrichtigung zum Zurücksetzen des Kennworts. Wenn Sie die E-Mail nicht erhalten, überprüfen Sie Ihren Spam-Ordner.
 
 >[!TIP]
 >
->Wenn das Zurücksetzen des Kennworts fehlschlägt oder Sie sich nicht im Admin-Bedienfeld anmelden können, kann ein Benutzer mit Administratorzugriff über SSH eine Verbindung zum Projekt herstellen und mithilfe des Befehls `admin:user:create` CLI einen Admin-Benutzer hinzufügen. Siehe [Erstellen, Bearbeiten oder Entsperren eines Administratorkontos](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/admin.html) im _Installationshandbuch_.
+>Wenn das Zurücksetzen des Kennworts fehlschlägt oder Sie sich nicht beim Admin-Bedienfeld anmelden können, kann ein Benutzer mit Administratorzugriff mithilfe von SSH eine Verbindung zum Projekt herstellen und mithilfe des `admin:user:create` CLI-Befehls einen Admin-Benutzer hinzufügen. Siehe [Erstellen, Bearbeiten oder Entsperren eines Administratorkontos](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/admin.html) im _Installationshandbuch_.
 
-## Überwachen des Site-Zustands
+## Überwachen des Site-Status
 
-Das [Site-weite Analyse-Tool](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/intro) ist ein proaktives Self-Service-Tool und zentrales Repository, das detaillierte Systemeinblicke und Empfehlungen enthält, um die Sicherheit und Bedienbarkeit Ihrer Adobe Commerce-Installation sicherzustellen. Es bietet rund um die Uhr eine Leistungsüberwachung, Berichte und Beratung in Echtzeit, um potenzielle Probleme zu identifizieren und bessere Sichtbarkeit in Bezug auf Gesundheit, Sicherheit und Anwendungskonfigurationen der Website zu erreichen. Dies trägt zur Verkürzung der Auflösungszeit und zur Verbesserung der Site-Stabilität und -Leistung bei. Sie können auf das Site-weite Analyse-Tool direkt über das [Admin-Bedienfeld](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-2-logging-in-to-your-site-wide-analysis-tool-dashboard-from-your-stores-admin-panel) oder über die [dedizierte Domäne](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-1-logging-in-to-your-site-wide-analysis-tool-dashboard-directly-from-the-site-wide-analysis-tool-domain-for-adobe-commerce-on-cloud-infrastructure-only) zugreifen (Adobe Commerce nur bei Cloud-Infrastrukturprojekten).
+Das [Site-Wide Analysis Tool](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/intro) ist ein proaktives Self-Service-Tool und ein zentrales Repository, das detaillierte Systemeinblicke und Empfehlungen bietet, um die Sicherheit und Bedienbarkeit Ihrer Adobe Commerce-Installation sicherzustellen. Sie bietet rund um die Uhr eine Echtzeit-Leistungsüberwachung, Berichte und Beratung, um potenzielle Probleme zu identifizieren und den Site-Status, die Sicherheit und Anwendungskonfigurationen besser einsehen zu können. Dies trägt dazu bei, die Auflösungszeit zu reduzieren und die Stabilität und Leistung der Site zu verbessern. Sie können auf das Site-Wide Analysis Tool direkt über das [Admin-Bedienfeld](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-2-logging-in-to-your-site-wide-analysis-tool-dashboard-from-your-stores-admin-panel) oder über die [dedizierte Domain](https://experienceleague.adobe.com/en/docs/commerce-operations/tools/site-wide-analysis-tool/access#option-1-logging-in-to-your-site-wide-analysis-tool-dashboard-directly-from-the-site-wide-analysis-tool-domain-for-adobe-commerce-on-cloud-infrastructure-only) zugreifen (nur Adobe Commerce für Cloud-Infrastrukturprojekte).

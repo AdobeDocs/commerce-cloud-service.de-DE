@@ -1,6 +1,6 @@
 ---
-title: Webeigenschaft
-description: Siehe Beispiele zum Konfigurieren der Webeigenschaft in der Konfigurationsdatei der [!DNL Commerce] Anwendung.
+title: Web-Eigenschaft
+description: Siehe Beispiele zum Konfigurieren der Web-Eigenschaft in der Konfigurationsdatei  [!DNL Commerce] .application.
 feature: Cloud, Configuration
 exl-id: 2ca94908-6fe1-42fd-bc3b-ef2dd473f1bb
 source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
@@ -10,9 +10,9 @@ ht-degree: 0%
 
 ---
 
-# Webeigenschaft
+# Web-Eigenschaft
 
-Die `web` -Eigenschaft definiert, wie Ihre Anwendung dem Web bereitgestellt wird (in HTTP), bestimmt, wie die Webanwendung Inhalte bereitstellt, und steuert, wie der Anwendungscontainer auf eingehende Anforderungen reagiert, indem Regeln an jedem Ort festgelegt werden _block_. Ein Block stellt einen absoluten Pfad dar, der mit einem Schrägstrich (`/`) führt.
+Die `web`-Eigenschaft definiert, wie Ihre Anwendung im Web (in HTTP) verfügbar gemacht wird, bestimmt, wie die Webanwendung Inhalte bereitstellt, und steuert, wie der Anwendungs-Container auf eingehende Anfragen reagiert, indem Regeln für jeden Speicherort (_)_. Ein Block stellt einen absoluten Pfad dar, der mit einem Schrägstrich (`/`) beginnt.
 
 ```yaml
 web:
@@ -21,25 +21,25 @@ web:
             # The public directory of the app, relative to its root.
 ```
 
-Sie können Ihre `locations` -Konfiguration mithilfe der folgenden Schlüsselwerte für jeden `locations` -Block anpassen:
+Sie können Ihre `locations` mithilfe der folgenden Schlüsselwerte für jeden `locations` anpassen:
 
 | Attribut | Beschreibung |
 | :--- | :--- |
-| `allow` | Bereitstellen von Dateien, die nicht mit den &quot;Regeln&quot;übereinstimmen. Standardwert = `true` |
-| `expires` | Legen Sie die Anzahl der Sekunden fest, um Inhalte im Browser zwischenzuspeichern. Dieser Schlüssel aktiviert die Header `cache-control` und `expires` für statischen Inhalt. Wenn dieser Wert nicht festgelegt ist, werden die Anweisung `expires` und die resultierenden Kopfzeilen bei der Bereitstellung statischer Inhaltsdateien nicht einbezogen. Ein negativer 1-Wert (`-1`) führt zu keiner Zwischenspeicherung und ist der Standardwert. Sie können den Zeitwert mit den folgenden Einheiten ausdrücken: `ms` (Millisekunden), `s` (Sekunden), `m` (Minuten), `h` (Stunden), `d` (Tage), `w` (Wochen), `M` (Monate, 30d) oder `y` (Jahre, 365d) |
-| `headers` | Legen Sie benutzerdefinierte Header wie `X-Frame-Options` für statischen Inhalt fest, der von diesem Speicherort bereitgestellt wird. |
-| `index` | Geben Sie die statischen Dateien an, die für Ihre Anwendung bereitgestellt werden sollen, z. B. die Datei &quot;`index.html`&quot;. Dieser Schlüssel erwartet eine Sammlung. Dies funktioniert nur, wenn der Zugriff auf die Datei(en) durch den Schlüssel `allow` oder `rules` für diesen Speicherort &quot;erlaubt&quot;ist. |
-| `rules` | Legen Sie Überschreibungen für einen Ort fest. Verwenden Sie einen regulären Ausdruck, um eine Anforderung abzugleichen. Wenn eine eingehende Anfrage mit der Regel übereinstimmt, wird die regelmäßige Verarbeitung der Anfrage durch die in der Regel verwendeten Schlüssel überschrieben. |
-| `passthru` | Legen Sie die URL fest, die verwendet wird, falls keine statische Datei oder PHP-Datei gefunden werden kann. In der Regel ist diese URL der erste Controller für Ihre Anwendungen, z. B. `/index.php` oder `/app.php`. |
-| `root` | Legen Sie den Pfad relativ zum Stammverzeichnis der Anwendung fest, die im Internet verfügbar gemacht wird. Das öffentliche Verzeichnis (Speicherort &quot;/&quot;) für ein Cloud-Projekt ist standardmäßig auf &quot;pub&quot;festgelegt. |
-| `scripts` | Laden von Skripten an diesem Speicherort zulassen. Setzen Sie den Wert auf `true` , um Skripte zuzulassen. |
+| `allow` | Bereitstellung von Dateien, die nicht den „Regeln“ entsprechen. Standardwert = `true` |
+| `expires` | Legen Sie die Anzahl der Sekunden fest, die Inhalte im Browser zwischengespeichert werden. Dieser Schlüssel aktiviert die `cache-control`- und `expires`-Kopfzeilen für statische Inhalte. Wenn dieser Wert nicht festgelegt ist, werden die `expires`-Anweisung und die resultierenden Kopfzeilen bei der Bereitstellung statischer Inhaltsdateien nicht einbezogen. Ein negativer 1 (`-1`)-Wert führt zu keiner Zwischenspeicherung und ist der Standardwert. Sie können Zeitwerte mit den folgenden Einheiten ausdrücken: `ms` (Millisekunden), `s` (Sekunden), `m` (Minuten), `h` (Stunden), `d` (Tage), `w` (Wochen), `M` (Monate, 30d) oder `y` (Jahre, 365d) |
+| `headers` | Legen Sie benutzerdefinierte Kopfzeilen wie `X-Frame-Options` für statische Inhalte fest, die von diesem Speicherort bereitgestellt werden. |
+| `index` | Listen Sie die statischen Dateien auf, die für Ihr Programm bereitgestellt werden sollen, z. B. die `index.html`. Dieser Schlüssel erwartet eine Sammlung. Dies funktioniert nur, wenn der Zugriff auf die Datei(en) durch den `allow` oder `rules` Schlüssel für diesen Speicherort „erlaubt“ wird. |
+| `rules` | Überschreibungen für einen Speicherort angeben. Verwenden Sie einen regulären Ausdruck, um eine Anfrage abzugleichen. Wenn eine eingehende Anfrage mit der Regel übereinstimmt, wird die reguläre Verarbeitung der Anfrage durch die in der Regel verwendeten Schlüssel überschrieben. |
+| `passthru` | Legen Sie die URL fest, die verwendet wird, falls eine statische Datei oder PHP-Datei nicht gefunden werden kann. Normalerweise ist diese URL der Frontleiter für Ihre Anwendungen, z. B. `/index.php` oder `/app.php`. |
+| `root` | Legen Sie den Pfad relativ zum Stamm der Anwendung fest, die im Web verfügbar gemacht wird. Das öffentliche Verzeichnis (Speicherort &quot;/„) für ein Cloud-Projekt ist standardmäßig auf „pub“ festgelegt. |
+| `scripts` | Laden von Skripten an diesem Speicherort zulassen. Legen Sie den Wert auf `true` fest, um Skripte zuzulassen. |
 
 Die Standardkonfiguration ermöglicht Folgendes:
 
 - Vom Stammpfad (`/`) aus kann nur auf Web und Medien zugegriffen werden
-- Über die Pfade `~/pub/static` und `~/pub/media` kann auf jede Datei zugegriffen werden
+- Über die `~/pub/static`- und `~/pub/media` kann auf jede Datei zugegriffen werden
 
-Das folgende Beispiel zeigt die Standardkonfiguration in der Datei `.magento.app.yaml` für eine Reihe von Web-zugänglichen Speicherorten, die mit einem Eintrag in der Eigenschaft [`mounts` ](properties.md#mounts) verknüpft sind:
+Das folgende Beispiel zeigt die Standardkonfiguration in der Datei `.magento.app.yaml` für eine Reihe von Speicherorten, auf die über das Web zugegriffen werden kann und die mit einem Eintrag in der Eigenschaft [`mounts` verknüpft sind](properties.md#mounts):
 
 ```yaml
  # The configuration of app when it is exposed to the web.
@@ -79,4 +79,4 @@ web:
 
 >[!NOTE]
 >
->Dieses Beispiel zeigt die standardmäßige Webkonfiguration für ein Cloud-Projekt, das für die Unterstützung einer einzelnen Domäne konfiguriert ist. Für ein Projekt, das Unterstützung für mehrere Websites oder Stores erfordert, muss die Konfiguration `web` so eingerichtet sein, dass freigegebene Domänen unterstützt werden. Siehe [Speicherorte für freigegebene Domänen konfigurieren](../store/multiple-sites.md#configure-locations-for-shared-domains).
+>Dieses Beispiel zeigt die standardmäßige Web-Konfiguration für ein Cloud-Projekt, das für die Unterstützung einer einzelnen Domain konfiguriert ist. Bei einem Projekt, das die Unterstützung mehrerer Websites oder Stores erfordert, muss die `web` so eingerichtet sein, dass freigegebene Domains unterstützt werden. Siehe [Konfigurieren von Speicherorten für freigegebene Domains](../store/multiple-sites.md#configure-locations-for-shared-domains).

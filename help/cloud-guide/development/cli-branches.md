@@ -1,5 +1,5 @@
 ---
-title: Verwalten von Zweigen mit der CLI
+title: Verwalten von Verzweigungen mit der CLI
 description: Erfahren Sie, wie Sie die Umgebungsverzweigungen für Adobe Commerce in der Cloud-Infrastruktur mithilfe der Cloud-CLI verwalten.
 role: Developer
 feature: Cloud, Install
@@ -11,37 +11,37 @@ ht-degree: 0%
 
 ---
 
-# Verwalten von Zweigen mit der CLI
+# Verwalten von Verzweigungen mit der CLI
 
-Informationen zum Installieren der `magento-cloud`-CLI finden Sie in der [Cloud-CLI-Referenz](../dev-tools/cloud-cli-overview.md). Nachdem Sie die `magento-cloud` -CLI installiert und SSH-Schlüssel für den Remote-Zugriff auf Ihre Cloud-Infrastruktur eingerichtet haben, können Sie die Umgebungen für Ihre Projekte mit `magento-cloud` -CLI-Befehlen verwalten. Informationen zur Umgebungsarchitektur finden Sie unter [Starter Architecture](../architecture/starter-architecture.md) oder [Pro Architecture](../architecture/pro-architecture.md).
+Informationen zur Installation der `magento-cloud` CLI finden Sie in der [Cloud CLI-Referenz](../dev-tools/cloud-cli-overview.md). Nachdem Sie die `magento-cloud` CLI installiert und SSH-Schlüssel für den Remote-Zugriff auf Ihre Cloud-Infrastruktur eingerichtet haben, können Sie `magento-cloud` CLI-Befehle verwenden, um die Umgebungen für Ihre Projekte zu verwalten. Informationen zur Umgebungsarchitektur finden Sie unter [Starter-Architektur](../architecture/starter-architecture.md) oder [Pro-Architektur](../architecture/pro-architecture.md).
 
-Informationen zum Verwalten der Verzweigungen und Umgebungen mit dem [!DNL Cloud Console] finden Sie unter [Verwalten von Verzweigungen mit dem  [!DNL Cloud Console]](../project/console-branches.md).
+Informationen zum Verwalten der Verzweigungen und Umgebungen mit der [!DNL Cloud Console] finden Sie unter [Verwalten von Verzweigungen mit der [!DNL Cloud Console]](../project/console-branches.md).
 
 ## CLI-Befehle verwenden
 
-Die `magento-cloud` CLI-Befehle ähneln den Git-Befehlen. Sie können sie verwenden, um eine Verbindung zu Ihrem Projekt herzustellen und Ihre Umgebungen zu verwalten. Sie können die Befehle zwar aus einem beliebigen Verzeichnis ausführen, es wird jedoch empfohlen, sie in einem Projektverzeichnis auszuführen. Wenn Sie von einem Projektverzeichnis aus ausgeführt werden, können Sie den Parameter `-p <project-ID>` auslassen. Siehe [Cloud-CLI-Referenz](../dev-tools/cloud-cli-overview.md).
+Die `magento-cloud` CLI-Befehle ähneln den Git-Befehlen. Sie können sie verwenden, um eine Verbindung zu Ihrem Projekt herzustellen und Ihre Umgebungen zu verwalten. Obwohl Sie die Befehle in jedem Verzeichnis ausführen können, wird empfohlen, sie in einem Projektverzeichnis auszuführen. Bei der Ausführung in einem Projektverzeichnis können Sie den `-p <project-ID>` Parameter weglassen. Siehe die [Cloud-CLI-Referenz](../dev-tools/cloud-cli-overview.md).
 
-## Projekt klonen
+## Klonen des Projekts
 
-Die folgenden Anweisungen verwenden eine Kombination aus `magento-cloud` CLI-Befehlen und Git-Befehlen, um Ihr Projekt auf Ihrer lokalen Workstation zu klonen. Verwenden Sie den Befehl `magento-cloud list` , um eine vollständige Liste der Befehle von `magento-cloud` CLI anzuzeigen.
+Die folgenden Anweisungen verwenden eine Kombination aus `magento-cloud` CLI- und Git-Befehlen, um Ihr Projekt auf Ihrer lokalen Workstation zu klonen. Um eine vollständige Liste der `magento-cloud` CLI-Befehle anzuzeigen, verwenden Sie den `magento-cloud list`.
 
 >[!IMPORTANT]
 >
->Einige Git-Befehle können keine Aktion in Ihrem Adobe Commerce-Projekt zur Cloud-Infrastruktur durchführen. Sie können beispielsweise eine Verzweigung mithilfe eines Git-Befehls erstellen, eine neue Umgebung jedoch nicht erstellen und aktivieren. Sie müssen eine Umgebung mit dem Befehl `magento-cloud environment:branch <branch-name>` erstellen, damit die Umgebung _aktiv_ wird. Alternativ können Sie die [!DNL Cloud Console] verwenden, um aktive Umgebungen zu erstellen. Siehe [Cloud-CLI-Referenz](../dev-tools/cloud-cli-overview.md#git-commands).
+>Einige Git-Befehle können eine Aktion in Ihrem Adobe Commerce in einem Cloud-Infrastrukturprojekt nicht abschließen. Sie können beispielsweise eine Verzweigung mit einem Git-Befehl erstellen, aber keine neue Umgebung erstellen und aktivieren. Sie müssen mit dem Befehl `magento-cloud environment:branch <branch-name>` eine Umgebung erstellen, damit die Umgebung _aktiv_ wird. Alternativ können Sie die [!DNL Cloud Console] verwenden, um aktive Umgebungen zu erstellen. Siehe [Cloud-CLI-Referenz](../dev-tools/cloud-cli-overview.md#git-commands).
 
-**So klonen Sie ein Projekt `master` environment**:
+**So klonen Sie ein Projekt `master` eine Umgebung**:
 
-1. Melden Sie sich mit einem [Dateisysteminhaber](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) -Konto bei Ihrer lokalen Workstation an.
+1. Melden Sie sich bei Ihrer lokalen Workstation mit einem Konto [Dateisystemeigentümer](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/file-system/configure-permissions.html) an.
 
-1. Wechseln Sie zum Ordner &quot;_docroot_&quot;des Webservers oder virtuellen Hosts.
+1. Wechseln Sie zum Verzeichnis Webserver oder virtueller Host _docroot_.
 
-1. Melden Sie sich mit der CLI `magento-cloud` an.
+1. Melden Sie sich über die `magento-cloud` CLI an.
 
    ```bash
    magento-cloud login
    ```
 
-1. Geben Sie Ihre Projekte an.
+1. Auflisten der Projekte
 
    ```bash
    magento-cloud project:list
@@ -53,11 +53,11 @@ Die folgenden Anweisungen verwenden eine Kombination aus `magento-cloud` CLI-Bef
    magento-cloud project:get <project-ID>
    ```
 
-   Geben Sie bei Aufforderung einen Ordnernamen an.
+   Geben Sie bei Aufforderung einen Verzeichnisnamen an.
 
-1. Wechseln Sie zum Ordner &quot;`magento2`&quot;.
+1. Wechseln Sie in das Verzeichnis `magento2` .
 
-1. Liste der verfügbaren Umgebungen für das Projekt.
+1. Auflisten der für das Projekt verfügbaren Umgebungen.
 
    ```bash
    magento-cloud environment:list
@@ -67,7 +67,7 @@ Die folgenden Anweisungen verwenden eine Kombination aus `magento-cloud` CLI-Bef
    >
    >Der Befehl `magento-cloud environment:list` zeigt Umgebungshierarchien an, der Befehl `git branch` dagegen nicht.
 
-1. Rufen Sie die Remote-Zweige ab.
+1. Rufen Sie die Remote-Verzweigungen ab.
 
    ```bash
    git fetch origin
@@ -81,18 +81,18 @@ Die folgenden Anweisungen verwenden eine Kombination aus `magento-cloud` CLI-Bef
 
 >[!TIP]
 >
->Informationen zur Verwendung von Git-basierten Hosting-Diensten mit Adobe Commerce in der Cloud-Infrastruktur finden Sie unter [Integrationen](../integrations/overview.md) .
+>Unter [Integrationen](../integrations/overview.md) finden Sie Informationen zur Verwendung von Git-basierten Hosting-Services mit Adobe Commerce in der Cloud-Infrastruktur.
 
 ## Erstellen einer Verzweigung für die Entwicklung
 
-Nachdem Sie Ihr Projekt geklont und die Konfiguration des Adobe Commerce-Administratorkontos aktualisiert haben, können Sie zur Entwicklung verzweigen. Wie bereits erwähnt, müssen Sie eine Umgebung mit dem Befehl `magento-cloud environment:branch <branch-name>` oder dem Befehl [!DNL Cloud Console] erstellen, damit die Umgebung _aktiv_ wird.
+Nachdem Sie Ihr Projekt geklont und die Konfiguration des Adobe Commerce-Administratorkontos aktualisiert haben, können Sie eine Verzweigung für die Entwicklung erstellen. Wie bereits erwähnt, müssen Sie eine Umgebung mit dem Befehl `magento-cloud environment:branch <branch-name>` oder dem [!DNL Cloud Console] erstellen, damit die Umgebung _aktiv_ wird.
 
-- Für [Starter](../architecture/starter-develop-deploy-workflow.md#clone-and-branch) sollten Sie eine Verzweigung für `staging` erstellen und dann eine Entwicklungsverzweigung erstellen, die auf der Verzweigung `staging` basiert.
-- Erstellen Sie für [Pro](../architecture/pro-develop-deploy-workflow.md#development-workflow) Entwicklungszweige basierend auf der `Integration` -Verzweigung.
+- Erwägen [ zunächst](../architecture/starter-develop-deploy-workflow.md#clone-and-branch) eine Verzweigung für `staging` zu erstellen und dann eine Entwicklungsverzweigung basierend auf der `staging` Verzweigung zu erstellen.
+- Erstellen Sie für [Pro](../architecture/pro-develop-deploy-workflow.md#development-workflow) Entwicklungsverzweigungen basierend auf der `Integration`.
 
-**So erstellen Sie einen Entwicklungszweig**:
+**So erstellen Sie eine**:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
+1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
 
 1. Erstellen Sie eine Umgebung basierend auf der für Ihren Projekt-Workflow empfohlenen Verzweigung.
 
@@ -106,13 +106,13 @@ Nachdem Sie Ihr Projekt geklont und die Konfiguration des Adobe Commerce-Adminis
    composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
    ```
 
-1. [_optional_] Erstellen Sie eine [Sicherung](../storage/snapshots.md) der Umgebung.
+1. [_optional_] Erstellen [Sicherung](../storage/snapshots.md) der Umgebung.
 
 ### Zusammenführen einer Verzweigung
 
-Führen Sie nach Abschluss der Entwicklung diesen Zweig mit dem übergeordneten Element zusammen:
+Führen Sie nach Abschluss der Entwicklung diese Verzweigung mit dem übergeordneten Element zusammen:
 
-1. Änderungen an Zustimmungs- und Push-Code:
+1. Code-Änderungen übernehmen und übertragen:
 
    ```bash
    git add -A && git commit -m "Add message here"
@@ -122,7 +122,7 @@ Führen Sie nach Abschluss der Entwicklung diesen Zweig mit dem übergeordneten 
    git push origin <branch-name>
    ```
 
-1. Mit der übergeordneten Umgebung zusammenführen:
+1. Zusammenführen mit der übergeordneten Umgebung:
 
    ```bash
    magento-cloud environment:merge <environment-ID>
@@ -130,21 +130,21 @@ Führen Sie nach Abschluss der Entwicklung diesen Zweig mit dem übergeordneten 
 
 ### Löschen einer Umgebung
 
-Löschen Sie eine Umgebung nur, wenn Sie sicher sind, dass Sie sie nicht mehr benötigen. Eine Umgebung kann nach dem Löschen nicht mehr wiederhergestellt werden.
+Löschen Sie eine Umgebung nur, wenn Sie sicher sind, dass Sie sie nicht mehr benötigen. Eine Umgebung kann nach dem Löschen nicht wiederhergestellt werden.
 
 >[!WARNING]
 >
->Sie können den Zweig `master` eines Projekts nicht löschen.
+>Die `master` Verzweigung eines Projekts kann nicht gelöscht werden.
 
-Sie müssen ein Projekt-Administrator, ein Umgebungsadministrator oder Kontoinhaber sein, um diese Aufgabe durchführen zu können. Siehe [Verwalten des Benutzerzugriffs auf Cloud-Projekte](../project/user-access.md).
+Sie müssen Projekt-Admin, Umgebungs-Admin oder Kontoinhaber sein, um diese Aufgabe auszuführen. Siehe [Benutzerzugriff auf Cloud-Projekte verwalten](../project/user-access.md).
 
-Wenn Sie eine Umgebung löschen, wird die Umgebung auf _inactive_ gesetzt. Der Code ist weiterhin in der Git-Verzweigung verfügbar, enthält jedoch nicht mehr die Dienste oder die Datenbank. Um die Umgebung vollständig zu löschen, müssen Sie auch die entsprechende Remote-Git-Verzweigung löschen.
+Wenn Sie eine Umgebung löschen, wird für die Umgebung _inaktiv_ festgelegt. Der Code ist weiterhin in der Git-Verzweigung verfügbar, enthält jedoch nicht mehr die Services oder die Datenbank. Um die Umgebung vollständig zu löschen, müssen Sie auch die entsprechende Remote-Git-Verzweigung löschen.
 
 **Löschen einer Umgebung**:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
+1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
 
-1. Rufen Sie Aktualisierungen vom Remote-Server ab.
+1. Aktualisierungen vom Remote-Server abrufen.
 
    ```bash
    git fetch
@@ -162,14 +162,14 @@ Wenn Sie eine Umgebung löschen, wird die Umgebung auf _inactive_ gesetzt. Der C
    magento-cloud environment:delete <environment-1-ID> <environment-2-ID>
    ```
 
-1. Beantworten Sie die Anweisungen zum Löschen der lokalen Umgebung und der entsprechenden Remote-Umgebung.
+1. Reagieren Sie auf die Aufforderungen zum Löschen der lokalen Umgebung und der entsprechenden Remote-Umgebung.
 
    ```
    The environment <environment-ID> is currently active: deleting it will delete all associated data.
    Are you sure you want to delete the environment <environment-ID>? [Y/n]
    ```
 
-   Durch Löschen der Umgebung wird sie in den Status _inactive_ versetzt.
+   Wenn Sie die Umgebung löschen, wird sie in einen _Status_.
 
    ```
    Delete the remote Git branch too? [Y/n]
@@ -177,7 +177,7 @@ Wenn Sie eine Umgebung löschen, wird die Umgebung auf _inactive_ gesetzt. Der C
 
    Durch Löschen der Remote-Git-Verzweigung wird die Umgebung aus dem Projekt entfernt.
 
-1. Warten Sie, bis die Umgebung gelöscht ist.
+1. Warten Sie, bis die Umgebung gelöscht wurde.
 
    ```
    Deleting environment <environment-ID>
@@ -192,8 +192,8 @@ Wenn Sie eine Umgebung löschen, wird die Umgebung auf _inactive_ gesetzt. Der C
 
 >[!TIP]
 >
->Verwenden Sie den Befehl `magento-cloud environment:activate` , um eine inaktive Umgebung zu aktivieren.
+>Um eine inaktive Umgebung zu aktivieren, verwenden Sie den Befehl `magento-cloud environment:activate` .
 
-## Interagieren mit Remote-Umgebungen
+## Interaktion mit Remote-Umgebungen
 
-Nachdem Sie [ SSH-Schlüssel eingerichtet haben](../development/secure-connections.md), können Sie [ eine Verbindung von Ihrem lokalen Arbeitsbereich zu einer Remote-Umgebung herstellen](../development/secure-connections.md#connect-to-a-remote-environment), mit Ihren Projektdiensten interagieren und Einstellungen ändern.
+Nachdem Sie [SSH-Schlüssel eingerichtet](../development/secure-connections.md) haben, können Sie [eine Verbindung zwischen Ihrem lokalen Arbeitsbereich und einer Remote-Umgebung herstellen](../development/secure-connections.md#connect-to-a-remote-environment) mit Ihren Projekt-Services interagieren und Einstellungen ändern.

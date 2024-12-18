@@ -1,9 +1,9 @@
 ---
 title: Cache-Konfiguration anpassen
-description: Erfahren Sie, wie Sie die Cache-Konfigurationseinstellungen überprüfen und anpassen können, nachdem die Einrichtung des Fastly-Dienstes abgeschlossen ist.
+description: Erfahren Sie, wie Sie die Cache-Konfigurationseinstellungen überprüfen und anpassen können, nachdem die Fastly-Service-Einrichtung abgeschlossen ist.
 feature: Cloud, Configuration, Iaas, Cache
 exl-id: f1fc85d4-7867-4bb5-9f11-bc8d2d80383b
-source-git-commit: 8a0523f1714b6ea41887e99b5c31294cf5e5255e
+source-git-commit: adcc6b2dd7929352dedf878cd2ec3b8af7c2a35f
 workflow-type: tm+mt
 source-wordcount: '1808'
 ht-degree: 0%
@@ -12,211 +12,211 @@ ht-degree: 0%
 
 # Cache-Konfiguration anpassen
 
-Nachdem Sie den Fastly-Dienst in Ihren Staging- und Produktionsumgebungen eingerichtet und getestet haben, überprüfen und passen Sie die Cache-Konfigurationseinstellungen an. Beispielsweise können Sie Einstellungen aktualisieren, um TLS zu zwingen, HTTP-Anforderungen an Fastly umzuleiten, Bereinigungsparameter zu aktualisieren und die einfache Authentifizierung zu aktivieren, damit Ihre Site während der Entwicklung mit einem Kennwort geschützt wird.
+Nachdem Sie den Fastly-Service in Ihren Staging- und Produktionsumgebungen eingerichtet und getestet haben, überprüfen und passen Sie die Cache-Konfigurationseinstellungen an. Sie können beispielsweise die Einstellungen aktualisieren, um zu ermöglichen, dass TLS HTTP-Anfragen an Fastly umleitet, die Bereinigungseinstellungen aktualisiert und die Standardauthentifizierung aktiviert, um Ihre Site während der Entwicklung mit einem Passwort zu schützen.
 
-Die folgenden Abschnitte enthalten eine Übersicht und Anweisungen zum Konfigurieren einiger Cacheeinstellungen. Weitere Informationen zu den verfügbaren Konfigurationsoptionen finden Sie in der Dokumentation zum [Fastly CDN Module for Magento 2](https://github.com/fastly/fastly-magento2/tree/master/Documentation) .
+Die folgenden Abschnitte enthalten eine Übersicht und Anweisungen zum Konfigurieren einiger Cache-Einstellungen. Weitere Informationen zu den verfügbaren Konfigurationsoptionen finden Sie in der Dokumentation [Fastly CDN Module for Magento 2](https://github.com/fastly/fastly-magento2/tree/master/Documentation).
 
 ## TLS erzwingen
 
-Bietet die Option _TLS erzwingen_ für die Umleitung unverschlüsselter Anfragen (HTTP) an Fastly. Nachdem Ihre Staging- oder Produktionsumgebung mit einem [gültigen SSL-/TLS-Zertifikat](fastly-configuration.md#provision-ssltls-certificates) ausgestattet wurde, können Sie die Schnelle Konfiguration für Ihren Store aktualisieren, um die Option TLS erzwingen zu aktivieren. Weitere Informationen finden Sie im Handbuch zum _Fastly CDN Module for Magento 2_ im Handbuch zum Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md) .
+Fastly bietet die _Force TLS_-Option zur Weiterleitung unverschlüsselter Anfragen (HTTP) an Fastly. Nachdem Ihre Staging- oder Produktionsumgebung mit einem [gültigen SSL-/TLS-Zertifikat](fastly-configuration.md#provision-ssltls-certificates) bereitgestellt wurde, können Sie die Fastly-Konfiguration für Ihren Store aktualisieren, um die Option TLS erzwingen zu aktivieren. Siehe das Fastly [Force TLS-Handbuch](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md) in der Dokumentation _Fastly CDN Module for Magento 2_.
 
 >[!NOTE]
 >
 >Die Aktivierung der Option TLS erzwingen ist eine empfohlene Best Practice für Adobe Commerce in Cloud-Infrastrukturspeichern.
 
-## Fastly-Timeout erweitern
+## Fastly-Zeitüberschreitung verlängern
 
-Die Fastly-Dienstkonfiguration gibt für HTTPS-Anforderungen an den Administrator einen standardmäßigen Timeout-Zeitraum von 180 Sekunden an. Bei einer Anforderungsverarbeitung, die den Timeout-Zeitraum überschreitet, wird ein 503-Fehler zurückgegeben. Daher können Sie 503-Fehler erhalten, wenn Sie Anfragen erhalten, die eine langwierige Verarbeitung erfordern, oder wenn Sie versuchen, Massenvorgänge durchzuführen.
+Die Fastly-Service-Konfiguration legt einen standardmäßigen Timeout-Zeitraum von 180 Sekunden für HTTPS-Anfragen an den Administrator fest. Jede Anforderungsverarbeitung, die die Zeitüberschreitung überschreitet, gibt einen 503-Fehler zurück. Daher können bei Anfragen, die eine langwierige Verarbeitung erfordern, oder beim Versuch, Massenvorgänge durchzuführen, 503 Fehler auftreten.
 
-Um Massenaktionen durchzuführen, die länger als 3 Minuten dauern, ändern Sie den Wert _Admin path timeout__ , um Fehler vom Typ 503 zu vermeiden.
+Um Massenaktionen abzuschließen, die länger als 3 Minuten dauern, ändern Sie den Wert _Admin Path Timeout_, um 503 Fehler zu vermeiden.
 
 >[!NOTE]
 >
->Informationen zum Erweitern von Fastly-Timeout-Parametern für andere als Admin in der Fastly-Benutzeroberfläche finden Sie unter [Erhöhen der Timeouts für lange Aufträge](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-INCREASE-TIMEOUTS-LONG-JOBS.md).
+>Informationen zum Erweitern von Fastly-Timeout-Parametern für andere als Admin in der Fastly-Benutzeroberfläche finden Sie unter [Erhöhen von Timeouts für lange Aufträge](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-INCREASE-TIMEOUTS-LONG-JOBS.md).
 
-**So erweitern Sie das Fastly-Timeout für den Admin**:
+**So verlängern Sie die Fastly-Zeitüberschreitung für den Administrator**:
 
 {{admin-login-step}}
 
-1. Klicken Sie auf &quot;**Stores**&quot;> &quot;Einstellungen&quot;> &quot;**Konfiguration**&quot;> &quot;**Erweitert**&quot;> &quot;**System**&quot;und erweitern Sie &quot;**Vollständiger Seiten-Cache**&quot;.
+1. Klicken Sie auf **Stores** > Einstellungen > **Konfiguration** > **Erweitert** > **System** und erweitern Sie **Vollständiger Seitencache**.
 
-1. Erweitern Sie im Abschnitt _Schnelle Konfiguration_ den Eintrag **Erweiterte Konfiguration** .
+1. Erweitern Sie im Abschnitt _Fastly_ den Eintrag **Erweiterte Konfiguration**.
 
-1. Legen Sie den Wert **admin path timeout** in Sekunden fest. Dieser Wert darf nicht mehr als 10 Minuten (600 Sekunden) betragen.
+1. Legen Sie den Wert **Zeitüberschreitung für Administratorpfad** in Sekunden fest. Dieser Wert darf nicht länger als 10 Minuten (600 Sekunden) sein.
 
-1. Klicken Sie oben auf der Seite auf **Konfiguration speichern** .
+1. Klicken **oben auf** Seite auf „Konfiguration speichern“.
 
-1. Nachdem die Seite neu geladen wurde, wählen Sie im Abschnitt _Schnelle Konfiguration_ die Option **VCL auf Fastly hochladen** aus.
+1. Wählen Sie nach dem Neuladen der Seite **** Abschnitt _Fastly-Konfiguration_ die Option VCL in Fastly hochladen aus.
 
-Ruft schnell den Admin-Pfad zum Generieren der VCL-Datei aus der `app/etc/env.php`-Konfigurationsdatei ab.
+Ruft schnell den Admin-Pfad für die Generierung der VCL-Datei aus der `app/etc/env.php`-Konfigurationsdatei ab.
 
 ## Bereinigungsoptionen konfigurieren
 
-Bietet auf Ihrer Magento-Cache-Verwaltungsseite schnell mehrere Arten von Bereinigungsoptionen, einschließlich Optionen zum Bereinigen von Produktkategorie, Produkt-Assets und Inhalten. Wenn diese Option aktiviert ist, sucht Fastly nach Ereignissen, um diese Zwischenspeicher automatisch zu löschen. Wenn Sie eine Bereinigungsoption deaktivieren, können Sie die Fastly-Caches nach Abschluss der Aktualisierungen über die Seite &quot;Cache-Verwaltung&quot;manuell bereinigen.
+Fastly bietet mehrere Arten von Bereinigungsoptionen auf Ihrer Magento-Cache-Verwaltungsseite, einschließlich Optionen zum Bereinigen von Produktkategorien, Produkt-Assets und Inhalten. Wenn diese Option aktiviert ist, sucht Fastly automatisch nach Ereignissen, um diese Caches zu bereinigen. Wenn Sie eine Bereinigungsoption deaktivieren, können Sie Fastly-Caches manuell bereinigen, nachdem Sie Aktualisierungen über die Seite Cache-Verwaltung abgeschlossen haben.
 
 Zu den Bereinigungsoptionen gehören:
 
-- **Kategorie bereinigen** - Löscht den Inhalt der Produktkategorie (nicht den Produktinhalt), wenn Sie ein einzelnes Produkt hinzufügen und aktualisieren. Sie können diese Option deaktivieren und die Bereinigung des Produkts aktivieren, wodurch Produkte und Produktkategorien bereinigt werden.
-- **Produkt bereinigen** - Löscht beim Speichern einer einzelnen Änderung an einem Produkt den gesamten Inhalt der Produkt- und Produktkategorie. Die Aktivierung des Bereinigungsprodukts kann hilfreich sein, um sofort Aktualisierungen an Kunden zu erhalten, wenn ein Preis geändert, eine Produktoption hinzugefügt und der Produktbestand nicht vorrätig ist.
-- **Bereinigen Sie die CMS-Seite** - Bereinigt Seiteninhalte beim Aktualisieren und Hinzufügen von Seiten zum Adobe Commerce CMS. Beispielsweise können Sie eine Bereinigung durchführen, wenn Sie Ihre Geschäftsbedingungen oder Rückgabebedingungen aktualisieren. Wenn Sie diese Änderungen selten vornehmen, können Sie die automatische Bereinigung deaktivieren.
-- **Soft purge** - Legt den Inhalt gemäß dem veralteten Zeitpunkt in &quot;veraltet&quot;und bereinigt ihn. Zusätzlich zu den veralteten Zeiten werden Kunden veraltete Inhalte bereitgestellt, während der Inhalt im Hintergrund schnell aktualisiert wird.
+- **Kategorie bereinigen** - Bereinigt den Inhalt einer Produktkategorie (nicht den Produktinhalt), wenn Sie ein einzelnes Produkt hinzufügen und aktualisieren. Sie können diese Option deaktivieren und die Option Produkt bereinigen aktivieren, wodurch Produkte und Produktkategorien bereinigt werden.
+- **Produkt bereinigen** - Löscht alle Inhalte aus Produkt- und Produktkategorien, wenn eine einzelne Änderung an einem Produkt gespeichert wird. Die Aktivierung der Produktbereinigung kann hilfreich sein, um Kunden sofort Aktualisierungen zu erhalten, wenn ein Preis geändert, eine Produktoption hinzugefügt oder der Produktbestand nicht vorrätig ist.
+- **CMS-Seite bereinigen** - Löscht Seiteninhalte beim Aktualisieren und Hinzufügen von Seiten zur Adobe Commerce CMS. Sie können beispielsweise löschen, wenn Sie Ihre Nutzungsbedingungen oder die Rückgaberichtlinie aktualisieren. Wenn Sie diese Änderungen nur selten vornehmen, können Sie die automatische Bereinigung deaktivieren.
+- **Soft purge** - Legt geänderten Inhalt auf veraltet fest und löscht ihn entsprechend dem veralteten Zeitpunkt. Zusätzlich zu den veralteten Zeiten werden Kunden veraltete Inhalte bereitgestellt, während Fastly den Inhalt im Hintergrund aktualisiert.
 
 ![Bereinigungsoptionen konfigurieren](../../assets/cdn/fastly-purge-options.png)
 
-**So konfigurieren Sie die Optionen für eine schnelle Bereinigung**:
+**So konfigurieren Sie die Optionen für die Schnellbereinigung**:
 
-1. Erweitern Sie im Abschnitt _Schnelle Konfiguration_ den Eintrag **Erweiterte Konfiguration** , um die Bereinigungsoptionen anzuzeigen.
+1. Erweitern Sie im Abschnitt _Fastly_ den Eintrag **Erweiterte Konfiguration**, um die Bereinigungsoptionen anzuzeigen.
 
-1. Wählen Sie für jede Bereinigungsoption **Ja** aus, um die automatische Bereinigung zu aktivieren, oder **Nein**, um die automatische Bereinigung zu deaktivieren.
+1. Wählen Sie für jede Bereinigungsoption **Ja**, um die automatische Bereinigung zu aktivieren, oder **Nein**, um die automatische Bereinigung zu deaktivieren.
 
    Wenn Sie eine Bereinigungsoption deaktivieren, müssen Sie den Cache für diese Kategorie auf der Seite _Cache-Verwaltung_ manuell bereinigen.
 
-1. Klicken Sie oben auf der Seite auf **Konfiguration speichern** .
+1. Klicken **oben auf** Seite auf „Konfiguration speichern“.
 
-1. Nachdem die Seite neu geladen wurde, wählen Sie im Abschnitt _Schnelle Konfiguration_ die Option **VCL auf Fastly hochladen** aus.
+1. Wählen Sie nach dem Neuladen der Seite **** Abschnitt _Fastly-Konfiguration_ die Option VCL in Fastly hochladen aus.
 
-Weitere Informationen finden Sie unter [Schnellkonfigurationsoptionen](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options).
+Weitere Informationen finden Sie [den Fastly-Konfigurationsoptionen](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options).
 
-## GeoIP-Handhabung konfigurieren
+## Geo-IP-Handhabung konfigurieren
 
-Das Fastly-Modul beinhaltet die GeoIP-Handhabung, um Besucher automatisch umzuleiten oder eine Liste von Stores bereitzustellen, die mit der erhaltenen Ländercode übereinstimmen. Wenn Sie bereits eine Erweiterung für die GeoIP-Handhabung verwenden, müssen Sie die Funktionen möglicherweise mit den Fastly-Optionen überprüfen.
+Das Fastly-Modul beinhaltet GeoIP-Handhabung, um Besucher automatisch umzuleiten oder eine Liste von Geschäften bereitzustellen, die ihrem jeweiligen Länder-Code entsprechen. Wenn Sie bereits eine Erweiterung für die GeoIP-Verarbeitung verwenden, müssen Sie die Funktionen möglicherweise mit den Fastly-Optionen überprüfen.
 
-**So richten Sie die GeoIp-Handhabung ein**:
+**So richten Sie die GeoIP-Verarbeitung ein**:
 
 {{admin-login-step}}
 
-1. Klicken Sie auf &quot;**Stores**&quot;> &quot;Einstellungen&quot;> &quot;**Konfiguration**&quot;> &quot;**Erweitert**&quot;> &quot;**System**&quot;und erweitern Sie &quot;**Vollständiger Seiten-Cache**&quot;.
+1. Klicken Sie auf **Stores** > Einstellungen > **Konfiguration** > **Erweitert** > **System** und erweitern Sie **Vollständiger Seitencache**.
 
-1. Erweitern Sie im Abschnitt _Schnelle Konfiguration_ den Eintrag **Erweiterte Konfiguration** .
+1. Erweitern Sie im Abschnitt _Fastly_ den Eintrag **Erweiterte Konfiguration**.
 
-1. Scrollen Sie nach unten und wählen Sie **Ja** zu **GeoIP aktivieren** aus. Es werden zusätzliche Konfigurationsoptionen angezeigt.
+1. Scrollen Sie nach unten und wählen Sie **Ja** aus, um **GeoIP aktivieren**. Es werden zusätzliche Konfigurationsoptionen angezeigt.
 
-1. Wählen Sie für die GeoIP-Aktion aus, ob der Besucher automatisch mit **Umleitung** umgeleitet wird oder eine Liste mit Stores bereitgestellt wird, aus denen er mit **Dialogfeld** auswählen kann.
+1. Wählen Sie für GeoIP-Aktion aus, ob der Besucher automatisch mit **Umleiten** umgeleitet wird oder ob eine Liste von Stores bereitgestellt wird, aus denen er mit **Dialog** auswählen kann.
 
-1. Wählen Sie für **Länderzuordnung** die Option **Hinzufügen** aus, um einen aus zwei Buchstaben bestehenden Ländercode einzugeben, der einem bestimmten Adobe Commerce-Store aus einer Liste zugeordnet werden soll.
+1. Wählen **bei der** „Länderzuordnung“ die Option **Hinzufügen** aus, um einen aus zwei Buchstaben bestehenden Ländercode einzugeben, der einem bestimmten Adobe Commerce-Store aus einer Liste zugeordnet werden soll.
 
    ![GeoIP-Länderkarten hinzufügen](/help/assets/cdn/fastly-geo-code.png)
 
-1. Klicken Sie oben auf der Seite auf **Konfiguration speichern** .
+1. Klicken **oben auf** Seite auf „Konfiguration speichern“.
 
-1. Wählen Sie nach dem Neuladen der Seite im Abschnitt _Schnelle Konfiguration_ die Option **VCL auf Fastly hochladen**.
+1. Wählen Sie nach dem Neuladen der Seite **** Abschnitt _Fastly-Konfiguration_ die Option VCL in Fastly hochladen aus.
 
 >[!NOTE]
 >
->Die aktuelle Adobe Commerce Fastly GeoIP-Modulimplementierung unterstützt keine Umleitungen zwischen mehreren Websites.
+>Die aktuelle Implementierung des Adobe Commerce Fastly GeoIP-Moduls unterstützt keine Umleitungen zwischen mehreren Websites.
 
-Fastly bietet außerdem eine Reihe von [geolocation-bezogenen VCL-Funktionen](https://developer.fastly.com/reference/vcl/variables/geolocation/) für benutzerdefinierte Geolocation-Codierung.
+Fastly bietet auch eine Reihe von [geolocation-bezogenen VCL-Funktionen](https://developer.fastly.com/reference/vcl/variables/geolocation/) für eine maßgeschneiderte Geolocation-Codierung.
 
 ## Fastly Edge-Module aktivieren
 
-Fastly Edge Module ist ein flexibles Framework, das die Definition von UI-Komponenten und zugehörigen VCL-Code über eine Vorlage ermöglicht. Diese Module erleichtern die Anpassung und Erweiterung der Fastly-Dienstkonfiguration über die Benutzeroberfläche, anstatt benutzerdefinierte VCL-Snippets zu verwenden.
+Fastly Edge Modules ist ein flexibles Framework, das die Definition von UI-Komponenten und zugehörigem VCL-Code über eine Vorlage ermöglicht. Diese Module erleichtern die Anpassung und Erweiterung der Fastly-Service-Konfiguration über die Benutzeroberfläche, anstatt benutzerdefinierte VCL-Snippets zu verwenden.
 
-Mit Edge-Modulen können Sie bestimmte Funktionen wie CORS-Kopfzeilen, Cloud Sitemap-Neuschreibungen aktivieren und die Integration zwischen Ihrem Adobe Commerce-Store und anderen CMS oder Back-Ends konfigurieren.
+Edge-Module ermöglichen es Ihnen, bestimmte Funktionen wie CORS-Kopfzeilen und Cloud-Sitemap-Neuschreibungen zu aktivieren und die Integration zwischen Ihrem Adobe Commerce-Store und anderen CMS oder Back-Ends zu konfigurieren.
 
-Um auf das Menü &quot;Edge-Module&quot;zuzugreifen, um die verfügbaren Module anzuzeigen, zu konfigurieren und zu verwalten, aktivieren Sie die Option _Fastly Edge modules aktivieren_ . Siehe [Fastly Edge Modules](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULES.md) in der Dokumentation zum Fastly CDN-Modul.
+Um auf das Edge-Modulmenü zuzugreifen, um die verfügbaren Module anzuzeigen, zu konfigurieren und zu verwalten, aktivieren Sie die Option _Fastly Edge-Module aktivieren_. Siehe [Fastly Edge-Module](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULES.md) in der Dokumentation zu Fastly CDN-Modulen.
 
-## Konfigurieren von Backends und Origin-Shirting
+## Konfigurieren der Backends und der Ursprungsabschirmung
 
-Back-End-Einstellungen bieten eine Feinabstimmung für eine schnelle Leistung mit Origin-Shirting und Timeouts. Ein _Backend_ ist ein bestimmter Ort (IP oder Domäne) mit konfigurierten Einstellungen für den Herkunftsschutz und die Zeitüberschreitung zum Überprüfen und Bereitstellen zwischengespeicherter Inhalte.
+Backend-Einstellungen ermöglichen eine Feinabstimmung der Fastly-Leistung mit Origin-Abschirmung und Zeitüberschreitungen. Ein _Back-End_ ist ein bestimmter Speicherort (IP oder Domain) mit konfigurierten Ursprungs-Shield- und Zeitüberschreitungseinstellungen zum Überprüfen und Bereitstellen von zwischengespeicherten Inhalten.
 
-_Origin shielding_ leitet alle Anforderungen für Ihren Store an einen bestimmten Point of Presence (POP) weiter. Wenn eine Anforderung empfangen wird, prüft das POP, ob der Inhalt im Cache gespeichert wurde, und stellt ihn bereit. Wenn er nicht zwischengespeichert wird, wird er an das Schild POP weitergeleitet und dann an den Herkunftsserver, der den Inhalt zwischenspeichert. Die Schilder reduzieren den Traffic direkt auf den Ursprung.
+_Ursprungsabschirmung_ leitet alle Anfragen für Ihren Store an einen bestimmten Point of Presence (POP) weiter. Wenn eine Anfrage empfangen wird, prüft POP auf zwischengespeicherte Inhalte und stellt diese bereit. Wenn er nicht zwischengespeichert wird, wird er zum Shield-POP weitergeleitet und dann zum Ursprungs-Server, auf dem der Inhalt zwischengespeichert wird. Die Schilde reduzieren den Verkehr direkt zum Ursprung.
 
-Der standardmäßige Fastly VCL-Code gibt Standardwerte für die Herkunftssicherung und Zeitüberschreitungen für Ihre Adobe Commerce auf Cloud-Infrastruktur-Sites an. In einigen Fällen müssen Sie möglicherweise die Standardwerte ändern. Wenn Sie beispielsweise die Fehler &quot;Time to First Byte (TTFB)&quot;erhalten, müssen Sie möglicherweise den Wert _first byte timeout_ anpassen.
+Der standardmäßige Fastly-VCL-Code legt Standardwerte für die Ursprungsabschirmung und Zeitüberschreitungen für Ihre Adobe Commerce auf Cloud-Infrastruktur-Sites fest. In einigen Fällen müssen Sie möglicherweise die Standardwerte ändern. Wenn Sie z. B. TTFB-Fehler (Time to First Byte) erhalten, müssen Sie möglicherweise den Wert _Timeout für das erste Byte_ anpassen.
 
 >[!NOTE]
 >
->Wenn Ihre Site über eine Backend-Integration wie [Wordpress](fastly-vcl-wordpress.md) funktional bereitgestellt werden muss, passen Sie Ihre Fastly-Dienstkonfiguration an, um das Backend hinzuzufügen und Umleitungen von Ihrem Adobe Commerce-Store zu Wordpress zu verwalten. Weitere Informationen finden Sie unter [Fastly Edge Module - Other CMS/Backend integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md) in der Dokumentation zum Fastly-Modul.
+>Wenn Ihre Site funktionell über eine Backend-Integration wie [Wordpress](fastly-vcl-wordpress.md) bereitgestellt werden muss, passen Sie Ihre Fastly-Service-Konfiguration an, um das Backend hinzuzufügen und Weiterleitungen von Ihrem Adobe Commerce-Store zu Wordpress zu verwalten. Weitere Informationen finden Sie unter [Fastly Edge Modules - Other CMS/Backend Integration](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/Edge-Modules/EDGE-MODULE-OTHER-CMS-INTEGRATION.md) in der Fastly-Moduldokumentation.
 
 **Überprüfen der Konfiguration der Backend-Einstellungen**:
 
 {{admin-login-step}}
 
-1. Klicken Sie auf &quot;**Stores**&quot;> &quot;Einstellungen&quot;> &quot;**Konfiguration**&quot;> &quot;**Erweitert**&quot;> &quot;**System**&quot;und erweitern Sie &quot;**Vollständiger Seiten-Cache**&quot;.
+1. Klicken Sie auf **Stores** > Einstellungen > **Konfiguration** > **Erweitert** > **System** und erweitern Sie **Vollständiger Seitencache**.
 
-1. Erweitern Sie den Abschnitt **Schnelle Konfiguration** .
+1. Erweitern Sie den Abschnitt **Fastly-**.
 
-1. Erweitern Sie **Backend-Einstellungen** und wählen Sie das Zahnrad aus, um das standardmäßige Backend zu überprüfen. Ein Modal wird geöffnet, das aktuelle Einstellungen mit Optionen zum Ändern anzeigt.
+1. Erweitern Sie **Backend-Einstellungen** und wählen Sie das Zahnrad aus, um das standardmäßige Backend zu überprüfen. Ein Modal wird geöffnet, in dem die aktuellen Einstellungen mit Optionen zum Ändern angezeigt werden.
 
-   ![Ändern des Backend](../../assets/cdn/fastly-backend.png)
+   ![Ändern des Back-End](../../assets/cdn/fastly-backend.png)
 
-1. Wählen Sie die Position **Schild** (oder das Rechenzentrum) aus.
+1. Wählen Sie den **Shield**-Standort (oder das Rechenzentrum) aus.
 
-   Die Standardkonfiguration Schnell für Ihr Projekt legt den Standort fest, der Ihrer Cloud Service-Region am nächsten ist. Wenn Sie es ändern müssen, wählen Sie einen Speicherort neben dem Standardspeicherort aus.
+   Die standardmäßige Fastly-Konfiguration für Ihr Projekt legt den Speicherort fest, der Ihrer Cloud Service-Region am nächsten ist. Wenn Sie ihn ändern müssen, wählen Sie einen Speicherort in der Nähe des Standardspeicherorts aus.
 
-1. Ändern Sie die Timeout-Werte (in Mikrosekunden) für die Verbindung zum Schild, die Zeit zwischen Bytes und die Zeit für das erste Byte. Es wird empfohlen, die standardmäßigen Timeout-Einstellungen beizubehalten.
+1. Ändern Sie die Zeitüberschreitungswerte (in Mikrosekunden) für die Verbindung mit dem Shield, die Zeit zwischen den Bytes und die Zeit für das erste Byte. Es wird empfohlen, die standardmäßigen Zeitüberschreitungseinstellungen beizubehalten.
 
-1. Wählen Sie optional **Backend und Schild nach Bearbeiten oder Speichern aktivieren** aus.
+1. Wählen Sie optional die Option **Aktivieren des Backends und von Shield nach dem Bearbeiten oder Speichern**.
 
-1. Klicken Sie auf **Hochladen** , um Ihre Änderungen zu speichern und sie auf die Fastly-Server hochzuladen.
+1. Klicken Sie **Hochladen**, um Ihre Änderungen zu speichern und sie auf die Fastly-Server hochzuladen.
 
-1. Wählen Sie im Admin **Konfiguration speichern** aus.
+1. Wählen Sie in Admin die Option **Konfiguration speichern**.
 
-Weitere Informationen finden Sie im Leitfaden für Backend-Einstellungen ](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md) in der Dokumentation zum Fastly-Modul.[
+Weitere Informationen finden Sie im [Handbuch zu Backend-Einstellungen](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md) in der Fastly-Moduldokumentation.
 
-## Grundlegende Authentifizierung
+## Einfache Authentifizierung
 
-Grundlegende Authentifizierung ermöglicht den Schutz aller Seiten und Assets auf Ihrer Site.
-mit einem Benutzernamen und Kennwort. Wir empfehlen **nicht,** zur Aktivierung der grundlegenden
-Authentifizierung in Ihrer Produktionsumgebung. Sie können sie beim Staging konfigurieren
-, um Ihre Site während des Entwicklungsprozesses zu schützen. Siehe [Grundlegendes Authentifizierungshandbuch](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/BASIC-AUTH.md) in der Dokumentation zum Fastly CDN-Modul.
+Die einfache Authentifizierung ist eine Funktion zum Schutz aller Seiten und Assets auf Ihrer Site
+mit einem Benutzernamen und einem Kennwort. Die **von Basic** nicht empfohlen
+Authentifizierung in der Produktionsumgebung. Sie können ihn im Staging konfigurieren
+um Ihre Site während des Entwicklungsprozesses zu schützen. Siehe [Standardauthentifizierungshandbuch“ in ](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/BASIC-AUTH.md) Dokumentation zum Fastly CDN-Modul.
 
-Wenn Sie Benutzerzugriff hinzufügen und grundlegende Authentifizierung für das Staging aktivieren, können Sie weiterhin
-auf den Admin zugreifen, ohne zusätzliche Anmeldeinformationen zu benötigen.
+Wenn Sie Benutzerzugriff hinzufügen und die Standardauthentifizierung für das Staging aktivieren, können Sie weiterhin
+Greifen Sie auf den Administrator zu, ohne dass zusätzliche Anmeldeinformationen erforderlich sind.
 
 ## Erstellen benutzerdefinierter VCL-Snippets
 
-Fastly unterstützt eine angepasste Version der Varnish Configuration Language (VCL), um die Konfiguration des Fastly-Dienstes anzupassen. Sie können beispielsweise mithilfe von VCL-Codeblöcken mit ACL-Wörterbüchern (Edge and Access Control List) den Zugriff für bestimmte Benutzer oder IP-Adressen zulassen, blockieren oder umleiten.
+Fastly unterstützt eine angepasste Version der Varnish Configuration Language (VCL), um die Fastly-Service-Konfiguration anzupassen. Sie können beispielsweise den Zugriff für bestimmte Benutzer oder IP-Adressen mithilfe von VCL-Codeblöcken mit Edge- und Access Control List (ACL)-Wörterbüchern zulassen, blockieren oder umleiten.
 
-Anweisungen zum Erstellen benutzerdefinierter VCL-Snippets, Edge-Wörterbücher und ACLs finden Sie unter [Benutzerdefinierte Fastly VCL-Snippets](fastly-vcl-custom-snippets.md).
+Anweisungen zum Erstellen benutzerdefinierter VCL-Snippets, Edge-Wörterbücher und ACLs finden Sie unter [Benutzerdefinierte Fastly-VCL-Snippets](fastly-vcl-custom-snippets.md).
 
 >[!NOTE]
 >
->Bevor Sie Ihrer Fastly-Modulkonfiguration benutzerdefinierten VCL-Code, Edge-Wörterbücher und ACLs hinzufügen, überprüfen Sie, ob der Fastly-Caching-Dienst mit der Standardkonfiguration funktioniert. Siehe [Schnelles Einrichten](fastly-configuration.md).
+>Bevor Sie benutzerdefinierten VCL-Code, Edge-Wörterbücher und ACLs zu Ihrer Fastly-Modulkonfiguration hinzufügen, überprüfen Sie, ob der Fastly-Caching-Service mit der Standardkonfiguration funktioniert. Siehe [Schnelles Setup](fastly-configuration.md).
 
-## Domänen verwalten
+## Verwalten von Domains
 
-Für sowohl Starter- als auch Pro-Projekte können Sie die Option [!UICONTROL Domains] verwenden, um die Konfiguration der Fastly-Domäne für Ihren Store hinzuzufügen und zu verwalten.
+Sowohl für Starter- als auch für Pro-Projekte können Sie die Option [!UICONTROL Domains] verwenden, um die Fastly-Domain-Konfiguration für Ihren Store hinzuzufügen und zu verwalten.
 
-- Wechseln Sie bei Einstiegsprojekten zur Projekt-URL auf der Registerkarte [!UICONTROL Domains] in der Registerkarte [!DNL Cloud Console], um Ihre Projekt-URL hinzuzufügen.
+- Rufen Sie für Startprojekte die Projekt-URL auf der Registerkarte [!UICONTROL Domains] im [!DNL Cloud Console] auf, um Ihre Projekt-URL hinzuzufügen.
 
-- Senden Sie für Pro-Projekte ein [Adobe Commerce-Supportticket](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) , um die Domäne Ihrer Cloud-Projektkonfiguration hinzuzufügen. Das Supportteam aktualisiert auch die Adobe Commerce Fastly-Kontokonfiguration, um die Domäne hinzuzufügen.
+- Senden Sie für Pro-Projekte ein [Adobe Commerce-Support-Ticket](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket), um die Domain zu Ihrer Cloud-Projektkonfiguration hinzuzufügen. Das Support-Team aktualisiert auch die Adobe Commerce Fastly-Kontokonfiguration, um die Domain hinzuzufügen.
 
-**So verwalten Sie die Konfiguration der Fastly-Domäne über den Admin**:
+**Verwaltung der Fastly-Domain-Konfiguration über den Administrator**:
 
 {{admin-login-step}}
 
-1. Wählen Sie **Stores** > Einstellungen > **Konfiguration** > **Erweitert** > **System** aus und erweitern Sie den **vollständigen Seiten-Cache**.
+1. Wählen Sie **Stores** > Einstellungen > **Konfiguration** > **Erweitert** > **System** und erweitern Sie **Vollständiger Seitencache**.
 
-1. Wählen Sie im Abschnitt Admin _Schnelle Konfiguration_ die Option **Domänen** aus.
+1. Wählen Sie im Admin _Fastly Configuration_-Bereich **Domains**.
 
-1. Klicken Sie auf **Domänen verwalten** , um die Seite Domänen zu öffnen.
+1. Klicken Sie auf **Domains verwalten**, um die Seite „Domains“ zu öffnen.
 
-1. Fügen Sie die Namen der obersten und untergeordneten Domänen für die Stores in der Cloud-Umgebung hinzu.
+1. Fügen Sie die Top-Level- und Subdomain-Namen für die Stores in der Cloud-Umgebung hinzu.
 
-   Sie können nur Domänen angeben, die bereits zur Cloud-Infrastrukturkonfiguration hinzugefügt wurden.
+   Sie können nur Domains angeben, die bereits zu Ihrer Cloud-Infrastrukturkonfiguration hinzugefügt wurden.
 
-   ![Schnellste Domänenkonfiguration für Starter hinzufügen](../../assets/cdn/fastly-starter-activate-domain.png)
+   ![Fastly-Domain-Konfiguration für Starter hinzufügen](../../assets/cdn/fastly-starter-activate-domain.png)
 
-1. Klicken Sie auf **Aktivieren** , um die Konfiguration der Fastly-Domäne zu aktualisieren.
+1. Klicken Sie auf **Aktivieren**, um die Fastly-Domain-Konfiguration zu aktualisieren.
 
 >[!NOTE]
 >
->Wenn dieselbe Domäne für ein anderes Fastly-Konto konfiguriert wurde, müssen Sie ein Adobe Commerce-Supportticket senden, um die Delegation der Domäne anzufordern, bevor Sie die Domäne zu Adobe Commerce hinzufügen können. Siehe [Mehrere schnelle Konten und zugewiesene Domänen](fastly.md#multiple-fastly-accounts-and-assigned-domains).
+>Wenn dieselbe Domain für ein anderes Fastly-Konto konfiguriert wurde, müssen Sie ein Adobe Commerce-Support-Ticket einreichen, um die Domain-Delegierung anzufordern, bevor Sie die Domain zu Adobe Commerce hinzufügen können. Siehe [Mehrere Fastly-Konten und zugeordnete Domains](fastly.md#multiple-fastly-accounts-and-assigned-domains).
 
 ## Wartungsmodus aktivieren
 
-Verwenden Sie die Option _Wartungsmodus_ , um den administrativen Zugriff auf Ihre Site von bestimmten IP-Adressen aus zuzulassen, während eine Fehlerseite für alle anderen Anforderungen zurückgegeben wird.
+Verwenden Sie die Option _Wartungsmodus_, um den administrativen Zugriff von bestimmten IP-Adressen auf Ihre Site zuzulassen und gleichzeitig eine Fehlerseite für alle anderen Anfragen zurückzugeben.
 
-**Aktivieren des Wartungsmodus mit Administratorzugriff**:
+**So aktivieren Sie den Wartungsmodus mit Administratorzugriff**:
 
-1. Öffnen Sie den Abschnitt _Schnelle Konfiguration_ im Admin.
+1. Öffnen Sie den Abschnitt _Fastly-_&quot; in der Admin-Liste.
 
-1. Aktualisieren Sie im Abschnitt _Edge ACL_ die Zugriffssteuerungsliste (ACL) mit den administrativen IP-Adressen, die auf Ihren Speicher zugreifen können, während er sich im Wartungsmodus befindet.`maint_allow`
+1. Aktualisieren Sie im Abschnitt _Edge ACL_ die `maint_allow` Zugriffssteuerungsliste (ACL) mit den administrativen IP-Adressen, die auf Ihren Store zugreifen können, während er sich im Wartungsmodus befindet.
 
-   ![Aktualisieren der Zulassungsliste des IP-Wartungsmodus](../../assets/cdn/fastly-maint-allowlist.png)
+   ![IP-Wartungsmodus-Zulassungsliste aktualisieren](../../assets/cdn/fastly-maint-allowlist.png)
 
-1. Wählen Sie im Abschnitt _Wartungsmodus_ die Option **Wartungsmodus aktivieren**.
+1. Wählen Sie im _Wartungsmodus_ die Option **Wartungsmodus aktivieren** aus.
 
-   Nachdem Sie den Wartungsmodus aktiviert haben, wird der gesamte Traffic blockiert, mit Ausnahme der Anforderungen von IP-Adressen in der ACL `maint_allowlist` . Sie können die `maint_allowlist` aktualisieren, um die IP-Adressen in der ACL zu ändern.
+   Nach der Aktivierung des Wartungsmodus wird der gesamte Traffic blockiert, mit Ausnahme von Anfragen von den IP-Adressen in der `maint_allowlist`-ACL. Sie können die `maint_allowlist` aktualisieren, um die IP-Adressen in der ACL zu ändern.
 
-   Detaillierte Konfigurationsanweisungen finden Sie im Leitfaden für den Wartungsmodus ](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/MAINTENANCE-MODE.md) in der Dokumentation zum Fastly CDN für Magento 2-Modul.[
+   Detaillierte Konfigurationsanweisungen finden Sie im [Handbuch für den Wartungsmodus](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/MAINTENANCE-MODE.md) in der Dokumentation zum Fastly CDN für Magento 2-Modul.

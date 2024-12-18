@@ -1,6 +1,6 @@
 ---
 title: Launch-Schritte
-description: Erfahren Sie, wie Sie den Site-Start abschließen.
+description: Erfahren Sie, wie Sie den Site-Launch abschließen.
 exl-id: cf75f89c-94c8-47c1-a23d-93cd9921aab7
 source-git-commit: e62236a8937ae1dd10df3c736b2e945be155d236
 workflow-type: tm+mt
@@ -11,34 +11,34 @@ ht-degree: 0%
 
 # Launch-Schritte
 
-Nach dem Testen und Fertigstellen Ihrer Start-Checkliste können Sie die letzten Schritte zum Starten starten. Diese Schritte umfassen die Eingabe von Tickets, die Übertragung des Site-Zugriffs und schließlich die Prüfung Ihres Stores bei Live.
+Nach dem Testen und Abschließen der Launch-Checkliste können Sie die letzten Schritte für den Launch starten. Zu diesen Schritten gehören das Eingeben von Tickets, der Zugriff auf die Transferseite und schließlich das Testen Ihres Stores, wenn er live ist.
 
-Adobe-Support-Mitarbeiter arbeiten mit Ihnen durch den Prozess, überprüfen den Status und helfen bei Fragen oder Problemen. Alle Probleme sollten mit Tickets nachverfolgt werden, um am besten zu erfassen, was passiert ist und wie es gelöst wurde. Wenn Sie mit kontinuierlichen Iterationen beginnen, die Aktualisierungen in Ihrem gestarteten Store bereitstellen, treten möglicherweise wieder ähnliche Probleme auf. Diese Tickets können dabei helfen, die Probleme zu erkennen und Ihre Bereitstellungsaufgaben anzupassen.
+Adobe-Support-Mitarbeiter arbeiten mit Ihnen durch den Prozess, prüfen den Status und helfen Ihnen, wenn Fragen oder Probleme auftreten. Alle Probleme sollten mit Tickets verfolgt werden, um am besten zu erfassen, was passiert ist und wie es gelöst wurde. Wenn Sie mit kontinuierlichen Iterationen beginnen, um Aktualisierungen für Ihren gestarteten Store bereitzustellen, können ähnliche Probleme erneut auftreten. Diese Tickets können dabei helfen, die Probleme zu identifizieren und Ihre Bereitstellungsaufgaben anzupassen.
 
-## Wenden Sie sich an Adobe, um Ihre Website zu starten.
+## Adobe kontaktieren, um Ihre Site zu starten
 
-Wenden Sie sich an den Adobe Commerce-Support und aktualisieren Sie alle Tickets für den Website-Start (Go Live) mit dem geplanten Datum und der geplanten Uhrzeit, um zu wechseln und Ihren Store zu starten.
+Wenden Sie sich an den Adobe Commerce-Support und aktualisieren Sie alle Eintrittskarten für den Site-Start (Live-Schaltung) mit dem vorgesehenen Datum und der vorgesehenen Uhrzeit für den Wechsel und den Start Ihres Stores.
 
-## DNS zur neuen Site wechseln
+## DNS auf die neue Site wechseln
 
-Der Wert &quot;Time-to-Live changed&quot;ist wichtig, um Ihre geänderte Domäne zu überprüfen. Wenn Sie die A- und CNAME-Datensätze ändern, dauert die Aktualisierung die für die TTL konfigurierte Zeit, um die Daten korrekt zu aktualisieren. Weitere Informationen zu DNS-Einstellungen finden Sie unter [DNS-Konfigurationen](checklist.md#update-dns-configuration-with-production-settings).
+Der Wert Geänderte Zeit bis zur Live-Schaltung ist wichtig, um Ihre geänderte Domain zu überprüfen. Wenn Sie die A- und CNAME-Datensätze ändern, dauert die Aktualisierung der TTL-Konfiguration länger, bis sie korrekt aktualisiert wird. Weitere Informationen zu DNS-Einstellungen finden Sie unter [DNS-Konfigurationen](checklist.md#update-dns-configuration-with-production-settings).
 
 ### So wechseln Sie zur neuen Site:
 
-1. Rufen Sie Ihren DNS-Dienst auf.
+1. Greifen Sie auf Ihren DNS-Service zu.
 
-1. Aktualisieren Sie Ihre A- und CNAME-Einträge für Ihre Domänen und Hostnamen.
+1. Aktualisieren Sie Ihre A- und CNAME-Einträge für Ihre Domains und Hostnamen.
 
-1. Warten Sie, bis die TTL-Zeit vergangen ist, und starten Sie Ihren Webbrowser neu.
+1. Warten Sie, bis die TTL-Zeit verstrichen ist, und starten Sie Ihren Webbrowser neu.
 
-1. Greifen Sie über die Storefront-Domäne auf Ihren Store zu.
+1. Greifen Sie über die Storefront-Domain auf Ihren Store zu.
 
 ## Testen des Live Stores
 
-Führen Sie einige UAT-Tests in Ihrem Live Store durch, um sicherzustellen, dass alles ordnungsgemäß geladen und die Aktionen ausgeführt werden. Eine Liste der Tests finden Sie unter [Testen der Bereitstellung](../test/staging-and-production.md#complete-uat-testing).
+Führen Sie einige UAT-Tests in Ihrem Live-Store durch, um zu bestätigen, dass alles geladen wird und Aktionen korrekt abgeschlossen werden. Eine Liste der Tests finden Sie unter [Testbereitstellung](../test/staging-and-production.md#complete-uat-testing).
 
-## Post-Launch
+## Nach dem Launch
 
-Adobe überprüft und überwacht die Website, um sicherzustellen, dass alle Dienste und der Zugriff grün sind. Wir bleiben bei Bedarf zur Verfügung, um zu überprüfen, ob alle Systemprotokolle, Dienste, Caching und Funktionen wie Sie und Ihre Kunden benötigen, funktionieren.
+Adobe überprüft und überwacht die Website, um sicherzustellen, dass alle Services und der Zugriff grün sind. Wir stehen Ihnen nach Bedarf zur Verfügung, um alles durchzugehen und zu überprüfen, ob alle Systemprotokolle, Dienste, Caching und Funktionen so funktionieren, wie Sie und Ihre Kunden es benötigen.
 
-Wenn Probleme auftreten, erstellen und verfolgen Sie Probleme mit dem Support. Binden Sie so viele Informationen wie möglich ein, einschließlich Datum/Uhrzeit, spezifischer Funktionen mit einem Problem, Symptomen und ungerade Verhaltensweisen, Erweiterungen und mehr. Wir untersuchen die Protokolle, das Problem und arbeiten mit Ihnen zusammen, um so schnell wie möglich eine Lösung zu finden.
+Wenn Probleme auftreten, erstellen und verfolgen Sie Probleme mit dem Support. Geben Sie so viele Informationen wie möglich ein, einschließlich Datum/Uhrzeit, spezifischer Funktionen mit einem Problem, Symptome und seltsames Verhalten, Erweiterungen und mehr. Wir untersuchen die Protokolle, das Problem und arbeiten mit Ihnen zusammen, um das Problem so schnell wie möglich zu beheben.

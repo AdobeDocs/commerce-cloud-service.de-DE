@@ -1,6 +1,6 @@
 ---
-title: Vorbereitungen für die Entwicklung
-description: Erfassen Sie Anmeldeinformationen und erfahren Sie mehr über die Tools, die zum Einrichten eines Entwicklungsarbeitsbereichs für die Verwendung mit Ihrem Commerce on Cloud-Infrastrukturprojekt verfügbar sind.
+title: Vorbereiten der Entwicklung
+description: Sammeln Sie Anmeldeinformationen und erfahren Sie mehr über die Tools, die zum Einrichten eines Entwicklungsarbeitsbereichs für die Verwendung mit Ihrem Commerce in einem Cloud-Infrastrukturprojekt verfügbar sind.
 recommendations: noDisplay, catalog
 exl-id: 8f88161f-3580-453b-b977-2c6e3824cc02
 source-git-commit: 85ff1283f773823ff2c6e6ab8f391fd5b4aa00e4
@@ -10,59 +10,59 @@ ht-degree: 0%
 
 ---
 
-# Vorbereitungen für die Entwicklung
+# Vorbereiten der Entwicklung
 
-Unabhängig davon, ob Sie neu bei Commerce sind oder bereits Commerce-Besitzer sind und zur Cloud-Infrastruktur wechseln, sollten Sie diese Schritte zum Vorbereiten eines Entwicklungsarbeitsbereichs für Ihr Cloud-Projekt verwenden. Wenn Sie einige dieser Schritte bereits durchgeführt haben oder bereits über eine Adobe Commerce-Entwicklungsumgebung verfügen, überprüfen Sie die folgenden Ergebnisse, und fahren Sie mit dem nächsten Schritt fort. Einige Konfigurationen und Workflows unterscheiden sich von einer typischen lokalen Installation.
+Unabhängig davon, ob Sie neu bei Commerce sind oder bereits Inhaber von Commerce sind und zur Cloud-Infrastruktur wechseln, können Sie mit diesen Schritten einen Entwicklungsarbeitsbereich für Ihr Cloud-Projekt vorbereiten. Wenn Sie bereits einige dieser Schritte abgeschlossen haben oder bereits über eine Adobe Commerce-Entwicklungsumgebung verfügen, sehen Sie sich die folgenden Schritte an, um die erwarteten Ergebnisse anzuzeigen, und fahren Sie mit dem nächsten Schritt fort. Einige Konfigurationen und Workflows unterscheiden sich von einer typischen On-Premise-Installation.
 
 ## Anmeldeinformationen
 
-Bevor Sie einen Arbeitsbereich einrichten, sammeln Sie die folgenden Schlüssel und den Kontozugriff:
+Bevor Sie einen Arbeitsbereich einrichten, stellen Sie die folgenden Schlüssel und Kontozugriff bereit:
 
 - **Authentifizierungsschlüssel (Composer-Schlüssel)**
 
-  Authentifizierungsschlüssel sind 32-stellige Authentifizierungstoken, die sicheren Zugriff auf das Adobe Commerce Composer-Repository (`repo.magento.com`) und alle anderen Git-Dienste bieten, die für die Anwendungsentwicklung erforderlich sind, z. B. GitHub. Ihr Konto kann über mehrere Authentifizierungsschlüssel verfügen. Beginnen Sie bei der Einrichtung des Arbeitsbereichs mit einem bestimmten Schlüssel für Ihr Code-Repository. Wenn Sie keine Schlüssel haben, wenden Sie sich an den Projekteigentümer oder erstellen Sie die [Authentifizierungsschlüssel](../cloud-guide/development/authentication-keys.md) selbst.
+  Authentifizierungsschlüssel sind 32-stellige Authentifizierungs-Token, die sicheren Zugriff auf das Adobe Commerce Composer Repository (`repo.magento.com`) und alle anderen Git-Services bieten, die für die Anwendungsentwicklung erforderlich sind, z. B. GitHub. Ihr Konto kann über mehrere Authentifizierungsschlüssel verfügen. Beginnen Sie bei der Einrichtung des Arbeitsbereichs mit einem bestimmten Schlüssel für Ihr Code-Repository. Wenn Sie keine Schlüssel haben, wenden Sie sich an den Projektbesitzer oder erstellen Sie die [Authentifizierungsschlüssel](../cloud-guide/development/authentication-keys.md) selbst.
 
-- **Cloud-Projekt-Konto**
+- **Cloud-Projektkonto**
 
-  Der Projektinhaber sollte Sie zum Adobe Commerce-Projekt für Cloud-Infrastruktur einladen. Wenn Sie die Einladung per E-Mail erhalten, klicken Sie auf den Link und befolgen Sie die Anweisungen zum Erstellen Ihres Kontos. Siehe [Onboarding](onboarding.md).
+  Der Projektbesitzer sollte Sie zum Adobe Commerce on Cloud-Infrastrukturprojekt einladen. Wenn Sie die E-Mail-Einladung erhalten, klicken Sie auf den Link und folgen Sie den Anweisungen, um Ihr Konto zu erstellen. Siehe [Onboarding](onboarding.md)
 
 - **Adobe Commerce-Verschlüsselungsschlüssel**
 
   Wenn Sie nur ein vorhandenes System importieren, erfassen Sie den Verschlüsselungsschlüssel, der zum Schutz Ihres Zugriffs und Ihrer Daten für die Datenbank verwendet wird. Weitere Informationen zu diesem Schlüssel finden Sie unter [Beheben von Problemen mit dem Verschlüsselungsschlüssel](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/resolve-issues-with-encryption-key.html)
 
-## Entwicklertools
+## Entwickler-Tools
 
 - **Installieren der Cloud-CLI**
 
-  Installieren Sie die CLI `magento-cloud` , damit Sie Cloud-Umgebungen verwalten und Automatisierungsaufgaben ausführen können. Installationsanweisungen finden Sie unter [Cloud CLI](../cloud-guide/dev-tools/cloud-cli-overview.md) .
+  Installieren Sie die `magento-cloud` CLI, damit Sie Cloud-Umgebungen verwalten und Automatisierungsaufgaben ausführen können. Siehe [Cloud-CLI](../cloud-guide/dev-tools/cloud-cli-overview.md) für Installationsanweisungen.
 
-- **Docker für lokale Entwicklung und Tests installieren**
+- **Installieren von Docker für lokale Entwicklung und Tests**
 
-  Optional können Sie die Docker-Umgebung verwenden, um die Commerce-Umgebung in der Cloud-Infrastruktur-Umgebung `integration` für die lokale Entwicklung zu emulieren. Es gibt drei wesentliche Komponenten: eine Adobe Commerce v2-Vorlage, Docker Compose und das `ece-tools` -Paket.
+  Optional können Sie die Docker-Umgebung verwenden, um die Commerce in der Cloud-Infrastruktur `integration` -Umgebung für die lokale Entwicklung zu emulieren. Es gibt drei wesentliche Komponenten: eine Adobe Commerce v2-Vorlage, Docker Compose und `ece-tools`.
 
    - [Docker-Architektur und allgemeine Befehle](../cloud-guide/dev-tools/cloud-docker.md)
-   - [Launch-Docker-Entwicklungsumgebung](https://developer.adobe.com/commerce/cloud-tools/docker/setup/)
+   - [Launch Docker-Entwicklungsumgebung](https://developer.adobe.com/commerce/cloud-tools/docker/setup/)
    - [ECE-Tools-Paket](../cloud-guide/dev-tools/package-overview.md)
 
-- **Git-basierte Dienste integrieren**
+- **Integrieren von Git-basierten Services**
 
-  Optional können Sie einen Git-basierten Hosting-Dienst wie GitHub oder GitLab in Adobe Commerce in die Cloud-Infrastruktur integrieren. Siehe [Integrationen](../cloud-guide/integrations/overview.md).
+  Integrieren Sie optional einen Git-basierten Hosting-Service wie GitHub oder GitLab mit Adobe Commerce in der Cloud-Infrastruktur. Siehe [Integrationen](../cloud-guide/integrations/overview.md).
 
-## Projektcode
+## Projekt-Code
 
-Eine sichere Verbindung ist für die Interaktion mit den Remote-Umgebungen unerlässlich. Melden Sie sich bei einem neuen Projekt [ bei  [!DNL Cloud Console]](https://console.adobecommerce.com) an und klicken Sie auf **[!UICONTROL No SSH key]**. Dieses Symbol befindet sich rechts neben dem Befehlsfeld und ist sichtbar, wenn das Projekt keinen SSH-Schlüssel enthält. Siehe [Sichere Verbindungen](../cloud-guide/development/secure-connections.md#add-an-ssh-public-key-to-your-account).
+Eine sichere Verbindung ist für die Interaktion mit den Remote-Umgebungen unerlässlich. Melden Sie sich bei einem [ Projekt bei an  [!DNL Cloud Console]](https://console.adobecommerce.com) klicken Sie auf **[!UICONTROL No SSH key]**. Dieses Symbol befindet sich rechts neben dem Befehlsfeld und ist sichtbar, wenn das Projekt keinen SSH-Schlüssel enthält. Siehe [Sichere Verbindungen](../cloud-guide/development/secure-connections.md#add-an-ssh-public-key-to-your-account)
 
-**So klonen Sie Ihre Codebase auf Ihrer lokalen Workstation**:
+**So klonen Sie Ihre Codebasis auf Ihrer lokalen Workstation**:
 
-1. Klicken Sie im Tab [[!DNL Cloud Console]](https://console.adobecommerce.com) auf **[!UICONTROL code]** und wählen Sie die Registerkarte **[!UICONTROL Git]** aus.
+1. Klicken Sie in der [[!DNL Cloud Console]](https://console.adobecommerce.com) auf **[!UICONTROL code]** und wählen Sie die Registerkarte **[!UICONTROL Git]** aus.
 
    ![Klonen Sie Ihren Code](../assets/ui-git-code.png){width="450"}
 
-1. Kopieren Sie den bereitgestellten Befehl `git clone ...` .
+1. Kopieren Sie den angegebenen `git clone ...`.
 
-1. Erstellen und ändern Sie in einem Terminal das Arbeitsverzeichnis.
+1. Erstellen Sie in einem Terminal Ihr Arbeitsverzeichnis und ändern Sie es.
 
-1. Fügen Sie den Befehl `git clone ...` ein und führen Sie ihn aus.
+1. Fügen Sie den `git clone ...` ein und führen Sie ihn aus.
 
 >[!TIP]
 >

@@ -1,6 +1,6 @@
 ---
-title: '[!DNL Onboarding] to Commerce'
-description: Greifen Sie auf Ihr Cloud-Konto zu und richten Sie ein Adobe Commerce-Projekt zur Cloud-Infrastruktur ein.
+title: '[!DNL Onboarding] zu Commerce'
+description: Greifen Sie auf Ihr Cloud-Konto zu und richten Sie ein Adobe Commerce on Cloud-Infrastrukturprojekt ein.
 role: Admin
 recommendations: noDisplay, catalog
 exl-id: c6b768d7-d835-4a8d-aad9-1c0324f7570d
@@ -11,48 +11,48 @@ ht-degree: 0%
 
 ---
 
-# [!DNL Onboarding] bis Commerce
+# [!DNL Onboarding] zu Commerce
 
-Nachdem Adobe eine Commerce für das Cloud-Infrastrukturabonnement aktiviert hat, sind das ursprüngliche Projekt und der Codezugriff nur für die Person verfügbar, die als Lizenzinhaber (Kontoinhaber) bezeichnet wurde.
+Nach der Aktivierung eines Commerce on Cloud Infrastructure-Abonnements durch Adobe steht der anfängliche Projekt- und Code-Zugriff nur der als Lizenzinhaber (Kontoinhaber) angegebenen Person zur Verfügung.
 
-Der Lizenzinhaber ist die Person in Ihrem Unternehmens- oder Finanzunternehmen, die Zahlungen und andere geschäftsbezogene Transaktionen für das Adobe Commerce-Konto für Cloud-Infrastruktur verwaltet. Diese Person dient als Ansprechpartner für Adobe. Wenn Sie den Lizenzinhaber in Ihrem Konto ändern müssen, wenden Sie sich an Ihr Adobe Account Team.
+Der Lizenzinhaber ist die Person in Ihrem Unternehmen oder Ihrer Finanzorganisation, die Zahlungen und andere geschäftliche Transaktionen für das Adobe Commerce on Cloud Infrastructure-Konto verwaltet. Diese Person dient als Ansprechpartner für Adobe. Wenn Sie den Lizenzinhaber Ihres Kontos ändern müssen, müssen Sie sich an Ihr Adobe-Konto-Team wenden.
 
-Um Ihr Projekt schnell zu integrieren und mit der Entwicklung Ihrer Site für die Live-Bereitstellung beginnen zu können, müssen Sie die erforderlichen Einrichtungs- und [!DNL onboarding]-Aufgaben ausführen. In der Regel startet der Lizenzinhaber den Prozess, indem er den Administratorzugriff sichert und Admin-Benutzer erstellt, die bei der Einrichtung, Anpassung und Entwicklungsarbeit helfen können.
+Um Ihr Projekt schnell integrieren zu können, damit Sie mit der Entwicklung Ihrer Site für die Live-Bereitstellung beginnen können, müssen Sie die erforderlichen Einrichtungs- und [!DNL onboarding] durchführen. Normalerweise beginnt der Lizenzinhaber mit dem Prozess, indem er den Admin-Zugriff sichert und Admin-Benutzer erstellt, die bei der Einrichtung, Anpassung und Entwicklung helfen können.
 
 ## Für ein Cloud-Konto anmelden
 
-Wenn Sie kein Adobe Commerce-Konto für die Cloud-Infrastruktur haben, wenden Sie sich an [Vertrieb]. Wenn Sie sich anmelden, erstellt Adobe Ihr Konto und sendet Ihnen eine Begrüßungs-E-Mail mit Anweisungen zum Zugriff auf die Projektoberfläche. Die E-Mail enthält einen Link, über den Sie sich bei Ihrem Konto anmelden und Ihre erste Projekteinrichtung abschließen können.
+Wenn Sie kein Adobe Commerce auf Cloud-Infrastruktur-Konto haben, wenden Sie sich an [Vertrieb]. Wenn Sie sich anmelden, erstellt Adobe Ihr Konto und sendet Ihnen eine Begrüßungs-E-Mail, die Anweisungen zum Zugriff auf die Projektoberfläche enthält. Die E-Mail enthält einen Link, über den Sie sich bei Ihrem Konto anmelden und das ursprüngliche Projekt einrichten können.
 
-## Projekt aufrufen und Benutzer hinzufügen
+## Zugreifen auf Projekte und Hinzufügen von Benutzern
 
-Der Lizenzinhaber kann Benutzerkonten hinzufügen, um den Zugriff auf Code zu ermöglichen, Zweige zu verwalten, Tickets einzugeben und Umgebungen zu unterstützen. Diese Benutzerkonten können interne Entwicklungs-, Berater- und Lösungsspezialisten umfassen.
+Der Lizenzinhaber kann Benutzerkonten hinzufügen, um Zugriff auf Code zu gewähren, Zweigstellen zu verwalten, Tickets einzugeben und Support-Umgebungen zu unterstützen. Zu diesen Benutzerkonten können interne Entwickler, Berater und Lösungsspezialisten gehören.
 
 ### Benutzerregistrierung
 
-Sie können Ihrer Adobe Commerce nur registrierte Benutzer für Cloud-Infrastrukturprojekte und -Umgebungen hinzufügen. Wenn Sie einen neuen Benutzer haben, bitten Sie ihn, sich für ein Konto zu registrieren ](https://account.magento.com/customer/account/login/) und die mit seinem Kontoprofil verknüpfte E-Mail-Adresse anzugeben.[
+Sie können nur registrierte Benutzende zu Ihrer Adobe Commerce in Cloud-Infrastrukturprojekten und -Umgebungen hinzufügen. Wenn Sie einen neuen Benutzer haben, bitten Sie ihn, sich [für ein Konto ](https://account.magento.com/customer/account/login/)) anzumelden und die mit seinem Kontoprofil verknüpfte E-Mail-Adresse anzugeben.
 
-### Zugriff auf freigegebene Konten
+### Zugriff auf freigegebenes Konto
 
-Der Lizenzinhaber kann den freigegebenen Zugriff für das Konto einrichten. Mit dem freigegebenen Zugriff können vertrauenswürdige Mitarbeiter und Dienstleister das Help Center zum Senden und Verfolgen von Support-Tickets für Ihre Adobe Commerce in Cloud-Infrastrukturprojekten verwenden. Anweisungen zum Einrichten finden Sie im Artikel [Freigegebener Zugriff] im Hilfezentrum.
+Der Lizenzinhaber kann den gemeinsamen Zugriff für das Konto einrichten. Durch den gemeinsamen Zugriff können vertrauenswürdige Mitarbeiter und Dienstleister das Hilfezentrum verwenden, um Support-Tickets für Ihre Adobe Commerce in Cloud-Infrastrukturprojekten zu senden und zu verfolgen. Anweisungen zum Einrichten finden Sie im Artikel [Freigegebener Zugriff] im Hilfe-Center.
 
 ### [!DNL Cloud Console]
 
-Sie können die [[!DNL Cloud Console]](cloud-console.md) verwenden, um Ihr Projekt zu verwalten, Benutzerkonten hinzuzufügen und mit der Entwicklung Ihres Stores zu beginnen. Lizenzinhaber, Benutzer technischer Administratoren und Entwickler können die [!DNL Cloud Console] verwenden, um alle Umgebungen und Zweige, Umgebungsvariablen, Umgebungseinstellungen und Routen zu verwalten.
+Sie können die [[!DNL Cloud Console]](cloud-console.md) verwenden, um Ihr Projekt zu verwalten, Benutzerkonten hinzuzufügen und mit der Entwicklung Ihres Stores zu beginnen. Lizenzinhaber, Benutzer mit technischen Administratorrechten und Entwickler können die [!DNL Cloud Console] verwenden, um alle Umgebungen und Verzweigungen, Umgebungsvariablen, Umgebungseinstellungen und Routen zu verwalten.
 
-## Für Adobe-Status anmelden
+## Adobe-Status abonnieren
 
-Rufen Sie Aktualisierungen zu Adobe Commerce in Cloud-Infrastrukturplattformumgebungen und zugehörigen Diensten von der [Statusseite] ab.
+Erhalten Sie Updates zu Adobe Commerce in Cloud-Infrastrukturplattformumgebungen und zugehörigen Services von der [Statusseite].
 
-Die Seite bietet einen Status für Adobe Commerce-Komponenten und -Dienste, gefolgt von Benachrichtigungen zu Vorfällen, Service-Upgrades, geplanten Ausfällen und geplanter Wartung. Jeder, der an Ihrem Projekt arbeitet, kann die Adobe Commerce-Status-Site abonnieren, um Ereignisbenachrichtigungen und -aktualisierungen per E-Mail oder Slack zu erhalten. Sie können Ihr Adobe-Status-Abonnement anpassen, um bestimmte-Produkte nach Regionen und Ereignissen zu verfolgen.
+Auf der Seite finden Sie einen Status für Adobe Commerce-Komponenten und -Services sowie Benachrichtigungen zu Vorfallsberichten, Service-Upgrades, geplanten Ausfällen und geplanten Wartungsarbeiten. Jeder, der an Ihrem Projekt arbeitet, kann die Adobe Commerce-Status-Website abonnieren, um Ereignisbenachrichtigungen und -aktualisierungen per E-Mail oder Slack zu erhalten. Sie können Ihr Adobe-Statusabonnement anpassen, um bestimmte Produkte nach Regionen und Ereignissen zu verfolgen.
 
 >[!TIP]
 >
-> Öffnen Sie die neue [!DNL Cloud Console] und zeigen Sie die Projekt- und Umgebungsaktivitäten an.
+> Öffnen Sie die neue [!DNL Cloud Console] und zeigen Sie Projekt- und Umgebungsaktivitäten an.
 >
->**Nächster Schritt**: [Anmelden bei Cl[!DNL ]oud Console](cloud-console.md)
+>**Nächster Schritt**: [Melden Sie sich bei der CL[!DNL ]oud-Konsole an](cloud-console.md)
 
 <!-- link definitions -->
 
-[Vertrieb]: https://business.adobe.com/products/magento/get-demo.html
-[Freigegebener Zugriff]: https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#shared-access
+[Verkauf]: https://business.adobe.com/products/magento/get-demo.html
+[Shared Access]: https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#shared-access
 [Statusseite]: https://status.adobe.com/products/503473

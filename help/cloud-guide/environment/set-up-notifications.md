@@ -1,5 +1,5 @@
 ---
-title: Benachrichtigungen einrichten
+title: Einrichten von Benachrichtigungen
 description: Erfahren Sie, wie Sie Benachrichtigungen für Adobe Commerce in Cloud-Infrastrukturumgebungen konfigurieren.
 feature: Cloud, Configuration, Logs
 exl-id: be48abcd-4753-4e89-83fe-0aadfb0415c2
@@ -10,34 +10,34 @@ ht-degree: 0%
 
 ---
 
-# Benachrichtigungen einrichten
+# Einrichten von Benachrichtigungen
 
-Standardmäßig schreibt Adobe Commerce in der Cloud-Infrastruktur Build- und Bereitstellungsaktionen in die Datei &quot;`app/var/log/cloud.log`&quot;im Stammordner der Adobe Commerce-Anwendung. Optional können Sie Protokolle an ein Messaging-System wie Slack und E-Mail senden, um Echtzeit-Benachrichtigungen zu erhalten.
+Standardmäßig schreibt Adobe Commerce in der Cloud-Infrastruktur Erstellungs- und Bereitstellungsaktionen in die `app/var/log/cloud.log` im Stammverzeichnis der Adobe Commerce-Anwendung. Optional können Sie Protokolle an ein Messaging-System senden, z. B. Slack und E-Mail, um Echtzeitbenachrichtigungen zu erhalten.
 
-Beispielsweise können Sie eine Slack-Nachricht senden, um eine Benutzergruppe bei einem fehlgeschlagenen Bereitstellungsprozess zu benachrichtigen und eine Untersuchung darüber einzuleiten, was schiefgelaufen ist.
+Sie können beispielsweise eine Slack-Nachricht senden, um eine Gruppe von Personen zu benachrichtigen, wenn eine Bereitstellung fehlschlägt, und eine Untersuchung der Fehlerursache einleiten.
 
-## Planen von Benachrichtigungen
+## Benachrichtigungen planen
 
-Beachten Sie vor der Konfiguration von Benachrichtigungen Folgendes:
+Beachten Sie Folgendes, bevor Sie Benachrichtigungen konfigurieren:
 
-- Welche Art von Benachrichtigungen möchten Sie erhalten (Slack-Nachrichten, E-Mails, beides)?
-- Wie viele Details möchten Sie in den Protokollen sehen?
-- Wo möchten Sie Benachrichtigungen einrichten (Integration, Staging, Produktion)?
+- Welche Art von Benachrichtigungen möchten Sie erhalten (Slack-Nachrichten, E-Mail, beides)?
+- Wie viele Details sollen in den Protokollen angezeigt werden?
+- Wo sollen Benachrichtigungen eingerichtet werden (Integration, Staging, Produktion)?
 
-Beispielsweise können Sie während der ersten Entwicklung E-Mail-Benachrichtigungen mit detaillierten Protokollen zu Ihrer Integrationsumgebung bevorzugen, um Probleme zu beheben, bevor Sie sie in der Staging-Umgebung bereitstellen. Wenn Sie für die Bereitstellung in der Staging- oder Produktionsumgebung bereit sind, sollten Sie eine Slack-Nachricht mit weniger detaillierten Informationen bevorzugen.
+Beispielsweise können Sie bei der ersten Entwicklung E-Mail-Benachrichtigungen bevorzugen, die detaillierte Protokolle über Ihre Integrationsumgebung enthalten, um Probleme vor der Bereitstellung in der Staging-Umgebung zu beheben. Wenn Sie für die Bereitstellung in der Staging- oder Produktionsumgebung bereit sind, bevorzugen Sie möglicherweise eine Slack-Nachricht, die weniger detaillierte Informationen enthält.
 
 >[!NOTE]
 >
->Die Konfigurationsdatei, die zum Einrichten von Benachrichtigungen verwendet wird, befindet sich im Stammverzeichnis Ihres Projektverzeichnisses. Sie gilt also, wenn Sie Änderungen an eine Umgebung pushen. Wenn Sie Benachrichtigungen pro Umgebung anpassen möchten, müssen Sie die Konfigurationsdatei ändern, bevor Sie sie an diese Umgebung senden.
+>Die Konfigurationsdatei, die zum Einrichten von Benachrichtigungen verwendet wird, befindet sich im Stammverzeichnis Ihres Projektverzeichnisses. Daher wird sie angewendet, wenn Sie Änderungen in eine beliebige Umgebung pushen. Wenn Sie Benachrichtigungen pro Umgebung anpassen möchten, müssen Sie die Konfigurationsdatei ändern, bevor Sie sie in diese Umgebung pushen.
 
-## Benachrichtigungen konfigurieren
+## Konfigurieren von Benachrichtigungen
 
 So konfigurieren Sie Benachrichtigungen:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
-1. Fügen Sie in der Datei &quot;`.magento.env.yaml`&quot;im Projektstamm Ihre Einstellungen für das Messaging-System hinzu, einschließlich der bevorzugten Benachrichtigungsebene [Protokollebenen](log-handlers.md#log-levels).
+1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
+1. Fügen Sie in der `.magento.env.yaml`-Datei in Ihrem Projektstammverzeichnis Ihre Messaging-Systemeinstellungen hinzu, einschließlich bevorzugter Benachrichtigungs- [Protokollebenen](log-handlers.md#log-levels).
 
-   Um beispielsweise die E-Mail-Konfigurationen für Slack _und_ zu konfigurieren, verwenden Sie Folgendes:
+   Verwenden Sie z. B. Folgendes, um sowohl die Slack _und_-E-Mail-Konfigurationen zu konfigurieren:
 
    ```yaml
    log:
@@ -55,9 +55,9 @@ So konfigurieren Sie Benachrichtigungen:
 
    >[!NOTE]
    >
-   >Adobe Commerce in der Cloud-Infrastruktur sendet nur E-Mails während der Bereitstellungsphase.
+   >Adobe Commerce in der Cloud-Infrastruktur sendet nur während der Bereitstellungsphase E-Mails.
 
-1. Übertragen Sie Ihre Änderungen auf den Remote-Server.
+1. Übergeben Sie Ihre Änderungen und übertragen Sie sie auf den Remote-Server.
 
    ```bash
    git -A && git commit -m "Configure build/deploy notifications"
@@ -67,7 +67,7 @@ So konfigurieren Sie Benachrichtigungen:
    git push origin <branch-name>
    ```
 
-### Slack-Beispielkonfiguration
+### Beispiel einer Slack-Konfiguration
 
 Das folgende Beispiel zeigt eine Nur-Slack-Konfiguration:
 
@@ -81,17 +81,17 @@ log:
 ```
 
 - `token` - Ihr Slack [Benutzer-Token](https://api.slack.com/docs/token-types#user). Ihr Benutzer-Token autorisiert Adobe Commerce in der Cloud-Infrastruktur zum Senden von Nachrichten.
-- `channel` - Der Name des Slack-Kanals Adobe Commerce in der Cloud-Infrastruktur sendet Benachrichtigungen.
-- `username`—Benutzername Adobe Commerce in der Cloud-Infrastruktur verwendet , um Benachrichtigungen in Slack zu senden.
-- `min_level`—Minimale Protokollebene für Benachrichtigungsmeldungen. Es wird empfohlen, `info` zu verwenden.
+- `channel` - Name des Slack-Kanals, über den Adobe Commerce in der Cloud-Infrastruktur Benachrichtigungen sendet.
+- `username` - Benutzername, den Adobe Commerce in der Cloud-Infrastruktur verwendet, um Benachrichtigungen auf Slack zu senden.
+- `min_level` - Minimale Protokollebene für Benachrichtigungsinhalte Es wird empfohlen, `info` zu verwenden.
 
-### Beispiel für eine E-Mail-Konfiguration
+### Beispiel einer E-Mail-Konfiguration
 
-Das folgende Beispiel zeigt eine E-Mail-Konfiguration:
+Das folgende Beispiel zeigt eine reine E-Mail-Konfiguration:
 
 >[!NOTE]
 >
->Adobe Commerce in der Cloud-Infrastruktur sendet nur E-Mails während der Bereitstellungsphase.
+>Adobe Commerce in der Cloud-Infrastruktur sendet nur während der Bereitstellungsphase E-Mails.
 
 ```yaml
 log:
@@ -102,7 +102,7 @@ log:
     min_level: "notice"
 ```
 
-- `to` - E-Mail-Adresse Adobe Commerce in der Cloud-Infrastruktur sendet Benachrichtigungen.
-- `from` - E-Mail-Adresse zum Senden von Benachrichtigungsinhalten an Empfänger.
-- `subject`—Beschreibung der E-Mail.
-- `min_level`—Minimale Protokollebene für Benachrichtigungsmeldungen. Es wird empfohlen, `notice` oder `warning` zu verwenden.
+- `to`: Die E-Mail-Adresse Adobe Commerce in der Cloud-Infrastruktur sendet Benachrichtigungsnachrichten.
+- `from` - E-Mail-Adresse für den Versand von Benachrichtigungsinhalten an Empfänger.
+- `subject` - Beschreibung der E-Mail.
+- `min_level` - Minimale Protokollebene für Benachrichtigungsinhalte Es wird empfohlen, `notice` oder `warning` zu verwenden.

@@ -1,6 +1,6 @@
 ---
-title: Profildatenbankabfragen
-description: Erfahren Sie, wie Sie die Profilerstellung aktivieren können, um die Auswirkungen von Datenbankänderungen zu verstehen.
+title: Abfragen der Profildatenbank
+description: Erfahren Sie, wie Sie die Profilerstellung aktivieren, um die Auswirkungen von Änderungen an der Datenbank zu verstehen.
 feature: Cloud, Storage
 exl-id: 85773cf6-e284-4de3-a6a4-765db6a6eb24
 source-git-commit: 24b553f897d3ac89345dc2539c0dc13e757e8515
@@ -10,13 +10,13 @@ ht-degree: 0%
 
 ---
 
-# Profildatenbankabfragen
+# Abfragen der Profildatenbank
 
-Beim Schreiben in eine Datenbank kann es hilfreich sein, die Profilerstellung auszuführen, um die Auswirkungen dieser Änderungen zu identifizieren. Die Profilerstellung verwaltet ein Protokoll mit Datenbankabfragen und erhöht die Laufzeitgenauigkeit.
+Beim Schreiben in eine Datenbank kann die Profilerstellung hilfreich sein, um die Auswirkungen dieser Änderungen zu ermitteln. Bei der Profilerstellung wird ein Protokoll mit Datenbankabfragen verwaltet und die Laufzeitgenauigkeit erhöht.
 
-**Aktivieren der Profilerstellung für Datenbankabfragen**:
+**So aktivieren Sie die Profilerstellung für Datenbankabfragen**:
 
-1. [Melden Sie sich bei der Datenbank an](../services/mysql.md#connect-to-the-database).
+1. [Melden Sie sich bei der Datenbank ](../services/mysql.md#connect-to-the-database).
 
 1. Aktivieren Sie die Profilerstellung.
 
@@ -25,7 +25,7 @@ Beim Schreiben in eine Datenbank kann es hilfreich sein, die Profilerstellung au
    ... run some queries
    ```
 
-1. Anzeigen des Protokolls der Abfragen.
+1. Protokoll der Abfragen anzeigen.
 
    ```sql
    SHOW profiles

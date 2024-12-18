@@ -1,6 +1,6 @@
 ---
-title: Keine Ausfallzeit-Bereitstellung
-description: Erfahren Sie, wie Sie bei der Bereitstellung von Adobe Commerce in Cloud-Infrastrukturprojekten Ausfallzeiten reduzieren können.
+title: Keine Ausfallzeiten bei der Bereitstellung
+description: Erfahren Sie, wie Sie bei der Bereitstellung von Adobe Commerce in Cloud-Infrastrukturprojekten die Ausfallzeiten insgesamt reduzieren können.
 feature: Cloud, Deploy, SCD, Themes
 exl-id: ff89d2e1-dfc8-4f6d-bd98-947559af13f0
 source-git-commit: 225fba1acfd8b3ce4d7ce989c7851e7b0b218680
@@ -10,35 +10,35 @@ ht-degree: 0%
 
 ---
 
-# Keine Ausfallzeit-Bereitstellung
+# Keine Ausfallzeiten bei der Bereitstellung
 
-Adobe Commerce in der Cloud-Infrastruktur führt die Anwendung während der Bereitstellungsphase im [_Wartungsmodus_ Modus](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/setup/application-modes.html#production-mode) aus, wodurch Ihre Site offline geschaltet wird, bis die Bereitstellung abgeschlossen ist. Die Dauer der Wartungsarbeiten Ihrer Produktions-Site hängt von der Größe der Site, der Anzahl der während der Bereitstellung angewendeten Änderungen und der Konfiguration für die Bereitstellung statischer Inhalte ab. Es ist möglich, Ihr Projekt so zu konfigurieren, dass es mit einem Ausfallzeiteffekt von **null** bereitgestellt wird.
+Adobe Commerce in der Cloud-Infrastruktur führt die Anwendung während [_Bereitstellungsphase im_-](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/setup/application-modes.html#production-mode) aus. Dadurch wird Ihre Site offline geschaltet, bis die Bereitstellung abgeschlossen ist. Wie lange sich Ihre Produktions-Site im Wartungsmodus befindet, hängt von der Größe der Site, der Anzahl der während der Bereitstellung vorgenommenen Änderungen und der Konfiguration für die Bereitstellung statischer Inhalte ab. Es ist möglich, Ihr Projekt so zu konfigurieren, dass es mit einem **Ausfallzeiteffekt bereitgestellt**.
 
-Während des Bereitstellungsprozesses werden alle Verbindungen bis zu 5 Minuten lang in die Warteschlange gestellt, wobei aktive Sitzungen und ausstehende Aktionen beibehalten werden, z. B. zum Warenkorb oder zum Checkout. Nach der Bereitstellung wird die Warteschlange freigegeben und die Verbindungen werden ohne Unterbrechung fortgesetzt. Um diesen _Verbindungsspeicher_ zu Ihrem Vorteil zu verwenden und die Bereitstellung auf den Stillstand von _null_ zu reduzieren, müssen Sie Ihr Projekt so konfigurieren, dass die effizienteste Bereitstellungsstrategie verwendet wird.
+Während des Bereitstellungsprozesses stehen alle Verbindungen für bis zu 5 Minuten in der Warteschlange, wobei alle aktiven Sitzungen und ausstehenden Aktionen beibehalten werden, z. B. das Hinzufügen zum Warenkorb oder der Checkout. Nach der Bereitstellung wird die Warteschlange freigegeben und die Verbindungen werden ohne Unterbrechung fortgesetzt. Um diese _Verbindung zu Ihrem Vorteil_ halten und die Bereitstellung auf _null_ Ausfallzeiten zu reduzieren, müssen Sie Ihr Projekt so konfigurieren, dass es die effizienteste Bereitstellungsstrategie verwendet.
 
-Führen Sie die folgenden Schritte aus, um die Zeit zu verkürzen, die Ihr Store für die Bereitstellung einer Aktualisierung für die Produktion benötigt:
+Führen Sie die folgenden Schritte aus, um die Zeit zu reduzieren, die Ihr Store für die Bereitstellung eines Updates für die Produktion benötigt:
 
-1. [Aktualisieren Sie auf das `ece-tools` Paket](../dev-tools/install-package.md) oder [aktualisieren Sie die `ece-tools` Version](../dev-tools/update-package.md) .
-Ihr Adobe Commerce on Cloud-Infrastrukturprojekt muss über das neueste `ece-tools` -Paket verfügen, damit Sie über die Tools verfügen, mit denen Sie eine optimale Bereitstellung konfigurieren können. Wenn Sie über die neueste Version von `ece-tools` verfügen, fahren Sie mit dem nächsten Schritt fort.
+1. [Aktualisieren Sie auf das `ece-tools`-](../dev-tools/install-package.md) oder [aktualisieren Sie die `ece-tools` Version](../dev-tools/update-package.md)
+Ihr Adobe Commerce in Cloud-Infrastrukturprojekt muss über das neueste `ece-tools` verfügen, damit Sie über die Tools zur Konfiguration einer optimalen Bereitstellung verfügen. Wenn Sie über die neuesten `ece-tools` verfügen, fahren Sie mit dem nächsten Schritt fort.
 
    >[!NOTE]
    >
-   >Obwohl es sich um eine Best Practice handelt, das neueste `ece-tools` -Paket zu verwenden, funktioniert die Methode zur Bereitstellung ohne Ausfallzeiten mit der `ece-tools` [Version 2002.0.13](../release-notes/cloud-release-archive.md#v2002013) und höher.
+   >Obwohl es sich um eine Best Practice handelt, das neueste `ece-tools`-Paket zu verwenden, funktioniert die Bereitstellungsmethode ohne Ausfallzeiten mit `ece-tools` ([.0.13](../release-notes/cloud-release-archive.md#v2002013) und höher.
 
 1. [Konfigurieren der Bereitstellung statischer Inhalte](static-content.md)
-Wenn die Bereitstellung statischer Inhalte in der Bereitstellungsphase fehlschlägt, bleibt Ihre Site im Wartungsmodus hängen. Wenn während der Build-Phase ein Fehler auftritt, vermeidet der Prozess Ausfallzeiten, da er die Bereitstellungsphase nie beginnt. [Das Generieren von statischem Inhalt während der Build-Phase mit minimiertem HTML](static-content.md#setting-the-scd-on-build), auch als idealer Status bezeichnet, ist die optimale Konfiguration für Bereitstellungen ohne Ausfallzeiten und _verhindert_ Ausfallzeiten, wenn ein Fehler auftritt.
+Wenn die Bereitstellung statischer Inhalte in der Bereitstellungsphase fehlschlägt, bleibt Ihre Site im Wartungsmodus hängen. Wenn während der Build-Phase ein Fehler auftritt, vermeidet der Prozess Ausfallzeiten, da er nie in die Bereitstellungsphase eintritt. [Das Generieren von statischem Inhalt während der Build-Phase mit minimiertem HTML](static-content.md#setting-the-scd-on-build), auch als idealer Status bezeichnet, ist die optimale Konfiguration für Bereitstellungen ohne Ausfallzeiten und _Ausfallzeiten_, wenn ein Fehler auftritt.
 
 1. [Konfigurieren des Hooks nach der Bereitstellung](../application/hooks-property.md)
-Sie müssen den Hook nach der Bereitstellung konfigurieren, um den Cache zu leeren und zu warnen. Standardmäßig erfolgt die Cache-Bereinigung während der Bereitstellungsphase, wenn die Site ausfällt. Wenn Sie den Cache in die Phase nach der Bereitstellung verschieben, bleibt der Cache aktiv, bis die Bereitstellungsphase abgeschlossen ist. Anschließend können Sie den Cache sicher löschen.
+Sie müssen den Hook nach der Bereitstellung konfigurieren, um den Cache zu bereinigen und zu wärmen. Standardmäßig erfolgt die Cache-Bereinigung während der Bereitstellungsphase, wenn die Site ausgefallen ist. Wenn Sie den Cache bereinigen in die Phase nach der Bereitstellung verschieben, bleibt Ihr Cache bis zum Abschluss der Bereitstellungsphase aktiv, und Sie können dann den Cache sicher bereinigen.
 
-   Passen Sie die Liste der Seiten an, die zum Vorausfüllen des Caches mit der Umgebungsvariablen [WARM_UP_PAGES](../environment/variables-post-deploy.md#warmuppages) verwendet werden.
+   Passen Sie die Liste der Seiten an, die zum Vorausfüllen des Caches verwendet werden, indem Sie die [WARM_UP_PAGES-Umgebungsvariable](../environment/variables-post-deploy.md#warmuppages) verwenden.
 
-1. [Reduzieren der Designdateien](../environment/variables-deploy.md#scdmatrix)
-Sie können die Anzahl unnötiger Designdateien reduzieren, indem Sie die Umgebungsvariable SCD\_MATRIX konfigurieren.
+1. [Reduzieren von Design-Dateien](../environment/variables-deploy.md#scdmatrix)
+Sie können die Anzahl unnötiger Design-Dateien reduzieren, indem Sie die Umgebungsvariable SCD\_MATRIX konfigurieren.
 
-1. [Beschleunigen der Bereitstellung statischer Inhalte](../environment/variables-deploy.md#scdthreads)
+1. [Beschleunigung der Bereitstellung statischer Inhalte](../environment/variables-deploy.md#scdthreads)
 Sie können den Bereitstellungsprozess beschleunigen, indem Sie die Umgebungsvariable SCD\_THREADS aktualisieren, um die Anzahl der Threads für die Bereitstellung statischer Inhalte zu erhöhen.
 
 >[!NOTE]
 >
->Sie können Ihre Projektkonfiguration auf eine optimale Bereitstellung überprüfen, indem Sie [den idealen Statusassistenten ausführen](smart-wizards.md#verifying-an-ideal-configuration).
+>Sie können Ihre Projektkonfiguration für eine optimale Bereitstellung überprüfen, indem Sie [den Assistenten für den Idealzustand ausführen](smart-wizards.md#verifying-an-ideal-configuration).

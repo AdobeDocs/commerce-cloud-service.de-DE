@@ -1,6 +1,6 @@
 ---
 title: Site-Launch
-description: Erfahren Sie, wie Sie mit der Vorbereitung des Site-Starts beginnen.
+description: Erfahren Sie, wie Sie mit der Vorbereitung des Site-Launches beginnen.
 exl-id: a7b3f260-b76e-4220-b521-699548a9928a
 source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
@@ -11,45 +11,45 @@ ht-degree: 0%
 
 # Site-Launch
 
-Wenn Sie die Bereitstellung und Tests in Integrations- und Staging-Umgebungen abgeschlossen haben, können Sie mit der Vorbereitung des Site-Starts beginnen. Zunächst sollten Sie alle Entwicklungs- und Testvorgänge abschließen, bevor Sie in der Produktionsumgebung arbeiten. Sind Sie bereit zum Start? Überprüfen Sie Checklisten, Best Practices und die letzten Schritte, um Ihre Site zu starten.
+Nach Abschluss der Bereitstellung und der Tests in Integrations- und Staging-Umgebungen können Sie mit der Vorbereitung des Site-Starts beginnen. Zunächst sollten alle Entwicklungs- und Testaufgaben abgeschlossen sein, bevor Sie in der Produktionsumgebung arbeiten. Sind Sie bereit zu starten? Überprüfen Sie Checklisten, Best Practices und letzte Schritte, um Ihre Site zu starten.
 
-Wenn Sie diese Informationen vor der Bereitstellung und dem Testen im Staging überprüft haben, sollten Sie die Vorteile von Tests im Staging zuerst im nächsten Abschnitt überprüfen. Staging ist eine nahezu produktionsorientierte Umgebung, die auf ähnlicher Hardware, Konfigurationen, Architektur und Diensten ausgeführt wird. Dadurch können Sie Ihre Ausfallzeiten reduzieren und wichtige Komponenten für Erweiterungen, Dienste, benutzerdefinierte Konfigurationen und das Testen der Benutzerakzeptanz für Händler zur Freigabe Ihrer Sites und Stores bereitstellen.
+Wenn Sie diese Informationen vor der Bereitstellung und dem Testen in der Staging-Umgebung geprüft haben, sollten Sie im nächsten Abschnitt die Vorteile von Tests in der Staging-Umgebung zuerst überprüfen. Staging ist eine produktionsnahe Umgebung, die auf ähnlicher Hardware, Konfigurationen, Architektur und Services ausgeführt wird. Dadurch können Sie Ausfallzeiten reduzieren und Ihre Erweiterungs-, Service-, benutzerdefinierten Konfigurationen- und Händlerakzeptanztests zu wichtigen Komponenten für die Freigabe Ihrer Sites und Stores machen.
 
-## Warum sollten Sie vollständig in Integration, Staging und Produktion testen?
+## Warum sollten Sie die Integration, das Staging und die Produktion vollständig testen?
 
-Wir empfehlen dringend Tests in der Integration-, Staging- und Produktionsumgebung, da es schwierig ist sicherzustellen, dass Ihr benutzerspezifischer Code, Designs, Erweiterungen und Drittanbieter-Integrationen zusammenarbeiten, um Ihre Stores zu betreiben. Im Folgenden finden Sie allgemeine Probleme, die Sie erkennen und beheben können, wenn Sie die Tests in den Integrations- und Staging-Umgebungen vor der Aktualisierung Ihrer Produktionsumgebung durchführen:
+Wir empfehlen dringend Tests in der Integrations-, Staging- und Produktionsumgebung, da Sie mit Sicherheit sicherstellen müssen, dass Ihr benutzerdefinierter Code, Designs, Erweiterungen und Drittanbieterintegrationen zusammenarbeiten, um Ihre Stores zu betreiben. Die folgenden häufigen Probleme können Sie identifizieren und beheben, wenn Sie das Testen in der Integrations- und Staging-Umgebung abschließen, bevor Sie Ihre Produktionsumgebung aktualisieren:
 
-- Staging unterstützt alle Produktionsdienste, Funktionen, Datenbankdaten, Technologiestapel, Architektur und mehr. Es spiegelt die Produktion wider. Wenn also in der Staging-Umgebung Fehler auftreten, erhalten Sie eine Warnung, bevor sie in der Produktion auftreten.
+- Staging unterstützt alle Produktions-Services, Funktionen, Datenbankdaten, Technologie-Stack, Architektur und mehr. Es spiegelt die Produktion wider, d. h. wenn beim Staging Fehler auftreten, erhalten Sie eine Warnung, bevor sie in der Produktion auftreten.
 
 - Code, der in Ihrer lokalen Integrationsumgebung funktioniert, funktioniert möglicherweise nicht in Staging- und Produktionsumgebungen.
 
-- Integrationsumgebungen unterstützen einige in Staging und Produktion verfügbare Dienste nicht, wie Fastly und New Relic.
+- Integrationsumgebungen unterstützen nicht alle Services, die in der Staging- und Produktionsumgebung verfügbar sind, z. B. Fastly und New Relic.
 
-- [Testen Sie Ihre Site vollständig](../test/guidance.md) mit verschiedenen Tools im Staging für Laden-, Stress-, Leistungs- und Site-Assets.
+- [Testen Sie ](../test/guidance.md) Site vollständig mit verschiedenen Tools in der Staging-Umgebung auf Auslastung, Belastung, Leistung und Site-Assets.
 
 - Da in Integrationsumgebungen möglicherweise nur Datenbanken mit Testdaten gefüllt sind, die nicht mit einer produktionsähnlichen Umgebung übereinstimmen, können beim Testen in Staging- oder Produktionsumgebungen zusätzliche Fehler oder unerwartetes Verhalten auftreten.
 
-## Voraussetzungen für den Site-Start
+## Voraussetzungen für den Site-Launch
 
-Sie benötigen die folgenden Informationen und Ressourcen, um sich auf den Site-Start vorzubereiten:
+Sie benötigen die folgenden Informationen und Ressourcen, um sich auf den Site-Launch vorzubereiten:
 
-- CNAME-Datensatzinformationen zum Konfigurieren des DNS
+- CNAME-Eintragsinformationen zum Konfigurieren des DNS
 
-- Liste aller Storefront-Domänen, die zum Zertifikat hinzugefügt werden sollen
+- Liste aller Storefront-Domains, die dem Zertifikat hinzugefügt werden sollen
 
 - SSL-/TLS-Zertifikat
 
-Als Teil von Adobe Commerce für die Cloud-Infrastrukturanmeldung stellt Adobe ein domänenvalidiertes SSL-/TLS-Zertifikat bereit, das von Let&#39;s Encrypt ausgestellt wurde. Jede Pro Production-, Staging- und Starter Production-Umgebung (`master`) verfügt über ein eindeutiges Zertifikat, das alle Domänen und Subdomänen in dieser Umgebung abdeckt. Diese Zertifikate werden automatisch bereitgestellt und auf Ihre Site hochgeladen, nachdem Sie Ihre DNS-Konfiguration für Entwicklung und Produktion aktualisiert haben. Siehe [Bereitstellen von SSL-/TLS-Zertifikaten](../cdn/fastly-configuration.md#provision-ssltls-certificates).
+Im Rahmen des Adobe Commerce on Cloud Infrastructure-Abonnements stellt Adobe ein Domain-validiertes SSL-/TLS-Zertifikat bereit, das von Let&#39;s Encrypt ausgestellt wird. Jede Pro Production, Staging- und Starter Production (`master`)-Umgebung verfügt über ein eindeutiges Zertifikat, das alle Domains und Subdomains in dieser Umgebung abdeckt. Diese Zertifikate werden automatisch bereitgestellt und auf Ihre Site hochgeladen, nachdem Sie Ihre DNS-Konfiguration für die Entwicklung und Produktion aktualisiert haben. Siehe [Bereitstellen von SSL-/TLS-](../cdn/fastly-configuration.md#provision-ssltls-certificates).
 
 >[!NOTE]
 >
->Wenn Sie Ihr eigenes erweitertes Validierungs-SSL-Zertifikat für Ihr Unternehmen bereitstellen möchten, anstatt das Let&#39;s Encrypt-Zertifikat zu verwenden, wenden Sie sich an Ihren CTA oder senden Sie ein Adobe Commerce-Supportticket](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket).[
+>Wenn Sie Ihr eigenes SSL-Zertifikat mit erweiterter Validierung für Ihr Unternehmen bereitstellen möchten, anstatt das Zertifikat „Let&#39;s Encrypt“ zu verwenden, wenden Sie sich an Ihren CTA oder [Senden eines Adobe Commerce-Support-Tickets](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket).
 
-## Einrichten des Sicherheitsscan-Tools
+## Einrichten des Sicherheits-Scan-Tools
 
 >[!NOTE]
 >
->Das Sicherheitsscan-Tool verwendet die folgenden öffentlichen IP-Adressen:
+>Das Tool zur Sicherheitsprüfung verwendet die folgenden öffentlichen IP-Adressen:
 >
 >```text
 >52.87.98.44
@@ -57,19 +57,19 @@ Als Teil von Adobe Commerce für die Cloud-Infrastrukturanmeldung stellt Adobe e
 >3.218.25.102
 >```
 >
->Fügen Sie diese IP-Adressen zu einer Zulassungsliste in Ihren Netzwerk-Firewall-Regeln hinzu, damit das Tool Ihre Website scannen kann. Das Tool sendet Anforderungen nur an die Ports 80 und 443.
+>Fügen Sie diese IP-Adressen zu einer Zulassungsliste in Ihren Netzwerk-Firewall-Regeln hinzu, damit das Tool Ihre Site überprüfen kann. Das Tool sendet Anfragen nur an die Ports 80 und 443.
 
-Mit dem Security Scan Tool können Sie Ihre Store-Websites regelmäßig überwachen und Updates auf bekannte Sicherheitsrisiken, Malware und veraltete Software erhalten. Dieses Tool ist ein kostenloser Dienst, der für alle Implementierungen und Versionen von Adobe Commerce in der Cloud-Infrastruktur verfügbar ist. Sie greifen über Ihr [Commerce Marketplace-Konto](https://account.magento.com/customer/account/login) auf das Tool zu.
+Mit dem Sicherheits-Scan-Tool können Sie Ihre Store-Websites regelmäßig überwachen und Updates für bekannte Sicherheitsrisiken, Malware und veraltete Software erhalten. Dieses Tool ist ein kostenloser Service, der für alle Implementierungen und Versionen von Adobe Commerce in der Cloud-Infrastruktur verfügbar ist. Sie greifen über Ihr [Commerce Marketplace-Konto auf das Tool zu](https://account.magento.com/customer/account/login).
 
-- Überwachen Sie den Sicherheitsstatus Ihrer Sites und angewendete Sicherheitsupdates.
+- Überwachen des Sicherheitsstatus Ihrer Sites und angewendete Sicherheitsaktualisierungen
 
-- Empfangen von Sicherheitsupdates und Site-spezifischen Benachrichtigungen
+- Empfangen von Sicherheitsaktualisierungen und Site-spezifischen Benachrichtigungen
 
-Informationen zum Einrichten und Verwenden des Sicherheitsscan-Tools finden Sie im [Benutzerhandbuch](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-scan) . Normalerweise beginnen Sie mit der Verwendung dieses Tools, wenn Sie mit dem Benutzerakzeptanztest (UAT) beginnen.
+Informationen [ Einrichten und Verwenden des Sicherheits](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-scan)Scan-Tools finden Sie im Benutzerhandbuch. Normalerweise verwenden Sie dieses Tool, wenn Sie mit dem Benutzerakzeptanztest (UAT) beginnen.
 
-Jede Site, die Sie scannen, muss über den Tab Sicherheitsscan registriert werden. Während des Registrierungsprozesses müssen Sie den Haftungsausschluss akzeptieren, bevor Sie mit dem Scannen beginnen können. Sie steuern sowohl den Zeitplan als auch die Autorisierung des Benutzers für den Empfang von Benachrichtigungen, wenn die Überprüfung abgeschlossen ist. Sie können Prüfungen für ein bestimmtes, wiederkehrendes Datum und eine bestimmte Uhrzeit planen oder bei Bedarf eine Überprüfung durchführen.
+Jede Site, die Sie durchsuchen, muss über die Registerkarte Sicherheitsprüfung registriert werden. Während des Registrierungsprozesses müssen Sie den Haftungsausschluss akzeptieren, bevor Sie mit dem Scannen beginnen können. Sie steuern sowohl den Zeitplan als auch die Autorisierung des Benutzers, nach Abschluss jeder Überprüfung Benachrichtigungen zu erhalten. Sie können die Suche für ein bestimmtes, wiederkehrendes Datum und eine bestimmte Uhrzeit planen oder bei Bedarf eine Suche ausführen.
 
-Das Security Scan Tool verwendet mehrere Benutzeragenten-Zeichenfolgen, um die Malware-Aktivität in Echtzeit zu simulieren. Möglicherweise sehen Sie die folgenden Benutzeragenten in Ihren Analyse- oder Zugriffsprotokollen:
+Das Security Scan Tool verwendet mehrere Benutzeragenten-Zeichenfolgen, um Malware-Aktivitäten in Echtzeit zu simulieren. Möglicherweise werden die folgenden Benutzeragenten in Ihren Analytics- oder Zugriffsprotokollen angezeigt:
 
 ```text
 Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:57.0) Gecko/20100101 Firefox/57.0
@@ -78,34 +78,34 @@ Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrom
 Visbot/2.0 (+http://www.visvo.com/en/webmasters.jsp;bot@visvo.com)
 ```
 
-## Site durchsuchen
+## Site scannen
 
-1. Greifen Sie auf Ihr [Commerce Marketplace-Konto](https://account.magento.com/customer/account/login) zu.
+1. Zugriff auf Ihr [Commerce Marketplace-Konto](https://account.magento.com/customer/account/login).
 
-1. Klicken Sie auf die Registerkarte Sicherheitsscan und wählen Sie **Gehe zu Sicherheitsscan**.
+1. Klicken Sie auf die Registerkarte Sicherheitsprüfung und wählen Sie **Zu Sicherheitsprüfung wechseln**.
 
-1. Wählen Sie in der Spalte _Aktionen_ für die Site die Option **Scan ausführen**. Der Status der Benachrichtigung zeigt die geplante Prüfung an.
+1. Wählen Sie in der _Aktionen_ für die Website **Suche ausführen** aus. Ein Benachrichtigungsstatus zeigt die zeitgesteuerte Suche an.
 
 ### So überprüfen Sie den Bericht:
 
-1. Nach Abschluss des Berichts wird eine Benachrichtigung angezeigt.
+1. Wenn der Bericht abgeschlossen ist, wird eine Benachrichtigung angezeigt.
 
-1. Wählen Sie in der Site-Zeile den Bericht aus, den Sie anzeigen möchten, in der Spalte **Berichte** . Die Bestellung ist von neuester bis älterer Version.
+1. Wählen Sie in der Zeile Site den Bericht, den Sie anzeigen möchten, aus der Spalte **Berichte** aus. Die Reihenfolge ist von der neuesten zur ältesten.
 
-Der Bericht listet Probleme auf, einschließlich fehlgeschlagener Scans, nicht identifizierter Ergebnisse und erfolgreicher Scans. Jeder Eintrag enthält detaillierte Informationen für die Prüfung, eine Liste der zu untersuchenden Probleme und zu ergreifenden Maßnahmen. Einige dieser Aktionen erfordern möglicherweise das Herunterladen und Installieren von Sicherheits-Patches. Fügen Sie erforderliche Patches zu einer Entwicklungsverzweigung auf Ihrer lokalen Workstation hinzu, bevor Sie sie zur Produktionsverzweigung hinzufügen.
+Der Bericht listet Probleme auf, einschließlich fehlgeschlagener Scans, nicht identifizierter Ergebnisse und erfolgreicher Scans. Jeder Eintrag enthält detaillierte Informationen für die Überprüfung, eine Liste der zu untersuchenden Probleme und zu ergreifende Maßnahmen. Einige dieser Aktionen erfordern möglicherweise das Herunterladen und Installieren von Sicherheits-Patches. Fügen Sie alle erforderlichen Patches zu einer Entwicklungsverzweigung auf Ihrer lokalen Workstation hinzu, bevor Sie sie zur Produktionsverzweigung hinzufügen.
 
-Die Scan-Ergebnisse enthalten eine Beschriftung, die den Status der Überprüfung besteht oder fehlschlägt, mit detaillierten Informationen zu den durchgeführten Prüfungen:
+Die Scan-Ergebnisse enthalten eine Bezeichnung, die den Status „Scan bestanden“ oder „Fehlgeschlagen“ mit detaillierten Informationen zu den durchgeführten Prüfungen beschreibt:
 
-- &quot;Fehlgeschlagen&quot;bedeutet, dass die Website eine schwerwiegende Sicherheitslücke aufweist.
+- „Fehlgeschlagen“ zeigt an, dass die Website eine schwerwiegende Sicherheitslücke enthält.
 
-- &quot;Nicht identifiziert&quot;bedeutet, dass Ihr Team oder Hosting-Provider eine tiefere Überprüfung durchführen muss, um festzustellen, ob weitere Maßnahmen erforderlich sind.
+- „Nicht identifiziert“ bedeutet, dass Ihr Team oder Ihr Hosting-Anbieter eine eingehendere Überprüfung benötigen, um festzustellen, ob weitere Maßnahmen erforderlich sind.
 
-Die Überprüfungsergebnisse enthalten auch die vorgeschlagenen Behebungsschritte für jeden fehlgeschlagenen Sicherheitstest. Die Ergebnisse der Sicherheitsscans sind nur durch den registrierten Benutzer geschützt und sichtbar. Nur Benutzer, die im Site-Registrierungsprozess benannt sind, erhalten eine Benachrichtigung zum Abschluss der Prüfung.
+Die Suchergebnisse enthalten auch empfohlene Schritte zur Behebung jedes fehlgeschlagenen Sicherheitstests. Ergebnisse der Sicherheitsüberprüfung sind geschützt und können nur von registrierten Benutzern angezeigt werden. Nur Benutzer, die im Site-Registrierungsprozess angegeben sind, erhalten Benachrichtigungen über den Abschluss der Überprüfung.
 
 ## Bereit zum Starten Ihrer Site
 
-Wenn Sie bereit sind, den Site-Startprozess zu starten, sehen Sie sich Folgendes an:
+Wenn Sie bereit sind, den Site-Launch-Prozess zu starten, lesen Sie Folgendes:
 
-- [Checkliste für Launch](checklist.md)
+- [Checkliste starten](checklist.md)
 
 - [Launch-Schritte](steps.md)

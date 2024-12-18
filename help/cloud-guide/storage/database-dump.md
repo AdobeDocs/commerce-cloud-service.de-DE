@@ -1,6 +1,6 @@
 ---
 title: Datenbank sichern
-description: Erfahren Sie, wie Sie mit ECE-Tools eine Sicherung der Datenbank für ein Adobe Commerce-Projekt zur Cloud-Infrastruktur erstellen.
+description: Erfahren Sie, wie Sie mit ECE-Tools eine Sicherung der Datenbank für ein Adobe Commerce in einem Cloud-Infrastrukturprojekt erstellen.
 feature: Cloud, Iaas, Storage
 exl-id: 8a96effe-a587-4edf-b0c7-e73ca8d3b56c
 source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
@@ -12,14 +12,14 @@ ht-degree: 0%
 
 # Datenbank sichern
 
-Sie können eine Kopie Ihrer Datenbank mit dem Befehl `ece-tools db-dump` erstellen, ohne alle Umgebungsdaten aus Diensten und Bereitstellungen zu erfassen. Standardmäßig erstellt dieser Befehl Sicherungen im Ordner `/app/var/dump-main` für alle Datenbankverbindungen, die in der Umgebungskonfiguration angegeben sind. Der DB-Dump-Vorgang wechselt die Anwendung in den Wartungsmodus, stoppt Prozesse in der Verbraucherwarteschlange und deaktiviert Cron-Aufträge, bevor der Dump beginnt.
+Mit dem Befehl `ece-tools db-dump` können Sie eine Kopie Ihrer Datenbank erstellen, ohne alle Umgebungsdaten von Services und Bereitstellungen zu erfassen. Standardmäßig erstellt dieser Befehl Sicherungen im `/app/var/dump-main` für alle Datenbankverbindungen, die in der Umgebungskonfiguration angegeben sind. Der DB-Dump-Vorgang schaltet die Anwendung in den Wartungsmodus, stoppt Verbraucherwarteschlangenprozesse und deaktiviert Cron-Aufträge, bevor der Dump beginnt.
 
 Beachten Sie die folgenden Richtlinien für DB-Dump:
 
-- Für Produktionsumgebungen empfiehlt Adobe, Datenbankabbildvorgänge außerhalb der Spitzenzeiten durchzuführen, um Dienstunterbrechungen zu minimieren, die auftreten, wenn sich die Site im Wartungsmodus befindet.
-- Wenn während des Dump-Vorgangs ein Fehler auftritt, löscht der Befehl die Dump-Datei, um Speicherplatz zu sparen. Überprüfen Sie die Protokolle auf Details (`var/log/cloud.log`).
-- Bei Pro-Produktionsumgebungen wird mit diesem Befehl nur von _einem_ der drei Hochverfügbarkeitsknoten abgelegt, sodass Produktionsdaten, die während des Dump in einen anderen Knoten geschrieben wurden, möglicherweise nicht kopiert werden. Der Befehl generiert eine `var/dbdump.lock` -Datei, um zu verhindern, dass der Befehl auf mehr als einem Knoten ausgeführt wird.
-- Für eine Sicherung aller Umgebungsdienste empfiehlt Adobe die Erstellung einer [Sicherung](snapshots.md).
+- Für Produktionsumgebungen empfiehlt Adobe, Datenbank-Dump-Vorgänge außerhalb der Spitzenzeiten abzuschließen, um Service-Unterbrechungen zu minimieren, die auftreten, wenn sich die Website im Wartungsmodus befindet.
+- Wenn beim Dump-Vorgang ein Fehler auftritt, löscht der Befehl die Dump-Datei, um Speicherplatz zu sparen. Überprüfen Sie die Protokolle auf Details (`var/log/cloud.log`).
+- Bei Pro-Produktionsumgebungen werden mit diesem Befehl nur von _einem_ der drei Knoten mit hoher Verfügbarkeit ausgegeben, sodass Produktionsdaten, die während des Speicherauszugs auf einen anderen Knoten geschrieben werden, möglicherweise nicht kopiert werden. Der Befehl generiert eine `var/dbdump.lock`-Datei, um zu verhindern, dass der Befehl auf mehr als einem Knoten ausgeführt wird.
+- Für ein Backup aller Umgebungs-Services empfiehlt Adobe die Erstellung eines [Backup](snapshots.md).
 
 Sie können mehrere Datenbanken sichern, indem Sie die Datenbanknamen an den Befehl anhängen. Im folgenden Beispiel werden zwei Datenbanken gesichert: `main` und `sales`:
 
@@ -29,14 +29,14 @@ php vendor/bin/ece-tools db-dump main sales
 
 Verwenden Sie den Befehl `php vendor/bin/ece-tools db-dump --help` für weitere Optionen:
 
-- `--dump-directory=<dir>` - Wählen Sie ein Zielverzeichnis für den Datenbank-Dump
-- `--remove-definers`—DEFINER-Anweisungen aus der Datenbank-Dump entfernen
+- `--dump-directory=<dir>` - Wählen Sie einen Zielordner für den Datenbank-Dump aus.
+- `--remove-definers` - Entfernen von DEFINER-Anweisungen aus dem Datenbank-Dump
 
-**So erstellen Sie einen Datenbank-Dump in der Staging- oder Produktionsumgebung**:
+**Erstellen eines Datenbank-Dump in der Staging- oder Produktionsumgebung**:
 
-1. [Verwenden Sie SSH, um sich anzumelden oder einen Tunnel zu erstellen, um eine Verbindung zur Remote-Umgebung herzustellen](../development/secure-connections.md), die die zu kopierende Datenbank enthält.
+1. [Verwenden Sie SSH, um sich anzumelden, oder erstellen Sie einen Tunnel, um eine Verbindung zur Remote-Umgebung herzustellen](../development/secure-connections.md) die die zu kopierende Datenbank enthält.
 
-1. Führen Sie die Umgebungsbeziehungen auf und notieren Sie sich die Informationen zur Datenbankanmeldung.
+1. Listen Sie die Umgebungsbeziehungen auf und beachten Sie die Anmeldeinformationen der Datenbank.
 
    ```bash
    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
@@ -48,7 +48,7 @@ Verwenden Sie den Befehl `php vendor/bin/ece-tools db-dump --help` für weitere 
    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
    ```
 
-1. Erstellen Sie eine Sicherung der Datenbank. Verwenden Sie die Option `--dump-directory` , um ein Zielverzeichnis für den DB-Dump auszuwählen.
+1. Erstellen Sie eine Sicherungskopie der Datenbank. Um einen Zielordner für den DB-Dump auszuwählen, verwenden Sie die Option `--dump-directory` .
 
    ```bash
    php vendor/bin/ece-tools db-dump -- main
@@ -71,7 +71,7 @@ Verwenden Sie den Befehl `php vendor/bin/ece-tools db-dump --help` für weitere 
    [2020-01-28 16:38:11] NOTICE: Maintenance mode is disabled.
    ```
 
-1. Der Befehl `db-dump` erstellt eine `dump-<timestamp>.sql.gz` -Archivdatei im Remote-Projektverzeichnis.
+1. Der Befehl `db-dump` erstellt eine `dump-<timestamp>.sql.gz`-Archivdatei im Remote-Projektverzeichnis.
 
 >[!TIP]
 >

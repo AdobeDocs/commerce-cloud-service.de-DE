@@ -1,6 +1,6 @@
 ---
-title: Redis-Dienst einrichten
-description: Erfahren Sie, wie Sie Redis als Backend-Cache-Lösung für Adobe Commerce in der Cloud-Infrastruktur einrichten und optimieren.
+title: Einrichten des Redis-Service
+description: Erfahren Sie, wie Sie Redis als Backend-Cache-Lösung für Adobe Commerce in der Cloud-Infrastruktur einrichten und optimieren können.
 feature: Cloud, Cache, Services
 exl-id: d6971875-d302-495a-ad10-a81c507c2bc9
 source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
@@ -10,9 +10,9 @@ ht-degree: 0%
 
 ---
 
-# Redis-Dienst einrichten
+# Einrichten des Redis-Service
 
-[Redis](https://redis.io) ist eine optionale Backend-Cache-Lösung, die das Zend Framework Zend_Cache_Backend_File ersetzt, das Adobe Commerce standardmäßig verwendet.
+[Redis](https://redis.io) ist eine optionale Backend-Cache-Lösung, die das Zend-Framework Zend_Cache_Backend_File ersetzt, das Adobe Commerce standardmäßig verwendet.
 
 Siehe [Konfigurieren von Redis](https://experienceleague.adobe.com/docs/commerce-operations/configuration-guide/cache/redis/config-redis.html) im _Konfigurationshandbuch_.
 
@@ -20,21 +20,21 @@ Siehe [Konfigurieren von Redis](https://experienceleague.adobe.com/docs/commerce
 
 **So aktivieren Sie Redis**:
 
-1. Fügen Sie den erforderlichen Namen und Typ zur Datei `.magento/services.yaml` hinzu.
+1. Fügen Sie den erforderlichen Namen und den erforderlichen Typ zur `.magento/services.yaml` hinzu.
 
    ```yaml
    myredis:
        type: redis:<version>
    ```
 
-   Um Ihre eigene Redis-Konfiguration bereitzustellen, fügen Sie einen `core_config` -Schlüssel in Ihre `.magento/services.yaml` -Datei ein:
+   Um Ihre eigene Redis-Konfiguration bereitzustellen, fügen Sie einen `core_config` Schlüssel in Ihrer `.magento/services.yaml` hinzu:
 
    ```yaml
    cache:
        type: redis:<version>
    ```
 
-1. Konfigurieren Sie die Beziehungen in der Datei &quot;`.magento.app.yaml`&quot;.
+1. Konfigurieren Sie die Beziehungen in der `.magento.app.yaml`.
 
    ```yaml
    runtime:
@@ -45,21 +45,21 @@ Siehe [Konfigurieren von Redis](https://experienceleague.adobe.com/docs/commerce
        redis: "redis:redis"
    ```
 
-1. Fügen Sie Code-Änderungen hinzu, übertragen Sie sie und übertragen Sie sie.
+1. Code-Änderungen hinzufügen, übertragen und per Push übertragen.
 
    ```bash
    git add .magento/services.yaml .magento.app.yaml && git commit -m "Enable redis service" && git push origin <branch-name>
    ```
 
-1. [Überprüfen Sie die Dienstbeziehungen](services-yaml.md#service-relationships).
+1. [Überprüfen Sie die Service-Beziehungen](services-yaml.md#service-relationships).
 
 {{service-change-tip}}
 
 ## Verwenden der Redis-CLI
 
-Wenn Ihre Redis-Beziehung den Namen `redis` hat, können Sie mit dem Tool `redis-cli` darauf zugreifen.
+Wenn Ihre Redis-Beziehung `redis` heißt, können Sie mit dem `redis-cli`-Tool darauf zugreifen.
 
-1. Verwenden Sie SSH, um eine Verbindung zur Integrationsumgebung mit installierten und konfigurierten Redis herzustellen.
+1. Verwenden Sie SSH, um eine Verbindung zur Integrationsumgebung herzustellen, in der Redis installiert und konfiguriert ist.
 
 1. Öffnen Sie einen SSH-Tunnel zu einem Host.
 
@@ -67,7 +67,7 @@ Wenn Ihre Redis-Beziehung den Namen `redis` hat, können Sie mit dem Tool `redis
    redis-cli -h redis.internal
    ```
 
-## Installieren der Rediv-Version
+## Installierte Redis-Version abrufen
 
 Verwenden Sie den folgenden Befehl, um die Redis-Version in einer Integrationsumgebung zu installieren:
 
@@ -82,9 +82,9 @@ redis_version:7.0.5
 gcc_version:8.3.0
 ```
 
-### Rediv zu Pro Staging und Produktion
+### Redis zu Pro-Staging und Produktion
 
-Um die Redis-Version in einer Staging- oder Produktionsumgebung zu installieren, verwenden Sie den Befehl `redis-server`:
+Um die Redis-Version in einer Staging- oder Produktionsumgebung zu installieren, verwenden Sie den `redis-server`:
 
 ```bash
 redis-server -v
@@ -125,11 +125,11 @@ Beispielantwort:
 ]
 ```
 
-## Fehlerbehebung bei Redizes
+## Fehlerbehebung für Redis
 
-In den folgenden Adobe Commerce-Supportartikeln finden Sie Hilfe zur Fehlerbehebung bei Problemen mit Redis:
+Hilfe bei der Fehlerbehebung bei Redis-Problemen finden Sie in den folgenden Artikeln zum Adobe Commerce-Support:
 
-- [Redis issue Delay Admin Login or Checkout](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-issue-delay-magento-admin-login-or-checkout.html)
-- [Extended Redis Cache-Implementierung Adobe Commerce 2.3.5+](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/planning/redis-service-configuration.html)
-- [Verwaltete Warnhinweise für Adobe Commerce: Warnhinweis bezüglich Speicherbereinigung](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-warning-alert.html)
-- [Verwaltete Warnhinweise für Adobe Commerce: Warnhinweis zur Speicherbedingung erneut anzeigen](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-critical-alert.html)
+- [Redis Problem verzögert Admin-Anmeldung oder Checkout](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/miscellaneous/redis-issue-delay-magento-admin-login-or-checkout.html)
+- [Erweiterte Redis-Cache-Implementierung Adobe Commerce 2.3.5+](https://experienceleague.adobe.com/docs/commerce-operations/implementation-playbook/best-practices/planning/redis-service-configuration.html)
+- [Verwaltete Warnhinweise auf Adobe Commerce: Warnung bei Redis-Speicher](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-warning-alert.html)
+- [Verwaltete Warnhinweise auf Adobe Commerce: Kritischer Warnhinweis zu Redis-Speicher](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/support-tools/managed-alerts/managed-alerts-on-magento-commerce-redis-memory-critical-alert.html)

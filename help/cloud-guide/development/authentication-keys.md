@@ -1,6 +1,6 @@
 ---
 title: Authentifizierungsschlüssel
-description: Erfahren Sie, wie Sie Authentifizierungsschlüssel auf ein Entwicklungsprojekt in Adobe Commerce in der Cloud-Infrastruktur anwenden.
+description: Erfahren Sie, wie Sie in Adobe Commerce in der Cloud-Infrastruktur Authentifizierungsschlüssel auf ein Entwicklungsprojekt anwenden.
 feature: Cloud, Security
 topic: Security
 exl-id: b05cd4c2-0804-49c8-980a-4c7b6932082b
@@ -13,31 +13,31 @@ ht-degree: 0%
 
 # Authentifizierungsschlüssel
 
-Sie müssen über einen Authentifizierungsschlüssel verfügen, um auf das Adobe Commerce-Repository zugreifen und Installations- und Aktualisierungsbefehle für Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur aktivieren zu können. Es gibt zwei Methoden zum Angeben der Autorisierungsberechtigungen für Composer.
+Sie müssen über einen Authentifizierungsschlüssel verfügen, um auf das Adobe Commerce-Repository zuzugreifen und um Installations- und Aktualisierungsbefehle für Ihr Adobe Commerce in einem Cloud-Infrastrukturprojekt zu aktivieren. Es gibt zwei Methoden zum Angeben von Composer-Autorisierungsberechtigungen.
 
-- **Authentifizierungsdatei** - Eine Datei, die Ihre Adobe Commerce [Autorisierungsberechtigungen](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/authentication-keys.html) in Ihrer Adobe Commerce im Stammordner der Cloud-Infrastruktur enthält.
-- **Umgebungsvariable**: Eine Umgebungsvariable zum Einrichten von Authentifizierungsschlüsseln in Ihrem Adobe Commerce-Projekt in der Cloud-Infrastruktur, um eine versehentliche Exposition zu verhindern.
+- **Authentifizierungsdatei** - Eine Datei, die Ihre Adobe Commerce-[Autorisierungsberechtigungen](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/prerequisites/authentication-keys.html) in Ihrem Stammverzeichnis der Adobe Commerce in der Cloud-Infrastruktur enthält.
+- **Umgebungsvariable** - Eine Umgebungsvariable, um Authentifizierungsschlüssel in Ihrem Adobe Commerce in einem Cloud-Infrastrukturprojekt einzurichten, um versehentliches Offenlegen zu verhindern.
 
 >[!BEGINSHADEBOX]
 
 **Sicherheitshinweis**
 
-Adobe empfiehlt die Verwendung der [Umgebungsvariable](#composer-auth-environment-variable) -Methode in Ihrem Cloud-Projekt, um eine versehentliche Offenlegung Ihrer Autorisierungsberechtigungen zu verhindern.
+Adobe empfiehlt die Verwendung der [Umgebungsvariable](#composer-auth-environment-variable)-Methode mit Ihrem Cloud-Projekt, um zu verhindern, dass Ihre Autorisierungsdaten versehentlich offen gelegt werden.
 
-Die Authentifizierungsdateimethode ist ideal, wenn Sie Cloud Docker für Commerce als lokales Entwicklungstool verwenden. Achten Sie jedoch darauf, die `auth.json` -Datei nicht in ein öffentliches Git-basiertes Repository hochzuladen. Sie können die Datei `auth.json` zur Datei [`.gitignore` ](../project/file-structure.md#ignoring-files) hinzufügen.
+Die Authentifizierungsdateimethode ist ideal für die Verwendung von Cloud Docker für Commerce als lokales Entwicklungs-Tool, achten Sie jedoch darauf, die `auth.json` nicht in ein öffentliches Git-basiertes Repository hochzuladen. Sie können die `auth.json` Datei zur [`.gitignore` Datei hinzufügen](../project/file-structure.md#ignoring-files).
 
 >[!ENDSHADEBOX]
 
 ## Authentifizierungsdatei
 
-**So erstellen Sie eine `auth.json` -Datei**:
+**So erstellen Sie eine `auth.json` Datei**:
 
-1. Wenn Sie keine `auth.json` -Datei im Stammverzeichnis Ihres Projekts haben, erstellen Sie eine.
+1. Wenn sich keine `auth.json`-Datei im Stammverzeichnis des Projekts befindet, erstellen Sie eine.
 
-   - Erstellen Sie mit einem Texteditor eine `auth.json` -Datei in Ihrem Projektstammverzeichnis.
-   - Kopieren Sie den Inhalt von [sample `auth.json`](https://github.com/magento/magento2/blob/2.3/auth.json.sample) in die neue `auth.json`-Datei.
+   - Erstellen Sie mit einem Texteditor eine `auth.json`-Datei in Ihrem Projektstammverzeichnis.
+   - Kopieren Sie den Inhalt der [`auth.json`](https://github.com/magento/magento2/blob/2.3/auth.json.sample) in die neue `auth.json`.
 
-1. Ersetzen Sie `<public-key>` und `<private-key>` durch Ihre Adobe Commerce-Authentifizierungsberechtigungen.
+1. Ersetzen Sie `<public-key>` und `<private-key>` durch Ihre Adobe Commerce-Authentifizierungsdaten.
 
    ```json
    {
@@ -52,23 +52,23 @@ Die Authentifizierungsdateimethode ist ideal, wenn Sie Cloud Docker für Commerc
 
 1. Speichern Sie Ihre Änderungen und beenden Sie den Texteditor.
 
-## Umgebungsvariable Composer auth
+## Composer-Auth-Umgebungsvariable
 
-Die folgende Methode stellt die beste Möglichkeit dar, die versehentliche Offenlegung vertraulicher Anmeldeinformationen in einem öffentlichen Git-basierten Repository zu verhindern.
+Die folgende Methode ist die beste Methode, um zu verhindern, dass vertrauliche Anmeldeinformationen in einem öffentlichen Git-basierten Repository versehentlich offen gelegt werden.
 
-**Hinzufügen von Authentifizierungsschlüsseln mit einer Umgebungsvariablen**:
+**So fügen Sie Authentifizierungsschlüssel mithilfe einer Umgebungsvariablen hinzu**:
 
-1. Klicken Sie im Ordner &quot;_[!DNL Cloud Console]_&quot;auf das Konfigurationssymbol auf der rechten Seite der Projektnavigation.
+1. Klicken Sie in der _[!DNL Cloud Console]_auf das Konfigurationssymbol auf der rechten Seite der Projektnavigation.
 
    ![Projekt konfigurieren](../../assets/icon-configure.png){width="36"}
 
-1. Klicken Sie in der Liste _Projekteinstellungen_ auf **[!UICONTROL Variables]**.
+1. Klicken Sie in _Liste_ Projekteinstellungen“ auf **[!UICONTROL Variables]**.
 
 1. Klicken Sie auf **[!UICONTROL Create variable]**.
 
-1. Geben Sie im Feld **[!UICONTROL Variable name]** den Wert `env:COMPOSER_AUTH` ein.
+1. Geben Sie im Feld **[!UICONTROL Variable name]** `env:COMPOSER_AUTH` ein.
 
-1. Fügen Sie im Feld _Wert_ Folgendes hinzu und ersetzen Sie `<public-key>` und `<private-key>` durch Ihre Adobe Commerce-Authentifizierungsberechtigungen:
+1. Fügen Sie im Feld _Wert_ Folgendes hinzu und ersetzen Sie `<public-key>` und `<private-key>` durch Ihre Adobe Commerce-Authentifizierungsdaten:
 
    ```json
    {
@@ -81,8 +81,8 @@ Die folgende Methode stellt die beste Möglichkeit dar, die versehentliche Offen
    }
    ```
 
-1. Wählen Sie **[!UICONTROL Available during buildtime]** aus und heben Sie die Auswahl von **[!UICONTROL Available during runtime]** auf.
+1. Wählen Sie **[!UICONTROL Available during buildtime]** aus und heben Sie die Auswahl für **[!UICONTROL Available during runtime]** auf.
 
 1. Klicken Sie auf **[!UICONTROL Create variable]**.
 
-1. Entfernen Sie die Datei &quot;`auth.json`&quot; aus jeder Umgebung.
+1. Entfernen Sie die `auth.json` aus jeder Umgebung.

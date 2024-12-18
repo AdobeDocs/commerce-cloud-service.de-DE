@@ -1,6 +1,6 @@
 ---
-title: ECE-Tools-Paket aktualisieren
-description: Erfahren Sie, wie Sie das ECE-Tools-Paket aktualisieren, um die neuesten Fehlerbehebungen und Funktionen zu nutzen, die auf Adobe Commerce in der Cloud-Infrastruktur angewendet werden.
+title: Aktualisieren des ECE-Tools-Pakets
+description: Erfahren Sie, wie Sie das ECE-Tools-Paket aktualisieren, um die neuesten Fehlerbehebungen und Funktionen für Adobe Commerce in der Cloud-Infrastruktur nutzen zu können.
 feature: Cloud, Upgrade
 exl-id: 7cce45eb-ae53-4468-b16d-4f4d3422ac52
 source-git-commit: 513bc5b52f046ffd98005d80f34725b7f60b38bd
@@ -10,23 +10,23 @@ ht-degree: 0%
 
 ---
 
-# ECE-Tools-Paket aktualisieren
+# Aktualisieren des ECE-Tools-Pakets
 
-Durch ein Update des `ece-tools`-Pakets werden auch die anderen [Cloud Tools Suite für Commerce-Pakete](../release-notes/cloud-tools-suite.md) aktualisiert, die von `ece-tools` abhängig sind. Daher müssen Sie eine Version von Adobe Commerce in der Cloud-Infrastruktur verwenden, die das `ece-tools` -Paket unterstützt.
+Eine Aktualisierung des `ece-tools` aktualisiert auch die anderen [Cloud-Tools-Suite für Commerce](../release-notes/cloud-tools-suite.md)-Pakete, die Abhängigkeiten für `ece-tools` sind. Daher müssen Sie eine Version von Adobe Commerce in der Cloud-Infrastruktur verwenden, die das `ece-tools` unterstützt.
 
 {{ece-tools-package}}
 
 **Voraussetzungen**:
 
-- Bevor Sie `ece-tools` aktualisieren, lesen Sie die Versionshinweise zur [Cloud Tools Suite für Commerce](../release-notes/cloud-tools-suite.md) durch.
-- Wenn Sie von `ece-tools` 2002.0.22 oder früher auf 2002.1.0 aktualisieren, überprüfen Sie die [Abwärtskompatiblen Änderungen](../release-notes/backward-incompatible-changes.md) und nehmen Sie die erforderlichen Änderungen an Ihrem Adobe Commerce-Projekt für die Cloud-Infrastruktur vor.
-- Überprüfen Sie [Upgrades und Patches](../development/commerce-version.md#upgrade-from-older-versions) , um die ECE-Tools-Versionen zu ermitteln, die mit Ihrem Adobe Commerce on Cloud-Infrastrukturprojekt kompatibel sind.
+- Bevor Sie `ece-tools` aktualisieren, lesen Sie die [Versionshinweise zu Cloud-Tools für Commerce](../release-notes/cloud-tools-suite.md).
+- Wenn Sie von `ece-tools` 2002.0.22 oder früher auf 2002.1.0 aktualisieren, überprüfen Sie [Abwärtsinkompatible Änderungen](../release-notes/backward-incompatible-changes.md) und nehmen Sie die erforderlichen Änderungen an Ihrem Adobe Commerce in Cloud-Infrastrukturprojekt vor.
+- Überprüfen Sie [Upgrades und Patches](../development/commerce-version.md#upgrade-from-older-versions) um die ECE-Tools-Versionen zu ermitteln, die mit Ihrem Adobe Commerce on Cloud Infrastructure-Projekt kompatibel sind.
 
 {{upgrade-tip}}
 
-**Aktualisieren des `ece-tools` -Pakets**:
+**So aktualisieren Sie das `ece-tools`-Paket**:
 
-1. Führen Sie auf Ihrer lokalen Workstation eine Aktualisierung mit Composer durch.
+1. Führen Sie auf Ihrer lokalen Workstation ein Update mit Composer durch.
 
    ```bash
    composer update magento/ece-tools --with-dependencies
@@ -34,9 +34,9 @@ Durch ein Update des `ece-tools`-Pakets werden auch die anderen [Cloud Tools Sui
 
    >[!NOTE]
    >
-   >Wenn Sie nicht über die `ece-tools` -Version 2002.0.8 hinaus aktualisieren können, finden Sie weitere Informationen unter [Projekt aktualisieren, um das ECE-Tools-Paket zu verwenden](install-package.md).
+   >Wenn Sie nicht über `ece-tools` Version 2002.0.8 hinaus aktualisieren können, lesen Sie [Upgrade-Projekt für das ECE-Tools-Paket](install-package.md).
 
-1. Hinzufügen, Übertragen und Push-Code-Änderungen.
+1. Code-Änderungen hinzufügen, übertragen und per Push übertragen.
 
    ```bash
    git add -A

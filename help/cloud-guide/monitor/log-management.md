@@ -1,5 +1,5 @@
 ---
-title: Protokollverwaltung von New Relic
+title: New Relic-Protokollverwaltung
 description: Erfahren Sie, wie Sie das New Relic-Protokoll verwenden
 feature: Cloud, Logs, Observability
 exl-id: d8afb5c0-9727-4123-8944-81cd6ad7cbb7
@@ -10,51 +10,51 @@ ht-degree: 0%
 
 ---
 
-# Protokollverwaltung von New Relic
+# New Relic-Protokollverwaltung
 
-Alle Cloud-Infrastrukturprojekte umfassen [New Relic-Protokollverwaltung](https://docs.newrelic.com/docs/logs/get-started/get-started-log-management/). Der Dienst ist vorkonfiguriert, um alle Protokolldaten aus Ihren Staging- und Produktionsumgebungen zu aggregieren und in einem zentralen Protokollverwaltungs-Dashboard anzuzeigen.
+Alle Cloud-Infrastrukturprojekte umfassen [New Relic-Protokollverwaltung](https://docs.newrelic.com/docs/logs/get-started/get-started-log-management/). Der Service ist so vorkonfiguriert, dass er alle Protokolldaten aus Ihren Staging- und Produktionsumgebungen aggregiert und in einem zentralen Dashboard für die Protokollverwaltung anzeigt.
 
-Die aggregierten Daten enthalten Informationen aus den folgenden Logs:
+Die aggregierten Daten enthalten Informationen aus den folgenden Protokollen:
 
-- Alle `ece-tools`- und Anwendungsprotokolle aus dem Verzeichnis `~/var/log`
-- Protokolle für Cloud-Services aus dem Verzeichnis `var/log/platform/<project-ID>`
-- Schnelles CDN und WAF
+- Alle `ece-tools`- und Anwendungsprotokolle aus dem `~/var/log`
+- Protokolle für Cloud-Services aus dem `var/log/platform/<project-ID>`
+- Fastly CDN und WAF
 
-Wenn Ihr Projekt mit New Relic verbunden ist, können Sie mit dem New Relic Logs-Dienst Aufgaben wie die folgenden ausführen:
+Wenn Ihr Projekt mit New Relic verbunden ist, können Sie den New Relic-Protokolldienst verwenden, um Aufgaben wie die folgenden auszuführen:
 
-- New Relic-Abfragen zum Durchsuchen aggregierter Protokolldaten verwenden
-- Protokolldaten über die New Relic Logs-Anwendung visualisieren
-- Benutzerdefinierte Diagramme, Dashboards und Warnhinweise erstellen
-- Beheben von Leistungsproblemen in einem einzelnen Dashboard
+- Verwenden von New Relic-Abfragen zum Suchen aggregierter Protokolldaten
+- Visualisieren von Protokolldaten über die New Relic-Protokollanwendung
+- Erstellen benutzerdefinierter Diagramme, Dashboards und Warnhinweise
+- Fehlerbehebung bei Leistungsproblemen über ein einziges Dashboard
 
-## Protokolldaten anzeigen und analysieren
+## Anzeigen und Analysieren von Protokolldaten
 
-Verwenden Sie die New Relic Logs-Anwendung, um über die aggregierten Protokolldaten zu suchen und Fehler in Anwendungen, Infrastruktur, CDN und WAF zu beheben. Sie können Diagramme, Dashboards und Warnhinweise mithilfe von Protokolldaten erstellen, die von New Relic-APM- und Infrastrukturdiensten erfasst wurden.
+Verwenden Sie die Anwendung &quot;New Relic Logs“, um die aggregierten Protokolldaten zu durchsuchen und Fehler in Anwendungen, Infrastrukturen, CDN und WAF zu beheben. Sie können Diagramme, Dashboards und Warnhinweise mithilfe von Protokolldaten erstellen, die von New Relic APM- und Infrastructure-Services erfasst wurden.
 
-**So verwenden Sie die New Relic Logs-Anwendung**:
+**So verwenden Sie die New Relic-Protokollanwendung**:
 
-1. Melden Sie sich bei Ihrem [New Relic-Konto](https://login.newrelic.com/login) an.
+1. Melden Sie sich bei Ihrem [New Relic-Konto an](https://login.newrelic.com/login).
 
-1. Wählen Sie **Protokolle** aus dem Navigationsmenü des Explorers aus.
+1. Wählen **Protokolle** aus dem Navigationsmenü des Explorers aus.
 
-1. Stellen Sie sicher, dass Ihr Konto oben in der Ansicht &quot;_Alle Protokolle_&quot;ausgewählt ist.
+1. Vergewissern Sie sich, dass Ihr Konto oben in der Ansicht _Alle Protokolle_ ausgewählt ist.
 
-1. Wählen Sie einen Zeitraum für die Logs-Abfrage aus.
+1. Wählen Sie einen Zeitbereich für die Protokollabfrage aus.
 
-1. Um Infrastrukturprotokolldaten für Cloud-Services (Protokolle von `~/var/log/`) zu überprüfen, geben Sie die Abfragezeichenfolge `has: "filePath"` in das Feld _Suche nach Protokollen_ ein. Klicken Sie dann auf **[!UICONTROL Query logs]**.
+1. Um die Protokolldaten der Infrastruktur für Cloud-Services (Protokolle aus `~/var/log/`) zu überprüfen, geben Sie die Abfragezeichenfolge `has: "filePath"` in das Feld _Nach Protokollen suchen_ ein. Klicken Sie dann auf **[!UICONTROL Query logs]**.
 
-   Die Namen der Protokolldateien werden in der Spalte `filePath` mit vollständigen Pfaden zur Protokolldatei gespeichert.
+   Die Namen der Protokolldateien werden in der Spalte `filePath` gespeichert, wobei vollständige Pfade zur Protokolldatei angegeben werden.
 
-   ![Protokolldaten des Cloud-Projekt-New Relic-Diensts](../../assets/new-relic/var-log-query.png)
+   ![Cloud-Projekt New Relic Service-Protokolldaten](../../assets/new-relic/var-log-query.png)
 
-1. Geben Sie die Abfragezeichenfolge `has: "client_ip"` in das Feld _Suche nach Protokollen_ ein, um die Fastly-Protokolldaten zu überprüfen. Klicken Sie dann auf **[!UICONTROL Query logs]**.
+1. Um Fastly-Protokolldaten zu überprüfen, geben Sie die Abfragezeichenfolge `has: "client_ip"` in das Feld _Nach Protokollen suchen_ ein. Klicken Sie dann auf **[!UICONTROL Query logs]**.
 
-1. Um die Ergebnisse des Schnellprotokolls nach Ländercode zu filtern, klicken Sie auf **[!UICONTROL Add column]** und wählen Sie dann **[!UICONTROL geo_country_code]** aus.
+1. Um die Fastly-Protokollergebnisse nach Länder-Code zu filtern, klicken Sie auf **[!UICONTROL Add column]** und wählen Sie dann **[!UICONTROL geo_country_code]** aus.
 
-   ![CDN-Attributfilter für das Cloud-Projekt New Relic-CDN-Projekt](../../assets/new-relic/fastly-countrycode-filter.png)
+   ![Cloud-Projekt New Relic CDN-Protokollattributfilter](../../assets/new-relic/fastly-countrycode-filter.png)
 
 >[!TIP]
 >
->Sie können die Abfrageansicht aus dem Dropdown-Menü _Gespeicherte Ansichten_ speichern. Klicken Sie auf &quot;**[!UICONTROL Create new]**&quot;, geben Sie einen Namen ein, wählen Sie Optionen aus und klicken Sie auf &quot;**[!UICONTROL Save view]**&quot;.
+>Sie können die Abfrageansicht im Dropdown-Menü _Gespeicherte Ansichten_ speichern. Klicken Sie auf **[!UICONTROL Create new]**, geben Sie einen Namen ein, wählen Sie Optionen aus und klicken Sie auf **[!UICONTROL Save view]**.
 >
->Siehe [Erste Schritte mit der Protokollverwaltung](https://docs.newrelic.com/docs/logs/get-started/get-started-log-management/) und [Einführung in die New Relic-Abfragesprache](https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/introduction-nrql-new-relics-query-language/) auf der Seite _New Relic Docs_ .
+>Siehe [Erste Schritte mit der Protokollverwaltung](https://docs.newrelic.com/docs/logs/get-started/get-started-log-management/) und [Einführung in die New Relic-Abfragesprache](https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/introduction-nrql-new-relics-query-language/) auf der _New Relic Docs_-Website.
