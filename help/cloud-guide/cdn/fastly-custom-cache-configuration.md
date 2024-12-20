@@ -3,7 +3,7 @@ title: Cache-Konfiguration anpassen
 description: Erfahren Sie, wie Sie die Cache-Konfigurationseinstellungen überprüfen und anpassen können, nachdem die Fastly-Service-Einrichtung abgeschlossen ist.
 feature: Cloud, Configuration, Iaas, Cache
 exl-id: f1fc85d4-7867-4bb5-9f11-bc8d2d80383b
-source-git-commit: adcc6b2dd7929352dedf878cd2ec3b8af7c2a35f
+source-git-commit: 8a0523f1714b6ea41887e99b5c31294cf5e5255e
 workflow-type: tm+mt
 source-wordcount: '1808'
 ht-degree: 0%

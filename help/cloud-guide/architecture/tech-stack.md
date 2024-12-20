@@ -3,7 +3,7 @@ title: Technologie-Stack
 description: Weitere Informationen finden Sie im Technologie-Stack, der die Commerce on Cloud-Infrastruktur bildet.
 feature: Cloud, Iaas, Paas
 exl-id: e456db25-c44b-4053-b96d-517d3d1606d0
-source-git-commit: adcc6b2dd7929352dedf878cd2ec3b8af7c2a35f
+source-git-commit: eace5d84fa0915489bf562ccf79fde04f6b9d083
 workflow-type: tm+mt
 source-wordcount: '374'
 ht-degree: 0%

@@ -4,7 +4,7 @@ description: Erfahren Sie mehr über die von der Pro-Architektur unterstützten 
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: adcc6b2dd7929352dedf878cd2ec3b8af7c2a35f
+source-git-commit: 18f4da5c6e7e5c483f5cf64e977b3fb3fd28bbb0
 workflow-type: tm+mt
 source-wordcount: '1573'
 ht-degree: 0%

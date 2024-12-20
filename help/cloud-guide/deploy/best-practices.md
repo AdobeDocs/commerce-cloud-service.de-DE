@@ -3,7 +3,7 @@ title: Best Practices für die Bereitstellung
 description: Entdecken Sie Best Practices für die Bereitstellung von Adobe Commerce auf Cloud-Infrastrukturen.
 feature: Cloud, Deploy, Best Practices
 exl-id: bac3ca83-0eee-4fda-9a5c-a84ab25a837a
-source-git-commit: adcc6b2dd7929352dedf878cd2ec3b8af7c2a35f
+source-git-commit: 269681efb9925d78ffb608ecbef657be740b5531
 workflow-type: tm+mt
 source-wordcount: '1904'
 ht-degree: 0%
