@@ -1,6 +1,6 @@
 ---
-title: Schnelle Bildoptimierung
-description: Erfahren Sie, wie Sie die Bildbereitstellung optimieren und die Bildverwaltung für die Adobe Commerce-Site vereinfachen können, indem Sie die schnelle Bildoptimierung aktivieren und konfigurieren.
+title: Fastly-Bildoptimierung
+description: Erfahren Sie, wie Sie die Bildbereitstellung optimieren und die Bildverwaltung für die Adobe Commerce-Site vereinfachen können, indem Sie die Bildoptimierung Fastly aktivieren und konfigurieren.
 feature: Cloud, Configuration, Media
 exl-id: 20f5c5c3-7c43-493b-b651-82b023cf5db5
 source-git-commit: 7a181af2149eef7bfaed4dd4d256b8fa19ae1dda
@@ -10,115 +10,115 @@ ht-degree: 0%
 
 ---
 
-# Schnelle Bildoptimierung
+# Fastly-Bildoptimierung
 
-Die schnelle Bildoptimierung (Fastly IO) bietet Echtzeit-Bildbearbeitung und -Optimierung, um die Bildbereitstellung zu beschleunigen und die Verwaltung von Bildquellensätzen für responsive Webanwendungen zu vereinfachen. Nach der Konfiguration bietet Fastly IO die folgenden Bildoptimierungsfunktionen:
+Fastly Image Optimization (Fastly IO) bietet Echtzeit-Bildbearbeitung und -optimierung, um die Bildbereitstellung zu beschleunigen und die Wartung von Bildquellen für responsive Web-Anwendungen zu vereinfachen. Nach der Konfiguration bietet Fastly IO die folgenden Bildoptimierungsfunktionen:
 
-- Erzwingen der verlustfreien Konvertierung
-- Deep-Image-Optimierung
+- Verlustbehaftete Konversion erzwingen
+- Tiefenbildoptimierung
 - Adaptive Pixelverhältnisse
-- Unterstützung für gängige Bildformate: PNG, JPEG, GIF und WebP
+- Unterstützung gängiger Bildformate: PNG, JPEG, GIF und WebP
 
-Bevor Sie die Option Fastly IO aktivieren und konfigurieren, müssen Sie Ihren Fastly-Dienst einrichten und die Herkunftssicherung konfigurieren.
+Bevor Sie die Option Fastly IO aktivieren und konfigurieren, müssen Sie Ihren Fastly-Service einrichten und die Origin-Abschirmung konfigurieren.
 
-Basierend auf Ihren Konfigurationseinstellungen fügt das Snippet Fastly Image Optimization (Fastly IO) den VCL-Code ein, um die Bildoptimierung durchzuführen, die die Bereitstellung von Produktbildern in der Storefront beschleunigt. Es gibt drei Schritte zum Konfigurieren der Fastly IO: Aktivieren, Konfigurieren und Überprüfen.
+Basierend auf Ihren Konfigurationseinstellungen fügt der Code Fastly Image Optimization (Fastly IO) den VCL-Code ein, um die Bildoptimierung durchzuführen, die die Bereitstellung von Produktbildern in der Storefront beschleunigt. Es gibt drei Schritte zum Konfigurieren der Fastly-E/A: Aktivieren, Konfigurieren und Überprüfen.
 
 ## Fastly IO aktivieren
 
-Aktivieren Sie die Fastly Image Optization (Fastly IO) über das Admin-Bedienfeld, indem Sie das Fastly IO VCL-Snippet hochladen. Das Snippet enthält die Schnellkonfigurationsanweisungen zur Verarbeitung aller Bilder über Bildoptimierer unter Verwendung von Standardkonfigurationen.
+Aktivieren Sie Fastly Image Optimization (Fastly IO) über das Admin-Bedienfeld, indem Sie das Snippet Fastly IO VCL hochladen. Der Ausschnitt bietet die Fastly-Konfigurationsanweisungen, um alle Bilder mithilfe von Bildoptimierern und Standardkonfigurationen zu verarbeiten.
 
 **Voraussetzungen:**
 
-- Installieren Sie das Fastly-Modul Version 1.2.62 oder höher oder aktualisieren Sie es
-- [Fastly Origin-Schutzschild und Back-End konfigurieren](fastly-custom-cache-configuration.md#configure-back-ends-and-origin-shielding)
+- Installieren oder Aktualisieren auf Fastly-Modul Version 1.2.62 oder höher
+- [Konfigurieren von Fastly Origin Shield und Back-End](fastly-custom-cache-configuration.md#configure-back-ends-and-origin-shielding)
 
 **So aktivieren Sie Fastly IO**:
 
-1. Melden Sie sich bei Ihrem lokalen Bedienfeld [Admin](../../get-started/onboarding.md#access-your-admin-panel) als Administrator an.
+1. Melden Sie sich bei Ihrem lokalen [Admin](../../get-started/onboarding.md#access-your-admin-panel)-Bedienfeld als Administrator an.
 
 1. Wählen Sie **Stores** > **Einstellungen** > **Konfiguration** > **Erweitert** > **System**.
 
-1. Erweitern Sie im rechten Bereich den Eintrag **Vollständiger Seiten-Cache**.
+1. Erweitern Sie im rechten Bereich **Vollständiger Seitencache**.
 
 1. Wählen Sie **Fastly Configuration** > **Image Optimization** aus, um die Konfigurationseinstellungen anzugeben.
 
-1. Wählen Sie im Feld _Fastly IO snippet_ die Option **Enable/Disable** aus.
+1. Wählen Sie im Feld _Fastly IO Snippet_ die Option **Aktivieren/Deaktivieren** aus.
 
 1. Laden Sie das Fastly IO-Snippet hoch:
 
-   - Wählen Sie **Standard-I/O-Konfigurationsoptionen** aus, um die Seite mit den standardmäßigen Konfigurationsoptionen für die Bildoptimierung zu öffnen.
+   - Wählen Sie **Standard-IO-Konfigurationsoptionen** aus, um die Seite mit den standardmäßigen Konfigurationsoptionen für die Bildoptimierung zu öffnen.
    - Wählen Sie **Hochladen** aus, um das VCL-Snippet auf Ihren Server hochzuladen.
 
 ## Fastly IO konfigurieren
 
-Überprüfen und aktualisieren Sie bei Bedarf die standardmäßigen IO-Konfigurationseinstellungen für die Bildoptimierung. Sie können beispielsweise die WebP- und JPEG-Qualitätsstufen für verlustbehaftete Formate ändern oder das Format für die Bereitstellung von JPEG-Bildern in _progressiv_ oder _Baseline_ ändern. Außerdem können Sie Fastly IO für detailliertere Bildoptimierungsfunktionen verwenden, z. B.:
+Überprüfen und aktualisieren Sie die standardmäßigen E/A-Konfigurationseinstellungen für die Bildoptimierung nach Bedarf. Beispielsweise können Sie die Qualitätsstufen von WebP und JPEG für verlustbehaftete Formate ändern oder das Format für die Bereitstellung von JPEG-Bildern auf _Progressiv_ oder _Grundlinie_ ändern. Außerdem können Sie Fastly IO für detailliertere Bildoptimierungsfunktionen verwenden, wie z. B.:
 
-- Erzwingen der verlustfreien Konvertierung
-- Deep-Image-Optimierung
+- Verlustbehaftete Konversion erzwingen
+- Tiefenbildoptimierung
 - Adaptive Pixelverhältnisse
 
-**So aktualisieren Sie schnell IO**:
+**So aktualisieren Sie Fastly IO**:
 
-1. Wählen Sie auf der Seite _Schnelle Konfiguration_ im Feld _Standard-I/O-Konfigurationsoptionen_ die Option **Konfigurieren**.
+1. Wählen Sie auf der _Fastly_ Konfigurationsseite im Feld _Default IO Config Options_ die Option **Konfigurieren** aus.
 
-   ![Anzeigen der Einstellungen für die schnelle IO-Konfiguration](../../assets/cdn/fastly-io-default-config.png)
+   ![Anzeigen der Fastly IO-Konfigurationseinstellungen](../../assets/cdn/fastly-io-default-config.png)
 
-1. Überprüfen und aktualisieren Sie die Einstellungen der Fastly IO-Konfiguration auf der Seite _Standardkonfigurationsoptionen für die Bildoptimierung_:
+1. Überprüfen und aktualisieren Sie die Fastly IO-Konfigurationseinstellungen auf der Seite _Standardkonfigurationsoptionen für die Bildoptimierung_:
 
-   ![Überprüfen der schnellen IO-Konfiguration](../../assets/cdn/fastly-io-config-options.png)
+   ![Überprüfen Sie die Fastly IO-Konfiguration](../../assets/cdn/fastly-io-config-options.png)
 
-   - **Auto WebP?** - Behalten Sie die Standardeinstellung (`Yes`) bei, um Bilder in Browsern, die sie unterstützen, in das WebP-Format zu konvertieren. Wenn Sie die Einstellung auf **Nein** ändern, verwendet Fastly den Bilddateityp, anstatt das Bild in das WebP-Format zu konvertieren.
+   - **Auto WebP?** - Lassen Sie die Standardeinstellung (`Yes`), um Bilder in Browsern, die sie unterstützen, in das WebP-Format zu konvertieren. Wenn Sie die Einstellung in **Nein** ändern, verwendet Fastly den Bilddateityp, anstatt das Bild in das WebP-Format zu konvertieren.
 
-   - **WebP-Standardqualität (verlustbehaftet)** - Behalten Sie die Standardeinstellung (`85`) bei oder geben Sie die Komprimierungsstufe für verlustbehaftete dateiformatierte Bilder ein. Sie können eine beliebige Ganzzahl von 1 bis 100 angeben.
+   - **Standard-WebP-Qualität (verlustbehaftet** - Behalten Sie die Standardeinstellung (`85`) bei oder geben Sie den Komprimierungsgrad für verlustbehaftete dateiformatierte Bilder ein. Sie können eine beliebige Ganzzahl zwischen 1 und 100 angeben.
 
-   - **Standardmäßige Steuerelemente im JPEG-Format** - Behalten Sie die Standardeinstellung (`Auto`) bei oder wählen Sie den JPEG-Typ aus, der für die Bildbereitstellung verwendet werden soll. Wenn der Wert auf _Auto_ festgelegt ist, stellt Fastly Bilder mit dem Ausgabetyp bereit, der dem Eingabetyp entspricht. Wählen Sie _Grundlinie_ aus, um Bilder in Zeilen von oben links nach unten anzuzeigen. Wählen Sie _Progressiv_ aus, um ein unscharfes Bild anzuzeigen, das beim Laden gelöscht wird.
+   - **Standard-Steuerelemente für das JPEG** - Lassen Sie die Standardeinstellung (`Auto`) unverändert, oder wählen Sie den JPEG-Typ aus, der bei der Bereitstellung eines Bildes verwendet werden soll. Wenn der Wert auf &quot;_&quot; festgelegt ist_ liefert Fastly Bilder mit einem Ausgabetyp, der dem Eingabetyp entspricht. Wählen Sie _Grundlinie_ aus, um die Bilder Zeile für Zeile anzuzeigen, beginnend von oben links bis unten rechts. Wählen Sie _Progressiv_ aus, um ein verschwommenes Bild anzuzeigen, das beim Laden deutlich wird.
 
-   - **Standardqualität der JPEG** - Behalten Sie die Standardeinstellung (`85`) bei oder geben Sie die Komprimierungsstufe für verlustbehaftete Dateiformate ein. Geben Sie eine beliebige Ganzzahl von 1 bis 100 an.
+   - **Standard-JPEG-Qualität** - Lassen Sie die Standardeinstellung (`85`), oder geben Sie den Komprimierungsgrad für die Qualität verlustbehafteter Dateiformate ein. Geben Sie eine beliebige Ganzzahl zwischen 1 und 100 an.
 
-   - **Vergrößern zulassen?**: Behalten Sie die Standardeinstellung (`No`) bei oder wählen Sie `Yes` aus, um Bilder zurückzugeben, die größer als die Originalquelldatei sind, damit sie in die angeforderten Dimensionen passen.
+   - **Hochskalierung zulassen?** - Lassen Sie die Standardeinstellung (`No`) unverändert, oder wählen Sie `Yes` aus, um Bilder zurückzugeben, die größer sind als die ursprüngliche Quelldatei, damit sie den angeforderten Abmessungen entsprechen.
 
-   - **Filter vergrößern** - Behalten Sie die Standardeinstellung (`Lancsoz3`) bei oder wählen Sie eine Alternative aus. Diese Einstellung gibt den Filter an, der zum Bereitstellen eines in der Größe angepassten Bildes verwendet wird. Je nach ausgewähltem Filter kann das in der Größe angepasste Bild eine höhere oder niedrigere Anzahl Pixel aufweisen.
+   - **Filter ändern** - Lassen Sie die Standardeinstellung (`Lancsoz3`) unverändert oder wählen Sie eine Alternative aus. Diese Einstellung gibt den Filter an, der zum Bereitstellen eines Bildes in der Größe verwendet wird. Je nach ausgewähltem Filter kann das skalierte Bild eine höhere oder niedrigere Anzahl von Pixeln aufweisen.
 
-      - `Lanczos3` (Standard): Stellt das Bild mit der besten Qualität bereit. Es erhöht die Fähigkeit, Kanten und lineare Funktionen innerhalb eines Bildes zu erkennen, und verwendet die Neuberechnung von _[!DNL sinc]_, um die bestmögliche Rekonstruktion zu ermöglichen.
-      - `Lanczos2`—Verwendet denselben Filter wie `Lancsoz3`, jedoch mit einer weniger genauen Annäherung an die _[!DNL sinc]_Resampling-Funktion.
-      - `Bicubic`: Hat einen natürlichen Scharfzeichnungseffekt, wenn ein Bild kleiner gemacht wird.
-      - `Bilinear`: Hat einen natürlichen Ausgleichungseffekt, wenn ein Bild größer wird.
-      - `Nearest`: Hat einen natürlichen Pixeleffekt bei der Größenanpassung der Pixelgrafik.
+      - `Lanczos3` (Standard) - Liefert die beste Bildqualität. Es erhöht die Fähigkeit, Kanten und lineare Merkmale innerhalb eines Bildes zu erkennen, und verwendet _[!DNL sinc]_Resampling, um die bestmögliche Rekonstruktion zu erzielen.
+      - `Lanczos2` - Verwendet denselben Filter wie `Lancsoz3`, jedoch mit einer weniger genauen Annäherung an die _[!DNL sinc]_-Neuberechnungsfunktion.
+      - `Bicubic` - Hat einen natürlichen Scharfzeichnungseffekt, wenn ein Bild kleiner wird.
+      - `Bilinear` - Hat einen natürlichen Glättungseffekt, wenn ein Bild größer wird.
+      - `Nearest` - Beim Ändern der Größe von Pixel-Art hat dies einen natürlichen Pixeleffekt.
 
-1. Nachdem Sie die IO-Konfigurationseinstellungen für den Fastly-Dienst festgelegt haben, wählen Sie **Abbrechen** aus, um zu den Einstellungen für die schnelle Konfiguration zurückzukehren.
+1. Nachdem Sie die IO-Konfigurationseinstellungen für den Fastly-Service angegeben haben, wählen Sie **Abbrechen** aus, um zu den Fastly-Konfigurationseinstellungen zurückzukehren.
 
-1. Wählen Sie im Feld Bildoptimierungskonfiguration _Deep-Bild-Optimierung aktivieren_ die Option **Ja** aus, um die Deep-Image-Optimierung zu aktivieren.
+1. Wählen Sie im Feld Bildoptimierungskonfiguration _Deep-Image_ Optimierung aktivieren **„Ja**, um die Deep-Image-Optimierung zu aktivieren.
 
-   ![Fastly IO Deep-Image-Optimierung aktivieren](../../assets/cdn/fastly-io-deep-image-config.png)
+   ![Fastly IO Deep Image Optimization aktivieren](../../assets/cdn/fastly-io-deep-image-config.png)
 
-   Die Deep-Image-Optimierung ist standardmäßig deaktiviert. Wenn diese Funktion aktiviert ist, ist die integrierte Größenanpassungsfunktion in Adobe Commerce deaktiviert und die Größenanpassung wird an den Fastly IO-Dienst abgeladen. Die Bildoptimierung gilt nur für Produktbilder. Die Größe von CMS-Bildern wird nicht geändert. Weitere Informationen finden Sie in der [Fastly-Dokumentation](#deep-image-optimization).
+   Die Tiefenbildoptimierung ist standardmäßig deaktiviert. Wenn diese Funktion aktiviert ist, wird die integrierte Größenänderungsfunktion in Adobe Commerce deaktiviert und die Größenänderungsarbeit wird in den Fastly IO-Service abgeladen. Die Bildoptimierung gilt nur für Produktbilder. Die Größe der CMS-Bilder wird nicht geändert. Siehe die [Fastly-](#deep-image-optimization).
 
-1. Nachdem Sie die Deep-Image-Optimierung aktiviert haben, aktivieren Sie die Funktion [Adaptive Pixelverhältnisse](#adaptive-pixel-ratios) , um Bilder zu generieren, die für die Verwendung auf responsiven Websites optimiert sind.
+1. Aktivieren Sie nach der Aktivierung der Tiefenbildoptimierung die Funktion [Adaptive Pixel Ratios](#adaptive-pixel-ratios), um Bilder zu generieren, die für die Verwendung auf responsiven Websites optimiert sind.
 
-   ![ Schnelles iOS-adaptives Pixelverhältnis aktivieren](../../assets/cdn/fastly-io-config-adaptive-pixel.png)
+   ![Fastly IO Adaptive Pixel Ratios aktivieren](../../assets/cdn/fastly-io-config-adaptive-pixel.png)
 
-   - Wählen Sie im Feld _Pixelverhältnisse des adaptiven Geräts aktivieren_ die Option **Ja** aus.
-   - Akzeptieren Sie im Feld _Gerätepixelverhältnisse_ die Standardeinstellung oder aktivieren Sie das Kontrollkästchen **Systemeingabe** , um die Einstellung zu entfernen. Wählen Sie dann das gewünschte Verhältnis aus. Eine höhere Einstellung für das Gerätepixelverhältnis liefert größere Bilder.
+   - Wählen Sie im Feld _Adaptive Gerätepixelverhältnisse aktivieren_ die Option **Ja**.
+   - Akzeptieren Sie im Feld _Gerätepixelverhältnis_ die Standardeinstellung, oder aktivieren Sie das Kontrollkästchen **Systemeingabe**, um die Einstellung zu entfernen. Wählen Sie dann das gewünschte Verhältnis aus. Eine höhere Einstellung für das Gerätepixelverhältnis liefert größere Bilder.
 
-1. Wählen Sie **Konfiguration speichern** aus.
+1. Wählen Sie **Konfiguration speichern**.
 
-### Erzwingen der verlustfreien Konvertierung
+### Verlustbehaftete Konversion erzwingen
 
-Standardmäßig erzwingt der Fastly IO-Dienst die Konvertierung verlustfreier Formate wie PNG, BMP oder WEBP in das JPEG/WEBP-Format.
+Standardmäßig erzwingt der Fastly IO-Service die Konvertierung verlustfreier Formate wie PNG, BMP oder WEBP in das JPEG/WEBP-Format.
 
-Der Vorteil der erzwungenen verlustbehafteten Konvertierung besteht darin, dass kleinere Bilder bereitgestellt werden.
-Wenn Sie beispielsweise das JPEG- oder WEBp-Format anstelle von PNG verwenden, kann die Größe je nach der in der Fastly IO-Konfiguration angegebenen Qualitätsstufe um 60 bis 70 Prozent reduziert werden.
+Der Vorteil der erzwungenen verlustreichen Konvertierung besteht darin, dass kleinere Bilder bereitgestellt werden.
+Wenn Sie beispielsweise das JPEG- oder WEBp-Format anstelle von PNG verwenden, kann die Größe je nach dem in der Fastly IO-Konfiguration angegebenen Qualitätsniveau um 60 bis 70 Prozent reduziert werden.
 
-Je nach der für die Bildoptimierung ausgewählten Qualitätsstufe können visuelle Unterschiede bei Bildern auftreten. Beispielsweise werden Alpha-Kanäle/Transparenzen entfernt und durch einen weißen Hintergrund ersetzt, es sei denn, Sie verwenden eine Deep-Image-Optimierung, die die Hintergrundfarbe Ihres Designs verwendet.
+Je nach ausgewähltem Qualitätsniveau für die Bildoptimierung können Sie visuelle Unterschiede in Bildern wahrnehmen. Beispielsweise werden Alpha-Kanäle/Transparenzen entfernt und durch einen weißen Hintergrund ersetzt, es sei denn, Sie verwenden Deep Image Optimization , die die Hintergrundfarbe Ihres Designs verwendet.
 
-Wenn Sie die verlustreiche Konvertierung (`WebP Auto? = No`) deaktivieren, ändert Fastly IO nur JPEG-Bilder für kompatible Browser in das WEBP-Format. Es werden keine anderen Bildtypen geändert. Wenn das Originalbild beispielsweise PNG ist, lautet die Ausgabe vom Fastly IO-Dienst PNG.
+Wenn Sie verlustbehaftete Konvertierung (`WebP Auto? = No`) deaktivieren, ändert Fastly IO nur JPEG-Images für kompatible Browser in das WEBP-Format. Es werden keine anderen Bildtypen geändert. Wenn das Originalbild beispielsweise PNG ist, ist die Ausgabe des Fastly IO-Service PNG.
 
-### Deep-Image-Optimierung
+### Tiefenbildoptimierung
 
-Die Deep-Image-Optimierung ist standardmäßig deaktiviert. Durch Aktivierung dieser Option wird die integrierte Adobe Commerce-Größenanpassung deaktiviert und vollständig an den Fastly IO-Dienst abgeladen.
-Diese Funktion ändert nur die Größe von _Produkt_-Bildern. Die Größe von CMS-Bildern wird nicht geändert.
+Die Tiefenbildoptimierung ist standardmäßig deaktiviert. Durch Aktivierung dieser Option wird die integrierte Größenanpassung von Adobe Commerce deaktiviert und vollständig auf den Fastly IO-Service abgeladen.
+Mit dieser Funktion wird nur die Größe _Produkt_-Bilder geändert. Die Größe der CMS-Bilder wird nicht geändert.
 
-Durch die Aktivierung der Deep-Image-Optimierung wird jedem Bild eine Hintergrundfarbdefinition hinzugefügt, wie in Ihrem Design definiert. Daher werden WebP-Bilder verlustfrei von WebP in verlustfreies WebP umgestellt. Einer der Hauptunterschiede zwischen verlustfrei und verlustfrei besteht darin, dass der Alphakanal verlustfrei von PNG-Bildern entfernt wird, wodurch wesentlich kleinere Bilder bereitgestellt werden. Bilder mit Transparenz können jedoch auf Produkt- und Kampagnenseiten mit einem anderen Hintergrund merkwürdig aussehen.
+Durch die Aktivierung der Optimierung für tiefe Bilder wird jedem Bild, wie im Design definiert, eine Hintergrundfarbdefinition hinzugefügt. Dadurch wechseln WebP-Bilder von WebP verlustfrei zu WebP verlustfrei. Einer der Hauptunterschiede zwischen verlustfrei und verlustbehaftet ist, dass verlustbehaftete den Alphakanal aus PNG-Bildern entfernt, was viel kleinere Bilder liefert. Bilder mit Transparenz können jedoch auf Produkt- und Kampagnenseiten mit einem anderen Hintergrund seltsam aussehen.
 
 Beispielsweise stellt der folgende Code die ursprüngliche Quelle für ein Bild aus dem Luma-Design dar:
 
@@ -130,7 +130,7 @@ Beispielsweise stellt der folgende Code die ursprüngliche Quelle für ein Bild 
      alt="Fusion Backpack"/>
 ```
 
-Wenn die Funktion Fastly IO Deep-Bild-Optimierung aktiviert ist, wird der ursprüngliche Quellcode für das Bild wie im folgenden Beispiel gezeigt umgeschrieben:
+Wenn die Deep-Image-Optimierungsfunktion von Fastly IO aktiviert ist, wird der ursprüngliche Quell-Code für das Bild neu geschrieben, wie im folgenden Beispiel gezeigt:
 
 ```html
 <img class="product-image-photo"
@@ -142,10 +142,10 @@ Wenn die Funktion Fastly IO Deep-Bild-Optimierung aktiviert ist, wird der urspr�
 
 ### Adaptive Pixelverhältnisse
 
-Die Funktion Adaptive Pixelverhältnisse ist nützlich, um Bilder für progressive Webanwendungen zu optimieren. Dadurch können Sie mehrere Bildgrößen und Auflösungen aus einer Bildquellendatei bereitstellen, indem Sie für jedes Produktbild einen Wert von `srcset` hinzufügen.
+Die Funktion für adaptive Pixelverhältnisse ist nützlich, um Bilder für progressive Web-Anwendungen zu optimieren. So können Sie mehrere Bildgrößen und Auflösungen aus einer Bildquelldatei bereitstellen, indem Sie für jedes Produktbild einen `srcset` hinzufügen.
 
-Wenn die Funktion Adaptive Pixelverhältnisse aktiviert ist, stellt der Fastly IO-Dienst ein Bild mit fester Breite bereit, das sich an variierende `device-pixel-ratios` anpassen kann.
-Beispielsweise ändert der Dienst die Produktbilddefinition wie im folgenden Beispiel gezeigt:
+Wenn die Funktion für adaptive Pixelverhältnisse aktiviert ist, liefert der Fastly IO-Service ein Bild mit fester Breite, das an unterschiedliche `device-pixel-ratios` angepasst werden kann.
+Beispielsweise ändert der Service die Produktbilddefinition, wie im folgenden Beispiel gezeigt:
 
 ```html
 <img class="product-image-photo"
@@ -157,8 +157,8 @@ Beispielsweise ändert der Dienst die Produktbilddefinition wie im folgenden Bei
      alt="Fusion Backpack"/>
 ```
 
-Siehe `srcset` [Browserunterstützung](https://caniuse.com/#feat=srcset) und [Spezifikation](https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-srcset).
+Siehe `srcset` [Browser-Unterstützung](https://caniuse.com/#feat=srcset) und [Spezifikation](https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-srcset).
 
-## Fastly IO überprüfen
+## Fastly IO validieren
 
-Nachdem Sie Fastly IO aktiviert und konfiguriert haben, validieren Sie Ihre Konfiguration, indem Sie Webseitenschnelltests mit und ohne Fastly IO-Aktivierung durchführen. Überprüfen Sie außerdem die Bilder in Ihrem Store, um die Bildgröße und das Erscheinungsbild auf Probleme zu überprüfen.
+Nachdem Sie Fastly IO aktiviert und konfiguriert haben, validieren Sie Ihre Konfiguration, indem Sie Web-Seiten-Geschwindigkeitstests mit und ohne aktiviertem Fastly IO durchführen. Überprüfen Sie außerdem die Bilder in Ihrem Store, um die Bildgröße und das Erscheinungsbild auf Probleme zu überprüfen.

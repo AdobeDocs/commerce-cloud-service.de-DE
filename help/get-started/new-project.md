@@ -1,6 +1,6 @@
 ---
-title: Bereitstellung von Commerce on Cloud
-description: Erfahren Sie, wie Sie einen Adobe Customer Technical Advisor für die Bereitstellung Ihres Adobe Commerce-Projekts zur Cloud-Infrastruktur vorbereiten.
+title: Bereitstellung von Commerce in Cloud Manager
+description: Erfahren Sie, wie Sie einen technischen Berater für Adobe-Kunden vorbereiten, um Ihr Adobe Commerce-on-Cloud-Infrastrukturprojekt bereitzustellen.
 recommendations: noDisplay, catalog
 role: Admin
 exl-id: cfb354b0-c255-4b6e-94aa-c5a6bf7230d6
@@ -11,77 +11,77 @@ ht-degree: 0%
 
 ---
 
-# Voraussetzungen für die Bereitstellung von Commerce on Cloud
+# Voraussetzungen für die Bereitstellung von Commerce auf Cloud
 
-Beginnen wir mit der Initialisierung Ihres Commerce-Projekts zur Cloud-Infrastruktur!
+Beginnen wir mit der Initialisierung Ihres Commerce-Projekts in der Cloud-Infrastruktur!
 
-Bevor Adobe Ihre Commerce in Cloud-Projektumgebungen bereitstellt, sollten Sie die folgenden Strategien berücksichtigen und Antworten für Ihre erste Beratung mit Ihrem Adobe-Account-Team vorbereiten. Verwenden Sie die folgenden Abschnitte als Checkliste, um Sie bei der Vorbereitung auf Ihr Gespräch mit einem technischen Kundenberater zur Bereitstellung eines Cloud-Projekts zu unterstützen:
+Bevor Adobe Ihre Commerce in Cloud-Projektumgebungen bereitstellt, sollten Sie die folgenden Strategien in Betracht ziehen und Antworten für Ihre erste Beratung mit Ihrem Adobe-Account-Team vorbereiten. Verwenden Sie die folgenden Abschnitte als Checkliste, um Sie bei der Vorbereitung Ihres Gesprächs mit einem technischen Kundenberater für die Bereitstellung eines Cloud-Projekts zu unterstützen:
 
 ## Domain-Definition
 
-**Frage 1**: _Welche Domäne oder Domänen beabsichtigen Sie für den Start der Site zu verwenden?_
+**Frage 1**: _Welche Domain(s) möchten Sie für den Site-Launch verwenden?_
 
-Bereiten Sie sich auf die Integration der Fastly- und Nginx-Dienste vor, indem Sie Ihre Top-Level-Domänen und Subdomänen für die Pro Staging- und Produktionsumgebungen definieren. Nach der ersten Einrichtung können Sie nur Domänen hinzufügen, indem Sie ein Adobe Commerce-Supportticket senden. Daher wird empfohlen, Ihre Domäneninformationen bereit zu halten.
+Bereiten Sie sich auf die Integration der Fastly- und nginx-Services vor, indem Sie Ihre Top-Level-Domains und Subdomains für die Pro Staging- und Produktionsumgebungen definieren. Nach der Ersteinrichtung können Sie nur Domains hinzufügen, indem Sie ein Adobe Commerce-Support-Ticket senden. Es wird daher empfohlen, Ihre Domain-Informationen vorzubereiten.
 
-Beispiele für Produktions- und Staging-Domänen:
+Beispiele für Produktions- und Staging-Domains:
 
 - `www.your-store.com`
 - `your-store.com`
 - `mcprod.your-store.com`
 - `mcstaging.your-store.com`
 
-Weitere Anleitungen zu mehreren oder eindeutigen Domänen finden Sie unter [Einrichten mehrerer Websites oder Stores](../cloud-guide/store/multiple-sites.md) im Handbuch _Commerce on Cloud Infrastructure_ .
+Weitere [ zu mehreren oder eindeutigen Domains finden Sie unter](../cloud-guide/store/multiple-sites.md)Einrichten mehrerer Websites oder Stores _im Handbuch zu_ Commerce in Cloud-Infrastrukturen.
 
-Weitere Informationen finden Sie unter [Mehrere schnelle Konten und zugewiesene Domänen](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/cdn/fastly#multiple-fastly-accounts-and-assigned-domains){target="_blank"} , wenn Sie über ein vorhandenes Fastly-Konto verfügen, das dieselbe Apex und dieselben Subdomänen verknüpft, die auf Ihrer Adobe Commerce-Site verwendet werden.
+Siehe [Mehrere Fastly-Konten und zugewiesene Domains](https://experienceleague.adobe.com/en/docs/commerce-cloud-service/user-guide/cdn/fastly#multiple-fastly-accounts-and-assigned-domains){target="_blank"}, wenn Sie über ein vorhandenes Fastly-Konto verfügen, das denselben Apex und dieselbe Subdomain verknüpft, die auf Ihrer Adobe Commerce-Site verwendet werden.
 
 ## Transaktions-E-Mail-Domain
 
-**Frage 2**: _Welche Domäne oder Domänen beabsichtigen Sie für Transaktions-E-Mails zu verwenden?_
+**Frage 2**: _Welche Domain(s) möchten Sie für Transaktions-E-Mails verwenden?_
 
-Adobe Commerce on Cloud verwendet den Proxy-Dienst SendGrid Simple Mail Transfer Protocol (SMTP), der ausgehende E-Mail-Authentifizierungs- und Reputationsüberwachungsdienste bereitstellt. SendGrid sendet Transaktions-E-Mails in Ihrem Namen, daher sind Domäneninformationen erforderlich.
+Adobe Commerce in Cloud Manager verwendet den SMTP-Proxy-Service (Simple Mail Transfer Protocol) SendGrid, der die Authentifizierung ausgehender E-Mails und die Überwachung der Reputation bereitstellt. SendGrid sendet Transaktions-E-Mails in Ihrem Namen, sodass Domain-Informationen erforderlich sind.
 
-Beispiel für die SendGrid-Domäne: `example@your-store.com`
+Beispiel für die SendGrid-Domain: `example@your-store.com`
 
-Weitere Informationen zu Transaktions-E-Mails und Domäneneinstellungen finden Sie unter [SendGrid-Mail-Dienst](../cloud-guide/project/sendgrid.md) im Handbuch _Commerce on Cloud Infrastructure_ .
+Siehe [SendGrid-E](../cloud-guide/project/sendgrid.md)Mail-Dienst) im Handbuch _Commerce_ Cloud-Infrastruktur für weitere Anleitungen zu Transaktions-E-Mails und Domain-Einstellungen.
 
 ## Speicherzuweisung
 
-**Frage 3**: _Wie viel von Ihrem vertraglich vereinbarten Speicher planen Sie für den Datei-Upload und für die Datenbank zuzuweisen?_
+**Frage 3**: _Wie viel von Ihrem vertraglich vereinbarten Speicher möchten Sie für den Datei-Upload und für die Datenbank bereitstellen?_
 
 Adobe Commerce in der Cloud-Infrastruktur verwendet Speicher für die Dateistruktur, die Suchindizierung und die Datenbank. Sie können den Speicher nach Bedarf unterteilen, beginnend mit 10 GB für jede Partition.
 
-Die Menge an Speicherplatz, die Sie für Ihr Cloud-Projekt zugewiesen haben, stellt den Gesamtspeicher für jede Umgebung dar. Wenn Sie beispielsweise 50 GB Speicherplatz gekauft haben, verfügen Sie für jede Umgebung über 50 GB Speicher. Es gibt 50 GB separaten Speicher für Produktion, Staging und jede Integrationsumgebung.
+Die Menge an Speicher, die Sie für Ihr Cloud-Projekt vertraglich gebunden haben, stellt den Gesamtspeicher für jede Umgebung dar. Wenn Sie beispielsweise 50 GB Speicherplatz erworben haben, verfügen Sie über 50 GB Speicherplatz für jede Umgebung. Es gibt 50 GB separaten Speicher für die Produktions-, Staging- bzw. Integrationsumgebung.
 
-Sie können Ihren vertraglich vereinbarten Speicher jederzeit erhöhen. Für Pro-Produktions- und Staging-Umgebungen müssen Sie ein Adobe Commerce-Support-Ticket senden, um die Speicherplatzzuweisung zu ändern. Eine Vergrößerung der Pro Production- und Staging-Umgebungen kann nur in bestimmten Abständen erfolgen. Je nach aktueller Speichernutzung empfiehlt das Supportteam möglicherweise, die Speicherplatzzuweisung um mindestens 10 GB zu erhöhen. Nach der Zuweisung kann die Speichersteigerung für Pro Staging und Produktion **nicht** zurückgesetzt werden.
+Sie können Ihre vertraglich vereinbarte Lagermenge jederzeit erhöhen. Für Pro-Produktions- und Staging-Umgebungen müssen Sie ein Adobe Commerce-Support-Ticket einreichen, um die Speicherplatzzuweisung zu ändern. Eine Vergrößerung der Pro-Produktions- und Staging-Umgebungen kann nur in bestimmten Intervallen erfolgen. Abhängig von Ihrer aktuellen Speicherplatznutzung empfiehlt das Support-Team möglicherweise, die Speicherplatzzuweisung um mindestens 10 GB zu erhöhen. Nach der Zuweisung kann die Speichererhöhung für Pro Staging und Produktion **nicht** rückgängig gemacht werden.
 
-Siehe [Verwalten von Speicherplatz](../cloud-guide/storage/manage-disk-space.md) im Handbuch _Commerce in Cloud Infrastructure_.
+Siehe [Verwalten von Festplattenspeicher](../cloud-guide/storage/manage-disk-space.md) im Handbuch _Commerce on Cloud Infrastructure_.
 
 ## Cloud Service-Region
 
-**Frage 4**: _Welche Cloud Service-Region eignet sich am bequemsten zu Ihrer Nähe?_
+**Frage 4**: _Welche Cloud Service-Region liegt am bequemsten in Ihrer Nähe?_
 
-Wählen Sie entweder Amazon Web Services (AWS) oder Microsoft Azure als Grundlage für Ihre Infrastruktur-as-a-Service-Projekte (IAAs) für Ihre Adobe Commerce in Cloud-Infrastruktur Pro-Projekte. Jeder Dienstleister arbeitet in mehreren Regionen und bietet mehrere Verfügbarkeitszonen. Wählen Sie eine Region aus, die Ihrem Standort entspricht, und reduzieren Sie das Latenzpotenzial und die höheren Kosten.
+Wählen Sie entweder Amazon Web Services (AWS) oder Microsoft Azure as a Service (IaaS) als Grundlage für Ihre Adobe Commerce on Cloud Infrastructure Pro-Projekte. Jeder Dienstleister ist in mehreren Regionen tätig und bietet mehrere Verfügbarkeitszonen. Wählen Sie eine Region aus, die Ihrem Standort entspricht, und reduzieren Sie das Latenzpotenzial und die höheren Kosten.
 
-Siehe [eine Zuordnung der Adobe Commerce-Cloud-Regionen](../cloud-guide/overview.md).
+Siehe [Karte der Cloud-Regionen von Adobe Commerce](../cloud-guide/overview.md).
 
 ## Verbindungsdienst
 
-**Frage 5**: _Benötigen Sie einen PrivateLink-Dienst? Wenn ja, in welcher Region befindet sich die PrivateLink-Verbindung?_
+**Frage 5**: _Benötigen Sie einen PrivateLink-Service? Wenn ja, in welcher Region ist die PrivateLink-Verbindung?_
 
-Adobe Commerce on Cloud Infrastructure unterstützt die Integration mit dem AWS PrivateLink- oder Azure Private Link-Dienst. Obwohl dieser Dienst optional ist, wird PrivateLink verwendet, um eine sichere, private Kommunikation zwischen Cloud-Infrastrukturumgebungen mit Diensten und Anwendungen herzustellen, die auf externen Systemen gehostet werden.
+Adobe Commerce in der Cloud-Infrastruktur unterstützt die Integration mit dem AWS PrivateLink- oder Azure Private Link-Service. Obwohl dieser Service optional ist, wird PrivateLink verwendet, um eine sichere, private Kommunikation zwischen Cloud-Infrastrukturumgebungen mit Services und Anwendungen herzustellen, die auf externen Systemen gehostet werden.
 
-Beachten Sie dabei Ihre Cloud Service-Strategie (AWS oder Azure), damit die Adobe Commerce-Instanz innerhalb derselben Region zugänglich ist. Weitere Informationen zur regionalen Barrierefreiheit finden Sie unter [PrivateLink-Dienst](../cloud-guide/development/privatelink-service.md) im Handbuch _Commerce on Cloud Infrastructure_ .
+Es ist wichtig, Ihre Cloud Service-Strategie (AWS oder Azure) zu berücksichtigen, damit die Adobe Commerce-Instanz in derselben Region zugänglich ist. Siehe [PrivateLink-](../cloud-guide/development/privatelink-service.md) im Handbuch _Commerce on Cloud Infrastructure_, um weitere Informationen zur regionalen Barrierefreiheit zu erhalten.
 
-## Start der Target-Site
+## Target-Site-Launch
 
-**Frage 6**: _Wie lautet Ihr voraussichtliches Zielstartdatum?_
+**Frage 6**: _Welches ist das voraussichtliche Zieldatum für die Markteinführung?_
 
-Für das Starten einer Site sind iterative Konfigurationen und Tests erforderlich, um den Erfolg des Site-Starts sicherzustellen. Das Festlegen eines Zieldatums hilft Ihnen und Ihrem Adobe-Account-Team bei der Vorbereitung der endgültigen Aktivitäten vor dem Start, die einen Aufruf zur Koordinierung der letzten Schritte enthalten.
+Der Start einer Site erfordert iterative Konfiguration und Tests, um den Erfolg des Site-Starts sicherzustellen. Das Festlegen eines Zieldatums hilft Ihnen und Ihrem Adobe-Account-Team bei der Vorbereitung auf die endgültigen Aktivitäten vor dem Start, zu denen auch ein Aufruf zur Koordinierung der letzten Schritte gehört.
 
-Weitere Informationen finden Sie unter [Übersicht über die Launch-Site](../cloud-guide/launch/overview.md) im Handbuch _Commerce on Cloud Infrastructure_ , um den vollständigen Prozess zu überprüfen und eine Kopie der Launch-Checkliste herunterzuladen.
+Siehe die [Launch-Site-Übersicht](../cloud-guide/launch/overview.md) im Handbuch zu _Commerce_ Cloud-Infrastruktur, um den vollständigen Prozess zu überprüfen und eine Kopie der Launch-Checkliste herunterzuladen.
 
 >[!TIP]
 >
-> Sehen Sie sich das Cloud-Portal kurz an und greifen Sie auf Ihr neues Cloud-Projekt zu.
+> Werfen Sie einen kurzen Blick auf das Cloud-Portal und greifen Sie auf Ihr neues Cloud-Projekt zu.
 >
 >**Nächster Schritt**: [Onboarding bei Commerce](onboarding.md)

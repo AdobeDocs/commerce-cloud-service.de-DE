@@ -2,121 +2,121 @@
 title: Sicherheit der Cloud-Infrastruktur
 description: Erfahren Sie, wie Adobe Adobe Commerce in der Cloud-Infrastruktur sicher hält.
 feature: Cloud, Security
-source-git-commit: 275b76aaf00c0f5c768773d51b2909b748e9e7cb
+exl-id: fcdcaa07-fac7-46a7-864b-16525fc7ff9d
+source-git-commit: acb1b8569f1b62553ff7e188d8142baba7063b82
 workflow-type: tm+mt
 source-wordcount: '1665'
 ht-degree: 0%
 
 ---
 
-
 # Sicherheit
 
-Die Adobe Commerce [Pro-Planarchitektur](pro-architecture.md) ist für eine äußerst sichere Umgebung ausgelegt. Jeder Kunde wird in einer eigenen isolierten Serverumgebung bereitgestellt, die von anderen Kunden getrennt ist. Die Sicherheitsdetails der Produktionsumgebung werden nachfolgend beschrieben.
+Die Adobe Commerce [Pro](pro-architecture.md)Planarchitektur wurde für eine hochsichere Umgebung entwickelt. Jeder Kunde wird in seiner eigenen isolierten Serverumgebung bereitgestellt, getrennt von anderen Kunden. Nachfolgend werden die Sicherheitsdetails der Produktionsumgebung beschrieben.
 
 ## Webbrowser
 
-Der Großteil des in die Cloud-Umgebung eingehenden und aus ihr ausgehenden Traffics stammt aus den Webbrowsern der Verbraucher. Der Kundentraffic kann mit HTTPS für alle Seiten auf der Website gesichert werden (entweder mithilfe eines gemeinsam genutzten SSL-Zertifikats oder des eigenen SSL-Zertifikats des Kunden gegen eine zusätzliche Gebühr). Checkout- und Kontoseiten werden immer über HTTPS bereitgestellt. Die Best Practice ist, alle Seiten unter HTTPS bereitzustellen.
+Der Großteil des Traffics, der in die und aus der Cloud-Umgebung fließt, stammt von den Webbrowsern der Verbraucher. Verbraucher-Traffic kann mit HTTPS für alle Seiten auf der Website gesichert werden (entweder mit einer gemeinsamen SSL-Zertifizierung oder dem eigenen SSL-Zertifikat des Kunden gegen eine zusätzliche Gebühr). Checkout- und Kontoseiten werden immer mit HTTPS bereitgestellt. Es empfiehlt sich, alle Seiten unter HTTPS bereitzustellen.
 
-## Netzwerk zur Inhaltsbereitstellung
+## Content Delivery Network
 
-Fastly bietet einen CDN-Schutz (Content Delivery Network) und verteilte Denial of Service (DDoS). Das Fastly CDN hilft, den direkten Zugriff auf die Herkunftsserver zu isolieren. Das öffentliche DNS verweist nur auf das Fastly Network. Die Fastly DDoS-Lösung schützt vor hochgradig störenden Angriffen auf Layer 3 und Layer 4 sowie komplexeren Angriffen auf Layer 7. Layer-7-Angriffe können mithilfe benutzerdefinierter Regeln blockiert werden, die auf den gesamten HTTP/HTTPS-Anforderungen basieren und auf Client- und Anforderungskriterien basieren, einschließlich Kopfzeilen, Cookies, Anfragepfad und Client-IP, oder Indikatoren wie Geolocation.
+Fastly bietet ein Content Delivery Network (CDN) und verteilten Denial-of-Service (DDoS)-Schutz. Das Fastly CDN hilft dabei, den direkten Zugriff auf die ursprünglichen Server zu isolieren. Das öffentliche DNS verweist nur auf das Fastly-Netzwerk. Die Fastly DDoS-Lösung schützt vor hochgradig störenden Layer 3- und Layer 4-Angriffen und komplexeren Layer 7-Angriffen. Layer-7-Angriffe können mit benutzerdefinierten Regeln blockiert werden, die auf den gesamten HTTP/HTTPS-Anforderungen und auf Client- und Anfragekriterien basieren, einschließlich Kopfzeilen, Cookies, Anfragepfad und Client-IP oder Indikatoren wie Geolokalisierung.
 
-Siehe [Übersicht über schnelle Dienste](../cdn/fastly.md).
+Siehe [Fastly Services - Übersicht](../cdn/fastly.md).
 
-## Web-Anwendungs-Firewall
+## Web Application Firewall
 
-Die Fastly Web Application Firewall (WAF) wird verwendet, um zusätzlichen Schutz zu bieten. Die Cloud-basierte WAF von Fastly verwendet Drittanbieterregeln aus kommerziellen und Open-Source-Quellen wie dem OWASP Core Ruleset. Darüber hinaus werden Adobe Commerce-spezifische Regeln angewendet. Die Kunden sind vor wichtigen Angriffen auf Anwendungsebene geschützt, darunter Injizierungsangriffe und schädliche Eingaben, Cross-Site-Scripting, Datenexfiltration, HTTP-Protokollverletzungen und anderen OWASP Top-10-Bedrohungen.
+Die Fastly Web Application Firewall (WAF) wird verwendet, um zusätzlichen Schutz zu bieten. Die Cloud-basierte WAF von Fastly nutzt Drittanbieterregeln aus kommerziellen und Open-Source-Quellen wie dem OWASP Core RuleSet. Darüber hinaus werden Adobe Commerce-spezifische Regeln verwendet. Kunden werden vor wichtigen Angriffen auf Anwendungsebene geschützt, einschließlich Injection-Angriffen und böswilligen Eingaben, Cross-Site-Scripting, Datenexfiltration, HTTP-Protokollverletzungen und anderen OWASP Top 10-Bedrohungen.
 
-Die WAF-Regeln werden von Adobe Commerce aktualisiert, wenn neue Schwachstellen erkannt werden, die es Managed Services ermöglichen, Sicherheitsprobleme vor Softwarepatches zu &quot;virtuell zu patchen&quot;. Der Fastly WAF bietet keine Dienste zur Ratenbegrenzung oder Bot-Erkennung. Bei Bedarf können Kunden einen Drittanbieter-Bot-Erkennungsdienst lizenzieren, der mit Fastly kompatibel ist.
+Die WAF-Regeln werden von Adobe Commerce aktualisiert, falls neue Sicherheitslücken entdeckt werden, die es Managed Services ermöglichen, Sicherheitsprobleme vor Software-Patches virtuell zu beheben. Fastly WAF bietet keine Dienste zur Ratenbegrenzung oder Bot-Erkennung an. Bei Bedarf können Kunden einen mit Fastly kompatiblen Bot-Erkennungs-Service eines Drittanbieters lizenzieren.
 
 Siehe [Web Application Firewall (WAF)](../cdn/fastly-waf-service.md).
 
-## Virtual Private Cloud
+## Virtuelle private Cloud
 
-Die Adobe Commerce Pro-Planproduktionsumgebung ist als Virtual Private Cloud (VPC) konfiguriert, sodass Produktionsserver isoliert sind und nur über eingeschränkte Möglichkeiten zur Verbindung mit und aus der Cloud-Umgebung verfügen. Nur sichere Verbindungen zu den Cloud-Servern sind zulässig. Für Dateiübertragungen können sichere Protokolle wie SFTP oder rsync verwendet werden.
+Die Produktionsumgebung des Adobe Commerce Pro-Plans ist als Virtual Private Cloud (VPC) konfiguriert, sodass die Produktionsserver isoliert sind und nur über eingeschränkte Möglichkeiten verfügen, eine Verbindung zur und aus der Cloud-Umgebung herzustellen. Nur sichere Verbindungen zu den Cloud-Servern sind zulässig. Sichere Protokolle wie SFTP oder rsync können für Dateiübertragungen verwendet werden.
 
-Kunden können SSH-Tunnel verwenden, um die Kommunikation mit der Anwendung zu sichern. Der Zugriff auf AWS PrivateLink ist gegen eine zusätzliche Gebühr möglich. Alle Verbindungen zu diesen Servern werden über AWS Security Groups gesteuert, eine virtuelle Firewall, die Verbindungen zur Umgebung einschränkt. Die technischen Ressourcen der Kunden können über SSH auf diese Server zugreifen.
+Kunden können SSH-Tunnel verwenden, um die Kommunikation mit der Anwendung zu sichern. Der Zugang zu AWS PrivateLink kann gegen eine zusätzliche Gebühr gewährt werden. Alle Verbindungen zu diesen Servern werden mithilfe von AWS Security Groups gesteuert, einer virtuellen Firewall, die die Verbindungen zur Umgebung einschränkt. Die technischen Ressourcen der Kunden können mithilfe von SSH auf diese Server zugreifen.
 
 ## Verschlüsselung
 
-Amazon Elastic Block Store (EBS) wird für die Speicherung verwendet. Alle EBS-Volumes werden mit dem AES-256-Algorithmus verschlüsselt, was bedeutet, dass die Daten im Ruhezustand verschlüsselt werden. Das System verschlüsselt auch Daten während der Übertragung zwischen dem CDN und dem Herkunftsserver sowie zwischen den Herkunftsservern. Kundenkennwörter werden als Hashes gespeichert. Vertrauliche Zugangsdaten, einschließlich Zahlungsdaten-Gateway-Anmeldeinformationen, werden mit dem SHA-256-Algorithmus verschlüsselt.
+Amazon Elastic Block Store (EBS) wird für die Speicherung verwendet. Alle EBS-Volumes werden mit dem AES-256-Algorithmus verschlüsselt, was bedeutet, dass die Daten im Ruhezustand verschlüsselt werden. Das System verschlüsselt auch Daten während der Übertragung zwischen dem CDN und dem Ursprungs-Server sowie zwischen den Ursprungs-Servern. Kundenkennwörter werden als Hashes gespeichert. Sensible Anmeldeinformationen, einschließlich Payment Gateway-Anmeldeinformationen, werden mit dem SHA-256-Algorithmus verschlüsselt.
 
-Die Adobe Commerce-Anwendung unterstützt keine Verschlüsselung oder Verschlüsselung auf Spalten- oder Zeilenebene, wenn sich die Daten nicht im Ruhezustand befinden oder sich nicht im Durchlauf zwischen Servern befinden. Der Kunde kann Verschlüsselungsschlüssel innerhalb der Anwendung verwalten. Die vom System verwendeten Schlüssel werden im Schlüsselverwaltungssystem von AWS gespeichert und müssen von Managed Services verwaltet werden, um Teile des Dienstes bereitzustellen.
+Die Adobe Commerce-Anwendung unterstützt keine Verschlüsselung oder Verschlüsselung auf Spalten- oder Zeilenebene, wenn sich die Daten nicht im Ruhezustand befinden oder nicht zwischen Servern übertragen werden. Der Kunde kann Verschlüsselungsschlüssel von der Anwendung aus verwalten. Vom System verwendete Schlüssel werden im AWS-Schlüsselverwaltungssystem gespeichert und müssen von Managed Services verwaltet werden, um Teile des Dienstes bereitzustellen.
 
-## Endpunkterkennung und -antwort
+## Endpunkterkennung und -reaktion
 
-[!DNL CrowdStrike Falcon], ein leichtgewichtiger Agent der nächsten Generation der Endpunkterkennung und -antwort (EDR) wird auf allen Endpunkten (einschließlich Servern) innerhalb von Adobe installiert. EDR-Agenten schützen Adobe-Daten und -Systeme mit kontinuierlicher Echtzeit-Überwachung und -Erfassung, was eine schnelle Ermittlung und Reaktion von Bedrohungen ermöglicht.
+[!DNL CrowdStrike Falcon] wird ein leichtgewichtiger Endpoint Detection and Response (EDR)-Agent der nächsten Generation auf allen Endpunkten (einschließlich Servern) innerhalb von Adobe installiert. EDR-Agenten schützen Adobe-Daten und -Systeme durch kontinuierliche Überwachung und Erfassung in Echtzeit, was eine schnelle Identifizierung und Reaktion bei Bedrohungen ermöglicht.
 
-## Penetrationstests
+## Penetrationstest
 
-Managed Services führt regelmäßige Penetrationstests für das Adobe Commerce-Cloud-System mit der nativen Anwendung durch. Kunden sind für alle Penetrationstests ihrer angepassten Anwendung verantwortlich.
+Managed Services führt mit dem vorkonfigurierten Programm regelmäßige Penetrationstests des Adobe Commerce-Cloud-Systems durch. Kunden sind für alle Penetrationstests ihrer benutzerdefinierten Anwendung verantwortlich.
 
-## Zahlungseingang
+## Zahlungs-Gateway
 
-Adobe Commerce erfordert Payment Gateway-Integrationen, bei denen Kreditkartendaten direkt vom Browser des Verbrauchers an das Payment Gateway weitergeleitet werden. Die Kartendaten sind in keiner der Adobe Commerce Pro Plan Managed Services-Umgebungen verfügbar. Aktionen, die die Transaktionen der E-Commerce-Anwendung betreffen, werden mithilfe eines Verweises auf die Transaktion vom Gateway ausgeführt.
+Adobe Commerce erfordert Integrationen mit Zahlungs-Gateways, bei denen Kreditkartendaten direkt vom Browser des Verbrauchers an das Zahlungs-Gateway übergeben werden. Die Kartendaten sind in keiner der Adobe Commerce Pro Plan Managed Services-Umgebungen verfügbar. Die Transaktionen, die von der eCommerce-Anwendung ausgeführt werden, werden mit einem Verweis auf die Transaktion vom Gateway abgeschlossen.
 
 ## Adobe Commerce-Anwendung
 
-Adobe testet regelmäßig den Kernanwendungscode auf Sicherheitslücken. Patches für Mängel und Sicherheitsprobleme werden den Kunden zur Verfügung gestellt. Das Produktsicherheitsteam validiert Adobe Commerce-Produkte gemäß den Sicherheitsrichtlinien der OWASP-Anwendung. Zur Prüfung und Überprüfung der Einhaltung werden verschiedene Tools zur Bewertung von Sicherheitslücken und externe Anbieter verwendet. Zu den Sicherheitstools gehören:
+Adobe testet den Kern-Anwendungs-Code regelmäßig auf Sicherheitslücken. Patches für Defekte und Sicherheitsprobleme werden Kunden bereitgestellt. Das Produktsicherheits-Team validiert Adobe Commerce-Produkte gemäß den Sicherheitsrichtlinien für OWASP-Anwendungen. Zur Prüfung und Verifizierung der Einhaltung werden verschiedene Tools zur Bewertung von Sicherheitslücken und externe Anbieter eingesetzt. Zu den Sicherheits-Tools gehören:
 
-- Statische und dynamische Veracode-Prüfung
-- Quellcode-Scannen von RIPS
-- Sicherheitsüberprüfungsdienste von Trustwave und Alert Logic
+- Statisches und dynamisches Scannen mit Veracode
+- RIPS-Quellcodescan
+- Sicherheitslücken-Scan-Services von TrustWave und Alert Logic
 - Burp Suite Pro
 - OWASPZAP
 - undSqlMap
 
-Die vollständige Codebasis wird mit diesen Tools alle zwei Wochen überprüft. Kunden werden durch direkte E-Mails, Benachrichtigungen in der Anwendung und im [Sicherheitscenter](https://helpx.adobe.com/security.html) über Sicherheits-Patches benachrichtigt.
+Die vollständige Code-Basis wird mit diesen Tools alle zwei Wochen gescannt. Kunden werden über Sicherheits-Patches per E-Mail, Benachrichtigungen in der Anwendung und im [Sicherheitscenter](https://helpx.adobe.com/security.html) benachrichtigt.
 
-Kunden müssen sicherstellen, dass diese Patches gemäß den PCI-Richtlinien innerhalb von 30 Tagen nach ihrer Veröffentlichung auf ihre benutzerdefinierte Anwendung angewendet werden. Adobe bietet außerdem ein [Sicherheits-Scan-Tool](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-scan), mit dem Händler ihre Websites regelmäßig überwachen und Updates zu bekannten Sicherheitsrisiken, Malware und unbefugtem Zugriff erhalten können. Das Security Scan Tool ist ein kostenloser Service und kann auf jeder beliebigen Version von Adobe Commerce ausgeführt werden.
+Kunden müssen sicherstellen, dass diese Patches innerhalb von 30 Tagen nach der Veröffentlichung gemäß den PCI-Richtlinien auf ihre benutzerdefinierte Anwendung angewendet werden. Adobe bietet außerdem ein [Security Scan Tool](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/security/security-scan) mit dem Händler ihre Websites regelmäßig überwachen und Updates zu bekannten Sicherheitsrisiken, Malware und unbefugtem Zugriff erhalten können. Das Security Scan Tool ist ein kostenloser Dienst, der auf jeder beliebigen Adobe Commerce-Version ausgeführt werden kann.
 
-Um Sicherheitsforscher dazu zu ermutigen, Schwachstellen zu identifizieren und zu melden, verfügt Adobe Commerce zusätzlich zu internen Tests über ein [Bugbounty-Programm](https://hackerone.com/magento) . Darüber hinaus erhält der Kunde bei Bedarf den vollständigen Quellcode der Anwendung für seine eigene Überprüfung.
+Um Sicherheitsforscher dazu zu ermutigen, Sicherheitslücken zu identifizieren und zu melden, [ Adobe Commerce zusätzlich zu internen Tests ein ](https://hackerone.com/magento)Bug-Bounty-Programm“. Des Weiteren wird dem Kunden der vollständige Quellcode des Programms zur eigenen Überprüfung, falls gewünscht, bereitgestellt.
 
 ## Schreibgeschütztes Dateisystem
 
-Der gesamte ausführbare Code wird in einem schreibgeschützten Dateisystembild bereitgestellt, wodurch die für Angriffe verfügbaren Oberflächen erheblich reduziert werden. Der Bereitstellungsprozess erstellt ein Squash-FS-Bild, um die Möglichkeiten für das Einfügen von PHP- oder JavaScript-Code in das System zu reduzieren oder die Adobe Commerce-Anwendungsdateien zu ändern.
+Der gesamte ausführbare Code wird in einem schreibgeschützten Dateisystemabbild bereitgestellt, wodurch die für Angriffe verfügbaren Oberflächen erheblich reduziert werden. Der Bereitstellungsprozess erstellt ein Squash-FS-Image, um die Möglichkeiten für das Einfügen von PHP- oder JavaScript-Code in das System oder das Ändern von Adobe Commerce-Anwendungsdateien zu reduzieren.
 
-## Remote-Implementierung
+## Remote-Bereitstellung
 
-Die einzige Möglichkeit, ausführbaren Code in die Managed Services-Produktionsumgebung zu übertragen, besteht darin, ihn über einen Bereitstellungsprozess auszuführen. Bei der Bereitstellung wird Quellcode aus dem Quell-Repository in ein Remote-Repository gepusht, das einen Bereitstellungsprozess initiiert. Der Zugriff auf dieses Bereitstellungsziel wird gesteuert, sodass Sie die vollständige Kontrolle darüber haben, wer auf das Bereitstellungsziel zugreifen kann. Alle Implementierungen von Anwendungs-Code in der Nicht-Produktionsumgebung werden vom Kunden gesteuert.
+Die einzige Möglichkeit, ausführbaren Code in die Managed Services-Produktionsumgebung zu bringen, besteht darin, ihn durch einen Bereitstellungsprozess auszuführen. Bei der Bereitstellung wird Quell-Code aus Ihrem Quell-Repository in ein Remote-Repository gepusht, das einen Bereitstellungsprozess initiiert. Der Zugriff auf dieses Bereitstellungsziel wird gesteuert, sodass Sie die vollständige Kontrolle darüber haben, wer auf das Bereitstellungsziel zugreifen kann. Alle Bereitstellungen von Anwendungs-Code in der Nicht-Produktionsumgebung werden vom Kunden gesteuert.
 
 ## Protokollierung
 
-Alle AWS-Aktivitäten werden in AWS CloudTrail protokolliert. Die Protokolle für Betriebssystem, Anwendungsserver und Datenbank werden auf den Produktionsservern gespeichert und in Backups gespeichert. Alle Quellcodeänderungen werden in einem Git-Repository aufgezeichnet. Der Bereitstellungsverlauf ist in der Adobe Commerce-[Projekt-Webschnittstelle](../project/overview.md) verfügbar. Der gesamte Support-Zugriff wird protokolliert und Support-Sitzungen werden aufgezeichnet.
+Alle AWS-Aktivitäten werden in AWS CloudTrail protokolliert. Betriebssystem-, Anwendungs- und Datenbankprotokolle werden auf den Produktions-Servern gespeichert und in Backups gespeichert. Alle Quellcodeänderungen werden in einem Git-Repository aufgezeichnet. Der Bereitstellungsverlauf ist in der Adobe Commerce [Project Web Interface) ](../project/overview.md). Alle Support-Zugriffe werden protokolliert und Support-Sitzungen aufgezeichnet.
 
-Siehe [Anzeigen und Verwalten von Protokollen](../test/log-locations.md).
+Siehe [Protokolle anzeigen und verwalten](../test/log-locations.md).
 
 ## Sensible Daten
 
-Vertrauliche Daten können entweder personenbezogene Daten von Verbrauchern oder vertrauliche Daten von Managed Services-Kunden umfassen. Der Schutz sensibler Kunden- und Verbraucherdaten ist eine wichtige Verpflichtung für Adobe Commerce Managed Services. Sowohl Managed Services- als auch Adobe-Kunden haben rechtliche Verpflichtungen in Bezug auf personenbezogene Daten. Zusätzlich zu den Sicherheitsfunktionen der Architektur gibt es weitere Steuerelemente, um die Verteilung und den Zugriff auf vertrauliche Daten zu beschränken.
+Sensible Daten können entweder personenbezogene Daten von Verbrauchern oder vertrauliche Daten von Managed Services-Kunden umfassen. Der Schutz sensibler Kunden- und Verbraucherdaten ist für Adobe Commerce Managed Services eine wichtige Aufgabe. Sowohl Managed Services- als auch Adobe-Kunden haben rechtliche Verpflichtungen in Bezug auf persönlich identifizierbare Informationen. Zusätzlich zu den Sicherheitsfunktionen der Architektur gibt es weitere Steuerelemente, um die Verteilung und den Zugriff auf vertrauliche Daten einzuschränken.
 
-Kunden besitzen ihre Daten und haben die Kontrolle darüber, wo sich diese Daten befinden. Der Kunde gibt den Speicherort an, an dem sich seine Produktions- und Entwicklungsinstanzen befinden. Sie geben außerdem an, welcher Speicherort für die Adobe Commerce-Reporting-Umgebung mit Commerce verwendet wird und ob diese Adobe Commerce-Berichtsanwendung Zugriff auf persönlich identifizierbare Informationen hat. Produktionsinstanzen können in den meisten AWS-Regionen auftreten, während Entwicklungs- und Adobe Commerce-Reporting-Umgebungen derzeit entweder in den USA oder in der Europäischen Union zu finden sind.
+Kunden besitzen eigene Daten und haben die Kontrolle darüber, wo sich diese Daten befinden. Der Kunde gibt den Speicherort an, an dem sich seine Produktions- und Entwicklungsinstanzen befinden. Sie geben auch an, welcher Speicherort für die Adobe Commerce-Reporting-Umgebung mit Commerce verwendet wird und ob diese Adobe Commerce-Reporting-Anwendung Zugriff auf persönlich identifizierbare Informationen hat oder nicht. Produktionsinstanzen finden sich in den meisten AWS-Regionen, während Entwicklungs- und Adobe Commerce-Reporting-Umgebungen derzeit entweder in den Vereinigten Staaten oder in der Europäischen Union zu finden sind.
 
-Sensible Daten können über das Fastly CDN-Server-Netzwerk übermittelt werden, werden jedoch nicht im Fastly-Netzwerk gespeichert. Alle in die Managed Services einbezogenen Partner, die ein Angebot anbieten, haben vertragliche Verpflichtungen, den Schutz sensibler Daten sicherzustellen. Managed Services verschiebt keine sensiblen Kunden- oder Verbraucherdaten von den vom Kunden angegebenen Speicherorten.
+Sensible Daten können das Fastly CDN-Server-Netzwerk durchlaufen, werden jedoch nicht im Fastly-Netzwerk gespeichert. Alle am Managed Services-Angebot beteiligten Partner haben vertragliche Verpflichtungen, den Schutz sensibler Daten sicherzustellen. Managed Services verschiebt keine sensiblen Kunden- oder Verbraucherdaten von den vom Kunden angegebenen Speicherorten.
 
-Als Teil der im Managed Services-Angebot enthaltenen Dienstleistungen benötigen Managed Services-Mitarbeiter Zugriff auf Produktionssysteme, die sensible Daten enthalten. Diese Mitarbeiter werden entsprechend ihrer Verpflichtung zum Schutz sensibler Kunden- und Verbraucherdaten geschult. Der Zugriff auf diese Systeme ist auf Mitarbeiter beschränkt, die Zugriff benötigen. Diese Mitarbeiter haben nur Zugriff auf die für die Erbringung dieser Dienstleistungen benötigte Zeit.
+Im Rahmen der Bereitstellung der im Managed Services-Angebot enthaltenen Services benötigen Managed Services-Mitarbeiter Zugriff auf Produktionssysteme, die sensible Daten enthalten. Diese Mitarbeiter werden in ihren Pflichten zum Schutz sensibler Kunden- und Verbraucherdaten geschult. Der Zugriff auf diese Systeme ist auf Mitarbeiter beschränkt, die Zugriff benötigen. Diese Mitarbeiter haben nur für die Zeit Zugriff, die für die Bereitstellung dieser Dienste benötigt wird.
 
-## Die Datenschutz-Grundverordnung
+## Datenschutz-Grundverordnung
 
-Die Datenschutz-Grundverordnung (DSGVO) ist ein Rechtsrahmen, der Richtlinien für die Erhebung und Verarbeitung personenbezogener Daten für Einzelpersonen in der Europäischen Union (EU) festlegt. Diese Vorschriften gelten unabhängig davon, wo die Site ihren Sitz hat und EU-Besucher darauf zugreifen können.
+Die Datenschutz-Grundverordnung (DSGVO) ist ein Rechtsrahmen, der Richtlinien für die Erhebung und Verarbeitung personenbezogener Daten für Einzelpersonen in der Europäischen Union (EU) festlegt. Diese Vorschriften gelten unabhängig davon, wo sich die Website befindet, und EU-Besucher haben Zugriff darauf.
 
-Besucher müssen über die Daten informiert werden, die von einer Site erfasst werden, und sie müssen sich ausdrücklich mit der Datenerfassung einverstanden erklären. Sites müssen Besucher benachrichtigen, wenn personenbezogene Daten, die sich auf der Site befinden, verletzt werden.
+Die Besucher müssen über die Daten informiert werden, die eine Website von ihnen erfasst, und müssen der Informationserfassung ausdrücklich zustimmen. Websites müssen Besucher benachrichtigen, wenn personenbezogene Daten der Website verletzt werden.
 
-Der Händler oder das Unternehmen, der bzw. das die Site betreibt, muss über einen speziellen Datenschutzbeauftragten verfügen, der die Datensicherheit der Site überwacht. Der Datenschutzbeauftragte (oder das Website-Management-Team) sollte kontaktiert werden können, wenn ein Besucher die Löschung seiner Daten anfordert.
+Der Händler oder das Unternehmen, der bzw. das die Website betreibt, muss über einen dedizierten Datenschutzbeauftragten verfügen, der die Datensicherheit der Website überwacht. Der Datenschutzbeauftragte (oder das Website-Management-Team) sollte kontaktiert werden können, wenn ein Besucher die Löschung seiner Daten verlangt.
 
-Die DSGVO fordert, dass alle personenbezogenen Daten (wie Namen, Rasse und Geburtsdatum), die erfasst werden, entweder anonymisiert oder pseudonymisiert werden.
+Die DSGVO fordert, dass alle personenbezogenen Daten (wie Namen, Rasse und Geburtsdatum) entweder anonymisiert oder pseudonymisiert erfasst werden.
 
 >[!NOTE]
 >
->Diese Seite bietet einen allgemeinen Überblick darüber, was für die DSGVO zu beachten ist. Weitere Informationen zum Speichern personenbezogener Daten in Adobe Commerce finden Sie im _[Sicherheits- und Compliance-Handbuch](https://experienceleague.adobe.com/en/docs/commerce-operations/security-and-compliance/overview)_ . Um festzustellen, wie Ihr Unternehmen rechtliche Verpflichtungen einhalten sollte, wenden Sie sich an Ihren Rechtsbeistand oder lesen Sie den [offiziellen Text](https://eur-lex.europa.eu/eli/reg/2016/679/oj).
+>Diese Seite bietet einen allgemeinen Überblick darüber, was im Rahmen der DSGVO zu beachten ist. Einzelheiten zur Speicherung _[personenbezogenen Daten durch Adobe Commerce finden Sie ](https://experienceleague.adobe.com/en/docs/commerce-operations/security-and-compliance/overview)_ „Sicherheits- und Compliance-Handbuch“. Um zu bestimmen, wie Ihr Unternehmen rechtliche Verpflichtungen einhalten sollte, wenden Sie sich an Ihren Rechtsbeistand oder lesen Sie den [offiziellen Text](https://eur-lex.europa.eu/eli/reg/2016/679/oj).
 
 ## Backups
 
-In den letzten 24 Stunden werden stündlich Sicherungen durchgeführt. Nach Ablauf des Zeitraums von 24 Stunden werden Backups mithilfe des AWS EBS Snapshot-Dienstes planmäßig aufbewahrt. Siehe [Bindungsrichtlinie](pro-architecture.md#retention-policy).
+Backups werden stündlich für die letzten 24 Betriebsstunden durchgeführt. Nach dem 24-Stunden-Zeitraum werden Backups mithilfe des AWS EBS Snapshot-Service planmäßig aufbewahrt. Siehe [Aufbewahrungsrichtlinie](pro-architecture.md#retention-policy).
 
-Der Dienst erstellt eine unabhängige Sicherung auf redundanten Speicher. Da die EBS-Volumes verschlüsselt sind, werden die Backups ebenfalls verschlüsselt. Darüber hinaus führt Managed Services On-Demand-Backups auf Kundenwunsch durch.
+Der Service erstellt ein unabhängiges Backup auf redundantem Speicher. Da die EBS-Volumes verschlüsselt sind, werden auch die Backups verschlüsselt. Außerdem führt Managed Services bedarfsgesteuerte Backups auf Kundenwunsch durch.
 
-Ihr Sicherungs- und Wiederherstellungsansatz von Managed Services verwendet eine hochverfügbare Architektur in Kombination mit Vollsystemsicherungen. Jedes Projekt - alle Daten, Code und Assets - wird über drei separate AWS-Verfügbarkeitszonen repliziert, wobei jeder Bereich über ein eigenes Rechenzentrum verfügt.
+Ihr Managed Services-Sicherungs- und Wiederherstellungsansatz verwendet eine Hochverfügbarkeitsarchitektur in Kombination mit vollständigen Systemsicherungen. Jedes Projekt wird - alle Daten, Code und Assets - über drei separate AWS-Verfügbarkeitszonen hinweg repliziert, wobei jede Zone über ein separates Rechenzentrum verfügt.
 
-Siehe [Snapshots und Backup-Management](../storage/snapshots.md).
+Siehe [Snapshots und Backup-Verwaltung](../storage/snapshots.md).

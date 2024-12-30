@@ -1,6 +1,6 @@
 ---
 title: Cloud-Infrastrukturprojekt
-description: Lesen Sie einen Überblick über die Adobe Commerce zur Cloud-Infrastruktur [!DNL Cloud Console] und erfahren Sie, wie Sie auf die Kontoeinstellungen zugreifen.
+description: Lesen Sie einen Überblick über die Adobe Commerce in Cloud [!DNL Cloud Console] Infrastruktur und erfahren Sie, wie Sie auf die Kontoeinstellungen zugreifen können.
 last-substantial-update: 2024-02-06T00:00:00Z
 exl-id: ae862898-9b4d-45ed-b370-e82cc6f99017
 source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
@@ -12,72 +12,72 @@ ht-degree: 0%
 
 # Cloud-Infrastrukturprojekt
 
-Das Projekt Adobe Commerce on Cloud Infrastructure umfasst sämtlichen Code in Git-Zweigen, verknüpften Umgebungen und Skripten zur Bereitstellung der [!DNL Commerce] -Anwendung. Umgebungen enthalten Dienste zur Unterstützung der [!DNL Commerce] -Anwendung, einschließlich einer Datenbank, eines Webservers und eines Caching-Servers.
+Das Adobe Commerce on Cloud-Infrastrukturprojekt umfasst den gesamten Code in Git-Verzweigungen, zugehörigen Umgebungen und Skripten zur Bereitstellung der [!DNL Commerce]. Umgebungen enthalten Dienste zur Unterstützung der [!DNL Commerce], einschließlich einer Datenbank, eines Webservers und eines Caching-Servers.
 
-Adobe bietet eine [!DNL Cloud Console]- und Entwicklertools, mit denen Sie alle Aspekte Ihres Projekts vollständig verwalten können. Als Kontoinhaber haben Sie vollen Zugriff auf alle Umgebungen.
+Adobe bietet eine [!DNL Cloud Console] und Entwickler-Tools, um alle Aspekte Ihres Projekts vollständig zu verwalten. Als Kontoinhaber haben Sie vollen Zugriff auf alle Umgebungen.
 
 ## [!DNL Cloud Console]
 
-Der [!DNL Cloud Console] bietet interaktive Methoden zum Erstellen, Verwalten und Bereitstellen von Commerce-Code in einem benutzerfreundlichen Format. [Melden Sie sich bei  [!DNL Cloud Console]](https://console.adobecommerce.com) an, um Ihre Projektliste anzuzeigen. Sie können nur Projekte sehen, auf die Sie als Administrator Zugriff haben, oder Projekte für bestimmte Umgebungstypen. Wenn Sie Adobe Solutions Partner sind, sehen Sie möglicherweise mehrere Projekte für von Ihnen unterstützte Clients.
+Die [!DNL Cloud Console] bietet interaktive Methoden zum Erstellen, Verwalten und Bereitstellen von Commerce-Code in einem benutzerfreundlichen Format. [Melden Sie sich bei an [!DNL Cloud Console]](https://console.adobecommerce.com) um Ihre Projektliste anzuzeigen. Sie können nur Projekte sehen, für die Sie als Admin oder für bestimmte Umgebungstypen über Zugriffsberechtigungen verfügen. Wenn Sie Adobe-Lösungspartner sind, werden möglicherweise mehrere Projekte für von Ihnen unterstützte Clients angezeigt.
 
 >[!TIP]
 >
->Wenn keine Projekte angezeigt werden, müssen Sie sich an den mit dem Projekt verknüpften [Kontoinhaber oder Projektadministrator](../project/user-access.md) wenden und den Zugriff anfordern. Erstmalige Benutzer finden Informationen zum Thema [Einstieg](../../get-started/onboarding.md#cloud-console) im Leitfaden _Erste Schritte_ .
+>Wenn keine Projekte angezeigt werden, wenden Sie sich an den [Kontoinhaber oder Projektadministrator](../project/user-access.md) der mit dem Projekt verknüpft ist und beantragen Sie Zugriff. Erstmalige Benutzer finden weitere Informationen unter [Onboarding-Thema](../../get-started/onboarding.md#cloud-console) im _Erste Schritte_.
 
-In der Ansicht &quot;_Alle Projekte_&quot;werden alle Projekte aufgelistet, auf die Sie Zugriff haben. Sie können auf &quot;**[!UICONTROL Show filters]**&quot;klicken und Ihre Projektliste nach Typ, Region oder Plan filtern.
+Die Ansicht _Alle Projekte_ listet alle Projekte auf, für die Sie über Zugriffsberechtigungen verfügen. Sie können auf **[!UICONTROL Show filters]** klicken und Ihre Projektliste nach Typ, Region oder Plan filtern.
 
 ![Projektliste](../../assets/ui-allprojects-list.png)
 
 ### Projektübersicht
 
-Wenn Sie ein Projekt aus der Liste _Alle Projekte_ auswählen, wird die Projektübersicht geöffnet. In der Projektübersicht wird immer eine Projektnavigationsleiste angezeigt, die einen Umgebungs-Selektor und eine Konfigurationsschaltfläche enthält:
+Wenn Sie ein Projekt in der Liste _Alle Projekte_ auswählen, wird die Projektübersicht geöffnet. In der Projektübersicht wird immer eine Projekt-Navigationsleiste angezeigt, die einen Umgebungsselektor und eine Konfigurationsschaltfläche enthält:
 
 ![Projektnavigation](../../assets/project-nav.png)
 
-Die Projektübersicht zeigt, solange keine Umgebung ausgewählt ist, eine Zusammenfassung der Projektdetails im Vorschaubereich:
+Die Projektübersicht zeigt, sofern keine Umgebung ausgewählt ist, eine Zusammenfassung der Projektdetails im Vorschaubereich an:
 
 - Projektname
 - Region, Projekt-ID
-- Planen, zugewiesener Speicher, Umgebungen, Benutzer
-- Storefront-URL mit Schaltfläche **[!UICONTROL Set a custom domain]**
+- Planung, zugewiesener Speicher, Umgebungen, Benutzer
+- Storefront-URL mit **[!UICONTROL Set a custom domain]** Schaltfläche
 
 Und in der Hauptprojektübersicht:
 
-- Die Ansicht &quot;Umgebungen&quot;zeigt eine Listen- oder Baumansicht der (inaktiven) ![aktiven Verzweigungen](../../assets/icon-active.png){width="32"} (active) and ![inactive branch](../../assets/icon-inactive.png){width="32"} -Umgebungen.
+- Die Ansicht Umgebungen zeigt eine Listen- oder Baumstrukturansicht von ![aktiven Verzweigungen](../../assets/icon-active.png){width="32"} (active) and ![inactive branch](../../assets/icon-inactive.png){width="32"} (inaktiven) Umgebungen.
 - [Aktivitäts-Stream](activity-stream.md) zeigt laufende, ausstehende und aktuelle Aktivitäten für das Projekt an.
 <!-- - Apps & Services—Shows a topology of service containers -->
 
-Bei **Starter** -Projekten gibt es eine Hierarchie von Verzweigungen, die mit `master` (Produktion) beginnt. Jeder Zweig, den Sie erstellen, wird als untergeordnete Elemente aus dem Zweig `master` angezeigt. Adobe empfiehlt, einen `staging` -Zweig zu erstellen und dann einen `integration` -Zweig für die Entwicklung zu erstellen. Siehe [Starterarchitektur](../architecture/starter-architecture.md).
+Bei **Starter**-Projekten gibt es eine Hierarchie von Verzweigungen, die von `master` (Produktion) beginnt. Jede Verzweigung, die Sie erstellen, wird als untergeordnete Elemente der `master` Verzweigung angezeigt. Adobe empfiehlt, eine `staging` Verzweigung zu erstellen und dann eine `integration` Verzweigung für die Entwicklung zu erstellen. Siehe [Starter-Architektur](../architecture/starter-architecture.md).
 
-Für **Pro** gibt es eine Hierarchie von Verzweigungen, die von `production` bis `staging` bis `integration` reicht. Das Symbol ![Dediziertes Symbol](../../assets/icon-dedicated.png){width="32"} zeigt an, dass die Verzweigung in einer dedizierten Umgebung bereitgestellt wird. Alle Zweige, die Sie erstellen, werden als untergeordnete Elemente des Zweigs `integration` angezeigt. Siehe [Pro-Architektur](../architecture/pro-architecture.md).
+Für **Pro** gibt es eine Hierarchie von Verzweigungen, die von `production` bis `staging` bis `integration` reicht. Das ![Dediziertes Symbol](../../assets/icon-dedicated.png){width="32"} zeigt an, dass die Verzweigung in einer dedizierten Umgebung bereitgestellt wird. Alle Verzweigungen, die Sie erstellen, werden als untergeordnete Elemente des `integration` Zweigs angezeigt. Siehe [Pro-Architektur](../architecture/pro-architecture.md).
 
-![Pro Umgebungs-Liste](../../assets/pro-environments.png)
+![Pro Umgebungsliste](../../assets/pro-environments.png)
 
 ### Umgebungsübersicht
 
-Wenn Sie eine Umgebung in der Projektnavigationsleiste auswählen, wird die Übersicht und die Navigationsleiste so geändert, dass sie sich auf die ausgewählte Umgebung konzentrieren. Die Navigationsleiste enthält Verzweigungssteuerelemente (Verzweigung, Zusammenführen und Synchronisieren) und eine Konfigurationsschaltfläche:
+Wenn Sie eine Umgebung in der Projekt-Navigationsleiste auswählen, ändern sich die Übersicht und die Navigationsleiste, sodass sie sich auf die ausgewählte Umgebung konzentrieren. Die Navigationsleiste enthält Verzweigungssteuerelemente (Verzweigung, Zusammenführen und Synchronisieren) und eine Konfigurationsschaltfläche:
 
 ![Umgebung ausgewählt](../../assets/environment-selected.png)
 
-Die Umgebungsübersicht zeigt eine Zusammenfassung der Umgebungsdetails im Vorschaubereich:
+Die Umgebungsübersicht zeigt eine Zusammenfassung der Umgebungsdetails im Vorschaubereich an:
 
 - Umgebungsname, Typ
 - Region, Projekt-ID
-- Datum und Uhrzeit der letzten Aktivität, einschließlich Sicherung
+- Datum und Uhrzeit der letzten Aktivität, einschließlich Backup
 - HTTP-Zugriff und Suchmaschinenstatus
-- Der der Umgebung zugewiesene Maschinenname
+- Maschinenname der Umgebung zugewiesen
 - Umgebungsstatus (aktiv oder inaktiv)
-- Storefront-URL mit Schaltfläche **[!UICONTROL Set a custom domain]**
+- Storefront-URL mit **[!UICONTROL Set a custom domain]** Schaltfläche
 
-Und in der Hauptumgebung - Übersicht:
+Und in der Hauptübersicht zur Umgebung:
 
-- [Aktivitäts-Stream](activity-stream.md) bildet die Übersicht der Hauptumgebung und zeigt laufende, ausstehende und aktuelle Aktivitäten für die ausgewählte Umgebung an.
+- [Aktivitäts-Stream](activity-stream.md) bildet die wichtigste Umgebungsübersicht und zeigt laufende, ausstehende und aktuelle Aktivitäten für die ausgewählte Umgebung an.
 <!-- - Services tab shows and Apps & Services menu, including overview and configuration tabs for each service. -->
-- Die Registerkarte [Sicherungen](../storage/snapshots.md#create-a-manual-backup) enthält eine Liste der gespeicherten Sicherungen, den Verlauf der Sicherungsaktionen und die Schaltfläche &quot;Sicherung&quot;.
+- [Registerkarte Sicherungen](../storage/snapshots.md#create-a-manual-backup) enthält eine Liste der gespeicherten Sicherungen, den Verlauf der Sicherungsaktionen und die Schaltfläche Sichern .
 
 ### Zugriff auf Storefront
 
-Jede aktive Umgebung verfügt über eine Storefront. Wählen Sie in der oberen Navigationsleiste eine Umgebung aus und klicken Sie in der Umgebungsübersicht auf die URL . Außerdem befindet sich rechts oberhalb der Aktivitätenliste eine Liste mit dem Wert **[!UICONTROL URLs]** .
+Jede aktive Umgebung verfügt über eine Storefront. Wählen Sie in der oberen Navigationsleiste eine Umgebung aus und klicken Sie auf die URL in der Umgebungsübersicht . Außerdem gibt es eine **[!UICONTROL URLs]** Liste auf der rechten Seite über der Aktivitätsliste.
 
 Die Web-Zugriffs-URL kann Folgendes enthalten:
 
@@ -87,11 +87,11 @@ https://<branch>-<unique-ID>-<project-ID>.<region>.magentosite.cloud/
 
 - **Eindeutige ID** = 7 zufällige alphanumerische Zeichen
 - **Projekt-ID** = Projekt-ID mit 13 Zeichen
-- **Region** = Name der AWS- oder Azure-Region, siehe [Regionale IP-Adressen](regional-ip-addresses.md)
+- **Region** = Name der AWS- oder Azure-Region, siehe &quot;[ IP-Adressen](regional-ip-addresses.md)
 
-Die Pro Production- und Staging-Umgebungen umfassen drei Knoten, auf die Sie über die folgenden Links zugreifen können:
+Die Pro-Produktions- und Staging-Umgebungen umfassen drei Knoten, auf die Sie über die folgenden Links zugreifen können:
 
-- Lastenausgleich-URLs:
+- Load-Balancer-URLs:
 
    - `http[s]://<your-domain>.c.<project-ID>.ent.magento.cloud`
    - `http[s]://<your-staging-domain>.c.<project-ID>.ent.magento.cloud`
@@ -105,53 +105,53 @@ Die Pro Production- und Staging-Umgebungen umfassen drei Knoten, auf die Sie üb
 
 ## Einstellungen
 
-Öffnen Sie das Bedienfeld _Einstellungen_ , indem Sie auf das Symbol ![Projektsymbol konfigurieren](../../assets/icon-configure.png){width="36"} (Konfigurieren) auf der rechten Seite der Projektnavigation klicken.
+Öffnen Sie _Bedienfeld_ Einstellungen“, indem Sie auf das Symbol ![Projektsymbol konfigurieren](../../assets/icon-configure.png){width="36"} (Konfigurieren) rechts in der Projektnavigation klicken.
 
 ### Projekteinstellungen
 
-**[!UICONTROL Project Settings]** erweitert ein Menü mit Steuerelementen auf Projektebene, um Benutzer, Variablen und mehr zu verwalten:
+**[!UICONTROL Project Settings]** wird ein Menü mit Steuerelementen auf Projektebene zum Verwalten von Benutzern, Variablen und mehr erweitert:
 
 | Option | Beschreibung |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------|
-| Allgemein | Verwalten Sie die Zeitzone für die Verwendung mit der Planung von Sicherungen oder Wartung. |
-| Zugriff | Verwalten Sie den [Benutzerzugriff](user-access.md) für Projekt- und Umgebungstypen. |
-| Zertifikate | Zeigen Sie eine Liste der mit dem Projekt verknüpften SSL-Zertifikate an. |
-| Bereitstellungsschlüssel | Fügen Sie den öffentlichen Schlüssel zum Projekt-Code-Repository hinzu und zeigen Sie ihn an. |
-| Domänen | Fügen Sie dem Projekt einen Domänennamen hinzu. Siehe [Domänen verwalten](../cdn/fastly-custom-cache-configuration.md#manage-domains). |
-| Integrationen | Fügen Sie [Integrationen](../integrations/overview.md) hinzu und verwalten Sie diese, z. B. Statusbenachrichtigungen und Webhooks. |
-| Variablen | Fügen Sie [Variablen auf Projektebene](../environment/variable-levels.md) hinzu, die beim Erstellen und zur Laufzeit in allen Umgebungen verfügbar sind. |
+| Allgemein | Verwalten Sie die Zeitzone für die Verwendung mit der Planung von Sicherungen oder Wartungsarbeiten. |
+| Zugriff | Verwalten Sie [Benutzerzugriff](user-access.md) auf Projekt- und Umgebungstypen. |
+| Zertifikate | Zeigt eine Liste der mit dem Projekt verknüpften SSL-Zertifikate an. |
+| Schlüssel bereitstellen | Fügen Sie den öffentlichen Schlüssel zum Projekt-Code-Repository hinzu und zeigen Sie ihn an. |
+| Domains | Fügen Sie dem Projekt einen Domain-Namen hinzu. Siehe [Verwalten von Domains](../cdn/fastly-custom-cache-configuration.md#manage-domains). |
+| Integrationen | Hinzufügen und Verwalten von [Integrationen](../integrations/overview.md) wie Statusbenachrichtigungen und Webhooks. |
+| Variablen | Fügen Sie [Variablen auf Projektebene](../environment/variable-levels.md) hinzu, die zum Zeitpunkt des Builds und der Laufzeit in allen Umgebungen verfügbar sind. |
 
 {style="table-layout:auto"}
 
 ### Umgebungseinstellungen
 
-Klicken Sie auf &quot;**[!UICONTROL Environments]**&quot;und wählen Sie eine bestimmte Umgebung aus der Liste für Steuerelemente aus, um die Site-Einstellungen und Umgebungsvariablen zu verwalten:
+Klicken Sie auf **[!UICONTROL Environments]** und wählen Sie eine bestimmte Umgebung aus der Liste aus, um Steuerelemente zum Verwalten von Site-Einstellungen, Umgebungsvariablen und mehr zu erhalten:
 
 | Option | Beschreibung |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Allgemein | Konfigurieren Sie Anzeigename, Umgebungstyp und übergeordnete Umgebung.<br>Wechsel zwischen verschiedenen Umgebungseinstellungen: |
-|           | **Ausgehende E-Mails aktivieren**: Senden Sie [ausgehende E-Mails](outgoing-emails.md) aus der Umgebung mit dem SMTP-Protokoll. |
-|           | **Aus Suchmaschinen ausblenden**: Blockieren Sie Suchmaschinen-Indexer und -Crawler von der Site. |
-|           | **HTTP-Zugriffssteuerung**: Aktivieren Sie die Sicherheitskonfiguration für die [!DNL Cloud Console] mithilfe einer Zugriffskontrolle für die Anmeldung und IP-Adresse. |
+| Allgemein | Konfigurieren von Anzeigename, Umgebungstyp und übergeordneter Umgebung.<br>Umschalten zwischen Umgebungseinstellungen: |
+|           | **Ausgehende E-Mails aktivieren**: Senden Sie [ausgehende E-Mails](outgoing-emails.md) aus der Umgebung mithilfe des SMTP-Protokolls. |
+|           | **Vor Suchmaschinen verstecken**: Blockieren Sie Suchmaschinen-Indexer und -Crawler von der Website. |
+|           | **HTTP-Zugriffssteuerung**: Aktivieren Sie die Sicherheitskonfiguration für den [!DNL Cloud Console] mithilfe einer Anmelde- und IP-Adresszugriffssteuerung. |
 |           | Status ist `active` oder `inactive`. Der Großteil Ihrer Arbeit befindet sich in einer aktiven Umgebung. Sie können die Umgebung deaktivieren oder löschen. |
-| Variablen | Anzeigen, Erstellen und Verwalten von [Umgebungsvariablen](../environment/variable-levels.md), die zur Laufzeit verfügbar sind. |
-| Domänen | Anzeigen einer Liste der [konfigurierten Routen](../routes/routes-yaml.md). |
+| Variablen | Anzeigen, Erstellen und Verwalten von [Variablen auf ](../environment/variable-levels.md) zur Laufzeit. |
+| Domains | Zeigen Sie eine Liste der [konfigurierten Routen](../routes/routes-yaml.md) an. |
 
 {style="table-layout:auto"}
 
 >[!WARNING]
 >
->**NICHT** Verwenden Sie die HTTP-Zugriffssteuerungsmethode zum Schützen von Pro Staging- und Produktionsumgebungen. Dies verhindert das schnelle Zwischenspeichern. Verwenden Sie stattdessen die Funktion &quot;[Blocking](../cdn/fastly-vcl-blocking.md)&quot;, die im Fastly CDN für Adobe Commerce verfügbar ist.
+>**VERWENDEN SIE** HTTP-Zugriffssteuerungs-Methode zum Schützen von Pro-Staging- und Produktionsumgebungen. Dadurch wird die Fastly-Zwischenspeicherung unterbrochen. Verwenden Sie stattdessen die Funktion [Blockierung](../cdn/fastly-vcl-blocking.md), die im Fastly CDN für Adobe Commerce verfügbar ist.
 
-## Schnelle und New Relic-Anmeldeinformationen
+## Fastly und New Relic Anmeldedaten
 
-Ihr Projekt umfasst [Fastly](../cdn/fastly.md) und [New Relic](../monitor/new-relic-service.md). Die Projektdetails enthalten Informationen zu Ihrem Projektplan sowie wichtige Lizenzen und Token für diese Integrationen. Nur der Lizenzinhaber hat erstmaligen Zugriff auf die Anmeldedaten und Dienste. Stellen Sie diese Anmeldeinformationen bei Bedarf für technische Ressourcen und Entwicklerressourcen bereit.
+Ihr Projekt umfasst [Fastly](../cdn/fastly.md) und [New Relic](../monitor/new-relic-service.md). Die Projektdetails enthalten Informationen zu Ihrem Projektplan und wichtige Lizenzen und Token für diese Integrationen. Nur der Lizenzinhaber hat anfänglichen Zugriff auf die Anmeldeinformationen und Services. Geben Sie diese Anmeldeinformationen bei Bedarf an technische Ressourcen und Entwicklerressourcen weiter.
 
-- [Fastly](https://www.fastly.com/) bietet Inhaltsbereitstellung (CDN), Bildoptimierung und Sicherheitsdienste (DDoS und WAF) für Ihre Adobe Commerce für Cloud-Infrastrukturprojekte. Siehe [Schnelle Anmeldeinformationen abrufen](../cdn/fastly-configuration.md#get-fastly-credentials).
+- [Fastly](https://www.fastly.com/) bietet Content Delivery (CDN), Bildoptimierung und Sicherheits-Services (DDoS und WAF) für Ihre Adobe Commerce in Cloud-Infrastrukturprojekten. Siehe [Abrufen von Fastly-Anmeldeinformationen](../cdn/fastly-configuration.md#get-fastly-credentials).
 
-- [New Relic](../monitor/new-relic-service.md) bietet Anwendungsmetriken und Leistungsinformationen für Staging- und Produktionsumgebungen.
+- [New Relic](../monitor/new-relic-service.md) stellt Anwendungsmetriken und Leistungsinformationen für Staging- und Produktionsumgebungen bereit.
 
-Verwenden Sie die [Cloud-CLI](../dev-tools/cloud-cli-overview.md), um Ihre Integrations-Token, IDs und mehr zu überprüfen:
+Verwenden Sie die [Cloud-CLI](../dev-tools/cloud-cli-overview.md) um Ihre Integrations-Token, IDs und mehr zu überprüfen:
 
 ```bash
 magento-cloud subscription:info services

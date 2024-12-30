@@ -1,6 +1,6 @@
 ---
 title: Cloud-CLI-Referenz
-description: Erfahren Sie mehr über alle verfügbaren Befehle, Argumente und Optionen für das Adobe Commerce-Befehlszeilen-Tool magento-cloud.
+description: Erfahren Sie mehr über alle verfügbaren Befehle, Argumente und Optionen für das Adobe Commerce Magento-Cloud-Befehlszeilen-Tool.
 recommendations: noDisplay
 last-substantial-update: 2023-06-01T00:00:00Z
 mini-toc-levels: 1

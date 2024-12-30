@@ -1,6 +1,6 @@
 ---
-title: New Relic-Dienst
-description: Erfahren Sie mehr über den New Relic-Dienst, der mit Ihrem Adobe Commerce-Projekt zur Cloud-Infrastruktur verfügbar ist.
+title: New Relic-Service
+description: Erfahren Sie mehr über den New Relic-Service, der mit Ihrem Adobe Commerce in einem Cloud-Infrastrukturprojekt verfügbar ist.
 feature: Cloud, Observability
 last-substantial-update: 2023-09-06T00:00:00Z
 exl-id: 613f0694-5338-4037-8ee4-ac5eca376159
@@ -11,11 +11,11 @@ ht-degree: 0%
 
 ---
 
-# Übersicht über den New Relic-Dienst
+# Übersicht über den New Relic-Service
 
-Alle Adobe Commerce-Projekte in der Cloud-Infrastruktur umfassen den Zugriff auf den New Relic-Dienst, um die Leistung zu überwachen und Ereignisse der [!DNL Commerce] -Anwendung und Cloud-Infrastruktur zu untersuchen.
+Alle Adobe Commerce-Projekte für Cloud-Infrastrukturen umfassen den Zugriff auf den New Relic-Service, der die Leistungsüberwachung und die Untersuchung von Ereignissen der [!DNL Commerce]-Anwendung und Cloud-Infrastruktur unterstützt.
 
-Die folgenden New Relic-Funktionen stehen für die Verwendung in Produktions- und Staging-Umgebungen zur Verfügung:
+Die folgenden New Relic-Funktionen sind für die Verwendung mit Produktions- und Staging-Umgebungen verfügbar:
 
 - [New Relic APM](#new-relic-apm) (Pro und Starter)
 - [New Relic Infrastructure](#new-relic-infrastructure) (nur Pro)
@@ -23,25 +23,25 @@ Die folgenden New Relic-Funktionen stehen für die Verwendung in Produktions- un
 
 >[!INFO]
 >
->Andere New Relic-Funktionen sind nicht für Adobe Commerce-Projekte verfügbar.
+>Andere New Relic-Funktionen sind in Adobe Commerce-Projekten nicht verfügbar.
 
 ## NEW RELIC APM
 
-[New Relic for Application Performance Management (APM)](https://docs.newrelic.com/introduction-apm/) ist ein Softwareanalyseprodukt, mit dem Sie Anwendungsinteraktionen analysieren und verbessern können. Das New Relic-APM ist für alle Adobe Commerce-Projekte in Cloud-Infrastruktur verfügbar und bietet die folgenden Funktionen:
+[New Relic for Application Performance Management (APM)](https://docs.newrelic.com/introduction-apm/) ist ein Softwareanalyseprodukt, mit dem Sie Anwendungsinteraktionen analysieren und verbessern können. New Relic APM ist für alle Adobe Commerce in Cloud-Infrastrukturprojekten verfügbar und bietet die folgenden Funktionen:
 
-- **Konzentrieren Sie sich auf bestimmte Transaktionen** - Markieren und überwachen Sie aktiv wichtige Kundenaktionen auf Ihrer Site, z. B. das Hinzufügen zum Warenkorb, das Auschecken oder die Verarbeitung einer Zahlung.
-- **Überwachung der Datenbankabfrage** - Suchen und überwachen Sie Datenbankabfragen, die sich auf die Leistung auswirken.
-- **App-Zuordnung**: Zeigen Sie alle Anwendungsabhängigkeiten innerhalb Ihrer Site, Erweiterungen und externen Dienste an.
-- **[!DNL Apdex]Bewertungen** - Evaluieren Sie die Leistung und erstellen Sie Warnhinweise, die Probleme identifizieren und Sie benachrichtigen, wenn sie auftreten, z. B. die Site-Leistung, die von einem Flash-Verkauf oder einem Web-Ereignis betroffen ist. Siehe [Apdex-Wert](https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction/).
-- **Verwaltete Warnhinweise für Adobe Commerce** - Verwenden Sie diese New Relic-Warnhinweisrichtlinie, um die Anwendungs- und Infrastrukturleistung anhand der Best Practices der Branche zu überwachen. Siehe [Überwachen der Leistung mit der Warnhinweisrichtlinie für verwaltete Warnhinweise für Adobe Commerce](investigate-performance.md/#monitor-performance-with-managed-alerts).
-- **Implementierungen verfolgen** - Überwachen Sie Bereitstellungsereignisse und analysieren Sie die Auswirkungen der Bereitstellung auf die Gesamtleistung. Siehe [Implementierungen verfolgen](track-deployments.md).
+- **Konzentration auf bestimmte Transaktionen** - Markieren und überwachen Sie aktiv wichtige Kundenaktionen auf Ihrer Site, z. B. das Hinzufügen zum Warenkorb, das Auschecken oder die Verarbeitung einer Zahlung.
+- **Überwachung von Datenbankabfragen** - Suchen und Überwachen von Datenbankabfragen, die die Leistung beeinträchtigen.
+- **App Map** - Alle Anwendungsabhängigkeiten auf Ihrer Site, Erweiterungen und externen Services anzeigen.
+- **[!DNL Apdex]Scores** - Evaluieren Sie die Leistung und erstellen Sie Warnhinweise, die Probleme identifizieren und Sie benachrichtigen, wenn sie auftreten, z. B. die Performance der Site, die durch einen Flash-Verkauf oder ein Web-Ereignis beeinträchtigt wird. Siehe [Apdex-Score](https://docs.newrelic.com/docs/apm/new-relic-apm/apdex/apdex-measure-user-satisfaction/).
+- **Verwaltete Warnhinweise für Adobe Commerce**-Verwenden Sie diese Warnhinweisrichtlinie für New Relic, um die Anwendungs- und Infrastrukturleistung auf der Grundlage von Best Practices der Branche zu überwachen. Siehe [Überwachen der Leistung mit der Warnmeldungsrichtlinie „Verwaltete Warnhinweise für Adobe Commerce&quot;](investigate-performance.md/#monitor-performance-with-managed-alerts).
+- **Bereitstellungen verfolgen** - Überwachen Sie Bereitstellungsereignisse und analysieren Sie die Auswirkungen der Bereitstellung auf die Gesamtleistung. Siehe [Verfolgen von Bereitstellungen](track-deployments.md).
 
-Ihr Adobe Commerce on Cloud-Infrastrukturprojekt umfasst die Software für den New Relic-APM-Dienst sowie einen Lizenzschlüssel. Sie müssen keine zusätzliche Software erwerben oder installieren.
+Ihr Adobe Commerce on Cloud Infrastructure-Projekt enthält die Software für den New Relic APM-Service zusammen mit einem Lizenzschlüssel. Sie müssen keine zusätzliche Software erwerben oder installieren.
 
 ## New Relic-Infrastruktur
 
-Zu den Pro-Projekten gehört der Dienst [New Relic Infrastructure (NRI)](https://docs.newrelic.com/docs/infrastructure/infrastructure-monitoring/get-started/get-started-infrastructure-monitoring/) , der automatisch eine Verbindung zu den Anwendungsdaten und Leistungsanalysen herstellt, um eine dynamische Serverüberwachung zu ermöglichen. Dieser Dienst ist in Pro Production- und Staging-Umgebungen verfügbar.
+Zu den Pro-Projekten gehört der Service [New Relic Infrastructure (NRI](https://docs.newrelic.com/docs/infrastructure/infrastructure-monitoring/get-started/get-started-infrastructure-monitoring/), der sich automatisch mit den Anwendungsdaten und Leistungsanalysen verbindet, um eine dynamische Serverüberwachung zu ermöglichen. Dieser Service ist für Pro-Produktions- und Staging-Umgebungen verfügbar.
 
 ## New Relic-Protokollverwaltung
 
-Alle Cloud-Infrastrukturprojekte umfassen [New Relic-Protokollverwaltung](log-management.md). Der Dienst ist vorkonfiguriert, um alle Protokolldaten aus Ihren Staging- und Produktionsumgebungen zu aggregieren und in einem zentralen Protokollverwaltungs-Dashboard anzuzeigen.
+Alle Cloud-Infrastrukturprojekte umfassen [New Relic-Protokollverwaltung](log-management.md). Der Service ist so vorkonfiguriert, dass er alle Protokolldaten aus Ihren Staging- und Produktionsumgebungen aggregiert und in einem zentralen Dashboard für die Protokollverwaltung anzeigt.

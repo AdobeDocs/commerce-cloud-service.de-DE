@@ -1,6 +1,6 @@
 ---
-title: Testleitfaden
-description: Erfahren Sie mehr über Testtypen und Best Practices für den Start von Adobe Commerce in der Cloud-Infrastruktur.
+title: Testanleitung
+description: Erfahren Sie mehr über Testtypen und Best Practices für den Start von Adobe Commerce in Cloud-Infrastrukturen.
 exl-id: 1d7897a2-af97-46ab-89c0-2ec54284190e
 source-git-commit: aae285d85188bfadd73d5b4e1fea16afa5beb117
 workflow-type: tm+mt
@@ -9,30 +9,30 @@ ht-degree: 0%
 
 ---
 
-# Testleitfaden
+# Testanleitung
 
-Nach dem Konfigurieren und Anpassen Ihres Adobe Commerce-Projekts für die Cloud-Infrastruktur empfiehlt es sich, Ihre Anwendung gründlich zu testen, bevor Sie die Store-Website starten. Beim Testen können Sie die Erwartungen an die Cluster-Größe ordnungsgemäß verwalten und entsprechend den künftigen Geschäftsanforderungen skalieren.
+Nach der Konfiguration und Anpassung Ihres Adobe Commerce on Cloud-Infrastrukturprojekts ist es Best Practice, Ihre Anwendung gründlich zu testen, bevor Sie die Store-Website starten. Tests helfen, die Erwartungen an die Cluster-Größe richtig zu verwalten und für zukünftige Geschäftsanforderungen angemessen zu skalieren.
 
 ## Funktionstests
 
-Bei der Entwicklung ist es wichtig, durchgängige Funktionstests für Ihre Adobe Commerce im Cloud-Infrastrukturprojekt durchzuführen. Weitere Informationen finden Sie in den folgenden Anleitungen zum Ausführen von Funktionstests in der Docker-Umgebung:
+Während der Entwicklung ist es wichtig, End-to-End-Funktionstests für Ihr Adobe Commerce in einem Cloud-Infrastrukturprojekt durchzuführen. Siehe die folgende Anleitung zum Ausführen von Funktionstests in der Docker-Umgebung:
 
 - **Anwendungstests**: Verwenden Sie das [Magento Functional Testing Framework (MFTF)](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) für Anwendungstests in der Cloud Docker-Umgebung.
 
-- **Code-Tests**: Verwenden Sie das [Codeception testing framework for PHP](https://developer.adobe.com/commerce/cloud-tools/docker/test/code-testing/)-Framework für die Validierung von Code, der für Beiträge zu Cloud-Package-Repositorys vorgesehen ist.
+- **Code-**: Verwenden Sie das [Codeception Testing Framework für PHP](https://developer.adobe.com/commerce/cloud-tools/docker/test/code-testing/) zur Validierung von Code, der für den Beitrag zu Cloud-Paket-Repositorys vorgesehen ist.
 
-## Best Practices vor dem Start
+## Best Practices vor dem Launch
 
-Beachten Sie die folgenden Testtypen als Best Practice, die vor dem Start der Site durchgeführt werden sollten:
+Beachten Sie die folgenden Testtypen als Best Practice vor dem Start der Site:
 
-- **Belastungstest**: Führen Sie einen Belastungstest durch, um das Verhalten des Systems bei einer erwarteten Belastung zu verstehen. Testen Sie beispielsweise eine gleichzeitige Anzahl aktiver Benutzer in der Anwendung, wobei jeder Benutzer eine bestimmte Anzahl von Transaktionen innerhalb der festgelegten Dauer durchführt. Dieser Test zeigt die Reaktionszeit wichtiger geschäftskritischer Transaktionen, wie z. B. des Verhaltens von Datenbank- oder Anwendungsservern. Ein Belastungstest kann dabei helfen, Engpässe zu erkennen.
+- **Belastungstest** Führen Sie einen Belastungstest durch, um das Verhalten des Systems unter einer erwarteten Last zu verstehen. Testen Sie beispielsweise eine gleichzeitige Anzahl aktiver Benutzer im Programm, wobei jeder Benutzer innerhalb der festgelegten Dauer eine bestimmte Anzahl von Transaktionen ausführen muss. Dieser Test zeigt die Reaktionszeit wichtiger geschäftskritischer Transaktionen, z. B. das Verhalten der Datenbank oder des Anwendungs-Servers. Ein Belastungstest kann dabei helfen, Engpässe zu identifizieren.
 
-- **Belastungstest**: Stellen Sie die oberen Kapazitätsgrenzen im System infrage, um festzustellen, ob das System ausreichend leistungsfähig ist, wenn die aktuelle Last deutlich über dem erwarteten Maximum liegt.
+- **Belastungstest** - Fordern Sie die oberen Kapazitätsgrenzen innerhalb des Systems an, um festzustellen, ob das System ausreichend funktioniert, wenn die aktuelle Last deutlich über dem erwarteten Maximum liegt.
 
-- **Sicherheitsscan** - Adobe stellt ein kostenloses [Sicherheitsscan-Tool](../launch/overview.md#set-up-the-security-scan-tool) für Ihre Sites bereit.
+- **Security Scan** - Adobe stellt ein kostenloses [Security Scan Tool](../launch/overview.md#set-up-the-security-scan-tool) für Ihre Website bereit.
 
-- **Penetrationstest**: Ist ein autorisierter simulierter Cyberangriff auf ein Computersystem, der dazu bestimmt ist, die Sicherheit des Systems zu bewerten. Der Penetrationstest hilft dabei, Schwächen oder Schwachstellen zu identifizieren, einschließlich des Potenzials für nicht autorisierte Parteien, Zugriff auf Systemfunktionen und Daten zu erhalten.
+- **Penetrationstest** - Ist ein autorisierter simulierter Cyberangriff auf ein Computersystem, der die Sicherheit des Systems bewertet. Der Penetrationstest hilft dabei, Schwachstellen oder Schwachstellen zu identifizieren, einschließlich des Potenzials für nicht autorisierte Parteien, Zugriff auf Systemfunktionen und -daten zu erhalten.
 
 >[!WARNING]
 >
->Kunden dürfen keine Sicherheitsbewertungen der AWS-Infrastruktur oder der AWS-Dienste selbst durchführen. Wenn Sie ein Sicherheitsproblem innerhalb eines der in Ihrer Sicherheitsbewertung beschriebenen AWS-Dienste feststellen, wenden Sie sich sofort an [AWS Security](mailto:aws-security@amazon.com) . Siehe [AWS-Kundenrichtlinien für Penetrationstests](https://aws.amazon.com/security/penetration-testing/).
+>Kunden sind nicht berechtigt, Sicherheitsbewertungen der AWS-Infrastruktur oder der AWS-Services selbst durchzuführen. Wenn Sie bei einem der AWS-Services in Ihrer Sicherheitsbewertung ein Sicherheitsproblem feststellen, wenden Sie sich [ an AWS Security](mailto:aws-security@amazon.com). Siehe [AWS-Kundenrichtlinien für Penetrationstests](https://aws.amazon.com/security/penetration-testing/).

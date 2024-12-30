@@ -1,6 +1,6 @@
 ---
 title: New Relic-Kontoverwaltung
-description: Erfahren Sie, wie Sie auf Ihr New Relic-Konto zugreifen und den Zugriff, Integrationen und die Verwendung von Tools für Ihre Adobe Commerce im Cloud-Infrastrukturprojekt verwalten können.
+description: Erfahren Sie, wie Sie auf Ihr New Relic-Konto zugreifen und den Zugriff, die Integrationen und die Tool-Nutzung für Ihr Adobe Commerce on Cloud-Infrastrukturprojekt verwalten können.
 feature: Cloud, Observability
 role: Admin
 exl-id: ee639e2e-4074-4384-8f68-152bc3bac93b
@@ -13,35 +13,35 @@ ht-degree: 0%
 
 # New Relic-Kontoverwaltung
 
-Wenn Adobe Ihr Cloud-Infrastrukturprojekt bereitstellt, erhält der Lizenzinhaber eine E-Mail von New Relic mit Anmeldeinformationen und Anweisungen zum Zugriff auf das New Relic-Konto. Wenn Sie die E-Mail nicht erhalten haben, verwenden Sie die E-Mail-Adresse des Lizenzinhabers, um das New Relic-Kennwort zurückzusetzen.
+Wenn Adobe Ihr Cloud-Infrastrukturprojekt bereitstellt, erhält der Lizenzinhaber eine E-Mail von New Relic mit Anmeldeinformationen und Anweisungen für den Zugriff auf das New Relic-Konto. Wenn Sie die E-Mail nicht erhalten haben, setzen Sie das New Relic-Kennwort mithilfe der E-Mail-Adresse des Lizenzinhabers zurück.
 
 ## Verwalten des Benutzerzugriffs
 
 >[!NOTE]
 >
->Gewähren Sie nur uneingeschränkten Zugriff für Benutzer, die Zugriff auf das vollständige Funktionssatz benötigen.
+>Gewähren Sie nur Benutzern vollständigen Zugriff, die Zugriff auf den gesamten Funktionssatz benötigen.
 
-**So greifen Sie auf die Benutzerverwaltung in New Relic zu:**
+**Zugriff auf die Benutzerverwaltung in New Relic**:
 
-1. Melden Sie sich bei Ihrem [New Relic-Konto](https://login.newrelic.com/login) an.
+1. Melden Sie sich bei Ihrem [New Relic-Konto an](https://login.newrelic.com/login).
 
-1. Wählen Sie Ihren Benutzernamen in der Navigation unten links aus.
+1. Wählen Sie in der linken unteren Navigationsleiste Ihren Benutzernamen aus.
 
-1. Klicken Sie auf **[!UICONTROL Administration]** und wählen Sie aus der Liste eine der folgenden Optionen aus:
+1. Klicken Sie auf **[!UICONTROL Administration]** und wählen Sie eine der folgenden Optionen aus der Liste aus:
 
-   - **[!UICONTROL User management]** , um einen Benutzer hinzuzufügen und aktive Benutzer und ausstehende Einladungen zu verwalten.
+   - **[!UICONTROL User management]** Sie einen Benutzer hinzufügen und aktive Benutzer und ausstehende Einladungen verwalten.
 
-   - **[!UICONTROL Access management]** , um Benutzergruppen, Rollen und Konten zu verwalten.
+   - **[!UICONTROL Access management]** zum Verwalten von Benutzergruppen, Rollen und Konten.
 
-Siehe [Benutzerverwaltung](https://docs.newrelic.com/docs/accounts/accounts-billing/new-relic-one-user-management/user-management-ui-and-tasks/) in der Dokumentation zu _New Relic_ .
+Siehe [Benutzerverwaltung](https://docs.newrelic.com/docs/accounts/accounts-billing/new-relic-one-user-management/user-management-ui-and-tasks/) in der Dokumentation zu _New Relic_.
 
-## Konfigurieren von New Relic für die Starterumgebung
+## Konfigurieren von New Relic für die Starter-Umgebung
 
 >[!NOTE]
 >
->**Pro-Umgebungen** sind für die Verwendung von New Relic-Diensten vorkonfiguriert und können Anweisungen zum Aktivieren und Verbinden überspringen. Wenn das New Relic-APM nicht in der Staging- und Produktionsumgebung installiert ist oder die New Relic-Infrastruktur in der Produktionsumgebung nicht verfügbar ist, senden [ein Adobe Commerce-Supportticket](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket), um eine Installation anzufordern.
+>**Pro-Umgebungen** sind für die Verwendung von New Relic-Services vorkonfiguriert und können Anweisungen zum Aktivieren und Verbinden überspringen. Wenn New Relic APM nicht in der Staging- und Produktionsumgebung installiert ist oder New Relic Infrastructure in der Produktionsumgebung nicht verfügbar ist, [ Sie ein Adobe Commerce-Support-Ticket ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket), um die Installation anzufordern.
 
-Bei Starterumgebungen müssen Sie die Datei `.magento.app.yaml` überprüfen, um sicherzustellen, dass der Abschnitt `runtime` die New Relic-Erweiterung enthält. Wenn die Erweiterung nicht konfiguriert wurde, fügen Sie Folgendes hinzu:
+Für Starterumgebungen müssen Sie die `.magento.app.yaml` überprüfen, um sicherzustellen, dass der Abschnitt `runtime` die New Relic-Erweiterung enthält. Wenn die Erweiterung nicht konfiguriert wurde, fügen Sie Folgendes hinzu:
 
 > `.magento.app.yaml`
 
@@ -55,33 +55,33 @@ runtime:
 
 Um eine Cloud-Umgebung mit New Relic zu verbinden, fügen Sie den New Relic-Lizenzschlüssel zur Umgebung hinzu.
 
-- Für **Pro projects** fügt Adobe während des Bereitstellungsprozesses den Lizenzschlüssel zu Ihren Produktions- und Staging-Umgebungen hinzu. Sie können sich bei Ihrem [New Relic-Konto](https://login.newrelic.com/login) anmelden, um die Verbindung zwischen Ihrer Adobe Commerce auf der Cloud-Infrastruktur-Site und New Relic zu überprüfen.
+- Bei **Pro-Projekten** fügt Adobe während des Bereitstellungsprozesses den Lizenzschlüssel zu Ihren Produktions- und Staging-Umgebungen hinzu. Sie können sich bei Ihrem [New Relic-Konto anmelden](https://login.newrelic.com/login) um die Verbindung zwischen Ihrer Adobe Commerce on Cloud Infrastructure-Site und New Relic zu überprüfen.
 
-- Für **Starterprojekte** verfügen Sie über einen New Relic-Lizenzschlüssel, der bis zu _drei_ -Umgebungen unterstützt. Sie müssen den Schlüssel manuell zu Ihren Umgebungskonfigurationen hinzufügen. Starterumgebungen sind nicht für die Verwendung des New Relic-Dienstes vorkonfiguriert.
+- Für **Starterprojekte** verfügen Sie über einen New Relic-Lizenzschlüssel, der bis zu _drei_ Umgebungen unterstützt. Sie müssen den Schlüssel manuell zu Ihren Umgebungskonfigurationen hinzufügen. Starterumgebungen sind für die Verwendung des New Relic-Service nicht vorab bereitgestellt.
 
-Aktivieren Sie bei Starterumgebungen die New Relic-Integration, indem Sie den New Relic-Lizenzschlüssel zur Umgebungskonfiguration hinzufügen. Fügen Sie den Schlüssel zu den Staging- und Produktionsumgebungen und einer anderen Umgebung Ihrer Wahl hinzu. Für die Konfiguration ist nur der New Relic-Lizenzschlüssel erforderlich. Informationen zu zusätzlichen Konfigurationsoptionen finden Sie im Thema [New Relic Reporting](https://experienceleague.adobe.com/docs/commerce-admin/config/general/new-relic-reporting.html) im _Adobe Commerce-Benutzerhandbuch_.
+Aktivieren Sie für Einstiegsumgebungen die New Relic-Integration, indem Sie den New Relic-Lizenzschlüssel zur Umgebungskonfiguration hinzufügen. Fügen Sie den Schlüssel zu den Staging- und Produktionsumgebungen und einer anderen Umgebung Ihrer Wahl hinzu. Für die Konfiguration ist nur der New Relic-Lizenzschlüssel erforderlich. Informationen zu zusätzlichen Konfigurationsoptionen finden Sie im Thema [New Relic-Berichte](https://experienceleague.adobe.com/docs/commerce-admin/config/general/new-relic-reporting.html) im _Adobe Commerce-Benutzerhandbuch_.
 
 {{redeploy-warning}}
 
 >[!PREREQUISITES]
 >
 >- Anmeldedaten für die Adobe Commerce-Kontoseite oder für die mit Ihrem Projekt verknüpfte New Relic-Lizenz
->- [Zugriff auf Starterumgebungen auf Administratorebene](../project/user-access.md) zum Konfigurieren
+>- [Zugriff auf Admin-Ebene](../project/user-access.md) auf die zu konfigurierenden Starter-Umgebungen
 >- Anmeldedaten für den Zugriff auf [Admin](https://experienceleague.adobe.com/docs/commerce-admin/systems/user-accounts/permissions.html) für die Umgebung
 
-**So konfigurieren Sie New Relic für Starterumgebungen**:
+**So konfigurieren Sie New Relic für Starter-Umgebungen**:
 
-1. Suchen Sie Ihren New Relic-Lizenzschlüssel über die Cloud-CLI (0) oder die Cloud-CLI.[!DNL Cloud Console]
+1. Suchen Sie Ihren New Relic-Lizenzschlüssel über die [!DNL Cloud Console] oder die Cloud-CLI.
 
-   **[!DNL Cloud Console]method**:
+   **[!DNL Cloud Console]Methode**:
 
-   - Öffnen Sie die Cloud-Projekt-[Kontoseite](https://accounts.magento.cloud/user).
+   - Öffnen Sie Ihr Cloud[Projekt (Kontoseite](https://accounts.magento.cloud/user).
 
-   - Suchen Sie auf der Registerkarte _Projekte_ Ihr Projekt.
+   - Suchen Sie auf _Registerkarte_ Ihr Projekt.
 
-   - Klicken Sie auf **Details anzeigen** , um Informationen zur Projektinfrastruktur zu erhalten.
+   - Klicken Sie **Details anzeigen**, um Informationen zur Projektinfrastruktur anzuzeigen.
 
-   - Erweitern Sie den Abschnitt **New Relic-Dienst** , um den Lizenzschlüssel anzuzeigen.
+   - Erweitern Sie den Abschnitt **New Relic Service**, um den Lizenzschlüssel anzuzeigen.
 
    - Kopieren Sie den Lizenzschlüssel.
 
@@ -91,26 +91,26 @@ Aktivieren Sie bei Starterumgebungen die New Relic-Integration, indem Sie den Ne
    magento-cloud subscription:info services.newrelic
    ```
 
-1. Fügen Sie den New Relic-Lizenzschlüssel mithilfe der CLI `magento-cloud` einer Umgebung hinzu.
+1. Fügen Sie den New Relic-Lizenzschlüssel mithilfe der `magento-cloud` CLI einer Umgebung hinzu.
 
-   - Ändern Sie die Umgebung, die den Lizenzschlüssel benötigt.
+   - Ändern Sie die Umgebung, für die der Lizenzschlüssel erforderlich ist.
    - Aktualisieren Sie den Variablenwert mit dem folgenden `magento-cloud` CLI-Befehl:
 
      ```bash
      magento-cloud variable:update php:newrelic.license --value <newrelic-license-key>
      ```
 
-   Optional können Sie sie über den [Commerce-Administrator](https://experienceleague.adobe.com/docs/commerce-admin/start/reporting/new-relic-reporting.html#step-3%3A-configure-your-store) hinzufügen.
+   Optional können Sie es über die [Commerce Admin](https://experienceleague.adobe.com/docs/commerce-admin/start/reporting/new-relic-reporting.html#step-3%3A-configure-your-store) hinzufügen.
 
-1. Melden Sie sich bei Ihrem [New Relic-Konto](https://login.newrelic.com/login) an, um zu überprüfen, ob Sie Daten aus der Adobe Commerce-Umgebung anzeigen können. Siehe [Leistung untersuchen](investigate-performance.md).
+1. Melden Sie sich bei Ihrem [New Relic-](https://login.newrelic.com/login) an, um sicherzustellen, dass Sie Daten aus der Adobe Commerce-Umgebung anzeigen können. Siehe [Untersuchung der Leistung](investigate-performance.md).
 
-### Lizenzschlüssel löschen
+### Lizenzschlüssel entfernen
 
-Sie können Ihren New Relic-Lizenzschlüssel nur in drei aktiven Umgebungen verwenden. Wenn der Schlüssel in drei Umgebungen verwendet wird, müssen Sie den Schlüssel aus einer Umgebung entfernen, bevor Sie ihn einer anderen Umgebung hinzufügen können.
+Sie können Ihren New Relic-Lizenzschlüssel nur in drei aktiven Umgebungen verwenden. Wenn der Schlüssel in drei Umgebungen verwendet wird, müssen Sie den Schlüssel aus einer der Umgebungen entfernen, bevor Sie ihn einer anderen Umgebung hinzufügen können.
 
 **So entfernen Sie einen Lizenzschlüssel aus einer Umgebung**:
 
-1. Umgebungsvariablen auflisten.
+1. Auflisten von Umgebungsvariablen.
 
    ```bash
    magento-cloud variable:list
@@ -128,9 +128,9 @@ Sie können Ihren New Relic-Lizenzschlüssel nur in drei aktiven Umgebungen verw
 
    >[!WARNING]
    >
-   >Wenn Sie den Lizenzschlüssel als _Projekt_-Variable hinzugefügt haben, müssen Sie diese Variable auf Projektebene entfernen. Eine Projektvariable fügt die Lizenz _jedem erstellten_ -Umgebungszweig hinzu, der die Lizenzbeschränkung verbrauchen oder überschreiten kann. So listen Sie Projektvariablen auf: `magento-cloud variable:list --level project`
+   >Wenn Sie den Lizenzschlüssel als _Projekt“-_ hinzugefügt haben, müssen Sie diese Variable auf Projektebene entfernen. Eine Projektvariable fügt die Lizenz zu _erstellten_ hinzu, die das Lizenzlimit verbrauchen oder überschreiten kann. So listen Sie Projektvariablen auf: `magento-cloud variable:list --level project`
 
-1. Löschen Sie die Lizenzvariable.
+1. Löschen Sie die Lizenzvariable .
 
    ```bash
    magento-cloud variable:delete php:newrelic.license

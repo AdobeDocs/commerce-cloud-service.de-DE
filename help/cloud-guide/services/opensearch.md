@@ -1,6 +1,6 @@
 ---
-title: Einrichten des OpenSearch-Dienstes
-description: Erfahren Sie, wie Sie den OpenSearch-Dienst für Adobe Commerce in der Cloud-Infrastruktur aktivieren.
+title: Einrichten des OpenSearch-Service
+description: Erfahren Sie, wie Sie den OpenSearch-Service für Adobe Commerce in der Cloud-Infrastruktur aktivieren.
 feature: Cloud, Search, Services
 exl-id: 10dc6367-3f90-4ab6-a84e-15e8c3b32a38
 source-git-commit: c39332d352f6dcb6f92c312a6ef1b74319d37aa3
@@ -10,28 +10,28 @@ ht-degree: 0%
 
 ---
 
-# Einrichten des OpenSearch-Dienstes
+# Einrichten des OpenSearch-Service
 
-Der Dienst [OpenSearch](https://www.opensearch.org) ist eine Open-Source-Abspaltung von Elasticsearch 7.10.2, die den Lizenzänderungen für Elasticsearch folgt. Siehe das [OpenSource-Projekt](https://github.com/opensearch-project) in GitHub.
+Der [OpenSearch](https://www.opensearch.org)-Service ist eine Open-Source-Version von Elasticsearch 7.10.2, die auf die Lizenzänderungen für Elasticsearch folgt. Siehe [OpenSource-Projekt](https://github.com/opensearch-project) in GitHub.
 
 {{elasticsearch-support}}
 
-Mit OpenSearch können Sie Daten aus beliebigen Quellen und beliebigen Formaten aufnehmen und in Echtzeit suchen und visualisieren.
+OpenSearch ermöglicht es Ihnen, Daten aus beliebigen Quellen und Formaten zu suchen und in Echtzeit zu visualisieren.
 
-- Schnelle und erweiterte Suchen nach Produkten im Produktkatalog
-- OpenSearch-Analyzer unterstützen mehrere Sprachen
+- Schnelle und erweiterte Suche nach Produkten im Produktkatalog
+- OpenSearch Analyzer unterstützt mehrere Sprachen
 - Unterstützt Stoppwörter und Synonyme
-- Die Indizierung hat keine Auswirkungen auf Kunden, bis der Neuindizierungsvorgang abgeschlossen ist
+- Die Indizierung wirkt sich erst dann auf Kunden aus, wenn der Neuindizierungsvorgang abgeschlossen ist
 
 {{service-instruction}}
 
 >[!TIP]
 >
->Adobe empfiehlt, OpenSearch immer für Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur einzurichten, selbst wenn Sie ein Tool für die Drittanbietersuche für Ihre Adobe Commerce-Anwendung konfigurieren möchten. Das Einrichten von OpenSearch bietet eine Ausweichoption, wenn das Suchwerkzeug eines Drittanbieters fehlschlägt.
+>Adobe empfiehlt, OpenSearch für Ihr Adobe Commerce on Cloud-Infrastrukturprojekt immer einzurichten, auch wenn Sie ein Drittanbieter-Suchwerkzeug für Ihr Adobe Commerce-Programm konfigurieren möchten. Das Einrichten von OpenSearch bietet eine Fallback-Option, wenn das Drittanbieter-Such-Tool fehlschlägt.
 
 **So aktivieren Sie OpenSearch**:
 
-1. Bei Integrationsumgebungen von Starter und Pro fügen Sie den Dienst `opensearch` der Datei `.magento/services.yaml` mit der entsprechenden Version und dem zugewiesenen Speicherplatz in MB hinzu. In diesem Fall ist Version 2 angemessen. Die Nebenversion ist nicht erforderlich, da die Cloud-Infrastruktur die neueste Version von OpenSearch verwendet.
+1. Fügen Sie für Starter- und Pro-Integrationsumgebungen den `opensearch`-Service zur `.magento/services.yaml`-Datei mit der entsprechenden Version und zugewiesenem Speicherplatz in MB hinzu. In diesem Fall ist Version 2 geeignet. Die Nebenversion ist nicht erforderlich, da die Cloud-Infrastruktur die neueste Version von OpenSearch verwendet.
 
    ```yaml
    opensearch:
@@ -39,16 +39,16 @@ Mit OpenSearch können Sie Daten aus beliebigen Quellen und beliebigen Formaten 
        disk: 1024
    ```
 
-   Für Pro-Projekte müssen Sie [ein Adobe Commerce-Supportticket senden](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket) , um die OpenSearch-Version in den Staging- und Produktionsumgebungen zu ändern.
+   Bei Pro-Projekten müssen Sie [ein Adobe Commerce-Support-Ticket einreichen](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket), um die OpenSearch-Version in der Staging- und Produktionsumgebung zu ändern.
 
-1. Legen Sie die Eigenschaft `relationships` in der Datei `.magento.app.yaml` fest oder überprüfen Sie sie.
+1. Legen Sie die `relationships`-Eigenschaft in der `.magento.app.yaml` fest oder überprüfen Sie sie.
 
    ```yaml
    relationships:
        opensearch: "opensearch:opensearch"
    ```
 
-1. Hinzufügen, Übertragen und Push-Code-Änderungen.
+1. Code-Änderungen hinzufügen, übertragen und per Push übertragen.
 
    ```bash
    git add .magento/services.yaml .magento.app.yaml
@@ -62,21 +62,21 @@ Mit OpenSearch können Sie Daten aus beliebigen Quellen und beliebigen Formaten 
    git push origin <branch-name>
    ```
 
-   Informationen dazu, wie sich diese Änderungen auf Ihre Umgebungen auswirken, finden Sie unter [Konfigurieren von Diensten](services-yaml.md).
+   Informationen darüber, wie sich diese Änderungen auf Ihre Umgebungen auswirken, finden Sie unter [Konfigurieren von Services](services-yaml.md).
 
-1. Nachdem der Bereitstellungsprozess abgeschlossen ist, melden Sie sich mit SSH bei der Remote-Umgebung an.
+1. Verwenden Sie nach Abschluss des Bereitstellungsprozesses SSH, um sich bei der Remote-Umgebung anzumelden.
 
    ```bash
    magento-cloud ssh
    ```
 
-1. Indizieren Sie den Index der Katalogsuche neu.
+1. Indizieren Sie den Katalogsuchindex neu.
 
    ```bash
    bin/magento indexer:reindex catalogsearch_fulltext
    ```
 
-1. Bereinigen Sie den Cache.
+1. Reinigen Sie den Cache.
 
    ```bash
    bin/magento cache:clean
@@ -84,21 +84,21 @@ Mit OpenSearch können Sie Daten aus beliebigen Quellen und beliebigen Formaten 
 
 {{service-change-tip}}
 
-## OpenSearch-Softwarekompatibilität
+## OpenSearch-Software-Kompatibilität
 
-Wenn Sie Adobe Commerce in einem Cloud-Infrastrukturprojekt installieren oder aktualisieren, prüfen Sie immer, ob die OpenSearch-Dienstversion mit dem [OpenSearch PHP](https://github.com/opensearch-project/opensearch-php)-Client für Adobe Commerce kompatibel ist.
+Wenn Sie Ihr Adobe Commerce in einem Cloud-Infrastrukturprojekt installieren oder aktualisieren, überprüfen Sie immer die Kompatibilität zwischen der Version des OpenSearch-Service und dem [OpenSearch PHP](https://github.com/opensearch-project/opensearch-php)-Client für Adobe Commerce.
 
-- **Erstmaliges Setup** - Vergewissern Sie sich, dass die in der Datei `services.yaml` angegebene OpenSearch-Version mit dem für Adobe Commerce konfigurierten OpenSearch-PHP-Client kompatibel ist.
+- **Erstmaliges Setup**-Bestätigen Sie, dass die in der `services.yaml` angegebene OpenSearch-Version mit dem für Adobe Commerce konfigurierten OpenSearch PHP-Client kompatibel ist.
 
-- **Projekt-Upgrade**-Überprüfen Sie, ob der OpenSearch-PHP-Client in der neuen Anwendungsversion mit der in der Cloud-Infrastruktur installierten OpenSearch-Dienstversion kompatibel ist.
+- **Projekt-Upgrade**-Überprüfen Sie, ob der OpenSearch PHP-Client in der neuen Anwendungsversion mit der in der Cloud-Infrastruktur installierten OpenSearch-Service-Version kompatibel ist.
 
-Die Unterstützung von Dienstversionen und Kompatibilität wird durch Versionen bestimmt, die in der Cloud-Infrastruktur getestet und bereitgestellt werden. Manchmal unterscheidet sich die Unterstützung von Versionen, die von lokalen Adobe Commerce-Implementierungen unterstützt werden. Eine Liste der unterstützten Versionen finden Sie unter [Systemanforderungen](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) im _Installationshandbuch_ .
+Die Unterstützung der Service-Version und -Kompatibilität hängt von den Versionen ab, die in der Cloud-Infrastruktur getestet und bereitgestellt werden, und unterscheidet sich manchmal von den Versionen, die von Adobe Commerce On-Premise-Bereitstellungen unterstützt werden. Siehe [Systemanforderungen](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/system-requirements.html) im _Installationshandbuch_ für eine Liste der unterstützten Versionen.
 
-**Überprüfen der Kompatibilität der OpenSearch-Software**:
+**So überprüfen Sie die Kompatibilität der OpenSearch-Software**:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
+1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
 
-1. Zeigen Sie die OpenSearch-Details für die aktive Umgebung an.
+1. OpenSearch-Details für die aktive Umgebung anzeigen.
 
    ```bash
    magento-cloud relationships --property=opensearch
@@ -110,13 +110,13 @@ Die Unterstützung von Dienstversionen und Kompatibilität wird durch Versionen 
    magento-cloud ssh
    ```
 
-1. Rufen Sie die Verbindungsdetails des OpenSearch-Dienstes ab.
+1. Rufen Sie die Verbindungsdetails des OpenSearch-Service ab.
 
    ```bash
    vendor/bin/ece-tools env:config:show services
    ```
 
-   Suchen Sie in der Antwort die IP-Adresse und den Port für den Endpunkt des OpenSearch-Dienstes:
+   Suchen Sie in der Antwort die IP-Adresse und den Port für den OpenSearch-Service-Endpunkt:
 
    ```
    +------------------------------------------+--------------------------------------------------------+
@@ -140,7 +140,7 @@ Die Unterstützung von Dienstversionen und Kompatibilität wird durch Versionen 
    | host_mapped                              | false                                                  |
    ```
 
-1. Rufen Sie den installierten OpenSearch-Dienst `version:number` vom Dienstendpunkt ab.
+1. Rufen Sie die installierte OpenSearch-Service-`version:number` vom Service-Endpunkt ab.
 
    ```bash
    curl -XGET <opensearch-service-endpoint-ip-address>:9200
@@ -168,19 +168,19 @@ Die Unterstützung von Dienstversionen und Kompatibilität wird durch Versionen 
 
 {{pro-update-service}}
 
-## Starten Sie den OpenSearch-Dienst neu
+## Starten Sie den OpenSearch-Service neu.
 
-Wenn Sie den OpenSearch-Dienst neu starten müssen, müssen Sie sich an den Adobe Commerce-Support wenden.
+Wenn Sie den OpenSearch-Service neu starten müssen, wenden Sie sich an den Adobe Commerce-Support.
 
 ## Zusätzliche Suchkonfiguration
 
-- Standardmäßig wird die Suchkonfiguration für Cloud-Umgebungen bei jeder Bereitstellung neu generiert. Sie können die Variable &quot;`SEARCH_CONFIGURATION` deploy&quot;verwenden, um benutzerdefinierte Sucheinstellungen zwischen Implementierungen beizubehalten. Siehe [Bereitstellen von Variablen](../environment/variables-deploy.md#search_configuration).
+- Standardmäßig wird die Suchkonfiguration für Cloud-Umgebungen bei jeder Bereitstellung neu generiert. Sie können die Variable `SEARCH_CONFIGURATION`-Bereitstellung verwenden, um benutzerdefinierte Sucheinstellungen zwischen Bereitstellungen beizubehalten. Siehe [Bereitstellen von Variablen](../environment/variables-deploy.md#search_configuration).
 
-- Nachdem Sie den OpenSearch-Dienst für Ihr Projekt eingerichtet haben, verwenden Sie die Admin-Benutzeroberfläche, um die OpenSearch-Verbindung zu testen und die OpenSearch-Einstellungen für Adobe Commerce anzupassen.
+- Nachdem Sie den OpenSearch-Service für Ihr Projekt eingerichtet haben, verwenden Sie die Admin-Benutzeroberfläche, um die OpenSearch-Verbindung zu testen und die OpenSearch-Einstellungen für Adobe Commerce anzupassen.
 
-### Hinzufügen von Plug-ins für OpenSearch
+### Plug-ins für OpenSearch hinzufügen
 
-Optional können Sie Plugins für OpenSearch hinzufügen, indem Sie den Abschnitt `configuration:plugins` zum OpenSearch-Dienst in der Datei `.magento/services.yaml` hinzufügen. Beispielsweise ermöglicht der folgende Code die Plug-ins für die ICU-Analyse und die Phonetic-Analyse.
+Optional können Sie Plug-ins für OpenSearch hinzufügen, indem Sie den `configuration:plugins` Abschnitt zum OpenSearch-Service in der `.magento/services.yaml`-Datei hinzufügen. Beispielsweise aktiviert der folgende Code die Plug-ins für die ICU-Analyse und die phonetische Analyse .
 
 ```yaml
 opensearch:
@@ -192,16 +192,16 @@ opensearch:
             - analysis-phonetic
 ```
 
-Weitere Informationen zu Plug-ins finden Sie im [OpenSearch-Projekt](https://github.com/opensearch-project) .
+Siehe das [OpenSearch-Projekt](https://github.com/opensearch-project) für weitere Informationen zu Plug-ins.
 
 ### Entfernen von Plug-ins für OpenSearch
 
-Wenn Sie die Plug-in-Einträge aus dem Abschnitt `opensearch:` der Datei `.magento/services.yaml` entfernen, wird der Dienst **nicht** deinstalliert oder deaktiviert. Um den Dienst vollständig zu deaktivieren, müssen Sie Ihre OpenSearch-Daten neu indizieren, nachdem Sie die Plug-ins aus Ihrer `.magento/services.yaml` -Datei entfernt haben. Dieses Design verhindert den möglichen Verlust oder die Beschädigung von Daten, die von diesen Plug-ins abhängig sind.
+Wenn Sie die Plug-in-Einträge aus dem Abschnitt `opensearch:` der `.magento/services.yaml`-Datei entfernen **wird der Service nicht** oder deaktiviert. Um den Dienst vollständig zu deaktivieren, müssen Sie Ihre OpenSearch-Daten neu indizieren, nachdem Sie die Plug-ins aus Ihrer `.magento/services.yaml`-Datei entfernt haben. Dieses Design verhindert den möglichen Verlust oder die Beschädigung von Daten, die von diesen Plug-ins abhängt.
 
 **So entfernen Sie OpenSearch-Plug-ins**:
 
-1. Entfernen Sie die OpenSearch-Plug-in-Einträge aus Ihrer `.magento/services.yaml` -Datei.
-1. Fügen Sie Code-Änderungen hinzu, übertragen Sie sie und übertragen Sie sie.
+1. Entfernen Sie die OpenSearch-Plug-in-Einträge aus Ihrer `.magento/services.yaml`.
+1. Code-Änderungen hinzufügen, übertragen und per Push übertragen.
 
    ```bash
    git add .magento/services.yaml
@@ -215,14 +215,14 @@ Wenn Sie die Plug-in-Einträge aus dem Abschnitt `opensearch:` der Datei `.magen
    git push origin <branch-name>
    ```
 
-1. Binden Sie die `.magento/services.yaml`-Änderungen in Ihr Cloud-Repository ein.
-1. Indizieren Sie den Index der Katalogsuche neu.
+1. Übertragen Sie die `.magento/services.yaml` Änderungen in Ihr Cloud-Repository.
+1. Indizieren Sie den Katalogsuchindex neu.
 
    ```bash
    bin/magento indexer:reindex catalogsearch_fulltext
    ```
 
-1. Bereinigen Sie den Cache.
+1. Reinigen Sie den Cache.
 
    ```bash
    bin/magento cache:clean

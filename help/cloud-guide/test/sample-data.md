@@ -11,15 +11,15 @@ ht-degree: 0%
 
 # Beispieldaten
 
-Wenn Sie bei der Entwicklung Ihres Stores Beispieldaten benötigen, können Sie Beispieldaten installieren. Diese Daten simulieren einen aktiven Adobe Commerce-Store mit Kunden, Produkten und anderen Daten. Diese Beispieldaten funktionieren am besten mit einer neuen Adobe Commerce für die Installation von Cloud-Infrastrukturvorlagen.
+Wenn Sie beim Entwickeln Ihres Stores Beispieldaten benötigen, können Sie Beispieldaten installieren. Diese Daten simulieren einen aktiven Adobe Commerce-Store mit Kunden, Produkten und anderen Daten. Diese Beispieldaten funktionieren am besten mit einer neuen Vorlageninstallation von Adobe Commerce auf der Cloud-Infrastruktur.
 
-Installieren Sie als Best Practice Beispieldaten in Entwicklungs- und Integrationsumgebungen. Wenn Sie Beispieldaten in der Staging- oder Produktionsumgebung verwenden, müssen Sie die Informationen und Produkte vor der Live-Schaltung [entfernen](#reset-or-uninstall-sample-data).
+Installieren Sie als Best Practice Beispieldaten in Entwicklungs- und Integrationsumgebungen. Wenn Sie Beispieldaten in der Staging- oder Produktionsumgebung verwenden, müssen Sie [ Informationen ](#reset-or-uninstall-sample-data) Produkte vor der Live-Schaltung entfernen.
 
-## Beispieldaten installieren
+## Installieren von Beispieldaten
 
 So installieren Sie Beispieldaten:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
+1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
 
 1. Geben Sie im Stammverzeichnis den folgenden Befehl ein, um Beispieldaten hinzuzufügen:
 
@@ -29,7 +29,7 @@ So installieren Sie Beispieldaten:
 
 1. Warten Sie, bis die Komponenten aktualisiert wurden.
 
-1. Übernehmen Sie die Änderungen und übertragen Sie sie:
+1. Bestätigen und Übertragen der Änderungen:
 
    ```bash
    git add -A && git commit -m "Install sample data"
@@ -39,21 +39,21 @@ So installieren Sie Beispieldaten:
    git push origin <branch-name>
    ```
 
-1. Warten Sie, bis das Projekt bereitgestellt wurde.
+1. Warten Sie, bis das Projekt bereitgestellt wird.
 
-1. Vergewissern Sie sich, dass die Installation erfolgreich war, indem Sie in der Integrationsumgebung zu Ihrer Storefront-Seite navigieren. Sie können den URL-Link zur Storefront über die [!DNL Cloud Console] finden.
+1. Überprüfen Sie, ob die Installation erfolgreich war, indem Sie in der Integrationsumgebung zu Ihrer Storefront-Seite gehen. Sie können den URL-Link zur Storefront über die [!DNL Cloud Console] finden.
 
-1. Erstellen Sie eine Momentaufnahme Ihrer Umgebung:
+1. Erstellen Sie einen Schnappschuss Ihrer Umgebung:
 
    ```bash
    magento-cloud snapshot:create -e <environment-ID>
    ```
 
-Sie können Ihre Entwicklung mit Live-Daten testen!
+Sie können mit dem Testen Ihrer Entwicklung mit Live-Daten beginnen!
 
 ## Beispieldaten zurücksetzen oder deinstallieren
 
-Sie können Beispieldaten nach demselben Verfahren, das zum Installieren der Beispieldaten verwendet wird, zurücksetzen oder entfernen:
+Sie können Beispieldaten mit demselben Verfahren zurücksetzen oder entfernen, das für die Installation der Beispieldaten verwendet wurde:
 
 - Beispieldaten löschen: `./bin/magento sampledata:remove`
 - Beispieldaten zurücksetzen: `./bin/magento sampledata:reset`

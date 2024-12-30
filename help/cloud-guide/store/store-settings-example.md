@@ -1,6 +1,6 @@
 ---
 title: Beispiel für die Verwaltung systemspezifischer Einstellungen
-description: Hier finden Sie ein Beispiel für die Verwaltung und Synchronisierung von Speicherkonfigurationseinstellungen in allen Adobe Commerce-Umgebungen in Cloud-Infrastruktur.
+description: Sehen Sie sich ein Beispiel für das Verwalten und Synchronisieren der Store-Konfigurationseinstellungen in allen Adobe Commerce in Cloud-Infrastrukturumgebungen an.
 hidefromtoc: true
 source-git-commit: 196efa316b9998c1980412ad96577d7ce42d4aec
 workflow-type: tm+mt
@@ -12,62 +12,62 @@ ht-degree: 0%
 
 # Beispiel für die Verwaltung systemspezifischer Einstellungen
 
-Dieses Beispiel zeigt, wie Sie mit der Konfigurationsverwaltung die Speichereinstellungen in allen Umgebungen konsistent halten.
+Dieses Beispiel zeigt, wie Sie die Konfigurationsverwaltung verwenden, um die Speichereinstellungen in allen Umgebungen konsistent zu halten.
 
-Das Beispiel verwendet das folgende in [Speichereinstellungen](store-settings.md) definierte Verfahren:
+Im Beispiel wird das folgende in „Store[Einstellungen“ definierte Verfahren ](store-settings.md):
 
-1. Geben Sie Ihre Konfigurationen in den Store-Administrator der Integrationsumgebung ein.
-1. Erstellen Sie eine `config.php` -Datei und übertragen Sie sie auf Ihre lokale Workstation.
-1. Push `config.php` in die Remote-Integrationsumgebung.
-1. Vergewissern Sie sich, dass Ihre Einstellungen im Admin nicht bearbeitbar sind.
+1. Geben Sie Ihre Konfigurationen in den Store-Admin Ihrer Integrationsumgebung ein.
+1. Erstellen Sie eine `config.php` Datei und übertragen Sie sie auf Ihre lokale Workstation.
+1. Pushen Sie `config.php` in die Remote-Integrationsumgebung.
+1. Stellen Sie sicher, dass Ihre Einstellungen in der Admin nicht bearbeitet werden können.
 1. Nehmen Sie die erforderlichen Änderungen vor:
 
    * Ändern Sie die Konfigurationseinstellungen in der Integrationsumgebung.
-   * Um Konfigurationen hinzuzufügen, führen Sie den Befehl aus, um `config.php` erneut zu erstellen. An die Datei werden neue Konfigurationen angehängt.
+   * Um Konfigurationen hinzuzufügen, führen Sie den Befehl aus, um `config.php` erneut zu erstellen. Neue Konfigurationen werden an die Datei angehängt.
    * Um vorhandene Konfigurationen zu entfernen oder zu bearbeiten, bearbeiten Sie die Datei manuell.
-   * Übernehmen und pushen.
+   * Bestätigen und übertragen.
 
-Sie können beispielsweise die folgenden Einstellungen festlegen:
+Beispielsweise können Sie die folgenden Einstellungen festlegen:
 
-* Deaktivieren Sie die Optimierungseinstellungen für Gebietsschema und statische Dateien in Ihrer Integrationsumgebung.
+* Deaktivieren Sie die Einstellungen für Gebietsschema und statische Dateioptimierung in Ihrer Integrationsumgebung.
 * Aktivieren der statischen Dateioptimierung in Staging- und Produktionsumgebungen
-* Schnelles Konfigurieren in Staging und Produktion mit spezifischen Anmeldeinformationen für jede
+* Konfigurieren Sie Fastly in Staging und Produktion mit jeweils spezifischen Anmeldeinformationen.
 
-_Statische Dateioptimierung_ bedeutet das Zusammenführen und Minimieren von JavaScript- und Cascading Style Sheets sowie das Minimieren von HTML-Vorlagen. Siehe [Bereitstellungsstrategien für statische Inhalte](../deploy/static-content.md).
+_Statische Dateioptimierung_ bedeutet das Zusammenführen und Minimieren von JavaScript- und Cascading Style Sheets sowie das Minimieren von HTML-Vorlagen. Siehe [Strategien zur Bereitstellung statischer Inhalte](../deploy/static-content.md).
 
 ## Voraussetzungen
 
-Um diese Konfigurationsverwaltungsaufgaben durchzuführen, benötigen Sie Folgendes:
+Um diese Konfigurationsverwaltungsaufgaben abzuschließen, benötigen Sie Folgendes:
 
-* Rolle des Projektlesers mit [Berechtigung &quot;admin&quot;](../project/user-access.md) der Umgebung
-* Admin-URL und Anmeldeinformationen für Integrations-, Staging- und Produktionsumgebungen
+* Rolle des Projektlesers mit Berechtigungen [Umgebung „Admin](../project/user-access.md)
+* Admin-URL und Anmeldedaten für Integrations-, Staging- und Produktionsumgebungen
 
-## Konfigurieren des Commerce-Administrators
+## Konfigurieren von Commerce Admin
 
-In der Integrationsumgebung können Sie sich beim Administrator anmelden, um die Systemkonfigurationseinstellungen für Stores, Websites, Module oder Erweiterungen, die statische Dateioptimierung und Systemwerte im Zusammenhang mit der Bereitstellung statischer Inhalte zu ändern. Siehe [Konfigurationsdaten](store-settings.md#scd-performance).
+In der Integrationsumgebung können Sie sich beim Administrator anmelden, um die Systemkonfigurationseinstellungen für Stores, Websites, Module oder Erweiterungen, die statische Dateioptimierung und die Systemwerte für die statische Inhaltsbereitstellung zu ändern. Siehe [Konfigurationsdaten](store-settings.md#scd-performance).
 
-**So ändern Sie die Optimierungseinstellungen für Gebietsschema und statische Dateien**:
+**So ändern Sie die Einstellungen für Gebietsschema und statische Dateioptimierung**:
 
-1. Melden Sie sich bei der Integrationsumgebung Admin an. Sie können über die [[!DNL Cloud Console]](../project/overview.md) auf diese URL zugreifen.
-1. Navigieren Sie zu **Stores** > Einstellungen > **Konfiguration** > Allgemein > **Allgemein** .
-1. Erweitern Sie im Seitennavigationsmenü die Option **Gebietsschema-Optionen**.
-1. Ändern Sie in der Liste **Gebietsschema** das Gebietsschema. Sie können es später wieder ändern.
+1. Melden Sie sich bei der Admin der Integrationsumgebung an. Sie können über die [[!DNL Cloud Console]](../project/overview.md) auf diese URL zugreifen.
+1. Navigieren Sie zu **Stores** > Einstellungen > **Konfiguration** > Allgemein **Allgemein**.
+1. Erweitern Sie in der Seitennavigation &quot;**&quot;**.
+1. Ändern Sie in der **Locale**-Liste das Gebietsschema. Sie können es später wieder ändern.
 
    ![Ändern des Gebietsschemas](../../assets/locale-options.png)
 
-1. Klicken Sie auf **Konfiguration speichern**.
-1. Wenn Sie dazu aufgefordert werden, leeren Sie den Cache-Speicher ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management).[
-1. Melden Sie sich beim Administrator ab.
+1. Klicken Sie **Konfiguration speichern**.
+1. Wenn Sie dazu aufgefordert werden[ leeren Sie den Cache](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management).
+1. Melden Sie sich bei der Administratorin bzw. dem Administrator ab.
 
 ## Werte exportieren und config.php auf Ihr lokales System übertragen
 
-Dieser Schritt erstellt und überträgt die Konfigurationsdatei `config.php` mithilfe eines Befehls, den Sie auf Ihrem lokalen Computer ausführen, in die Integrationsumgebung.
+In diesem Schritt wird die `config.php`-Konfigurationsdatei mithilfe eines Befehls, den Sie auf Ihrem lokalen Computer ausführen, erstellt und in die Integrationsumgebung übertragen.
 
 Dieses Verfahren entspricht Schritt 2 im [empfohlenen Verfahren](store-settings.md). Nachdem Sie `config.php` erstellt haben, übertragen Sie es auf Ihr lokales System, damit Sie es zu Git hinzufügen können.
 
-**Erstellen und Übertragen von`config.php`**:
+**So erstellen und übertragen Sie`config.php`**:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
+1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
 
 1. Änderung an der Integrationsumgebung.
 
@@ -81,7 +81,7 @@ Dieses Verfahren entspricht Schritt 2 im [empfohlenen Verfahren](store-settings.
    magento-cloud db:dump
    ```
 
-Das folgende Snippet aus `config.php` zeigt ein Beispiel für die Änderung des Standardgebietsschemas in `en_GB` und die Änderung der Einstellungen zur Optimierung statischer Dateien:
+Das folgende Snippet aus `config.php` zeigt ein Beispiel für das Ändern des Standardgebietsschemas in `en_GB` und das Ändern der Einstellungen für die statische Dateioptimierung:
 
 ```php?start_inline=1
 'general' => [
@@ -110,59 +110,59 @@ Das folgende Snippet aus `config.php` zeigt ein Beispiel für die Änderung des 
      ... more ...
 ```
 
-## Push und Bereitstellung von &quot;config.php&quot;in Umgebungen
+## Pushen und Bereitstellen von config.php in Umgebungen
 
-Nachdem Sie jetzt `config.php` erstellt und auf Ihr lokales System übertragen haben, müssen Sie es auf Git übertragen und in Ihre Umgebungen übertragen. Dieses Verfahren entspricht den Schritten 3 und 4 im [empfohlenen Verfahren](store-settings.md).
+Nachdem Sie `config.php` erstellt und auf Ihr lokales System übertragen haben, übertragen Sie es auf Git und übertragen Sie es in Ihre Umgebungen. Dieses Verfahren entspricht den Schritten 3 und 4 im [empfohlenen Verfahren](store-settings.md).
 
-Der folgende Befehl fügt den Zweig `master` hinzu, fügt ihn hinzu, überträgt ihn und pusht ihn:
+Mit dem folgenden Befehl wird die `master`-Verzweigung hinzugefügt, übergeben und per Push übertragen:
 
 ```bash
 git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
 ```
 
-Vollständige Codebereitstellung für Staging und Produktion. Für &quot;Starter&quot;pushen Sie zu den Verzweigungen `staging` und `master`. Weitere Informationen zu Bereitstellungsbefehlen finden Sie unter [Bereitstellen Ihres Stores](../deploy/staging-production.md).
+Vollständige Code-Bereitstellung für Staging und Produktion. Zunächst einmal drücken Sie auf `staging` und `master` Verzweigungen. Weitere Informationen zu Bereitstellungsbefehlen finden Sie unter [Store bereitstellen](../deploy/staging-production.md).
 
 Warten Sie, bis die Bereitstellung in allen Umgebungen abgeschlossen ist.
 
 ## Überprüfen der Konfigurationsänderungen
 
-Nachdem Sie `config.php` in Ihre Umgebungen gepusht haben, sollten alle geänderten Werte im Admin schreibgeschützt sein. In diesem Beispiel sollten die geänderten Standardeinstellungen für Gebietsschema und statische Dateioptimierung nicht im Admin bearbeitet werden können. Diese Konfigurationseinstellungen werden in `config.php` festgelegt.
+Nachdem Sie `config.php` an Ihre Umgebungen gepusht haben, sollten alle von Ihnen geänderten Werte in der Admin schreibgeschützt sein. In diesem Beispiel sollten das geänderte Standardgebietsschema und die geänderten Einstellungen für die statische Dateioptimierung nicht in Admin bearbeitet werden können. Diese Konfigurationseinstellungen werden in `config.php` festgelegt.
 
-Überprüfen der Konfigurationsänderungen:
+So überprüfen Sie Ihre Konfigurationsänderungen:
 
-1. Melden Sie sich in einer der Umgebungen von Admin ab.
+1. Melden Sie sich in einer der Umgebungen vom Administrator ab.
 1. Melden Sie sich wieder beim Administrator an.
 1. Klicken Sie auf **Stores** > Einstellungen > **Konfiguration** > Allgemein > **Allgemein**.
 1. Erweitern Sie im rechten Bereich **Gebietsschema-Optionen**.
 
-   Beachten Sie, dass mehrere Felder nicht bearbeitet werden können, wie im folgenden Beispiel gezeigt. Diese Konfigurationseinstellungen werden von `config.php` beibehalten.
+   Beachten Sie, dass mehrere Felder nicht bearbeitet werden können, wie im folgenden Beispiel gezeigt. Diese Konfigurationseinstellungen werden von `config.php` verwaltet.
 
-   ![Bestimmte Werte können im Admin nicht mehr bearbeitet werden](../../assets/locale-options-disabled.png)
+   ![Bestimmte Werte können im Administrator nicht mehr bearbeitet werden](../../assets/locale-options-disabled.png)
 
-1. Melden Sie sich beim Administrator ab.
+1. Melden Sie sich bei der Administratorin bzw. dem Administrator ab.
 
 ## Systemspezifische Konfigurationseinstellungen ändern und aktualisieren
 
-Wenn Sie eine dieser Einstellungen ändern müssen, ändern Sie die Datei `config.php` manuell mit einem Texteditor. Nach Abschluss der Bearbeitungen oder Entfernungen können Sie sie bestätigen und in die Remote-Umgebung übertragen, wie in den vorherigen Schritten beschrieben.
+Wenn Sie eine dieser Einstellungen ändern müssen, ändern Sie die `config.php`-Datei manuell mit einem Texteditor. Nachdem Sie die Änderungen oder Entfernungen abgeschlossen haben, können Sie einen Commit ausführen und ihn in die Remote-Umgebung übertragen, indem Sie die vorherigen Schritte ausführen.
 
-Um Konfigurationen hinzuzufügen, ändern Sie Ihre Integrationsumgebung und führen Sie den Befehl erneut aus, um die Datei zu generieren. Alle neuen Konfigurationen werden an den Code in der Datei angehängt. Push it to Git, wie zuvor beschrieben.
+Um Konfigurationen hinzuzufügen, ändern Sie Ihre Integrationsumgebung und führen Sie den Befehl erneut aus, um die Datei zu generieren. Alle neuen Konfigurationen werden an den Code in der Datei angehängt. Pushen Sie sie in den vorherigen Schritten an Git.
 
-Ändern Sie in diesem Beispiel die Einstellungen zur Optimierung statischer Dateien und fügen Sie eine neue Einstellung für JavaScript hinzu.
+In diesem Beispiel ändern Sie die statischen Dateioptimierungseinstellungen und fügen eine neue Einstellung für JavaScript hinzu.
 
 ### Hinzufügen von Konfigurationen in der Integration
 
-Hinzufügen von Konfigurationswerten zum Integrationsumgebungs-Admin. In diesem Beispiel werden JavaScript-Dateien zusammengeführt.
+So fügen Sie Konfigurationswerte in der Integrationsumgebung „Admin“ hinzu. In diesem Beispiel werden JavaScript-Dateien zusammengeführt.
 
-1. Melden Sie sich von der Integrationsadministratorin ab.
-1. Melden Sie sich wieder beim Integrationsadministrator an.
+1. Melden Sie sich bei der Integrations-Admin ab.
+1. Melden Sie sich beim Integrations-Admin wieder an.
 1. Klicken Sie auf **Stores** > Einstellungen > **Konfiguration** > **Erweitert** > **Entwickler**.
 1. Erweitern Sie im rechten Bereich **JavaScript-Einstellungen**.
-1. Klicken Sie in der Liste **JavaScript-Dateien zusammenführen** auf **Ja**.
-1. Klicken Sie auf **Konfiguration speichern**.
-1. Wenn Sie dazu aufgefordert werden, leeren Sie den Cache-Speicher ](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management).[
-1. Melden Sie sich beim Administrator ab.
+1. Klicken Sie in **Liste &quot;JavaScript-** zusammenführen **auf Ja**.
+1. Klicken Sie **Konfiguration speichern**.
+1. Wenn Sie dazu aufgefordert werden[ leeren Sie den Cache](https://experienceleague.adobe.com/en/docs/commerce-admin/systems/tools/cache-management).
+1. Melden Sie sich bei der Administratorin bzw. dem Administrator ab.
 
-Wenn Sie den Befehl &quot;dump&quot;erneut ausführen, wird die neue Konfiguration an die Datei angehängt.
+Wenn Sie den Dump-Befehl erneut ausführen, wird die neue Konfiguration an die Datei angehängt.
 
 ```bash
 magento-cloud db:dump
@@ -170,7 +170,7 @@ magento-cloud db:dump
 
 ### Bearbeiten Sie config.php mit neuen Einstellungen
 
-Verwenden Sie auf Ihrer lokalen Seite einen Texteditor, um die aktualisierte `app/etc/config.php` -Datei zu bearbeiten. Bearbeiten Sie diese Einstellungen, um die Minimierung für JavaScript-, HTML- und CSS-Dateien zu aktivieren.
+Bearbeiten Sie die aktualisierte `app/etc/config.php`-Datei auf dem lokalen Computer mit einem Texteditor. Bearbeiten Sie diese Einstellungen, um die Minimierung für JavaScript-, HTML- und CSS-Dateien zu aktivieren.
 
 ```php?start_inline=1
  'dev' => [
@@ -192,7 +192,7 @@ Verwenden Sie auf Ihrer lokalen Seite einen Texteditor, um die aktualisierte `ap
      ],
 ```
 
-Um die Einstellungen so zu ändern, dass eine Minimierung möglich ist, bearbeiten Sie `'0'` für `'minify_html'` und jede `'minify_files'` -Option auf `'1'`:
+Um die Einstellungen so zu ändern, dass die Minimierung möglich ist, bearbeiten Sie `'0'` für `'minify_html'` und jede `'minify_files'` Option auf `'1'` :
 
 ```php?start_inline=1
  'dev' => [
@@ -214,11 +214,11 @@ Um die Einstellungen so zu ändern, dass eine Minimierung möglich ist, bearbeit
      ],
 ```
 
-Speichern Sie die Änderungen in der Datei.
+Speichern Sie die Änderungen in der Datei .
 
-### Push the changes to Git
+### Übertragen der Änderungen an Git
 
-Geben Sie Folgendes ein, um Ihre Änderungen zu übertragen:
+Geben Sie Folgendes ein, um Ihre Änderungen per Push zu übertragen:
 
 ```bash
 git add app/etc/config.php
@@ -234,4 +234,4 @@ git push origin master
 
 Warten Sie, bis die Bereitstellung abgeschlossen ist.
 
-Wiederholen Sie den Bereitstellungsprozess für das Pushen des Codes in alle Umgebungen.
+Wiederholen Sie den Bereitstellungsprozess, um den Code in alle Umgebungen zu pushen.

@@ -11,68 +11,68 @@ ht-degree: 0%
 
 # Staging- und Produktionstests
 
-Verwenden Sie nach erfolgreicher Migration von Code, Dateien und Daten in Staging oder Produktion die Umgebungs-URLs, um Ihre Sites und Stores zu testen. Im Folgenden finden Sie Informationen zum Überprüfen von Protokollen, zum Testen von Fastly-Konfigurationen, zum Testen von Benutzerakzeptanztests (UAT) und mehr.
+Verwenden Sie nach einer erfolgreichen Migration Ihres Codes, Ihrer Dateien und Ihrer Daten zu Staging oder Produktion die Umgebungs-URLs, um Ihre Sites und Stores zu testen. Im Folgenden finden Sie Informationen zum Überprüfen von Protokollen, Testen von Fastly-Konfigurationen, Benutzerakzeptanztests (UAT) und mehr.
 
 {{second-staging}}
 
 ## Protokolldateien
 
-Wenn bei der Bereitstellung Fehler auftreten oder andere Probleme beim Testen auftreten, überprüfen Sie die Protokolldateien. Protokolldateien befinden sich im Verzeichnis &quot;`var/log`&quot;.
+Wenn beim Testen Fehler bei der Bereitstellung oder andere Probleme auftreten, überprüfen Sie die Protokolldateien. Protokolldateien befinden sich im `var/log`.
 
-Das Bereitstellungsprotokoll befindet sich in `/var/log/platform/<prodject-ID>/deploy.log`. Der Wert von `<project-ID>` hängt von der Projekt-ID und davon ab, ob es sich bei der Umgebung um Staging oder Produktion handelt. Bei der Projekt-ID `yw1unoukjcawe` ist der Staging-Benutzer beispielsweise `yw1unoukjcawe_stg` und der Produktions-Benutzer `yw1unoukjcawe`.
+Das Bereitstellungsprotokoll befindet sich in `/var/log/platform/<prodject-ID>/deploy.log`. Der Wert von `<project-ID>` hängt von der Projekt-ID ab und davon, ob es sich um eine Staging- oder eine Produktionsumgebung handelt. Bei einer Projekt-ID von `yw1unoukjcawe` wird beispielsweise der Staging-Benutzer `yw1unoukjcawe_stg` und der Produktions-Benutzer `yw1unoukjcawe`.
 
-Verwenden Sie beim Zugriff auf Protokolle in Produktions- oder Staging-Umgebungen SSH, um sich bei jedem der drei Knoten anzumelden, um die Protokolle zu finden. Sie können auch die [New Relic-Protokollverwaltung](../monitor/log-management.md) verwenden, um aggregierte Protokolldaten von allen Knoten anzuzeigen und abzufragen. Siehe [Protokolle anzeigen](log-locations.md#application-logs).
+Verwenden Sie beim Zugriff auf Protokolle in Produktions- oder Staging-Umgebungen SSH, um sich bei jedem der drei Knoten anzumelden und die Protokolle zu finden. Sie können auch die [New Relic-Protokollverwaltung](../monitor/log-management.md) verwenden, um aggregierte Protokolldaten von allen Knoten anzuzeigen und abzufragen. Siehe [Protokolle anzeigen](log-locations.md#application-logs).
 
-## Überprüfen der Codebasis
+## Code-Basis überprüfen
 
-Stellen Sie sicher, dass Ihre Codebasis ordnungsgemäß in Staging- und Produktionsumgebungen bereitgestellt wird. Die Umgebungen sollten über identische Codegrundlagen verfügen.
+Überprüfen Sie, ob Ihre Code-Basis in Staging- und Produktionsumgebungen ordnungsgemäß bereitgestellt wurde. Die Umgebungen sollten über identische Code-Basen verfügen.
 
 ## Konfigurationseinstellungen überprüfen
 
-Überprüfen Sie die Konfigurationseinstellungen über das Admin-Bedienfeld, einschließlich Basis-URL, Basis-Admin-URL, Einstellungen für mehrere Sites und mehr. Wenn Sie zusätzliche Änderungen vornehmen müssen, führen Sie die Änderungen in Ihrer lokalen Git-Verzweigung durch und pushen Sie in die Verzweigung `master` in Integration, Staging und Produktion.
+Überprüfen Sie die Konfigurationseinstellungen über das Admin-Bedienfeld, einschließlich Basis-URL, Basis-Admin-URL, Einstellungen für mehrere Sites und mehr. Wenn Sie zusätzliche Änderungen vornehmen müssen, schließen Sie die Änderungen in Ihrer lokalen Git-Verzweigung ab und übertragen Sie sie in die `master` Verzweigung in Integration, Staging und Produktion.
 
-## Schnelles Zwischenspeichern überprüfen
+## Überprüfen der Fastly-Zwischenspeicherung
 
-[Die Konfiguration von Fastly](../cdn/fastly-configuration.md) erfordert sorgfältige Detailgenauigkeit: Verwendung der richtigen Fastly Service ID- und Fastly API-Token-Anmeldeinformationen, Hochladen des Fastly VCL-Codes, Aktualisierung der DNS-Konfiguration und Anwendung der SSL/TLS-Zertifikate auf Ihre Umgebungen. Nach Abschluss dieser Einrichtungsaufgaben können Sie die schnelle Zwischenspeicherung in Staging- und Produktionsumgebungen überprüfen.
+[Fastly konfigurieren](../cdn/fastly-configuration.md) erfordert sorgfältige Aufmerksamkeit zum Detail: Verwenden der richtigen Fastly Service-ID- und Fastly API-Token-Anmeldeinformationen, Hochladen des Fastly VCL-Codes, Aktualisieren der DNS-Konfiguration und Anwenden der SSL-/TLS-Zertifikate auf Ihre Umgebungen. Nachdem Sie diese Einrichtungsaufgaben abgeschlossen haben, können Sie das schnelle Caching in Staging- und Produktionsumgebungen überprüfen.
 
-**Überprüfen der Konfiguration des Fastly-Dienstes**:
+**So überprüfen Sie die Fastly-Service-Konfiguration**:
 
-1. Melden Sie sich bei Admin für Staging und Produktion mit der URL mit `/admin` oder der [aktualisierten Admin-URL](../environment/variables-admin.md#admin-url) an.
+1. Melden Sie sich bei Admin für Staging und Produktion an, indem Sie die URL mit `/admin` oder die [aktualisierte Admin-URL](../environment/variables-admin.md#admin-url) verwenden.
 
-1. Navigieren Sie zu **Stores** > **Einstellungen** > **Konfiguration** > **Erweitert** > **System**. Scrollen Sie nach unten und klicken Sie auf **Vollständiger Seiten-Cache**.
+1. Navigieren Sie zu **Stores** > **Einstellungen** > **Konfiguration** > **Erweitert** > **System**. Scrollen Sie und klicken Sie auf **Vollständiger Seitencache**.
 
-1. Stellen Sie sicher, dass der Wert **Caching application** auf _Fastly CDN_ gesetzt ist.
+1. Stellen Sie sicher **dass der Wert für** Caching-Anwendung“ auf _Fastly CDN)_.
 
-1. Testen Sie die Fastly-Anmeldeinformationen.
+1. Testen Sie die Fastly-Anmeldedaten.
 
-   - Klicken Sie auf **Schnelle Konfiguration**.
+   - Klicken Sie **Fastly Configuration**.
 
-   - Überprüfen Sie, ob die Werte für die Anmeldedaten für die Fastly Service ID und den Fastly API-Token vorhanden sind. Siehe [Schnelle Anmeldeinformationen abrufen](/help/cloud-guide/cdn/fastly-configuration.md#get-fastly-credentials).
+   - Überprüfen Sie, ob die Werte für die Fastly Service ID- und Fastly API Token-Anmeldeinformationen vorliegen. Siehe [Abrufen von Fastly-Anmeldeinformationen](/help/cloud-guide/cdn/fastly-configuration.md#get-fastly-credentials).
 
-   - Klicken Sie auf **Testberechtigungen**.
+   - Klicken Sie **Testanmeldeinformationen**.
 
    >[!WARNING]
    >
-   >Vergewissern Sie sich, dass Sie in Ihren Staging- und Produktionsumgebungen die richtige Fastly Service-ID und das richtige API-Token eingegeben haben. Schnelle Anmeldeinformationen werden pro Dienstumgebung erstellt und zugeordnet. Wenn Sie in Ihrer Produktionsumgebung Staging-Anmeldeinformationen eingeben, können Sie Ihre VCL-Snippets nicht hochladen. Das Caching funktioniert nicht ordnungsgemäß und Ihre Caching-Konfiguration verweist auf den falschen Server und die falschen Stores.
+   >Stellen Sie sicher, dass Sie die richtige Fastly Service-ID und das richtige API-Token in Ihren Staging- und Produktionsumgebungen eingegeben haben. Fastly-Anmeldeinformationen werden pro Service-Umgebung erstellt und zugeordnet. Wenn Sie die Staging-Anmeldeinformationen in Ihre Produktionsumgebung eingeben, können Sie Ihre VCL-Snippets nicht hochladen, das Caching funktioniert nicht ordnungsgemäß und Ihre Caching-Konfiguration verweist auf den falschen Server und speichert.
 
-**So überprüfen Sie das Verhalten beim schnellen Zwischenspeichern**:
+**So überprüfen Sie das Fastly-Caching**:
 
-1. Suchen Sie mithilfe des Befehlszeilen-Dienstprogramms `dig` nach Kopfzeilen, um Informationen zur Site-Konfiguration zu erhalten.
+1. Suchen Sie mithilfe des `dig`-Befehlszeilendienstprogramms nach Kopfzeilen, um Informationen über die Site-Konfiguration zu erhalten.
 
-   Sie können jede URL mit dem Befehl `dig` verwenden. Die folgenden Beispiele verwenden Pro-URLs:
+   Sie können eine beliebige URL mit dem Befehl `dig` verwenden. In den folgenden Beispielen werden Pro-URLs verwendet:
 
    - Staging: `dig https://mcstaging.<your-domain>.com`
    - Produktion: `dig https://mcprod.<your-domain>.com`
 
-   Weitere `dig`-Tests finden Sie unter Fastly&#39;s [Testing before change DNS](https://docs.fastly.com/en/guides/working-with-domains).
+   Weitere `dig` finden Sie unter Fastly&#39;s [Testing before changing DNS](https://docs.fastly.com/en/guides/working-with-domains).
 
-1. Verwenden Sie `cURL` , um die Informationen des Antwortheaders zu überprüfen.
+1. Verwenden Sie `cURL`, um die Antwort-Header-Informationen zu überprüfen.
 
    ```bash
    curl https://mcstaging.<your-domain>.com -H "host: mcstaging.<your-domain.com>" -k -vo /dev/null -H Fastly-Debug:1
    ```
 
-   Weitere Informationen zum Überprüfen der Kopfzeilen finden Sie unter [Überprüfen der Antwortheader](../cdn/fastly-troubleshooting.md#check-cache-hit-and-miss-response-headers) .
+   Siehe [Überprüfen von Antwort-](../cdn/fastly-troubleshooting.md#check-cache-hit-and-miss-response-headers)) für Details zur Überprüfung der Kopfzeilen.
 
 1. Nachdem Sie live sind, verwenden Sie `cURL` , um Ihre Live-Site zu überprüfen.
 
@@ -82,19 +82,19 @@ Stellen Sie sicher, dass Ihre Codebasis ordnungsgemäß in Staging- und Produkti
 
 ## Vollständige UAT-Tests
 
-Führen Sie Benutzerakzeptanztests (UAT) für Staging und Produktion durch. Die folgenden Tests sind eine kurze Liste möglicher Aufgaben und Bereiche, die als Händler und Kunde getestet werden können. Ihre Liste kann länger sein und zusätzliche Tests für benutzerdefinierte Module, Erweiterungen und Drittanbieterintegrationen enthalten. Verwenden Sie beim Testen Desktops, Laptops und Mobilgeräte.
+Abschließen der Benutzerakzeptanztests (UAT) für Staging und Produktion. Die folgenden Tests sind eine schnelle Liste möglicher Aufgaben und Bereiche, die als Händler und Kunde getestet werden sollten. Ihre Liste kann länger sein und zusätzliche Tests für benutzerdefinierte Module, Erweiterungen und Integrationen von Drittanbietern enthalten. Verwenden Sie beim Testen Desktops, Laptops und Mobilgeräte.
 
-Wenn Probleme auftreten, speichern Sie Ihre Reproduktionsschritte, Fehlermeldungen, seltsame Bildschirmaufzeichnungen und Links. Verwenden Sie diese Informationen, um Probleme im Code und Konfigurationen der Integrationsumgebung oder in den Umgebungseinstellungen zu untersuchen und zu beheben.
+Wenn Probleme auftreten, speichern Sie Ihre Reproduktionsschritte, Fehlermeldungen, seltsamen Bildschirmaufnahmen und Links. Verwenden Sie diese Informationen, um Probleme im Code der Integrationsumgebung und in Konfigurationen oder Umgebungseinstellungen zu untersuchen und zu beheben.
 
 <table>
 <tr>
 <td style="width:150px">Benutzerverwaltung</td>
 <td>
 <ul>
-<li>Kundenkonten erstellen und bearbeiten, E-Mails überprüfen</li>
+<li>Erstellen und Bearbeiten von Kundenkonten, Überprüfen von E-Mails</li>
 <li>Erstellen von Administratorrollen für Händler</li>
-<li>Erstellen von Handelskonten mit bestimmten Rollen</li>
-<li>Testen des Händlerkontozugriffs pro Rolle</li>
+<li>Erstellen von Händlerkonten mit bestimmten Rollen</li>
+<li>Zugriff auf Händlerkonto pro Rolle testen</li>
 </ul>
 </td>
 </tr>
@@ -103,28 +103,28 @@ Wenn Probleme auftreten, speichern Sie Ihre Reproduktionsschritte, Fehlermeldung
 <td>
 <ul>
 <li>Erstellen eines Katalogs mit zugehörigen Produkten</li>
-<li>Erstellen Sie Produkte für Ihre Storefront, einschließlich aller Produkttypen: einfach, konfigurierbar, gebündelt</li>
+<li>Erstellen Sie Produkte für Ihre Storefront, einschließlich aller Produktarten: einfach, konfigurierbar, gebündelt</li>
 <li>Hinzufügen von Produktbildern, Farbfeldern, Videos und anderen Medienoptionen</li>
-<li>Preis, Rabatte, Preisregeln konfigurieren </li>
-<li>Konfigurieren Sie erweiterte Funktionen wie Preisspannen, vorgestellte Produkte und Verfügbarkeitsdaten.</li>
-<li>Inventar ändern und die korrekten Werte anzeigen und ändern pro Erhöhung und abgeschlossenem Kauf</li>
+<li>Konfigurieren von Preisen, Rabatten und Preisregeln </li>
+<li>Erweiterte Funktionen konfigurieren, einschließlich Preisspannen, vorgestellter Produkte, Verfügbarkeitsdaten</li>
+<li>Ändern des Bestands und Überprüfen der korrekten Werte Anzeige und Änderung pro Erhöhung und abgeschlossenem Kauf</li>
 </ul>
 </td>
 </tr>
 <tr>
-<td>Warenkorb und Checkout</td>
+<td>Warenkörbe und Checkout</td>
 <td>
 <ul>
 <li>Nach Produkten suchen und Filteroptionen auswählen</li>
-<li>Produkte aus Suchergebnissen, Kategorieseiten und Produktseiten zum Warenkorb hinzufügen</li>
-<li>Alle Produkttypen testen</li>
+<li>Fügen Sie Produkte aus Suchergebnissen, Kategorieseiten und Produktseiten in den Warenkorb</li>
+<li>Alle Produktarten testen</li>
 <li>Anzeigen des Warenkorbs und Ändern des Inhalts durch Entfernen oder Ändern von Beträgen </li>
-<li>Checkout, um die Bestellmengen mit den Warenkorb- und Produktinformationen zu überprüfen</li>
+<li>Zur Kasse gehen, um die Bestellbeträge mit dem Warenkorb und den Produktinformationen zu vergleichen</li>
 <li>Überprüfen, ob die Steuer für den Warenkorb korrekt berechnet wird</li>
-<li>Führen Sie einen Kauf mit verschiedenen Optionen durch: Fügen Sie einen Gutschein hinzu, wählen Sie Versand aus, geben Sie Versand- und Rechnungsinformationen sowie Zahlungsinformationen ein.</li>
-<li>Überprüfen der Zahlungskanäle und -optionen beim Checkout</li>
-<li>Überprüfen Sie auf On-Screen-Benachrichtigungen, im Kundenkonto aufgelistete Bestellungen und E-Mail-Benachrichtigungen.</li>
-<li>Test des Gastes und des Kunden-Checkouts</li>
+<li>Kauf mit verschiedenen Optionen abschließen: Gutschein hinzufügen, Versand auswählen, Versand- und Rechnungsinformationen und Zahlungsinformationen eingeben</li>
+<li>Überprüfen von Zahlungs-Gateways und -optionen während des Checkouts</li>
+<li>Auf Benachrichtigungen auf dem Bildschirm, im Kundenkonto aufgeführte Bestellungen und E-Mail-Benachrichtigungen prüfen</li>
+<li>Testen von Gast- und Kunden-Checkout</li>
 </ul>
 </td>
 </tr>
@@ -135,23 +135,23 @@ Wenn Probleme auftreten, speichern Sie Ihre Reproduktionsschritte, Fehlermeldung
 <li>Erstellen einer Bestellung für einen Kunden</li>
 <li>Suchen und Anzeigen von Bestellungen</li>
 <li>Ändern einer Bestellung durch Hinzufügen und Entfernen von Produkten, Ändern von Beträgen, Ändern von Versand- und Rechnungsinformationen</li>
-<li>Umgang mit Erstattungen</li>
-<li>Abbrechen einer Bestellung</li>
+<li>Verwalten einer Rückerstattung</li>
+<li>Stornieren einer Bestellung</li>
 <li>Couponcodes und Rabatte anwenden</li>
 </ul>
 </td>
 </tr>
 <tr>
-<td>Site-Content</td>
+<td>Site-Inhalte</td>
 <td>
 <ul>
-<li>Überprüfen Sie, ob alle Designs und Assets ordnungsgemäß geladen werden.</li>
-<li>Überprüfen der korrekten Anzeige von CSS, einschließlich responsiver Mediengrößen</li>
-<li>Überprüfen Sie die Geschäftsbedingungen, die Erstattungsrichtlinien und andere Informationen zu den Richtlinien.</li>
-<li>Kontaktinformationen, Links und mehr zu Ihrem Unternehmen</li>
-<li>Suchen Sie nach Produkten und Inhalten, überprüfen Sie die Filterung der Ergebnisse.</li>
-<li>Fußzeilenblock und oberste Navigationsbausteine überprüfen</li>
-<li>404- und Wartungsseiten testen</li>
+<li>Überprüfen, ob alle Designs und Assets korrekt geladen wurden</li>
+<li>Überprüfen der korrekten CSS-Anzeige, einschließlich der Größe responsiver Medien</li>
+<li>Prüfen Sie die Geschäftsbedingungen, die Rückerstattungsrichtlinie und andere Richtlinieninformationen.</li>
+<li>Überprüfen Sie Kontaktinformationen, Links und mehr über Ihr Unternehmen</li>
+<li>Nach Produkten und Inhalten suchen, Filterung der Ergebnisse überprüfen</li>
+<li>Überprüfen des Fußzeilenblocks und der oberen Navigationsblöcke</li>
+<li>Testen der 404- und Wartungsseiten</li>
 </ul>
 </td>
 </tr>
@@ -159,24 +159,24 @@ Wenn Probleme auftreten, speichern Sie Ihre Reproduktionsschritte, Fehlermeldung
 <td>Erweiterungen</td>
 <td>
 <ul>
-<li>Überprüfen Sie alle Erweiterungseinstellungen, insbesondere für Steuer-, Versand- und Zahlungsmodule (z. B. an Lager- und Finanzverwaltungssystem gesendete Bestellung).</li>
-<li>Testen aller benutzerdefinierten Module und installierten Erweiterungsinteraktionen</li>
+<li>Überprüfen Sie alle Erweiterungseinstellungen, insbesondere für alle Steuer-, Versand- und Zahlungsmodule (Beispiel: Bestellung an Lager- und Finanzverwaltungssystem gesendet).</li>
+<li>Testen aller angepassten Modul- und installierten Erweiterungsinteraktionen</li>
 <li>Überprüfen Sie die Daten auf alle Interaktionen, die abgeschlossen werden sollen (Zahlungen, Bestellungen, E-Mail-Benachrichtigungen).</li>
 <li>Überprüfen der Konfigurationen pro Umgebung für Ihre Erweiterungen</li>
-<li>Überprüfen der Abhängigkeiten zwischen Modulen und Erweiterungen funktioniert</li>
-<li>Alle Aktionen als Händler und Kunde überprüfen</li>
+<li>Überprüfen der Funktionsabhängigkeit zwischen Modulen und Erweiterungen</li>
+<li>Überprüfen Sie alle Aktionen als Händler und Kunde</li>
 </ul>
 </td>
 </tr>
 <tr>
-<td>Drittanbieterintegrationen</td>
+<td>Integrationen von Drittanbietern</td>
 <td>
 <ul>
-<li>Stellen Sie sicher, dass die Daten in Adobe Commerce korrekt gespeichert werden und exportiert, gepusht oder für den Drittanbieterdienst zugänglich sind (Beispiel: Bestellungen werden im Auftragsverwaltungssystem eines Drittanbieters angezeigt).</li>
-<li>Konfigurationen und Interaktionen pro Integration überprüfen</li>
-<li>Durchführen von Roundtrip-Tests mit Ursprung in Adobe Commerce und Ihrem Drittanbieter-Service</li>
+<li>Stellen Sie sicher, dass Daten korrekt in Adobe Commerce gespeichert werden und vom Drittanbieterdienst exportiert, per Push übertragen oder aufgerufen werden können (Beispiel: Bestellungen werden im Auftragsverwaltungssystem von Drittanbietern angezeigt)</li>
+<li>Überprüfen von Konfigurationen und Interaktionen pro Integration</li>
+<li>Durchführen von Roundtrip-Tests mit Ursprung in Adobe Commerce und Ihrem Drittanbieterdienst</li>
 <li>Überprüfen, ob die Authentifizierung abgeschlossen ist</li>
-<li>Prüfen Sie, ob protokollierte Probleme auftreten, um Code-Integrationen oder Fehlermeldungen in den Control Panels zu aktualisieren.</li>
+<li>Überprüfen Sie, ob protokollierte Probleme vorliegen, um Code-Integrationen oder Fehlermeldungen in Control Panels zu aktualisieren.</li>
 </ul>
 </td>
 </tr>
@@ -184,11 +184,11 @@ Wenn Probleme auftreten, speichern Sie Ihre Reproduktionsschritte, Fehlermeldung
 <td>Backend-Tests</td>
 <td>
 <ul>
-<li>Cache testen und löschen </li>
-<li>Neuindizierungen durchführen und Ergebnisse überprüfen</li>
-<li>Überprüfen Sie die Cron-Aufträge auf etwaige cron_schedule-Fehler.</li>
-<li>Überprüfen und Überprüfen von Shell-Skriptproblemen</li>
-<li>Prüfen Sie, ob protokollierte Probleme vorliegen: Anwendungsprotokolle, PHP-Protokolle, MySQL-Protokolle, E-Mail-Protokolle</li>
+<li>Testen und Löschen des Cache </li>
+<li>Durchführen von Neuindizierungen und Überprüfen der Ergebnisse</li>
+<li>Überprüfen Sie Cron-Aufträge, prüfen Sie sie auf etwaige cron_schedule-Fehler</li>
+<li>Überprüfen auf Probleme mit Shell-Skripten</li>
+<li>Überprüfen auf protokollierte Probleme: Anwendungsprotokolle, PHP-Protokolle, MySQL-Protokolle, E-Mail-Protokolle</li>
 </ul>
 </td>
 </tr>
@@ -196,24 +196,24 @@ Wenn Probleme auftreten, speichern Sie Ihre Reproduktionsschritte, Fehlermeldung
 
 ## Belastungs- und Belastungstests
 
-Vor dem Start sollten Sie in Ihren Staging- und Produktionsumgebungen umfangreiche Traffic- und Leistungstests durchführen. Prüfen Sie die Leistung Ihrer Frontend- und Backend-Prozesse.
+Vor dem Start sollten Sie umfassende Traffic- und Leistungstests für Ihre Staging- und Produktionsumgebungen durchführen. Erwägen Sie Leistungstests für Ihre Frontend- und Backend-Prozesse.
 
-Bevor Sie mit dem Testen beginnen, geben Sie ein Ticket mit Support ein, das die getesteten Umgebungen, die verwendeten Tools und den Zeitrahmen berät. Aktualisieren Sie das Ticket mit Ergebnissen und Informationen, um die Leistung zu verfolgen. Fügen Sie nach Abschluss des Tests Ihre aktualisierten Ergebnisse hinzu und beachten Sie, dass der Tickettest mit einem Datums- und Zeitstempel abgeschlossen ist.
+Bevor Sie mit dem Testen beginnen, geben Sie ein Ticket mit Support ein, in dem Sie die zu testenden Umgebungen, die von Ihnen verwendeten Tools und den Zeitrahmen angeben. Aktualisieren Sie das Ticket mit Ergebnissen und Informationen, um die Leistung zu verfolgen. Wenn Sie den Test abgeschlossen haben, fügen Sie Ihre aktualisierten Ergebnisse hinzu und notieren Sie, dass der Tickettest mit einem Datum- und Zeitstempel abgeschlossen ist.
 
-Überprüfen Sie die Optionen für das [Leistungs-Toolkit](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit) als Teil Ihres Vorab-Bereitstellungsprozesses.
+Überprüfen Sie die [Performance Toolkit](https://github.com/magento/magento2/tree/2.4/setup/performance-toolkit)-Optionen im Rahmen Ihres Bereitschaftsprozesses vor der Markteinführung.
 
-Verwenden Sie die folgenden Tools, um die bestmöglichen Ergebnisse zu erzielen:
+Um optimale Ergebnisse zu erzielen, verwenden Sie die folgenden Tools:
 
-- [Leistungstest der Anwendung](../environment/variables-post-deploy.md#ttfb_tested_pages) - Testen Sie die Leistung der Anwendung, indem Sie die Umgebungsvariable `TTFB_TESTED_PAGES` so konfigurieren, dass die Antwortzeit der Site getestet wird.
-- [Belagerung](https://www.joedog.org/siege-home/): Software für die Traffic-Formung und -Tests, um Ihren Store an die Grenze zu bringen. Treffer auf Ihrer Site mit einer konfigurierbaren Anzahl simulierter Clients. Belagerung unterstützt grundlegende Authentifizierungs-, Cookies-, HTTP-, HTTPS- und FTP-Protokolle.
-- [Jmeter](https://jmeter.apache.org)—Ausgezeichnete Belastungstests, mit denen die Leistung bei erhöhtem Traffic gemessen werden kann, z. B. bei Flash-Verkäufen. Erstellen Sie benutzerdefinierte Tests, die für Ihre Site ausgeführt werden.
-- [New Relic](../monitor/new-relic-service.md) (bereitgestellt): Hilft bei der Suche nach Prozessen und Bereichen der Site, was zu einer langsamen Leistung führt, da pro Aktion aufgetrackte Zeit wie das Senden von Daten, Abfragen, Redis usw. benötigt wird.
-- [WebPageTest](https://www.webpagetest.org) und [Pingdom](https://www.pingdom.com)—Die Echtzeitanalyse Ihrer Seiten lädt die Zeit mit verschiedenen Ausgangspunkten. Pingdom kann eine Gebühr verlangen. WebPageTest ist ein kostenloses Tool.
+- [Anwendungs-Leistungstest](../environment/variables-post-deploy.md#ttfb_tested_pages) - Testen Sie die Anwendungs-Leistung, indem Sie die `TTFB_TESTED_PAGES` Umgebungsvariable konfigurieren, um die Reaktionszeit der Site zu testen.
+- [Siege](https://www.joedog.org/siege-home/) - Traffic-Gestaltungs- und Testsoftware, die Ihr Geschäft an die Grenze bringt. Treten Sie mit einer konfigurierbaren Anzahl simulierter Clients auf Ihre Website. Siege unterstützt einfache Authentifizierung, Cookies, HTTP-, HTTPS- und FTP-Protokolle.
+- [Jmeter](https://jmeter.apache.org) - Hervorragende Belastungstests, um die Leistung bei Traffic-Spitzen wie bei Flash-Verkäufen zu messen. Erstellen Sie benutzerdefinierte Tests, die für Ihre Site ausgeführt werden.
+- [New Relic](../monitor/new-relic-service.md) (bereitgestellt) - Hilft beim Auffinden von Prozessen und Bereichen der Site, was zu einer langsamen Leistung führt, wobei die pro Aktion aufgezeichnete Zeit wie die Übertragung von Daten, Abfragen, Redis und mehr verwendet wird.
+- [WebPageTest](https://www.webpagetest.org) und [Pingdom](https://www.pingdom.com) - Echtzeit-Analyse der Ladezeit Ihrer Site-Seiten mit verschiedenen Ursprungsorten. Pingdom kann eine Gebühr verlangen. WebPageTest ist ein kostenloses Tool.
 
 ## Funktionstests
 
-Sie können das Magento Functional Testing Framework (MFTF) verwenden, um Funktionstests für Adobe Commerce aus der Cloud Docker-Umgebung abzuschließen. Siehe [Anwendungstests](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) im Handbuch _Cloud Docker für Commerce_.
+Sie können das Magento Functional Testing Framework (MFTF) verwenden, um Funktionstests für Adobe Commerce über die Cloud Docker-Umgebung abzuschließen. Siehe [Anwendungstests](https://developer.adobe.com/commerce/cloud-tools/docker/test/application-testing/) im Handbuch _Cloud Docker für Commerce_.
 
-## Einrichten des Sicherheitsscan-Tools
+## Einrichten des Sicherheits-Scan-Tools
 
-Es gibt ein kostenloses Sicherheits-Scan-Tool für Ihre Sites. Informationen zum Hinzufügen Ihrer Sites und Ausführen des Tools finden Sie unter [Sicherheitsscan-Tool](../launch/overview.md#set-up-the-security-scan-tool).
+Es gibt ein kostenloses Sicherheits-Scan-Tool für Ihre Websites. Informationen zum Hinzufügen Ihrer Sites und Ausführen des Tools finden Sie unter [Security Scan Tool](../launch/overview.md#set-up-the-security-scan-tool).

@@ -13,13 +13,13 @@ ht-degree: 0%
 
 # Leistungsüberwachung
 
-Sie können die folgenden Dienste verwenden, um die Leistung Ihrer Cloud-Umgebungen zu überwachen:
+Sie können die folgenden Services verwenden, um die Leistung Ihrer Cloud-Umgebungen zu überwachen:
 
-- [Statusbenachrichtigungen](../integrations/health-notifications.md): Eine Integration, die in Starter- und Pro-Integrationsumgebungen einen Hinweis auf Festplattenspeicherplatz bereitstellt.
-- [Beobachtung für Adobe Commerce-Handbuch](https://experienceleague.adobe.com/docs/commerce-operations/tools/observation-for-adobe-commerce/intro.html) - Umfassende Überwachung aller Commerce-Sites, die Protokolldaten aus verschiedenen Quellen kombiniert, um Sie bei der besseren Verwaltung der Adobe Commerce-Site-Leistung und der Diagnose von Problemen zu unterstützen.
+- [Statusbenachrichtigungen](../integrations/health-notifications.md) - Eine Integration, die einen Warnhinweis bezüglich Festplattenspeicher in Starter- und Pro-Integrationsumgebungen bereitstellt.
+- [Handbuch zu Observation for Adobe Commerce](https://experienceleague.adobe.com/docs/commerce-operations/tools/observation-for-adobe-commerce/intro.html) - Umfassende Überwachung für alle Commerce-Sites, die Protokolldaten aus verschiedenen Quellen kombiniert, um Ihnen dabei zu helfen, die Leistung Ihrer Adobe Commerce-Site besser zu verwalten und Probleme zu diagnostizieren.
 
-## New Relic-Dienst
+## New Relic-Service
 
-Überwachen Sie Ihre Adobe Commerce-Leistung in Staging- und Produktionsumgebungen mithilfe des [New Relic-Dienstes für die Leistungsüberwachung](new-relic-service.md).
+Überwachen Sie die Adobe Commerce-Leistung in Staging- und Produktionsumgebungen mit dem [New Relic-Service zur Leistungsüberwachung](new-relic-service.md).
 
-- [Adobe Richtlinie für verwaltete Warnhinweise](investigate-performance.md#monitor-performance-with-managed-alerts) - Eine Richtlinie, die verschiedene Leistungsmetriken verfolgt und eine Sammlung von Warnhinweisen enthält, die Schwellenwerte für Trigger-Warnungen und kritische Benachrichtigungen festlegen, wenn Site-Infrastruktur- oder Anwendungsprobleme die Leistung beeinträchtigen.
+- [Adobe-Richtlinie für verwaltete Warnhinweise](investigate-performance.md#monitor-performance-with-managed-alerts) - Eine Richtlinie, die verschiedene Leistungsmetriken verfolgt und eine Sammlung von Warnhinweisen enthält, die Schwellenwerte für Trigger-Warnungen und kritische Benachrichtigungen festlegen, wenn Probleme mit der Website-Infrastruktur oder der Anwendung die Leistung beeinträchtigen.

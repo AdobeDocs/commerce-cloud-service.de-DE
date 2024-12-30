@@ -1,6 +1,6 @@
 ---
 title: Bitbucket-Integration
-description: Erfahren Sie, wie Sie Ihr Adobe Commerce in das Cloud-Infrastrukturprojekt mit Bitbucket integrieren.
+description: Erfahren Sie, wie Sie Ihr Adobe Commerce in ein Cloud-Infrastrukturprojekt mit Bitbucket integrieren.
 feature: Cloud, Integration
 exl-id: cd3cffbe-268f-429b-a2ea-0306159f4a6b
 source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
@@ -12,29 +12,29 @@ ht-degree: 0%
 
 # Bitbucket-Integration
 
-Sie können Ihr Bitbucket-Repository so konfigurieren, dass beim Push von Code-Änderungen automatisch eine Umgebung erstellt und bereitgestellt wird. Diese Integration synchronisiert Ihr Bitbucket-Repository mit Ihrem Adobe Commerce-Konto für die Cloud-Infrastruktur.
+Sie können Ihr Bitbucket-Repository so konfigurieren, dass automatisch eine Umgebung erstellt und bereitgestellt wird, wenn Sie Code-Änderungen per Push übertragen. Diese Integration synchronisiert Ihr Bitbucket-Repository mit Ihrem Adobe Commerce in einem Cloud-Infrastrukturkonto.
 
 {{private-repository}}
 
 ## Voraussetzungen
 
-- Administratorzugriff auf das Adobe Commerce-Projekt in der Cloud-Infrastruktur
+- Administratorzugriff auf das Adobe Commerce on Cloud-Infrastrukturprojekt
 - [`magento-cloud` CLI](../dev-tools/cloud-cli-overview.md)-Tool in Ihrer lokalen Umgebung
 - Ein Bitbucket-Konto
 - Administratorzugriff auf das Bitbucket-Repository
-- Einen SSH-Zugriffsschlüssel für das Bitbucket-Repository
+- Ein SSH-Zugriffsschlüssel für das Bitbucket-Repository
 
 ## Repository vorbereiten
 
-Klonen Sie Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur von einer bestehenden Umgebung und migrieren Sie die Projektverzweigungen in ein neues, leeres Bitbucket-Repository, wobei Sie dieselben Zweignamen beibehalten. Es ist **wichtig**, eine identische Git-Struktur beizubehalten, damit Sie keine bestehenden Umgebungen oder Verzweigungen in Ihrer Adobe Commerce im Cloud-Infrastrukturprojekt verlieren.
+Klonen Sie Ihr Adobe Commerce in einem Cloud-Infrastrukturprojekt aus einer bestehenden Umgebung und migrieren Sie die Projektverzweigungen in ein neues, leeres Bitbucket-Repository, wobei dieselben Verzweigungsnamen beibehalten werden. Es ist **wichtig** eine identische Git-Struktur beizubehalten, damit Sie keine vorhandenen Umgebungen oder Verzweigungen in Ihrem Adobe Commerce on Cloud-Infrastrukturprojekt verlieren.
 
-1. Melden Sie sich über das Terminal bei Ihrem Adobe Commerce-Projekt für eine Cloud-Infrastruktur an.
+1. Melden Sie sich vom Terminal aus bei Ihrem Adobe Commerce on Cloud-Infrastrukturprojekt an.
 
    ```bash
    magento-cloud login
    ```
 
-1. Geben Sie Ihre Projekte an und kopieren Sie die Projekt-ID.
+1. Listen Sie Ihre Projekte auf und kopieren Sie die Projekt-ID.
 
    ```bash
    magento-cloud project:list
@@ -46,15 +46,15 @@ Klonen Sie Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur von einer beste
    magento-cloud project:get <project-ID>
    ```
 
-1. Fügen Sie Ihr Bitbucket-Repository als Remote-Ressource hinzu.
+1. Fügen Sie Ihr Bitbucket-Repository als Remote-Datenquelle hinzu.
 
    ```bash
    git remote add origin git@bitbucket.org:<user-name>/<repo-name>.git
    ```
 
-   Der Standardname für die Remote-Verbindung kann `origin` oder `magento` sein. Wenn `origin` vorhanden ist, können Sie einen anderen Namen wählen oder die vorhandene Referenz umbenennen oder löschen. Siehe [git-remote-Dokumentation](https://git-scm.com/docs/git-remote).
+   Der Standardname für die Remoteverbindung kann `origin` oder `magento` sein. Wenn `origin` vorhanden ist, können Sie einen anderen Namen auswählen oder den vorhandenen Verweis umbenennen oder löschen. Siehe [Git-Remote-Dokumentation](https://git-scm.com/docs/git-remote).
 
-1. Vergewissern Sie sich, dass Sie die Bitbucket-Fernbedienung korrekt hinzugefügt haben.
+1. Stellen Sie sicher, dass Sie den Bitbucket-Remote-Zugriff korrekt hinzugefügt haben.
 
    ```bash
    git remote -v
@@ -67,7 +67,7 @@ Klonen Sie Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur von einer beste
    origin git@bitbucket.org:<user-name>/<repo-name>.git (push)
    ```
 
-1. Übertragen Sie die Projektdateien in Ihr neues Bitbucket-Repository. Denken Sie daran, alle Zweignamen gleich zu halten.
+1. Übertragen Sie die Projektdateien in das neue Bitbucket-Repository. Denken Sie daran, alle Verzweigungsnamen gleich zu halten.
 
    ```bash
    git push -u origin master
@@ -77,35 +77,35 @@ Klonen Sie Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur von einer beste
 
 1. Stellen Sie sicher, dass Ihr Bitbucket-Repository alle Ihre Projektdateien enthält.
 
-## OAuth-Verbraucher erstellen
+## Erstellen eines OAuth-Verbrauchers
 
-Für die Bitbucket-Integration ist ein [OAuth-Benutzer](https://support.atlassian.com/bitbucket-cloud/docs/use-oauth-on-bitbucket-cloud/) erforderlich. Sie benötigen die OAuth `key` und `secret` von diesem Verbraucher, um den nächsten Abschnitt abzuschließen.
+Die Bitbucket-Integration erfordert einen [OAuth-Verbraucher](https://support.atlassian.com/bitbucket-cloud/docs/use-oauth-on-bitbucket-cloud/). Sie benötigen die OAuth-`key` und `secret` von diesem Verbraucher, um den nächsten Abschnitt abzuschließen.
 
-**Erstellen eines OAuth-Verbrauchers in Bitbucket**:
+**So erstellen Sie einen OAuth-Verbraucher in Bitbucket**:
 
-1. Melden Sie sich bei Ihrem [Bitbucket](https://id.atlassian.com/login) -Konto an.
+1. Melden Sie sich bei Ihrem [Bitbucket](https://id.atlassian.com/login)-Konto an.
 
 1. Klicken Sie auf **Einstellungen** > **Zugriffsverwaltung** > **OAuth**.
 
-1. Klicken Sie auf **Benutzer hinzufügen** und konfigurieren Sie ihn wie folgt:
+1. Klicken Sie **Verbraucher hinzufügen** und konfigurieren Sie ihn wie folgt:
 
-   ![Bitbucket OAuth-Verbraucherkonfiguration](../../assets/oauth-consumer-config.png)
+   ![Bitbucket-OAuth-Verbraucherkonfiguration](../../assets/oauth-consumer-config.png)
 
    >[!WARNING]
    >
-   >Eine gültige **Callback-URL** ist nicht erforderlich, Sie müssen jedoch einen Wert in dieses Feld eingeben, um die Integration erfolgreich abzuschließen.
+   >Eine gültige **Callback-URL** ist nicht erforderlich, aber Sie müssen einen Wert in dieses Feld eingeben, um die Integration erfolgreich abzuschließen.
 
-1. Klicken Sie auf **Speichern**.
+1. Klicken Sie **Speichern**.
 
-1. Klicken Sie auf den Verbraucher **Name** , um Ihre OAuth `key` und `secret` anzuzeigen.
+1. Klicken Sie auf Verbraucher **Name**, um Ihre OAuth-`key` und -`secret` anzuzeigen.
 
-1. Kopieren Sie Ihre OAuth `key` und `secret` für die Konfiguration der Integration.
+1. Kopieren Sie Ihre OAuth-`key` und -`secret` zum Konfigurieren der Integration.
 
 ## Integration konfigurieren
 
-1. Navigieren Sie vom Terminal zu Ihrem Adobe Commerce-Projekt in der Cloud-Infrastruktur.
+1. Navigieren Sie vom Terminal zu Ihrem Adobe Commerce on Cloud-Infrastrukturprojekt.
 
-1. Erstellen Sie eine temporäre Datei mit dem Namen `bitbucket.json` und fügen Sie Folgendes hinzu, wobei Sie die Variablen in spitzen Klammern durch Ihre Werte ersetzen:
+1. Erstellen Sie eine temporäre Datei mit dem Namen `bitbucket.json` und fügen Sie Folgendes hinzu. Ersetzen Sie dabei die Variablen in den spitzen Klammern durch Ihre Werte:
 
    ```json
    {
@@ -124,21 +124,21 @@ Für die Bitbucket-Integration ist ein [OAuth-Benutzer](https://support.atlassia
 
    >[!TIP]
    >
-   >Verwenden Sie unbedingt den Namen Ihres Bitbucket-Repositorys und nicht die URL. Die Integration schlägt fehl, wenn Sie eine URL verwenden.
+   >Stellen Sie sicher, dass Sie den Namen Ihres Bitbucket-Repositorys und nicht die URL verwenden. Die Integration schlägt fehl, wenn eine URL verwendet wird.
 
-1. Fügen Sie die Integration mit dem CLI-Tool `magento-cloud` zu Ihrem Projekt hinzu.
+1. Fügen Sie die Integration mithilfe des `magento-cloud` CLI-Tools zu Ihrem Projekt hinzu.
 
    >[!WARNING]
    >
-   >Der folgende Befehl überschreibt den Code _all_ in Ihrem Adobe Commerce-Projekt in der Cloud-Infrastruktur mit Code aus Ihrem Bitbucket-Repository. Dies umfasst alle Verzweigungen, einschließlich der Verzweigung `production` . Diese Aktion erfolgt sofort und kann nicht rückgängig gemacht werden. Als Best Practice ist es wichtig, alle Verzweigungen aus Ihrem Adobe Commerce-Projekt in der Cloud-Infrastruktur zu klonen und sie in Ihr Bitbucket-Repository zu übertragen, **bevor** die Bitbucket-Integration hinzufügt.
+   >Der folgende Befehl überschreibt _all_-Code in Ihrem Adobe Commerce in einem Cloud-Infrastrukturprojekt mit Code aus Ihrem Bitbucket-Repository. Dies umfasst alle Verzweigungen, einschließlich der `production`. Diese Aktion erfolgt sofort und kann nicht rückgängig gemacht werden. Als Best Practice ist es wichtig, alle Ihre Verzweigungen aus Ihrem Adobe Commerce in einem Cloud-Infrastrukturprojekt zu klonen und in Ihr Bitbucket-Repository zu pushen, **die Bitbucket** Integration hinzuzufügen.
 
    ```bash
    magento-cloud project:curl -p '<project-ID>' /integrations -i -X POST -d "$(< bitbucket.json)"
    ```
 
-   Dadurch wird eine lange HTTP-Antwort mit Headern zurückgegeben. Bei erfolgreicher Integration wird der Status-Code 200 oder 201 zurückgegeben. Der Status 400 oder höher zeigt an, dass ein Fehler aufgetreten ist.
+   Dadurch wird eine lange HTTP-Antwort mit Kopfzeilen zurückgegeben. Bei einer erfolgreichen Integration wird der Status-Code 200 oder 201 zurückgegeben. Ein Status von 400 oder höher zeigt an, dass ein Fehler aufgetreten ist.
 
-1. Löschen Sie die temporäre Datei &quot;`bitbucket.json`&quot;.
+1. Löschen Sie die temporäre `bitbucket.json`.
 
 1. Überprüfen Sie die Projektintegration.
 
@@ -156,41 +156,41 @@ Für die Bitbucket-Integration ist ein [OAuth-Benutzer](https://support.atlassia
    +----------+-----------+--------------------------------------------------------------------------------+
    ```
 
-   Notieren Sie sich die **Hook-URL** , um einen Webhook in BitBucket zu konfigurieren.
+   Notieren Sie sich die **Hook-URL**, um einen Webhook in BitBucket zu konfigurieren.
 
 ### Webhook in BitBucket hinzufügen
 
-Um Ereignisse wie Push-Benachrichtigungen mit Ihrem Cloud Git-Server zu kommunizieren, benötigen Sie einen Webhook für Ihr BitBucket-Repository. Die auf dieser Seite beschriebene Methode zum Einrichten einer Bitbucket-Integration erstellt automatisch einen Webhook, wenn sie korrekt ausgeführt wird. Es ist wichtig, den Webhook zu überprüfen, um das Erstellen mehrerer Integrationen zu vermeiden.
+Um Ereignisse - z. B. eine Push-Benachrichtigung - mit Ihrem Cloud Git-Server zu kommunizieren, ist ein Webhook für Ihr BitBucket-Repository erforderlich. Die Methode zum Einrichten einer auf dieser Seite beschriebenen Bitbucket-Integration erstellt bei korrekter Befolgung automatisch einen Webhook. Es ist wichtig, den Webhook zu überprüfen, um zu vermeiden, dass mehrere Integrationen erstellt werden.
 
-1. Melden Sie sich bei Ihrem [Bitbucket](https://id.atlassian.com/login) -Konto an.
+1. Melden Sie sich bei Ihrem [Bitbucket](https://id.atlassian.com/login)-Konto an.
 
-1. Klicken Sie auf **Repositorys** und wählen Sie Ihr Projekt aus.
+1. Klicken Sie **Repositorys** und wählen Sie Ihr Projekt aus.
 
-1. Klicken Sie auf **Repository-Einstellungen** > **Workflow** > **Webhooks**.
+1. Klicken Sie **Repository-Einstellungen** > **Workflow** > **Webhooks**.
 
 1. Überprüfen Sie den Webhook, bevor Sie fortfahren.
 
-   Wenn der Hook aktiv ist, überspringen Sie die verbleibenden Schritte und [Testen Sie die Integration](#test-the-integration). Der Hook sollte einen ähnlichen Namen haben wie **&quot;Adobe Commerce on cloud Infrastructure &lt;project_id>&quot;** und ein Hook-URL-Format wie: `https://<zone>.magento.cloud/api/projects/<project_id>/integrations/<id>/hook`
+   Wenn der Hook aktiv ist, überspringen Sie die verbleibenden Schritte und [ Sie die Integration ](#test-the-integration). Der Hook sollte einen Namen ähnlich **&quot;Adobe Commerce on Cloud Infrastructure &lt;project_id>&quot;** und ein Hook-URL-Format ähnlich `https://<zone>.magento.cloud/api/projects/<project_id>/integrations/<id>/hook` haben.
 
-1. Klicken Sie auf **Webhook hinzufügen**.
+1. Klicken Sie **Webhook hinzufügen**.
 
-1. Bearbeiten Sie in der Ansicht _Neuen Webhook hinzufügen_ die folgenden Felder:
+1. Bearbeiten _in der Ansicht_ Neuen Webhook hinzufügen“ die folgenden Felder:
 
-   - **Titel**: Adobe Commerce-Integration
-   - **URL**: Verwenden Sie die Hook-URL aus Ihrer `magento-cloud` Integrationsliste.
-   - **Trigger**: Der Standardwert ist ein einfacher _Repository-Push-Vorgang_
+   - **Title**: Adobe Commerce-Integration
+   - **URL**: Verwenden Sie die Hook-URL aus Ihrer `magento-cloud`-Integrationsliste
+   - **Trigger**: Der Standardwert ist ein einfacher _Repository-Push_
 
-1. Klicken Sie auf **Speichern**.
+1. Klicken Sie **Speichern**.
 
-### Integration testen
+### Testen der Integration
 
-Nach der Konfiguration der Bitbucket-Integration können Sie mithilfe der `magento-cloud`-CLI überprüfen, ob die Integration funktioniert:
+Nach dem Konfigurieren der Bitbucket-Integration können Sie mithilfe der `magento-cloud` CLI überprüfen, ob die Integration funktionsfähig ist:
 
 ```bash
 magento-cloud integration:validate
 ```
 
-Alternativ können Sie sie testen, indem Sie eine einfache Änderung an Ihr Bitbucket-Repository senden.
+Sie können es auch testen, indem Sie eine einfache Änderung an Ihr Bitbucket-Repository senden.
 
 1. Erstellen Sie eine Testdatei.
 
@@ -198,23 +198,23 @@ Alternativ können Sie sie testen, indem Sie eine einfache Änderung an Ihr Bitb
    touch test.md
    ```
 
-1. Übertragen Sie die Änderung in Ihr Bitbucket-Repository.
+1. Übertragen Sie die Änderung in das Bitbucket-Repository und übertragen Sie sie.
 
    ```bash
    git add . && git commit -m "Testing Bitbucket integration" && git push
    ```
 
-1. Melden Sie sich bei [[!DNL Cloud Console]](../project/overview.md) an und überprüfen Sie, ob Ihre Commit-Nachricht angezeigt wird und Ihr Projekt bereitgestellt wird.
+1. Melden Sie sich bei der [[!DNL Cloud Console]](../project/overview.md) an und stellen Sie sicher, dass Ihre Commit-Nachricht angezeigt wird und Ihr Projekt bereitgestellt wird.
 
    ![Testen der Bitbucket-Integration](../../assets/bitbucket-integration.png)
 
-## Cloud-Verzweigung erstellen
+## Erstellen einer Cloud-Verzweigung
 
-Die Bitbucket-Integration kann keine neuen Umgebungen in Ihrer Adobe Commerce im Cloud-Infrastrukturprojekt aktivieren. Wenn Sie eine Umgebung mit Bitbucket erstellen, müssen Sie die Umgebung manuell aktivieren. Um diesen zusätzlichen Schritt zu vermeiden, empfiehlt es sich, Umgebungen mit dem `magento-cloud` CLI-Tool oder dem [!DNL Cloud Console] zu erstellen.
+Die Bitbucket-Integration kann keine neuen Umgebungen in Ihrem Adobe Commerce in einem Cloud-Infrastrukturprojekt aktivieren. Wenn Sie eine Umgebung mit Bitbucket erstellen, müssen Sie die Umgebung manuell aktivieren. Um diesen zusätzlichen Schritt zu vermeiden, empfiehlt es sich, Umgebungen mit dem `magento-cloud` CLI-Tool oder dem [!DNL Cloud Console] zu erstellen.
 
-**So aktivieren Sie eine mit Bitbucket** erstellte Verzweigung:
+**So aktivieren Sie eine mit Bitbucket erstellte Verzweigung**:
 
-1. Verwenden Sie die CLI `magento-cloud` , um den Zweig zu verschieben.
+1. Verwenden Sie die `magento-cloud` CLI, um die Verzweigung per Push zu übertragen.
 
    ```bash
    magento-cloud environment:push from-bitbucket
@@ -245,17 +245,17 @@ Die Bitbucket-Integration kann keine neuen Umgebungen in Ihrer Adobe Commerce im
    * - Indicates the current environment
    ```
 
-Nachdem Sie eine Umgebung erstellt haben, können Sie die entsprechende Verzweigung mithilfe regulärer Git-Befehle an Ihr Remote-Bitbucket-Repository übertragen. Nachfolgende Änderungen an Ihrer Verzweigung in Bitbucket erstellen und stellen die Umgebung automatisch bereit.
+Nachdem Sie eine Umgebung erstellt haben, können Sie die entsprechende Verzweigung mit regulären Git-Befehlen an Ihr Remote-Bitbucket-Repository pushen. Nachfolgende Änderungen an Ihrer Verzweigung in Bitbucket erstellen und stellen die Umgebung automatisch bereit.
 
 ## Integration entfernen
 
-Sie können die Bitbucket-Integration sicher aus Ihrem Projekt entfernen, ohne den Code zu beeinträchtigen.
+Sie können die Bitbucket-Integration sicher aus Ihrem Projekt entfernen, ohne den Code zu beeinflussen.
 
-**Entfernen der Bitbucket-Integration**:
+**So entfernen Sie die Bitbucket-Integration**:
 
-1. Melden Sie sich über das Terminal bei Ihrem Adobe Commerce-Projekt für eine Cloud-Infrastruktur an.
+1. Melden Sie sich vom Terminal aus bei Ihrem Adobe Commerce on Cloud-Infrastrukturprojekt an.
 
-1. Geben Sie Ihre Integrationen an. Sie benötigen die Bitbucket-Integrations-ID, um den nächsten Schritt abzuschließen.
+1. Auflisten der Integrationen. Sie benötigen die Bitbucket-Integrations-ID , um den nächsten Schritt abzuschließen.
 
    ```bash
    magento-cloud integration:list
@@ -267,19 +267,19 @@ Sie können die Bitbucket-Integration sicher aus Ihrem Projekt entfernen, ohne d
    magento-cloud integration:delete <int-ID>
    ```
 
-Außerdem können Sie die Bitbucket-Integration entfernen, indem Sie sich bei Ihrem Bitbucket-Konto anmelden und die OAuth-Finanzhilfe für das Konto _Einstellungen_ widerrufen.
+Sie können die Bitbucket-Integration auch entfernen, indem Sie sich bei Ihrem Bitbucket-Konto anmelden und die OAuth-Gewährung auf der Seite „Einstellungen _des Kontos_.
 
-## Integration von Bitbucket-Servern
+## Bitbucket-Serverintegration
 
-Um die Bitbucket-Serverintegration zu verwenden, benötigen Sie Folgendes:
+Um die Bitbucket-Server-Integration zu verwenden, benötigen Sie Folgendes:
 
-- [Bitbucket-Zugriffstoken](https://confluence.atlassian.com/bitbucketserver/http-access-tokens-939515499.html) - Generieren Sie ein Token, das dem Projekt `read` Zugriff und dem Repository `admin` Zugriff gewährt
-- [Bitbucket-Server-URL](https://confluence.atlassian.com/bitbucketserver/specify-the-bitbucket-base-url-776640392.html) - Fügen Sie die Basis-URL Ihrer Bitbucket-Instanz hinzu.
+- [Bitbucket-Zugriffstoken](https://confluence.atlassian.com/bitbucketserver/http-access-tokens-939515499.html) - Generieren eines Tokens, das Project `read` Zugriff und Repository-`admin` gewährt
+- [Bitbucket-Server-URL](https://confluence.atlassian.com/bitbucketserver/specify-the-bitbucket-base-url-776640392.html) - Fügen Sie die Basis-URL Ihrer Bitbucket-Instanz hinzu
 
-Sie können zwar die Cloud-CLI verwenden, um durch die Integrationsschritte des Bitbucket-Servers zu navigieren, der vollständige Befehl sieht jedoch wie folgt aus:
+Sie können die Cloud-CLI zwar verwenden, um die Schritte zur Integration des Bitbucket-Servers zu durchlaufen, der vollständige Befehl sieht jedoch ähnlich wie der folgende aus:
 
 ```bash
 magento-cloud integration:add --type=bitbucket_server --base-url=<bitbucket-url> --username=<username> --token=<bitbucket-access-token> --project=<project-ID>
 ```
 
-Verwenden Sie den Hilfebefehl, um mehr Nutzungsanforderungen und -optionen zu erhalten: `magento-cloud integration:add --help`
+Verwenden Sie den Hilfe-Befehl für weitere Nutzungsanforderungen und Optionen: `magento-cloud integration:add --help`

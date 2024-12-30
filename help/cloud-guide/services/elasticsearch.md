@@ -1,6 +1,6 @@
 ---
-title: Elasticsearch-Dienst einrichten
-description: Erfahren Sie, wie Sie den Elasticsearch-Dienst für Adobe Commerce in der Cloud-Infrastruktur aktivieren.
+title: Einrichten des Elasticsearch-Service
+description: Erfahren Sie, wie Sie den Elasticsearch-Service für Adobe Commerce in der Cloud-Infrastruktur aktivieren.
 feature: Cloud, Search, Services
 exl-id: ac559cbb-342a-4756-ade5-49eba4827965
 source-git-commit: 38c29e3a2cee1658bb73922f0f56fdfa84af5a6f
@@ -10,28 +10,28 @@ ht-degree: 0%
 
 ---
 
-# Elasticsearch-Dienst einrichten
+# Einrichten des Elasticsearch-Service
 
-[Elasticsearch](https://www.elastic.co) ist ein Open-Source-Produkt, mit dem Sie Daten aus beliebigen Quellen aufnehmen, in beliebigen Formaten suchen und in Echtzeit visualisieren können.
+[Elasticsearch](https://www.elastic.co) ist ein Open-Source-Produkt, mit dem Sie Daten aus beliebigen Quellen und Formaten in Echtzeit suchen und visualisieren können.
 
 {{elasticsearch-support}}
 
-Informationen zur Adobe Commerce-Version 2.4.4 und höher finden Sie unter [Einrichten des OpenSearch-Dienstes](opensearch.md).
+Informationen zu Adobe Commerce Version 2.4.4 und höher finden Sie unter [Einrichten des OpenSearch-Service](opensearch.md).
 
 - Elasticsearch führt schnelle und erweiterte Suchen nach Produkten im Produktkatalog durch
-- Elasticsearch Analytics unterstützt mehrere Sprachen
+- Elasticsearch Analyzer unterstützen mehrere Sprachen
 - Unterstützt Stoppwörter und Synonyme
-- Die Indizierung hat keine Auswirkungen auf Kunden, bis der Neuindizierungsvorgang abgeschlossen ist
+- Die Indizierung wirkt sich erst dann auf Kunden aus, wenn der Neuindizierungsvorgang abgeschlossen ist
 
 >[!TIP]
 >
->Adobe empfiehlt, immer Elasticsearch für Ihr Adobe Commerce-Projekt in der Cloud-Infrastruktur einzurichten, selbst wenn Sie ein Tool für die Drittanbietersuche für Ihre Adobe Commerce-Anwendung konfigurieren möchten. Das Einrichten von Elasticsearch bietet eine Ausweichoption für den Fall, dass das Suchwerkzeug eines Drittanbieters fehlschlägt.
+>Adobe empfiehlt, immer Elasticsearch für Ihr Adobe Commerce on Cloud Infrastructure-Projekt einzurichten, auch wenn Sie ein Drittanbieter-Suchwerkzeug für Ihr Adobe Commerce-Programm konfigurieren möchten. Das Einrichten von Elasticsearch bietet eine Fallback-Option für den Fall, dass das Such-Tool eines Drittanbieters fehlschlägt.
 
 {{service-instruction}}
 
 **So aktivieren Sie Elasticsearch**:
 
-1. Fügen Sie bei Starterprojekten den Dienst `elasticsearch` zur Datei `.magento/services.yaml` hinzu, wobei die Elasticsearch-Version und der zugewiesene Speicherplatz in MB vorhanden sind.
+1. Fügen Sie für Einstiegsprojekte den `elasticsearch`-Service zur `.magento/services.yaml` hinzu, wobei die Elasticsearch-Version und der zugewiesene Speicherplatz in MB angegeben werden.
 
    ```yaml
    elasticsearch:
@@ -39,36 +39,36 @@ Informationen zur Adobe Commerce-Version 2.4.4 und höher finden Sie unter [Einr
        disk: 1024
    ```
 
-   Für Pro-Projekte müssen Sie ein Adobe Commerce-Supportticket senden, um die Elasticsearch-Version in den Staging- und Produktionsumgebungen zu ändern.
+   Bei Pro-Projekten müssen Sie ein Adobe Commerce-Support-Ticket einreichen, um die Elasticsearch-Version in der Staging- und Produktionsumgebung zu ändern.
 
-1. Legen Sie die Eigenschaft `relationships` in der Datei `.magento.app.yaml` fest.
+1. Legen Sie die `relationships`-Eigenschaft in der `.magento.app.yaml` fest.
 
    ```yaml
    relationships:
        elasticsearch: "elasticsearch:elasticsearch"
    ```
 
-1. Hinzufügen, Übertragen und Push-Code-Änderungen.
+1. Code-Änderungen hinzufügen, übertragen und per Push übertragen.
 
    ```bash
    git add .magento/services.yaml .magento.app.yaml && git commit -m "Enable Elasticsearch" && git push origin <branch-name>
    ```
 
-   Informationen dazu, wie sich diese Änderungen auf Ihre Umgebungen auswirken, finden Sie unter [Dienste](services-yaml.md).
+   Informationen darüber, wie sich diese Änderungen auf Ihre Umgebungen auswirken, finden Sie unter [Services](services-yaml.md).
 
-1. Nachdem der Bereitstellungsprozess abgeschlossen ist, melden Sie sich mit SSH bei der Remote-Umgebung an.
+1. Verwenden Sie nach Abschluss des Bereitstellungsprozesses SSH, um sich bei der Remote-Umgebung anzumelden.
 
    ```bash
    magento-cloud ssh
    ```
 
-1. Indizieren Sie den Index der Katalogsuche neu.
+1. Indizieren Sie den Katalogsuchindex neu.
 
    ```bash
    bin/magento indexer:reindex catalogsearch_fulltext
    ```
 
-1. Bereinigen Sie den Cache.
+1. Reinigen Sie den Cache.
 
    ```bash
    bin/magento cache:clean
@@ -76,21 +76,21 @@ Informationen zur Adobe Commerce-Version 2.4.4 und höher finden Sie unter [Einr
 
 {{service-change-tip}}
 
-## Elasticsearch-Softwarekompatibilität
+## Kompatibilität der Elasticsearch-Software
 
-Wenn Sie Adobe Commerce in einem Cloud-Infrastrukturprojekt installieren oder aktualisieren, prüfen Sie immer, ob die Elasticsearch-Dienstversion mit dem [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php)-Client für Adobe Commerce kompatibel ist.
+Wenn Sie Ihr Adobe Commerce in einem Cloud-Infrastrukturprojekt installieren oder aktualisieren, überprüfen Sie immer die Kompatibilität zwischen der Elasticsearch-Service-Version und dem [Elasticsearch PHP](https://github.com/elastic/elasticsearch-php)-Client für Adobe Commerce.
 
-- **Erstmaliges Setup** - Vergewissern Sie sich, dass die in der Datei `services.yaml` angegebene Elasticsearch-Version mit dem für Adobe Commerce konfigurierten Elasticsearch-PHP-Client kompatibel ist.
+- **Erstmaliges Setup**-Vergewissern Sie sich, dass die in der `services.yaml` angegebene Elasticsearch-Version mit dem für Adobe Commerce konfigurierten Elasticsearch PHP-Client kompatibel ist.
 
-- **Projektaktualisierung** - Überprüfen Sie, ob der Elasticsearch-PHP-Client in der neuen Anwendungsversion mit der in der Cloud-Infrastruktur installierten Elasticsearch-Dienstversion kompatibel ist.
+- **Projekt-Upgrade**-Überprüfen Sie, ob der Elasticsearch-PHP-Client in der neuen Anwendungsversion mit der Elasticsearch-Service-Version kompatibel ist, die in der Cloud-Infrastruktur installiert ist.
 
-Die Unterstützung von Dienstversionen und Kompatibilität für Adobe Commerce in der Cloud-Infrastruktur wird durch Versionen bestimmt, die in der Cloud-Infrastruktur bereitgestellt werden. Manchmal unterscheidet sich die Unterstützung von Versionen, die von lokalen Adobe Commerce-Implementierungen unterstützt werden. Siehe [Dienstversionen](services-yaml.md#service-versions).
+Die Unterstützung der Service-Version und der Kompatibilität für Adobe Commerce in der Cloud-Infrastruktur wird von den Versionen bestimmt, die in der Cloud-Infrastruktur bereitgestellt werden, und unterscheidet sich manchmal von den Versionen, die von Adobe Commerce On-Premise-Bereitstellungen unterstützt werden. Siehe [Service-Versionen](services-yaml.md#service-versions).
 
-**Überprüfen der Kompatibilität der Elasticsearch-Software**:
+**So überprüfen Sie die Kompatibilität der Elasticsearch-Software**:
 
-1. Wechseln Sie auf Ihrer lokalen Workstation zum Projektverzeichnis.
+1. Wechseln Sie auf Ihrer lokalen Workstation in Ihr Projektverzeichnis.
 
-1. Zeigen Sie die Details des Elasticsearchs für die aktive Umgebung an.
+1. Elasticsearch-Details für die aktive Umgebung anzeigen.
 
    ```bash
    magento-cloud relationships --property=elasticsearch
@@ -102,7 +102,7 @@ Die Unterstützung von Dienstversionen und Kompatibilität für Adobe Commerce i
    magento-cloud ssh
    ```
 
-1. Überprüfen Sie die Composer-Paketversion auf `elasticsearch/elasticsearch`.
+1. Überprüfen Sie die Version des Composer-Pakets auf `elasticsearch/elasticsearch`.
 
    ```bash
    composer show elasticsearch/elasticsearch
@@ -125,15 +125,15 @@ Die Unterstützung von Dienstversionen und Kompatibilität für Adobe Commerce i
    names    : elasticsearch/elasticsearch
    ```
 
-   Außerdem finden Sie die Elasticsearch-PHP-Clientversion in der Datei `composer.lock` im Stammverzeichnis der Umgebung.
+   Außerdem finden Sie die Elasticsearch-PHP-Client-Version in der `composer.lock`-Datei im Umgebungsstammverzeichnis.
 
-1. Rufen Sie in der Befehlszeile die Verbindungsdetails des Elasticsearch-Diensts ab.
+1. Rufen Sie in der Befehlszeile die Verbindungsdetails des Elasticsearch-Services ab.
 
    ```bash
    vendor/bin/ece-tools env:config:show services
    ```
 
-   Suchen Sie in der Antwort die IP-Adresse für den Elasticsearch-Dienst-Endpunkt:
+   Suchen Sie in der Antwort die IP-Adresse für den Endpunkt des Elasticsearch-Services:
 
    ```
    | elasticsearch:                                                                                                  |
@@ -156,7 +156,7 @@ Die Unterstützung von Dienstversionen und Kompatibilität für Adobe Commerce i
    +------------------------------------------+----------------------------------------------------------------------+
    ```
 
-1. Rufen Sie den installierten Elasticsearch-Dienst `version:number` vom Dienstendpunkt ab.
+1. Rufen Sie die installierte Elasticsearch-Service-`version:number` vom Service-Endpunkt ab.
 
    ```bash
    curl -XGET <elasticsearch-service-endpoint-ip-address>:9200/
@@ -182,33 +182,33 @@ Die Unterstützung von Dienstversionen und Kompatibilität für Adobe Commerce i
    }
    ```
 
-1. Überprüfen Sie die Versionskompatibilität zwischen dem Elasticsearch-Dienst und dem PHP-Client.
+1. Überprüfen Sie die Versionskompatibilität zwischen dem Elasticsearch-Service und dem PHP-Client.
 
-   Wenn die Versionen inkompatibel sind, nehmen Sie eine der folgenden Aktualisierungen an Ihrer Umgebungskonfiguration vor:
+   Wenn die Versionen nicht kompatibel sind, führen Sie eine der folgenden Aktualisierungen an Ihrer Umgebungskonfiguration durch:
 
-   - Ändern Sie den Elasticsearch-PHP-Client in eine Version, die mit der Elasticsearch-Dienstversion kompatibel ist.
+   - Ändern Sie den Elasticsearch-PHP-Client auf eine Version, die mit der Elasticsearch-Service-Version kompatibel ist.
 
      ```bash
      composer require "elasticsearch/elasticsearch:~<version>"
      ```
 
-   - Ändern Sie die Version des Elasticsearch-Diensts in der Datei `services.yaml` in eine Version, die mit dem Elasticsearch-PHP-Client kompatibel ist.
+   - Ändern Sie die Version des Elasticsearch-Dienstes in der Datei `services.yaml` in eine Version, die mit dem PHP-Client von Elasticsearch kompatibel ist.
 
      {{pro-update-service}}
 
-## Elasticsearch-Dienst neu starten
+## Elasticsearch-Service neu starten
 
-Wenn Sie den Dienst [Elasticsearch](https://www.elastic.co) neu starten müssen, müssen Sie sich an den Adobe Commerce-Support wenden.
+Wenn Sie den [Elasticsearch ](https://www.elastic.co)-Service neu starten müssen, wenden Sie sich an den Adobe Commerce-Support.
 
 ## Zusätzliche Suchkonfiguration
 
-- Standardmäßig wird die Suchkonfiguration für Cloud-Umgebungen bei jeder Bereitstellung neu generiert. Sie können die Variable &quot;`SEARCH_CONFIGURATION` deploy&quot;verwenden, um benutzerdefinierte Sucheinstellungen zwischen Implementierungen beizubehalten. Siehe [Bereitstellen von Variablen](../environment/variables-deploy.md#search_configuration).
+- Standardmäßig wird die Suchkonfiguration für Cloud-Umgebungen bei jeder Bereitstellung neu generiert. Sie können die Variable `SEARCH_CONFIGURATION`-Bereitstellung verwenden, um benutzerdefinierte Sucheinstellungen zwischen Bereitstellungen beizubehalten. Siehe [Bereitstellen von Variablen](../environment/variables-deploy.md#search_configuration).
 
-- Nachdem Sie den Projektdienst für Ihr Elasticsearch eingerichtet haben, verwenden Sie die Administrator-Benutzeroberfläche, um die Elasticsearch-Verbindung zu testen und die Elasticsearch-Einstellungen für Adobe Commerce anzupassen.
+- Nachdem Sie den Elasticsearch-Service für Ihr Projekt eingerichtet haben, verwenden Sie die Admin-Benutzeroberfläche, um die Elasticsearch-Verbindung zu testen und Elasticsearch-Einstellungen für Adobe Commerce anzupassen.
 
 ### Hinzufügen von Plug-ins für Elasticsearch
 
-Optional können Sie Plugins für Elasticsearch hinzufügen, indem Sie den Abschnitt `configuration:plugins` zum Elasticsearch-Dienst in der Datei `.magento/services.yaml` hinzufügen. Beispielsweise ermöglicht der folgende Code die Plug-ins für die ICU-Analyse und die Phonetic-Analyse.
+Optional können Sie Plug-ins für Elasticsearch hinzufügen, indem Sie den `configuration:plugins` Abschnitt zum Elasticsearch-Service in der `.magento/services.yaml` hinzufügen. Beispielsweise aktiviert der folgende Code die Plug-ins für die ICU-Analyse und die phonetische Analyse .
 
 ```yaml
 elasticsearch:
@@ -220,17 +220,17 @@ elasticsearch:
             - analysis-phonetic
 ```
 
-Wenn Sie das Drittanbieter-Plug-in der Elastic Suite verwenden, müssen Sie [das `ece-tools` -Paket](../dev-tools/update-package.md) auf Version 2002.0.19 oder höher aktualisieren.
-Fügen Sie beim Einrichten der Elastic Suite die Konfigurationseinstellungen zur Variablen &quot;`ELASTICSUITE_CONFIGURATION` deploy&quot;hinzu. Mit dieser Konfiguration werden die Einstellungen über verschiedene Bereitstellungen hinweg gespeichert.
+Wenn Sie das Elastic Suite-Drittanbieter-Plug-in verwenden, müssen Sie [das `ece-tools`-Paket aktualisieren](../dev-tools/update-package.md) auf Version 2002.0.19 oder höher.
+Fügen Sie beim Einrichten von Elastic Suite die Konfigurationseinstellungen zur `ELASTICSUITE_CONFIGURATION` Bereitstellungsvariablen hinzu. Diese Konfiguration speichert die Einstellungen in allen Bereitstellungen.
 
-### Entfernen von Plug-ins für Elasticsearch
+### Plug-ins für Elasticsearch entfernen
 
-Wenn Sie die Plug-in-Einträge aus `elasticsearch:` in `.magento/services.yaml` entfernen, werden sie nicht wie erwartet deinstalliert oder deaktiviert. Sie müssen Ihre Elasticsearch-Daten neu indizieren. Dieses Verhalten soll verhindern, dass Daten, die von diesen Plug-ins abhängen, verloren gehen oder beschädigt werden.
+Wenn Sie die Plug-in-Einträge aus `elasticsearch:` in `.magento/services.yaml` entfernen, werden sie nicht wie erwartet deinstalliert oder deaktiviert. Sie müssen Ihre Elasticsearch-Daten neu indizieren. Dieses Verhalten ist beabsichtigt, einen möglichen Verlust oder eine Beschädigung von Daten zu verhindern, die von diesen Plug-ins abhängen.
 
 **So entfernen Sie Elasticsearch-Plug-ins**:
 
-1. Entfernen Sie die Elasticsearch-Plug-in-Einträge aus Ihrer `.magento/services.yaml` -Datei.
-1. Fügen Sie Code-Änderungen hinzu, übertragen Sie sie und übertragen Sie sie.
+1. Entfernen Sie die Elasticsearch-Plug-in-Einträge aus Ihrer `.magento/services.yaml`.
+1. Code-Änderungen hinzufügen, übertragen und per Push übertragen.
 
    ```bash
    git add .magento/services.yaml
@@ -244,14 +244,14 @@ Wenn Sie die Plug-in-Einträge aus `elasticsearch:` in `.magento/services.yaml` 
    git push origin <branch-name>
    ```
 
-1. Vergeben Sie die Änderungen an `.magento/services.yaml` in Ihr Cloud-Repository.
-1. Indizieren Sie den Index der Katalogsuche neu.
+1. Übertragen Sie die `.magento/services.yaml` Änderungen in Ihr Cloud-Repository.
+1. Indizieren Sie den Katalogsuchindex neu.
 
    ```bash
    bin/magento indexer:reindex catalogsearch_fulltext
    ```
 
-1. Bereinigen Sie den Cache.
+1. Reinigen Sie den Cache.
 
    ```bash
    bin/magento cache:clean
@@ -259,12 +259,12 @@ Wenn Sie die Plug-in-Einträge aus `elasticsearch:` in `.magento/services.yaml` 
 
 >[!TIP]
 >
->Weitere Informationen zur Verwendung oder Fehlerbehebung des Elastic Suite-Plug-ins mit Adobe Commerce finden Sie in der [Dokumentation zur Elastic Suite](https://github.com/Smile-SA/elasticsuite).
+>Weitere Informationen zur Verwendung oder Fehlerbehebung beim Elastic Suite-Plug-in mit Adobe Commerce finden Sie unter [Elastic Suite-Dokumentation](https://github.com/Smile-SA/elasticsuite).
 
 ## Fehlerbehebung
 
-In den folgenden Adobe Commerce-Supportartikeln finden Sie Hilfe zur Fehlerbehebung bei Problemen mit Elasticsearch:
+In den folgenden Adobe Commerce-Support-Artikeln finden Sie Hilfe bei der Fehlerbehebung bei Elasticsearch-Problemen:
 
-- [Elasticsearch 5 ist konfiguriert, die Suchseite wird jedoch nicht mit dem Fehler &quot;Felddaten sind deaktiviert...&quot;geladen](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-5-is-configured-but-search-page-does-not-load-with-fielddata-is-disabled...-error.html).
+- [Elasticsearch 5 ist konfiguriert, aber die Suchseite wird nicht mit dem Fehler „Felddaten sind deaktiviert…“ geladen](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-5-is-configured-but-search-page-does-not-load-with-fielddata-is-disabled...-error.html)
 - [Elasticsearch in Adobe Commerce-Fehlerbehebung](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-in-magento-troubleshooter.html)
 - [Elasticsearch-Indexstatus ist `yellow` oder `red`](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-index-status-is-yellow-or-red.html)

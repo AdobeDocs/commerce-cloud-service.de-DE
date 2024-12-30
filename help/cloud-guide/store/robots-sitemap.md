@@ -1,6 +1,6 @@
 ---
-title: Sitemap- und Suchmaschinenroboter hinzufügen
-description: Erfahren Sie, wie Sie Adobe Commerce in der Cloud-Infrastruktur Sitemap- und Suchmaschinenrobots hinzufügen.
+title: Hinzufügen von Sitemap- und Suchmaschinenrobotern
+description: Erfahren Sie, wie Sie in der Cloud-Infrastruktur Sitemap- und Suchmaschinenroboter zu Adobe Commerce hinzufügen.
 feature: Cloud, Configuration, Search, Site Navigation
 exl-id: b98f43fa-1878-466d-8ea0-1e7207af8b60
 source-git-commit: fda88fdf03afa4a59f40e52802c16b6136d8716f
@@ -10,58 +10,58 @@ ht-degree: 0%
 
 ---
 
-# Sitemap- und Suchmaschinenroboter hinzufügen
+# Hinzufügen von Sitemap- und Suchmaschinenrobotern
 
-Der Versuch, die Datei `sitemap.xml` zu generieren und in den Stammordner zu schreiben, führt zu folgendem Fehler:
+Der Versuch, die `sitemap.xml`-Datei zu generieren und in das Stammverzeichnis zu schreiben, führt zum folgenden Fehler:
 
 ```
 Please make sure that "/" is writable by the web-server.
 ```
 
-Mit Adobe Commerce in der Cloud-Infrastruktur können Sie nur in bestimmte Ordner schreiben, z. B. `var`, `pub/media`, `pub/static` oder `app/etc`. Wenn Sie die Datei &quot;`sitemap.xml`&quot;mithilfe des Admin-Bedienfelds generieren, müssen Sie den Pfad &quot;`/media/`&quot;angeben.
+Mit Adobe Commerce in der Cloud-Infrastruktur können Sie nur in bestimmte Verzeichnisse schreiben, z. B. `var`, `pub/media`, `pub/static` oder `app/etc`. Wenn Sie die `sitemap.xml` Datei mithilfe des Admin-Bedienfelds generieren, müssen Sie den `/media/` angeben.
 
-Sie müssen keine `robots.txt`-Datei generieren, da sie den Inhalt von `robots.txt` bei Bedarf generiert und in der Datenbank speichert. Sie können den Inhalt in Ihrem Browser mit dem Link `<domain.your.project>/robots.txt` oder `<domain.your.project>/robots` anzeigen.
+Sie müssen keine `robots.txt`-Datei generieren, da sie den `robots.txt` Inhalt nach Bedarf generiert und in der Datenbank speichert. Sie können den Inhalt in Ihrem Browser mit dem `<domain.your.project>/robots.txt` oder `<domain.your.project>/robots` Link anzeigen.
 
-Dies erfordert die ECE-Tools-Version 2002.0.12 und höher mit einer aktualisierten `.magento.app.yaml` -Datei. Ein Beispiel für diese Regeln finden Sie im [magento-cloud-Repository](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml#L43-L49).
+Dies erfordert die ECE-Tools-Version 2002.0.12 und höher mit einer aktualisierten `.magento.app.yaml`. Ein Beispiel für diese Regeln finden Sie im [Magento-Cloud-Repository](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml#L43-L49).
 
-**So generieren Sie eine `sitemap.xml` -Datei in Version 2.2 und höher**:
+**So generieren Sie eine `sitemap.xml` in Version 2.2 oder höher**:
 
-1. Rufen Sie Admin auf.
-1. Klicken Sie im Menü _Marketing_ im Abschnitt _SEO &amp; Suche_ auf **Site Map** .
-1. Klicken Sie in der Ansicht _Sitemap_ auf **Sitemap hinzufügen**.
-1. Geben Sie in der Ansicht _Neue Sitemap_ die folgenden Werte ein:
+1. Zugriff auf Admin.
+1. Klicken Sie im Menü _Marketing_ auf **Siteübersicht** im Abschnitt _SEO und Suche_.
+1. Klicken Sie in _Ansicht_ Sitemap“ auf **Sitemap hinzufügen**.
+1. Geben _in der Ansicht_ Neue Sitemap“ die folgenden Werte ein:
 
    - **Dateiname**:`sitemap.xml`
-   - **Pfad**:`/media/`
+   - **path**:`/media/`
 
-1. Klicken Sie auf **Speichern und generieren**. Die neue Sitemap wird im Raster _Sitemap_ verfügbar.
-1. Klicken Sie auf den Pfad in der Spalte _Link für Google_ .
+1. Klicken Sie **Speichern und generieren**. Die neue Sitemap wird im Raster _Sitemap_ verfügbar.
+1. Klicken Sie auf den Pfad in der Spalte _Link für Google_.
 
-**Hinzufügen von Inhalt zur `robots.txt` Datei**:
+**So fügen Sie der `robots.txt` Inhalt hinzu**:
 
-1. Rufen Sie Admin auf.
-1. Klicken Sie im Menü _Inhalt_ auf **Konfiguration** im Abschnitt _Design_ .
-1. Klicken Sie in der Ansicht _Design-Konfiguration_ in der Spalte _Aktion_ auf **Bearbeiten** für die Website.
-1. Klicken Sie in der Ansicht _Hauptwebsite_ auf **Suchmaschinen-Roboter**.
-1. Aktualisieren Sie das Feld **Benutzerdefinierte Anweisung von robots.txt** bearbeiten .
-1. Klicken Sie auf **Konfiguration speichern**.
-1. Überprüfen Sie die `<domain.your.project>/robots.txt`-Datei oder die `<domain.your.project>/robots`-URL in Ihrem Browser.
-
->[!NOTE]
->
->Wenn die `<domain.your.project>/robots.txt` -Datei einen `404 error` generiert, senden Sie ein Adobe Commerce Support-Ticket ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket), um die Umleitung von `/robots.txt` auf `/media/robots.txt` zu entfernen.[
-
-## Mit Fastly VCL-Snippet umschreiben
-
-Wenn Sie unterschiedliche Domänen haben und separate Sitemaps benötigen, können Sie eine VCL erstellen, um zur entsprechenden Sitemap zu gelangen. Generieren Sie die Datei &quot;`sitemap.xml`&quot;im Admin-Bedienfeld wie oben beschrieben und erstellen Sie dann ein benutzerdefiniertes Fastly VCL-Snippet, um die Umleitung zu verwalten. Siehe [Benutzerdefinierte schnelle VCL-Snippets](../cdn/fastly-vcl-custom-snippets.md).
+1. Zugriff auf Admin.
+1. Klicken Sie _Menü_ Inhalt **im Abschnitt _Design_ auf** Konfiguration“.
+1. Klicken Sie in _Ansicht_ Design-Konfiguration **für** Website in der Spalte _Aktion_ auf Bearbeiten.
+1. Klicken Sie in der Ansicht _Hauptwebsite_ auf **Suchmaschinenroboter**.
+1. Aktualisieren Sie das Feld **Benutzerdefinierte Anweisung von robots.txt bearbeiten**.
+1. Klicken Sie **Konfiguration speichern**.
+1. Überprüfen Sie die `<domain.your.project>/robots.txt` oder `<domain.your.project>/robots` URL in Ihrem Browser.
 
 >[!NOTE]
 >
-> Sie können benutzerdefinierte VCL-Snippets von der Admin-Benutzeroberfläche oder über die Fastly-API hochladen. Siehe [Beispiele und Tutorials für benutzerdefinierte VCL-Codebeispiele und -Tutorials](../cdn/fastly-vcl-custom-snippets.md#example-vcl-snippet-code).
+>Wenn die `<domain.your.project>/robots.txt` eine `404 error` generiert, [ Sie &quot;Adobe Commerce-Support-Ticket einreichen](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket), um die Umleitung von `/robots.txt` zu `/media/robots.txt` zu entfernen.
 
-### Verwenden eines Fastly VCL-Snippets zur Umleitung
+## Umschreiben mit Fastly VCL-Snippet
 
-Erstellen Sie ein benutzerdefiniertes VCL-Snippet, um den Pfad für `sitemap.xml` mit den Schlüssel-Wert-Paaren `type` und `content` in `/media/sitemap.xml` umzuschreiben.
+Wenn Sie über verschiedene Domains verfügen und separate Sitemaps benötigen, können Sie eine VCL erstellen, um zur richtigen Sitemap zu routen. Generieren Sie die `sitemap.xml`-Datei im Admin-Bedienfeld wie oben beschrieben und erstellen Sie dann ein benutzerdefiniertes Fastly-VCL-Snippet, um die Umleitung zu verwalten. Siehe [Benutzerdefinierte Fastly-VCL-Snippets](../cdn/fastly-vcl-custom-snippets.md).
+
+>[!NOTE]
+>
+> Sie können benutzerdefinierte VCL-Snippets über die Admin-Benutzeroberfläche oder die Fastly-API hochladen. Siehe [Beispiele und Tutorials für benutzerdefinierte VCL-Snippets](../cdn/fastly-vcl-custom-snippets.md#example-vcl-snippet-code).
+
+### Verwenden eines Fastly VCL-Snippets für die Umleitung
+
+Erstellen Sie ein benutzerdefiniertes VCL-Snippet , um den Pfad für `sitemap.xml` zu `/media/sitemap.xml` mithilfe der Schlüssel-Wert-Paare `type` und `content` neu zu schreiben.
 
 ```json
 {
@@ -73,7 +73,7 @@ Erstellen Sie ein benutzerdefiniertes VCL-Snippet, um den Pfad für `sitemap.xml
 }
 ```
 
-Das folgende Beispiel zeigt, wie der Pfad für `robots.txt` und `sitemap.xml` in `/media/robots.txt` und `/media/sitemap.xml` umgeschrieben wird
+Das folgende Beispiel zeigt, wie Sie den Pfad für `robots.txt` und `sitemap.xml` zu `/media/robots.txt` und `/media/sitemap.xml` umschreiben
 
 ```json
 {
@@ -85,9 +85,9 @@ Das folgende Beispiel zeigt, wie der Pfad für `robots.txt` und `sitemap.xml` in
 }
 ```
 
-**So verwenden Sie ein Fastly VCL-Snippet für eine bestimmte Domänenumleitung**:
+**So verwenden Sie ein Fastly-VCL-Snippet für eine bestimmte Domain-Umleitung**:
 
-Erstellen Sie eine `pub/media/domain_robots.txt` -Datei, deren Domäne `domain.com` ist, und verwenden Sie das nächste VCL-Snippet:
+Erstellen Sie eine `pub/media/domain_robots.txt`-Datei, in der die Domain `domain.com` ist, und verwenden Sie das nächste VCL-Snippet:
 
 ```json
 {
@@ -99,9 +99,9 @@ Erstellen Sie eine `pub/media/domain_robots.txt` -Datei, deren Domäne `domain.c
 }
 ```
 
-Das VCL-Snippet routet `http://domain.com/robots.txt` und zeigt die Datei `pub/media/domain_robots.txt` an.
+Der VCL-Ausschnitt leitet `http://domain.com/robots.txt` und zeigt die `pub/media/domain_robots.txt` an.
 
-Um eine Umleitung für `robots.txt` und `sitemap.xml` in einem einzelnen Snippet zu konfigurieren, erstellen Sie die Dateien `pub/media/domain_robots.txt` und `pub/media/domain_sitemap.xml`, wobei die Domäne `domain.com` ist, und verwenden Sie das nächste VCL-Snippet:
+Um eine Umleitung für `robots.txt` und `sitemap.xml` in einem einzigen Snippet zu konfigurieren, erstellen Sie `pub/media/domain_robots.txt`- und `pub/media/domain_sitemap.xml`-Dateien, wobei die Domain `domain.com` ist, und verwenden Sie das nächste VCL-Snippet:
 
 ```json
 {
@@ -113,16 +113,16 @@ Um eine Umleitung für `robots.txt` und `sitemap.xml` in einem einzelnen Snippet
 }
 ```
 
-In der Admin-Konfiguration `sitemap` müssen Sie den Speicherort der Datei mit `pub/media/` anstelle von `/` angeben.
+In der `sitemap`-Admin-Konfiguration müssen Sie den Speicherort der Datei mithilfe von `pub/media/` anstelle von `/` angeben.
 
 ### Konfigurieren der Indizierung nach Suchmaschine
 
-Um die `robots.txt` -Anpassungen in der Produktion zu aktivieren, müssen Sie die Option **Indizierung durch Suchmaschinen ist für`<environment-name>`** in Ihren Projekteinstellungen aktivieren.
+Um `robots.txt` Anpassungen in der Produktion zu aktivieren, müssen Sie die Option **Indizierung durch Suchmaschinen ist aktiviert für`<environment-name>`** in Ihren Projekteinstellungen aktivieren.
 
-![Verwenden Sie den [!DNL Cloud Console], um Umgebungen zu verwalten](../../assets/robots-indexing-by-search-engine.png)
+![Verwenden der [!DNL Cloud Console] zum Verwalten von Umgebungen](../../assets/robots-indexing-by-search-engine.png)
 
 >[!NOTE]
 >
->- Die Indizierung durch Suchmaschinen kann nur in der Produktion aktiviert werden, jedoch nicht in einer der niedrigeren Umgebungen.
+>- Die Indizierung durch Suchmaschinen kann nur in der Produktion aktiviert werden, nicht aber in einer der niedrigeren Umgebungen.
 >
->- Wenn Sie PWA Studio verwenden und nicht auf Ihre konfigurierte `robots.txt` -Datei zugreifen können, fügen Sie `robots.txt` zur [Vorname-Zulassungsliste](https://github.com/magento/magento2-upward-connector#front-name-allowlist) unter **Stores** > Konfiguration > **Allgemein** > **Web** > UPWARD-PWA-Konfiguration hinzu.
+>- Wenn Sie PWA Studio Auf die Zulassungsliste setztest verwenden und nicht auf Ihre konfigurierte `robots.txt` zugreifen können, fügen Sie `robots.txt` zur [Front Name](https://github.com/magento/magento2-upward-connector#front-name-allowlist) unter **Stores** > Configuration > **General** > **Web** > UPWARD PWA Configuration hinzu.

@@ -16,13 +16,13 @@ ht-degree: 17%
 
 <!-- (REQUIRED) What is the issue or current behavior? -->
 
-### Zu reproduzierende Schritte
+### Schritte zur Reproduktion
 
 <!-- (OPTIONAL) What needs to be done to replicate this issue? You can provide your scenario in a Gist. -->
 
 1. Erster Schritt
 1. Zweiter Schritt
-1. Etcetera
+1. usw
 
 ## Erwartetes Ergebnis
 

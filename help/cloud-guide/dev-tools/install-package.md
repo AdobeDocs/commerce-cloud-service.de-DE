@@ -1,6 +1,6 @@
 ---
-title: Upgrade des Projekts zur Verwendung der ECE-Tools
-description: Erfahren Sie, wie Sie Ihr Adobe Commerce auf das Cloud-Infrastrukturprojekt aktualisieren, um das ECE-Tools-Paket zu verwenden und die neuesten Fehlerbehebungen und Funktionen zu nutzen.
+title: Projekt auf ECE-Tools aktualisieren
+description: Erfahren Sie, wie Sie Ihr Adobe Commerce in einem Cloud-Infrastrukturprojekt aktualisieren, um das ECE-Tools-Paket zu verwenden und die neuesten Fehlerbehebungen und Funktionen zu nutzen.
 feature: Cloud, Install
 exl-id: 820cca84-2817-4881-829f-ebb78400d8c7
 source-git-commit: b49a51aba56f79b5253eeacb1adf473f42bb8959
@@ -10,41 +10,41 @@ ht-degree: 0%
 
 ---
 
-# Upgrade des Projekts zur Verwendung des ECE-Tools-Pakets
+# Upgrade des Projekts auf das ECE-Tools-Paket
 
-Adobe veraltete die Pakete `magento/magento-cloud-configuration` und `magento/ece-patches` zugunsten des Pakets `ece-tools` , wodurch viele Cloud-Prozesse vereinfacht werden. Wenn Sie ein älteres Adobe Commerce in einem Cloud-Infrastrukturprojekt verwenden, das _nicht_ das Paket `ece-tools` enthält, müssen Sie einen einmaligen, manuellen _Upgrade_ -Prozess für Ihr Projekt durchführen.
+Adobe hat die `magento/magento-cloud-configuration`- und `magento/ece-patches`-Pakete zugunsten des `ece-tools`-Pakets verworfen, was viele Cloud-Prozesse vereinfacht. Wenn Sie ein älteres Adobe Commerce in einem Cloud-Infrastrukturprojekt verwenden, das _nicht_ das `ece-tools` enthält, müssen Sie für Ihr Projekt einen einmaligen manuellen Prozess _Upgrade_ durchführen.
 
 >[!WARNING]
 >
->Wenn Ihr Projekt das Paket `ece-tools` enthält, können Sie das folgende Upgrade überspringen. Rufen Sie zur Überprüfung die Version [!DNL Commerce] mit dem Befehl `php vendor/bin/ece-tools -V` im Stammverzeichnis Ihres lokalen Projekts ab.
+>Wenn Ihr Projekt das `ece-tools` enthält, können Sie das folgende Upgrade überspringen. Rufen Sie zur Überprüfung die [!DNL Commerce] Version mit dem Befehl `php vendor/bin/ece-tools -V` im lokalen Projektstammverzeichnis ab.
 
-Für dieses Projekt-Upgrade-Verfahren müssen Sie die `magento/magento-cloud-metapackage`-Versionsbegrenzung in der Datei `composer.json` im Stammverzeichnis aktualisieren. Diese Einschränkung ermöglicht Aktualisierungen für Adobe Commerce für Cloud-Infrastruktur-Metapakete - einschließlich der Entfernung veralteter Pakete - ohne die aktuelle Adobe Commerce-Version zu aktualisieren.
+Für diesen Projekt-Upgrade-Prozess müssen Sie die `magento/magento-cloud-metapackage` Versionsbeschränkung in der `composer.json`-Datei im Stammverzeichnis aktualisieren. Diese Einschränkung ermöglicht Aktualisierungen für Adobe Commerce in Cloud-Infrastruktur-Metapaketen, einschließlich der Entfernung veralteter Pakete, ohne die aktuelle Adobe Commerce-Version zu aktualisieren.
 
 {{upgrade-tip}}
 
-## Entfernen veralteter Pakete
+## Veraltete Pakete entfernen
 
-Überprüfen Sie vor dem Ausführen eines Upgrades zur Verwendung des `ece-tools`-Pakets die Datei `composer.lock` auf die folgenden veralteten Pakete:
+Bevor Sie ein Upgrade für die Verwendung des `ece-tools` durchführen, überprüfen Sie die `composer.lock`-Datei auf die folgenden veralteten Pakete:
 
 - `magento/magento-cloud-configuration`
 - `magento/ece-patches`
 
 ## Metapaket aktualisieren
 
-Für jede Adobe Commerce-Version sind unterschiedliche Einschränkungen erforderlich, die auf Folgendes basieren:
+Jede Adobe Commerce-Version erfordert eine andere Einschränkung, die auf den folgenden Elementen basiert:
 
 ```
 >=current_version <next_version
 ```
 
-- Geben Sie für &quot;`current_version`&quot;die zu installierende Adobe Commerce-Version an.
-- Geben Sie für `next_version` die nächste Patch-Version nach dem in `current_version` angegebenen Wert an.
+- Geben Sie `current_version` die zu installierende Adobe Commerce-Version an.
+- Geben Sie `next_version` die nächste Patch-Version nach dem in `current_version` angegebenen Wert an.
 
-Wenn Sie Adobe Commerce `2.3.5-p2` installieren möchten, setzen Sie `current_version` auf `2.3.5` und die `next_version` auf `2.3.6`. Durch die Beschränkung `">=2.3.5 <2.3.6"` wird das neueste verfügbare Paket für 2.3.5 installiert.
+Wenn Sie Adobe Commerce `2.3.5-p2` installieren möchten, setzen Sie `current_version` auf `2.3.5` und die `next_version` auf `2.3.6`. Mit der `">=2.3.5 <2.3.6"` wird das neueste verfügbare Paket für 2.3.5 installiert.
 
-Sie können die neueste Metapaket-Einschränkung immer in der [`magento-cloud` Vorlage](https://github.com/magento/magento-cloud/blob/master/composer.json) finden.
+Die neueste Metapaket-Einschränkung finden Sie immer in der [`magento-cloud` Vorlage](https://github.com/magento/magento-cloud/blob/master/composer.json).
 
-Im folgenden Beispiel wird eine Beschränkung für das Adobe Commerce-Metapaket zur Cloud-Infrastruktur auf eine Version festgelegt, die größer oder gleich der aktuellen Version 2.4.7 und kleiner als die nächste Version 2.4.8 ist:
+Im folgenden Beispiel wird eine Einschränkung für das Adobe Commerce on Cloud Infrastructure-Metapaket auf eine beliebige Version festgelegt, die größer oder gleich der aktuellen Version 2.4.7 und kleiner als die nächste Version 2.4.8 ist:
 
 ```json
 "require": {
@@ -52,13 +52,13 @@ Im folgenden Beispiel wird eine Beschränkung für das Adobe Commerce-Metapaket 
 },
 ```
 
-## Projekt aktualisieren
+## Aktualisieren des Projekts
 
-Um Ihr Projekt für die Verwendung des `ece-tools`-Pakets zu aktualisieren, müssen Sie das Metapaket und die `.magento.app.yaml` -Hooks-Eigenschaften aktualisieren und eine Composer-Aktualisierung durchführen.
+Um Ihr Projekt für die Verwendung des `ece-tools`-Pakets zu aktualisieren, müssen Sie das Metapaket und die `.magento.app.yaml` Hooks-Eigenschaften aktualisieren und eine Composer-Aktualisierung durchführen.
 
-**Aktualisieren des Projekts für die Verwendung von ece-tools**:
+**So aktualisieren Sie das Projekt auf ECE-Tools**:
 
-1. Aktualisieren Sie die `magento/magento-cloud-metapackage`-Versionsbegrenzung in der Datei `composer.json` .
+1. Aktualisieren Sie die `magento/magento-cloud-metapackage` Versionsbeschränkung in der `composer.json`.
 
    ```bash
    composer require "magento/magento-cloud-metapackage":">=2.4.7 <2.4.8" --no-update
@@ -70,7 +70,7 @@ Um Ihr Projekt für die Verwendung des `ece-tools`-Pakets zu aktualisieren, müs
    composer update magento/magento-cloud-metapackage
    ```
 
-1. Ändern Sie die Hook-Befehle in der Datei &quot;`magento.app.yaml`&quot;.
+1. Ändern Sie die Hook-Befehle in der `magento.app.yaml`.
 
    ```yaml
    hooks:
@@ -87,7 +87,7 @@ Um Ihr Projekt für die Verwendung des `ece-tools`-Pakets zu aktualisieren, müs
            php ./vendor/bin/ece-tools run scenario/post-deploy.xml
    ```
 
-1. Suchen und entfernen Sie die [veralteten Pakete](#remove-deprecated-packages). Die veralteten Pakete können eine erfolgreiche Aktualisierung verhindern.
+1. Suchen Sie nach den [veralteten Paketen](#remove-deprecated-packages) und entfernen Sie diese. Die veralteten Pakete können ein erfolgreiches Upgrade verhindern.
 
    ```bash
    composer remove magento/magento-cloud-configuration
@@ -97,13 +97,13 @@ Um Ihr Projekt für die Verwendung des `ece-tools`-Pakets zu aktualisieren, müs
    composer remove magento/ece-patches
    ```
 
-1. Es kann erforderlich sein, das `ece-tools` -Paket zu aktualisieren.
+1. Möglicherweise muss das `ece-tools` aktualisiert werden.
 
    ```bash
    composer update magento/ece-tools
    ```
 
-1. Fügen Sie die Codeänderungen hinzu und übertragen Sie sie. In diesem Beispiel wurden die folgenden Dateien aktualisiert:
+1. Fügen Sie die Code-Änderungen hinzu und übertragen Sie sie. In diesem Beispiel wurden die folgenden Dateien aktualisiert:
 
    ```
    .magento.app.yaml
@@ -111,7 +111,7 @@ Um Ihr Projekt für die Verwendung des `ece-tools`-Pakets zu aktualisieren, müs
    composer.lock
    ```
 
-1. Übertragen Sie Ihre Codeänderungen auf den Remote-Server und führen Sie diese Verzweigung mit der Verzweigung `integration` zusammen.
+1. Übertragen Sie Ihre Code-Änderungen auf den Remote-Server und führen Sie diese Verzweigung mit der `integration` Verzweigung zusammen.
 
    ```bash
    git push origin <branch-name>
