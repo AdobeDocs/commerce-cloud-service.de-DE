@@ -3,9 +3,9 @@ title: Anzeigen und Verwalten von Protokollen
 description: Machen Sie sich mit den in der Cloud-Infrastruktur verfügbaren Protokolldateitypen vertraut und erfahren Sie, wo Sie sie finden.
 last-substantial-update: 2023-05-23T00:00:00Z
 exl-id: d7f63dab-23bf-4b95-b58c-3ef9b46979d4
-source-git-commit: 633e5e75ae23a933d15a0faedae22092797d5d0b
+source-git-commit: 564a569c37ab8ec53f8a12bc105106a621251b10
 workflow-type: tm+mt
-source-wordcount: '1056'
+source-wordcount: '1083'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,18 @@ ssh 1.ent-project-environment-id@ssh.region.magento.cloud "cat var/log/cron.log"
 
 >[!TIP]
 >
->Für Pro-Staging- und Produktionsumgebungen sind automatische Protokollrotation, -komprimierung und -entfernung für Protokolldateien mit festem Dateinamen aktiviert. Jeder Protokolldateityp hat ein rotierendes Muster und eine rotierende Lebensdauer. Starterumgebungen haben keine Protokollrotation. Ausführliche Informationen zur Protokollrotation der Umgebung und zur Lebensdauer komprimierter Protokolle finden Sie in: `/etc/logrotate.conf` und `/etc/logrotate.d/<various>`. Die Protokollrotation kann in Pro Integration-Umgebungen nicht konfiguriert werden. Für die Pro-Integration müssen Sie eine benutzerdefinierte Lösung/ein benutzerdefiniertes Skript implementieren und [Ihren Cron konfigurieren](../application/crons-property.md), um das Skript nach Bedarf auszuführen.
+>Für Pro Staging- und Pro-Produktionsumgebungen sind automatische Protokollrotation, -komprimierung und -entfernung für Protokolldateien mit festem Dateinamen aktiviert. Jeder Protokolldateityp hat ein rotierendes Muster und eine rotierende Lebensdauer.
+>Ausführliche Informationen zur Protokollrotation der Umgebung und zur Lebensdauer komprimierter Protokolle finden Sie in: `/etc/logrotate.conf` und `/etc/logrotate.d/<various>`.
+>Für Pro Staging- und Pro-Produktionsumgebungen müssen Sie [ein Adobe Commerce-Support-Ticket ](https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/help-center-guide/magento-help-center-user-guide.html#submit-ticket), um Änderungen an der Protokollrotationskonfiguration anzufordern.
+
+>[!TIP]
+>
+>Die Protokollrotation kann in Pro Integration-Umgebungen nicht konfiguriert werden.
+>Für die Pro-Integration müssen Sie eine benutzerdefinierte Lösung/ein benutzerdefiniertes Skript implementieren und [Ihren Cron konfigurieren](../application/crons-property.md), um das Skript nach Bedarf auszuführen.
+
+>[!NOTE]
+>
+>Starter-Projektumgebungen haben keine Protokollrotation.
 
 ## Erstellen und Bereitstellen von Protokollen
 
