@@ -4,9 +4,9 @@ description: Erfahren Sie mehr über die von der Pro-Architektur unterstützten 
 feature: Cloud, Auto Scaling, Iaas, Paas, Storage
 topic: Architecture
 exl-id: d10d5760-44da-4ffe-b4b7-093406d8b702
-source-git-commit: 18f4da5c6e7e5c483f5cf64e977b3fb3fd28bbb0
+source-git-commit: eb33d9867355a4ccfada99c7f5b0e4520dbe44f5
 workflow-type: tm+mt
-source-wordcount: '1573'
+source-wordcount: '1554'
 ht-degree: 0%
 
 ---
@@ -185,7 +185,7 @@ Mithilfe von CLI **Befehlen können Sie eine** manuelle Sicherung) der Datenbank
 
 ### Wiederherstellungspunkt-Ziel
 
-RPO beträgt maximal sechs Stunden für die letzte Sicherung (z. B. um 06:00 Uhr, dann um 12:00 Uhr und dann um 18:00 Uhr). Die Häufigkeit der Backups hängt vom Backup-Zeitplan Ihres Plans und der Anzahl der Änderungen ab, die in den Speicher-Service geschrieben werden sollen.
+Wenden Sie sich an Ihren Adobe Customer Success Manager, um weitere Informationen zur Wiederherstellungspunkt-Zielzeit bis zur letzten Sicherung zu erhalten. Die Häufigkeit der Backups hängt vom Backup-Zeitplan Ihres Plans und der Anzahl der Änderungen ab, die in den Speicher-Service geschrieben werden sollen.
 
 ### Aufbewahrungsrichtlinie
 
@@ -203,11 +203,7 @@ Diese Richtlinie kann je nach Cloud-Infrastrukturplan variieren.
 
 ### Recovery Time Objective
 
-RTO hängt von der Größe des Speichers ab. Bei großen EBS-Volumes dauert die Wiederherstellung länger. Die Wiederherstellungszeiten können je nach Größe der Datenbank variieren:
-
-- Eine große Datenbank (200 oder mehr GB) kann 5 Stunden dauern
-- Eine mittlere Datenbank (150 GB) kann 2 1/2 Stunden dauern
-- Eine kleine Datenbank (60 GB) kann 1 Stunde dauern
+RTO hängt von der Größe des Speichers ab. Bei großen EBS-Volumes dauert die Wiederherstellung länger. Die Wiederherstellungszeiten können je nach Größe der Datenbank variieren. Weitere Informationen erhalten Sie von Ihrem Adobe Customer Success Manager.
 
 ## Pro Cluster-Skalierung
 
